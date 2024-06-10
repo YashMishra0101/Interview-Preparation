@@ -58,43 +58,13 @@
 
 // arrowTwo("I a Value")
 
+
 //#IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
 
 //   (function abc () {
 //     console.log("Helo Guys I am a iffi");
 // }());
 
-//#Question
-
-// let ab=5;
-// let bc="10"
-
-// let cd=bc-ab;
-// let cd=bc*ab;
-//  let cd=bc/ab;
-
-// let cd=bc+ab;
-// console.log(cd);
-// console.log(typeof(cd));
-
-/*
-In JavaScript, when you use the + operator with one operand being a number and the other operand being a string, JavaScript implicitly
-coerces the number to a string and performs string concatenation rather than addition.
-*/
-
-/* 
-Concatenation primarily refers to combining strings together to form a single string. However, it can also be used more broadly to
-describe the process of combining or linking together multiple items or entities, not just limited to strings. 
-
-In the context of programming, especially with languages like JavaScript, concatenation commonly refers to combining strings by 
-appending one string to the end of another. For example, combining words or phrases to form a sentence, or combining different 
-parts of a URL.
-
-While concatenation often involves combining strings, the concept can also be applied to other types of data, such as combining arrays, 
-objects, or even numbers. However, in the context of programming languages, the term "concatenation" is most commonly associated 
-with string manipulation.
-
-*/
 
 //#Parameter and Argument
 
@@ -113,14 +83,37 @@ and handled by the parameter.
 
 // greet("Yash");
 
-//>How can you pass one function into another function and print its value in JavaScript ?
 
-// const one = (parameter) => {
-//   console.log(parameter());
-// };
 
-// const two = () => {
-// return("I am Two")
-// };
+//# What is first class citizen in javascript ?
 
-// one(two)
+/*
+
+1.Assign to Variables: Functions can be assigned to variables, just like any other value.
+
+const sayHello = function() {
+  console.log("Hello!");
+};
+
+2.Pass as Arguments: Functions can be passed as arguments to other functions.
+
+function greet(fn) {
+  fn();
+}
+
+greet(sayHello); // Output: Hello!
+
+3.Return from Other Functions: Functions can be returned from other functions.
+
+function createGreeter() {
+  return function() {
+    console.log("Hi!");
+  };
+}
+
+const greeter = createGreeter();
+greeter(); // Output: Hi!
+
+
+Other reason bhi hai
+*/
