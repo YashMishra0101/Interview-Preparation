@@ -58,13 +58,11 @@
 
 // arrowTwo("I a Value")
 
-
 //#IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
 
 //   (function abc () {
 //     console.log("Helo Guys I am a iffi");
 // }());
-
 
 //#Parameter and Argument
 
@@ -82,8 +80,6 @@ and handled by the parameter.
 // }
 
 // greet("Yash");
-
-
 
 //# What is first class citizen in javascript ?
 
@@ -117,3 +113,90 @@ greeter(); // Output: Hi!
 
 Other reason bhi hai
 */
+
+//#Three way to declared variable in javascript (Var,let,Const)
+
+//>In var we can redecared and reassing the the var vriable.
+
+// var a = 10;
+// console.log("In Var:", a);
+// var a = 20;
+// console.log("In Var:", a);
+
+//>In let we cannot redecared the variable but we can reassign them.
+
+// let b = 30;
+// console.log("In let:", b);
+
+// let b = 40; (not valid)
+// console.log("In let:", b);
+
+//>In const we cannot redecared or reassign the variable.
+
+// const c = 50;
+// console.log("In Const:", c);
+
+//>Extra Info
+
+/*
+
+- **`var`**: Accessible anywhere in the function where it's declared. Can cause unexpected 
+behavior due to its function scope and hoisting.
+- **`let`**: Only accessible within the block (`{}`) where it's declared. Safer to use
+ because it's block-scoped.
+- **`const`**: Also block-scoped like `let`. Once assigned, its value can't be changed. 
+
+Using `let` and `const` is generally better because they avoid problems caused by `var`'s 
+function scope and hoisting.
+
+*/
+
+// function abcd() {
+//   if (true) {
+//     const yash = "Developer";
+//     console.log(yash);
+//   }
+// }
+
+// abcd();
+
+
+//#What is Array in Javascript ?
+/*
+An array in JavaScript is a type of object that allows us to store multiple values in a single variable. 
+We use square brackets ([]) to define an array, and the values inside the array are separated by commas.
+
+Arrays are zero-indexed, which means the first element of an array is at index 0.
+*/
+
+// let array=["Yash","Jeet","Aman","Rahul"];
+// console.log(typeof(array));//object
+// console.log(array[1]);
+
+//#What is object is Javascript ?
+
+/*
+An object is a data structure in JavaScript where we can store data in the form of key-value pairs. To access 
+the data within an object, we use either dot notation or bracket notation. In bracket notation, we use square 
+brackets. A function inside an object is called a method. Methods represent the behaviors or actions of the object.
+
+With this: Preferred for accessing properties within methods as it makes the method flexible and tied to the object 
+instance.
+
+Without this: Not standard practice for object methods, but can work in specific contexts like closures or when 
+properties are fixed at creation.
+*/
+
+
+// let person ={
+//   name :"Yash",
+//   age:"22",
+//   profile:"Front End Developer",
+//   info:function(){
+//     console.log(`Hello My Name is ${this.name}`);
+//   }
+// };
+
+// console.log(person.name);
+// console.log(person["age"]);
+// person.info();

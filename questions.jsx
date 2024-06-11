@@ -42,35 +42,33 @@ with string manipulation.
 
 // one(two)
 
-//#Three way to declared variable in javascript (Var,let,Const)
 
-//>In var we can redecared and reassing the the var vriable.
+//  function a(){
+//   console.log("one");
+// }
+// a()
 
-var a = 10;
-console.log("In Var:", a);
-a = 20;
-console.log("In Var:", a);
+// function a(){
+//   console.log("two");
+// }
 
-//>In let we cannot redecared the variable but we can reassign them.
+// function a(){
+//   console.log("three");
+// }
 
-let b = 30;
-console.log("In let:", b);
-b = 40;
-console.log("In let:", b);
+//#Question 3 : Difference between null, undefined, and empty, you can say:
 
-//>In const we cannot redecared or reassign the variable.
+/*
+Undefined means a variable has been declared but not assigned a value. Null is an explicit assignment indicating 
+that a variable has no value. Empty refers to a variable that is assigned an empty string or an empty array, meaning 
+it has been assigned a value, but that value is empty.
+*/
 
-const c = 50;
-console.log("In Const:", c);
+// let u;
+// let emptyStringExample = null;
+// let emptyArrayExample = [];
 
-//> If we use var so we can acces the var value in side the funtion in any places ,
-//> but in let and const we can access the value on nearest braces
+// console.log(u); // Output: undefined
+// console.log(emptyStringExample); // Output: (empty string)
+// console.log(emptyArrayExample); // Output: []
 
-function abcd() {
-  if (true) {
-    const yash = "Developer";
-  console.log(yash);
-    }
-}
-
-abcd();
