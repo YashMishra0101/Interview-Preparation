@@ -1,4 +1,4 @@
-//#Three Type Of Function
+//#1)Three Type Of Function
 
 //>Normal function
 
@@ -58,13 +58,13 @@
 
 // arrowTwo("I a Value")
 
-//#IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
+//#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
 
 //   (function abc () {
 //     console.log("Helo Guys I am a iffi");
 // }());
 
-//#Parameter and Argument
+//#3)Parameter and Argument
 
 /*
 Parameter and argument are both part of a function. When we call a function and pass a value inside it, we use an argument to send
@@ -81,9 +81,11 @@ and handled by the parameter.
 
 // greet("Yash");
 
-//# What is first class citizen in javascript ?
+//#4)What is first class citizen in javascript ?
 
 /*
+In JavaScript, functions are considered "first-class citizens." This means that functions have the same capabilities 
+as other values like numbers and strings.
 
 1.Assign to Variables: Functions can be assigned to variables, just like any other value.
 
@@ -93,11 +95,16 @@ const sayHello = function() {
 
 2.Pass as Arguments: Functions can be passed as arguments to other functions.
 
-function greet(fn) {
-  fn();
+const greet = function(n) {
+  return "Hello, " + n;
+};
+
+
+function logGreeting(greetingFunction,a) {
+  console.log(greetingFunction(a));
 }
 
-greet(sayHello); // Output: Hello!
+logGreeting(greet,"yash")
 
 3.Return from Other Functions: Functions can be returned from other functions.
 
@@ -114,7 +121,7 @@ greeter(); // Output: Hi!
 Other reason bhi hai
 */
 
-//#Three way to declared variable in javascript (Var,let,Const)
+//#5)Three way to declared variable in javascript (Var,let,Const)
 
 //>In var we can redecared and reassing the the var vriable.
 
@@ -160,8 +167,7 @@ function scope and hoisting.
 
 // abcd();
 
-
-//#What is Array in Javascript ?
+//#5)What is Array in Javascript ?
 /*
 An array in JavaScript is a type of object that allows us to store multiple values in a single variable. 
 We use square brackets ([]) to define an array, and the values inside the array are separated by commas.
@@ -173,7 +179,7 @@ Arrays are zero-indexed, which means the first element of an array is at index 0
 // console.log(typeof(array));//object
 // console.log(array[1]);
 
-//#What is object is Javascript ?
+//#6)What is object is Javascript ?
 
 /*
 An object is a data structure in JavaScript where we can store data in the form of key-value pairs. To access 
@@ -187,7 +193,6 @@ Without this: Not standard practice for object methods, but can work in specific
 properties are fixed at creation.
 */
 
-
 // let person ={
 //   name :"Yash",
 //   age:"22",
@@ -200,3 +205,81 @@ properties are fixed at creation.
 // console.log(person.name);
 // console.log(person["age"]);
 // person.info();
+
+//#7)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
+
+// Primitive Data Types: String, Boolean, Number, etc.
+// Non-Primitive Data Types: Array, Object, Function, etc.
+
+// Primitive Data Types are stored in the stack. In the stack, copying data results in a
+// new copy being created, so changes to the copy do not affect the original data.
+// Non-Primitive Data Types are stored in the heap. In the heap, data is accessed via references,
+// so changes to the reference will affect the original data.
+
+/*
+
+let oldProfile = "Front End Developer";
+let newProfile = oldProfile;
+
+newProfile = "Full Stack Developer";
+
+console.log(newProfile); // Output: Full Stack Developer
+console.log(oldProfile); // Output: Front End Developer
+
+let arr = ["HTML", "CSS", "JavaScript"];
+let arr2 = arr;
+
+arr2[1] = "Tailwind CSS";
+
+console.log(arr2[1]); // Output: Tailwind CSS
+console.log(arr[1]);  // Output: Tailwind CSS
+
+*/
+
+//#8)Execution Context in JavaScript
+/*
+An execution context is the environment in which JavaScript code is executed. It consists of two main phases:
+
+1. **Memory Allocation Phase**:
+   - Memory is allocated for variables and functions.
+   - Initially, variables are set to `undefined`.
+   - Function declarations are stored with their definitions.
+
+2. **Code Execution Phase**:
+   - Code is executed line by line.
+   - Variables are assigned actual values during execution.
+
+// Global Execution Context
+
+- Created when the JavaScript code starts to run.
+- Initially, the global execution context is pushed onto the call stack.
+
+// Function Execution Context
+
+- Created whenever a function is called.
+- Each function call creates a new execution context.
+- Function execution contexts are managed by the call stack:
+  - A new execution context is pushed onto the call stack when a function is called.
+  - The execution context is popped off the call stack when the function execution is complete.
+
+// Call Stack
+
+- The call stack keeps track of execution contexts.
+- The global execution context is the first to be pushed onto the stack.
+- Subsequent function calls create new execution contexts that are pushed onto the stack.
+- Execution contexts are popped from the stack once their execution is finished.
+
+// Key Points
+
+- The execution context manages the execution of code.
+- Memory allocation happens first, followed by code execution.
+- The call stack tracks the execution contexts, managing function calls and returns.
+
+This should provide you with a solid understanding of execution context and the role of the call stack in JavaScript. 
+
+*/
+
+// for (initialization; condition; increment/decrement) {
+  
+// }
+

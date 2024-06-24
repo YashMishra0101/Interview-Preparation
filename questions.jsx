@@ -72,3 +72,22 @@ it has been assigned a value, but that value is empty.
 // console.log(emptyStringExample); // Output: (empty string)
 // console.log(emptyArrayExample); // Output: []
 
+//#Question 4 : Tells the output without running the code 
+
+// function firstFunction() {
+//   console.log("First Function Start");
+//   secondFunction();
+//   console.log("First Function End");
+// }
+
+// function secondFunction() {
+//   console.log("Second Function Start");
+//   thirdFunction();
+//   console.log("Second Function End");
+// }
+
+// function thirdFunction() {
+//   console.log("Third Function");
+// }
+
+// firstFunction();
