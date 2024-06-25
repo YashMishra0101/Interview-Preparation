@@ -249,12 +249,12 @@ An execution context is the environment in which JavaScript code is executed. It
    - Code is executed line by line.
    - Variables are assigned actual values during execution.
 
-// Global Execution Context
+//-- Global Execution Context
 
 - Created when the JavaScript code starts to run.
 - Initially, the global execution context is pushed onto the call stack.
 
-// Function Execution Context
+//-- Function Execution Context
 
 - Created whenever a function is called.
 - Each function call creates a new execution context.
@@ -262,14 +262,14 @@ An execution context is the environment in which JavaScript code is executed. It
   - A new execution context is pushed onto the call stack when a function is called.
   - The execution context is popped off the call stack when the function execution is complete.
 
-// Call Stack
+//-- Call Stack
 
 - The call stack keeps track of execution contexts.
 - The global execution context is the first to be pushed onto the stack.
 - Subsequent function calls create new execution contexts that are pushed onto the stack.
 - Execution contexts are popped from the stack once their execution is finished.
 
-// Key Points
+//-- Key Points
 
 - The execution context manages the execution of code.
 - Memory allocation happens first, followed by code execution.
@@ -279,7 +279,140 @@ This should provide you with a solid understanding of execution context and the 
 
 */
 
-// for (initialization; condition; increment/decrement) {
-  
+//#9)Loops
+
+//---For Loop
+
+// for(let f=1;f<=10;f++){
+//   console.log("For Loop",f);
 // }
+
+//--While Loop
+
+// let w2=1;
+
+// while(w2<=5){
+//   console.log("While Loop",w2);
+//   w2++
+// }
+
+//--Do While loop
+
+// let d=1;
+
+// do{
+// console.log("Do While Loop",d);
+// d++;
+// }while(d<=8)
+
+//--For in loop
+
+// const info={
+//   name:"yash mishra",
+//   role:"front end developer",
+//   age:"21"
+// }
+
+// for (let key in info){
+//   console.log(key);
+// }
+
+// for (let key in info){
+//   console.log(info[key]);
+// }
+
+// for (let key in info){
+//   console.log(`${key}:${info[key]}`);
+// }
+
+//--For of loop
+
+// const fruits = ['apple', 'banana', 'cherry'];
+
+// for (let fruit of fruits) {
+//   console.log(fruit[1]);
+// }
+
+//#10) Hoisting Explained
+
+/*
+
+**Hoisting** in JavaScript means that variable and function declarations are moved to the top of their 
+containing scope during the execution phase. However, this does not mean that the actual initialization or 
+assignment of values is hoisted, only the declarations.
+
+*/
+
+//-- Function Declarations
+
+// Function declarations using the `function` keyword are hoisted to the top of their scope. This means you
+// can call a function before it is declared in the code.
+
+/*
+Example:
+hoistedFunction(); // This works because hoistedFunction is hoisted
+
+function hoistedFunction() {
+    console.log("This function is hoisted!");
+}
+*/
+
+//--Function Expressions
+
+// Function expressions, where you assign a function to a variable, are not hoisted. Only the variable declaration
+// is hoisted, not the function assignment.
+
+//Example:
+
+// try {
+//     notHoistedFunction(); // This throws an error because notHoistedFunction is undefined
+// } catch (error) {
+//     console.log(error); // ReferenceError: notHoistedFunction is not defined
+// }
+
+// var notHoistedFunction = function() {
+//     console.log("This function is not hoisted.");
+// };
+
+//-- Variable Declarations (var, let, const)
+
+/*
+- **var**: Variables declared with `var` are hoisted to the top of their scope, but they are initialized with 
+`undefined` until the actual assignment happens.
+
+Example:
+
+console.log(hoistedVar); // Output: undefined
+var hoistedVar = 5;
+console.log(hoistedVar); // Output: 5
+
+
+- **let** and **const**: Variables declared with `let` and `const` are also hoisted, but unlike `var`, they 
+are not initialized. Accessing them before the declaration (initialization) results in a `ReferenceError`.
+
+Example with `let`:
+
+console.log(notHoistedVar); // Throws ReferenceError
+let notHoistedVar = 10;
+
+
+Example with `const`:
+
+console.log(notHoistedConst); // Throws ReferenceError
+const notHoistedConst = 15;
+
+*/
+
+//-- Conclusion
+
+/*
+- **Function Declarations**: Hoisted entirely (both name and function body).
+- **Function Expressions**: Only the variable declaration is hoisted, not the function assignment.
+- **Variable Declarations**: `var` variables are hoisted and initialized with `undefined`, while `let` 
+and `const` variables are hoisted but not initialized (temporal dead zone).
+
+I hope this clears up the confusion about hoisting and function expressions! If you have more questions 
+or need further clarification, feel free to ask.
+*/
+
 
