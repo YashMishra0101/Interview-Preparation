@@ -56,7 +56,7 @@ with string manipulation.
 //   console.log("three");
 // }
 
-//#Question 3 : Difference between null, undefined, and empty, you can say:
+//#Question 3 : Difference between null, undefined, and empty .
 
 /*
 Undefined means a variable has been declared but not assigned a value. Null is an explicit assignment indicating 
@@ -72,7 +72,7 @@ it has been assigned a value, but that value is empty.
 // console.log(emptyStringExample); // Output: (empty string)
 // console.log(emptyArrayExample); // Output: []
 
-//#Question 4 : Tells the output without running the code 
+//#Question 4 : Tells the output without running the code.
 
 // function firstFunction() {
 //   console.log("First Function Start");
@@ -91,3 +91,26 @@ it has been assigned a value, but that value is empty.
 // }
 
 // firstFunction();
+
+
+//#Quesstion 5 : Tells the output without running the code in the proper sequence.
+
+console.log("line number 1", varName);
+var varName = 10;
+
+function b() {
+console.log("line number 2", varName);
+}
+
+console.log("line number 3", varName);
+
+function fn() {
+console.log("line number 4", varName);
+var varName = 20;
+b();
+console.log("line number 5", varName);
+}
+
+console.log("line number 6");
+
+fn();

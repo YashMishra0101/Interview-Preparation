@@ -211,10 +211,18 @@ properties are fixed at creation.
 // Primitive Data Types: String, Boolean, Number, etc.
 // Non-Primitive Data Types: Array, Object, Function, etc.
 
-// Primitive Data Types are stored in the stack. In the stack, copying data results in a
-// new copy being created, so changes to the copy do not affect the original data.
-// Non-Primitive Data Types are stored in the heap. In the heap, data is accessed via references,
-// so changes to the reference will affect the original data.
+// Primitive Data Types are immutable, meaning their values cannot be changed. 
+// Any modification results in the creation of a new value.
+
+// Non-Primitive Data Types are mutable, meaning their values can be changed 
+// without creating a new object, changing the same memory block.
+
+// Primitive Data Types are stored in the stack. Copying these results in a new 
+// copy being created, so changes to the copy do not affect the original.
+
+// Non-Primitive Data Types are stored in the heap. They are accessed via references, 
+// so changes to a reference will affect the original data.
+
 
 /*
 
@@ -415,4 +423,119 @@ I hope this clears up the confusion about hoisting and function expressions! If 
 or need further clarification, feel free to ask.
 */
 
+//#11)this,window and global
+
+/*With the help of `window`, `this`, or `global`, you can access values inside the global execution context. 
+This makes it easy to refer to or manipulate global variables and functions.*/
+
+//-- Browser:
+
+//>window or this:
+//- In the global execution context, you can use `window` or `this` to access any value (variables or functions) that are defined globally.
+
+//-- Node.js:
+
+//> global :
+// - In the global execution context, you use `global` to access any value that is defined globally.
+
+//--Example:
+
+//>Browser:
+
+/*
+var name = 'Alice';
+
+Accessing the global variable 'name' using 'window' and 'this'
+
+console.log(window.name); // Output: Alice
+console.log(this.name);   // Output: Alice
+*/
+
+//> Node.js:
+
+/*
+
+global.name = 'Alice';
+
+Accessing the global variable 'name' using 'global'
+console.log(global.name); // Output: Alice
+
+*/
+
+//--Key Points:
+/*
+
+- In browsers, `window` or `this` gives you access to the global scope.
+- In Node.js, `global` gives you access to the global scope.
+
+*/
+
+//#8)Execution Context and Global Objects
+
+//--Execution Context in JavaScript:
+
+/*
+- An execution context is the environment where JavaScript code is executed.
+- It has two main phases:
+  1. Memory Allocation Phase:
+     - Memory is allocated for variables and functions.
+     - Variables are initially set to `undefined`.
+     - Function declarations are stored with their definitions.
+  2. Code Execution Phase:
+     - Code is executed line by line.
+     - Variables are assigned their actual values during execution.
+*/
+
+//--Global Execution Context:
+/*
+- Created when JavaScript code starts to run.
+- The global execution context is pushed onto the call stack first.
+- Manages the execution of global code.
+*/
+
+//-- Global Objects in JavaScript:
+/*
+- In the browser, the global object is `window`.
+  - You can use `window` or `this` to access global variables and functions.
+  - Example:
+    var name = 'Alice';
+    console.log(window.name); // Output: Alice
+    console.log(this.name);   // Output: Alice
+- In Node.js, the global object is `global`.
+  - Use `global` to access global variables and functions.
+  - Example:
+    global.name = 'Alice';
+    console.log(global.name); // Output: Alice
+*/
+
+//--Key Points:
+/*
+- Global execution context is the default context where code starts execution.
+- Execution context has memory allocation and code execution phases.
+- Both **`this`** and **`window`** refer to the global object in browsers.
+- **`this`, `window`, and `global` keywords** allow access to values in the global execution context.
+- **`global`** serves a similar role as **`window`** in browsers but is specific to Node.js environments,provides 
+  access to the global scope of variables and functions within Node.js applications.
+*/
+
+//#9)Basic Info
+
+/*
+JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was working at Netscape Communications Corporation.
+Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
+meaning it executes code line by line and is single-threaded.
+
+JavaScript can be run in browsers and Node.js. Browsers like Firefox use SpiderMonkey, Safari uses JavaScriptCore, 
+and Microsoft Edge uses the Chakra engine to execute JavaScript.Node.js, on the other hand, is not a framework 
+or language but a software platform. It uses the V8 engine, the same one used by Google Chrome, to run JavaScript 
+code in any terminal or command-line prompt.
+
+JavaScript is fundamentally an interpreted language because it executes source code directly without 
+a separate compilation step before runtime. However, modern JavaScript engines like V8 use JIT (just-in-time) compilation 
+to optimize performance by compiling JavaScript code into machine code at runtime. So, while JavaScript remains an 
+interpreted language, it benefits from JIT compilation in engines like V8, which significantly improves its performance. 
+
+V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
+execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
+*/
 
