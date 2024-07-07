@@ -1,3 +1,4 @@
+console.log("Console Is Working");
 //#1)Three Type Of Function
 
 //>Normal function
@@ -58,8 +59,14 @@
 
 // arrowTwo("I a Value")
 
-//#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
-
+//#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed
+//#immediately after it is defined.
+//--It is a common JavaScript pattern used to create a new scope and avoid polluting the
+//#global namespace.
+//--Uses :-
+//>Avoid polluting the global namespace
+//>Execute an async function
+//>The module pattern
 //   (function abc () {
 //     console.log("Helo Guys I am a iffi");
 // }());
@@ -211,18 +218,17 @@ properties are fixed at creation.
 // Primitive Data Types: String, Boolean, Number, etc.
 // Non-Primitive Data Types: Array, Object, Function, etc.
 
-// Primitive Data Types are immutable, meaning their values cannot be changed. 
+// Primitive Data Types are immutable, meaning their values cannot be changed.
 // Any modification results in the creation of a new value.
 
-// Non-Primitive Data Types are mutable, meaning their values can be changed 
+// Non-Primitive Data Types are mutable, meaning their values can be changed
 // without creating a new object, changing the same memory block.
 
-// Primitive Data Types are stored in the stack. Copying these results in a new 
+// Primitive Data Types are stored in the stack. Copying these results in a new
 // copy being created, so changes to the copy do not affect the original.
 
-// Non-Primitive Data Types are stored in the heap. They are accessed via references, 
+// Non-Primitive Data Types are stored in the heap. They are accessed via references,
 // so changes to a reference will affect the original data.
-
 
 /*
 
@@ -282,8 +288,6 @@ An execution context is the environment in which JavaScript code is executed. It
 - The execution context manages the execution of code.
 - Memory allocation happens first, followed by code execution.
 - The call stack tracks the execution contexts, managing function calls and returns.
-
-This should provide you with a solid understanding of execution context and the role of the call stack in JavaScript. 
 
 */
 
@@ -419,8 +423,6 @@ const notHoistedConst = 15;
 - **Variable Declarations**: `var` variables are hoisted and initialized with `undefined`, while `let` 
 and `const` variables are hoisted but not initialized (temporal dead zone).
 
-I hope this clears up the confusion about hoisting and function expressions! If you have more questions 
-or need further clarification, feel free to ask.
 */
 
 //#11)this,window and global
@@ -440,7 +442,7 @@ This makes it easy to refer to or manipulate global variables and functions.*/
 
 //--Example:
 
-//>Browser:
+//>In Browser:
 
 /*
 var name = 'Alice';
@@ -451,7 +453,7 @@ console.log(window.name); // Output: Alice
 console.log(this.name);   // Output: Alice
 */
 
-//> Node.js:
+//>In Node.js:
 
 /*
 
@@ -538,4 +540,29 @@ interpreted language, it benefits from JIT compilation in engines like V8, which
 V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
 execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
 */
+
+//#
+
+console.log("line number 1", varName);
+var varName = 10;
+
+function b() {
+console.log("line number 5", varName);
+}
+
+console.log("line number 7", varName);
+
+function fn() {
+console.log("line number 9", varName);
+var varName = 20;
+b();
+console.log("line number 13", varName);
+}
+
+fn();
+
+//line 1: undefine
+//line 7:10
+//line 9:undefine
+//line 5:
 

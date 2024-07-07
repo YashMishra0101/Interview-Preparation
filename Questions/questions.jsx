@@ -42,7 +42,6 @@ with string manipulation.
 
 // one(two)
 
-
 //  function a(){
 //   console.log("one");
 // }
@@ -92,25 +91,34 @@ it has been assigned a value, but that value is empty.
 
 // firstFunction();
 
-
 //#Quesstion 5 : Tells the output without running the code in the proper sequence.
 
-console.log("line number 1", varName);
-var varName = 10;
+// console.log("line number 1", varName);
+// var varName = 10;
 
-function b() {
-console.log("line number 2", varName);
-}
+// function b() {
+//   console.log("line number 2", varName);
+// }
 
-console.log("line number 3", varName);
+// console.log("line number 3", varName);
 
-function fn() {
-console.log("line number 4", varName);
-var varName = 20;
-b();
-console.log("line number 5", varName);
-}
+// function fn() {
+//   console.log("line number 4", varName);
+//   var varName = 20;
+//   b();
+//   console.log("line number 5", varName);
+// }
 
-console.log("line number 6");
+// console.log("line number 6");
 
-fn();
+// fn();
+
+//#Question 6 : Can we use the for...of loop for objects?
+/*
+When we use the for...of loop with an array, it throws the values. 
+When we use the for...in loop with an array, it prints the index 
+numbers instead of the array values.
+
+1. Use `for...of` for arrays to directly access the values.
+2. Use `for...in` for objects to iterate over property names.
+*/
