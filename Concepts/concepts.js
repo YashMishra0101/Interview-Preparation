@@ -541,28 +541,57 @@ V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized ma
 execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
 */
 
-//#
+//#JavaScript is a synchronous single-threaded language.
+
+// console.log("line number 1", varName);
+// var varName = 10;
+
+// function b() {
+// console.log("line number 5", varName);
+// }
+
+// console.log("line number 7", varName);
+
+// function fn() {
+// console.log("line number 9", varName);
+// var varName = 20;
+// b();
+
+// console.log("line number 13", varName);
+// }
+// fn();
+
+/*
+undefine
+10
+undefine
+10
+20
+*/
+
+
 
 console.log("line number 1", varName);
+
 var varName = 10;
 
-function b() {
-console.log("line number 5", varName);
-}
-
-console.log("line number 7", varName);
+console.log("line number 2", varName);
 
 function fn() {
-console.log("line number 9", varName);
+console.log("line number 3", varName);
 var varName = 20;
-b();
-console.log("line number 13", varName);
+console.log("line number 4", varName);
 }
+
+console.log("ine number 5",varName);
 
 fn();
 
-//line 1: undefine
-//line 7:10
-//line 9:undefine
-//line 5:
+
+/*
+undefine
+10
+undefine
+20
+*/
 
