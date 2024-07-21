@@ -1,5 +1,5 @@
 console.log("Console Is Working");
-//#1)Three Type Of Function
+//#1)How to declare variable in javascript / Three Type Of Function
 
 //>Normal function
 
@@ -59,14 +59,13 @@ console.log("Console Is Working");
 
 // arrowTwo("I a Value")
 
-//#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed
-//#immediately after it is defined.
-//--It is a common JavaScript pattern used to create a new scope and avoid polluting the
-//#global namespace.
+//#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined.
+//--It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
 //--Uses :-
 //>Avoid polluting the global namespace
 //>Execute an async function
 //>The module pattern
+
 //   (function abc () {
 //     console.log("Helo Guys I am a iffi");
 // }());
@@ -153,26 +152,33 @@ Other reason bhi hai
 //>Extra Info
 
 /*
+Using let and const is generally better because they avoid problems caused by var's function scope 
+and hoisting. When we use var and let, we can assign a variable's value after declaration, but when
+we use const, it is necessary to define the value during declaration.
 
-- **`var`**: Accessible anywhere in the function where it's declared. Can cause unexpected 
-behavior due to its function scope and hoisting.
-- **`let`**: Only accessible within the block (`{}`) where it's declared. Safer to use
- because it's block-scoped.
-- **`const`**: Also block-scoped like `let`. Once assigned, its value can't be changed. 
+--var is function scope and let and const are block scoped:-
 
-Using `let` and `const` is generally better because they avoid problems caused by `var`'s 
-function scope and hoisting.
+example:function scope
+
+function one() {
+ if(true){
+    var a=10;
+ }
+  console.log(a) //output:10
+}
+one()
+
+example:Block scoped
+
+function one() {
+ if(true){
+    let a=10;
+ }
+  console.log(a)//refrence error
+}
+one()
 
 */
-
-// function abcd() {
-//   if (true) {
-//     const yash = "Developer";
-//     console.log(yash);
-//   }
-// }
-
-// abcd();
 
 //#5)What is Array in Javascript ?
 /*
@@ -202,7 +208,7 @@ properties are fixed at creation.
 
 // let person ={
 //   name :"Yash",
-//   age:"22",
+//   age:22,
 //   profile:"Front End Developer",
 //   info:function(){
 //     console.log(`Hello My Name is ${this.name}`);
@@ -210,8 +216,32 @@ properties are fixed at creation.
 // };
 
 // console.log(person.name);
-// console.log(person["age"]);
-// person.info();
+// console.log(person["name"]);
+// console.log(person[name]); //wrong always use double or single quotes
+// console.log(person[age]); //wrong always use double or single quotes
+
+//--?Why it is wrong :Because whenever we write any key without double or single quotes, then JavaScript tries to find a variable name, not the object property name. So it gives a `ReferenceError` because the variable is not present.
+
+/*
+When you use a key without quotes in bracket notation, JavaScript interprets it as a variable name:
+
+- **If the variable exists:** JavaScript uses its value as the property name.
+- **If the variable does not exist:** JavaScript throws a `ReferenceError`.
+
+Solution:-
+
+let ref="name";
+console.log(person[ref])
+output=Yash
+let age ="age";
+console.log(person[age]);
+output=22;
+
+--🖐️ Use always Dot notation because is straightforward and easier to read.
+
+*/
+
+//--? 😂 Identifiers: Names given to variables, functions, properties, etc., to uniquely identify them.
 
 //#7)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
 
@@ -250,7 +280,7 @@ console.log(arr[1]);  // Output: Tailwind CSS
 
 */
 
-//#8)Execution Context in JavaScript
+//#8)Execution Context in JavaScript (Basic)
 /*
 An execution context is the environment in which JavaScript code is executed. It consists of two main phases:
 
@@ -286,7 +316,7 @@ An execution context is the environment in which JavaScript code is executed. It
 //-- Key Points
 
 - The execution context manages the execution of code.
-- Memory allocation happens first, followed by code execution.
+- Memory allocation happens first, then code execution is happend.
 - The call stack tracks the execution contexts, managing function calls and returns.
 
 */
@@ -317,7 +347,7 @@ An execution context is the environment in which JavaScript code is executed. It
 // d++;
 // }while(d<=8)
 
-//--For in loop
+//--For in loop ( For in loop for object )
 
 // const info={
 //   name:"yash mishra",
@@ -337,28 +367,51 @@ An execution context is the environment in which JavaScript code is executed. It
 //   console.log(`${key}:${info[key]}`);
 // }
 
-//--For of loop
+//>Inportant Info
+/*
+ When we use an arrow function, we cannot use this. If we need to use this, we should use a regular function instead 
+  of an arrow function. According to gpt, a regular function is better than an arrow function inside an object .
+? Can we use for of loop with obejct ?
+Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
+arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
+by iterating over their properties using methods like Object.keys(), Object.values(), or Object.entries()
+*/
 
-// const fruits = ['apple', 'banana', 'cherry'];
+// -- For of loop (use for array)
 
-// for (let fruit of fruits) {
-//   console.log(fruit[1]);
+// let arr = ["Yash", 21, "Developer"];
+
+// for (let a of arr) {
+//   console.log(a);
 // }
+
+/*
+Can we use a for in loop for an array?
+If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
+we need to use it this way: console.log(arr[a]) instant of console.log(a).
+
+>Objects: Use for...in to iterate over keys.
+>Arrays/Iterables: Use for...of to iterate over values.
+*/
 
 //#10) Hoisting Explained
 
 /*
-
-**Hoisting** in JavaScript means that variable and function declarations are moved to the top of their 
-containing scope during the execution phase. However, this does not mean that the actual initialization or 
-assignment of values is hoisted, only the declarations.
-
+Hoisting means that during the compile phase (before code execution), variable and function declarations are moved to
+the top of their containing scope. This is called hoisting.
 */
 
-//-- Function Declarations
+/*
+**Explanation:**
+- **During the compile phase**: It's important to note that hoisting occurs during the compile phase, not during code execution.
+- **Variable and function declarations**: Both variables and functions are hoisted, but only the declarations, not the initializations.
+*/
 
-// Function declarations using the `function` keyword are hoisted to the top of their scope. This means you
-// can call a function before it is declared in the code.
+//--Hoistin In Function
+
+//> Function Declarations
+
+// Function Declarations: Are hoisted completely (both the name and body), so they can be called before they are defined in the code.
 
 /*
 Example:
@@ -369,12 +422,18 @@ function hoistedFunction() {
 }
 */
 
-//--Function Expressions
+//> Function Expressions
 
 // Function expressions, where you assign a function to a variable, are not hoisted. Only the variable declaration
-// is hoisted, not the function assignment.
+// is hoisted, not the function assignment ,so calling the function before assignment results in a TypeError.
 
 //Example:
+
+// a()
+
+// var a =function (){
+//   console.log("Hey I a function") //TypeError: a is not a function
+// }
 
 // try {
 //     notHoistedFunction(); // This throws an error because notHoistedFunction is undefined
@@ -386,7 +445,7 @@ function hoistedFunction() {
 //     console.log("This function is not hoisted.");
 // };
 
-//-- Variable Declarations (var, let, const)
+//> Variable Declarations (var, let, const)
 
 /*
 - **var**: Variables declared with `var` are hoisted to the top of their scope, but they are initialized with 
@@ -422,7 +481,6 @@ const notHoistedConst = 15;
 - **Function Expressions**: Only the variable declaration is hoisted, not the function assignment.
 - **Variable Declarations**: `var` variables are hoisted and initialized with `undefined`, while `let` 
 and `const` variables are hoisted but not initialized (temporal dead zone).
-
 */
 
 //#11)this,window and global
@@ -472,7 +530,7 @@ console.log(global.name); // Output: Alice
 
 */
 
-//#8)Execution Context and Global Objects
+//#8)Execution Context and Global Objects (In Detail)
 
 //--Execution Context in JavaScript:
 
@@ -497,7 +555,7 @@ console.log(global.name); // Output: Alice
 
 //-- Global Objects in JavaScript:
 /*
-- In the browser, the global object is `window`.
+- In the browser, the global object is `window and this`.
   - You can use `window` or `this` to access global variables and functions.
   - Example:
     var name = 'Alice';
@@ -527,8 +585,8 @@ JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was wo
 Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
 meaning it executes code line by line and is single-threaded.
 
-JavaScript can be run in browsers and Node.js. Browsers like Firefox use SpiderMonkey, Safari uses JavaScriptCore, 
-and Microsoft Edge uses the Chakra engine to execute JavaScript.Node.js, on the other hand, is not a framework 
+JavaScript can be run in browsers and Node.js. Browsers like Firefox use SpiderMonkey, Safari uses JavaScriptCore,Chrome use V8 engine 
+and Microsoft Edge uses the Chakra engine to execute JavaScript. //--Node.js, on the other hand, is not a framework 
 or language but a software platform. It uses the V8 engine, the same one used by Google Chrome, to run JavaScript 
 code in any terminal or command-line prompt.
 
@@ -539,59 +597,117 @@ interpreted language, it benefits from JIT compilation in engines like V8, which
 
 V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
 execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
+
+-JavaScript is a synchronous single-threaded language.
 */
 
-//#JavaScript is a synchronous single-threaded language.
-
-// console.log("line number 1", varName);
-// var varName = 10;
-
-// function b() {
-// console.log("line number 5", varName);
-// }
-
-// console.log("line number 7", varName);
-
-// function fn() {
-// console.log("line number 9", varName);
-// var varName = 20;
-// b();
-
-// console.log("line number 13", varName);
-// }
-// fn();
+//#Lexical Scope , Scope chain
 
 /*
-undefine
-10
-undefine
-10
-20
-*/
 
+### Lexical Scope
 
+**Definition:** Lexical scope means that a function can access variables that are defined in its 
+  outer scope.
 
-console.log("line number 1", varName);
+### Simple Explanation:
 
-var varName = 10;
+1. **Lexical Scope:** If you have a function inside another function (nested function), 
+the inner function can access variables from the outer function.
 
-console.log("line number 2", varName);
+2. **Example:**
 
-function fn() {
-console.log("line number 3", varName);
-var varName = 20;
-console.log("line number 4", varName);
+function outerFunction() {
+  var outerVar = "I am outside!";
+
+  function innerFunction() {
+    console.log(outerVar); // Can access outerVar because of lexical scope
+  }
+
+  innerFunction();
 }
 
-console.log("ine number 5",varName);
+outerFunction();
 
-fn();
+In this example:
+- `outerVar` is defined in `outerFunction`.
+- `innerFunction` can access `outerVar` because it is within the lexical scope of `outerFunction`.
+
+### Scope Chain
+
+**Definition:** The scope chain is the list of all the scopes in which a variable can be looked up.
+
+### Simple Explanation:
+
+1. **Scope Chain:** When the JavaScript engine needs to find a variable, it starts looking in the current scope. If it doesn't find it, it moves to the outer scope, and keeps going up the chain until it reaches the global scope.
+
+2. **Example:**
 
 
-/*
-undefine
-10
-undefine
-20
+function outerFunction() {
+  var outerVar = "I am outside!";
+
+  function innerFunction() {
+    console.log(outerVar); // Looks in innerFunction's scope first, then outerFunction's scope
+  }
+
+  innerFunction();
+}
+
+outerFunction()
+
+In this example:
+- `innerFunction` looks for `outerVar`.
+- It doesn't find `outerVar` in its own scope, so it looks in `outerFunction`'s scope.
+- This process of looking up through the scopes is the scope chain.
+
+### Summary
+
+- **Lexical Scope:** Determines that inner functions can access variables from their outer functions.
+- **Scope Chain:** The process of looking up variables through nested scopes.
+
+**In simple terms:** Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. The scope chain is the path JavaScript follows to find a variable if it's not in the current box.
+
 */
 
+//##Tempory Dead Zone (TDZ)
+/*
+Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
+it throws a ReferenceError. On the other hand, variables declared with var are hoisted and initialized to undefined, 
+so you can access them before their declaration, but they'll just return undefined.
+
+--Example
+
+console.log(myVar); // Output: undefined (because of hoisting)
+var myVar = 10;
+
+console.log(myLet); // Throws ReferenceError
+let myLet = 20;
+
+console.log(myConst); // Throws ReferenceError
+const myConst = 30;
+
+*/
+
+//#Shadowing
+
+/*
+Definition: Shadowing occurs when a variable declared within a certain scope (like a function or block) has the 
+same name as a variable in an outer scope. The inner variable "shadows" the outer variable, meaning it takes precedence 
+within its scope.
+
+--Example
+
+let x = 10; // Outer variable
+
+function example() {
+  let x = 20; // Inner variable that shadows the outer one
+  console.log(x); // Outputs: 20
+}
+
+example();
+console.log(x); // Outputs: 10
+
+
+>So, shadowing means that a variable inside a specific scope can "hide" a variable with the same name in an outer scope.
+*/

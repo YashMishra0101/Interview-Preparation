@@ -122,3 +122,43 @@ numbers instead of the array values.
 1. Use `for...of` for arrays to directly access the values.
 2. Use `for...in` for objects to iterate over property names.
 */
+
+//#Question 7 : Tells the output
+
+// var a = 10;
+// console.log("line number 2", a);
+// function fn() {
+//   console.log("line number 4", a);
+//   var a = 28;
+//   a++;
+//   console.log("line number 7", a);
+//   if (a) {
+//     var a = 30;
+//     a++;
+//     console.log("line number 11", a);
+//   }
+//   console.log("line number 13", a);
+// }
+// fn();
+// console.log("line number 2", a);
+
+//#Question 8 : Tells The output
+
+// let letFruit = "orange";
+// var varFruit = "orange"
+// console.log("letFruit", letFruit,
+// "varFruit", varFruit)
+// {
+// let letFruit = "apple";
+// varFruit = "apple";
+// console. log("letFruit", letFruit,
+// "varFruit", varFruit)
+// }
+// console.log("letFruit", letFruit, "varFruit", varFruit);
+
+/*
+letfruit=orange,varfruit=orange
+letfruit=apple,varfruit=apple
+letfruit=orange,varfruit=apple
+
+*/
