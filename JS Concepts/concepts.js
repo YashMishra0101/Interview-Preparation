@@ -601,16 +601,16 @@ execution. So, while JavaScript benefits from improved performance with V8, it r
 -JavaScript is a synchronous single-threaded language.
 */
 
-//#Lexical Scope , Scope chain
+//##10)Lexical Scope , Scope chain
 
 /*
 
-### Lexical Scope
+-- Lexical Scope
 
 **Definition:** Lexical scope means that a function can access variables that are defined in its 
   outer scope.
 
-### Simple Explanation:
+> Simple Explanation:
 
 1. **Lexical Scope:** If you have a function inside another function (nested function), 
 the inner function can access variables from the outer function.
@@ -633,11 +633,11 @@ In this example:
 - `outerVar` is defined in `outerFunction`.
 - `innerFunction` can access `outerVar` because it is within the lexical scope of `outerFunction`.
 
-### Scope Chain
+-- Scope Chain
 
 **Definition:** The scope chain is the list of all the scopes in which a variable can be looked up.
 
-### Simple Explanation:
+> Simple Explanation:
 
 1. **Scope Chain:** When the JavaScript engine needs to find a variable, it starts looking in the current scope. If it doesn't find it, it moves to the outer scope, and keeps going up the chain until it reaches the global scope.
 
@@ -661,7 +661,7 @@ In this example:
 - It doesn't find `outerVar` in its own scope, so it looks in `outerFunction`'s scope.
 - This process of looking up through the scopes is the scope chain.
 
-### Summary
+-- Summary
 
 - **Lexical Scope:** Determines that inner functions can access variables from their outer functions.
 - **Scope Chain:** The process of looking up variables through nested scopes.
@@ -670,7 +670,7 @@ In this example:
 
 */
 
-//##Tempory Dead Zone (TDZ)
+//##11)Tempory Dead Zone (TDZ)
 /*
 Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
 it throws a ReferenceError. On the other hand, variables declared with var are hoisted and initialized to undefined, 
@@ -689,7 +689,7 @@ const myConst = 30;
 
 */
 
-//#Shadowing
+//#12)Shadowing
 
 /*
 Definition: Shadowing occurs when a variable declared within a certain scope (like a function or block) has the 
@@ -709,5 +709,474 @@ example();
 console.log(x); // Outputs: 10
 
 
+But ,
+
+{
+  let fruit = "Orange";
+  console.log("one :", fruit)
+  {
+    var fruit = "Apple";
+    console.log("two", fruit)//error,Identifier 'fruit' has already been declared
+  }
+} 
+
+var is function-scoped and does not respect block scope, leading to potential conflicts and errors.
+let and const are block-scoped, preventing these conflicts by keeping variables confined to the block in which they are declared.
+
 >So, shadowing means that a variable inside a specific scope can "hide" a variable with the same name in an outer scope.
+*/
+
+//#13)About array and objects in details
+
+/*
+JavaScript में arrays और functions दोनों की typeof output "object" होती है, लेकिन वे अलग-अलग तरह से काम करते हैं। Arrays और functions दोनों iterable होते हैं, जबकि plain objects by default iterable नहीं होते। 
+
+1. **Arrays और functions iterable होते हैं।** आप arrays के लिए for-of loop का उपयोग कर सकते हैं क्योंकि वे iterable होते हैं।
+2. **Plain objects iterable नहीं होते।** अगर आपको objects के keys या values को iterate करना है, तो आप for-in loop का उपयोग कर सकते हैं।
+
+उदाहरण:
+- **Arrays:** for-of loop का उपयोग कर सकते हैं।
+- **Objects:** for-in loop का उपयोग कर सकते हैं।
+
+*/
+
+//--We can add key,value and function inside the array
+
+/*
+let arr=[1,"Yash","Ram","Hello"];
+arr.name="yash"
+*/
+
+/*
+--More About array
+
+let arr = [1, "Yash", "Ram", "Hello"];
+
+// Adding a property to the array
+arr.name = "yash";
+
+// Adding a method to the array
+arr.a = function(){
+  console.log("I am a function inside the array");
+}
+
+console.log(arr); // Outputs the array with added properties and methods
+
+console.log(arr.length); // Outputs: 4
+
+**Explanation:**
+- We start with an array containing four elements.
+- We then add a property `name` and a method `a` to the array.
+- The `length` property of the array remains 4. This is because the `length` property only counts the numeric indices (elements) in the array, not the additional properties or methods.
+
+// Adding an element at index 10
+
+arr[10] = "Rahul";
+
+console.log(arr); // Outputs the array with "Rahul" at index 10 and undefined for missing indices
+
+console.log(arr.length); // Outputs: 11
+console.log(arr[8]); // Outputs: undefined (since no value is assigned at index 8)
+console.log(arr[10]); // Outputs: "Rahul"
+console.log(arr[15]); // Outputs: undefined (since no value is assigned at index 15)
+
+
+**Explanation:**
+- We add an element "Rahul" at index 10 of the array.
+- The `length` of the array now becomes 11. This is because the array now has elements from index 0 to 10, even though some of these elements are `undefined`.
+- Accessing `arr[8]` returns `undefined` because no value is assigned at that index.
+- Accessing `arr[10]` returns "Rahul" because we explicitly assigned a value at that index.
+- Accessing `arr[15]` returns `undefined` because no value is assigned at that index.
+
+**Key Points:**
+1. **Array Length:** The `length` property of an array only counts numeric indices (elements), not additional properties or methods added to the array.
+2. **Adding Properties/Methods:** Adding properties or methods to an array does not affect its length.
+3. **Sparse Arrays:** Assigning a value to a higher index (e.g., 10) creates a sparse array, where intermediate indices (e.g., 4 to 9) are `undefined`.
+
+--- About array
+
+>1. `shift()`
+ **`shift()`**:
+  - **Use:** Removes and returns the first element of an array.
+
+let arr = [1, 2, 3, 4];
+let firstElement = arr.shift();
+
+console.log(firstElement); // Outputs: 1
+console.log(arr); // Outputs: [2, 3, 4]
+
+
+ >2. `Object.keys()`
+ **`Object.keys()`**:
+  - **Use:** Returns an array of the object's property names (keys).
+
+
+let obj = { name: "Yash", age: 21, role: "Front End Developer" };
+let keys = Object.keys(obj);
+
+console.log(keys); // Outputs: ["name", "age", "role"]
+
+>3. `Object.values()`
+ **`Object.values()`**:
+  - **Use:** Returns an array of the object's property values.
+
+**Example:**
+
+let obj = { name: "Yash", age: 21, role: "Front End Developer" };
+let values = Object.values(obj);
+
+console.log(values); // Outputs: ["Yash", 21, "Front End Developer"]
+
+
+>4. `Object.entries()`
+**`Object.entries()`**:
+  - **Use:** Returns an array of the object's property [key, value] pairs.
+  
+let obj = { name: "Yash", age: 21, role: "Front End Developer" };
+let entries = Object.entries(obj);
+
+console.log(entries); // Outputs: [["name", "Yash"], ["age", 21], ["role", "Front End Developer"]]
+
+--About function
+
+In JavaScript, functions are a special type of object. Although using `typeof` on a function will return `"function"`,
+functions are indeed objects. This means you can add properties and methods to them just like you would with any other object.
+
+So, even though `typeof` returns `"function"`, you can think of functions as objects with additional capabilities. 
+
+Here's a quick example:
+
+function example() {
+  console.log("I am a function.");
+}
+
+// Adding a property to the function
+example.description = "This is a function object.";
+
+// Adding a method to the function
+example.sayHello = function() {
+  console.log("Hello!");
+};
+
+console.log(typeof example); // "function"
+console.log(example.description); // "This is a function object."
+example.sayHello(); // "Hello!"
+
+
+In this example, `example` is a function, but it also has properties and methods, demonstrating that functions are
+indeed objects in JavaScript.
+
+Method:In simple terms, a method is a function that belongs to an object. It allows you to perform actions or compute values
+related to that object.Property of an Object: 
+*/
+
+//#14)Declarative Programming vs Imperative Programming
+/*
+-- Imperative Programming:
+
+- **Pros**:
+  - **Control**: Gives you more control over the exact steps the program takes, which can be useful for optimization.
+  - **Flexibility**: Allows for more detailed and customized solutions.
+  - **Performance**: Can be more performant in certain cases because you can optimize the exact steps.
+
+- **Cons**:
+  - **Readability**: Code can become verbose and harder to read, especially for complex tasks.
+  - **Maintainability**: Can be harder to maintain and modify because of the detailed control flow.
+
+  > Example:
+
+  --(Array Sum):
+
+  const numbers = [1, 2, 3, 4, 5];
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum); // Outputs: 15
+
+-- Declarative Programming:
+
+- **Pros**:
+  - **Readability**: Code is usually easier to read and understand because it focuses on *what* you want to achieve.
+  - **Maintainability**: Easier to maintain and modify, especially for complex logic.
+  - **Abstraction**: Hides the complexity of the underlying implementation, allowing you to focus on the business logic.
+  - **Conciseness**: Typically requires fewer lines of code, making it more concise.
+
+- **Cons**:
+  - **Performance**: May not always be the most optimized for performance, depending on how the underlying system handles the logic.
+  - **Flexibility**: Sometimes less flexible because you rely on predefined functions or methods.
+
+> Example:
+
+  --(Array Sum):
+
+  const numbers = [1, 2, 3, 4, 5];
+  const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  console.log(sum); // Outputs: 15
+
+-- Which is Better?
+
+- Use Declarative When:
+  - You want your code to be more readable and maintainable.
+  - You're working with high-level abstractions like React, SQL, or CSS.
+  - The performance difference is negligible, or you're not dealing with performance-critical code.
+
+- Use Imperative When:
+  - You need more control over the exact steps of the program.
+  - You're working on performance-critical code where every step needs to be optimized.
+  - The task requires detailed step-by-step logic that's not easily expressed declaratively.
+
+-- Summary:
+
+Declarative programming is often more readable and maintainable, while imperative programming offers 
+more control and can be more performant for certain tasks. Both paradigms have their place, and the
+choice depends on the specific requirements of your project. 
+
+*/
+
+//#15)Pure Function vs Imppure Function
+/*
+
+--Pure Functions:
+
+A **pure function** is a function that:
+1. **Always returns the same output** for the same input.
+2. **Does not cause any side effects** (does not modify external state, variables, or data).
+
+>Example:
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add(2, 3)); // Always returns 5
+
+
+In this example, `add` is a pure function because it always returns the same result for the same 
+inputs and does not modify any external state.
+
+--Impure Functions:
+
+An **impure function** is a function that:
+1. **May return different outputs** for the same input.
+2. **Causes side effects** (modifies external state, variables, or data).
+
+>Example:
+
+let counter = 0;
+
+function increment() {
+  counter++;
+  return counter;
+}
+
+console.log(increment()); // 1
+console.log(increment()); // 2
+
+
+In this example, `increment` is an impure function because it modifies the external variable `counter`, 
+causing side effects.
+
+-- Key Differences:
+
+- **Predictability**:
+  - Pure functions are predictable and easier to test because they always produce the same output for the same input.
+  - Impure functions are less predictable because their output can depend on external factors or state changes.
+  
+- **Side Effects**:
+  - Pure functions do not cause side effects, making them safer to use and less likely to introduce bugs.
+  - Impure functions can cause side effects, which can lead to unintended consequences and harder-to-trace bugs.
+
+-- Summary:
+- **Pure Functions**:
+  - Always return the same output for the same input.
+  - Do not cause side effects.
+  
+- **Impure Functions**:
+  - May return different outputs for the same input.
+  - Cause side effects by modifying external state.
+*/
+
+//#16)ForEach vs forOf loop
+/*
+- **`forEach`** is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
+but we cannot use `break` or `continue` statements.
+forEach(value,index,array)
+- **`for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
+` statements but cannot directly access the index number (unless using `Array.entries()`).
+
+> `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
+> or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
+> we can use `continue` and `break` statements but cannot directly access the index number.
+
+--ForEach Example
+
+let arr = ['Yash', 'Ram', 'Hello'];
+
+arr.forEach((value, index) => {
+  console.log(`${index}:${value}`);
+});
+
+ Output:
+ Index: 0, Value: Yash
+ Index: 1, Value: Ram
+ Index: 2, Value: Hello
+
+ --for of loop
+
+ 1)
+ let arr=[1,2,"Yash",4,"Bro"];
+
+  for(let a of arr){
+   console.log(a)
+ }
+
+ Output:
+ 1
+ 2
+ Yash
+ 4
+ Bro
+
+2)let str = "Yash";
+
+str.forEach((value) => {
+  console.log(value);
+});
+
+//Output
+Y
+a
+s
+h
+
+
+3)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Found "s", terminating the loop.');
+    break;  // Exit the loop
+  }
+  console.log(char);
+}
+
+//Output:
+Y
+a
+Found "s", terminating the loop.
+
+4)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Skipping "s".');
+    continue;  // Skip the rest of the loop for this iteration
+  }
+  console.log(char);
+}
+
+Output:
+Y
+a
+Skipping "s".
+h
+
+5)
+let arr = ['Yash', 'Ram', 'Hello'];
+
+for (let [index, value] of arr.entries()) {
+  console.log(`Index: ${index}, Value: ${value}`);
+}
+
+// Output:
+// Index: 0, Value: Yash
+// Index: 1, Value: Ram
+// Index: 2, Value: Hello
+*/
+
+//#17)Map, Filter, and Reduce (They are higher-order functions, and they are used specifically for arrays. They create new arrays without impacting the original array.)
+
+/*
+
+--With the help of map,filter and reduce we can make new array based on our need , forEach helps us to perform operation on array
+--map and filter return an array and reduce return an single value.
+
+>Map
+
+let data=[1,2,"Yash",4,"Bro"];
+
+let a=data.map((value ,index ,arr)=>{
+  return value ;
+  // return index ;
+  // return arr ;
+})
+
+console.log(a)
+
+>Filter
+
+let data=[1,2,3,4,5];
+
+let a=data.filter((value ,index ,arr)=>{
+  // return value>2 ;
+  // return index ; // value start form 1 not from 0 , The filter method in this code is using the index to determine which elements to keep. Since 0 is falsy in JavaScript, the element at index 0 is removed from the array, and all other elements 
+  // return arr ;
+})
+
+console.log(a)
+
+>>In JavaScript, `0` is considered a falsy value. Falsy values are values that are considered false when
+> encountered in a Boolean context. Here are the falsy values in JavaScript:
+
+- `false`
+- `0`
+- `-0`
+- `0n` (BigInt zero)
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN` (Not a Number)
+
+>Reduce (Combines all elements of an array into a single value based on a provided function.)
+
+let numbers = [1, 2, 3, 4, 5];
+
+let a=numbers.reduce((accumulator, currentValue)=>{
+  return accumulator+currentValue
+})
+
+console.log(a)
+
+*/
+
+//#18)What is polly fill 
+/*
+
+
+With the help of polyfills, we can write the latest JavaScript code and ensure that older browsers can still support those modern 
+features and functions. Polyfills are crucial for maintaining cross-browser compatibility in web development, 
+allowing developers to use the latest features while ensuring older browsers can still function correctly.
+
+*/
+
+
+//#19)What is closer 
+
+/*
+A closure in JavaScript means that an inner function has access to the outer function’s variables and functions even after 
+the outer function has completed execution.
+
+let outerFun=()=>{
+  let name="My Name is Yash I am a Front End Developer";
+  function innerFun (){
+   console.log(name)
+  }
+  return innerFun;
+}
+
+let print=outerFun();
+print()
+
 */
