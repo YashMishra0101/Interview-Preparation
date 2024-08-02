@@ -1161,7 +1161,6 @@ allowing developers to use the latest features while ensuring older browsers can
 
 */
 
-
 //#19)What is closer 
 
 /*
