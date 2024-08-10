@@ -1,4 +1,4 @@
-console.log("Console Is Working");
+console.log("JS Concepts Is Working");
 //#1)How to declare variable in javascript / Three Type Of Function
 
 //>Normal function
@@ -486,8 +486,13 @@ and `const` variables are hoisted but not initialized (temporal dead zone).
 //#11)this,window and global
 
 /*With the help of `window`, `this`, or `global`, you can access values inside the global execution context. 
-This makes it easy to refer to or manipulate global variables and functions.*/
 
+To Summarize :
+window : window is the global object in the browser.
+global : global is the global object in Node.js.
+this   : this refers to the current execution context. In a global scope (in non-strict mode) in browsers,. In Node.js, in the global scope,
+this refers to an empty object ({}).
+*/
 //-- Browser:
 
 //>window or this:
@@ -870,7 +875,7 @@ Method:In simple terms, a method is a function that belongs to an object. It all
 related to that object.Property of an Object: 
 */
 
-//#14)Declarative Programming vs Imperative Programming
+//#14)Imperative Programming vS Declarative Programming
 /*
 -- Imperative Programming:
 
@@ -915,16 +920,16 @@ related to that object.Property of an Object:
   console.log(sum); // Outputs: 15
 
 -- Which is Better?
-
+- Use Imperative When:
+  - You need more control over the exact steps of the program.
+  - You're working on performance-critical code where every step needs to be optimized.
+  - The task requires detailed step-by-step logic that's not easily expressed declaratively.
+  
 - Use Declarative When:
   - You want your code to be more readable and maintainable.
   - You're working with high-level abstractions like React, SQL, or CSS.
   - The performance difference is negligible, or you're not dealing with performance-critical code.
 
-- Use Imperative When:
-  - You need more control over the exact steps of the program.
-  - You're working on performance-critical code where every step needs to be optimized.
-  - The task requires detailed step-by-step logic that's not easily expressed declaratively.
 
 -- Summary:
 
@@ -1000,6 +1005,7 @@ causing side effects.
 /*
 - **`forEach`** is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
 but we cannot use `break` or `continue` statements.
+
 forEach(value,index,array)
 - **`for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
 ` statements but cannot directly access the index number (unless using `Array.entries()`).
@@ -1139,9 +1145,14 @@ console.log(a)
 - `undefined`
 - `NaN` (Not a Number)
 
->Reduce (Combines all elements of an array into a single value based on a provided function.)
+>Reduce (Combines all elements of an array into a single value based on a provided function).
+>Reduce a element of array into the single value.
 
 let numbers = [1, 2, 3, 4, 5];
+
+let a=numbers.reduce((previousElement , nextElement)=>{
+  return accumulator+currentValue
+})
 
 let a=numbers.reduce((accumulator, currentValue)=>{
   return accumulator+currentValue
@@ -1151,7 +1162,7 @@ console.log(a)
 
 */
 
-//#18)What is polly fill 
+//#18)What is polly fill
 /*
 
 
@@ -1161,7 +1172,7 @@ allowing developers to use the latest features while ensuring older browsers can
 
 */
 
-//#19)What is closer 
+//#19)What is closer
 
 /*
 A closure in JavaScript means that an inner function has access to the outer function’s variables and functions even after 
@@ -1177,5 +1188,39 @@ let outerFun=()=>{
 
 let print=outerFun();
 print()
+
+*/
+
+//#20)Call Back fucniton inside the array
+/*
+When you use the `map` method, it’s a function itself, and it takes another function as an argument. That function you pass inside `map` is what we call the **callback function**.
+
+-- How It Works:
+- The `map` method iterates over each element in the array.
+- For each element, it calls the **callback function** you provided.
+- The callback function takes the current element (and optionally the index and the whole array) and returns a new value.
+- The `map` method collects all these new values into a new array.
+
+-- Simple Breakdown:
+
+// Original array
+const numbers = [1, 2, 3, 4];
+
+// map method (outer function) takes an inner function (callback function)
+const doubled = numbers.map(function(number) { // This function is the callback
+  return number * 2; // This is what the callback does with each element
+});
+
+console.log(doubled); // Output: [2, 4, 6, 8]
+
+
+So, in the code above:
+- `numbers.map(...)` is the `map` method (which is a function).
+- `function(number) { return number * 2; }` is the callback function.
+
+This callback function is applied to every element of the `numbers` array. The `map` method uses it to generate a new array based on the transformations done by the callback function.
+
+So yes, when you use `map`, the function you pass to it is indeed the callback function. 🎉
+
 
 */

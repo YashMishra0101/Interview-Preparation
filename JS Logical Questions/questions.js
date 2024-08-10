@@ -1,3 +1,4 @@
+console.log("JS Logical Questions Is Working");
 //#Question 1
 
 // let ab=5;
