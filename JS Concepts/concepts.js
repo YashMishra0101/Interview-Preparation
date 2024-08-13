@@ -180,7 +180,7 @@ one()
 
 */
 
-//#5)What is Array in Javascript ?
+//#6)What is Array in Javascript ?
 /*
 An array in JavaScript is a type of object that allows us to store multiple values in a single variable. 
 We use square brackets ([]) to define an array, and the values inside the array are separated by commas.
@@ -192,7 +192,7 @@ Arrays are zero-indexed, which means the first element of an array is at index 0
 // console.log(typeof(array));//object
 // console.log(array[1]);
 
-//#6)What is object is Javascript ?
+//#7)What is object is Javascript ?
 
 /*
 An object is a data structure in JavaScript where we can store data in the form of key-value pairs. To access 
@@ -243,7 +243,7 @@ output=22;
 
 //--? 😂 Identifiers: Names given to variables, functions, properties, etc., to uniquely identify them.
 
-//#7)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
+//#8)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
 
 // Primitive Data Types: String, Boolean, Number, etc.
 // Non-Primitive Data Types: Array, Object, Function, etc.
@@ -280,7 +280,7 @@ console.log(arr[1]);  // Output: Tailwind CSS
 
 */
 
-//#8)Execution Context in JavaScript (Basic)
+//#9)Execution Context in JavaScript (Basic)
 /*
 An execution context is the environment in which JavaScript code is executed. It consists of two main phases:
 
@@ -321,7 +321,7 @@ An execution context is the environment in which JavaScript code is executed. It
 
 */
 
-//#9)Loops
+//#10)Loops
 
 //---For Loop
 
@@ -394,7 +394,7 @@ we need to use it this way: console.log(arr[a]) instant of console.log(a).
 >Arrays/Iterables: Use for...of to iterate over values.
 */
 
-//#10) Hoisting Explained
+//#11) Hoisting Explained
 
 /*
 Hoisting means that during the compile phase (before code execution), variable and function declarations are moved to
@@ -483,59 +483,8 @@ const notHoistedConst = 15;
 and `const` variables are hoisted but not initialized (temporal dead zone).
 */
 
-//#11)this,window and global
 
-/*With the help of `window`, `this`, or `global`, you can access values inside the global execution context. 
-
-To Summarize :
-window : window is the global object in the browser.
-global : global is the global object in Node.js.
-this   : this refers to the current execution context. In a global scope (in non-strict mode) in browsers,. In Node.js, in the global scope,
-this refers to an empty object ({}).
-*/
-//-- Browser:
-
-//>window or this:
-//- In the global execution context, you can use `window` or `this` to access any value (variables or functions) that are defined globally.
-
-//-- Node.js:
-
-//> global :
-// - In the global execution context, you use `global` to access any value that is defined globally.
-
-//--Example:
-
-//>In Browser:
-
-/*
-var name = 'Alice';
-
-Accessing the global variable 'name' using 'window' and 'this'
-
-console.log(window.name); // Output: Alice
-console.log(this.name);   // Output: Alice
-*/
-
-//>In Node.js:
-
-/*
-
-global.name = 'Alice';
-
-Accessing the global variable 'name' using 'global'
-console.log(global.name); // Output: Alice
-
-*/
-
-//--Key Points:
-/*
-
-- In browsers, `window` or `this` gives you access to the global scope.
-- In Node.js, `global` gives you access to the global scope.
-
-*/
-
-//#8)Execution Context and Global Objects (In Detail)
+//#12)Execution Context and Global Objects (In Detail)
 
 //--Execution Context in JavaScript:
 
@@ -583,7 +532,7 @@ console.log(global.name); // Output: Alice
   access to the global scope of variables and functions within Node.js applications.
 */
 
-//#9)Basic Info
+//#13)Basic Info
 
 /*
 JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was working at Netscape Communications Corporation.
@@ -606,7 +555,7 @@ execution. So, while JavaScript benefits from improved performance with V8, it r
 -JavaScript is a synchronous single-threaded language.
 */
 
-//##10)Lexical Scope , Scope chain
+//##14)Lexical Scope , Scope chain
 
 /*
 
@@ -675,7 +624,7 @@ In this example:
 
 */
 
-//##11)Tempory Dead Zone (TDZ)
+//##15)Tempory Dead Zone (TDZ)
 /*
 Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
 it throws a ReferenceError. On the other hand, variables declared with var are hoisted and initialized to undefined, 
@@ -694,7 +643,7 @@ const myConst = 30;
 
 */
 
-//#12)Shadowing
+//#16)Shadowing
 
 /*
 Definition: Shadowing occurs when a variable declared within a certain scope (like a function or block) has the 
@@ -731,7 +680,7 @@ let and const are block-scoped, preventing these conflicts by keeping variables 
 >So, shadowing means that a variable inside a specific scope can "hide" a variable with the same name in an outer scope.
 */
 
-//#13)About array and objects in details
+//#17)About array and objects in details
 
 /*
 JavaScript में arrays और functions दोनों की typeof output "object" होती है, लेकिन वे अलग-अलग तरह से काम करते हैं। Arrays और functions दोनों iterable होते हैं, जबकि plain objects by default iterable नहीं होते। 
@@ -875,7 +824,7 @@ Method:In simple terms, a method is a function that belongs to an object. It all
 related to that object.Property of an Object: 
 */
 
-//#14)Imperative Programming vS Declarative Programming
+//#18)Imperative Programming vS Declarative Programming
 /*
 -- Imperative Programming:
 
@@ -939,7 +888,7 @@ choice depends on the specific requirements of your project.
 
 */
 
-//#15)Pure Function vs Imppure Function
+//#19)Pure Function vs Imppure Function
 /*
 
 --Pure Functions:
@@ -1001,7 +950,7 @@ causing side effects.
   - Cause side effects by modifying external state.
 */
 
-//#16)ForEach vs forOf loop
+//#20)ForEach vs forOf loop
 /*
 - **`forEach`** is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
 but we cannot use `break` or `continue` statements.
@@ -1102,7 +1051,7 @@ for (let [index, value] of arr.entries()) {
 // Index: 2, Value: Hello
 */
 
-//#17)Map, Filter, and Reduce (They are higher-order functions, and they are used specifically for arrays. They create new arrays without impacting the original array.)
+//#21)Map, Filter, and Reduce (They are higher-order functions, and they are used specifically for arrays. They create new arrays without impacting the original array.)
 
 /*
 
@@ -1162,7 +1111,7 @@ console.log(a)
 
 */
 
-//#18)What is polly fill
+//#22)What is polly fill
 /*
 
 
@@ -1172,7 +1121,7 @@ allowing developers to use the latest features while ensuring older browsers can
 
 */
 
-//#19)What is closer
+//#23)What is closer
 
 /*
 A closure in JavaScript means that an inner function has access to the outer function’s variables and functions even after 
@@ -1191,7 +1140,7 @@ print()
 
 */
 
-//#20)Call Back fucniton inside the array
+//#24)Call Back fucniton inside the array
 /*
 When you use the `map` method, it’s a function itself, and it takes another function as an argument. That function you pass inside `map` is what we call the **callback function**.
 
@@ -1224,3 +1173,15 @@ So yes, when you use `map`, the function you pass to it is indeed the callback f
 
 
 */
+
+//#25) What is window obejct in browser ?
+
+/*
+The window object is the global container in a browser that holds everything you need to interact 
+with the web page and browser. It includes properties and methods like alert for showing messages, 
+location for getting or setting the URL, and document for accessing the content of the page.
+*/
+
+//#26)Call , Apply , Blind
+
+
