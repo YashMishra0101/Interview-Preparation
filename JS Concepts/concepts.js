@@ -483,7 +483,6 @@ const notHoistedConst = 15;
 and `const` variables are hoisted but not initialized (temporal dead zone).
 */
 
-
 //#12)Execution Context and Global Objects (In Detail)
 
 //--Execution Context in JavaScript:
@@ -1184,4 +1183,115 @@ location for getting or setting the URL, and document for accessing the content 
 
 //#26)Call , Apply , Blind
 
+/*
 
+--1. **`call()` Method**
+>Call , apply and blind are the pre build method in javascript with the helps that we can invoke the funciton with the help of this keyword.
+
+- **Definition:** `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
+- **Example:**
+ 
+ 
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(post){
+  return (`My name is ${this.firstName} ${this.lastName} and I am a ${post}`)
+}
+
+console.log(userInfo.call(userOne,"frontEnd-Developer"))
+
+-- 2. **`apply()` Method**
+
+- **Definition:** `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
+- **Example:**
+
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(post){
+  return (`My name is ${this.firstName} ${this.lastName} and I am a ${post}`)
+}
+
+console.log(userInfo.apply(userOne,["frontEnd-Developer"])) //--Pass Info In the form of array
+  
+
+-- 3. **`bind()` Method**
+
+- **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately.
+- **Example:**
+
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(post){
+  return (`My name is ${this.firstName} ${this.lastName} and I am a ${post}`)
+}
+
+let userData=userInfo.bind(userOne,"frontEnd-Developer"); //--assing to the variable and then call it
+console.log(userData())
+
+>Should You Use Array Form or Individual Arguments?
+
+--Individual Arguments: When using bind, you should pass arguments individually, as bind is not designed to accept an array of arguments. The additional arguments after the this value are passed directly to the bound function when it is called.
+
+--Array Form: If you have arguments in array form, you might consider using apply instead, as apply is designed to accept an array of arguments.
+
+> Summary:
+- **`call()`**: Calls a function with a specific `this` value and individual arguments.
+- **`apply()`**: Like `call()`, but arguments are passed as an array.
+- **`bind()`**: Creates a new function with a specific `this` value but doesn’t call it immediately.
+
+*/
+
+//#27)Function Currying
+/*
+--With Bind
+function add(a,b){
+  return a+b;
+}
+
+let result=add.bind(this,4)
+console.log(result(2))
+
+--With Closer
+
+function add(a,b,c){
+  return a+b+c;
+}
+
+console.log(add(5,1,1));
+
+
+function one(a){
+  return function (b){
+      return function (c){
+        return a+b+c;
+      }
+  }
+}
+
+console.log(one(1)(2)(3));
+
+*/
