@@ -163,3 +163,83 @@ letfruit=apple,varfruit=apple
 letfruit=orange,varfruit=apple
 
 */
+
+//#Question 9 : You have the following JavaScript object:
+
+/*
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  age: 22,
+  fullName: function() {
+    let greeting = "Hello, my name is ";
+    return `${greeting} ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  }
+};
+
+
+1. What will be the output of `console.log(person.fullName())`, and why?
+2. How does the `this` keyword behave inside the `fullName` method?
+3. What is the significance of using `let` inside the `fullName` method?
+
+//>**Answer:**
+
+1. **Output:**
+   - The output will be: `"Hello, my name is Yash Mishra. I am 22 years old."`
+
+2. **Explanation of `this`:**
+   - Inside the `fullName` method, `this` refers to the `person` object because the method is being called on the `person` object (`person.fullName()`).
+   - As a result, `this.firstName`, `this.lastName`, and `this.age` correctly access the `firstName`, `lastName`, and `age` properties of the `person` object.
+
+3. **Significance of `let`:**
+   - `let` is used to declare the `greeting` variable inside the `fullName` method. This variable is block-scoped, meaning it is only accessible within the `fullName` method. 
+   - Using `let` here ensures that `greeting` is a local variable and doesn't interfere with other parts of the code, demonstrating good scoping practices.
+
+ */
+
+//##Question 9 In JavaScript, what is the difference between using an arrow function and a regular
+//## function as a method inside an object? How does the value of `this` differ between the two,
+//# and what happens if you try to access object properties using `this` inside an arrow function?
+/*
+**Answer:**
+
+The key difference between an arrow function and a regular function as a method inside an object is how `this` is handled.
+
+- **Regular functions**: When used as methods inside an object, the `this` keyword refers to the object the method is called on. This allows you to access the object's properties directly using `this.propertyName`.
+
+- **Arrow functions**: Arrow functions do not have their own `this` context. Instead, they inherit `this` from the surrounding lexical scope where the function is defined. If an arrow function is used as a method inside an object, the `this` value inside the arrow function will refer to the `this` from the outer scope, not the object itself.
+
+**Example:**
+
+
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  age: 22,
+  regularFunction: function() {
+    return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  },
+  arrowFunction: () => {
+    return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  }
+};
+
+console.log(person.regularFunction());
+// Output: "Regular: My name is Yash Mishra. I am 22 years old."
+
+console.log(person.arrowFunction());
+// Output: "Arrow: My name is undefined undefined. I am undefined years old."
+
+
+**Explanation:**
+
+- In `regularFunction`, `this` refers to the `person` object, so it correctly accesses `firstName`, 
+`lastName`, and `age`.
+- In `arrowFunction`, `this` does not refer to the `person` object. Instead, it refers to 
+the outer scope, which in many cases is the global object (`window` in browsers), leading to `undefined` values for the properties.
+
+**Conclusion:** When defining methods inside an object, if you need to use `this` to refer
+ to the object, you should use regular functions. Arrow functions are more suited for cases 
+ where you want to maintain `this` from the surrounding scope, not when you need to access 
+ properties of the object.  
+*/

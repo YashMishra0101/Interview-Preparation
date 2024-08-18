@@ -1,7 +1,7 @@
 console.log("JS Concepts Is Working");
-//#1)How to declare variable in javascript / Three Type Of Function
+//#1)How to decalare function in Javascript
 
-//>Normal function
+//--1)Normal function
 
 // function naam() {
 //   console.log("Hi I am a normal Function");
@@ -21,6 +21,28 @@ console.log("JS Concepts Is Working");
 
 // naamThree(3 + 7);
 
+//--2)Anonymous Function (Functon ka name nahi hota use variable ke andar store kr te hai)
+
+//   const ano = function () {
+//     console.log("Hello Ji I am a Anonymous Function");
+//  };
+
+// ano()
+
+//--3)Arrow Function
+
+// const arrow =(print,printTwo)=>{
+//     console.log(print,printTwo);
+// }
+
+// arrow ("I am a arrow Fucntion", "✋Two");
+
+//>If there is a single Parameter
+
+// const arrowTwo=(value)=>console.log(value);
+
+// arrowTwo("I a Value");
+
 //> Reference Assignment (Ek Variable ka refereance Dusre Variable ko diye hai)
 
 // let a = [1, 2, 3, 5];
@@ -37,31 +59,12 @@ console.log("JS Concepts Is Working");
 
 // fExpress();
 
-//>Anonymous Function (Functon ka name nahi hota use variable ke andar store kr te hai)
-
-//   const ano = function () {
-//     console.log("Hello Ji I am a Anonymous Function");
-//  };
-
-// ano()
-
-//>Arrow Function
-
-// const arrow =(print,printTwo)=>{
-//     console.log(print,printTwo);
-// }
-
-// arrow ("I am a arrow Fucntion", "✋Two");
-
-//>If there is a single Parameter
-
-// const arrowTwo=(value)=>console.log(value);
-
-// arrowTwo("I a Value")
-
 //#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined.
+
 //--It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
+
 //--Uses :-
+
 //>Avoid polluting the global namespace
 //>Execute an async function
 //>The module pattern
@@ -152,8 +155,9 @@ Other reason bhi hai
 //>Extra Info
 
 /*
-Using let and const is generally better because they avoid problems caused by var's function scope 
-and hoisting. When we use var and let, we can assign a variable's value after declaration, but when
+-Using let and const is generally better because they avoid problems caused by var's function scope 
+and hoisting and let and const are block scope.
+-When we use var and let, we can assign a variable's value after declaration, but when
 we use const, it is necessary to define the value during declaration.
 
 --var is function scope and let and const are block scoped:-
@@ -196,14 +200,17 @@ Arrays are zero-indexed, which means the first element of an array is at index 0
 
 /*
 An object is a data structure in JavaScript where we can store data in the form of key-value pairs. To access 
-the data within an object, we use either dot notation or bracket notation. In bracket notation, we use square 
-brackets. A function inside an object is called a method. Methods represent the behaviors or actions of the object.
+the data within an object, we use either dot notation or bracket notation. 
+
+In bracket notation, we use square brackets.A function inside an object is called a method. 
+Methods represent the behaviors or actions of the object.
 
 With this: Preferred for accessing properties within methods as it makes the method flexible and tied to the object 
 instance.
 
 Without this: Not standard practice for object methods, but can work in specific contexts like closures or when 
 properties are fixed at creation.
+
 */
 
 // let person ={
@@ -220,9 +227,12 @@ properties are fixed at creation.
 // console.log(person[name]); //wrong always use double or single quotes
 // console.log(person[age]); //wrong always use double or single quotes
 
-//--?Why it is wrong :Because whenever we write any key without double or single quotes, then JavaScript tries to find a variable name, not the object property name. So it gives a `ReferenceError` because the variable is not present.
+//--? Why it is wrong ?
 
-/*
+/*Why it is wrong :Because whenever we write any key without double or single quotes, then 
+JavaScript tries to find a variable name, not the object property name. So it gives a 
+`ReferenceError` because the variable is not present.
+
 When you use a key without quotes in bracket notation, JavaScript interprets it as a variable name:
 
 - **If the variable exists:** JavaScript uses its value as the property name.
@@ -241,7 +251,7 @@ output=22;
 
 */
 
-//--? 😂 Identifiers: Names given to variables, functions, properties, etc., to uniquely identify them.
+//--? 😂 Identifiers: Names given to variables, functions, properties, etc, to uniquely identify them.
 
 //#8)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
 
@@ -280,56 +290,60 @@ console.log(arr[1]);  // Output: Tailwind CSS
 
 */
 
-//#9)Execution Context in JavaScript (Basic)
+//#9) Execution Context in JavaScript (Basic)
+
 /*
-An execution context is the environment in which JavaScript code is executed. It consists of two main phases:
+An execution context is the environment in which JavaScript code runs. It consists of two main phases:
 
 1. **Memory Allocation Phase**:
    - Memory is allocated for variables and functions.
-   - Initially, variables are set to `undefined`.
-   - Function declarations are stored with their definitions.
+   - Variables are initialized to `undefined`.
+   - Function declarations are stored with their full definitions.
 
 2. **Code Execution Phase**:
    - Code is executed line by line.
-   - Variables are assigned actual values during execution.
+   - Variables are assigned their actual values.
 
-//-- Global Execution Context
+ //-- Global Execution Context
 
-- Created when the JavaScript code starts to run.
-- Initially, the global execution context is pushed onto the call stack.
+- Created when JavaScript code first starts to run.
+- The global execution context is pushed onto the call stack at the start.
 
-//-- Function Execution Context
+ //-- Function Execution Context
 
 - Created whenever a function is called.
-- Each function call creates a new execution context.
+- Each function call generates a new execution context.
 - Function execution contexts are managed by the call stack:
-  - A new execution context is pushed onto the call stack when a function is called.
-  - The execution context is popped off the call stack when the function execution is complete.
+  - A new execution context is pushed onto the stack when a function is invoked.
+  - It is popped off the stack once the function completes execution.
 
-//-- Call Stack
+ //-- Call Stack
 
-- The call stack keeps track of execution contexts.
+- The call stack tracks all execution contexts.
 - The global execution context is the first to be pushed onto the stack.
-- Subsequent function calls create new execution contexts that are pushed onto the stack.
-- Execution contexts are popped from the stack once their execution is finished.
+- Subsequent function calls push new execution contexts onto the stack.
+- Execution contexts are popped from the stack when their execution finishes.
 
-//-- Key Points
+ //-- Key Points
 
-- The execution context manages the execution of code.
-- Memory allocation happens first, then code execution is happend.
-- The call stack tracks the execution contexts, managing function calls and returns.
-
+- The execution context manages the flow and execution of code.
+- Memory allocation happens before code execution.
+- The call stack handles the order of execution contexts, managing function calls and returns.
 */
 
 //#10)Loops
 
-//---For Loop
+//---1)For Loop
+
+// The for loop is used to repeat a block of code a specific number of times.
 
 // for(let f=1;f<=10;f++){
 //   console.log("For Loop",f);
 // }
 
-//--While Loop
+//--2)While Loop
+
+// The while loop repeats a block of code as long as a condition is true.
 
 // let w2=1;
 
@@ -338,7 +352,9 @@ An execution context is the environment in which JavaScript code is executed. It
 //   w2++
 // }
 
-//--Do While loop
+//--3)Do While loop
+
+// The do while loop executes the code block once before checking the condition, then repeats as long as the condition is true.
 
 // let d=1;
 
@@ -347,7 +363,9 @@ An execution context is the environment in which JavaScript code is executed. It
 // d++;
 // }while(d<=8)
 
-//--For in loop ( For in loop for object )
+//--4)For in loop ( For in loop for object )
+
+// The for...in loop is used to iterate over the properties (keys) of an object.
 
 // const info={
 //   name:"yash mishra",
@@ -369,15 +387,13 @@ An execution context is the environment in which JavaScript code is executed. It
 
 //>Inportant Info
 /*
- When we use an arrow function, we cannot use this. If we need to use this, we should use a regular function instead 
-  of an arrow function. According to gpt, a regular function is better than an arrow function inside an object .
 ? Can we use for of loop with obejct ?
 Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
 arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
 by iterating over their properties using methods like Object.keys(), Object.values(), or Object.entries()
 */
 
-// -- For of loop (use for array)
+// --5)For of loop (use for array)
 
 // let arr = ["Yash", 21, "Developer"];
 
@@ -386,12 +402,114 @@ by iterating over their properties using methods like Object.keys(), Object.valu
 // }
 
 /*
-Can we use a for in loop for an array?
+? Can we use a for in loop for an array?
 If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
 we need to use it this way: console.log(arr[a]) instant of console.log(a).
 
 >Objects: Use for...in to iterate over keys.
 >Arrays/Iterables: Use for...of to iterate over values.
+
+//--6)ForEach vs forOf loop
+/*
+forEach(value,index,array)
+
+- `forEach` is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
+but we cannot use `break` or `continue` statements.
+
+- `for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
+` statements but cannot directly access the index number (unless using `Array.entries()`).
+
+> `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
+> or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
+> we can use `continue` and `break` statements but cannot directly access the index number.
+
+--ForEach Example
+
+let arr = ['Yash', 'Ram', 'Hello'];
+
+arr.forEach((value, index) => {
+  console.log(`${index}:${value}`);
+});
+
+ Output:
+ Index: 0, Value: Yash
+ Index: 1, Value: Ram
+ Index: 2, Value: Hello
+
+ --for of loop
+
+ 1)
+ let arr=[1,2,"Yash",4,"Bro"];
+
+  for(let a of arr){
+   console.log(a)
+ }
+
+ Output:
+ 1
+ 2
+ Yash
+ 4
+ Bro
+
+2)let str = "Yash";
+
+str.forEach((value) => {
+  console.log(value);
+});
+
+//Output
+Y
+a
+s
+h
+
+
+3)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Found "s", terminating the loop.');
+    break;  // Exit the loop
+  }
+  console.log(char);
+}
+
+//Output:
+Y
+a
+Found "s", terminating the loop.
+
+4)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Skipping "s".');
+    continue;  // Skip the rest of the loop for this iteration
+  }
+  console.log(char);
+}
+
+Output:
+Y
+a
+Skipping "s".
+h
+
+5)
+let arr = ['Yash', 'Ram', 'Hello'];
+
+for (let [index, value] of arr.entries()) {
+  console.log(`Index: ${index}, Value: ${value}`);
+}
+
+// Output:
+// Index: 0, Value: Yash
+// Index: 1, Value: Ram
+// Index: 2, Value: Hello
+
 */
 
 //#11) Hoisting Explained
@@ -399,9 +517,7 @@ we need to use it this way: console.log(arr[a]) instant of console.log(a).
 /*
 Hoisting means that during the compile phase (before code execution), variable and function declarations are moved to
 the top of their containing scope. This is called hoisting.
-*/
 
-/*
 **Explanation:**
 - **During the compile phase**: It's important to note that hoisting occurs during the compile phase, not during code execution.
 - **Variable and function declarations**: Both variables and functions are hoisted, but only the declarations, not the initializations.
@@ -436,7 +552,7 @@ function hoistedFunction() {
 // }
 
 // try {
-//     notHoistedFunction(); // This throws an error because notHoistedFunction is undefined
+//     notHoistedFunction(); // This throws an error because not HoistedFunction is undefined
 // } catch (error) {
 //     console.log(error); // ReferenceError: notHoistedFunction is not defined
 // }
@@ -649,6 +765,9 @@ Definition: Shadowing occurs when a variable declared within a certain scope (li
 same name as a variable in an outer scope. The inner variable "shadows" the outer variable, meaning it takes precedence 
 within its scope.
 
+>var is function-scoped and does not respect block scope, leading to potential conflicts and errors.
+>let and const are block-scoped, preventing these conflicts by keeping variables confined to the block in which they are declared.
+
 --Example
 
 let x = 10; // Outer variable
@@ -673,8 +792,7 @@ But ,
   }
 } 
 
-var is function-scoped and does not respect block scope, leading to potential conflicts and errors.
-let and const are block-scoped, preventing these conflicts by keeping variables confined to the block in which they are declared.
+
 
 >So, shadowing means that a variable inside a specific scope can "hide" a variable with the same name in an outer scope.
 */
@@ -693,12 +811,7 @@ JavaScript में arrays और functions दोनों की typeof outpu
 
 */
 
-//--We can add key,value and function inside the array
-
-/*
-let arr=[1,"Yash","Ram","Hello"];
-arr.name="yash"
-*/
+//-- 🔥🧐 We can add key,value and function inside the array
 
 /*
 --More About array
@@ -706,9 +819,10 @@ arr.name="yash"
 let arr = [1, "Yash", "Ram", "Hello"];
 
 // Adding a property to the array
-arr.name = "yash";
+arr.name = "Amit";
 
 // Adding a method to the array
+
 arr.a = function(){
   console.log("I am a function inside the array");
 }
@@ -735,6 +849,7 @@ console.log(arr[15]); // Outputs: undefined (since no value is assigned at index
 
 
 **Explanation:**
+
 - We add an element "Rahul" at index 10 of the array.
 - The `length` of the array now becomes 11. This is because the array now has elements from index 0 to 10, even though some of these elements are `undefined`.
 - Accessing `arr[8]` returns `undefined` because no value is assigned at that index.
@@ -742,6 +857,7 @@ console.log(arr[15]); // Outputs: undefined (since no value is assigned at index
 - Accessing `arr[15]` returns `undefined` because no value is assigned at that index.
 
 **Key Points:**
+
 1. **Array Length:** The `length` property of an array only counts numeric indices (elements), not additional properties or methods added to the array.
 2. **Adding Properties/Methods:** Adding properties or methods to an array does not affect its length.
 3. **Sparse Arrays:** Assigning a value to a higher index (e.g., 10) creates a sparse array, where intermediate indices (e.g., 4 to 9) are `undefined`.
@@ -761,7 +877,7 @@ console.log(arr); // Outputs: [2, 3, 4]
 
  >2. `Object.keys()`
  **`Object.keys()`**:
-  - **Use:** Returns an array of the object's property names (keys).
+  - **Use:** Returns an array of the object's property names (keys) work on both arrya and object.
 
 
 let obj = { name: "Yash", age: 21, role: "Front End Developer" };
@@ -771,7 +887,7 @@ console.log(keys); // Outputs: ["name", "age", "role"]
 
 >3. `Object.values()`
  **`Object.values()`**:
-  - **Use:** Returns an array of the object's property values.
+  - **Use:** Returns an array of the object's property values  work on both arrya and object..
 
 **Example:**
 
@@ -949,108 +1065,7 @@ causing side effects.
   - Cause side effects by modifying external state.
 */
 
-//#20)ForEach vs forOf loop
-/*
-- **`forEach`** is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
-but we cannot use `break` or `continue` statements.
-
-forEach(value,index,array)
-- **`for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
-` statements but cannot directly access the index number (unless using `Array.entries()`).
-
-> `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
-> or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
-> we can use `continue` and `break` statements but cannot directly access the index number.
-
---ForEach Example
-
-let arr = ['Yash', 'Ram', 'Hello'];
-
-arr.forEach((value, index) => {
-  console.log(`${index}:${value}`);
-});
-
- Output:
- Index: 0, Value: Yash
- Index: 1, Value: Ram
- Index: 2, Value: Hello
-
- --for of loop
-
- 1)
- let arr=[1,2,"Yash",4,"Bro"];
-
-  for(let a of arr){
-   console.log(a)
- }
-
- Output:
- 1
- 2
- Yash
- 4
- Bro
-
-2)let str = "Yash";
-
-str.forEach((value) => {
-  console.log(value);
-});
-
-//Output
-Y
-a
-s
-h
-
-
-3)
-let str = "Yash";
-
-for (let char of str) {
-  if (char === 's') {
-    console.log('Found "s", terminating the loop.');
-    break;  // Exit the loop
-  }
-  console.log(char);
-}
-
-//Output:
-Y
-a
-Found "s", terminating the loop.
-
-4)
-let str = "Yash";
-
-for (let char of str) {
-  if (char === 's') {
-    console.log('Skipping "s".');
-    continue;  // Skip the rest of the loop for this iteration
-  }
-  console.log(char);
-}
-
-Output:
-Y
-a
-Skipping "s".
-h
-
-5)
-let arr = ['Yash', 'Ram', 'Hello'];
-
-for (let [index, value] of arr.entries()) {
-  console.log(`Index: ${index}, Value: ${value}`);
-}
-
-// Output:
-// Index: 0, Value: Yash
-// Index: 1, Value: Ram
-// Index: 2, Value: Hello
-*/
-
-//#21)Map, Filter, and Reduce (They are higher-order functions, and they are used specifically for arrays. They create new arrays without impacting the original array.)
+//#20)Map, Filter, and Reduce (They are higher-order functions, and they are used specifically for arrays. They create new arrays without impacting the original array.)
 
 /*
 
@@ -1110,7 +1125,7 @@ console.log(a)
 
 */
 
-//#22)What is polly fill
+//#21)What is pollyfill
 /*
 
 
@@ -1120,7 +1135,7 @@ allowing developers to use the latest features while ensuring older browsers can
 
 */
 
-//#23)What is closer
+//#22)What is closer
 
 /*
 A closure in JavaScript means that an inner function has access to the outer function’s variables and functions even after 
@@ -1139,7 +1154,7 @@ print()
 
 */
 
-//#24)Call Back fucniton inside the array
+//#23)Call Back fucniton inside the array
 /*
 When you use the `map` method, it’s a function itself, and it takes another function as an argument. That function you pass inside `map` is what we call the **callback function**.
 
@@ -1173,15 +1188,17 @@ So yes, when you use `map`, the function you pass to it is indeed the callback f
 
 */
 
-//#25) What is window obejct in browser ?
+//#24) What is window obejct in browser ?
 
 /*
-The window object is the global container in a browser that holds everything you need to interact 
-with the web page and browser. It includes properties and methods like alert for showing messages, 
-location for getting or setting the URL, and document for accessing the content of the page.
+The browser automatically creates a window object.The window object represents a window in the browser 
+and provides access to the browser's features and functions, like alert(), setTimeout(),prompt() etc.  
+
+Window is the object of browser, it is not the object of javascript. The javascript objects are string, 
+array, date etc. 
 */
 
-//#26)Call , Apply , Blind
+//#25)Call , Apply , Blind
 
 /*
 
@@ -1232,7 +1249,7 @@ console.log(userInfo.apply(userOne,["frontEnd-Developer"])) //--Pass Info In the
 
 -- 3. **`bind()` Method**
 
-- **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately.
+> **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately.
 - **Example:**
 
 let userOne={
@@ -1265,15 +1282,21 @@ console.log(userData())
 
 */
 
-//#27)Function Currying
+//#26)Function Currying
 /*
+Currying in JavaScript is a process that allows you to transform a function 
+with multiple arguments into a sequence of nesting functions.
+
 --With Bind
 function add(a,b){
   return a+b;
-}
+} 
 
 let result=add.bind(this,4)
+
 console.log(result(2))
+
+
 
 --With Closer
 
@@ -1293,5 +1316,16 @@ function one(a){
 }
 
 console.log(one(1)(2)(3));
+
+
+function stepOne(name) {
+    return function stepTwo(tea) {
+        return function stepThree(cup) {
+            console.log(`${name} ordered ${cup} of ${tea}.`);
+        };
+    };
+}
+
+stepOne("Yash")("Lemon Tea")("One cup");
 
 */
