@@ -1192,7 +1192,7 @@ So yes, when you use `map`, the function you pass to it is indeed the callback f
 
 /*
 The browser automatically creates a window object.The window object represents a window in the browser 
-and provides access to the browser's features and functions, like alert(), setTimeout(),prompt() etc.  
+and provides access to the browser's features and functions,alert(), setTimeout(),prompt() etc.  
 
 Window is the object of browser, it is not the object of javascript. The javascript objects are string, 
 array, date etc. 
@@ -1288,6 +1288,7 @@ Currying in JavaScript is a process that allows you to transform a function
 with multiple arguments into a sequence of nesting functions.
 
 --With Bind
+
 function add(a,b){
   return a+b;
 } 
@@ -1328,4 +1329,161 @@ function stepOne(name) {
 
 stepOne("Yash")("Lemon Tea")("One cup");
 
+*/
+
+//#27) What is constructor in Javascript ?
+/*
+
+- **Constructor**: In JavaScript, a constructor is a special function used to create and initialize objects.
+- **`new` keyword**: When you use the `new` keyword with a constructor function, it creates a new instance of an object.
+- **`this` keyword**: Inside the constructor, `this` refers to the new object that is being created, allowing you to set properties on that object.
+
+-- Example Recap:
+
+>Example one : 
+
+function Car(make, model) {
+    this.make = make;  // 'this' refers to the new Car object
+    this.model = model;
+}
+
+let myCar = new Car('Toyota', 'Corolla');
+console.log(myCar);  
+
+// Output: Car { make: 'Toyota', model: 'Corolla' }
+
+
+In this example:
+- The `Car` function is a **constructor**.
+- The `new` keyword is used to create an object, `myCar`, from the `Car` constructor.
+- The `this` keyword refers to the `myCar` object inside the `Car` constructor, allowing the properties `make` and `model` to be set.
+
+>Example Two :
+
+function userInfo(name, age, role) {
+    this.name = name;
+    this.age = age;
+    this.role = role;
+}
+
+userInfo.prototype.info = function() {
+    return (`Hello My name is ${this.name} and my age is ${this.age} and I am 
+    ${this.role} Developer`)
+}
+
+let userOne = new userInfo("Yash", "22", "FrontEnd")
+
+let userTwo = new userInfo("Ram", "25", "Full Stack")
+
+console.log(userTwo.info())
+
+*/
+
+//#28)Prototype and Prototype inheritance
+
+/*
+-- In JavaScript, every object has a hidden internal property known as Prototype.
+
+>What is Prototype Inheritance ?
+
+/*
+Inheritance means one object is trying to access property of other objects,
+and overall prototype inheritance ka bhi means ye hi hota hai.
+
+Prototype inheritance is a feature of JavaScript that allows objects to inherit 
+properties and methods from their prototype. If a property or method isn’t found 
+directly on an object, JavaScript will look for it in the object’s prototype. 
+If it’s not found in the prototype, it will keep looking up the chain until it 
+finds the property or reaches the end of the chain (where the prototype is null).
+
+--Example 
+
+let userOne={
+  name:"Yashu",
+  age:"22"
+}
+
+let userTwo={
+  name:"Ram"
+}
+
+userTwo.__proto__=userOne;
+
+console.log(userTwo.age)
+
+--But
+
+>Why It's Not Ideal to Use `__proto__` Directly:
+
+1. Performance: Direct manipulation of `__proto__` can lead to performance issues, as it changes 
+the internal prototype chain, which is generally not as fast as other methods.
+  
+2. Readability and Maintainability: Using `__proto__` can make your code harder to understand 
+and maintain, especially in larger projects.
+
+>Recommended Approach:
+
+Instead of using `__proto__`, you can use `Object.create()` to create `userTwo` with `userOne` 
+as its prototype:
+
+let userOne={
+  name:"Yashu",
+  age:"22"
+}
+
+let userTwo={
+  name:"Ram"
+}
+
+userTwo=Object.create(userOne)
+
+console.log(userTwo.age)
+
+
+Explanation:
+- `Object.create(userOne)` creates a new object (`userTwo`) with `userOne` as its prototype.
+- `userTwo` inherits the properties of `userOne`, so `userTwo.age` will return `22`.
+
+*/
+
+//#29)Callback funtion and Async call back
+
+/*
+>Call Back
+
+let userName=(name)=>{
+  return name;
+}
+
+let info=(data)=>{
+  console.log(data)
+}
+
+info(userName("Yashu"))
+
+>Async call back
+
+let one=(()=>{
+  console.log("One")
+})
+one()
+
+setTimeout(()=>{
+  console.log("Two")
+},2000)
+
+let three=(()=>{
+  console.log("Three")
+})
+
+three()
+
+setTimeout(()=>{
+  console.log("Four")
+},4000)
+
+let five=(()=>{
+  console.log("Five")
+})
+five()
 */
