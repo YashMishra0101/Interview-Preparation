@@ -1487,3 +1487,31 @@ let five=(()=>{
 })
 five()
 */
+
+//#30)This is why js is synchronous and asynchronous in  nature .
+
+/*
+
+>Synchronous 
+
+console.log("Hi I am a one");
+
+for (let a=0; a<=10; a++){
+    console.log(a);
+}
+
+console.log("Hi I am a Two ")
+
+>Asynchronous 
+
+console.log("Hi I am a one");
+
+for (let a=0; a<=10; a++){
+    setTimeout(()=>{
+      console.log(a);
+    })
+}
+
+console.log("Hi I am a Two ");
+
+*/
