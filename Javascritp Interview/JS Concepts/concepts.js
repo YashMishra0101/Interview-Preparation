@@ -162,7 +162,7 @@ we use const, it is necessary to define the value during declaration.
 
 --var is function scope and let and const are block scoped:-
 
-example:function scope
+--Example:function scope
 
 function one() {
  if(true){
@@ -172,7 +172,7 @@ function one() {
 }
 one()
 
-example:Block scoped
+--Example:Block scoped
 
 function one() {
  if(true){
@@ -1513,5 +1513,314 @@ for (let a=0; a<=10; a++){
 }
 
 console.log("Hi I am a Two ");
+
+*/
+
+//#31)Event Loop
+/*
+--1.Event Loop Overview
+
+   - **Single-threaded:** JavaScript runs one task at a time in the call stack.
+   - **Asynchronous Capabilities:** Handles tasks without blocking the main thread using async operations like `setTimeout`, promises, etc.
+
+---2.Key Components
+
+   - **Call Stack:** Stores the currently executing function. Tasks are pushed to the stack when called and popped off when completed.
+   - **Web APIs:** Provided by the environment (browser/Node.js) to handle asynchronous tasks (e.g., `setTimeout`, HTTP requests).
+   - **Task Queue (callback queue):** Stores callbacks from Web APIs like `setTimeout`, `setInterval`, and I/O tasks.
+   - **Microtask Queue:**
+     - Handles microtasks like promise callbacks (`.then()`, `.catch()`).
+     - **Priority:** Microtasks are executed immediately after the current stack is cleared, before any task in the Task Queue.
+
+--3. How the Event Loop Works
+
+   1. Executes the code in the **Call Stack**.
+   2. When the Call Stack is empty:
+      - Processes all tasks in the **Microtask Queue** first.
+      - If the Microtask Queue is empty, moves to the **Task Queue**.
+   3. The loop continues, ensuring both synchronous and asynchronous tasks are handled.
+
+-- 4. Execution Example
+
+   console.log("Start");
+
+   setTimeout(() => console.log("Timeout callback"), 1);
+
+   Promise.resolve().then(() => console.log("Promise callback"));
+
+   console.log("End");
+   
+   **Output Order:** Start → End → Promise callback → Timeout callback
+
+   - Explanation:The promise callback (Microtask) runs before the `setTimeout` callback (Macrotask) because Microtasks have higher priority.
+
+-- 5. Key Takeaways
+
+   - **Microtask Queue** is not a Web API but part of the JavaScript runtime.
+   - Microtasks are processed before macrotasks, ensuring high-priority operations like promises are handled promptly.
+   - The Event Loop is what enables JavaScript to manage asynchronous operations in a non-blocking manner.
+
+*/
+
+//#32)Callback Hel
+/*
+It occurs when asynchronous operations are performed one after another, and each step depends on the
+completion of the previous one.Callback Hell is a situation in programming, especially in JavaScript, 
+where multiple nested callbacks make the code difficult to read, maintain, and debug so it happens
+when callbacks are nested within each other, leading to deeply indented code.
+
+>Explanation
+
+1. **Concept**:
+   - **Callback Hell** happens when callbacks are nested within each other, leading to deeply
+    indented code.
+   - This nesting can make the code look like a pyramid (often called the "Pyramid of Doom"), 
+   making it harder to follow and manage.
+
+2. **Why It Happens**:
+   - Asynchronous operations (like reading files, making network requests, or waiting for timers) 
+   often use callbacks to handle their results.
+   - When multiple asynchronous operations are chained together, the need for callbacks in each 
+   operation can lead to deep nesting.
+
+3. **Example**:
+ 
+   let stepOne = (callme) => {
+  setTimeout(() => {
+    console.log("One");
+    callme();
+  }, 1000);
+};
+
+let stepTwo = (callme) => {
+  setTimeout(() => {
+    console.log("Two");
+    callme();
+  }, 1000);
+};
+
+let stepThree = (callme) => {
+  setTimeout(() => {
+    console.log("Three");
+    callme();
+  }, 1000);
+};
+
+let stepFour = (callme) => {
+  setTimeout(() => {
+    console.log("Four");
+    callme();
+  }, 1000);
+};
+
+let stepFive = () => {
+  setTimeout(() => {
+    console.log("Five");
+  }, 1000);
+};
+
+let stepSequence = () => {
+  stepOne(() => {
+    stepTwo(() => {
+      stepThree(() => {
+        stepFour(stepFive);
+      });
+    });
+  });
+};
+
+stepSequence();
+function start() {
+  stepOne()
+    .then(stepTwo)
+    .then(stepThree)
+    .then(stepFour)
+    .then(stepFive)
+    .catch((error) => {
+      console.error("An error occurred:", error);
+    });
+}
+
+start();
+
+   
+- In the example above, each function relies on the completion of the previous function, 
+ resulting in nested callbacks.
+
+4. **Problems with Callback Hell**:
+
+   - **Readability**: Deeply nested callbacks make it hard to read and understand the code.
+   - **Maintenance**: Adding new features or debugging becomes challenging.
+   - **Error Handling**: Managing errors in nested callbacks can be cumbersome.
+
+5. **Solutions**:
+
+   - **Promises**: Flatten the code structure by chaining `.then()` calls.
+   - **Async/Await**: Write asynchronous code in a more synchronous-looking style, improving readability and maintainability.
+
+>Summary
+
+In summary, **callback hell** is the challenge of managing deeply nested callbacks in asynchronous code.
+it can make the code hard to read and maintain. Modern solutions like **Promises** and **async/await**
+provide cleaner, more manageable ways to handle asynchronous operations, reducing the problems
+associated with callback hell.
+
+*/
+
+//#33)Promise in JS
+/*
+A Promise is a special JavaScript object. It produces a value after an asynchronous operation completes
+successfully, or an error if it does not complete successfully due to time out, network error, and 
+so on.
+
+>Syntax -
+
+let promise = new Promise (function (resolve, reject) {
+
+// Make an asynchronous call and either resolve or reject
+
+});
+
+>>>Example of Promises and Async await
+
+let dataOne=(()=>{
+  return new Promise ((resolve ,reject)=>{
+    setTimeout(()=>{
+      console.log("One")
+      resolve("I am a Dataone");
+    },2000)
+  })
+  
+})
+
+let dataTwo=(()=>{
+  return new Promise ((resolve, reject)=>{
+    setTimeout(()=>{
+      console.log("Two")
+      resolve("I am a Datatwo")
+    },1000)
+  })
+})
+
+let dataThree=(()=>{
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("Three");
+      reject("Error hai Three me");
+      // resolve("I am a dataThree");
+    },1000)
+  })
+  
+})
+
+let dataFour=(()=>{
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("Four")
+      resolve("I am a dataFour");
+    },1000)
+  })
+})
+
+
+let start=(()=>{
+  dataOne()
+  
+  .then(dataTwo)
+  .then(dataThree)
+  .then(dataFour)
+      
+  .catch((error)=>{
+    console.log("Error : ",error)
+  })
+  .finally(()=>{
+    console.log("Program End")
+  })
+  
+})
+
+start();
+
+// console.log(dataOne())
+// console.log(dataThree())
+
+>>Async await ,try catch
+
+/*
+async and await are used together to handle asynchronous code in a more readable and 
+synchronous-looking way. They are part of ES2017 (ES8) and provide an alternative to 
+using Promises with .then() chains.
+
+Error Handling: try/catch is used to handle errors that may occur during the execution 
+of code. When you use await in an async function, you can use try/catch to handle any 
+errors that might occur when the promise is rejected.
+
+>Key Points to Remember:
+
+-`async` functions:Always return a `Promise`.
+- `await`:** Pauses the execution of the function until the promise resolves/rejects.
+- `try/catch`:Helps in handling errors gracefully in an `async` function.
+
+*/
+
+/*
+
+let dataOne=(()=>{
+  return new Promise ((resolve ,reject)=>{
+    setTimeout(()=>{
+      console.log("One")
+      resolve("I am a Dataone");
+    },2000)
+  })
+  
+})
+
+let dataTwo=(()=>{
+  return new Promise ((resolve, reject)=>{
+    setTimeout(()=>{
+      console.log("Two")
+      resolve("I am a Datatwo")
+    },1000)
+  })
+})
+
+let dataThree=(()=>{
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("Three");
+      reject("Error hai Three me");
+      // resolve("I am a dataThree");
+    },1000)
+  })
+  
+})
+
+let dataFour=(()=>{
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("Four")
+      resolve("I am a dataFour");
+    },1000)
+  })
+})
+
+
+let start =(async ()=>{
+  try{
+    await dataOne()
+    await dataTwo()
+    await dataThree()
+    await dataFour()
+  }
+  catch(error){
+    console.log("Error aaya bro : ",error)
+  }
+  finally {
+    console.log("Program End");
+  }
+
+})
+
+start()
 
 */
