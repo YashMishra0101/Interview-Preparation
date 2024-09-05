@@ -1681,7 +1681,7 @@ let promise = new Promise (function (resolve, reject) {
 
 });
 
->>>Example of Promises and Async await
+>>>Example of Promises 
 
 let dataOne=(()=>{
   return new Promise ((resolve ,reject)=>{
