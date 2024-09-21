@@ -253,15 +253,15 @@ output=22;
 
 //--? 😂 Identifiers: Names given to variables, functions, properties, etc, to uniquely identify them.
 
-//#8)Primitive Data Types , Non-Primitive Data Types and Stack and Heap
+//#8)Primitive Data Types , Non-Primitive(Reference) Data Types and Stack and Heap
 
-// Primitive Data Types: String, Boolean, Number, etc.
-// Non-Primitive Data Types: Array, Object, Function, etc.
+// Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
+// Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed)
 
 // Primitive Data Types are immutable, meaning their values cannot be changed.
 // Any modification results in the creation of a new value.
 
-// Non-Primitive Data Types are mutable, meaning their values can be changed
+// Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed
 // without creating a new object, changing the same memory block.
 
 // Primitive Data Types are stored in the stack. Copying these results in a new
@@ -653,7 +653,6 @@ and `const` variables are hoisted but not initialized (temporal dead zone).
 JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was working at Netscape Communications Corporation.
 Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
 meaning it executes code line by line and is single-threaded.
-
 JavaScript can be run in browsers and Node.js. Browsers like Firefox use SpiderMonkey, Safari uses JavaScriptCore,Chrome use V8 engine 
 and Microsoft Edge uses the Chakra engine to execute JavaScript. //--Node.js, on the other hand, is not a framework 
 or language but a software platform. It uses the V8 engine, the same one used by Google Chrome, to run JavaScript 
@@ -1617,12 +1616,12 @@ console.log("Hi I am a Two ");
    cleaner way to handle asynchronous code.
 */
 
-//#33)Callback Hel
+//#33)Callback Hell
 /*
-It occurs when asynchronous operations are performed one after another, and each step depends on the
-completion of the previous one.Callback Hell is a situation in programming, especially in JavaScript, 
+Callback Hell is a situation in programming, especially in JavaScript, 
 where multiple nested callbacks make the code difficult to read, maintain, and debug so it happens
-when callbacks are nested within each other, leading to deeply indented code.
+when callbacks are nested within each other, leading to deeply indented code.It occurs when asynchronous operations are performed one after another, and each step depends on the
+completion of the previous one
 
 >Explanation
 
@@ -1877,5 +1876,560 @@ let start =(async ()=>{
 })
 
 start()
+
+*/
+
+//#35
+/*
+Sure! Here's a brief overview of the main methods used with JavaScript Promises:
+
+>> 1. `Promise.resolve(value)`
+- **Description**: Returns a promise that is resolved with the given value. If the value is a promise, that promise is returned; if the value is a thenable (i.e., has a `then` method), the returned promise will "follow" that thenable, adopting its eventual state.
+- **Usage**: Useful for wrapping a value into a promise.
+
+>> 2. `Promise.reject(reason)`
+- **Description**: Returns a promise that is rejected with the given reason.
+- **Usage**: Useful for creating a promise that is immediately rejected, often used for error handling.
+
+>> 3. `Promise.all(iterable)`
+- **Description**: Takes an iterable of promises and, once all the promises in the iterable have resolved, returns a single promise that resolves with an array of the resolved values. If any promise in the iterable rejects, the returned promise is rejected with the reason from the first promise that was rejected.
+- **Usage**: Useful for running multiple promises in parallel and waiting for all of them to complete.
+
+>> 4. `Promise.allSettled(iterable)`
+- **Description**: Similar to `Promise.all`, but instead of waiting for all promises to resolve, it waits for all promises to either resolve or reject. Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describe the outcome of each promise.
+- **Usage**: Useful for when you need to know the result of all promises, regardless of whether they succeed or fail.
+
+>> 5. `Promise.any(iterable)`**
+- **Description**: Takes an iterable of Promise objects and, as soon as one of the promises in the iterable fulfills, returns a single promise that resolves with the value from that promise. If no promises in the iterable fulfill (i.e., all of them are rejected), then it rejects with an AggregateError, a new subclass of Error that groups together individual errors.
+- **Usage**: Useful when you want to get the result of the first promise that resolves successfully.
+
+>> 6. `Promise.race(iterable)`**
+- **Description**: Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
+- **Usage**: Useful for situations where you need the result from the first promise to settle.
+
+>> 7. `Promise.finally(onFinally)`**
+- **Description**: Adds a handler to be invoked regardless of the promise's outcome (fulfilled or rejected). The `onFinally` callback is called when the promise is settled, but it does not receive the promise's result or reason.
+- **Usage**: Useful for performing cleanup actions or other operations that need to occur after the promise settles, no matter the outcome.
+
+>> 8. `Promise.prototype.then(onFulfilled, onRejected)`
+- **Description**: Adds fulfillment and rejection handlers to the promise, and returns a new promise resolving to the return value of the called handler.
+- **Usage**: The primary method for defining what to do when a promise resolves or rejects.
+
+>> 9. `Promise.prototype.catch(onRejected)`
+- **Description**: Adds a rejection handler callback to the promise and returns a new promise resolving to the return value of the callback if it is called or to its original promise if the promise was not rejected.
+- **Usage**: Used for handling errors that occur in promise chains.
+
+*/
+
+//#36)Kya hai isska outpu 🤔💭
+
+/*
+
+let set=(()=>{
+  setTimeout(()=>{
+    console.log("I am setTime out")
+  },1000)
+})
+
+set();
+
+
+let action=(()=>{
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve();
+    },1000)
+  })
+})
+
+let pro=(()=>{
+  console.log("I am promise")
+})
+
+action().then(pro)
+
+*/
+
+/*
+>Acc to me , Chat gpt , Node environement and as per Javascrpt Rules.
+
+I am promise
+I am setTime out
+
+>But acc to replit (Brave Browser is used), vs code (chrome) and one compiler.
+
+I am setTime out
+I am promise
+
+*/
+
+//#37) Not defined vs undefined vs null
+
+/*
+> undefined: This occurs when a variable or function is declared, but no value is assigned. When we try to access that variable, it gives us "undefined."
+Example:
+
+console.log(a); // Logs "undefined" because 'a' is hoisted but not initialized yet.
+var a = 10;
+
+console.log(b); // Hoisting applies here as well, so it logs "undefined."
+var b = 10;
+
+function c() {
+}
+
+console.log(c()); // 'c()' returns undefined because the function has no return statement.
+
+> Not defined / ReferenceError: This happens when a variable or function is not declared, and we try to access it. If `let` or `const` is used, it throws a "ReferenceError: variable is not defined." Since the declaration is missing, we can't initialize it either.
+
+var b = 20;
+
+console.log(a); // Throws " ReferenceError: a is Not defined " because 'a' is never declared.
+
+function x() {
+  return "Hi";
+}
+console.log(value()); // Throws " ReferenceError: value is Not defined " because 'value' is not declared or defined.
+
+> null: "null" is explicitly assigned to a variable (We need to explicitly assign "null"). It represents the intentional absence of any object value. It’s a bit strange 😂, but it’s true.
+
+let info = {
+  name: "Rahul",
+  middleName: null, // We explicitly set 'middleName' to null.
+  lastName: "Turkar"
+};
+
+console.log(info.middleName); // Logs "null" because we explicitly set it to null.
+*/
+
+//#38) About  Coercion (koversion) and  comparision operator
+/*
+
+>>Coercion :
+
+- Coercion is when JavaScript **automatically** converts one data type to another during comparisons or operations. 
+This is done to make different types of values comparable.
+
+  - Example: `5 == '5'` → JavaScript converts `'5'` (a string) to `5` (a number), so the result is `true`.
+
+>>No Coercion :
+
+- No coercion means JavaScript **does not** automatically convert types. The values must match exactly in both
+ type and value for the comparison to be true.
+
+  - Example: `5 === '5'` → Since a number and a string are different types, the result is `false`.
+
+
+
+>>Previous Explanation :
+
+When I said **why they are called coercion and no coercion**, I meant:
+
+- Coercion (`==`, `!=`) happens because JavaScript **converts** values to the same type before comparing.
+- No coercion (`===`, `!==`) means JavaScript checks both the **value and type** without any conversion.
+
+
+>>1. Equal (`==`) (performs type coercion).
+  -- Compares values but not types (loose comparisons).  
+   
+   console.log(5 == '5'); // true (number and string are compared as equal)
+   
+
+>>.2. Strict Equal (`===`)  (no type coercion).
+ --  Compares both values and types (strict comparisons).  
+
+   console.log(5 === '5'); // false (number vs string, different types)
+
+
+>>.3. Not Equal (`!=`)  (performs type coercion).
+   Compares values but not types (performs type coercion).  
+
+   console.log(5 != '5'); // false (values are the same after coercion)
+
+
+>>.4. Strict Not Equal (`!==`)  (no type coercion).
+   Compares both values **and types** (no type coercion).  
+ 
+   console.log(5 !== '5'); // true (different types, so not equal)
+
+
+>>5. Greater Than (`>`)  
+   Checks if the left value is greater than the right value.  
+   
+   console.log(10 > 5); // true
+
+
+>>6. Less Than (`<`)  
+   Checks if the left value is less than the right value.  
+
+   console.log(5 < 10); // true
+   
+
+>>7. Greater Than or Equal (`>=`)  
+   Checks if the left value is greater than or equal to the right value.  
+ 
+   console.log(10 >= 10); // true
+
+
+>>8.Less Than or Equal (`<=`)  
+   Checks if the left value is less than or equal to the right value.  
+
+   console.log(5 <= 5); // true
+  
+
+These are essential in decision-making (conditions) in JavaScript, and they work with `if-else` or ternary operators.
+
+
+>> Additional Tip:
+
+Always use `===` and `!==` for strict comparisons to avoid unexpected results from type coercion! This will help you 
+write more reliable and bug-free code.
+
+*/
+
+//#39 Truthy Values and Falsy Values
+/*
+
+let checkVaue=((value)=>{
+  return value  ? console.log("True") : console.log("False")
+});
+
+checkVaue(-Infinits)
+
+
+>>Truthy Values :
+
+In JavaScript, a truthy value is any value that is considered `true` when evaluated in a Boolean context
+(e.g., inside an `if` statement). Any value that is **not** falsy is considered truthy.
+
+>>Falsy Values :
+
+A falsy value is one that is considered `false` when evaluated in a Boolean context. JavaScript has only a 
+few specific falsy values.
+
+>> Additional Tip :
+
+When checking for truthy or falsy values in your code, it's often a good idea to use `===` for strict comparison to 
+avoid unexpected results due to type coercion. Keep an eye on `null`, `undefined`, and `NaN`— they can be tricky in 
+logical conditions.
+
+>> Falsy Values in JavaScript :
+
+1. `false`
+2. `0`
+3. `-0`
+4. `""` (empty string)
+5. `null`
+6. `undefined`
+7. `NaN`
+8. jjkdfjd (random text)
+
+>> Truthy Values in JavaScript :
+
+1. `true`
+2. Non-zero numbers (e.g., `1`, `-1`)
+3. Non-empty strings (e.g., `"hello"`, `"0"`)
+4. Objects (e.g., `{}`, `[]`)
+5. Symbols (e.g., `Symbol()`)
+6. `Infinity` and `-Infinity`
+
+*/
+
+//#40) Destructuring , Spread Operator, Rest Operator.
+/*
+
+>>1. Destructuring
+
+Destructuring is a JavaScript feature that allows you to **extract values** from arrays or
+properties from objects assing them into variable.
+
+>>Array Destructuring
+
+You can extract values from arrays and assign them to variables in a simple, readable way.
+
+--Example:
+
+const fruits = ['Apple', 'Banana', 'Orange'];
+
+// Array Destructuring
+
+const [firstFruit, secondFruit] = fruits;
+
+console.log(firstFruit);  // Output: 'Apple'
+console.log(secondFruit); // Output: 'Banana'
+
+
+--You can also **skip values** when destructuring:
+
+const [first, , third] = fruits;
+
+console.log(first);  // Output: 'Apple'
+console.log(third);  // Output: 'Orange'
+
+
+>>Object Destructuring
+
+You can extract values from objects by using their **property names**.
+
+--Example:
+
+const user = {
+  name: 'Yashu',
+  age: 22,
+  city: 'Nagpur'
+};
+
+// Object Destructuring
+
+const { name, age } = user;
+
+console.log(name); // Output: 'Yashu'
+console.log(age);  // Output: 22
+
+
+--You can also **rename variables** when destructuring:
+
+const { name: userName, city: userCity } = user;
+
+console.log(userName); // Output: 'Yashu'
+console.log(userCity); // Output: 'Nagpur'
+
+
+>>Default Values in Destructuring
+
+If the property or value is `undefined`, you can assign default values.
+
+--Example:
+
+const { name, country = 'India' } = user;
+
+console.log(name);    // Output: 'Yashu'
+console.log(country); // Output: 'India' (default)
+
+
+>>>2. Spread Operator (`...`)** 🌟
+
+The spread operator is used to spread out the elements of an iterable (like an array or object)
+into individual elements. It's useful when you need to copy, combine, or expand arrays or object.
+
+>>Copying Arrays
+
+You can create a shallow copy of an array using the spread operator.
+
+--Example:
+
+const numbers = [1, 2, 3];
+const copiedNumbers = [...numbers];
+
+console.log(copiedNumbers); // Output: [1, 2, 3]
+
+--Merging Arrays
+
+You can combine two or more arrays into one.
+
+--Example:
+
+const array1 = [1, 2];
+const array2 = [3, 4];
+
+const mergedArray = [...array1, ...array2];
+
+console.log(mergedArray); // Output: [1, 2, 3, 4]
+
+--Expanding Function Arguments
+
+When passing multiple arguments to a function, you can use the spread operator to **expand** an 
+array into individual values.
+
+--Example:
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Output: 6
+
+--Copying and Merging Objects
+
+The spread operator also works with objects to copy or merge them.
+
+--Example:
+
+const user = { name: 'Yashu', age: 22 };
+const updatedUser = { ...user, city: 'Nagpur' };
+
+console.log(updatedUser);
+
+// Output: { name: 'Yashu', age: 22, city: 'Nagpur' }
+
+---
+
+>>>3. Rest Operator (`...`) 🛠️
+
+The rest operator looks the same as the spread operator (`...`), but its use case is different.
+It allows you to **collect** multiple elements into a single array.
+
+>>Function Arguments
+
+The rest operator is often used to gather all remaining function arguments into an array.
+
+--Example:
+
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4));  // Output: 10
+
+>>Destructuring with Rest Operator
+
+The rest operator can be used in **destructuring** to gather the remaining elements into an array.
+
+--Example:
+
+const [first, ...rest] = [1, 2, 3, 4, 5];
+
+console.log(first);  // Output: 1
+console.log(rest);   // Output: [2, 3, 4, 5]
+
+
+>>Object Destructuring with Rest**
+
+You can also gather remaining object properties into a new object using the rest operator.
+
+--Example:
+
+const user = { name: 'Yashu', age: 22, city: 'Nagpur' };
+const { name, ...details } = user;
+
+console.log(name);     // Output: 'Yashu'
+console.log(details);  // Output: { age: 22, city: 'Nagpur' }
+
+
+>>Summary:
+
+--Destructuring
+- Extract values from arrays or objects into variables.
+- Can rename variables or provide default values.
+
+--Spread Operator (`...`)
+- **Expands** arrays or objects into individual elements.
+- Useful for copying, merging, and passing function arguments.
+
+--Rest Operator (`...`)
+- **Collects** remaining elements into an array.
+- Used in function parameters and destructuring.
+
+*/
+
+//#41) Shallow Copy vs Deep Copy 🧑‍💻
+
+/*
+>Shallow Copy
+
+When you make a shallow copy, you're copying the outer layer of an object or array. If the object has 
+other objects inside it, those inner objects are **not** copied. Instead, both the original and the 
+copied version still share the same inner objects. So, if you change the inner objects in one, it 
+affects the other.
+
+>Deep Copy
+
+A deep copy makes a complete copy of an object or array, including any objects inside it. The original 
+and the copied version are **completely separate**, so changes to one won't affect the other at all.
+
+
+--Example: Shallow Copy on Array using Spread Operator
+
+// Shallow copy with spread operator on array
+
+let usersName = ["Yash", "Rahul", "Trisha", { a: "Ramesh", b: "Turkar" }];
+
+let copyName = [...usersName]; // Shallow copy
+
+copyName[0] = "Yashu";         // Modifies the copied array's first element
+copyName[3]['a'] = "test";     // Modifies the nested object in the copied array
+
+console.log("Original", usersName);
+console.log("Copy", copyName);
+
+
+--Output:
+
+Original [ 'Yash', 'Rahul', 'Trisha', { a: 'test', b: 'Turkar' } ]
+Copy     [ 'Yashu', 'Rahul', 'Trisha', { a: 'test', b: 'Turkar' } ]
+
+--Example: Deep Copy on Array using `JSON.stringify()` and `JSON.parse()`**
+
+
+// Deep Copy on array
+
+let usersName = ["Yash", "Rahul", "Trisha", { a: "Ramesh", b: "Turkar" }];
+
+let copyName = JSON.parse(JSON.stringify(usersName)); // Deep copy
+
+copyName[0] = "Yashu";         // Modifies the copied array's first element
+copyName[3]['a'] = "Gulab";    // Modifies the nested object in the copied array
+
+console.log("Original", usersName);
+console.log("Copy", copyName);
+
+--Output:
+
+Original [ 'Yash', 'Rahul', 'Trisha', { a: 'Ramesh', b: 'Turkar' } ]
+Copy     [ 'Yashu', 'Rahul', 'Trisha', { a: 'Gulab', b: 'Turkar' } ]
+
+--Example: Shallow Copy on Object using Spread Operator
+
+// Shallow copy on object
+
+let userInfo = {
+  name: "Yash",
+  age: "22",
+  city: "Nagpur",
+  otherInfo: [ctc = "12", role = "Full Stack Developer"]
+};
+
+let updatedUserInfo = { ...userInfo }; // Shallow copy
+
+updatedUserInfo.name = "Yashu";         // Modifies the copied object's 'name' property
+updatedUserInfo.otherInfo[0] = "15";    // Modifies the nested array in the copied object
+
+console.log("Original", userInfo);
+console.log("Copy", updatedUserInfo);
+
+
+--Output:
+
+Original { name: 'Yash', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full Stack Developer' ] }
+Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full Stack Developer' ] }
+
+---
+
+--Example: Deep Copy on Object using `JSON.stringify()` and `JSON.parse()`
+
+// Deep Copy on object
+
+let userInfo = {
+  name: "Yash",
+  age: "22",
+  city: "Nagpur",
+  otherInfo: [ctc = "12", role = "Full Stack Developer"]
+};
+
+let updatedUserInfo = JSON.parse(JSON.stringify(userInfo)); // Deep copy
+
+updatedUserInfo.name = "Yashu";          // Modifies the copied object's 'name' property
+updatedUserInfo.otherInfo[0] = "15";     // Modifies the nested array in the copied object
+
+console.log("Original", userInfo);
+console.log("Copy", updatedUserInfo);
+
+
+-- **Output:**
+
+Original { name: 'Yash', age: '22', city: 'Nagpur', otherInfo: [ '12', 'Full Stack Developer' ] }
+Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full Stack Developer' ] }
+
 
 */
