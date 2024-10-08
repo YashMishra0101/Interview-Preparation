@@ -256,7 +256,7 @@ output=22;
 //#8)Primitive Data Types , Non-Primitive(Reference) Data Types and Stack and Heap
 
 // Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
-// Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed)
+// Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed-(Reference-)
 
 // Primitive Data Types are immutable, meaning their values cannot be changed.
 // Any modification results in the creation of a new value.
@@ -2431,5 +2431,19 @@ console.log("Copy", updatedUserInfo);
 Original { name: 'Yash', age: '22', city: 'Nagpur', otherInfo: [ '12', 'Full Stack Developer' ] }
 Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full Stack Developer' ] }
 
+
+*/
+
+
+//#42)What is type inference in TypeScript?**
+/*
+Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
+variable or expression based on its value or context, without needing explicit type annotations. 
+This feature helps keep the code clean and reduces redundancy while still providing type safety. For example, if you write `let num = 5;`, TypeScript infers that `num` is of type `number`. 📊✨
+
+Even with type inference, we mention types explicitly for clarity, better error checking, improved IDE 
+support, and to maintain code readability, especially in larger projects and for the developers.
+
+Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
 
 */

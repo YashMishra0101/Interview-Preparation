@@ -757,13 +757,43 @@ do not work.
 
 ###21)What is TypeScript ?
 
-TypeScript is a **superset of JavaScript** that adds **static typing** to the language. This means that,
-unlike JavaScript, where variables can hold any type of data and their type can change at runtime, 
-in TypeScript, you explicitly define the type of data a variable can hold. 
-
+TypeScript is a statically typed superset of JavaScript that enhances code quality, maintainability, and 
+readability. It ensures type safety during development, which helps prevent runtime errors, especially in 
+large-scale applications.
 
 > Extra Tip:
 When discussing TypeScript, make sure to mention that it’s widely used in larger applications to improve 
 reliability** and make **refactoring** easier. It also **transpiles** into JavaScript, so it can run in 
 any environment where JavaScript runs!
+*/
+
+/*
+
+###21)What is -g ?
+
+-g (Global Installation):
+When you use the -g flag with npm (e.g., npm install -g <package-name>), it means you are installing the 
+package globally on your system. This means the package will be available system and can be used 
+in any project without needing to install it separately in each project folder.
+
+>>Global Installation :
+(-g) installs the package in a global location on your system, making it accessible anywhere in your system.
+
+>>Local Installation (without -g) :
+Installs the package only in the current project’s node_modules folder, and it is available only within that 
+specific project.
+
+*/
+
+//#22)What is type inference in TypeScript?
+/*
+Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
+variable or expression based on its value or context, without needing explicit type annotations. 
+This feature helps keep the code clean and reduces redundancy while still providing type safety. For example, if you write `let num = 5;`, TypeScript infers that `num` is of type `number`. 📊✨
+
+Even with type inference, we mention types explicitly for clarity, better error checking, improved IDE 
+support, and to maintain code readability, especially in larger projects and for the developers.
+
+Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
+
 */
