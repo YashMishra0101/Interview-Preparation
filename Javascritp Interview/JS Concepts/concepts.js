@@ -2434,7 +2434,6 @@ Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full St
 
 */
 
-
 //#42)What is type inference in TypeScript?**
 /*
 Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
