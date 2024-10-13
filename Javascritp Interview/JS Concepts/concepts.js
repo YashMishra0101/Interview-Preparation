@@ -1333,7 +1333,7 @@ stepOne("Yash")("Lemon Tea")("One cup");
 //#27) What is constructor in Javascript ?
 /*
 
-- **Constructor**: In JavaScript, a constructor is a special function used to create and initialize objects.
+- **Constructor**: With the help of construcot we can define the we can define the object and and it's properties.
 - **`new` keyword**: When you use the `new` keyword with a constructor function, it creates a new instance of an object.
 - **`this` keyword**: Inside the constructor, `this` refers to the new object that is being created, allowing you to set properties on that object.
 
@@ -1358,25 +1358,24 @@ In this example:
 - The `this` keyword refers to the `myCar` object inside the `Car` constructor, allowing the properties `make` and `model` to be set.
 
 >Example Two :
-
-function userInfo(name, age, role) {
-    this.name = name;
-    this.age = age;
-    this.role = role;
-}
-
-userInfo.prototype.info = function() {
-    return (`Hello My name is ${this.name} and my age is ${this.age} and I am 
-    ${this.role} Developer`)
-}
-
-let userOne = new userInfo("Yash", "22", "FrontEnd")
-
-let userTwo = new userInfo("Ram", "25", "Full Stack")
-
-console.log(userTwo.info())
-
 */
+function UserData(name, age, role) {
+  this.name = name;
+  this.age = age;
+  this.role = role;
+
+  this.userInfo = function () {
+    return `Hello My name is ${this.name} and my age is ${this.age} and I am 
+    ${this.role} Developer`;
+  };
+}
+
+let userOne = new UserData("Yash", "22", "FrontEnd");
+
+let userTwo = new UserData("Ram", "25", "Full Stack");
+
+console.log(userOne.userInfo());
+console.log(userTwo.userInfo());
 
 //#28)Prototype and Prototype inheritance
 
@@ -2444,5 +2443,100 @@ Even with type inference, we mention types explicitly for clarity, better error 
 support, and to maintain code readability, especially in larger projects and for the developers.
 
 Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
+
+*/
+
+//#43)Naming conventions
+/*
+> 1. Camel Case
+
+- Usage: This convention is commonly used for variable names, function names, and method names.
+
+- Example: userName
+
+  let userName = "Yashu";       // Variable
+  function calculateTotal() {   // Function
+      return total;
+  }
+  
+
+> 2. Pascal Case
+
+- Usage: Often used for class names and constructor functions.
+
+- Example:UserProfile
+
+  class UserProfile {                 // Class
+      constructor(name: string) {
+          this.name = name;
+      }
+  }
+
+
+> 3. Snake Case
+
+- All letters are lowercase, and words are separated by underscores.
+- Usage: This convention is frequently used in variable names in some languages, particularly Python and Ruby.
+
+- Example:user_name
+
+  ```python
+  user_name = "Yashu"       # Variable in Python
+  total_price = 100         # Another example
+  ```
+
+> 4. Kebab Case
+
+- Definition: All letters are lowercase, and words are separated by hyphens.
+- Usage: Commonly used in URLs and CSS class names.
+
+- Example:main-header
+
+  ```css
+  .main-header {             CSS Class 
+      font-size: 24px;
+  }
+  ```
+
+>5. Uppercase Snake Case
+
+- Usage: Typically used for constants.
+
+- Example:MAX_USERS , API_URL
+
+
+  const MAX_USERS = 100;     // Constant
+  const API_URL = "https://api.example.com"; // Another example API_URL
+
+
+> Descriptive Names
+
+- Using full words to describe the purpose of a variable or function rather than 
+abbreviations or short forms.
+
+- Example:
+
+  function calculateAreaOfCircle(radius) { // Descriptive function name
+      return Math.PI * radius * radius;
+  }
+
+
+> Consistency
+
+- Whatever convention you choose, it should be used consistently across your 
+entire codebase.
+- Usage: Helps in understanding and maintaining the code over time.
+- Example: If you start using camel case for your variable names, continue using it for all other variable 
+names in the same file or project.
+
+> Best Practices for Naming Conventions:
+
+- Be Meaningful: Choose names that clearly convey the purpose of the variable or function. Avoid vague 
+  names like `data` or `info`.
+- Keep It Simple: Use simple, clear words that are easy to understand.
+- Avoid Abbreviations: Unless widely accepted (like `url` or `id`), avoid abbreviations that might
+  confuse readers.
+- Use Context: Sometimes, providing context in the name can be very helpful. For example, `userEmail` 
+  instead of just `email` can clarify which email you're referring to.
 
 */
