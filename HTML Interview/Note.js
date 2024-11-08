@@ -1,0 +1,425 @@
+/*
+# 👁️ Most Asked Questions in HTML for Freshers 🧑‍💻
+
+
+# 1) How to apply comment in html ?
+Ans :
+Syntax: <!-- Your comment goes here -->
+Anything inside the `<!--    -->` tags is treated as a comment, meaning it won't be rendered on the webpage.>
+
+
+# 2) What is the different between HTML(Hyper Text Markup language) and HTM5 (HTM5 is the Latest Version of HTML)?
+Ans :
+ 1)
+ HTML: Uses a long and complex doctype declaration. : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+ HTML5: A simplified, shorter doctype declaration. : <!DOCTYPE html>
+ 2)
+ HTML: Does not have dedicated semantic tags, leading to overuse of div tags.
+ HTML5: Introduced semantic elements like <header>, <footer>, <section>, <article>, which improve code
+ readability and SEO.
+ 3)
+ HTML: Requires third-party plugins like Flash for multimedia (audio, video).
+ HTML5: Natively supports multimedia with the <audio> and <video> tags.
+ 4) 
+ HTML: Limited input types (text, password, etc.).
+ HTML5: New input types like date, email, number, range, etc., making form validation easier.
+ HTML5 introduced new input types (like tel, email, date, etc.) that are optimized for mobile devices. 
+ For example, the tel input type brings up the numeric keypad on mobile devices, making it easier for users to enter phone numbers.
+ <input type="tel" placeholder="Enter your phone number">
+ 5)
+ Mobile Optimization in HTML5 
+ HTML was not designed with the increasing use of mobile phones in mind, leading
+ to poor experiences on mobile devices (like having to zoom in to read text).  
+ HTML5 introduced elements and attributes (like <meta> tags) that made it easier to create responsive layouts. 
+Responsive design ensures that websites adapt to different screen sizes and orientations.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> --This 
+
+The `<meta name="viewport" content="width=device-width, initial-scale=1.0">` tag helps in responsive design by:
+
+1. Setting the Width: It makes the page’s width match the device’s screen width, so the site fits properly on any screen size.
+  
+2. Adjusting Zoom Level: The `initial-scale=1.0` part ensures that the page is not zoomed in or out on mobile, making it easier to read without manually resizing.
+
+
+# 3)What is the diffrent between HTML and XHTML ?
+
+XHTML stands for *Extensible Hypertext Markup Language*. It’s a combination of HTML and XML (Extensible Markup Language). 
+It was developed to make HTML more strict and well-structured, like XML. It enforces strict rules, like:
+
+- Tags must always be properly closed (e.g., `<br />` instead of `<br>`)
+- Elements must be written in lowercase
+- Attributes must be enclosed in double quotes (e.g., `type="text"`)
+
+-- Differences Between HTML5 and XHTML:
+
+| Feature                  | **HTML5**                                         | **XHTML**                                         |
+|--------------------------|---------------------------------------------------|---------------------------------------------------|
+| **Syntax Rules**          | More flexible, you can skip closing some tags    | Very strict, all tags must be closed properly     |
+| **Case Sensitivity**      | Tag names are not case-sensitive (`<DIV>` = `<div>`) | Tag names must be in lowercase (`<div>`, not `<DIV>`) |
+| **Error Handling**        | More forgiving, browsers try to fix your errors  | Very strict, browsers won't display pages with errors |
+| **Doctype Declaration**   | Simple and short: `<!DOCTYPE html>`              | Complex and longer: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">` |
+| **Multimedia Support**    | Built-in support for audio, video, and canvas    | No built-in multimedia support, requires plugins like Flash. |
+| **Browser Compatibility** | Designed to be compatible with modern browsers and mobile devices | Limited Browser Support older browsers.     |
+
+XHTML was developed before HTML5. XHTML, short for Extensible Hypertext Markup Language, was introduced in 2000 as an 
+effort to make HTML more strict and compatible with XML.
+
+HTML5 came later, officially introduced in 2014
+
+# 4)What is the role of DOCTYPE in HTML and What if we remove the <!DOCTYPE html> from the HTML ?
+
+The `DOCTYPE` declaration is used to tell the browser which version of HTML you are using in your document. 
+It is important because it helps the browser render the page acc to current version of HTML.
+
+In simpler terms, the `DOCTYPE` acts like a signal to the browser to handle your HTML code in a proper and consistent way.
+
+# Why is it Important ?
+
+1. Standards Mode vs. Quirks Mode: Without a correct `DOCTYPE`, browsers may go into "quirks mode," where they behave like old 
+browsers and render pages incorrectly. With `DOCTYPE`, the browser knows to use "standards mode," ensuring modern web standards are
+followed.
+  
+2. Cross-browser Compatibility: It ensures that your web page is displayed consistently across different browsers by following
+ the same set of rules.
+
+3.HTML5 Simplified: The DOCTYPE declaration for HTML5 is very simple: 
+   ```html
+   <!DOCTYPE html>
+   ```
+   This one line tells the browser you're using HTML5, and it's backward compatible with older HTML versions, so you don’t have to 
+   worry much about browser inconsistencies.
+
+Other version example , just for the knowledge  :  
+
+XHTML 1.0 Strict: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+XHTML 1.0 Transitional:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+HTML 4.01 Frameset:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+HTML5 (Simple & Clean):<!DOCTYPE html>
+
+>What if we remove it ?
+
+If we remove <!DOCTYPE html> from an HTML document, the browser can still render the webpage. However, without the doctype, the browser 
+will switch to quirks mode, where it uses outdated rendering rules from older versions of HTML. This can cause several issues:
+
+--CSS and Modern JavaScript: Older rendering can lead to inconsistent styles and behaviors, especially when using modern CSS and JavaScript features.
+--SEO and Debugging: Some compatibility issues may arise, affecting how search engines interpret the page or how developers debug errors.
+
+
+# 5)What is the Differences between head and body in html and where to place js link reference ?
+=>
+    The<head> element is where you place meta-
+    information (information about the document).
+    For example, <title>, <meta>, <link>, <script>
+    <style> are normally kept under head element.
+
+    The <body> element is where you place the actual
+    content of your HTML web page. For example,
+    <div>, <h1>, <p>, <img>, <a> are normally kept
+    under body element.
+
+1. In the `<head>` section (before the closing `</head>` tag)
+   - This ensures that the script is loaded before the page content is rendered. However, this can delay the display of the page, especially if the script is large or slow to load.
+   - You can use the `defer` attribute to avoid blocking the page rendering:
+     ```html
+     <head>
+       <script src="your-script.js" defer></script>
+     </head>
+     ```
+   - The `defer` attribute ensures that the script is executed after the HTML has been fully parsed.
+
+2. **Before the closing `</body>` tag**
+   - Placing the script here ensures that the HTML is loaded first, so the page content displays before the JavaScript is executed. 
+     This is a common practice to prevent blocking the page rendering.
+     ```html
+     <body>
+       <!-- Your page content -->
+       <script src="your-script.js"></script>
+     </body>
+     ```
+> Where to Place JavaScript in HTML (Industry Practice)
+
+- Place JavaScript Links: Just before the closing `</body>` tag.
+  
+- Reasons:
+  1. Improves Page Load Speed: HTML content loads first, making the page appear faster.
+  2. Enhances User Experience: Content is visible and interactive sooner.
+  3. Prevents Blocking: Avoids "render-blocking" issues caused by JavaScript in the `<head>`.
+
+- Exception: `async`/`defer`
+   - `async`: Loads the script in parallel with HTML but may not wait for the DOM to be fully loaded.
+   - `defer`: Loads the script while HTML is parsed but only executes after the HTML is fully loaded, maintaining the order of scripts.
+
+For most cases, placing JavaScript just before `</body>` remains the preferred industry practice.
+
+# 6)What is title tag and it's important?
+
+=>For adding title 
+  Seo:search engine us the title as the main heading for search results.
+  Bookmarks/Facorite:title tag is used as the defalut name for the bookmark.
+
+# 7)What is meta tag and tell me some name ?
+A meta tag is an HTML element used to provide metadata (information about the webpage) to browsers and search engines. Meta tags 
+are placed inside the <head> section of an HTML document and help control how the webpage is displayed.
+
+    <meta charset="UTF-8">`
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of the webpage.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">`
+
+ 1. `<meta charset="UTF-8">`
+Purpose: Specifies the character encoding for the HTML document. UTF-8 is the most widely used character encoding that supports
+ almost all characters and symbols from different languages.
+
+Use: Ensures that special characters like "é", "ü", "😊" are displayed correctly.
+
+```html
+<meta charset="UTF-8">
+```
+
+ 2. `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+Purpose: Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+3. `<meta name="description" content="A brief description of the webpage.">`
+Purpose: Provides a short description of the webpage. Search engines like Google use this meta tag to display a summary in search results.
+Use: Improves SEO by helping search engines understand what your page is about and can increase click-through rates.
+
+```html
+<meta name="description" content="Learn about HTML meta tags and their usage.">
+```
+
+4. `<meta name="keywords" content="HTML, CSS, JavaScript, Web Development">`
+Purpose: Lists keywords relevant to the content of the page. Search engines can use these keywords to understand the context of the
+page, though it’s less significant in modern SEO.
+Use: Provides a way to target specific search terms for SEO purposes (though modern SEO relies less on this).
+
+```html
+<meta name="keywords" content="HTML, CSS, JavaScript, Web Development">
+```
+# 8)What is tags , content and Element in HTML ?
+
+                  Opening Tag        Closing Tag  
+                     |                   | 
+                     |                   | 
+                     <p>Interview Happy</p>
+                     |  |______________| |           
+                     |      Content      |   
+                     |                   |
+                     |___________________|     
+                          HTML Element 
+  (A combination of an opening tag, closing tag and content is called an HTML element.)                       
+         
+# 9)What is div and span tag and what is span and inline tag ?
+
+Div a block-level element,it is used for grouping elements. It often acts as a container for other HTML elements. 
+Div takes up the full width of its container.
+
+Span is an inline element, meaning it only takes up as much space as needed acc to content.
+
+--IMP
+We can set the height and width of block elements but we can not set height and width of inline element.
+
+However, if you need to set width and height on an inline element, you can change its display property to
+inline-block or block. This allows inline elements to behave like block elements in terms of layout properties.
+
+> 10 Examples of Block Elements
+1. `<div>` - Generic container for block content.
+2. `<p>` - Paragraph tag.
+3. `<header>` - Header section of a page or section.
+4. `<footer>` - Footer section of a page or section.
+5. `<section>` - Defines a section in a document.
+6. `<article>` - Defines self-contained content, like a blog post.
+7. `<nav>` - Container for navigation links.
+8. `<aside>` - Sidebar content, often for related or supplementary information.
+9. `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` - Headings, each with decreasing size.
+10. `<ul>` - Unordered list, typically for bullet points.
+
+> 8 Examples of Inline Elements
+1. `<span>` - Generic inline container for text.
+2. `<a>` - Hyperlink to navigate to other pages or locations.
+3. `<strong>` - Makes text bold for emphasis.
+4. `<em>` - Italicizes text for emphasis.
+5. `<img>` - Embeds an image within the text.
+6. `<label>` - Associates labels with form inputs.
+7. `<input>` - User input element (e.g., text box, radio button).
+8. `<abbr>`(Abbreviation) - An abbreviation is a shortened form of a word or phrase.
+--eg:1.<abbr title="HyperText Markup Language">HTML</abbr>
+--   2.<p>The official standards are maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+
+9. `<code>` - Displays code snippets inline.
+10. `<i>` - Italicizes text (often used for stylistic purposes). 
+
+These distinctions can help you structure your page, improving both styling and accessibility.
+
+# 10)What is anchor tag ?
+
+With the help of the **anchor (`<a>`) tag, we can create hyperlinks using the `href` attribute, which is placed 
+inside the anchor tag to specify the link’s destination. If we want to open the link in a new tab, we can also use 
+the `target attribute with the value `"_blank"`, which is also placed inside the anchor tag.
+
+Example:
+
+<a href="https://www.example.com" target="_blank">Visit Example in New Tab</a>
+
+
+# 11)About em , hr and img tag
+
+- `<em>`(emphasis): Makes text italic to show it’s important.
+
+ -- <p>This is <em>very important</em> information.</p>
+ 
+- hr>`: Adds a horizontal line to separate sections of content.
+--
+  <p>First Section</p>
+  <hr>
+  <p>Second Section</p>
+--
+- `<img>`: with the help if img we can display an image use src attribue and and use alt attribute we can display the image 
+description, which appears if the image fails to load.
+ 
+ -- <img src="image.jpg" alt="A description of the image">
+
+# 12)What is semantic tags ?
+A semantic element clearly describes its meaning to both the browser and the developer. These tags help organize
+ the structure of a webpage, make code easier to read, improve accessibility for screen readers, and play an 
+ important role in SEO also.
+
+ Semantic Tags Examples :
+
+- **`<header>`**: Defines the top section of a webpage, typically where navigation links, logos, or the page title are placed.
+
+- **`<footer>`**: Marks the bottom part of a webpage, usually containing copyright information, links, or contact details.
+
+- **`<article>`**: Wraps around independent content that can stand alone, like blog posts, news stories, or articles. Each `<article>` is a complete piece of content.
+
+- **`<section>`**: Groups related content into sections, like chapters or different topics on a page, helping to organize the layout.
+
+- **`<nav>`**: Contains navigation links for the website, such as menus, so users can easily find and move to different pages.
+
+- **`<aside>`**: Holds side content that’s related but not essential to the main content, like ads, links, or extra info that supports the main text.
+
+- **`<main>`**: Represents the primary content of the page that is unique to that page.It doesn’t include repeated parts like headers, footers, or sidebars.
+
+- **`<address>`**: Used for providing contact information, like an address, phone number, or email, often about the author or site owner.
+
+- **`<details>`**: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
+
+# 13)Headin Tag ?
+There are a total of 6 heading tags, from <h1> to <h6>. <h1> has the largest size, followed by <h2>, which is 
+slightly smaller, and then <h3>, <h4>, <h5>, and finally <h6>, which has the smallest size. These tags are used 
+to define headings on a page, with the main heading usually placed in <h1>. Proper use of heading tags also has 
+an impact on SEO, as search engines give more importance to the content in <h1> for understanding the page’s main 
+topic.
+ 
+# 14)Empty and Self closing tags ?
+
+In HTML5, empty tags and self-closing tags are the same and can simply be written without a closing slash.
+
+<img src="image.jpg" alt="An image">
+<br>
+<hr>
+<meta charset="UTF-8">
+<link> - Links to external resources, like stylesheets : <link rel="stylesheet" href="styles.css">
+<source> - Specifies media resources for <audio> or <video>.
+--
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+</video>
+--
+
+In XML (and XHTML), tags must follow stricter rules, so empty tags need a self-closing format with a slash 
+at the end:
+
+<img src="image.jpg" alt="An image" />
+<br />
+<hr />
+
+So, while they serve the same purpose, XML and XHTML require the closing slash to meet syntax rules,
+while HTML5 does not.
+
+# 15)Absolute and Relative URL.
+--Absolute URL:
+A complete URL that includes the full path, starting with "http://" or "https://",
+Best use case for external links, ensuring that they work from any location or directory on the site.  
+
+--Relative URL:
+A URL that is relative to the current page or directory. It doesn't start with "http://" or "https://";
+Ideal for internal links within the same website, making it easier to move files
+or folders without updating URLs. 
+
+# 16)Base Element .
+
+The `<base>` element specifies the base URL for all relative URLs on a page, usually placed within the 
+`<head>`. When used, it sets a starting point for links and resources, so all relative URLs will build off this base.
+
+- Example:
+
+  <head>
+      <base href="https://www.example.com/folder/">
+  </head>
+
+  - If you add a link like `<a href="page2.html">Page 2</a>`,....it will be 
+  resolved to `https://www.example.com/folder/page2.html`.
+  
+# 17)List in HTML.
+
+1.Ordered List (`<ol>`)*
+   - Displays items in a numbered order.
+   <ol>
+       <li>Step 1</li>
+       <li>Step 2</li>
+       <li>Step 3</li>
+   </ol>
+
+2. Unordered List (`<ul>`)
+   - Displays items with bullets, without specific order.
+
+   <ul>
+       <li>Item 1</li>
+       <li>Item 2</li>
+       <li>Item 3</li>
+   </ul>
+
+3. Description List (`<dl>`)
+   - Pairs terms with their definitions.
+   - `<dl>` stands for Description List
+   - `<dt>` stands for Description Term
+   - `<dd>` stands for Description Definition
+
+   <dl>
+       <dt>HTML</dt>
+       <dd>Hypertext Markup Language</dd>
+       <dt>CSS</dt>
+       <dd>Cascading Style Sheets</dd>
+   </dl>
+
+# 18) The most awaited question: How to center a div 😂 😂? 
+1. Using Flexbox (Recommended for modern browsers)
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div>Centered Content</div>
+</div>
+
+2. Using Grid (Alternative method)
+<div style="display: grid; place-items: center; height: 100vh;">
+    <div>Centered Content</div>
+</div>
+
+3. Using Margin Auto (for horizontal centering)
+<div style="width: 200px; margin: 0 auto;">
+    Centered Content
+</div>
+
+4. Using Absolute Positioning
+<div style="position: relative; height: 100vh;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        Centered Content
+    </div>
+</div>
+
+>>In a real-world scenario, Flexbox or Grid is generally preferred because of their simplicity and flexibility.
+
+*/
