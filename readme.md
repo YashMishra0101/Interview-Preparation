@@ -6,22 +6,20 @@ Welcome to the **Frontend Interview Preparation Repository**! Here, you'll find 
 - 🎨 **CSS**
 - ⚙️ **JavaScript**
 - ⚛️ **React**
-- 🧩 **Machine Coding** (for React-based interviews)
+- 🧩 **Machine Coding** (For React-Based Interviews)
 
-Feel free to contribute, practice, and refer back to this repo to ace your frontend interviews!
-
+Feel free to contribute, practice, and refer back to this repo to ace your frontend interviews.
 
 ## 📝 How to Contribute
 
-Contributions are always welcome! If you want to add new interview questions or improve existing explanations, follow these steps:
+Contributions are always welcome, If you want to add new interview questions or improve existing explanations, follow these steps:
 
 1. Fork this repository.
 2. Create a new branch: `git checkout -b my-new-feature`
 3. Add your changes.
 4. Commit your changes: `git commit -am 'Added new interview questions'`
 5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request. 
-
+6. Submit a pull request.
 
 ## 📚 Resources
 
@@ -35,7 +33,6 @@ For further reading and practice, here are some great resources:
 
 If you find this repository helpful, don't forget to **star** it and **share** it with others ⭐️
 
-
 ## 👤 Author
 
 **Yash Mishra**
@@ -44,6 +41,4 @@ If you find this repository helpful, don't forget to **star** it and **share** i
 - [Twitter (X)](https://x.com/YashRKMishra1)
 - [LinkedIn](https://www.linkedin.com/in/yash-mishra-356280223/)
 
-
 Happy coding, and best of luck with your frontend interview prep 💪.
-
