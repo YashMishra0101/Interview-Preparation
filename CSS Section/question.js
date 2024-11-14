@@ -40,4 +40,18 @@ There are three main ways** to add CSS to HTML:
 - **External CSS**: Best practice for large projects, allows styles to be applied across multiple pages. 
 
 Using **external CSS** is the preferred choice for most cases due to better maintainability and reusability.
+
+# 2)What is CSS preprocessor ?
+A *CSS preprocessor* is a tool that expands standard CSS capabilities, letting developers write code that is 
+more dynamic, organized, and efficient. With preprocessors like **Sass**, **Less**, and **Stylus**, you can 
+use features such as:
+
+- Variables: Store reusable values like colors and fonts.
+- Nesting: Write CSS in a way that visually mirrors the HTML structure.
+- Mathematical Operations: Perform calculations, useful in responsive design.
+- Mixins and Functions: Reuse code blocks for common styles, reducing redundancy.
+
+*Sass* (Syntactically Awesome Style Sheets) is one of the most widely used preprocessors, enabling features 
+like variables, selector nesting, and more complex operations, making it a popular choice for writing 
+organized, maintainable CSS. Preprocessor code compiles into standard CSS, ready for the browser.
 */
