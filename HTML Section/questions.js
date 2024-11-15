@@ -213,7 +213,7 @@ Use: Provides a way to target specific search terms for SEO purposes (though mod
                           HTML Element 
   (A combination of an opening tag, closing tag and content is called an HTML element.)                       
          
-# 9)What is div and span tag and what is span and inline tag ?
+# 9)What is div and span tag and what is block and inline tag ?
 
 Div a block-level element,it is used for grouping elements. It often acts as a container for other HTML elements. 
 Div takes up the full width of its container.
@@ -398,6 +398,7 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
    </dl>
 
 # 18) The most awaited question: How to center a div 😂 😂? 
+
 1. Using Flexbox (Recommended for modern browsers)
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div>Centered Content</div>
