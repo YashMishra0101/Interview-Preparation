@@ -1,21 +1,30 @@
-.wrapper{
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
+*{
     margin: 0;
     padding: 0;
-    background-color: rgb(33, 199, 199);
+    
 }
-
-.parent{
-    height:80%;
-    width: 80%;
-    background-color: brown;
-    margin-top: 50px;
-}
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+ 
+  }
+  
 
 .boxOne{
-    background-color: blue;
-    width: 150px;
-    height:150px;
+    height: 10rem;
+    width: 10rem;
+    background-color: yellow;
+    padding: 1rem;
+    
+
+}
+.boxTwo{
+    height: 10rem;
+    width: 10rem;
+    box-sizing: ;
+    background-color: red;
+    padding: 1rem;
+
 }

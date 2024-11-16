@@ -56,5 +56,14 @@ use features such as:
 like variables, selector nesting, and more complex operations, making it a popular choice for writing 
 organized, maintainable CSS. Preprocessor code compiles into standard CSS, ready for the browser.
 
+# 3)What is border size border box ?
+Yes, exactly! In simple words:
 
+When you use `box-sizing: border-box` in CSS, adding padding or borders **won’t change the actual height and 
+width** of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
+
+Without `box-sizing: border-box` (the default is `content-box`), padding and borders **will increase** 
+the total height and width, making the element larger than what you initially set.  
+
+By default, `box-sizing` is set to `content-box`.
 */
