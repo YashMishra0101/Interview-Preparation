@@ -1,30 +1,32 @@
-*{
-    margin: 0;
-    padding: 0;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.wrapper {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
- 
-  }
-  
 
-.boxOne{
-    height: 10rem;
-    width: 10rem;
-    background-color: yellow;
-    padding: 1rem;
-    
 
+
+ /* Pseudo-element ::before */
+ h1::before {
+    content: "🔥 ";
+    color: red;
 }
-.boxTwo{
-    height: 10rem;
-    width: 10rem;
-    box-sizing: ;
-    background-color: red;
-    padding: 1rem;
 
+/* Pseudo-element ::after */
+h1::after {
+    content: " ✨";
+    color: gold;
 }
+
+/* Pseudo-element ::first-line */
+p::first-line {
+    font-weight: bold;
+    color: green;
+}
+
+/* Pseudo-element ::first-letter */
+p::first-letter {
+    font-size: 2rem;
+    color: blue;
+}
+
