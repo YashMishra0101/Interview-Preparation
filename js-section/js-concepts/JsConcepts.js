@@ -2451,7 +2451,8 @@ Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
 > 1. Camel Case
 
 - Usage: This convention is commonly used for variable names, function names, and method names.
-
+- Camel Case is a naming convention in which the first word starts with a lowercase letter, 
+and all subsequent words start with an uppercase letter.
 - Example: userName
 
   let userName = "Yashu";       // Variable
@@ -2463,7 +2464,8 @@ Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
 > 2. Pascal Case
 
 - Usage: Often used for class names and constructor functions.
-
+- Pascal Case is a naming convention where each word starts with an uppercase letter, including 
+the first word.
 - Example:UserProfile
 
   class UserProfile {                 // Class
@@ -2519,6 +2521,15 @@ abbreviations or short forms.
   function calculateAreaOfCircle(radius) { // Descriptive function name
       return Math.PI * radius * radius;
   }
+
+--In React and TS 
+
+- Kebab Case for Folders: Use `kebab-case` for folder names. It’s simple, readable, and widely 
+used in React and TypeScript projects.  
+  Example: `user-profile`, `api-services`.
+
+- Pascal Case for Files: Use `PascalCase` for file names, especially for React components. 
+  - Example: `UserProfile.tsx`, `Header.tsx`.
 
 
 > Consistency

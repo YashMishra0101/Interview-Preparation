@@ -1,37 +1,80 @@
 # 💻 Frontend Interview Preparation Repository
 
-Welcome to the **Frontend Interview Preparation Repository**! Here, you'll find a curated list of questions and concepts covering various topics essential for **Frontend Development** interviews. This repository includes:
+Welcome to the **Frontend Interview Preparation Repository**.  
+Here, you'll find a curated list of **questions with answers**, **concepts**, and **practice sections** to help you prepare effectively for frontend interviews. Whether you're just starting or brushing up, this repository has something for everyone! 💪
+
+This repository includes:
 
 - 🌐 **HTML**
 - 🎨 **CSS**
 - ⚙️ **JavaScript**
 - ⚛️ **React**
 - 🧩 **Machine Coding** (For React-Based Interviews)
+- 🔷 **TypeScript**
 
-Feel free to contribute, practice, and refer back to this repo to ace your frontend interviews.
+---
+
+## 📂 Folder and File Naming Conventions (Which I Used)
+
+- **Folders**: Use **kebab-case** (e.g., `frontend-basics`, `react-hooks`).
+- **Files**: Use **PascalCase** (e.g., `InterviewQuestions.md`, `PracticeCode.js`).
+
+---
+
+## 🗂️ Repository Structure
+
+Each section contains:
+
+1. **Interview Questions**: A comprehensive list of questions with detailed answers to strengthen your preparation.
+2. **Practice Section**: A dedicated space to practice related concepts and code hands-on.
+   - 📝 _Note_: The pre-existing code reflects my personal practice. Feel free to modify it, break it, and rebuild it—your repo, your rules! 😎
+3. **Concepts**: Proper explanations of important concepts, making even complex topics easier to understand.
+
+⚠️ _Disclaimer_: You may find some grammatical or spelling mistakes. But hey, coding is more important, right? 😜 So, ignore those slip-ups and focus on what truly matters—your code!
+
+---
 
 ## 📝 How to Contribute
 
-Contributions are always welcome, If you want to add new interview questions or improve existing explanations, follow these steps:
+Contributions are always welcome! 🤝  
+If you'd like to add new interview questions, improve explanations, or share practice examples, follow these steps:
 
-1. Fork this repository.
-2. Create a new branch: `git checkout -b my-new-feature`
+1. **Fork this repository.**
+2. Create a new branch:
+   ```bash
+   git checkout -b my-new-feature
+   ```
 3. Add your changes.
-4. Commit your changes: `git commit -am 'Added new interview questions'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request.
+4. Commit your changes:
+   ```bash
+   git commit -am 'Added new interview questions'
+   ```
+5. Push to the branch:
+   ```bash
+   git push origin my-new-feature
+   ```
+6. Submit a **pull request**.
+
+---
 
 ## 📚 Resources
 
-For further reading and practice, here are some great resources:
+For further reading and practice, check out these fantastic resources:
 
 - [MDN Web Docs (HTML, CSS, JS)](https://developer.mozilla.org/)
 - [React Official Documentation](https://reactjs.org/docs/getting-started.html)
 - [Frontend Interview Handbook](https://frontendinterviewhandbook.com/)
 
+---
+
 ## ⭐️ Show Your Support
 
-If you find this repository helpful, don't forget to **star** it and **share** it with others ⭐️
+If you find this repository helpful:
+
+- **Star** ⭐️ the repo.
+- **Share** it with fellow developers!
+
+---
 
 ## 👤 Author
 
@@ -41,4 +84,6 @@ If you find this repository helpful, don't forget to **star** it and **share** i
 - [Twitter (X)](https://x.com/YashRKMishra1)
 - [LinkedIn](https://www.linkedin.com/in/yash-mishra-356280223/)
 
-Happy coding, and best of luck with your frontend interview prep 💪.
+---
+
+Happy coding, and best of luck with your frontend interview prep! 💪💻
