@@ -2,31 +2,69 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
-
-
- /* Pseudo-element ::before */
- h1::before {
-    content: "🔥 ";
-    color: red;
+.wrapper{
+   /* background-color:rgb(255, 2555, 255);
+  background-color:rgb(0, 0, 0);
+  background-color:rgb(255, 0, 0);
+  background-color:rgb(0, 255, 0); */
+  /* background-color:rgb(0, 0, 255 ,0.5); */
+  background-color:#05abcd;
+  background-color:hsl(90, 100%, 50%);
+}
+.pseudo-elements::first-letter{
+ color: rgb(42, 165, 54);
+ font-size: 2rem;
 }
 
-/* Pseudo-element ::after */
-h1::after {
-    content: " ✨";
+.pseudo-elements::selection{
+    background-color: rgb(144, 165, 42);
+    font-size: 2rem;
+}
+   
+.pseudo-elements::before{
+    content:"Before pseudo element se ka uss kr ke write huaa hai";
+    font-size: 1.5rem;
     color: gold;
 }
 
-/* Pseudo-element ::first-line */
-p::first-line {
-    font-weight: bold;
-    color: green;
+.pseudo-elements::after{
+    content:"After pseudo element hu mai";
+    font-size: 1.5rem;
+    color: rgb(255, 115, 0);
 }
 
-/* Pseudo-element ::first-letter */
-p::first-letter {
-    font-size: 2rem;
-    color: blue;
-}
-
+/* For WebKit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height for horizontal scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  /* Hover effect for the scrollbar thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  }
+  
+  /* Active scrollbar styling */
+  ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  }
+  
+  /* For Firefox */
+  html {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #6a11cb #f0f0f0; /* Thumb and track colors */
+  }
+  
