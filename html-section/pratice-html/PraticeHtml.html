@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Section</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grades Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
-
 <body>
-    <!--🤚➡️ This is Random Codes just for the sake of practice -->
 
-    <h1>HTML Section</h1>
-
-    <head>I am head</head>
-    <p>Smiley face: 😊</p>
-    <p>French word: Café</p>
-    Hello My name is yash
-    <!-- Hello Bro This is a comment isse comment bol the hai -->
-    <p>Hey kya bol ti <em>Public</em>
-    <p>
-        <hr>
-        <hr>
-        <img src="dummy.jpg" alt="dummy image">
-    <p></p>
-    <p>The official standards are maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
-    <abbr title="HyperText Markup Language">HTML</abbr>
-    <a href="mailto:yashrkm0505@gmail.com">hello Ji</a>
-    <ol>
-        <li>Step 1</li>
-        <li>Step 2</li>
-        <li>Step 3</li>
-    </ol>
-
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-
-    <dl>
-        <dt>HTML</dt>
-        <dd>Hypertext Markup Language</dd>
-        <dt>CSS</dt>
-        <dd>Cascading Style Sheets</dd>
-    </dl>
+  <h2>Student Grades Table (Class 10 - 2024)</h2>
+  
+  <table>
+    <caption>Class 10 - 2024</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Name</th>
+        <th colspan="2">Subjects</th>
+      </tr>
+      <tr>
+        <th>Math</th>
+        <th>Science</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prany</td>
+        <td>90</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Sujal</td>
+        <td>78</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Rahul</td> <!-- Indian student's name -->
+        <td>85</td>
+        <td>89</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total Students: 3</td>
+      </tr>
+    </tfoot>
+  </table>
 
 </body>
-
 </html>

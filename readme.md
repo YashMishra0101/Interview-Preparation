@@ -1,4 +1,4 @@
-# 💻 Welcome to the **Frontend Interview Preparation Repository**
+# Welcome to the **Frontend Interview Preparation Repository 💻**
  
 Here, you'll find a curated list of **questions with answers**, **concepts**, and **practice sections** to help you prepare effectively for frontend interviews. Whether you're just starting or brushing up, this repository has something for everyone 💪.
 
@@ -24,15 +24,15 @@ Each section contains:
 
 1. **Interview Questions**: A comprehensive list of questions with detailed answers to strengthen your preparation.
 2. **Practice Section**: A dedicated space to practice related concepts and code hands-on.
-   - 📝 _Note_: The pre-existing code reflects my personal practice. Feel free to modify it, break it, and rebuild it—your repo, your rules! 😎
+   - 📝 _Note_: The pre-existing code reflects my personal practice. Feel free to modify it, break it, and rebuild it—your repo, your rules 😎
 3. **Concepts**: Proper explanations of important concepts, making even complex topics easier to understand.
 
-⚠️ _Disclaimer_: You may find some grammatical or spelling mistakes. But hey, coding is more important, right? 😜 So, ignore those slip-ups and focus on what truly matters—your code!
+⚠️ _Disclaimer_: You may find some grammatical or spelling mistakes. But hey, coding is more important, right? 😜 So, ignore those slip-ups and focus on what truly matters—your code.
 
 
 ## 📝 How to Contribute
 
-Contributions are always welcome! 🤝  
+Contributions are always welcome 🤝  
 If you'd like to add new interview questions, improve explanations, or share practice examples, follow these steps:
 
 1. **Fork this repository.**
@@ -66,7 +66,7 @@ For further reading and practice, check out these fantastic resources:
 If you find this repository helpful:
 
 - **Star** ⭐️ the repo.
-- **Share** it with fellow developers!
+- **Share** it with fellow developers.
 
 ## 👤 Author
 

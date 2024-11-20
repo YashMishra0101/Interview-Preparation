@@ -1,6 +1,11 @@
 /*
-# 👁️ Most Asked Questions in HTML for Freshers 🧑‍💻
+# 👁️ Most Asked Questions in HTML for Freshers and Entry-Level Jobs 🧑‍💻  
 
+## Note 🤚  
+
+> I have covered the most frequently asked HTML questions for entry-level and fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the most important topics. This should be sufficient for entry-level roles.  
+
+-- 💻 Total Questions : 19
 
 # 1) How to apply comment in html ?
 Ans :
@@ -15,7 +20,7 @@ Ans :
  HTML5: A simplified, shorter doctype declaration. : <!DOCTYPE html>
  2)
  HTML: Does not have dedicated semantic tags, leading to overuse of div tags.
- HTML5: Introduced semantic elements like <header>, <footer>, <section>, <article>, which improve code
+ HTML5: Introduced semantic elements like <header>, <footer>, <section>, <article>, etc which improve code
  readability and SEO.
  3)
  HTML: Requires third-party plugins like Flash for multimedia (audio, video).
@@ -26,16 +31,30 @@ Ans :
  HTML5 introduced new input types (like tel, email, date, etc.) that are optimized for mobile devices. 
  For example, the tel input type brings up the numeric keypad on mobile devices, making it easier for users to enter phone numbers.
  <input type="tel" placeholder="Enter your phone number">
+
+--List of HTML5 Input Types Introduced in HTML5 (Not Present in Previous Versions):
+
+1. `<input type="email">`
+2. `<input type="url">`
+3. `<input type="tel">`
+4. `<input type="number">`
+5. `<input type="range">`
+6. `<input type="date">`
+7. `<input type="time">`
+8. `<input type="datetime-local">`
+9. `<input type="month">`
+10. `<input type="week">`
+11. `<input type="search">`
+12. `<input type="color">`
+
  5)
  Mobile Optimization in HTML5 
- HTML was not designed with the increasing use of mobile phones in mind, leading
+ Html:HTML was not designed with the increasing use of mobile phones in mind, leading
  to poor experiences on mobile devices (like having to zoom in to read text).  
- HTML5 introduced elements and attributes (like <meta> tags) that made it easier to create responsive layouts. 
+ HTML5:HTML5 introduced elements and attributes (like <meta> tags) that made it easier to create responsive layouts. 
 Responsive design ensures that websites adapt to different screen sizes and orientations.
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> --This 
-
-The `<meta name="viewport" content="width=device-width, initial-scale=1.0">` tag helps in responsive design by:
 
 1. Setting the Width: It makes the page’s width match the device’s screen width, so the site fits properly on any screen size.
   
@@ -47,9 +66,9 @@ The `<meta name="viewport" content="width=device-width, initial-scale=1.0">` tag
 XHTML stands for *Extensible Hypertext Markup Language*. It’s a combination of HTML and XML (Extensible Markup Language). 
 It was developed to make HTML more strict and well-structured, like XML. It enforces strict rules, like:
 
-- Tags must always be properly closed (e.g., `<br />` instead of `<br>`)
-- Elements must be written in lowercase
-- Attributes must be enclosed in double quotes (e.g., `type="text"`)
+- Tags must always be properly closed (e.g., `<br />` instead of `<br>`).
+- Elements must be written in lowercase.
+- Attributes must be enclosed in double quotes (e.g., `type="text"`).
 
 -- Differences Between HTML5 and XHTML:
 
@@ -63,34 +82,24 @@ It was developed to make HTML more strict and well-structured, like XML. It enfo
 | **Browser Compatibility** | Designed to be compatible with modern browsers and mobile devices | Limited Browser Support older browsers.     |
 
 XHTML was developed before HTML5. XHTML, short for Extensible Hypertext Markup Language, was introduced in 2000 as an 
-effort to make HTML more strict and compatible with XML.
-
-HTML5 came later, officially introduced in 2014
+effort to make HTML more strict and compatible with XML and HTML5 came later, officially introduced in 2014.
 
 # 4)What is the role of DOCTYPE in HTML and What if we remove the <!DOCTYPE html> from the HTML ?
 
 The `DOCTYPE` declaration is used to tell the browser which version of HTML you are using in your document. 
 It is important because it helps the browser render the page acc to current version of HTML.
 
-In simpler terms, the `DOCTYPE` acts like a signal to the browser to handle your HTML code in a proper and consistent way.
+In simpler terms, the `DOCTYPE` acts like a signal to the browser to handle your HTML code in a proper 
+and consistent way.
 
-# Why is it Important ?
-
-1. Standards Mode vs. Quirks Mode: Without a correct `DOCTYPE`, browsers may go into "quirks mode," where they behave like old 
-browsers and render pages incorrectly. With `DOCTYPE`, the browser knows to use "standards mode," ensuring modern web standards are
-followed.
-  
-2. Cross-browser Compatibility: It ensures that your web page is displayed consistently across different browsers by following
- the same set of rules.
-
-3.HTML5 Simplified: The DOCTYPE declaration for HTML5 is very simple: 
+HTML5 Simplified: The DOCTYPE declaration for HTML5 is very simple: 
    ```html
    <!DOCTYPE html>
    ```
    This one line tells the browser you're using HTML5, and it's backward compatible with older HTML versions, so you don’t have to 
    worry much about browser inconsistencies.
 
-Other version example , just for the knowledge  :  
+--Other version example , just for the knowledge  :  
 
 XHTML 1.0 Strict: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 XHTML 1.0 Transitional:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -100,16 +109,15 @@ HTML5 (Simple & Clean):<!DOCTYPE html>
 >What if we remove it ?
 
 If we remove <!DOCTYPE html> from an HTML document, the browser can still render the webpage. However, without the doctype, the browser 
-will switch to quirks mode, where it uses outdated rendering rules from older versions of HTML. This can cause several issues:
+will switch to "Quirks mode", where it uses outdated rendering rules from older versions of HTML. This can cause several issues:
 
---CSS and Modern JavaScript: Older rendering can lead to inconsistent styles and behaviors, especially when using modern CSS and JavaScript features.
---SEO and Debugging: Some compatibility issues may arise, affecting how search engines interpret the page or how developers debug errors.
+1. CSS and JavaScript may not work properly: Modern CSS and JavaScript features might behave unexpectedly or fail to work.   
+2. SEO-related issues: Search engines may not interpret the page correctly, leading to poor rankings.   
+3. Cross-browser compatibility issues: The page may render differently across browsers, causing inconsistencies.   
 
-
-# 5)What is the Differences between head and body in html and where to place js link reference ?
+# 5)What is the Differences between head and body in html and where to place JS link reference ?
 =>
-    The<head> element is where you place meta-
-    information (information about the document).
+    The<head> element is where you place meta-information (information about the document) are present.
     For example, <title>, <meta>, <link>, <script>
     <style> are normally kept under head element.
 
@@ -118,25 +126,26 @@ will switch to quirks mode, where it uses outdated rendering rules from older ve
     <div>, <h1>, <p>, <img>, <a> are normally kept
     under body element.
 
+>Two way to add JS Link 
+
 1. In the `<head>` section (before the closing `</head>` tag)
    - This ensures that the script is loaded before the page content is rendered. However, this can delay the display of the page, especially if the script is large or slow to load.
    - You can use the `defer` attribute to avoid blocking the page rendering:
-     ```html
-     <head>
-       <script src="your-script.js" defer></script>
-     </head>
-     ```
+
+    <head>
+      <script src="your-script.js" defer></script>
+    </head>
+     
    - The `defer` attribute ensures that the script is executed after the HTML has been fully parsed.
 
-2. **Before the closing `</body>` tag**
+2. Before the closing `</body>` tag
    - Placing the script here ensures that the HTML is loaded first, so the page content displays before the JavaScript is executed. 
      This is a common practice to prevent blocking the page rendering.
-     ```html
      <body>
        <!-- Your page content -->
        <script src="your-script.js"></script>
      </body>
-     ```
+     
 > Where to Place JavaScript in HTML (Industry Practice)
 
 - Place JavaScript Links: Just before the closing `</body>` tag.
@@ -156,7 +165,7 @@ For most cases, placing JavaScript just before `</body>` remains the preferred i
 
 =>For adding title 
   Seo:search engine us the title as the main heading for search results.
-  Bookmarks/Facorite:title tag is used as the defalut name for the bookmark.
+  Bookmarks/Favorites: When a user bookmarks or adds a webpage to favorites, the <title> tag is used as the default name.
 
 # 7)What is meta tag and tell me some name ?
 A meta tag is an HTML element used to provide metadata (information about the webpage) to browsers and search engines. Meta tags 
@@ -167,45 +176,31 @@ are placed inside the <head> section of an HTML document and help control how th
     <meta name="description" content="A brief description of the webpage.">
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">`
 
- 1. `<meta charset="UTF-8">`
+1. `<meta charset="UTF-8">`
 Purpose: Specifies the character encoding for the HTML document. UTF-8 is the most widely used character encoding that supports
- almost all characters and symbols from different languages.
+almost all characters and symbols from different languages.
 
 Use: Ensures that special characters like "é", "ü", "😊" are displayed correctly.
 
-```html
-<meta charset="UTF-8">
-```
-
- 2. `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+2. `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 Purpose: Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
 
 3. `<meta name="description" content="A brief description of the webpage.">`
 Purpose: Provides a short description of the webpage. Search engines like Google use this meta tag to display a summary in search results.
 Use: Improves SEO by helping search engines understand what your page is about and can increase click-through rates.
-
-```html
-<meta name="description" content="Learn about HTML meta tags and their usage.">
-```
 
 4. `<meta name="keywords" content="HTML, CSS, JavaScript, Web Development">`
 Purpose: Lists keywords relevant to the content of the page. Search engines can use these keywords to understand the context of the
 page, though it’s less significant in modern SEO.
 Use: Provides a way to target specific search terms for SEO purposes (though modern SEO relies less on this).
 
-```html
-<meta name="keywords" content="HTML, CSS, JavaScript, Web Development">
-```
+
 # 8)What is tags , content and Element in HTML ?
 
                   Opening Tag        Closing Tag  
                      |                   | 
                      |                   | 
-                     <p>Interview Happy</p>
+                     <p> Interview Happy </p>
                      |  |______________| |           
                      |      Content      |   
                      |                   |
@@ -226,7 +221,8 @@ We can set the height and width of block elements but we can not set height and 
 However, if you need to set width and height on an inline element, you can change its display property to
 inline-block or block. This allows inline elements to behave like block elements in terms of layout properties.
 
-> 10 Examples of Block Elements
+> Examples of Block Elements
+
 1. `<div>` - Generic container for block content.
 2. `<p>` - Paragraph tag.
 3. `<header>` - Header section of a page or section.
@@ -238,7 +234,8 @@ inline-block or block. This allows inline elements to behave like block elements
 9. `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` - Headings, each with decreasing size.
 10. `<ul>` - Unordered list, typically for bullet points.
 
-> 8 Examples of Inline Elements
+> Examples of Inline Elements
+
 1. `<span>` - Generic inline container for text.
 2. `<a>` - Hyperlink to navigate to other pages or locations.
 3. `<strong>` - Makes text bold for emphasis.
@@ -247,13 +244,10 @@ inline-block or block. This allows inline elements to behave like block elements
 6. `<label>` - Associates labels with form inputs.
 7. `<input>` - User input element (e.g., text box, radio button).
 8. `<abbr>`(Abbreviation) - An abbreviation is a shortened form of a word or phrase.
---eg:1.<abbr title="HyperText Markup Language">HTML</abbr>
---   2.<p>The official standards are maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
-
+--  eg:1.<abbr title="HyperText Markup Language">HTML</abbr>
+--     2.<p>The official standards are maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
 9. `<code>` - Displays code snippets inline.
 10. `<i>` - Italicizes text (often used for stylistic purposes). 
-
-These distinctions can help you structure your page, improving both styling and accessibility.
 
 # 10)What is anchor tag ?
 
@@ -309,6 +303,7 @@ A semantic element clearly describes its meaning to both the browser and the dev
 - **`<details>`**: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
 
 # 13)Headin Tag ?
+
 There are a total of 6 heading tags, from <h1> to <h6>. <h1> has the largest size, followed by <h2>, which is 
 slightly smaller, and then <h3>, <h4>, <h5>, and finally <h6>, which has the smallest size. These tags are used 
 to define headings on a page, with the main heading usually placed in <h1>. Proper use of heading tags also has 
@@ -365,7 +360,7 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
   - If you add a link like `<a href="page2.html">Page 2</a>`,....it will be 
   resolved to `https://www.example.com/folder/page2.html`.
   
-# 17)List in HTML.
+# 17)Lists in HTML.
 
 1.Ordered List (`<ol>`)*
    - Displays items in a numbered order.
@@ -397,7 +392,94 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
        <dd>Cascading Style Sheets</dd>
    </dl>
 
-# 18) The most awaited question: How to center a div 😂 😂? 
+# 18) About Table
+
+>Crisp Notes on Table (How to create table)
+
+1. `<table>`: - Defines a table structure.
+
+2. `<thead>`, `<tbody>`, `<tfoot>`:  - Groups the header, body, and footer content in the table.
+
+3. `<caption>`: - Adds a title to the table.
+
+3. `<tr>`: - Defines a row in the table.
+
+4. `<th>`: - Defines a header cell (bold and centered).
+
+4. `<td>`: - Defines a regular data cell.
+
+5. `rowspan`: - Allows a cell to span across multiple rows.
+
+6. `colspan`: - Allows a cell to span across multiple columns.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grades Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Grades Table (Class 10 - 2024)</h2>
+  
+  <table>
+    <caption>Class 10 - 2024</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Name</th>
+        <th colspan="2">Subjects</th>
+      </tr>
+      <tr>
+        <th>Math</th>
+        <th>Science</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prany</td>
+        <td>90</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Sujal</td>
+        <td>78</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Rahul</td> <!-- Indian student's name -->
+        <td>85</td>
+        <td>89</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total Students: 3</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
+
+# 19) The most awaited question: How to center a div 😂 😂 ? 
 
 1. Using Flexbox (Recommended for modern browsers)
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
