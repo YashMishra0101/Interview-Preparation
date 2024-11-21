@@ -5,7 +5,7 @@
 
 > I have covered the most frequently asked HTML questions for entry-level and fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the most important topics. This should be sufficient for entry-level roles.  
 
--- 💻 Total Questions : 19
+-- 💻 Total Questions : 18
 
 # 1) How to apply comment in html ?
 Ans :
@@ -69,6 +69,7 @@ It was developed to make HTML more strict and well-structured, like XML. It enfo
 - Tags must always be properly closed (e.g., `<br />` instead of `<br>`).
 - Elements must be written in lowercase.
 - Attributes must be enclosed in double quotes (e.g., `type="text"`).
+- Built-in support for audio, video in html5, No built-in multimedia support in xhtml, requires plugins like Flash
 
 -- Differences Between HTML5 and XHTML:
 
@@ -478,31 +479,5 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
 
 </body>
 </html>
-
-# 19) The most awaited question: How to center a div 😂 😂 ? 
-
-1. Using Flexbox (Recommended for modern browsers)
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div>Centered Content</div>
-</div>
-
-2. Using Grid (Alternative method)
-<div style="display: grid; place-items: center; height: 100vh;">
-    <div>Centered Content</div>
-</div>
-
-3. Using Margin Auto (for horizontal centering)
-<div style="width: 200px; margin: 0 auto;">
-    Centered Content
-</div>
-
-4. Using Absolute Positioning
-<div style="position: relative; height: 100vh;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        Centered Content
-    </div>
-</div>
-
->>In a real-world scenario, Flexbox or Grid is generally preferred because of their simplicity and flexibility.
 
 */

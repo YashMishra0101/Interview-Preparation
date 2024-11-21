@@ -318,5 +318,49 @@ Reusability: Change a value in one place, and it updates everywhere.
 Maintainability: Your CSS is easier to read and modify.
 Theming: Easily implement themes by switching variable values.
 
-# 10) 
+# 10) Tell me which is the better approach in developemt and Why ?
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,*::before,::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+Ans :  You should use the **second approach** because:  
+
+1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
+2. Pseudo-elements sometimes have default styles in browsers that can cause unexpected layout issues. The second approach resets those styles too.  
+3. It’s the **standard practice** used by industry experts and frameworks, making your code more professional and future-proof.  
+
+In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
+
+# 18) The most awaited question: How to center a div 😂 😂 ? 
+
+1. Using Flexbox (Recommended for modern browsers)
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div>Centered Content</div>
+</div>
+
+2. Using Grid (Alternative method)
+<div style="display: grid; place-items: center; height: 100vh;">
+    <div>Centered Content</div>
+</div>
+
+3. Using Margin Auto (for horizontal centering)
+<div style="width: 200px; margin: 0 auto;">
+    Centered Content
+</div>
+
+4. Using Absolute Positioning
+<div style="position: relative; height: 100vh;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        Centered Content
+    </div>
+</div>
+
+>>In a real-world scenario, Flexbox or Grid is generally preferred because of their simplicity and flexibility.
 */
