@@ -1,29 +1,31 @@
-*{
+*,
+*::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-*,*::before,::after{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.wrapper{
-  width: 100%;
-  height: 100vh;
-  background-color: yellow;
-}
-
-body{
+body {
   background-color: red;
 }
 
-.boxOne{
-  width: 150px;
-  height: 130px;
-  border: 2px solid rgb(128, 55, 0);
-  padding:30px;
-  /* margin: 50px; */
+.wrapper {
+  width: 100%;
+  height: 100rem;
+  background-color: yellow;
+}
+
+.parentBox {
+  background-color: blanchedalmond;
+  width: 30rem;
+  height: 25rem;
+}
+
+.boxOne {
+  width: 8rem;
+  height: 8rem;
+  background-color: rgb(42, 116, 165);
+  position: relative;
+  ri: 0;
 }
