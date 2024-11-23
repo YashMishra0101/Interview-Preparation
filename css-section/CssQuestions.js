@@ -445,6 +445,9 @@ Ans :  You should use the **second approach** because:
 
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
+# 12)About flex box ?
+
+
 # 18) The most awaited question: How to center a div 😂 😂 ? 
 
 1. Using Flexbox (Recommended for modern browsers)
