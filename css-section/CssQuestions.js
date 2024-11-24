@@ -419,6 +419,7 @@ h1 {
    color: var(--main-color);
    font-size: var(--font-size);
 }
+   
 Why Use CSS Variables?
 
 Reusability: Change a value in one place, and it updates everywhere.
@@ -437,6 +438,7 @@ Theming: Easily implement themes by switching variable values.
   padding: 0;
   box-sizing: border-box;
 }
+
 Ans :  You should use the **second approach** because:  
 
 1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
@@ -446,6 +448,8 @@ Ans :  You should use the **second approach** because:
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
 # 12)About flex box ?
+
+Properties :
 
 
 # 18) The most awaited question: How to center a div 😂 😂 ? 
