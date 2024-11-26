@@ -1,9 +1,15 @@
 /*
 # 👁️ Most Asked Questions in CSS for Freshers 🧑‍💻
 
-# Note 🤚
- >For CSS, you need to practice regularly, just reading and understanding the concepts is not sufficient.So, please make sure to practice properly.
- >CSS is really vast, so we cover the most frequently asked CSS-related questions for entry-level and fresher job interviews.
+
+# Note (Very important)🤚  
+
+> This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
+> Unlike other repositories, this one is not designed to include each and everything in terms of interview preparation but instead focuses on what is truly important in interviews.  
+> This is for interview preparation purposes, not for learning CSS from scratch. Make sure you first learn CSS.  
+> For CSS, regular practice is essential—just reading and understanding concepts is not enough. So, ensure you Practice properly.  
+  
+
 
 # 1) How To add css in hmtl ?
 
@@ -448,8 +454,46 @@ Ans :  You should use the **second approach** because:
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
 # 12)About flex box ?
+--Quick Revision About flex box.
 
-Properties :
+In simple language, flexbox helps you design layouts and arrange items within a container according to our
+needs and it also helps us to creating reponsive design.
+
+> justify-content: justify-content helps aligns flex items along the x axis (Horizontally/row by default) or y axis vertical if `flex-direction` is column.
+> align-items: align-items helps aligns flex items along the y-axis (vertical/colum by default) or x-axis horizontal if flex-direction is set to row.
+> space-between: The space is only between the items no space on the edges (left and right).
+> space-around: Equal space around items, but on edges (left and right) spaces are smaller.  
+> space-evenly: Equal space everywhere —between items and at the edges.  
+> basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
+> align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
+
+1. `flex-direction:`  
+   - `row`, `row-reverse`, `column`, `column-reverse`.
+
+2. `justify-content:`  
+   - `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `space-evenly`.
+
+3. `align-items:`  
+   - `flex-start`, `flex-end`, `center`, `stretch`(this is default), `baseline`.
+
+4. `align-content:`  
+   - `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch (this is default)`.
+
+5. `align-self (for child):`  
+   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
+
+6. `gap` / `row-gap` / `column-gap:`  
+   - examples: `10px`, `1rem`, `5%`.
+
+7. `order:`  
+   - Numeric values to define item order. Default: `0`.  
+   - We can change the order of the items.
+
+8. `flex-grow:`  
+   - Specifies how much space an item should take relative to others. Default is `0`.
+
+9. `flex-shrink:`  
+   - Specifies how much an item should shrink when space is limited. Default is `1`. 
 
 
 # 18) The most awaited question: How to center a div 😂 😂 ? 
