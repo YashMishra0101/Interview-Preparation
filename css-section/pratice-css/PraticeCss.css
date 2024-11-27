@@ -6,26 +6,23 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: red;
+.container{
+width: vw; /* Adjusts with viewport */ 
+height: 30rem;
+border: 2px solid green;
+margin: 3rem 0rem 0rem 0rem;
+background-color: rebeccapurple;
+display: flex;
+gap: 1rem;
 }
 
-.wrapper {
-  width: 100%;
-  height: 100rem;
-  background-color: yellow;
+.box{
+  flex-basis: 5rem;
+  height: 5rem;
+  border: 2px solid yellow;
 }
 
-.parentBox {
-  background-color: blanchedalmond;
-  width: 30rem;
-  height: 25rem;
-}
-
-.boxOne {
-  width: 8rem;
-  height: 8rem;
-  background-color: rgb(42, 116, 165);
-  position: relative;
-  ri: 0;
+.box:nth-child(3){
+  flex-basis: 10rem;
+  width: 10rem;
 }

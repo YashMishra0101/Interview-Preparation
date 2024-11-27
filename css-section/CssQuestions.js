@@ -453,7 +453,29 @@ Ans :  You should use the **second approach** because:
 
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
-# 12)About flex box ?
+# 12) Image (img) is a inline element so why we can able to set widht and height of <img> tag ?
+
+The `<img>` tag is an **inline element**, but since it contains **external content (the image)**, 
+the browser allows us to set its `height` and `width`. This is because the `<img>` tag is specifically 
+designed to handle images, making it a **special inline element** that supports dimensions for proper display.
+
+# 13) Float and Clear 
+--Before flex box and grid we was using Float and Clear 
+Float:
+The float property is used to position elements to the left or right within their container, allowing text or 
+other elements to wrap around them.
+
+Clear:
+The clear property is used to stop elements from wrapping around floated elements. It ensures the element starts
+below the floated elements.
+
+Clear in simple language:
+When you use float on an element (like an image), other elements (like text) can move around it. The clear 
+property tells the browser:
+"Stop wrapping content around the floated element and start below it."
+
+# 14)About flex box.
+
 --Quick Revision About flex box.
 
 In simple language, flexbox helps you design layouts and arrange items within a container according to our
@@ -466,6 +488,13 @@ needs and it also helps us to creating reponsive design.
 > space-evenly: Equal space everywhere —between items and at the edges.  
 > basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
 > align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
+> align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
+   --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
+>Note 🤚: 
+If flex-wrap is not set to wrap (or is set to its default value, nowrap), the align-content property will not work, 
+even if the container has more than one line of content.
+This is because align-content only applies when the flex container allows items to wrap into multiple rows or 
+columns.
 
 1. `flex-direction:`  
    - `row`, `row-reverse`, `column`, `column-reverse`.
@@ -479,21 +508,23 @@ needs and it also helps us to creating reponsive design.
 4. `align-content:`  
    - `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch (this is default)`.
 
-5. `align-self (for child):`  
-   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
-
-6. `gap` / `row-gap` / `column-gap:`  
+5. `gap` / `row-gap` / `column-gap:`  
    - examples: `10px`, `1rem`, `5%`.
 
-7. `order:`  
+6. `align-self (for child):`  
+   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
+
+7. `order (for child):`  
    - Numeric values to define item order. Default: `0`.  
    - We can change the order of the items.
 
-8. `flex-grow:`  
+8. `flex-grow (for child):`  
    - Specifies how much space an item should take relative to others. Default is `0`.
 
-9. `flex-shrink:`  
+9. `flex-shrink (for child):`  
    - Specifies how much an item should shrink when space is limited. Default is `1`. 
+
+# 14)About Grid.
 
 
 # 18) The most awaited question: How to center a div 😂 😂 ? 
