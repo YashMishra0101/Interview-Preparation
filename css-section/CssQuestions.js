@@ -524,6 +524,18 @@ columns.
 9. `flex-shrink (for child):`  
    - Specifies how much an item should shrink when space is limited. Default is `1`. 
 
+10. flex-basic ( for child );
+   - we can set the width of flex item width 
+ >Note (V.V IMP)
+ =>Yes, Yashu! You've got it right! 😄
+
+- If you use `width`**: It will **set a fixed width** for the item, and **`flex-grow`** or **`flex-shrink`**
+won’t affect it. The item will stay at that width.
+
+- **If you use `flex-basis`**: It will set the **initial size** for the item, and **`flex-grow`** and 
+`flex-shrink`** will work based on that starting size. The item can grow or shrink depending on
+ available space in the container.
+
 # 14)About Grid.
 
 
