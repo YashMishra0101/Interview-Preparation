@@ -537,6 +537,12 @@ won’t affect it. The item will stay at that width.
 
 # 14)About Grid.
 
+VIDEO_LINK : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  ( 🤚 First Watch this Video )
+
+--About Parent :
+
+grid-template-rows : 1rem 1rem 1rem   or  1fr 1fr 1fr  or  repeat(3, 1fr) or repeat (3,minmax(2rem,1fr)) or  repeat(auto-fit,minmax(2rem,1fr))
+grid-template-rows : 1rem 1rem 1rem   or  1fr 1fr 1fr  or  repeat(3, 1fr) or repeat (3,minmax(2rem,1fr)) or  repeat(auto-fit,minmax(2rem,1fr))
 
 # 18) The most awaited question: How to center a div 😂 😂 ? 
 

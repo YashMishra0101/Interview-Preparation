@@ -2450,7 +2450,7 @@ Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
 /*
 > 1. Camel Case
 
-- Usage: This convention is commonly used for variable names, function names, and method names.
+- Usage: This convention is commonly used for variable names, function names and method names.
 - Camel Case is a naming convention in which the first word starts with a lowercase letter, 
 and all subsequent words start with an uppercase letter.
 - Example: userName
