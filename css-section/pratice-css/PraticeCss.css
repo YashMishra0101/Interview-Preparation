@@ -6,23 +6,23 @@
   box-sizing: border-box;
 }
 
-.container{
-width: vw; /* Adjusts with viewport */ 
-height: 30rem;
-border: 2px solid green;
-margin: 3rem 0rem 0rem 0rem;
-background-color: rebeccapurple;
+.wrapper{
+max-width:100vw; 
+min-height:100vh;
+border: 5px solid green;
 display: flex;
-gap: 1rem;
+justify-content: center;
+align-items: center;
 }
 
-.box{
-  flex-basis: 5rem;
-  height: 5rem;
-  border: 2px solid yellow;
+button{
+  border:3px solid green;
+  width: 80px;
+  height: 80px;
+  font-size: 3rem;
+  padding:5rem;
+
 }
 
-.box:nth-child(3){
-  flex-basis: 10rem;
-  width: 10rem;
-}
+`
+

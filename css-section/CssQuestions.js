@@ -372,16 +372,16 @@ Note 🤚: Just read it for knowledge purposes and watch a quick video on YouTub
 CSS combinators define the relationship between elements in HTML to style them based on their connection. 
 There are four main types:
 
-1. **Descendant (`space`)**: Targets all elements inside another element.  
+1.*Descendant (`space`): Targets all elements inside another element.  
    Example: `div p` (styles all `<p>` inside a `<div>`).
 
-2. **Child (`>`)**: Targets only direct children.  
+2. Child (`>`): Targets only direct children.  
    Example: `div > p` (styles only direct `<p>` children of a `<div>`).
 
-3. **Adjacent Sibling (`+`)**: Targets the next immediate sibling.  
+3. Adjacent Sibling (`+`): Targets the next immediate sibling.  
    Example: `h1 + p` (styles the first `<p>` right after an `<h1>`).
 
-4. **General Sibling (`~`)**: Targets all siblings after a specific element.  
+4. General Sibling (`~`): Targets all siblings after a specific element.  
    Example: `h1 ~ p` (styles all `<p>` after an `<h1>`).
 
 
@@ -460,7 +460,9 @@ the browser allows us to set its `height` and `width`. This is because the `<img
 designed to handle images, making it a **special inline element** that supports dimensions for proper display.
 
 # 13) Float and Clear 
+
 --Before flex box and grid we was using Float and Clear 
+
 Float:
 The float property is used to position elements to the left or right within their container, allowing text or 
 other elements to wrap around them.
@@ -476,7 +478,9 @@ property tells the browser:
 
 # 14)About flex box.
 
---Quick Revision About flex box.
+---Flex Box Video Link : https://youtu.be/phWxA89Dy94?si=Q79vSketdYYc4TKy  [🤚 Watch this video first  ]
+
+--Quick Revision About flex box
 
 In simple language, flexbox helps you design layouts and arrange items within a container according to our
 needs and it also helps us to creating reponsive design.
@@ -490,7 +494,9 @@ needs and it also helps us to creating reponsive design.
 > align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
 > align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
    --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
+
 >Note 🤚: 
+
 If flex-wrap is not set to wrap (or is set to its default value, nowrap), the align-content property will not work, 
 even if the container has more than one line of content.
 This is because align-content only applies when the flex container allows items to wrap into multiple rows or 
@@ -526,7 +532,9 @@ columns.
 
 10. flex-basic ( for child );
    - we can set the width of flex item width 
+
  >Note (V.V IMP)
+
  =>
 - If you use `width`: It will **set a fixed width** for the item, and `flex-grow` or `flex-shrink`
 won’t affect it. The item will stay at that width.
@@ -535,14 +543,137 @@ won’t affect it. The item will stay at that width.
 `flex-shrink` will work based on that starting size. The item can grow or shrink depending on
  available space in the container.
 
-# 14)About Grid.
 
-VIDEO_LINK : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  ( 🤚 First Watch this Video )
+# 14) About Grid
 
---About Parent :
+---Grid Video Link : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
 
-grid-template-rows : 1rem 1rem 1rem   or  1fr 1fr 1fr  or  repeat(3, 1fr) or repeat (3,minmax(2rem,1fr)) or  repeat(auto-fit,minmax(2rem,1fr))
-grid-template-rows : 1rem 1rem 1rem   or  1fr 1fr 1fr  or  repeat(3, 1fr) or repeat (3,minmax(2rem,1fr)) or  repeat(auto-fit,minmax(2rem,1fr))
+
+>> Parent (Grid Container) Properties :
+
+--1. For Creating Grid
+
+- grid-template-rows:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
+- grid-template-colums:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
+
+
+---2. For Creating Gaps
+
+- gap:  `gap: 1rem; (Applies to both rows and columns)  
+- row-gap: 1rem;
+- column-gap:  1rem;
+- gap: 1rem 2rem;  (rows,columns)
+
+
+---3. For Handling Whole Grid Positioning (Aligning the entire grid within its container)  
+
+- `justify-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`  
+- `align-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`
+
+
+---4. For Handling Items from the Parent (Aligning grid items as a group)
+
+- `justify-items`:  - `start`, `end`, `center`, `stretch`  
+
+- `align-items`:  - `start`, `end`, `center`, `stretch`
+
+
+--5. For Defining Named Areas (Optional)
+
+- `grid-template-areas`:  
+  'header header'  
+  'main main'  
+  'footer footer';
+ 
+  - This property is used to assign names to specific sections of the grid, which can be referred to by grid items.
+
+
+>>Child (Grid Item) Properties
+
+---1. For Row and Column Spanning
+
+- grid-row: 1 / 2 or span 2 (Defines the start and end of the row or how many rows to span)  
+
+- grid-column: 1 / 2 or span 2 (Defines the start and end of the column or how many columns to span)
+
+- grid-area: row-start / col-start / row-end / col-end  ( Shorthand for Grid Positioning  )
+
+---3. For Aligning Individual Grid Items
+- justify-self: `start`, `end`, `center`, `stretch` (Aligns the grid item horizontally within its cell)  
+
+- align-self: `start`, `end`, `center`, `stretch` (Aligns the grid item vertically within its cell)
+
+--Key Notes
+
+- Difference Between Grid and Flexbox:  
+  - Flexbox is for 1-dimensional layouts (either row or column).  
+  - Grid is for 2-dimensional layouts (rows and columns).  
+  - Flexbox is item-based, while Grid is container-based.  
+- Parent Properties like `justify-content` and `align-content` handle the entire grid.  
+- Child Properties like `justify-self` and `align-self` handle individual items.
+
+# 15)About CSS untis 
+
+---CSS units Video Link : https://youtu.be/fzZTvLmmTzM?si=ez-WddNN-JNDefco  [🤚 Watch this video first  ]
+
+
+>>>There are a total of 30+ CSS units, but we use 99% of the time: em, rem, %, vw, vh, ch, and px.
+
+--1. px (Pixels)
+- Key point: Doesn’t scale with screen size or parent elements,not recommended at all.
+- px (pixels) is considered an absolute unit in CSS because it represents a fixed value,it does not change based on parent elements or the root font size.
+- 1 px = one dot on the screen.  
+
+--2. em  
+- Relative to the "font size" of its nearest parent element.   
+- Usage: For scalable designs, padding, margins, etc.  
+
+--3. rem (Root em) 
+- Relative to the root font size (html root element). Most modern browsers typically 
+  have a default root font size of 16px.
+- Usage: most commonly used For scalable designs and sizing.
+
+--4. vw (Viewport Width)
+- It's relative to directly to main screen (Viewport Width). 
+- `1vw` = 1% of the screen’s width.  
+- Usage: For responsive designs like full-width banners or layouts.  
+
+--5. vh (Viewport Height) 
+- It's relative to directly to main screen (Viewport Height).    
+- `1vh` = 1% of the screen’s height.  
+- Usage: For elements like fullscreen sections.  
+
+--6. % (Percentage)  
+- Relative to the size of the nearest parent element.    
+
+--7. ch (Character Width) 
+- Based on the width of the character `0` in the current font.  
+- `10ch` = width of 10 `0` characters.  
+- 45ch to 75ch: Ideal for readable paragraphs.
+- Usage: Best for setting widths for text-heavy elements like inputs or text blocks. 
+- 🤚 Even if you don’t understand everything, no worries! Just remember to use ch for setting 
+paragraph widths, and keep the value between 45-75 for optimal readability that's it's.
+
+Example : 
+p {
+  width: 60ch;  ---->> Creates a text container that fits approximately 60 characters in a line 
+  margin: 0 auto; -----> Centers the paragraph 
+}
+
+# 16) Calculated font size for the `<li>` element ? Assume the root font size (default for HTML) is `16px`. 
+
+body { 
+  font-size: 1.5em;
+}
+.container {
+  font-size: 2em;
+}
+ul {
+  font-size: 1em;
+}
+li {
+  font-size: 2em;
+}
 
 # 18) The most awaited question: How to center a div 😂 😂 ? 
 
