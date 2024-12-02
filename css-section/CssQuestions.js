@@ -45,7 +45,7 @@ There are three main ways** to add CSS to HTML:
    </head>
    ```
 
-### Summary:
+-- Summary:
 
 - **Inline CSS**: Quick, one-time styling on individual elements.
 - **Internal CSS**: Applies to the entire page, defined within `<style>` in `<head>`.
@@ -478,7 +478,7 @@ property tells the browser:
 
 # 14)About flex box.
 
----Flex Box Video Link : https://youtu.be/phWxA89Dy94?si=Q79vSketdYYc4TKy  [🤚 Watch this video first  ]
+---Flex Box Video Link (Lang : English): https://youtu.be/phWxA89Dy94?si=Q79vSketdYYc4TKy  [🤚 Watch this video first  ]
 
 --Quick Revision About flex box
 
@@ -544,9 +544,9 @@ won’t affect it. The item will stay at that width.
  available space in the container.
 
 
-# 14) About Grid
+# 15) About Grid
 
----Grid Video Link : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
+---Grid Video Link (Lang : English): https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
 
 
 >> Parent (Grid Container) Properties :
@@ -612,9 +612,9 @@ won’t affect it. The item will stay at that width.
 - Parent Properties like `justify-content` and `align-content` handle the entire grid.  
 - Child Properties like `justify-self` and `align-self` handle individual items.
 
-# 15)About CSS untis 
+# 16)About CSS untis 
 
----CSS units Video Link : https://youtu.be/fzZTvLmmTzM?si=ez-WddNN-JNDefco  [🤚 Watch this video first  ]
+---CSS units Video Link (Lang : English) : https://youtu.be/fzZTvLmmTzM?si=ez-WddNN-JNDefco  [🤚 Watch this video first  ]
 
 
 >>>There are a total of 30+ CSS units, but we use 99% of the time: em, rem, %, vw, vh, ch, and px.
@@ -660,7 +660,7 @@ p {
   margin: 0 auto; -----> Centers the paragraph 
 }
 
-# 16) Calculated font size for the `<li>` element ? Assume the root font size (default for HTML) is `16px`. 
+# 17)Calculated font size for the `<li>` element ? Assume the root font size (default for HTML) is `16px`. 
 
 body { 
   font-size: 1.5em;
@@ -675,7 +675,132 @@ li {
   font-size: 2em;
 }
 
-# 18) The most awaited question: How to center a div 😂 😂 ? 
+# 18)Cascade Algorithm in CSS (Simplified Notes) ?
+
+---CSS specificity Video Link (Lang : Hindi) : https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first  ]
+
+
+The cascade algorithm determines which CSS rules apply to an element when there are multiple conflicting styles. 
+It takes into account three main factors:
+
+1. Rule Order and Position:
+   - If the same selector is used multiple times with different styles, the rule that appears last in the CSS file will be applied. 
+   - Example:
+
+     p { color: blue; }
+     p { color: red; }  This rule is applied because it's last.
+ 
+
+2. Priority of Selectors:
+   CSS follows a specific priority order to resolve conflicts:
+   - `!important`: Always takes the highest priority, regardless of where it is used.
+   - Inline styles: Written directly in the HTML using `style=""`.
+   - ID selectors: `#id`.
+   - Class selectors, attributes, and pseudo-classes: `.class`, `[attr=value]`, `:hover`.
+   - Element and pseudo-element selectors: `p`, `::before`.
+   - Universal selector: `*` (lowest priority).
+
+   Priority pattern:
+   
+--  !important > Inline Style > ID Selector > Class/Attribute/Pseudo-class Selector > Element/Pseudo-element Selector > Universal Selector
+  
+
+3. Predefined Browser Styles:
+   - Browsers have their own default styles (called user agent stylesheets), but these have 
+   **lower priority** than developer-defined styles.
+
+4.Specificity numbers
+The specificity numbers are calculated based on the types of selectors in CSS.
+
+- Inline styles: 1000 ------->(e.g., `style="color: red;"`)  
+- IDs: 100 -------> (e.g., `#header`)  
+- Classes, attributes, pseudo-classes: 10 -------> (e.g., `.btn`, `[type="text"]`, `:hover`)  
+- Elements and pseudo-elements: 1 -------> (e.g., `div`, `p`, `::before`)  
+- Universal selector (`*`): 0 -------> (no specificity).
+
+# 19)Tell us the specificity number :
+
+a.testClass.yash-class[hred]:hover{
+
+background-color:red;
+
+}
+
+# 20)About media query 
+>Watch video direcly on youtube about media query atleast watch minimum Two videos
+
+English : https://youtu.be/K24lUqcT0Ms?si=eL4f53v2J8LFVknv
+Hindi : https://youtu.be/eHye3PxH4jU?si=qkRLpAbZ69x8NfEe
+
+>>Tips for Using Media Querie
+
+ 1. Start Mobile-First: Define base styles for smaller screens, then override for larger screens.
+ 2. Use Relative Units: Use `em` or `rem` for breakpoints to maintain scalability.
+ 3. Avoid Too Many Breakpoints: Stick to essential breakpoints for maintainability.
+ 4. Test Responsiveness: Always test your website on multiple devices and orientations.
+
+
+>> Media Query Breakpoints Template
+
+---Custom CSS Breakpoints
+
+Extra Small Devices (Mobile) 
+
+@media (max-width: 480px) {
+    Your styles 
+ }
+ 
+
+Small Devices (Tablets) 
+
+ @media (min-width: 481px) and (max-width: 768px) {
+    Your styles 
+ }
+ 
+
+Medium Devices (Laptops) 
+
+ @media (min-width: 769px) and (max-width: 1024px) {
+    Your styles 
+ }
+ 
+Large Devices (Desktops) 
+
+ @media (min-width: 1025px) and (max-width: 1200px) {
+    Your styles 
+ }
+ 
+Extra Large Devices (Widescreens) 
+
+ @media (min-width: 1201px) {
+    Your styles 
+ }
+ 
+ 
+--- Tailwind CSS Breakpoints
+
+ In Tailwind CSS, you don't write `@media` queries manually. Instead, use these classes:
+ 
+ | Breakpoint        | Prefix            | Pixels               |
+ |-------------------|-------------------|--------------------- |
+ | Extra Small (xs)  | `N/A`             | Default/mobile-first |
+ | Small (sm)        | `sm:`             | `640px`              |
+ | Medium (md)       | `md:`             | `768px`              |
+ | Large (lg)        | `lg:`             | `1024px`             |
+ | Extra Large (xl)  | `xl:`             | `1280px`             |
+ | 2XL               | `2xl:`            | `1536px`             |
+ 
+ Example:
+
+ <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+   Responsive text!
+ </div>
+ 
+
+#22)About Animation
+
+
+# 21) The most awaited question: How to center a div 😂 😂 ? 
 
 1. Using Flexbox (Recommended for modern browsers)
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
