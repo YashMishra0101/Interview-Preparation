@@ -15,12 +15,37 @@ justify-content: center;
 align-items: center;
 }
 
-button{
-  border:3px solid green;
-  width: 80px;
-  height: 80px;
-  font-size: 3rem;
-  padding:5rem;
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border-radius: 5rem;
+  animation: bounce 1s ease infinite;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
 
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}

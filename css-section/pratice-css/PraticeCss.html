@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,11 +10,41 @@
 
 <body>
     <div class="wrapper">
-        <div class="container">
-            <button>Hi</button>
-        </div>
-    </div>
+        <div class="box"></div>
+        <button class="button">Hover Me</button>
+
     </div>
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow from Small to Full Size</title>
+  <style>
+    .grow {
+      width: 100px;
+      height: 100px;
+      background-color: #e74c3c;
+      animation: growAnimation 2s ease-in-out forwards infinite;
+    }
+
+    @keyframes growAnimation {
+      from {
+        transform: scale(0); /* Start from small size */
+        border-radius: 0; /* Start with no border-radius */
+      }
+      to {
+        transform: scale(1); /* Grow to normal size */
+        border-radius: 5rem; /* Add rounded corners */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grow"></div>
+</body>
 </html>

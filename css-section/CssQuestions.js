@@ -4,12 +4,12 @@
 
 # Note (Very important)🤚  
 
-> This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
-> Unlike other repositories, this one is not designed to include each and everything in terms of interview preparation but instead focuses on what is truly important in interviews.  
 > This is for interview preparation purposes, not for learning CSS from scratch. Make sure you first learn CSS.  
+> Unlike other repositories, this one is not designed to include each and everything in terms of interview preparation but instead focuses on what is truly important in interviews.  
+> This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
 > For CSS, regular practice is essential—just reading and understanding concepts is not enough. So, ensure you Practice properly.  
-  
 
+--Total : 22 Questions
 
 # 1) How To add css in hmtl ?
 
@@ -718,7 +718,7 @@ The specificity numbers are calculated based on the types of selectors in CSS.
 - Elements and pseudo-elements: 1 -------> (e.g., `div`, `p`, `::before`)  
 - Universal selector (`*`): 0 -------> (no specificity).
 
-# 19)Tell us the specificity number :
+# 19)Tell me the specificity number :
 
 a.testClass.yash-class[hred]:hover{
 
@@ -727,6 +727,7 @@ background-color:red;
 }
 
 # 20)About media query 
+
 >Watch video direcly on youtube about media query atleast watch minimum Two videos
 
 English : https://youtu.be/K24lUqcT0Ms?si=eL4f53v2J8LFVknv
@@ -797,10 +798,225 @@ Extra Large Devices (Widescreens)
  </div>
  
 
-#22)About Animation
+#21)About Animation and Transition.
+
+--Transition
+
+Transition is like a smooth change from one state to another. It works when something happens 
+(like hover, click, or focus), A transition needs an action (like hover or click) to trigger the change.
+
+--Rules/Syntax
+
+-transition-property : Specifies the name of the CSS property the transition effect is for.
+
+-transition-delay : Specifies a delay (in seconds) for the transition effect.
+
+-transition-duration : Specifies how many seconds or milliseconds a transition effect takes to complete. (e.g., 2s or 500ms).
+
+-transition-timing-function : Specifies the speed curve of the transition effect.
+  -ease : slow start, then fast, then end slowly (this is default)
+  -linear : same speed from start to end
+  -ease-in : effect with a slow start
+  -ease-in-out :  effect with a slow start and end
+  -cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+
+-transition : A shorthand property for setting the four transition properties into a single property.
+  -(e.g., transition: all 0.3s ease).
+
+ 
+--About "all"
+
+In simple language, when we use "all," all the properties will be applied, and we don't need to specify 
+the name of a particular property.  
+
+---Example 1:
+
+div {
+  transition-property: width;
+  transition-delay: 1s;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+
+  transition: property duration delay timing-function; //Shorthand property
+  transition :width 1s 2s linear
+}
+
+--Example 2 :
+
+ - Second Example (individual properties with shorthand): You get the same result but with more control 
+ over which properties transition, while still using shorthand for efficiency. 
+ 
+ .button {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 16px;
+   color: white;
+   background-color: #3498db;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; // Shorthand for each property 
+ }
+ 
+ .button:hover {
+   background-color: #2980b9;  // Change background color 
+   transform: translateY(-5px); // Move the button 
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); // Add shadow 
+ }
+
+---Example 3:
+
+- Third Example (`all`): Applies the transition to all properties that change, and it's much simpler.
+
+.button {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 16px;
+   color: white;
+   background-color: #3498db;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.3s ease;  // Transition for all changing properties with shorthand 
+ }
+ 
+ .button:hover {
+   background-color: #2980b9;  // Change background color 
+   transform: translateY(-5px); // Move the button 
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); // Add shadow 
+ }
 
 
-# 21) The most awaited question: How to center a div 😂 😂 ? 
+--Animation 
+
+Animation" is about creating movement or changes that happen automatically (without any trigger). 
+It keeps running for a specified time or loops continuously.
+
+>Animation Syntax
+
+--There are two main ways to define animations in CSS:
+
+1. Using the `from` and `to` syntax: This is the simplest form of keyframes where you specify the start (`from`) and end (`to`) states.
+
+ 
+   @keyframes animation-name {
+     from {
+        starting styles 
+      }
+      to {
+        ending styles 
+      }
+    }
+    
+ 
+ 2. Using percentage-based keyframes:This allows you to define more granular control over the animation's progression by specifying multiple points along the way.
+ 
+    @keyframes animation-name {
+      0% {
+         start styles 
+      }
+      50% {
+        middle styles 
+      }
+      100% {
+         end styles 
+      }
+    }
+
+-- Example 1: Grow from Small to Full Size
+
+This animation will make the element smoothly grow from a small size to a full size, while also rounding 
+its corners during the process.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow from Small to Full Size</title>
+  <style>
+    .grow {
+      width: 100px;
+      height: 100px;
+      background-color: #e74c3c;
+      animation: growAnimation 2s ease-in-out forwards infinite;    }
+
+     @keyframes growAnimation {
+      from {
+        transform: scale(0);  Start from small size 
+        border-radius: 0;  Start with no border-radius 
+      }
+      to {
+        transform: scale(1); Grow to normal size 
+        border-radius: 5rem;  Add rounded corners 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grow"></div>
+</body>
+</html>
+
+
+--Explanation:
+
+1.animation: growAnimation 2s ease-in-out forwards infinite;: This applies the animation, makes it smooth with ease-in-out, and loops infinitely.
+2.border-radius: 0 to 5rem: This makes the element gradually become more rounded as it grows.
+
+ 
+--Example 2:Rotating an Element Using Percentage-based Keyframes
+ 
+ In this example, we rotate an element in a full circle using percentage-based keyframes.
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rotation Animation</title>
+   <style>
+     .rotate {
+       width: 100px;
+       height: 100px;
+       background-color: #3498db;
+       animation: rotateAnimation 4s linear infinite;
+     }
+ 
+     @keyframes rotateAnimation {
+       0% {
+         transform: rotate(0deg);  Initial state 
+       }
+       50% {
+         transform: rotate(180deg);  Half rotation 
+       }
+       100% {
+         transform: rotate(360deg);  Full rotation 
+       }
+     }
+   </style>
+ </head>
+ <body>
+   <div class="rotate"></div>
+ </body>
+ </html>
+
+ 
+ Explanation:
+ - The `@keyframes` uses percentages to define the rotation at different stages.
+   - `0%` starts the rotation at `0deg` (no rotation).
+   - `50%` rotates it halfway (to `180deg`).
+   - `100%` completes the full rotation (`360deg`).
+ - The animation lasts for `4 seconds` and runs infinitely with a smooth continuous rotation.
+
+
+ 
+> Key Points:
+- `from` and `to`: Simplifies animation with just two states (start and end).
+- Percentage-based: Allows more detailed control of the animation's progress by specifying intermediate points like `50%`, `75%`, etc.
+ 
+
+# 22) The most awaited question: How to center a div 😂 😂 ? 
 
 1. Using Flexbox (Recommended for modern browsers)
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
