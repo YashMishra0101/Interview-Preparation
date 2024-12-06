@@ -3,6 +3,8 @@
 
 ## Note 🤚  
 
+> This is for interview preparation purposes, not for learning HTML from scratch. Make sure you first learn HTML.  
+
 > I have covered the most frequently asked HTML questions for entry-level and fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the most important topics. This should be sufficient for entry-level roles.  
 
 -- 💻 Total Questions : 18
