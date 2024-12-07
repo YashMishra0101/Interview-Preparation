@@ -3,20 +3,22 @@
 
 ## Note 🤚  
 
-> This is for interview preparation purposes, not for learning HTML from scratch. Make sure you first learn HTML.  
+> This is for Interview Preparation purposes, not for learning HTML from scratch. Make sure you first learn HTML.  
 
-> I have covered the most frequently asked HTML questions for entry-level and fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the most important topics. This should be sufficient for entry-level roles.  
+> I have covered the Most Frequently asked HTML questions for Entry-Level and Fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the Most Important topics and Question. This should be sufficient for entry-level roles and for job interviews.  
 
 -- 💻 Total Questions : 18
 
 # 1) How to apply comment in html ?
 Ans :
+
 Syntax: <!-- Your comment goes here -->
 Anything inside the `<!--    -->` tags is treated as a comment, meaning it won't be rendered on the webpage.>
 
 
 # 2) What is the different between HTML(Hyper Text Markup language) and HTM5 (HTM5 is the Latest Version of HTML)?
 Ans :
+
  1)
  HTML: Uses a long and complex doctype declaration. : <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
  HTML5: A simplified, shorter doctype declaration. : <!DOCTYPE html>
@@ -41,12 +43,12 @@ Ans :
 3. `<input type="tel">`
 4. `<input type="number">`
 5. `<input type="range">`
-6. `<input type="date">`
+6. `<input type="search">`
 7. `<input type="time">`
 8. `<input type="datetime-local">`
 9. `<input type="month">`
 10. `<input type="week">`
-11. `<input type="search">`
+11. `<input type="date">`
 12. `<input type="color">`
 
  5)
@@ -56,7 +58,9 @@ Ans :
  HTML5:HTML5 introduced elements and attributes (like <meta> tags) that made it easier to create responsive layouts. 
 Responsive design ensures that websites adapt to different screen sizes and orientations.
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> --This 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> -- 🤚This 
+
+---Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
 
 1. Setting the Width: It makes the page’s width match the device’s screen width, so the site fits properly on any screen size.
   
@@ -64,6 +68,7 @@ Responsive design ensures that websites adapt to different screen sizes and orie
 
 
 # 3)What is the diffrent between HTML and XHTML ?
+Ans:
 
 XHTML stands for *Extensible Hypertext Markup Language*. It’s a combination of HTML and XML (Extensible Markup Language). 
 It was developed to make HTML more strict and well-structured, like XML. It enforces strict rules, like:
@@ -88,6 +93,7 @@ XHTML was developed before HTML5. XHTML, short for Extensible Hypertext Markup L
 effort to make HTML more strict and compatible with XML and HTML5 came later, officially introduced in 2014.
 
 # 4)What is the role of DOCTYPE in HTML and What if we remove the <!DOCTYPE html> from the HTML ?
+Ans:
 
 The `DOCTYPE` declaration is used to tell the browser which version of HTML you are using in your document. 
 It is important because it helps the browser render the page acc to current version of HTML.
@@ -102,7 +108,7 @@ HTML5 Simplified: The DOCTYPE declaration for HTML5 is very simple:
    This one line tells the browser you're using HTML5, and it's backward compatible with older HTML versions, so you don’t have to 
    worry much about browser inconsistencies.
 
---Other version example , just for the knowledge  :  
+--Other version example , just for the Knowledge  :  
 
 XHTML 1.0 Strict: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 XHTML 1.0 Transitional:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -119,7 +125,8 @@ will switch to "Quirks mode", where it uses outdated rendering rules from older 
 3. Cross-browser compatibility issues: The page may render differently across browsers, causing inconsistencies.   
 
 # 5)What is the Differences between head and body in html and where to place JS link reference ?
-=>
+Ans:
+
     The<head> element is where you place meta-information (information about the document) are present.
     For example, <title>, <meta>, <link>, <script>
     <style> are normally kept under head element.
@@ -165,12 +172,15 @@ will switch to "Quirks mode", where it uses outdated rendering rules from older 
 For most cases, placing JavaScript just before `</body>` remains the preferred industry practice.
 
 # 6)What is title tag and it's important?
+Ans:
 
 =>For adding title 
   Seo:search engine us the title as the main heading for search results.
   Bookmarks/Favorites: When a user bookmarks or adds a webpage to favorites, the <title> tag is used as the default name.
 
 # 7)What is meta tag and tell me some name ?
+Ans:
+
 A meta tag is an HTML element used to provide metadata (information about the webpage) to browsers and search engines. Meta tags 
 are placed inside the <head> section of an HTML document and help control how the webpage is displayed.
 
@@ -199,6 +209,7 @@ Use: Provides a way to target specific search terms for SEO purposes (though mod
 
 
 # 8)What is tags , content and Element in HTML ?
+Ans:
 
                   Opening Tag        Closing Tag  
                      |                   | 
@@ -211,11 +222,17 @@ Use: Provides a way to target specific search terms for SEO purposes (though mod
                           HTML Element 
   (A combination of an opening tag, closing tag and content is called an HTML element.)                       
          
-# 9)What is div and span tag and what is block and inline tag ?
+# 9) What is block and inline tag and what is div and span tag ?
+Ans:
 
+Block tags : Take full width of containers.
+Span tags  : Takw widht as much as needed.
+
+Div:
 Div a block-level element,it is used for grouping elements. It often acts as a container for other HTML elements. 
 Div takes up the full width of its container.
 
+Span:
 Span is an inline element, meaning it only takes up as much space as needed acc to content.
 
 --IMP
@@ -253,6 +270,7 @@ inline-block or block. This allows inline elements to behave like block elements
 10. `<i>` - Italicizes text (often used for stylistic purposes). 
 
 # 10)What is anchor tag ?
+Ans:
 
 With the help of the **anchor (`<a>`) tag, we can create hyperlinks using the `href` attribute, which is placed 
 inside the anchor tag to specify the link’s destination. If we want to open the link in a new tab, we can also use 
@@ -264,6 +282,7 @@ Example:
 
 
 # 11)About em , hr and img tag
+Ans:
 
 - `<em>`(emphasis): Makes text italic to show it’s important.
 
@@ -281,9 +300,12 @@ description, which appears if the image fails to load.
  -- <img src="image.jpg" alt="A description of the image">
 
 # 12)What is semantic tags ?
-A semantic element clearly describes its meaning to both the browser and the developer. These tags help organize
- the structure of a webpage, make code easier to read, improve accessibility for screen readers, and play an 
- important role in SEO also.
+Ans:
+
+A semantic element clearly describes its meaning to both the Browser and the Developers.
+- These tags help organize the structure of a webpage.
+- Make code easier to read improve accessibility for screen readers. 
+- Play an important role in SEO also.
 
  Semantic Tags Examples :
 
@@ -306,6 +328,7 @@ A semantic element clearly describes its meaning to both the browser and the dev
 - **`<details>`**: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
 
 # 13)Headin Tag ?
+Ans:
 
 There are a total of 6 heading tags, from <h1> to <h6>. <h1> has the largest size, followed by <h2>, which is 
 slightly smaller, and then <h3>, <h4>, <h5>, and finally <h6>, which has the smallest size. These tags are used 
@@ -314,6 +337,7 @@ an impact on SEO, as search engines give more importance to the content in <h1> 
 topic.
  
 # 14)Empty and Self closing tags ?
+Ans:
 
 In HTML5, empty tags and self-closing tags are the same and can simply be written without a closing slash.
 
@@ -340,6 +364,8 @@ So, while they serve the same purpose, XML and XHTML require the closing slash t
 while HTML5 does not.
 
 # 15)Absolute and Relative URL.
+Ans:
+
 --Absolute URL:
 A complete URL that includes the full path, starting with "http://" or "https://",
 Best use case for external links, ensuring that they work from any location or directory on the site.  
@@ -350,6 +376,7 @@ Ideal for internal links within the same website, making it easier to move files
 or folders without updating URLs. 
 
 # 16)Base Element .
+Ans:
 
 The `<base>` element specifies the base URL for all relative URLs on a page, usually placed within the 
 `<head>`. When used, it sets a starting point for links and resources, so all relative URLs will build off this base.
@@ -364,6 +391,7 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
   resolved to `https://www.example.com/folder/page2.html`.
   
 # 17)Lists in HTML.
+Ans:
 
 1.Ordered List (`<ol>`)*
    - Displays items in a numbered order.
@@ -396,6 +424,7 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
    </dl>
 
 # 18) About Table
+Ans:
 
 >Crisp Notes on Table (How to create table)
 
@@ -415,6 +444,9 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
 
 6. `colspan`: - Allows a cell to span across multiple columns.
 
+Note 🤚: you cannot use rowspan and colspan in internal CSS (or any CSS). These attributes are part of HTML and are used directly
+in the markup within table elements (<td> or <th>). CSS is used for styling elements, whereas rowspan and colspan are structural
+attributes that define how table cells span across rows or columns.
 
 <!DOCTYPE html>
 <html lang="en">
