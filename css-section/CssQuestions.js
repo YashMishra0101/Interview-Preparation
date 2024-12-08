@@ -5,24 +5,24 @@
 # Note (Very important)🤚  
 
 > This is for interview preparation purposes, not for learning CSS from scratch. Make sure you first learn CSS.  
-> Unlike other repositories, this one is not designed to include each and everything in terms of interview preparation but instead focuses on what is truly important in interviews.  
 > This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
 > For CSS, regular practice is essential—just reading and understanding concepts is not enough. So, ensure you Practice properly.  
 
---Total : 22 Questions
+--Total : 24 Questions
 
 # 1) How To add css in hmtl ?
 
-There are three main ways** to add CSS to HTML:
+There are three main ways to add CSS to HTML:
 
-1. **Inline CSS** 
+1. Inline CSS
    - CSS styles are applied directly to HTML elements using the `style` attribute.
    - Useful for applying quick, one-time styles to specific elements but not ideal for large-scale styling.
+
    ```html
    <h1 style="color: blue; font-size: 24px;">Hello World</h1>
    ```
 
-2. **Internal CSS**  
+2. Internal CSS
    - CSS rules are placed inside a `<style>` tag within the `<head>` section of the HTML document.
    - Useful for styling a single page without needing an external stylesheet.
    ```html
@@ -36,7 +36,7 @@ There are three main ways** to add CSS to HTML:
    </head>
    ```
 
-3. **External CSS**  
+3. External CSS
    - CSS rules are stored in a separate `.css` file, which is linked to the HTML document using the `<link>` tag inside the `<head>`.
    - Best for larger projects, as it separates design and content, making the CSS reusable across multiple pages.
    ```html
@@ -45,33 +45,382 @@ There are three main ways** to add CSS to HTML:
    </head>
    ```
 
--- Summary:
+--Using **External CSS** is the preferred choice for most cases due to better maintainability and reusability.
 
-- **Inline CSS**: Quick, one-time styling on individual elements.
-- **Internal CSS**: Applies to the entire page, defined within `<style>` in `<head>`.
-- **External CSS**: Best practice for large projects, allows styles to be applied across multiple pages. 
+# 2) What is the Precedence and Specificity in CSS ?
 
-Using **external CSS** is the preferred choice for most cases due to better maintainability and reusability.
+In simple language, we can say that precedence deals with CSS styles (inline > internal > external CSS), and specificity 
+deals with selectors (ID > class > element).
 
-# 2)What is CSS preprocessor ?
+Precedency of CSS Styles : inline > internal > external CSS
+Specificity of selectors : ID > class > element
 
-A *CSS preprocessor* is a tool that expands standard CSS capabilities, letting developers write code that is 
-more dynamic, organized, and efficient. With preprocessors like **Sass**, **Less**, and **Stylus**, you can 
-use features such as:
+# 3) Cascade Algorithm in CSS ?
 
-- Variables: Store reusable values like colors and fonts.
+---CSS specificity Youtube Video Link (Lang : Hindi) (cltr + click 👆): https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first ]
+
+The cascade algorithm determines which CSS rules apply to an element when there are multiple conflicting
+styles. It considers factors like CSS specificity, importance (e.g., !important), and the source order
+to resolve conflicts.
+
+--Rules:
+
+1.Order and Position:
+   - If the same selector is used multiple times with different styles, the one written last will be applied. 
+   - Example:
+     p { color: blue; }
+     p { color: red; }  This rule is applied because it's last.
+ 
+
+2. Priority of Selectors:
+   CSS follows a specific priority order to resolve conflicts:
+   - `!important`: Always takes the highest priority, regardless of where it is used.
+   - Inline styles: Written directly in the HTML using `style=""`.
+   - ID selectors: `#id`.
+   - Class selectors, attributes, and pseudo-classes: `.class`, `[attr=value]`, `:hover`.
+   - Element and pseudo-element selectors: `p`, `::before`.
+   - Universal selector: `*` (lowest priority).
+
+   Priority pattern:
+   
+--🤚Specificit👇
+
+=> !important > Inline Style > ID Selector > Class/Attribute/Pseudo-class Selector > Element/Pseudo-element Selector > Universal Selector
+  
+
+3. Predefined Browser Styles:
+   - Browsers have their own default styles (called user agent stylesheets), but these have 
+   **lower priority** than developer-defined styles.
+
+4.Specificity numbers
+The specificity numbers are calculated based on the types of selectors in CSS.
+
+- Inline styles: 1000 ------->(e.g., `style="color: red;"`)  
+- IDs: 100 -------> (e.g., `#header`)  
+- Classes, attributes, pseudo-classes: 10 -------> (e.g., `.btn`, `[type="text"]`, `:hover`)  
+- Elements and pseudo-elements: 1 -------> (e.g., `div`, `p`, `::before`)  
+- Universal selector (`*`): 0 -------> (no specificity).
+
+# 4)Box Model
+
+---CSS Box Youtube Video Link (Lang : Eng) (cltr + click 👆) : https://youtu.be/nSst4-WbEZk?si=lTfz75tuk8UIdJIt  [🤚 Watch this video first ]
+
+1)Content
+2)Padding
+3)Border
+4)Margin
+
+                 Margin
+  +-------------------------------------+  --->Border
+  |                                     |
+  |                                     |
+  |                                     |
+  |             Padding                 |
+  |      +---------------------+        |
+  |      |      Content        |        |
+  |      +---------------------+        |
+  |                                     |
+  |                                     | 
+  |                                     |
+  +-------------------------------------+
+
+# 5)Position Property In CSS ?
+
+  position: static (Default);
+  position: relative;
+  position: absolute;
+  position: fixed;
+  position: sticky;
+  
+There are Four Main Postion Property :
+
+1. `static` (Default):  
+   - This is the default position for elements.  
+
+2. `relative`:  
+   - You can move it using properties like top, right, bottom, or left.
+
+3. `absolute`:  
+   - The element moves based on its nearest parent with a position set (like `relative`)**.  
+   - If there’s no such parent, it moves based on the whole page (`body`). 
+   - absolute relies on a relative parent; otherwise, it uses the body.
+ 
+5. `sticky`:  
+   - You have to give something like "top:0px" working it , if you just write postion:sticky so it will no work.
+   - The element sticks in place while you scroll within it's nearest parent container.  
+   - It "sticks" to a specified offset (e.g., top: 0) within its nearest parent container and stops sticking once it reaches the parent's boundary.
+   
+4. `fixed`:  
+   - The element stays in a fixed spot on the screen, no matter how much you scroll.  
+   - If top, bottom, left, or right are used, the element is positioned relative to the 
+   direct viewport(browser window/body) not to nearest parent , no realtive like thing is 
+   working her like with absolute. 
+   
+   --Key Differences Between Fixed and Sticky :
+
+| Property         | `fixed`                            | `sticky`                           |
+|------------------|------------------------------------|------------------------------------|
+| Reference        | Viewport                          | Parent container boundaries         |
+| Scroll Behavior  | Always stays fixed                | Becomes fixed within a boundary     |
+| Common Use       | Navigation bars, floating buttons | Table headers, sticky sections      |
+
+
+
+# 6)About flex box.
+
+---Flex Box Youtube Video Link (Lang : English)(cltr + click 👆) : https://youtu.be/phWxA89Dy94?si=Q79vSketdYYc4TKy  [🤚 Watch this video first  ]
+
+--Quick Revision About flex box
+
+In simple language, flexbox helps you design layouts and arrange items within a container according to our
+needs and it also helps us to creating reponsive design.
+
+> justify-content: justify-content helps aligns flex items along the x axis (Horizontally/row by default) or y axis vertical if `flex-direction` is column.
+> align-items: align-items helps aligns flex items along the y-axis (vertical/colum by default) or x-axis horizontal if flex-direction is set to row.
+> space-between: The space is only between the items no space on the edges (left and right).
+> space-around: Equal space around items, but on edges (left and right) spaces are smaller.  
+> space-evenly: Equal space everywhere —between items and at the edges.  
+> basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
+> align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
+> align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
+   --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
+
+>Note 🤚: 
+
+If flex-wrap is not set to wrap (or is set to its default value, nowrap), the align-content property will not work, 
+even if the container has more than one line of content.
+This is because align-content only applies when the flex container allows items to wrap into multiple rows or 
+columns.
+
+1. `flex-direction:`  
+   - `row`, `row-reverse`, `column`, `column-reverse`.
+
+2. `justify-content:`  
+   - `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `space-evenly`.
+
+3. `align-items:`  
+   - `flex-start`, `flex-end`, `center`, `stretch`(this is default), `baseline`.
+
+4. `align-content:`  
+   - `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch (this is default)`.
+
+5. `gap` / `row-gap` / `column-gap:`  
+   - examples: `10px`, `1rem`, `5%`.
+
+6. `align-self (for child):`  
+   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
+
+7. `order (for child):`  
+   - Numeric values to define item order. Default: `0`.  
+   - We can change the order of the items.
+
+8. `flex-grow (for child):`  
+   - Specifies how much space an item should take relative to others. Default is `0`.
+
+9. `flex-shrink (for child):`  
+   - Specifies how much an item should shrink when space is limited. Default is `1`. 
+
+10. flex-basic ( for child );
+   - we can set the width of flex item width 
+
+ >Note (V.V IMP)
+
+ =>
+- If you use `width`: It will **set a fixed width** for the item, and `flex-grow` or `flex-shrink`
+won’t affect it. The item will stay at that width.
+
+- If you use `flex-basis`: It will set the initial size for the item, and `flex-grow` and 
+`flex-shrink` will work based on that starting size. The item can grow or shrink depending on
+ available space in the container.
+
+
+# 7) About Grid
+
+---Grid Youtube Video Link (Lang : English) (cltr + click 👆) : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
+
+>> Parent (Grid Container) Properties :
+
+--1. For Creating Grid
+
+- grid-template-rows:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
+- grid-template-colums:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
+
+
+---2. For Creating Gaps
+
+- gap:  `gap: 1rem; (Applies to both rows and columns)  
+- row-gap: 1rem;
+- column-gap:  1rem;
+- gap: 1rem 2rem;  (rows,columns)
+
+
+---3. For Handling Whole Grid Positioning (Aligning the entire grid within its container)  
+
+- `justify-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`  
+- `align-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`
+
+
+---4. For Handling Items from the Parent (Aligning grid items as a group)
+
+- `justify-items`:  - `start`, `end`, `center`, `stretch`  
+
+- `align-items`:  - `start`, `end`, `center`, `stretch`
+
+
+--5. For Defining Named Areas (Optional)
+
+- `grid-template-areas`:  
+  'header header'  
+  'main main'  
+  'footer footer';
+ 
+  - This property is used to assign names to specific sections of the grid, which can be referred to by grid items.
+
+
+>>Child (Grid Item) Properties
+
+---1. For Row and Column Spanning
+
+- grid-row: 1 / 2 or span 2 (Defines the start and end of the row or how many rows to span)  
+
+- grid-column: 1 / 2 or span 2 (Defines the start and end of the column or how many columns to span)
+
+- grid-area: row-start / col-start / row-end / col-end  ( Shorthand for Grid Positioning  )
+
+---3. For Aligning Individual Grid Items
+- justify-self: `start`, `end`, `center`, `stretch` (Aligns the grid item horizontally within its cell)  
+
+- align-self: `start`, `end`, `center`, `stretch` (Aligns the grid item vertically within its cell)
+
+--Key Notes
+
+- Difference Between Grid and Flexbox:  
+  - Flexbox is for 1-dimensional layouts (either row or column).  
+  - Grid is for 2-dimensional layouts (rows and columns).  
+  - Flexbox is item-based, while Grid is container-based.  
+- Parent Properties like `justify-content` and `align-content` handle the entire grid.  
+- Child Properties like `justify-self` and `align-self` handle individual items.
+
+
+# 8) What is the color of Box Two? (Look carefully at the code 👁️)
+
+--HTML Code
+
+<body>
+  <div class="wrapper">
+    <div class="boxOne">
+      <div class="boxTwo" id="boxTwO"></div>
+    </div>
+  </div>
+</body>
+
+--CSS Code
+
+.boxOne{
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  border: 2px solid yellowgreen;
+  position: relative;
+
+}
+
+#boxTwo{
+  background-color: red;
+}
+
+.boxTwo{
+  width: 130px;
+  height: 130px;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+#boxTwo{
+  background-color: white;
+}
+
+--------Code End
+
+# 9) What is the color of Box Two (It's a diff question) ? (Look carefully at the code 👁️)
+
+--HTML Code
+
+<body>
+  <div class="wrapper">
+    <div class="boxOne">
+      <div class="boxTwo" id="boxTwo"></div>
+    </div>
+  </div>
+</body>
+
+--CSS Code
+
+.boxOne{
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  border: 2px solid yellowgreen;
+  position: relative;
+
+}
+
+#boxTwo{
+  background-color: red;
+}
+
+.boxTwo{
+  width: 130px;
+  height: 130px;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+#boxTwo{
+  background-color: white;
+}
+
+--------Code End
+
+# 10)What is the specificity number of these css selectors:
+
+a.testClass.yash-class[hred]:hover{
+
+background-color:red;
+
+}
+
+# 11) What is CSS preprocessor ?
+
+In simple language, we can say that CSS preprocessors help us write CSS in a better and more flexible way. 
+CSS preprocessors add features that aren't available in regular CSS. After writing the preprocessor code, it gets compiled
+(converted) into standard CSS.
+
+- Variables: Store reusable values like colors and fonts, we can use variable in normal css but However, 
+  CSS preprocessors (like Sass) allow you to define variables with more advanced feature manner.
 - Nesting: Write CSS in a way that visually mirrors the HTML structure.
 - Mathematical Operations: Perform calculations, useful in responsive design.
-- Mixins and Functions: Reuse code blocks for common styles, reducing redundancy.
+- Mixins : A mixin is a reusable block of CSS code 
+- Functions : Functions allow you to perform operations, transformations, or calculations on CSS values and return the result.
 
-*Sass* (Syntactically Awesome Style Sheets) is one of the most widely used preprocessors, enabling features 
-like variables, selector nesting, and more complex operations, making it a popular choice for writing 
-organized, maintainable CSS. Preprocessor code compiles into standard CSS, ready for the browser.
+Top CSS Preprocessor :
 
-# 3)What is border size border box ?
+1.SCSS/SASS (SASS for CSS and SCSS for CSS3)
+2.LESS
+3.Stylus
 
-When you use `box-sizing: border-box` in CSS, adding padding or borders **won’t change the actual height and 
-width** of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
+# 12)What is border size border box ?
+
+When you use `box-sizing: border-box` in CSS, adding padding or borders won’t change the actual height and 
+width of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
 
 Without `box-sizing: border-box` padding and borders **will increase** 
 the total height and width, making the element larger than what you initially set.  
@@ -81,7 +430,8 @@ By default, `box-sizing` is set to `content-box`.
 --box-sizing:border-box;
 --box-sizing:content-box;(By default)
 
-# 4)About Margin collapsing ?
+
+# 13)About Margin collapsing ?
 
 In simple words, margin collapsing is a behavior in CSS where the vertical margins of two elements "combine" or 
 "merge" into one margin instead of adding up. This happens with block-level elements (like div, p, etc.) and 
@@ -153,7 +503,7 @@ What happens ?
 >Solutions to Margin Collapsing
 
 1. **Add Padding**  
-   - Add padding to the parent element or the child element.  
+   - Add padding to the parent element nearest element.  
    - Padding creates a "buffer" that prevents margins from collapsing.  
    ```css
    .parent {
@@ -189,47 +539,8 @@ What happens ?
    The most common and practical methods are **padding** and **overflow: hidden**. These are widely used in the 
    industry to handle collapsing margins effectively. Keep it clean and efficient.
 
-# 5)Position Property In CSS ?
 
-  position: static (Default);
-  position: relative;
-  position: absolute;
-  position: fixed;
-  position: sticky;
-  
-There are Four Main Postion Property :
-
-1. `static` (Default):  
-   - This is the default position for elements.  
-
-2. `relative`:  
-   - You can move it using properties like top, right, bottom, or left.
-
-3. `absolute`:  
-   - The element moves based on its nearest parent with a position set (like `relative`)**.  
-   - If there’s no such parent, it moves based on the whole page (`body`). 
-   - absolute relies on a relative parent; otherwise, it uses the body.
- 
-5. `sticky`:  
-   - You have to give something like "top:0px" working it , if you just write postion:sticky so it will no work.
-   - The element sticks in place while you scroll within it's nearest parent container.  
-   - It "sticks" to a specified offset (e.g., top: 0) within its nearest parent container and stops sticking once it reaches the parent's boundary.
-   
-4. `fixed`:  
-   - The element stays in a fixed spot on the screen, no matter how much you scroll.  
-   - If top, bottom, left, or right are used, the element is positioned relative to the 
-   direct viewport(browser window/body) not to nearest parent , no realtive like thing is 
-   working her like with absolute. 
-   
-   --Key Differences Between Fixed and Sticky :
-
-| Property         | `fixed`                            | `sticky`                           |
-|------------------|------------------------------------|------------------------------------|
-| Reference        | Viewport                          | Parent container boundaries         |
-| Scroll Behavior  | Always stays fixed                | Becomes fixed within a boundary     |
-| Common Use       | Navigation bars, floating buttons | Table headers, sticky sections      |
-
-# 6)What is Pseudo Elements ?
+# 14)What is Pseudo Elements ?
 
 With the help of pseudo-elements, we can use CSS to style specific parts of an element or add extra 
 content without modifying the HTML or using JavaScript.
@@ -249,7 +560,7 @@ Some Examples of Pseudo-elements
 5. `::marker`**: is used to style the markers of list items in ordered (<ol>) or unordered (<ul>) 
 lists, such as bullets or numbers.
 
-# 7)Tell me what is colors codes and how to use them (How to give colors in css)?
+# 15)Tell me what is colors codes and how to use them (How to give colors in css)?
 
 >1. Named Colors :
 
@@ -354,6 +665,7 @@ color: hsla(30, 100%, 50%, 0.5);  50% transparent orange
 
 
 >7. CSS Custom Properties (Variables)
+
 Colors can be defined as variables for reuse.  
 
 -- Example:  
@@ -366,10 +678,14 @@ p {
 }
 
 
-# 8) What is CSS combinator ?
+# 16) What is CSS combinator ?
 
-Note 🤚: Just read it for knowledge purposes and watch a quick video on YouTube for a better understanding. No one is asking for a detailed explanation of what a CSS combinator is; just read it and watch one video on YouTube. That’s it.
+Note 🤚: Just read it for knowledge purposes and watch a quick video on YouTube for a 
+better understanding. No one is asking for a detailed explanation of what a CSS 
+combinator is; just read it and watch one video on YouTube. That’s it.
+
 CSS combinators define the relationship between elements in HTML to style them based on their connection. 
+
 There are four main types:
 
 1.*Descendant (`space`): Targets all elements inside another element.  
@@ -385,7 +701,7 @@ There are four main types:
    Example: `h1 ~ p` (styles all `<p>` after an `<h1>`).
 
 
-# 9)Box shadow
+# 17)Box shadow
 
 --Syntax :
 
@@ -399,7 +715,7 @@ Inset Shadow (Adds a shadow inside the element. Use the inset keyword.) : box-sh
 
 >🤚 In general, "pseudo" means false, fake, or pretend. In CSS, pseudo-classes (:) and pseudo-elements (::) are not in the HTML. They are written in the CSS file and act like virtual parts or states, which is why they are called pseudo. 
 
-# 10) What is css variable and how to use them ?
+# 18) What is css variable and how to use them ?
 
  CSS variables (also called custom properties) are a way to store reusable values in CSS, making your code more efficient and 
  easier to maintain. They are particularly useful when you want to define values like colors, fonts, or spacing that you might
@@ -432,7 +748,7 @@ Reusability: Change a value in one place, and it updates everywhere.
 Maintainability: Your CSS is easier to read and modify.
 Theming: Easily implement themes by switching variable values.
 
-# 11) Tell me which is the better approach in developemt and Why ?
+# 19) Tell me which is the better approach in developemt and Why ?
 *{
   margin: 0;
   padding: 0;
@@ -445,7 +761,7 @@ Theming: Easily implement themes by switching variable values.
   box-sizing: border-box;
 }
 
-Ans :  You should use the **second approach** because:  
+Ans : **second approach** because:  
 
 1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
 2. Pseudo-elements sometimes have default styles in browsers that can cause unexpected layout issues. The second approach resets those styles too.  
@@ -453,13 +769,13 @@ Ans :  You should use the **second approach** because:
 
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
-# 12) Image (img) is a inline element so why we can able to set widht and height of <img> tag ?
+# 20) Image (img) is a inline element so why we can able to set widht and height of <img> tag (We can set height & widht on inline element) ?
 
 The `<img>` tag is an **inline element**, but since it contains **external content (the image)**, 
 the browser allows us to set its `height` and `width`. This is because the `<img>` tag is specifically 
 designed to handle images, making it a **special inline element** that supports dimensions for proper display.
 
-# 13) Float and Clear 
+# 21) Float and Clear 
 
 --Before flex box and grid we was using Float and Clear 
 
@@ -476,143 +792,8 @@ When you use float on an element (like an image), other elements (like text) can
 property tells the browser:
 "Stop wrapping content around the floated element and start below it."
 
-# 14)About flex box.
 
----Flex Box Video Link (Lang : English): https://youtu.be/phWxA89Dy94?si=Q79vSketdYYc4TKy  [🤚 Watch this video first  ]
-
---Quick Revision About flex box
-
-In simple language, flexbox helps you design layouts and arrange items within a container according to our
-needs and it also helps us to creating reponsive design.
-
-> justify-content: justify-content helps aligns flex items along the x axis (Horizontally/row by default) or y axis vertical if `flex-direction` is column.
-> align-items: align-items helps aligns flex items along the y-axis (vertical/colum by default) or x-axis horizontal if flex-direction is set to row.
-> space-between: The space is only between the items no space on the edges (left and right).
-> space-around: Equal space around items, but on edges (left and right) spaces are smaller.  
-> space-evenly: Equal space everywhere —between items and at the edges.  
-> basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
-> align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
-> align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
-   --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
-
->Note 🤚: 
-
-If flex-wrap is not set to wrap (or is set to its default value, nowrap), the align-content property will not work, 
-even if the container has more than one line of content.
-This is because align-content only applies when the flex container allows items to wrap into multiple rows or 
-columns.
-
-1. `flex-direction:`  
-   - `row`, `row-reverse`, `column`, `column-reverse`.
-
-2. `justify-content:`  
-   - `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `space-evenly`.
-
-3. `align-items:`  
-   - `flex-start`, `flex-end`, `center`, `stretch`(this is default), `baseline`.
-
-4. `align-content:`  
-   - `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `stretch (this is default)`.
-
-5. `gap` / `row-gap` / `column-gap:`  
-   - examples: `10px`, `1rem`, `5%`.
-
-6. `align-self (for child):`  
-   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
-
-7. `order (for child):`  
-   - Numeric values to define item order. Default: `0`.  
-   - We can change the order of the items.
-
-8. `flex-grow (for child):`  
-   - Specifies how much space an item should take relative to others. Default is `0`.
-
-9. `flex-shrink (for child):`  
-   - Specifies how much an item should shrink when space is limited. Default is `1`. 
-
-10. flex-basic ( for child );
-   - we can set the width of flex item width 
-
- >Note (V.V IMP)
-
- =>
-- If you use `width`: It will **set a fixed width** for the item, and `flex-grow` or `flex-shrink`
-won’t affect it. The item will stay at that width.
-
-- If you use `flex-basis`: It will set the initial size for the item, and `flex-grow` and 
-`flex-shrink` will work based on that starting size. The item can grow or shrink depending on
- available space in the container.
-
-
-# 15) About Grid
-
----Grid Video Link (Lang : English): https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
-
-
->> Parent (Grid Container) Properties :
-
---1. For Creating Grid
-
-- grid-template-rows:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
-- grid-template-colums:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
-
-
----2. For Creating Gaps
-
-- gap:  `gap: 1rem; (Applies to both rows and columns)  
-- row-gap: 1rem;
-- column-gap:  1rem;
-- gap: 1rem 2rem;  (rows,columns)
-
-
----3. For Handling Whole Grid Positioning (Aligning the entire grid within its container)  
-
-- `justify-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`  
-- `align-content`:  - `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`
-
-
----4. For Handling Items from the Parent (Aligning grid items as a group)
-
-- `justify-items`:  - `start`, `end`, `center`, `stretch`  
-
-- `align-items`:  - `start`, `end`, `center`, `stretch`
-
-
---5. For Defining Named Areas (Optional)
-
-- `grid-template-areas`:  
-  'header header'  
-  'main main'  
-  'footer footer';
- 
-  - This property is used to assign names to specific sections of the grid, which can be referred to by grid items.
-
-
->>Child (Grid Item) Properties
-
----1. For Row and Column Spanning
-
-- grid-row: 1 / 2 or span 2 (Defines the start and end of the row or how many rows to span)  
-
-- grid-column: 1 / 2 or span 2 (Defines the start and end of the column or how many columns to span)
-
-- grid-area: row-start / col-start / row-end / col-end  ( Shorthand for Grid Positioning  )
-
----3. For Aligning Individual Grid Items
-- justify-self: `start`, `end`, `center`, `stretch` (Aligns the grid item horizontally within its cell)  
-
-- align-self: `start`, `end`, `center`, `stretch` (Aligns the grid item vertically within its cell)
-
---Key Notes
-
-- Difference Between Grid and Flexbox:  
-  - Flexbox is for 1-dimensional layouts (either row or column).  
-  - Grid is for 2-dimensional layouts (rows and columns).  
-  - Flexbox is item-based, while Grid is container-based.  
-- Parent Properties like `justify-content` and `align-content` handle the entire grid.  
-- Child Properties like `justify-self` and `align-self` handle individual items.
-
-# 16)About CSS untis 
+# 22)About CSS untis 
 
 ---CSS units Video Link (Lang : English) : https://youtu.be/fzZTvLmmTzM?si=ez-WddNN-JNDefco  [🤚 Watch this video first  ]
 
@@ -660,7 +841,7 @@ p {
   margin: 0 auto; -----> Centers the paragraph 
 }
 
-# 17)Calculated font size for the `<li>` element ? Assume the root font size (default for HTML) is `16px`. 
+# 23)Calculated font size for the `<li>` element ? Assume the root font size (default for HTML) is `16px`. 
 
 body { 
   font-size: 1.5em;
@@ -675,58 +856,8 @@ li {
   font-size: 2em;
 }
 
-# 18)Cascade Algorithm in CSS (Simplified Notes) ?
 
----CSS specificity Video Link (Lang : Hindi) : https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first  ]
-
-
-The cascade algorithm determines which CSS rules apply to an element when there are multiple conflicting styles. 
-It takes into account three main factors:
-
-1. Rule Order and Position:
-   - If the same selector is used multiple times with different styles, the rule that appears last in the CSS file will be applied. 
-   - Example:
-
-     p { color: blue; }
-     p { color: red; }  This rule is applied because it's last.
- 
-
-2. Priority of Selectors:
-   CSS follows a specific priority order to resolve conflicts:
-   - `!important`: Always takes the highest priority, regardless of where it is used.
-   - Inline styles: Written directly in the HTML using `style=""`.
-   - ID selectors: `#id`.
-   - Class selectors, attributes, and pseudo-classes: `.class`, `[attr=value]`, `:hover`.
-   - Element and pseudo-element selectors: `p`, `::before`.
-   - Universal selector: `*` (lowest priority).
-
-   Priority pattern:
-   
---  !important > Inline Style > ID Selector > Class/Attribute/Pseudo-class Selector > Element/Pseudo-element Selector > Universal Selector
-  
-
-3. Predefined Browser Styles:
-   - Browsers have their own default styles (called user agent stylesheets), but these have 
-   **lower priority** than developer-defined styles.
-
-4.Specificity numbers
-The specificity numbers are calculated based on the types of selectors in CSS.
-
-- Inline styles: 1000 ------->(e.g., `style="color: red;"`)  
-- IDs: 100 -------> (e.g., `#header`)  
-- Classes, attributes, pseudo-classes: 10 -------> (e.g., `.btn`, `[type="text"]`, `:hover`)  
-- Elements and pseudo-elements: 1 -------> (e.g., `div`, `p`, `::before`)  
-- Universal selector (`*`): 0 -------> (no specificity).
-
-# 19)Tell me the specificity number :
-
-a.testClass.yash-class[hred]:hover{
-
-background-color:red;
-
-}
-
-# 20)About media query 
+# 24)About media query 
 
 >Watch video direcly on youtube about media query atleast watch minimum Two videos
 
@@ -798,7 +929,7 @@ Extra Large Devices (Widescreens)
  </div>
  
 
-#21)About Animation and Transition.
+#25)About Animation and Transition.
 
 --Transition
 
@@ -1016,7 +1147,7 @@ its corners during the process.
 - Percentage-based: Allows more detailed control of the animation's progress by specifying intermediate points like `50%`, `75%`, etc.
  
 
-# 22) The most awaited question: How to center a div 😂 😂 ? 
+# 26) The most awaited question: How to center a div 😂 😂 ? 
 
 1. Using Flexbox (Recommended for modern browsers)
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
@@ -1035,7 +1166,7 @@ its corners during the process.
 
 4. Using Absolute Positioning
 <div style="position: relative; height: 100vh;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> --- 🤚🖖 We are applying on child not parent so we if need to center the box acc to parent so we have to use transform: translate(-50%, -50%); without that it will not center acc to parent ( Please do it Pratically 🧑‍💻)
         Centered Content
     </div>
 </div>

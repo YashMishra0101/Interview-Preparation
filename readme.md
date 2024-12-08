@@ -77,4 +77,4 @@ If you find this repository helpful:
 - [Twitter (X)](https://x.com/YashRKMishra1)
 - [LinkedIn](https://www.linkedin.com/in/yash-mishra-356280223/)
 
-Happy coding, and best of luck with your frontend interview prep. 💪💻
+Happy coding and best of luck with your frontend interview prep. 💪💻

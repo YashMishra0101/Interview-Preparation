@@ -178,7 +178,7 @@ Ans:
   Seo:search engine us the title as the main heading for search results.
   Bookmarks/Favorites: When a user bookmarks or adds a webpage to favorites, the <title> tag is used as the default name.
 
-# 7)What is meta tag and tell me some name ?
+# 7)What is meta tag and tell me some names ?
 Ans:
 
 A meta tag is an HTML element used to provide metadata (information about the webpage) to browsers and search engines. Meta tags 
@@ -225,15 +225,16 @@ Ans:
 # 9) What is block and inline tag and what is div and span tag ?
 Ans:
 
-Block tags : Take full width of containers.
-Span tags  : Takw widht as much as needed.
+Block tags : Block tags take up the full width of their container by default.
+Inline tags only take up as much space as required by their content and do not start on a new line.
 
 Div:
 Div a block-level element,it is used for grouping elements. It often acts as a container for other HTML elements. 
 Div takes up the full width of its container.
 
 Span:
-Span is an inline element, meaning it only takes up as much space as needed acc to content.
+Span is an inline element, It only occupies as much space as its content requires, making it useful for styling or
+manipulating small pieces of content within other elements.
 
 --IMP
 We can set the height and width of block elements but we can not set height and width of inline element.
@@ -389,6 +390,18 @@ The `<base>` element specifies the base URL for all relative URLs on a page, usu
 
   - If you add a link like `<a href="page2.html">Page 2</a>`,....it will be 
   resolved to `https://www.example.com/folder/page2.html`.
+
+Note 🤚 :
+
+The <base> element works only with relative URLs. It sets the base URL to which relative paths will be appended. 
+For example:
+<base href="https://example.com/">
+<a href="page1.html">Page 1</a>
+
+=>The link will resolve to https://example.com/page1.html.  
+
+In Absolute URLs already include the full path (e.g., https://example.com/page1.html) and do not depend on the <base> tag. 
+Therefore, the <base> element has no effect on absolute URLs.
   
 # 17)Lists in HTML.
 Ans:
