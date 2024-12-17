@@ -36,6 +36,7 @@ There are three main ways to add CSS to HTML:
    </head>
    ```
 
+
 3. External CSS
    - CSS rules are stored in a separate `.css` file, which is linked to the HTML document using the `<link>` tag inside the `<head>`.
    - Best for larger projects, as it separates design and content, making the CSS reusable across multiple pages.
@@ -64,6 +65,7 @@ styles. It considers factors like CSS specificity, importance (e.g., !important)
 to resolve conflicts.
 
 --Rules:
+
 
 1.Order and Position:
    - If the same selector is used multiple times with different styles, the one written last will be applied. 
