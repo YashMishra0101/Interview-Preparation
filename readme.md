@@ -16,8 +16,8 @@ This repository includes:
 - ⚛️ **React**
 - 🧩 **Machine Coding** (For React-Based Interviews)
 - 🔷 **TypeScript**
-- Basic Backend Questions
-- General HR Questions
+- 🛠️ Basic Backend Questions
+- 💬 General HR Questions
 
 ## 📂 Folder and File Naming Conventions (Which I Used)
 
