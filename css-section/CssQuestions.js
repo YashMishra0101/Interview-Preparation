@@ -1,5 +1,5 @@
 /*
-# 👁️ Most Asked Questions in CSS for Freshers 🧑‍💻
+# 👁️ Most Asked Questions in CSS for entry-level and fresher jobs 🧑‍💻
 
 
 # Note (Very important)🤚  
@@ -8,7 +8,7 @@
 > This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
 > For CSS, regular practice is essential—just reading and understanding concepts is not enough. So, ensure you Practice properly.  
 
---Total : 24 Questions
+--Total : 26 Questions
 
 # 1) How To add css in hmtl ?
 
@@ -50,7 +50,10 @@ There are three main ways to add CSS to HTML:
 
 # 2) What is the Precedence and Specificity in CSS ?
 
-In simple language, we can say that precedence deals with CSS styles (inline > internal > external CSS), and specificity 
+---CSS specificity Youtube Video Link (Lang : Hindi) (cltr + click 👆): https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first ]
+---CSS specificity Youtube Video Link (Lang : English) (cltr + click 👆): https://youtu.be/CHyPGSpIhSs?si=aoeiBrvZxUkGzs-2  [🤚 Watch this video first ]
+
+In simple language, we can say that precedence deals with CSS styles (inline > internal > external CSS) and specificity 
 deals with selectors (ID > class > element).
 
 Precedency of CSS Styles : inline > internal > external CSS
@@ -58,10 +61,9 @@ Specificity of selectors : ID > class > element
 
 # 3) Cascade Algorithm in CSS ?
 
----CSS specificity Youtube Video Link (Lang : Hindi) (cltr + click 👆): https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first ]
 
 The cascade algorithm determines which CSS rules apply to an element when there are multiple conflicting
-styles. It considers factors like CSS specificity, importance (e.g., !important), and the source order
+styles. It considers both factors like CSS precedecny and specificity, importance (e.g., !important), and the source order
 to resolve conflicts.
 
 --Rules:
@@ -209,8 +211,8 @@ columns.
 5. `gap` / `row-gap` / `column-gap:`  
    - examples: `10px`, `1rem`, `5%`.
 
-6. `align-self (for child):`  
-   - `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
+6. `align-self (for child) (It doesn’t affect the main-axis/x-axis ):`  
+   - `auto`(Default), `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
 
 7. `order (for child):`  
    - Numeric values to define item order. Default: `0`.  
