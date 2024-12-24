@@ -1,6 +1,6 @@
 # Welcome to the Frontend Interview Preparation Repository 🧑‍💻
 
-Here, you'll find a curated list of **questions with answers**, **concepts**, and **practice sections** to help you prepare effectively for frontend interviews. Whether you're just starting or brushing up, this repository has something for everyone 💪.
+Here, you'll find a curated list of **questions with answers**, **concepts**, and **practice sections** to help you prepare effectively for frontend interviews. Whether you're just starting or brushing up, this repository has something for everyone .
 
 ## **Why This Repository?**
 
@@ -16,6 +16,8 @@ This repository includes:
 - ⚛️ **React**
 - 🧩 **Machine Coding** (For React-Based Interviews)
 - 🔷 **TypeScript**
+- 🛠️ Basic Backend Questions
+- 💬 General HR Questions
 
 ## 📂 Folder and File Naming Conventions (Which I Used)
 
