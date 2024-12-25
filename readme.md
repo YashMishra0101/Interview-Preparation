@@ -12,10 +12,10 @@ This repository includes:
 
 - 🌐 **HTML**
 - 🎨 **CSS**
-- ⚙️ **JavaScript**
+- ⚙️ JavaScript
 - ⚛️ **React**
 - 🧩 **Machine Coding** (For React-Based Interviews)
-- 🔷 **TypeScript**
+- 🔷 TypeScript
 - 🛠️ Basic Backend Questions
 - 💬 General HR Questions
 
