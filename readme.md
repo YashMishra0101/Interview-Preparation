@@ -10,8 +10,8 @@ Unlike other repositories, this one is not designed to include everything in the
 
 This repository includes:
 
-- 🌐 **HTML
-- 🎨 **CSS
+- 🌐 HTML
+- 🎨 CSS
 - ⚙️ JavaScript
 - ⚛️ **React**
 - 🧩 **Machine Coding** (For React-Based Interviews)
