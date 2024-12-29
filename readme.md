@@ -13,8 +13,8 @@ This repository includes:
 - 🌐 HTML
 - 🎨 CSS
 - ⚙️ JavaScript
-- ⚛️ **React**
-- 🧩 **Machine Coding** (For React-Based Interviews)
+- ⚛️ React
+- 🧩 Machine Coding (For React-Based Interviews)
 - 🔷 TypeScript
 - 🛠️ Basic Backend Questions
 - 💬 General HR Questions
