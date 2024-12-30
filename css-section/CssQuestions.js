@@ -252,7 +252,7 @@ won’t affect it. The item will stay at that width.
 
 ---2. For Creating Gaps
 
-- gap:  `gap: 1rem; (Applies to both rows and columns)  
+- gap:1rem; (Applies to both rows and columns)  
 - row-gap: 1rem;
 - column-gap:  1rem;
 - gap: 1rem 2rem;  (rows,columns)
@@ -292,13 +292,15 @@ won’t affect it. The item will stay at that width.
 - grid-area: row-start / col-start / row-end / col-end  ( Shorthand for Grid Positioning  )
 
 ---3. For Aligning Individual Grid Items
+
 - justify-self: `start`, `end`, `center`, `stretch` (Aligns the grid item horizontally within its cell)  
 
 - align-self: `start`, `end`, `center`, `stretch` (Aligns the grid item vertically within its cell)
 
 --Key Notes
 
-- Difference Between Grid and Flexbox:  
+# Difference Between Grid and Flexbox:  
+
   - Flexbox is for 1-dimensional layouts (either row or column).  
   - Grid is for 2-dimensional layouts (rows and columns).  
   - Flexbox is item-based, while Grid is container-based.  
@@ -408,6 +410,14 @@ In simple language, we can say that CSS preprocessors help us write CSS in a bet
 CSS preprocessors add features that aren't available in regular CSS. After writing the preprocessor code, it gets compiled
 (converted) into standard CSS.
 
+Top CSS Preprocessor :
+
+1.SCSS/SASS (SASS for CSS and SCSS for CSS3)
+2.LESS
+3.Stylus
+
+Features of CSS Preprocessor :
+
 - Variables: Store reusable values like colors and fonts, we can use variable in normal css but However, 
   CSS preprocessors (like Sass) allow you to define variables with more advanced feature manner.
 - Nesting: Write CSS in a way that visually mirrors the HTML structure.
@@ -415,11 +425,6 @@ CSS preprocessors add features that aren't available in regular CSS. After writi
 - Mixins : A mixin is a reusable block of CSS code 
 - Functions : Functions allow you to perform operations, transformations, or calculations on CSS values and return the result.
 
-Top CSS Preprocessor :
-
-1.SCSS/SASS (SASS for CSS and SCSS for CSS3)
-2.LESS
-3.Stylus
 
 # 12)What is border size border box ?
 

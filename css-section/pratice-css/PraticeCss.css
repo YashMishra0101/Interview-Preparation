@@ -1,31 +1,24 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.boxOne{
+  display: inline-block;
+  width: 30rem;
+  height: 30rem;
+  background-color: aqua;
+    /* border: 1px solid black; */
+
 }
 
-
-.wrapper{
-display: flex;
-justify-content: center;
-min-height:1000vh;
-max-width: 100vw;
-background-color: aqua;
-}
-
-.box-one{
+.boxTwo{
+ 
   width: 20rem;
-  height:20rem ;
-  border: 1px solid green;
-  background-color: greenyellow;
+  height: 20rem;
+  background-color: yellow;
+  /* border: 1px solid black; */
+}
 
- }
+.boxThree{
 
-.box-two{
- width: 6rem;
- height:5rem ;
- border: 1px solid green;
- background-color: gold;
- position: sticky;
- top: 0;
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+  margin-top: 5rem;
 }
