@@ -2,7 +2,7 @@
 
 Here, you'll find a curated list of **questions with answers**, **concepts**, and **practice sections** to help you prepare effectively for frontend interviews. Whether you're just starting or brushing up, this repository has something for everyone .
 
-## **Why This Repository?**
+## Why This Repository?
 
 This repository covers the most commonly asked interview questions and concepts for entry-level and fresher jobs.
 
