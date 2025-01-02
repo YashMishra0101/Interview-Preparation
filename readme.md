@@ -28,7 +28,7 @@ This repository includes:
 
 Each section contains:
 
-1. **Interview Questions**: A comprehensive list of questions with detailed answers to strengthen your preparation.
+1. Interview Questions: A comprehensive list of questions with detailed answers to strengthen your preparation.
 2. **Practice Section**: A dedicated space to practice related concepts and code hands-on.
    - 📝 _Note_: The pre-existing code reflects my personal practice. Feel free to modify it, break it, and rebuild it—your repo, your rules 😎
 3. **Concepts**: Proper explanations of important concepts, making even complex topics easier to understand.
