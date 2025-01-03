@@ -396,13 +396,8 @@ won’t affect it. The item will stay at that width.
 
 --------Code End
 
-# 10)What is the specificity number of these css selectors:
+# 10)
 
-a.testClass.yash-class[hred]:hover{
-
-background-color:red;
-
-}
 
 # 11) What is CSS preprocessor ?
 
@@ -468,7 +463,7 @@ only for vertical margins (top and bottom), not horizontal margins.
          <div class="child"></div>
      </div>
     
-     If `.child` has `margin-top: 20px`, it might push the `.parent` down, as the margins collapse.
+     If `.child` has `margin-top: 20px`, it push the `.parent` , as the margins collapse.
 
 3. Empty Elements*
    If a block-level element has no content, no padding, and no border, its top and bottom margins may 
@@ -654,11 +649,11 @@ HSL specifies colors based on hue (0-360°), saturation (0-100%), and lightness 
  
 --Syntax
 
-hsl(hue(colors), saturation, lightness);
+hsl(hue/colors, saturation, lightness);
 
 -- Example:  
 
-color: hsl(30, 100%, 50%);  A shade of orange 
+color: hsl(2, 100%, 50%);  A shade of orange 
 color: hsl(240, 100%, 50%);  Bright blue 
 color: hsl(0, 100%, 50%);    Bright red 
 color: hsl(90, 100%, 50%);
@@ -689,25 +684,23 @@ p {
 
 # 16) What is CSS combinator ?
 
-Note 🤚: Just read it for knowledge purposes and watch a quick video on YouTube for a 
-better understanding. No one is asking for a detailed explanation of what a CSS 
-combinator is; just read it and watch one video on YouTube. That’s it.
+With the help of CSS combinators, we can style elements in a more precise and efficient way.
 
-CSS combinators define the relationship between elements in HTML to style them based on their connection. 
 
 There are four main types:
 
-1.*Descendant (`space`): Targets all elements inside another element.  
+1. Descendant (`space`): Targets all elements inside another element.  
    Example: `div p` (styles all `<p>` inside a `<div>`).
 
 2. Child (`>`): Targets only direct children.  
    Example: `div > p` (styles only direct `<p>` children of a `<div>`).
 
+4. General Sibling (`~`): Targets all siblings after a specific element.  
+    Example: `h1 ~ p` (styles all `<p>` after an `<h1>`).
+
 3. Adjacent Sibling (`+`): Targets the next immediate sibling.  
    Example: `h1 + p` (styles the first `<p>` right after an `<h1>`).
 
-4. General Sibling (`~`): Targets all siblings after a specific element.  
-   Example: `h1 ~ p` (styles all `<p>` after an `<h1>`).
 
 
 # 17)Box shadow
