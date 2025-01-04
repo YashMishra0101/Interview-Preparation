@@ -89,9 +89,9 @@ to resolve conflicts.
    
 --🤚Specificit👇
 
-=> !important > Inline Style > ID Selector > Class/Attribute/Pseudo-class Selector > Element/Pseudo-element Selector > Universal Selector
+=> !important > ID Selector > Class/Attribute/Pseudo-class Selector > Element/Pseudo-element Selector > Universal Selector
+=> Inline css > Internal css > External CSS
   
-
 3. Predefined Browser Styles:
    - Browsers have their own default styles (called user agent stylesheets), but these have 
    **lower priority** than developer-defined styles.
@@ -150,9 +150,9 @@ There are Four Main Postion Property :
    - absolute relies on a relative parent; otherwise, it uses the body.
  
 5. `sticky`:  
-   - You have to give something like "top:0px" working it , if you just write postion:sticky so it will no work.
    - The element sticks in place while you scroll within it's nearest parent container.  
-   - It "sticks" to a specified offset (e.g., top: 0) within its nearest parent container and stops sticking once it reaches the parent's boundary.
+   - You have to give something like "top:0px" working it , if you just write postion:sticky so it will no work.
+   - It's stops sticking once it reaches the parent's boundary.
    
 4. `fixed`:  
    - The element stays in a fixed spot on the screen, no matter how much you scroll.  
@@ -187,7 +187,7 @@ needs and it also helps us to creating reponsive design.
 > basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
 > align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
 > align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
-   --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
+  --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
 
 >Note 🤚: 
 
@@ -301,9 +301,9 @@ won’t affect it. The item will stay at that width.
 
 # Difference Between Grid and Flexbox:  
 
-  - Flexbox is for 1-dimensional layouts (either row or column).  
-  - Grid is for 2-dimensional layouts (rows and columns).  
-  - Flexbox is item-based, while Grid is container-based.  
+- Flexbox is for 1-dimensional layouts (either row or column).  
+- Grid is for 2-dimensional layouts (rows and columns).  
+- Flexbox is item-based, while Grid is container-based.  
 - Parent Properties like `justify-content` and `align-content` handle the entire grid.  
 - Child Properties like `justify-self` and `align-self` handle individual items.
 
@@ -396,7 +396,12 @@ won’t affect it. The item will stay at that width.
 
 --------Code End
 
-# 10)
+# 10) Shorthand Property 
+
+Margin/Padding : 1rem 1rem 1rem 1rem ( Top , Right , Bottom , Left )
+Margin/Padding : 1rem 1rem 1rem      ( Top , Left & Right , Bottom )
+Margin/Padding : 1rem 1rem           ( Top & Bottom , Left & Right )
+Margin/Padding : 1rem                ( Apply on All Direction      )
 
 
 # 11) What is CSS preprocessor ?
@@ -689,18 +694,128 @@ With the help of CSS combinators, we can style elements in a more precise and ef
 
 There are four main types:
 
-1. Descendant (`space`): Targets all elements inside another element.  
-   Example: `div p` (styles all `<p>` inside a `<div>`).
+-- Note 🤚 : 
 
-2. Child (`>`): Targets only direct children.  
-   Example: `div > p` (styles only direct `<p>` children of a `<div>`).
+- Space ( ) and > → Child combinators (parent-child relationships).
+- ~ and + → Sibling combinators (relationships between elements on the same level).
 
-4. General Sibling (`~`): Targets all siblings after a specific element.  
-    Example: `h1 ~ p` (styles all `<p>` after an `<h1>`).
+---1. Descendant Combinator (Space)
 
-3. Adjacent Sibling (`+`): Targets the next immediate sibling.  
-   Example: `h1 + p` (styles the first `<p>` right after an `<h1>`).
+- **What it does:** Styles all elements inside another element, no matter how deeply nested.  
+- **Example:** `div p`  
+  - This means: Style all `<p>` tags that are **inside** a `<div>`.  
 
+ 
+```html
+
+<div class="container">
+
+  <p>Styled paragraph</p> <!-- This will be styled -->
+
+  <div>
+    <p>Nested styled paragraph</p> <!-- This will also be styled -->
+  </div>
+
+<p>Styled paragraph</p> <!-- This will be styled -->
+
+</div>
+
+```  
+  
+```css
+div p {
+  color: blue;
+}
+```  
+- **Result:** All `<p>` tags inside `<div>` will have blue text.  
+
+
+--2. Child Combinator (`>`)
+
+- **What it does:** Styles only the **direct children** of an element.  
+- **Example:** `div > p`  
+  - This means: Style only `<p>` tags that are **directly inside** a `<div>`.  
+
+
+```html
+
+<div class="container">
+
+  <p>Direct child paragraph</p> <!-- This will be styled -->
+
+  <div>
+    <p>Nested paragraph</p> <!-- This will NOT be styled -->
+  </div>
+
+    <p>Direct child paragraph</p> <!-- This will be styled -->
+
+</div>
+
+```  
+
+```css
+div > p {
+  color: green;
+}
+```  
+- **Result:** Only the first `<p>` inside the `<div>` will have green text.  
+
+
+-- 3. General Sibling Combinator (`~`)
+
+- **What it does:** Styles all siblings (on the same level) **after** a specific element.  
+- **Example:** `h1 ~ p`  
+  - This means: Style all `<p>` tags that come **after an `<h1>`** in the same parent.  
+
+
+```html
+
+<h1>Main Heading</h1>
+<p>First paragraph</p> <!-- This will be styled -->
+<p>Second paragraph</p> <!-- This will also be styled -->
+<h1>Another Heading</h1>
+ <div>
+    <p>Third paragraph</p> <!-- NOT styled because it is not a sibling of the first <h1> -->  
+  </div>
+
+```  
+
+```css
+
+h1 ~ p {
+  color: red;
+}
+
+```  
+- **Result:** All `<p>` tags that are siblings after an `<h1>` will have red text.  
+
+
+---4. Adjacent Sibling Combinator (`+`)
+
+- **What it does:** Styles only the **next immediate sibling** after a specific element.  
+- **Example:** `h1 + p`  
+  - This means: Style only the first `<p>` tag that comes **right after an `<h1>`.**  
+
+```html
+
+<h1>Main Heading</h1>
+<p>First paragraph</p> <!-- This will be styled -->
+<p>Second paragraph</p> <!-- This will NOT be styled -->
+
+```  
+
+```css
+h1 + p {
+  font-weight: bold;
+}
+```  
+- **Result:** Only the first `<p>` tag after `<h1>` will be bold.  
+
+
+--  Key Difference Between `~` and `+`:  
+
+- **`~` (General Sibling):** Styles **all siblings** after a specific element.  
+- **`+` (Adjacent Sibling):** Styles **only the first sibling** immediately following an element.  
 
 
 # 17)Box shadow
@@ -715,7 +830,6 @@ Simple : box-shadow: 10px 10px 5px gray;
 Spread Effect : box-shadow: 10px 10px 5px 2px rgba(0, 0, 0, 0.5);
 Inset Shadow (Adds a shadow inside the element. Use the inset keyword.) : box-shadow: inset 5px 5px 10px black;
 
->🤚 In general, "pseudo" means false, fake, or pretend. In CSS, pseudo-classes (:) and pseudo-elements (::) are not in the HTML. They are written in the CSS file and act like virtual parts or states, which is why they are called pseudo. 
 
 # 18) What is css variable and how to use them ?
 
@@ -757,11 +871,18 @@ Theming: Easily implement themes by switching variable values.
   box-sizing: border-box;
 }
 
-*,*::before,::after{
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+1. * (Universal Selector):
+  - Targets all elements on the page.
+
+2.*::before and *::after :
+  - Targets the `::before` and `::after` pseudo-elements of all elements on the page.
+
 
 Ans : **second approach** because:  
 
@@ -789,10 +910,9 @@ Clear:
 The clear property is used to stop elements from wrapping around floated elements. It ensures the element starts
 below the floated elements.
 
-Clear in simple language:
-When you use float on an element (like an image), other elements (like text) can move around it. The clear 
-property tells the browser:
-"Stop wrapping content around the floated element and start below it."
+In simple language:
+When you use float on an element (like an image), other elements (like text) can move around it and The clear 
+property tells the browser:"Stop wrapping content around the floated element and start below it."
 
 
 # 22)About CSS untis 
@@ -938,7 +1058,7 @@ Extra Large Devices (Widescreens)
 Transition is like a smooth change from one state to another. It works when something happens 
 (like hover, click, or focus), A transition needs an action (like hover or click) to trigger the change.
 
---Rules/Syntax
+--Rules/Syntax 
 
 -transition-property : Specifies the name of the CSS property the transition effect is for.
 
@@ -956,7 +1076,8 @@ Transition is like a smooth change from one state to another. It works when some
 -transition : A shorthand property for setting the four transition properties into a single property.
   -(e.g., transition: all 0.3s ease).
 
- 
+>Syntax 🤚: transition: property duration timing-function delay;
+
 --About "all"
 
 In simple language, when we use "all," all the properties will be applied, and we don't need to specify 
@@ -1025,7 +1146,8 @@ div {
 Animation" is about creating movement or changes that happen automatically (without any trigger). 
 It keeps running for a specified time or loops continuously.
 
->Animation Syntax
+>Animation Syntax : animation: animationName duration timing-function delay(optional) iteration-count;
+
 
 --There are two main ways to define animations in CSS:
 
