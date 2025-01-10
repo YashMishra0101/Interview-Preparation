@@ -1,58 +1,17 @@
-console.log("JS Pratice Room Is Working");
-let incrementButton = document.querySelector(".incrementButton");
-let incrementNumber = document.querySelector(".incrementNumber");
+console.log("JS Practice Room");
 
-incrementButton.addEventListener("click", () => {
-  let convertInt = parseInt(incrementNumber.textContent);
-  convertInt++;
-  incrementNumber.textContent = convertInt;
-});
-
-//#constructure
-
-//>Functional Based
-
-function UserData(userName, userAge, userLocation) {
-  this.userName = userName;
-  this.userAge = userAge;
-  this.userLocation = userLocation;
-
-  this.userInfo = function () {
-    console.log(
-      `Functional Based : User name is ${this.userName} he is ${this.userAge} and he belong from ${this.userLocation}`
-    );
-  };
-}
-
-let data = new UserData("Yash", 22, "India");
-data.userInfo();
-
-//>Class Based
-
-// class UserData {
-//   constructor(userName, userAge, userLocation) {
-//     this.userName = userName;
-//     this.userAge = userAge;
-//     this.userLocation = userLocation;
-//   }
-
-//   userInfo() {
-//     console.log(
-//       `Classed Based : User name is ${this.userName} he is ${this.userAge} and he belong from ${this.userLocation}`
-//     );
-//   }
+// 1)
+// let reverseString=(str)=>{
+//     return str.split('').reverse().join('');
 // }
-// let data = new UserData("Yash", 22, "India");
-// data.userInfo();
 
-let userData = (name, age, location) => {
-  console.log(name, age, location);
-};
+// console.log(reverseString("Yash"));
 
-userData("Yash", 22);
+// 2) Palindrome
 
-function sum(...numbers) {
-  return numbers.reduce((total, num) => total + num, 0);
+let isPalindrome=(naam)=>{
+   let check=naam.split('').reverse().join('');
+   return check===naam;
 }
 
-console.log(sum(1, 2, 3, 4)); // Output: 10
+console.log(isPalindrome("madam"));

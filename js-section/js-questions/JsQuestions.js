@@ -739,7 +739,7 @@ and optimizing files for deployment.
 
 
 */
-//##20) For Checking which command is good: --version, -v, --v, or -version?
+//##20) For version Checking which command is good: --version, -v, --v, or -version?
 
 /*
 With the help of these commands (--version, -v, --v, and -version), we can check the version of 

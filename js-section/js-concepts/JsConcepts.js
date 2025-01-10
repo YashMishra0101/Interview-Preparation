@@ -1,4 +1,6 @@
 console.log("JS Concepts Is Working");
+
+
 //#1)How to decalare function in Javascript
 
 //--1)Normal function

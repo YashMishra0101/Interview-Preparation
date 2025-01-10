@@ -5,7 +5,7 @@
 
 > This is for Interview Preparation purposes, not for learning HTML from scratch. Make sure you first learn HTML.  
 
-> I have covered the Most Frequently asked HTML questions for Entry-Level and Fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the Most Important topics and Question. This should be sufficient for entry-level roles and for job interviews.  
+> I have covered the Most Frequently asked HTML questions and Concepts for Entry-Level and Fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the Most Important topics and Question. This should be sufficient for entry-level roles and for job interviews.  
 
 -- 💻 Total Questions : 18
 
@@ -60,7 +60,7 @@ Responsive design ensures that websites adapt to different screen sizes and orie
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> -- 🤚This 
 
----Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
+--Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
 
 1. Setting the Width: It makes the page’s width match the device’s screen width, so the site fits properly on any screen size.
   
@@ -130,11 +130,11 @@ Ans:
     The<head> element is where you place meta-information (information about the document) are present.
     For example, <title>, <meta>, <link>, <script>
     <style> are normally kept under head element.
-
+       
     The <body> element is where you place the actual
     content of your HTML web page. For example,
     <div>, <h1>, <p>, <img>, <a> are normally kept
-    under body element.
+    under body element. 
 
 >Two way to add JS Link 
 
@@ -187,7 +187,7 @@ are placed inside the <head> section of an HTML document and help control how th
     <meta charset="UTF-8">`
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A brief description of the webpage.">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">`
+    <meta name="keywords" content="HTML, CSS, JavaScript, Web Development">
 
 1. `<meta charset="UTF-8">`
 Purpose: Specifies the character encoding for the HTML document. UTF-8 is the most widely used character encoding that supports
@@ -401,7 +401,7 @@ For example:
 =>The link will resolve to https://example.com/page1.html.  
 
 In Absolute URLs already include the full path (e.g., https://example.com/page1.html) and do not depend on the <base> tag. 
-Therefore, the <base> element has no effect on absolute URLs.
+>>Therefore, the <base> element has no effect on absolute URLs.
   
 # 17)Lists in HTML.
 Ans:
