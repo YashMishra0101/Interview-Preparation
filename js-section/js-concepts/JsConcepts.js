@@ -1,65 +1,7 @@
 console.log("JS Concepts Is Working");
 
 
-//#1)How to decalare function in Javascript
 
-//--1)Normal function
-
-// function naam() {
-//   console.log("Hi I am a normal Function");
-// }
-
-// naam();
-
-// function naamTwo(num1, num2) {
-//   console.log(num1 + num2);
-// }
-
-// naamTwo(5, 2);
-
-// function naamThree(add) {
-//   console.log(add);
-// }
-
-// naamThree(3 + 7);
-
-//--2)Anonymous Function (Functon ka name nahi hota use variable ke andar store kr te hai)
-
-//   const ano = function () {
-//     console.log("Hello Ji I am a Anonymous Function");
-//  };
-
-// ano()
-
-//--3)Arrow Function
-
-// const arrow =(print,printTwo)=>{
-//     console.log(print,printTwo);
-// }
-
-// arrow ("I am a arrow Fucntion", "✋Two");
-
-//>If there is a single Parameter
-
-// const arrowTwo=(value)=>console.log(value);
-
-// arrowTwo("I a Value");
-
-//> Reference Assignment (Ek Variable ka refereance Dusre Variable ko diye hai)
-
-// let a = [1, 2, 3, 5];
-
-// let b = a;
-
-// console.log(b);
-
-//>Function Expression (Funciton ko Variable ke andar Store kiye hai)
-
-//   const fExpress = function ex() {
-//     console.log("I am a Function Expression");
-//   };
-
-// fExpress();
 
 //#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined.
 
@@ -91,6 +33,7 @@ and handled by the parameter.
 // }
 
 // greet("Yash");
+
 
 //#4)What is first class citizen in javascript ?
 
@@ -253,7 +196,6 @@ output=22;
 
 */
 
-//--? 😂 Identifiers: Names given to variables, functions, properties, etc, to uniquely identify them.
 
 //#8)Primitive Data Types , Non-Primitive(Reference) Data Types and Stack and Heap
 
@@ -1566,8 +1508,8 @@ console.log("Hi I am a Two ");
 /*
 > Callback Functions - Quick Notes 📜
 
-1. **Definition**: A callback function is a function passed as an argument to another function, and it's
- executed **after** the main function completes its task, either immediately or at a later time.
+1. A callback function is a function passed as an argument to another function, to be executed either immediately, after the main 
+function completes its task, or at a later time, depending on how the callback is used.
 
 2. **Types of Callbacks**:
    - **Synchronous Callbacks**: Executed right after the main function completes its task (typically 
@@ -1575,7 +1517,7 @@ console.log("Hi I am a Two ");
    - **Asynchronous Callbacks**: Executed after a delay or once a specific task (like an API request or 
    file read) is finished.
 
-3. ommon Use Cases:
+3. Common Use Cases:
    - **API requests** and **database queries** that are time-dependent.
    - **Event handling**, such as responding to button clicks.
    - **Timers**, using `setTimeout` or `setInterval`.
@@ -1621,8 +1563,8 @@ console.log("Hi I am a Two ");
 /*
 Callback Hell is a situation in programming, especially in JavaScript, 
 where multiple nested callbacks make the code difficult to read, maintain, and debug so it happens
-when callbacks are nested within each other, leading to deeply indented code.It occurs when asynchronous operations are performed one after another, and each step depends on the
-completion of the previous one
+when callbacks are nested within each other, leading to deeply indented code.It occurs when asynchronous
+operations are performed one after another, and each step depends on the completion of the previous one
 
 >Explanation
 
@@ -1640,7 +1582,7 @@ completion of the previous one
 
 3. **Example**:
  
-   let stepOne = (callme) => {
+ let stepOne = (callme) => {
   setTimeout(() => {
     console.log("One");
     callme();
@@ -1685,6 +1627,7 @@ let stepSequence = () => {
 };
 
 stepSequence();
+
 function start() {
   stepOne()
     .then(stepTwo)
@@ -1931,7 +1874,7 @@ let set=(()=>{
     console.log("I am setTime out")
   },1000)
 })
-
+`
 set();
 
 
@@ -2561,4 +2504,57 @@ in the code const [initialValue, updateValue] = useState(1);, we define two item
 the first is initialValue, and the second is updateValue. The initialValue starts with the value you
 pass to useState (like 1 in this example). The updateValue is a function used to update the initialValue. 
 This is how the useState hook works.
+
+//#45)Sorting in Javascript .
+
+1. **Sorting helps in arranging elements in ascending or descending order, finding smallest and greatest elements**  
+  => Sorting is used to organize data systematically.
+
+2. **By default, `sort()` converts array elements to strings and sorts them alphabetically.**  
+  =>  The default behavior of `sort()` is string-based sorting.
+
+3. **If we need to sort numbers, we must use a comparison function because, by default, `sort()` treats numbers as strings.**  
+  => Without a comparison function, numbers like `[100, 2, 50]` converted into string for that we need to use comparison 
+  operator.
+
+4. **Sorting modifies the original array.**  
+  => The `sort()` method mutates the original array. If you want to keep the original array unchanged, 
+  use `.slice()` to create a copy before sorting.
+
+5. **By default, uppercase letters are sorted before lowercase letters.**  
+  => This is due to the Unicode values of characters (uppercase letters have lower values than lowercase ones).
+
+
+>>About Unique Code Value
+
+Every character (like A, B, C, D), every emoji, and every currency symbol has a unique Unicode value that helps the computer understand 
+them. When we put any number inside double quotes or single quotes, it becomes a string. At this point, the number is no longer 
+treated as a number but as a string with its own Unicode value.  
+
+When we use the `.sort()` method directly on strings, they are arranged based on their Unicode values, not as numbers.  
+
+Even if we use pure numbers inside an array and then apply `.sort()`, the numbers are temporarily converted into strings during 
+sorting. This is why they are arranged according to their Unicode values instead of numerically.  
+
+To avoid this and ensure proper numerical sorting, we need to use a comparator function in `.sort()`, so the values are treated 
+as numbers instead of strings.  
+
+>> Comparator Functions in Sorting
+
+When working with sorting in JavaScript, **comparator functions** use comparison logic to determine order. These can be 
+customized based on your requirements.
+
+- Numerical Sorting:
+
+  let numbers = [18, 6, 4, 1, 0];
+  
+  numbers.sort((a, b) => a - b); // Ascending order
+
+  numbers.sort((a, b) => b - a); // Descending Order:
+
+- Custom Sorting (e.g., by string length):
+
+  let words = ["apple", "bat", "banana"];
+  words.sort((a, b) => a.length - b.length); // Shortest to longest
+
 */
