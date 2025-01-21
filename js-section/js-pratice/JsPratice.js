@@ -8,7 +8,6 @@ console.log("JS Practice Room");
 
 // console.log(reverse("yash"));
 
-
 //2)Input: `"madam"` → Output: `true`
 
 // let palindrom=(input)=>{
@@ -20,10 +19,9 @@ console.log("JS Practice Room");
 
 //3)
 
-let arr=[1,2,3,4,5];
+let arr = [1, 2, 3, 4, 5];
 
 // console.log(arr[arr.length-1]);
-
 
 // arr.forEach(value=>{
 //     console.log(value);
@@ -36,8 +34,6 @@ let arr=[1,2,3,4,5];
 //    console.log("old=",arr);
 //    console.log("new",newArray);
 
-
-
 // let Teaorder=(finalInput)=>{
 // console.log(`Order is ${finalInput}`);
 // }
@@ -47,15 +43,10 @@ let arr=[1,2,3,4,5];
 // }
 
 // let sugar=()=>{
-    
+
 // }
 
 // item("Pizza",order);
-
-
-
-
-
 
 // let one=(callme)=>{
 //     setTimeout(()=>{
@@ -91,11 +82,7 @@ let arr=[1,2,3,4,5];
 //     })
 // }
 
-
 // start()
-
-
-
 
 let one= ()=>{
   return new Promise((resolve,reject)=>{
@@ -127,7 +114,8 @@ let Three= ()=>{
 let Four= ()=>{
     return new Promise((resolve,reject)=>{
        setTimeout(()=>{
-       return reject(new Error ("yyy 4 occurred"));         
+       return reject(new Error ("yyy 4 occurred"));
+      // resolve()
          console.log("Hello Ji Four ");
        })
     })
@@ -138,18 +126,16 @@ let start=()=>{
     .then(Two)
     .then(Three)
     .then(Four)
-    
+
     .catch((error)=>{
         console.error("Error Name:", error.message);
     })
-    .finally{
+    .finally(()=>{
         console.log("Code Ended");
-    }
+    })
 }
 
-
 start()
-
 
 // let one= ()=>{
 //   return new Promise((resolve,reject)=>{
@@ -181,12 +167,11 @@ start()
 // let Four= ()=>{
 //     return new Promise((resolve,reject)=>{
 //        setTimeout(()=>{
-//        return reject(new Error ("yyy 4 occurred"));         
+//        return reject(new Error ("yyy 4 occurred"));
 //          console.log("Hello Ji Four ");
 //        })
 //     })
 // }
-
 
 // let start=async()=>{
 //     try{
@@ -202,7 +187,15 @@ start()
 //         console.log("code ended");
 //     }
 
-    
 // }
 
 // start()
+
+// let a = (callback) => {
+//   callback();
+//   console.log("Process Stop");
+// };
+
+// a(() => {
+//   console.log("Exceute  immediately");
+// });

@@ -1,8 +1,5 @@
 console.log("JS Concepts Is Working");
 
-
-
-
 //#2)IIFE (Immediately Invoked Function Expression): An IIFE is a function that is executed immediately after it is defined.
 
 //--It is a common JavaScript pattern used to create a new scope and avoid polluting the global namespace.
@@ -17,14 +14,7 @@ console.log("JS Concepts Is Working");
 //     console.log("Helo Guys I am a iffi");
 // }());
 
-//#3)Parameter and Argument
 
-/*
-Parameter and argument are both part of a function. When we call a function and pass a value inside it, we use an argument to send
-that value. The parameter, on the other hand, receives the value sent by the argument and handles it within the function. So, when 
-we call a function and try to pass a value, that value is called an argument. Then, inside the function, that value is received 
-and handled by the parameter.
-*/
 
 //>Code:-
 
@@ -33,7 +23,6 @@ and handled by the parameter.
 // }
 
 // greet("Yash");
-
 
 //#4)What is first class citizen in javascript ?
 
@@ -73,60 +62,6 @@ greeter(); // Output: Hi!
 
 
 Other reason bhi hai
-*/
-
-//#5)Three way to declared variable in javascript (Var,let,Const)
-
-//>In var we can redecared and reassing the the var vriable.
-
-// var a = 10;
-// console.log("In Var:", a);
-// var a = 20;
-// console.log("In Var:", a);
-
-//>In let we cannot redecared the variable but we can reassign them.
-
-// let b = 30;
-// console.log("In let:", b);
-
-// let b = 40; (not valid)
-// console.log("In let:", b);
-
-//>In const we cannot redecared or reassign the variable.
-
-// const c = 50;
-// console.log("In Const:", c);
-
-//>Extra Info
-
-/*
--Using let and const is generally better because they avoid problems caused by var's function scope 
-and hoisting and let and const are block scope.
--When we use var and let, we can assign a variable's value after declaration, but when
-we use const, it is necessary to define the value during declaration.
-
---var is function scope and let and const are block scoped:-
-
---Example:function scope
-
-function one() {
- if(true){
-    var a=10;
- }
-  console.log(a) //output:10
-}
-one()
-
---Example:Block scoped
-
-function one() {
- if(true){
-    let a=10;
- }
-  console.log(a)//refrence error
-}
-one()
-
 */
 
 //#6)What is Array in Javascript ?
@@ -195,7 +130,6 @@ output=22;
 --🖐️ Use always Dot notation because is straightforward and easier to read.
 
 */
-
 
 //#8)Primitive Data Types , Non-Primitive(Reference) Data Types and Stack and Heap
 
@@ -456,92 +390,8 @@ for (let [index, value] of arr.entries()) {
 
 */
 
-//#11) Hoisting Explained
-
-/*
-Hoisting means that during the compile phase (before code execution), variable and function declarations are moved to
-the top of their containing scope. This is called hoisting.
-
-**Explanation:**
-- **During the compile phase**: It's important to note that hoisting occurs during the compile phase, not during code execution.
-- **Variable and function declarations**: Both variables and functions are hoisted, but only the declarations, not the initializations.
-*/
-
-//--Hoistin In Function
-
-//> Function Declarations
-
-// Function Declarations: Are hoisted completely (both the name and body), so they can be called before they are defined in the code.
-
-/*
-Example:
-hoistedFunction(); // This works because hoistedFunction is hoisted
-
-function hoistedFunction() {
-    console.log("This function is hoisted!");
-}
-*/
-
-//> Function Expressions
-
-// Function expressions, where you assign a function to a variable, are not hoisted. Only the variable declaration
-// is hoisted, not the function assignment ,so calling the function before assignment results in a TypeError.
-
-//Example:
-
-// a()
-
-// var a =function (){
-//   console.log("Hey I a function") //TypeError: a is not a function
-// }
-
-// try {
-//     notHoistedFunction(); // This throws an error because not HoistedFunction is undefined
-// } catch (error) {
-//     console.log(error); // ReferenceError: notHoistedFunction is not defined
-// }
-
-// var notHoistedFunction = function() {
-//     console.log("This function is not hoisted.");
-// };
-
-//> Variable Declarations (var, let, const)
-
-/*
-- **var**: Variables declared with `var` are hoisted to the top of their scope, but they are initialized with 
-`undefined` until the actual assignment happens.
-
-Example:
-
-console.log(hoistedVar); // Output: undefined
-var hoistedVar = 5;
-console.log(hoistedVar); // Output: 5
 
 
-- **let** and **const**: Variables declared with `let` and `const` are also hoisted, but unlike `var`, they 
-are not initialized. Accessing them before the declaration (initialization) results in a `ReferenceError`.
-
-Example with `let`:
-
-console.log(notHoistedVar); // Throws ReferenceError
-let notHoistedVar = 10;
-
-
-Example with `const`:
-
-console.log(notHoistedConst); // Throws ReferenceError
-const notHoistedConst = 15;
-
-*/
-
-//-- Conclusion
-
-/*
-- **Function Declarations**: Hoisted entirely (both name and function body).
-- **Function Expressions**: Only the variable declaration is hoisted, not the function assignment.
-- **Variable Declarations**: `var` variables are hoisted and initialized with `undefined`, while `let` 
-and `const` variables are hoisted but not initialized (temporal dead zone).
-*/
 
 //#12)Execution Context and Global Objects (In Detail)
 
@@ -682,24 +532,7 @@ In this example:
 
 */
 
-//##15)Tempory Dead Zone (TDZ)
-/*
-Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
-it throws a ReferenceError. On the other hand, variables declared with var are hoisted and initialized to undefined, 
-so you can access them before their declaration, but they'll just return undefined.
 
---Example
-
-console.log(myVar); // Output: undefined (because of hoisting)
-var myVar = 10;
-
-console.log(myLet); // Throws ReferenceError
-let myLet = 20;
-
-console.log(myConst); // Throws ReferenceError
-const myConst = 30;
-
-*/
 
 //#16)Shadowing
 
@@ -1076,26 +909,7 @@ With the help of polyfills, we can write the latest JavaScript code and ensure t
 features and functions. Polyfills are crucial for maintaining cross-browser compatibility in web development, 
 allowing developers to use the latest features while ensuring older browsers can still function correctly.
 
-*/
 
-//#22)What is closer
-
-/*
-A closure in JavaScript means that an inner function has access to the outer function’s variables and functions even after 
-the outer function has completed execution.
-
-let outerFun=()=>{
-  let name="My Name is Yash I am a Front End Developer";
-  function innerFun (){
-   console.log(name)
-  }
-  return innerFun;
-}
-
-let print=outerFun();
-print()
-
-*/
 
 //#23)Call Back fucniton inside the array
 /*
@@ -1501,369 +1315,6 @@ console.log("Hi I am a Two ");
    - **Microtask Queue** is not a Web API but part of the JavaScript runtime.
    - Microtasks are processed before macrotasks, ensuring high-priority operations like promises are handled promptly.
    - The Event Loop is what enables JavaScript to manage asynchronous operations in a non-blocking manner.
-
-*/
-
-//#32)Call Back
-/*
-> Callback Functions - Quick Notes 📜
-
-1. A callback function is a function passed as an argument to another function, to be executed either immediately, after the main 
-function completes its task, or at a later time, depending on how the callback is used.
-
-2. **Types of Callbacks**:
-   - **Synchronous Callbacks**: Executed right after the main function completes its task (typically 
-   in simple operations like calculations).
-   - **Asynchronous Callbacks**: Executed after a delay or once a specific task (like an API request or 
-   file read) is finished.
-
-3. Common Use Cases:
-   - **API requests** and **database queries** that are time-dependent.
-   - **Event handling**, such as responding to button clicks.
-   - **Timers**, using `setTimeout` or `setInterval`.
-
-4. **Example of Synchronous Callback**:
-
-   function calculate(a, b, callback) {
-       let sum = a + b;
-       callback(sum);  // Executes immediately after sum is calculated
-   }
-   calculate(3, 5, (result) => {
-       console.log('Sum:', result); // Output: 'Sum: 8'
-   });
-
-
-5. **Example of Asynchronous Callback**:
-
-   function fetchData(callback) {
-       setTimeout(() => {
-           console.log('Data fetched');
-           callback();  // Executes after 2 seconds
-       }, 2000);
-   }
-   fetchData(() => {
-       console.log('Processing data after fetching');  // Output after 2 sec
-   });
-   
-
-6. **Importance**:
-   - Callbacks allow for **non-blocking operations**, meaning they let code run while waiting for 
-   time-consuming tasks (like fetching data).
-   - Vital in **JavaScript** for managing **asynchronous tasks**, such as API calls, file handling, 
-   and user interactions.
-
-7. **Drawbacks**:
-   - Using too many callbacks or nesting them deeply can result in **callback hell**, making your 
-   code hard to read and maintain.
-   - You can avoid callback hell by using **promises** or **async/await**, which provide a 
-   cleaner way to handle asynchronous code.
-*/
-
-//#33)Callback Hell
-/*
-Callback Hell is a situation in programming, especially in JavaScript, 
-where multiple nested callbacks make the code difficult to read, maintain, and debug so it happens
-when callbacks are nested within each other, leading to deeply indented code.It occurs when asynchronous
-operations are performed one after another, and each step depends on the completion of the previous one
-
->Explanation
-
-1. **Concept**:
-   - **Callback Hell** happens when callbacks are nested within each other, leading to deeply
-    indented code.
-   - This nesting can make the code look like a pyramid (often called the "Pyramid of Doom"), 
-   making it harder to follow and manage.
-
-2. **Why It Happens**:
-   - Asynchronous operations (like reading files, making network requests, or waiting for timers) 
-   often use callbacks to handle their results.
-   - When multiple asynchronous operations are chained together, the need for callbacks in each 
-   operation can lead to deep nesting.
-
-3. **Example**:
- 
- let stepOne = (callme) => {
-  setTimeout(() => {
-    console.log("One");
-    callme();
-  }, 1000);
-};
-
-let stepTwo = (callme) => {
-  setTimeout(() => {
-    console.log("Two");
-    callme();
-  }, 1000);
-};
-
-let stepThree = (callme) => {
-  setTimeout(() => {
-    console.log("Three");
-    callme();
-  }, 1000);
-};
-
-let stepFour = (callme) => {
-  setTimeout(() => {
-    console.log("Four");
-    callme();
-  }, 1000);
-};
-
-let stepFive = () => {
-  setTimeout(() => {
-    console.log("Five");
-  }, 1000);
-};
-
-let stepSequence = () => {
-  stepOne(() => {
-    stepTwo(() => {
-      stepThree(() => {
-        stepFour(stepFive);
-      });
-    });
-  });
-};
-
-stepSequence();
-
-function start() {
-  stepOne()
-    .then(stepTwo)
-    .then(stepThree)
-    .then(stepFour)
-    .then(stepFive)
-    .catch((error) => {
-      console.error("An error occurred:", error);
-    });
-}
-
-start();
-
-   
-- In the example above, each function relies on the completion of the previous function, 
- resulting in nested callbacks.
-
-4. **Problems with Callback Hell**:
-
-   - **Readability**: Deeply nested callbacks make it hard to read and understand the code.
-   - **Maintenance**: Adding new features or debugging becomes challenging.
-   - **Error Handling**: Managing errors in nested callbacks can be cumbersome.
-
-5. **Solutions**:
-
-   - **Promises**: Flatten the code structure by chaining `.then()` calls.
-   - **Async/Await**: Write asynchronous code in a more synchronous-looking style, improving readability and maintainability.
-
->Summary
-
-In summary, **callback hell** is the challenge of managing deeply nested callbacks in asynchronous code.
-it can make the code hard to read and maintain. Modern solutions like **Promises** and **async/await**
-provide cleaner, more manageable ways to handle asynchronous operations, reducing the problems
-associated with callback hell.
-
-*/
-
-//#34)Promise in JS
-/*
-A Promise is a special JavaScript object. It produces a value after an asynchronous operation completes
-successfully, or an error if it does not complete successfully due to time out, network error, and 
-so on.
-
->Syntax -
-
-let promise = new Promise (function (resolve, reject) {
-
-// Make an asynchronous call and either resolve or reject
-
-});
-
->>>Example of Promises 
-
-let dataOne=(()=>{
-  return new Promise ((resolve ,reject)=>{
-    setTimeout(()=>{
-      console.log("One")
-      resolve("I am a Dataone");
-    },2000)
-  })
-  
-})
-
-let dataTwo=(()=>{
-  return new Promise ((resolve, reject)=>{
-    setTimeout(()=>{
-      console.log("Two")
-      resolve("I am a Datatwo")
-    },1000)
-  })
-})
-
-let dataThree=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Three");
-      reject("Error hai Three me");
-      // resolve("I am a dataThree");
-    },1000)
-  })
-  
-})
-
-let dataFour=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Four")
-      resolve("I am a dataFour");
-    },1000)
-  })
-})
-
-
-let start=(()=>{
-  dataOne()
-  
-  .then(dataTwo)
-  .then(dataThree)
-  .then(dataFour)
-      
-  .catch((error)=>{
-    console.log("Error : ",error)
-  })
-  .finally(()=>{
-    console.log("Program End")
-  })
-  
-})
-
-start();
-
-// console.log(dataOne())
-// console.log(dataThree())
-
->>Async await ,try catch
-
-/*
-async and await are used together to handle asynchronous code in a more readable and 
-synchronous-looking way. They are part of ES2017 (ES8) and provide an alternative to 
-using Promises with .then() chains.
-
-Error Handling: try/catch is used to handle errors that may occur during the execution 
-of code. When you use await in an async function, you can use try/catch to handle any 
-errors that might occur when the promise is rejected.
-
->Key Points to Remember:
-
--`async` functions:Always return a `Promise`.
-- `await`:** Pauses the execution of the function until the promise resolves/rejects.
-- `try/catch`:Helps in handling errors gracefully in an `async` function.
-
-*/
-
-/*
-
-let dataOne=(()=>{
-  return new Promise ((resolve ,reject)=>{
-    setTimeout(()=>{
-      console.log("One")
-      resolve("I am a Dataone");
-    },2000)
-  })
-  
-})
-
-let dataTwo=(()=>{
-  return new Promise ((resolve, reject)=>{
-    setTimeout(()=>{
-      console.log("Two")
-      resolve("I am a Datatwo")
-    },1000)
-  })
-})
-
-let dataThree=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Three");
-      reject("Error hai Three me");
-      // resolve("I am a dataThree");
-    },1000)
-  })
-  
-})
-
-let dataFour=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Four")
-      resolve("I am a dataFour");
-    },1000)
-  })
-})
-
-
-let start =(async ()=>{
-  try{
-    await dataOne()
-    await dataTwo()
-    await dataThree()
-    await dataFour()
-  }
-  catch(error){
-    console.log("Error aaya bro : ",error)
-  }
-  finally {
-    console.log("Program End");
-  }
-
-})
-
-start()
-
-*/
-
-//#35
-/*
-Sure! Here's a brief overview of the main methods used with JavaScript Promises:
-
->> 1. `Promise.resolve(value)`
-- **Description**: Returns a promise that is resolved with the given value. If the value is a promise, that promise is returned; if the value is a thenable (i.e., has a `then` method), the returned promise will "follow" that thenable, adopting its eventual state.
-- **Usage**: Useful for wrapping a value into a promise.
-
->> 2. `Promise.reject(reason)`
-- **Description**: Returns a promise that is rejected with the given reason.
-- **Usage**: Useful for creating a promise that is immediately rejected, often used for error handling.
-
->> 3. `Promise.all(iterable)`
-- **Description**: Takes an iterable of promises and, once all the promises in the iterable have resolved, returns a single promise that resolves with an array of the resolved values. If any promise in the iterable rejects, the returned promise is rejected with the reason from the first promise that was rejected.
-- **Usage**: Useful for running multiple promises in parallel and waiting for all of them to complete.
-
->> 4. `Promise.allSettled(iterable)`
-- **Description**: Similar to `Promise.all`, but instead of waiting for all promises to resolve, it waits for all promises to either resolve or reject. Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describe the outcome of each promise.
-- **Usage**: Useful for when you need to know the result of all promises, regardless of whether they succeed or fail.
-
->> 5. `Promise.any(iterable)`**
-- **Description**: Takes an iterable of Promise objects and, as soon as one of the promises in the iterable fulfills, returns a single promise that resolves with the value from that promise. If no promises in the iterable fulfill (i.e., all of them are rejected), then it rejects with an AggregateError, a new subclass of Error that groups together individual errors.
-- **Usage**: Useful when you want to get the result of the first promise that resolves successfully.
-
->> 6. `Promise.race(iterable)`**
-- **Description**: Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
-- **Usage**: Useful for situations where you need the result from the first promise to settle.
-
->> 7. `Promise.finally(onFinally)`**
-- **Description**: Adds a handler to be invoked regardless of the promise's outcome (fulfilled or rejected). The `onFinally` callback is called when the promise is settled, but it does not receive the promise's result or reason.
-- **Usage**: Useful for performing cleanup actions or other operations that need to occur after the promise settles, no matter the outcome.
-
->> 8. `Promise.prototype.then(onFulfilled, onRejected)`
-- **Description**: Adds fulfillment and rejection handlers to the promise, and returns a new promise resolving to the return value of the called handler.
-- **Usage**: The primary method for defining what to do when a promise resolves or rejects.
-
->> 9. `Promise.prototype.catch(onRejected)`
-- **Description**: Adds a rejection handler callback to the promise and returns a new promise resolving to the return value of the callback if it is called or to its original promise if the promise was not rejected.
-- **Usage**: Used for handling errors that occur in promise chains.
-
-*/
 
 //#36)Kya hai isska outpu 🤔💭
 
@@ -2378,18 +1829,8 @@ Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full St
 
 */
 
-//#42)What is type inference in TypeScript?**
-/*
-Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
-variable or expression based on its value or context, without needing explicit type annotations. 
-This feature helps keep the code clean and reduces redundancy while still providing type safety. For example, if you write `let num = 5;`, TypeScript infers that `num` is of type `number`. 📊✨
 
-Even with type inference, we mention types explicitly for clarity, better error checking, improved IDE 
-support, and to maintain code readability, especially in larger projects and for the developers.
 
-Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
-
-*/
 
 //#43)Naming conventions
 /*
@@ -2495,66 +1936,5 @@ names in the same file or project.
 - Use Context: Sometimes, providing context in the name can be very helpful. For example, `userEmail` 
   instead of just `email` can clarify which email you're referring to.
 
-*/
-
-//#44)What is useSate in React ?
-/*
-With the help of the useState hook, we can manage state in React functional components. For example, 
-in the code const [initialValue, updateValue] = useState(1);, we define two items inside the array: 
-the first is initialValue, and the second is updateValue. The initialValue starts with the value you
-pass to useState (like 1 in this example). The updateValue is a function used to update the initialValue. 
-This is how the useState hook works.
-
-//#45)Sorting in Javascript .
-
-1. **Sorting helps in arranging elements in ascending or descending order, finding smallest and greatest elements**  
-  => Sorting is used to organize data systematically.
-
-2. **By default, `sort()` converts array elements to strings and sorts them alphabetically.**  
-  =>  The default behavior of `sort()` is string-based sorting.
-
-3. **If we need to sort numbers, we must use a comparison function because, by default, `sort()` treats numbers as strings.**  
-  => Without a comparison function, numbers like `[100, 2, 50]` converted into string for that we need to use comparison 
-  operator.
-
-4. **Sorting modifies the original array.**  
-  => The `sort()` method mutates the original array. If you want to keep the original array unchanged, 
-  use `.slice()` to create a copy before sorting.
-
-5. **By default, uppercase letters are sorted before lowercase letters.**  
-  => This is due to the Unicode values of characters (uppercase letters have lower values than lowercase ones).
-
-
->>About Unique Code Value
-
-Every character (like A, B, C, D), every emoji, and every currency symbol has a unique Unicode value that helps the computer understand 
-them. When we put any number inside double quotes or single quotes, it becomes a string. At this point, the number is no longer 
-treated as a number but as a string with its own Unicode value.  
-
-When we use the `.sort()` method directly on strings, they are arranged based on their Unicode values, not as numbers.  
-
-Even if we use pure numbers inside an array and then apply `.sort()`, the numbers are temporarily converted into strings during 
-sorting. This is why they are arranged according to their Unicode values instead of numerically.  
-
-To avoid this and ensure proper numerical sorting, we need to use a comparator function in `.sort()`, so the values are treated 
-as numbers instead of strings.  
-
->> Comparator Functions in Sorting
-
-When working with sorting in JavaScript, **comparator functions** use comparison logic to determine order. These can be 
-customized based on your requirements.
-
-- Numerical Sorting:
-
-  let numbers = [18, 6, 4, 1, 0];
-  
-  numbers.sort((a, b) => a - b); // Ascending order
-
-  numbers.sort((a, b) => b - a); // Descending Order:
-
-- Custom Sorting (e.g., by string length):
-
-  let words = ["apple", "bat", "banana"];
-  words.sort((a, b) => a.length - b.length); // Shortest to longest
 
 */
