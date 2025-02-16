@@ -19,7 +19,7 @@ console.log("JS Practice Room");
 
 //3)
 
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 
 // console.log(arr[arr.length-1]);
 
@@ -84,58 +84,58 @@ let arr = [1, 2, 3, 4, 5];
 
 // start()
 
-let one= ()=>{
-  return new Promise((resolve,reject)=>{
-     setTimeout(()=>{
-        console.log("Hello Ji One ");
-        resolve()
-     },1000)
-  })
-}
+// let one= ()=>{
+//   return new Promise((resolve,reject)=>{
+//      setTimeout(()=>{
+//         console.log("Hello Ji One ");
+//         resolve()
+//      },1000)
+//   })
+// }
 
-let Two= ()=>{
-    return new Promise((resolve,reject)=>{
-       setTimeout(()=>{
-          console.log("Hello Ji Two");
-          resolve()
-       },1000)
-    })
-}
+// let Two= ()=>{
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(()=>{
+//           console.log("Hello Ji Two");
+//           resolve()
+//        },1000)
+//     })
+// }
 
-let Three= ()=>{
-    return new Promise((resolve,reject)=>{
-       setTimeout(()=>{
-          console.log("Hello Ji Three");
-          resolve()
-       },1000)
-    })
-}
+// let Three= ()=>{
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(()=>{
+//           console.log("Hello Ji Three");
+//           resolve()
+//        },1000)
+//     })
+// }
 
-let Four= ()=>{
-    return new Promise((resolve,reject)=>{
-       setTimeout(()=>{
-       return reject(new Error ("yyy 4 occurred"));
-      // resolve()
-         console.log("Hello Ji Four ");
-       })
-    })
-}
+// let Four= ()=>{
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(()=>{
+//        return reject(new Error ("yyy 4 occurred"));
+//       // resolve()
+//          console.log("Hello Ji Four ");
+//        })
+//     })
+// }
 
-let start=()=>{
-    one()
-    .then(Two)
-    .then(Three)
-    .then(Four)
+// let start=()=>{
+//     one()
+//     .then(Two)
+//     .then(Three)
+//     .then(Four)
 
-    .catch((error)=>{
-        console.error("Error Name:", error.message);
-    })
-    .finally(()=>{
-        console.log("Code Ended");
-    })
-}
+//     .catch((error)=>{
+//         console.error("Error Name:", error.message);
+//     })
+//     .finally(()=>{
+//         console.log("Code Ended");
+//     })
+// }
 
-start()
+// start()
 
 // let one= ()=>{
 //   return new Promise((resolve,reject)=>{
@@ -199,3 +199,125 @@ start()
 // a(() => {
 //   console.log("Exceute  immediately");
 // });
+
+let one = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hi I am One");
+    }, 1000);
+  });
+};
+
+let two = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hi I am Two");
+    }, 1000);
+  });
+};
+
+let three = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Hi I am Three");
+    }, 1000);
+  });
+};
+
+let four = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hi I am four");
+    }, 1000);
+  });
+};
+
+let five = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hi I am five");
+    }, 1000);
+  });
+};
+
+
+// one().then((result) => {
+//   console.log(result);
+//   return two();
+// })
+// .then((result)=>{
+//     console.log(result);
+//     return three();
+// })
+// .then((result)=>{
+//     console.log(result);
+//     return four();
+// })
+// .then((result)=>{
+//     console.log(result);
+//     return five();
+// }).then((result)=>{
+//     console.log(result);
+   
+// })
+// .catch((error)=>{
+//   console.log(error);
+// })
+// .finally(()=>{
+//     console.log("Process Completed");
+// })
+
+
+
+// one(()=>{
+//    two(()=>{
+//     three(()=>{
+//         four(()=>{
+//             five()
+//         })
+//     })
+//    })
+// })
+
+
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+// .then((data)=>{
+//    return data.json()
+// })
+// .then((info)=>{
+//     console.log(info);
+// })
+// .catch((error)=>{
+//    console.log(error);
+// })
+// .finally(()=>{
+//     console.log("Process Completed");
+// })
+
+// console.log("Hello I am a yash");
+
+// async function abc (){
+//     try {
+//     let data = await fetch ("https://jsonplaceholder.typicode.com/todos/1");
+//     let info= await data.json();
+//     console.log(info);
+//     }
+//     catch(error){
+//       console.log(error);
+//     }
+//   }
+  
+//   abc()
+
+//   console.log("Hello I am a yash");
+
+
+
+
+
+b()  //ReferenceError: Cannot access 'b' before initialization
+
+let b =function (){
+ console.log("Hey I a function")
+}
+

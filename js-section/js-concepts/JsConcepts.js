@@ -182,31 +182,7 @@ An execution context is the environment in which JavaScript code runs. It consis
    - Code is executed line by line.
    - Variables are assigned their actual values.
 
- //-- Global Execution Context
 
-- Created when JavaScript code first starts to run.
-- The global execution context is pushed onto the call stack at the start.
-
- //-- Function Execution Context
-
-- Created whenever a function is called.
-- Each function call generates a new execution context.
-- Function execution contexts are managed by the call stack:
-  - A new execution context is pushed onto the stack when a function is invoked.
-  - It is popped off the stack once the function completes execution.
-
- //-- Call Stack
-
-- The call stack tracks all execution contexts.
-- The global execution context is the first to be pushed onto the stack.
-- Subsequent function calls push new execution contexts onto the stack.
-- Execution contexts are popped from the stack when their execution finishes.
-
- //-- Key Points
-
-- The execution context manages the flow and execution of code.
-- Memory allocation happens before code execution.
-- The call stack handles the order of execution contexts, managing function calls and returns.
 */
 
 //#10)Loops
@@ -391,56 +367,6 @@ for (let [index, value] of arr.entries()) {
 */
 
 
-
-
-//#12)Execution Context and Global Objects (In Detail)
-
-//--Execution Context in JavaScript:
-
-/*
-- An execution context is the environment where JavaScript code is executed.
-- It has two main phases:
-  1. Memory Allocation Phase:
-     - Memory is allocated for variables and functions.
-     - Variables are initially set to `undefined`.
-     - Function declarations are stored with their definitions.
-  2. Code Execution Phase:
-     - Code is executed line by line.
-     - Variables are assigned their actual values during execution.
-*/
-
-//--Global Execution Context:
-/*
-- Created when JavaScript code starts to run.
-- The global execution context is pushed onto the call stack first.
-- Manages the execution of global code.
-*/
-
-//-- Global Objects in JavaScript:
-/*
-- In the browser, the global object is `window and this`.
-  - You can use `window` or `this` to access global variables and functions.
-  - Example:
-    var name = 'Alice';
-    console.log(window.name); // Output: Alice
-    console.log(this.name);   // Output: Alice
-- In Node.js, the global object is `global`.
-  - Use `global` to access global variables and functions.
-  - Example:
-    global.name = 'Alice';
-    console.log(global.name); // Output: Alice
-*/
-
-//--Key Points:
-/*
-- Global execution context is the default context where code starts execution.
-- Execution context has memory allocation and code execution phases.
-- Both **`this`** and **`window`** refer to the global object in browsers.
-- **`this`, `window`, and `global` keywords** allow access to values in the global execution context.
-- **`global`** serves a similar role as **`window`** in browsers but is specific to Node.js environments,provides 
-  access to the global scope of variables and functions within Node.js applications.
-*/
-
 //#13)Basic Info
 
 /*
@@ -462,78 +388,6 @@ execution. So, while JavaScript benefits from improved performance with V8, it r
 
 -JavaScript is a synchronous single-threaded language.
 */
-
-//##14)Lexical Scope , Scope chain
-
-/*
-
--- Lexical Scope
-
-**Definition:** Lexical scope means that a function can access variables that are defined in its 
-  outer scope.
-
-> Simple Explanation:
-
-1. **Lexical Scope:** If you have a function inside another function (nested function), 
-the inner function can access variables from the outer function.
-
-2. **Example:**
-
-function outerFunction() {
-  var outerVar = "I am outside!";
-
-  function innerFunction() {
-    console.log(outerVar); // Can access outerVar because of lexical scope
-  }
-
-  innerFunction();
-}
-
-outerFunction();
-
-In this example:
-- `outerVar` is defined in `outerFunction`.
-- `innerFunction` can access `outerVar` because it is within the lexical scope of `outerFunction`.
-
--- Scope Chain
-
-**Definition:** The scope chain is the list of all the scopes in which a variable can be looked up.
-
-> Simple Explanation:
-
-1. **Scope Chain:** When the JavaScript engine needs to find a variable, it starts looking in the current scope. If it doesn't find it, it moves to the outer scope, and keeps going up the chain until it reaches the global scope.
-
-2. **Example:**
-
-
-function outerFunction() {
-  var outerVar = "I am outside!";
-
-  function innerFunction() {
-    console.log(outerVar); // Looks in innerFunction's scope first, then outerFunction's scope
-  }
-
-  innerFunction();
-}
-
-outerFunction()
-
-In this example:
-- `innerFunction` looks for `outerVar`.
-- It doesn't find `outerVar` in its own scope, so it looks in `outerFunction`'s scope.
-- This process of looking up through the scopes is the scope chain.
-
--- Summary
-
-- **Lexical Scope:** Determines that inner functions can access variables from their outer functions.
-- **Scope Chain:** The process of looking up variables through nested scopes.
-
-**In simple terms:** Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. The scope chain is the path JavaScript follows to find a variable if it's not in the current box.
-
-*/
-
-
-
 //#16)Shadowing
 
 /*
@@ -1358,44 +1212,6 @@ I am promise
 
 */
 
-//#37) Not defined vs undefined vs null
-
-/*
-> undefined: This occurs when a variable or function is declared, but no value is assigned. When we try to access that variable, it gives us "undefined."
-Example:
-
-console.log(a); // Logs "undefined" because 'a' is hoisted but not initialized yet.
-var a = 10;
-
-console.log(b); // Hoisting applies here as well, so it logs "undefined."
-var b = 10;
-
-function c() {
-}
-
-console.log(c()); // 'c()' returns undefined because the function has no return statement.
-
-> Not defined / ReferenceError: This happens when a variable or function is not declared, and we try to access it. If `let` or `const` is used, it throws a "ReferenceError: variable is not defined." Since the declaration is missing, we can't initialize it either.
-
-var b = 20;
-
-console.log(a); // Throws " ReferenceError: a is Not defined " because 'a' is never declared.
-
-function x() {
-  return "Hi";
-}
-console.log(value()); // Throws " ReferenceError: value is Not defined " because 'value' is not declared or defined.
-
-> null: "null" is explicitly assigned to a variable (We need to explicitly assign "null"). It represents the intentional absence of any object value. It’s a bit strange 😂, but it’s true.
-
-let info = {
-  name: "Rahul",
-  middleName: null, // We explicitly set 'middleName' to null.
-  lastName: "Turkar"
-};
-
-console.log(info.middleName); // Logs "null" because we explicitly set it to null.
-*/
 
 //#38) About  Coercion (koversion) and  comparision operator
 /*

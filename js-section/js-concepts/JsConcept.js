@@ -1,14 +1,15 @@
 /*
 #1)Three way to declared variable in javascript (Var,let,Const)
 
->In var we can redecared and reassing the the var variable and var is function scope.
+>In var, we can redeclared and reassing them and Var is function scope.
 
 var a = 10;
-console.log("In Var:", a);
 var a = 20;
 console.log("In Var:", a);
+a=30;
+console.log("In Var:", a);
 
->In let we cannot redecared the variable but we can reassign them and let is block scoped.
+>In let, we cannot redeclared the variable but we can reassign them and let is block scoped.
 
 let b = 30;
     b = 32;
@@ -17,7 +18,7 @@ console.log("In let:", b);
 let b = 40; (not valid)
 console.log("In let:", b);
 
->>>In const we cannot redecared or reassign the variable and const is also a block scoped.
+>>>In const we cannot redeclared or reassign the variable and const is also a block scoped.
 
 const c = 50;
 console.log("In Const:", c);
@@ -33,7 +34,7 @@ const, it is necessary to define the value during declaration.(🔥V.Imp)
 and hoisting and let and const are block scope.
 
 
---Example:function scope
+--Example:function scope using var
 
 function one() {
     if(true){
@@ -43,7 +44,7 @@ function one() {
     }
     one()
         
---Example:Block scoped
+--Example:Block scoped using let
         
     function one() {
     if(true){
@@ -95,13 +96,13 @@ const arrow =(print,printTwo)=>{
 
 arrow ("I am a arrow Fucntion", "✋Two");
 
->If there is a single Parameter
+>If there is a single Parameter in arrow function
 
 const arrowTwo=(value)=>console.log(value);
 
 arrowTwo("I a Value");
 
-> Reference Assignment (The reference of one variable is given to another variable).
+--> Reference Assignment (The reference of one variable is given to another variable).
 
 let a = [1, 2, 3, 5];
 
@@ -127,21 +128,21 @@ and handled by the parameter.
 
 #4)About Call Back :-
 
-When a function is passed as an argument into another function, then it is called a callback function.
+When "A function" is passed as an argument into "Another function", then it is called a callback function.
 (It executed either immediately, after the main function completes its task, or at a later time, depending on how the callback is used.
 
-1. **Types of Callbacks**:
-   - **Synchronous Callbacks**: Executed right after the main function completes its task (typically 
+1. Types of Callbacks:
+   - Synchronous Callbacks: Executed right after the main function completes its task (typically 
    in simple operations like calculations).
-   - **Asynchronous Callbacks**: Executed after a delay or once a specific task (like an API request or 
+   - Asynchronous Callbacks: Executed after a delay or once a specific task (like an API request or 
    file read) is finished.
 
 2. Common Use Cases:
-   - **API requests** and **database queries** that are time-dependent.
-   - **Event handling**, such as responding to button clicks.
-   - **Timers**, using `setTimeout` or `setInterval`.
+   - API requests and database queries that are time-dependent.
+   - Event handling, such as responding to button clicks.
+   - Timers, using `setTimeout` or `setInterval`.
 
-3. **Example of Synchronous Callback**:
+3. Example of Synchronous Callback:
 
    function calculate(a, b, callback) {
        let sum = a + b;
@@ -152,7 +153,7 @@ When a function is passed as an argument into another function, then it is calle
    });
 
 
-4. **Example of Asynchronous Callback**:
+4. Example of Asynchronous Callback:
 
    function fetchData(callback) {
        setTimeout(() => {
@@ -165,7 +166,7 @@ When a function is passed as an argument into another function, then it is calle
    });
    
 
-5. **Importance**:
+5. Importance:
    - Callbacks allow for **non-blocking operations**, meaning they let code run while waiting for 
    time-consuming tasks (like fetching data).
    - Vital in **JavaScript** for managing **asynchronous tasks**, such as API calls, file handling, 
@@ -247,8 +248,7 @@ let stepSequence = () => {
 
 stepSequence();
 
-- In the example above, each function relies on the completion of the previous function, 
- resulting in nested callbacks.
+-- In the example above, each function relies on the completion of the previous function, resulting in nested callbacks.
 
  Problems with Callback Hell:
 
@@ -257,7 +257,7 @@ stepSequence();
 
    - Readability: Deeply nested callbacks make it hard to read and understand the code.
 
- Solutions:
+--Solutions:
 
   - Promises: Flatten the code structure by chaining `.then()` calls.
   - Async/Await: Write asynchronous code in a more synchronous-looking style, improving readability and maintainability.
@@ -280,6 +280,16 @@ and we can use catch for handling errors in promises.
 .Pending: The work is still happening.
 .Resolved (Fulfilled): The work is done successfully.
 .Rejected: The work failed, and there’s an error.
+
+--We also have catch and finally  👇👇
+
+.catch(()=>{
+
+})
+
+.finally(()=>{
+
+})
 
 --Why are Promises Used?
 
@@ -360,7 +370,9 @@ start();
 #7)Asyn await
 
 Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides 
-additional functionality. With the help of async, a Promise is created automatically. The resolved and rejected 
+additional functionality. With the help of async, a Promise is created automatically. 
+
+The resolved and rejected 
 states are handled using try and catch blocks. When the code is resolved, it is executed inside the try block, 
 and if the code is rejected, it is handled with the help of the catch block.
 
@@ -398,7 +410,6 @@ fetch('https://api.example.com/user')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
-Using async/await:
 
 --Using Async await (try/catch):
 
@@ -418,7 +429,7 @@ async function fetchUserData() {
 
 #8)What is closer
 
-A closure in JavaScript means that an inner function has access to the outer function’s variables and even after 
+A closure in JavaScript means that an inner function has access to the outer function’s variable and even after 
 the outer function has completed execution.
 
 let outerFun=()=>{
@@ -433,7 +444,96 @@ let print=outerFun();
 print()
 
 
-#9) Hoisting Explained
+#9)Scope chain, Lexical Scope (Closer)
+
+>Scope Chain
+
+--Simple Explanation:
+
+Scope Chain: When the JavaScript engine needs to find a variable, it starts looking in the current scope. 
+If it doesn't find it, it moves to the outer scope, and keeps going up the chain until it reaches the global scope.
+
+--Example:
+
+function outerFunction() {
+  var outerVar = "I am outside!";
+
+  function innerFunction() {
+    console.log(outerVar); // Looks in innerFunction's scope first, then outerFunction's scope
+  }
+
+  innerFunction();
+}
+
+outerFunction()
+
+In this example:
+- `innerFunction` looks for `outerVar`.
+- It doesn't find `outerVar` in its own scope, so it looks in `outerFunction`'s scope.
+- This process of looking up through the scopes is the scope chain.
+
+
+> Lexical Scope
+
+Definition: Lexical scope means that a inner function can access variables that are defined in its outer scope.
+
+-- Simple Explanation:
+
+Lexical Scope:If you have a function inside another function (nested function), 
+the inner function can access variables from the outer function.
+
+--Example:
+
+function outerFunction() {
+  var outerVar = "I am outside!";
+
+  function innerFunction() {
+    console.log(outerVar); // Can access outerVar because of lexical scope
+  }
+
+  innerFunction();
+}
+
+outerFunction();
+
+In this example:
+- `outerVar` is defined in `outerFunction`.
+- `innerFunction` can access `outerVar` because it is within the lexical scope of `outerFunction`.
+
+-- Summary In simple terms:
+
+-The scope chain is the path JavaScript follows to find a variable if it's not in the current box. (Because)
+-Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
+
+
+#12)Tempory Dead Zone (TDZ)
+
+The Temporal Dead Zone (TDZ) refers to the period of time during which a variable declared with let or const is
+hoisted but cannot be accessed until the code execution reaches its declaration.
+
+In the TDZ, attempting to access the variable will result in a ReferenceError, because the variable is not yet
+initialized.
+
+--Simple Explaination
+
+Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
+it throws a ReferenceError. 
+(On the other hand, variables declared with var are hoisted and automatically initialized to undefined, 
+so you can access var before declaration, but it just return undefined.)
+
+--Example
+
+console.log(myVar); // Output: undefined (because of hoisting)
+var myVar = 10;
+
+console.log(myLet); // Uncaught ReferenceError: Cannot access 'myLet' before initialization
+let myLet = 20;
+
+console.log(myConst); // Uncaught ReferenceError: Cannot access 'myConst' before initialization
+const myConst = 30;
+
+
+#11) Hoisting Explained
 
 Hoisting means that during the compile phase (before code execution), variable and function declarations are 
 moved to the top of their containing scope. This is called hoisting.
@@ -469,28 +569,28 @@ function hoistedFunction() {
 
 --Example:
 
- a()  //TypeError: a is not a function
+a()  //TypeError: a is not a function
 
- var a =function (){
+var a =function (){
+ console.log("Hey I a function")
+}
+
+
+ b()  //ReferenceError: Cannot access 'b' before initialization
+
+ let b =function (){
   console.log("Hey I a function")
  }
 
- try {
-     notHoistedFunction(); // This throws an error because not HoistedFunction is undefined
- } catch (error) {
-     console.log(error); // ReferenceError: notHoistedFunction is not defined
- }
 
- var notHoistedFunction = function() {
-     console.log("This function is not hoisted.");
- };
-
-
->Variable Declarations (var, let, const) 
+>Variable Declarations in (var, let, const) 
 
 1. `var`:
 
-- Variables declared with `var` are hoisted to the top of their scope.  
+During the compilation phase, variables declared with var are hoisted to the top of their containing scope 
+and are automatically initialized to undefined."
+
+- Variables declared with `var` are hoisted to the top of their scope.
 - They are initialized with `undefined` during the hoisting phase.  
 - Accessing them before declaration does not throw an error but returns `undefined`.
 
@@ -534,24 +634,140 @@ const notHoistedConst = 15;
 
 - Function Declarations: Hoisted entirely (both name and function body).
 - Function Expressions: Only the variable declaration is hoisted, not the function assignment.
-- Variable Declarations : `var` variables are hoisted and initialized with `undefined`, while `let` 
-and `const` variables are hoisted but not initialized (temporal dead zone).
+- Variable Declarations : `var` variables are hoisted and automatic initialized with `undefined`, while `let` 
+and `const` variables are hoisted but not initialized (temporal dead zone) anf gives ReferenceError ( ReferenceError: Cannot access 'variable' before initialization )
 
-#10)Tempory Dead Zone (TDZ)
 
-Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
-it throws a ReferenceError. On the other hand, variables declared with var are hoisted and initialized to undefined, 
-so you can access var before declaration, but it just return undefined.
+#12) undefined vs Not define vs null
 
---Example
+> undefined: This occurs when a variable or function is declared, but no value is assigned to them. When we try to access that variable, it gives us "undefined."
 
-console.log(myVar); // Output: undefined (because of hoisting)
+--->Variable or function is declared, but no value is assigned to them.
+
+Example:
+
+let b ;
+console.log(b); -->undefined
+
+console.log(a); -->Logs "undefined" because 'a' is hoisted but not initialized yet.
+var a = 10;
+
+function c() {
+//nothing
+}
+
+console.log(c()); -->'c()' returns undefined because the function has no return statement.
+
+> ReferenceError:Not Define :- This happens when a variable or function is not declared and we are trying to access it. Since the declaration is missing, we can't initialize it either.
+
+var b = 20;
+
+console.log(a); --> Throws " ReferenceError: a is Not defined " because 'a' is never declared.
+
+function x() {
+  return "Hi";
+}
+console.log(value()); --> Throws " ReferenceError: value is Not defined " because 'value' is not declared or defined.
+
+> null: "null" is explicitly assigned to a variable (We need to explicitly assign "null"). It represents the intentional absence of any object value. It’s a bit strange 😂, but it’s true.
+
+let info = {
+  name: "Rahul",
+  middleName: null, // We explicitly set 'middleName' to null.
+  lastName: "Turkar"
+};
+
+console.log(info.middleName); // Logs "null" because we explicitly set it to null.
+
+#13) Global Execution Context and Execution Context (In Detail)
+
+> Global Execution Context in JavaScript:
+
+- An Global execution context is the environment where JavaScript code is executed,This is the first execution context 
+that is created when JavaScript starts running. It is the default environment where the entire JavaScript code runs.
+
+So, the global execution context is just one type of execution context, and it is the first and main one that 
+JavaScript creates before executing any other function.
+
+
+>It has two main phases:
+
+
+--1️⃣ Memory Allocation Phase (Hoisting Phase):  
+
+   - Variables declared with `var` are initialized as `undefined`.  
+   - Variables declared with `let` and `const` are stored in memory but remain in the "Temporal Dead Zone" until they are assigned a value.
+   - Functions (declared using function declarations) are stored with their full body.  
+
+   
+---Example:Example for Better Understanding :
+
+console.log(myVar); // Output: undefined (hoisted but not initialized)
+console.log(myFunction()); // Output: "Hello, Yashu" (function is hoisted with name + body)
+
+// Memory Allocation Phase:
+// - myVar: undefined
+// - myFunction: function () { return "Hello, Yashu!"; }
+
 var myVar = 10;
+function myFunction() {
+   return ("Hello, Yashu")
+}
 
-console.log(myLet); // Throws ReferenceError
-let myLet = 20;
 
-console.log(myConst); // Throws ReferenceError
-const myConst = 30;
+---2️⃣ Code Execution Phase:
+   - Code executes line by line.  
+   - Variables are assigned their actual values.  
+   - When a function is called, a new execution context is created and pushed into the call stack.  
+   - After the function finishes execution, its execution context is popped out of the call stack.  
+
+
+> Call Stack Behavior:  
+
+  - First, the Global Execution Context (GEC) is pushed into the call stack.  
+  - Then, when a function is called, a new execution context is created and **pushed** into the **call stack**.  
+  - Once the function execution is **completed**, its execution context is **removed (popped out)** from the stack.  
+  - This process **repeats for every function call** until all functions are executed, and finally,
+   the **Global Execution Context is removed** once the program finishes.  
+
+
+> Function Execution Context
+
+- Created whenever a function is called.
+- Each function call generates a new execution context.
+- Function execution contexts are managed by the call stack:
+  - A new execution context is pushed onto the stack when a function is invoked.
+  - It is popped off the stack once the function completes execution.
+
+
+-- Key Points
+
+- Memory allocation happens before code execution.
+- The call stack handles the order of execution contexts, managing function calls and returns.
+- The execution context manages the flow and execution of code.
+
+
+---Example to Understand
+
+console.log("Start");  // Runs inside Global Execution Context
+
+function sayHello() {
+    console.log("Hello, Yashu!");  // New Execution Context is created
+}
+
+sayHello();  // Function call → New Execution Context created in Call Stack
+
+console.log("End");  // Still inside Global Execution Context
+
+
+--Flow of Execution Context:
+
+1️⃣ Global Execution Context is created first.  
+2️⃣ `console.log("Start")` runs inside the GEC.  
+3️⃣ `sayHello()` is called → A new execution context is created inside the Call Stack.  
+4️⃣ `console.log("Hello, Yashu!")` runs inside this new execution context.  
+5️⃣ After execution, the function’s execution context is removed from the stack.  
+6️⃣ `console.log("End")` runs inside the Global Execution Context.  
+7️⃣ Once all code is executed, the Global Execution Context is removed from the call stack.  
 
 */
