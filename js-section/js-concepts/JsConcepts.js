@@ -14,8 +14,6 @@ console.log("JS Concepts Is Working");
 //     console.log("Helo Guys I am a iffi");
 // }());
 
-
-
 //>Code:-
 
 // function greet(name) {
@@ -63,18 +61,6 @@ greeter(); // Output: Hi!
 
 Other reason bhi hai
 */
-
-//#6)What is Array in Javascript ?
-/*
-An array in JavaScript is a type of object that allows us to store multiple values in a single variable. 
-We use square brackets ([]) to define an array, and the values inside the array are separated by commas.
-
-Arrays are zero-indexed, which means the first element of an array is at index 0.
-*/
-
-// let array=["Yash","Jeet","Aman","Rahul"];
-// console.log(typeof(array));//object
-// console.log(array[1]);
 
 //#7)What is object is Javascript ?
 
@@ -165,23 +151,6 @@ arr2[1] = "Tailwind CSS";
 
 console.log(arr2[1]); // Output: Tailwind CSS
 console.log(arr[1]);  // Output: Tailwind CSS
-
-*/
-
-//#9) Execution Context in JavaScript (Basic)
-
-/*
-An execution context is the environment in which JavaScript code runs. It consists of two main phases:
-
-1. **Memory Allocation Phase**:
-   - Memory is allocated for variables and functions.
-   - Variables are initialized to `undefined`.
-   - Function declarations are stored with their full definitions.
-
-2. **Code Execution Phase**:
-   - Code is executed line by line.
-   - Variables are assigned their actual values.
-
 
 */
 
@@ -365,7 +334,6 @@ for (let [index, value] of arr.entries()) {
 // Index: 2, Value: Hello
 
 */
-
 
 //#13)Basic Info
 
@@ -764,41 +732,6 @@ features and functions. Polyfills are crucial for maintaining cross-browser comp
 allowing developers to use the latest features while ensuring older browsers can still function correctly.
 
 
-
-//#23)Call Back fucniton inside the array
-/*
-When you use the `map` method, it’s a function itself, and it takes another function as an argument. That function you pass inside `map` is what we call the **callback function**.
-
--- How It Works:
-- The `map` method iterates over each element in the array.
-- For each element, it calls the **callback function** you provided.
-- The callback function takes the current element (and optionally the index and the whole array) and returns a new value.
-- The `map` method collects all these new values into a new array.
-
--- Simple Breakdown:
-
-// Original array
-const numbers = [1, 2, 3, 4];
-
-// map method (outer function) takes an inner function (callback function)
-const doubled = numbers.map(function(number) { // This function is the callback
-  return number * 2; // This is what the callback does with each element
-});
-
-console.log(doubled); // Output: [2, 4, 6, 8]
-
-
-So, in the code above:
-- `numbers.map(...)` is the `map` method (which is a function).
-- `function(number) { return number * 2; }` is the callback function.
-
-This callback function is applied to every element of the `numbers` array. The `map` method uses it to generate a new array based on the transformations done by the callback function.
-
-So yes, when you use `map`, the function you pass to it is indeed the callback function. 🎉
-
-
-*/
-
 //#24) What is window obejct in browser ?
 
 /*
@@ -1056,48 +989,6 @@ Explanation:
 
 */
 
-//#29)Callback funtion and Async call back
-
-/*
->Call Back
-
-let userName=(name)=>{
-  return name;
-}
-
-let info=(data)=>{
-  console.log(data)
-}
-
-info(userName("Yashu"))
-
->Async call back
-
-let one=(()=>{
-  console.log("One")
-})
-one()
-
-setTimeout(()=>{
-  console.log("Two")
-},2000)
-
-let three=(()=>{
-  console.log("Three")
-})
-
-three()
-
-setTimeout(()=>{
-  console.log("Four")
-},4000)
-
-let five=(()=>{
-  console.log("Five")
-})
-five()
-*/
-
 //#30)This is why js is synchronous and asynchronous in  nature .
 
 /*
@@ -1211,7 +1102,6 @@ I am setTime out
 I am promise
 
 */
-
 
 //#38) About  Coercion (koversion) and  comparision operator
 /*
@@ -1644,9 +1534,6 @@ Copy     { name: 'Yashu', age: '22', city: 'Nagpur', otherInfo: [ '15', 'Full St
 
 
 */
-
-
-
 
 //#43)Naming conventions
 /*

@@ -506,45 +506,58 @@ In this example:
 -Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
 
 
-#12)Tempory Dead Zone (TDZ)
+#10) Hoisting Explained
 
-The Temporal Dead Zone (TDZ) refers to the period of time during which a variable declared with let or const is
-hoisted but cannot be accessed until the code execution reaches its declaration.
+Hoisting means that during the compile phase (before code execution), variable declarations are moved to the top 
+of their containing scope, while function declarations are hoisted along with their body, allowing them to be called 
+before their declaration. However, only the declarations are hoisted, not the initializations. Variables declared with 
+var are hoisted with their declaration but initialized as undefined, while let and const are hoisted but remain uninitialized 
+and go into the Temporal Dead Zone (TDZ). This process is known as hoisting.
 
-In the TDZ, attempting to access the variable will result in a ReferenceError, because the variable is not yet
-initialized.
-
---Simple Explaination
-
-Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
-it throws a ReferenceError. 
-(On the other hand, variables declared with var are hoisted and automatically initialized to undefined, 
-so you can access var before declaration, but it just return undefined.)
-
---Example
-
-console.log(myVar); // Output: undefined (because of hoisting)
-var myVar = 10;
-
-console.log(myLet); // Uncaught ReferenceError: Cannot access 'myLet' before initialization
-let myLet = 20;
-
-console.log(myConst); // Uncaught ReferenceError: Cannot access 'myConst' before initialization
-const myConst = 30;
-
-
-#11) Hoisting Explained
-
-Hoisting means that during the compile phase (before code execution), variable and function declarations are 
-moved to the top of their containing scope. This is called hoisting.
-
-Explanation:
+Quick Points:
 
 - During the compile phase : It's important to note that hoisting occurs during the compile phase, not during code execution.
-- Variable and function declarations : Both variables and functions are hoisted, 
+- Variable and function declarations : Both variables and functions are hoisted, means moved to the top of their containing scope.
   But :-
 ->Function declarations are fully hoisted (name and body).
 ->Variable declarations are hoisted, but their values are not, only the declarations, not the initializations.
+
+>Hosting with variable (var, let, const) 
+
+1. `var`:
+
+During the compilation phase, variables declared with var are hoisted to the top of their containing scope 
+and are automatically initialized to undefined.
+
+- Variables declared with `var` are hoisted to the top of their scope.
+- They are initialized with `undefined` during the hoisting phase.  
+- Accessing them before declaration does not throw an error but returns `undefined`.
+
+--Example :
+
+console.log(hoistedVar); // Output: undefined (hoisted but not initialized)
+
+var hoistedVar = 5;
+
+console.log(hoistedVar); // Output: 5
+
+2. `let` and `const`:
+
+- Variables declared with `let` and `const` are also hoisted, but they are **not initialized** during the hoisting phase.  
+- They remain in the "temporal dead zone" (TDZ) from the start of their scope until the code execution reaches their declaration.  
+- Accessing them **before declaration** results in a `ReferenceError`.
+
+Example with `let`:
+
+console.log(notHoistedVar); // Throws ReferenceError: Cannot access 'notHoistedVar' before initialization
+
+let notHoistedVar = 10;
+
+Example with `const`:
+
+console.log(notHoistedConst); // Throws ReferenceError: Cannot access 'notHoistedConst' before initialization
+
+const notHoistedConst = 15;
 
 >>Hoisting In Function
 
@@ -580,45 +593,7 @@ var a =function (){
 
  let b =function (){
   console.log("Hey I a function")
- }
-
-
->Variable Declarations in (var, let, const) 
-
-1. `var`:
-
-During the compilation phase, variables declared with var are hoisted to the top of their containing scope 
-and are automatically initialized to undefined."
-
-- Variables declared with `var` are hoisted to the top of their scope.
-- They are initialized with `undefined` during the hoisting phase.  
-- Accessing them before declaration does not throw an error but returns `undefined`.
-
---Example :
-
-console.log(hoistedVar); // Output: undefined (hoisted but not initialized)
-
-var hoistedVar = 5;
-
-console.log(hoistedVar); // Output: 5
-
-2. `let` and `const`:
-
-- Variables declared with `let` and `const` are also **hoisted**, but they are **not initialized** during the hoisting phase.  
-- They remain in the "temporal dead zone" (TDZ) from the start of their scope until the code execution reaches their declaration.  
-- Accessing them **before declaration** results in a `ReferenceError`.
-
-Example with `let`:
-
-console.log(notHoistedVar); // Throws ReferenceError: Cannot access 'notHoistedVar' before initialization
-
-let notHoistedVar = 10;
-
-Example with `const`:
-
-console.log(notHoistedConst); // Throws ReferenceError: Cannot access 'notHoistedConst' before initialization
-
-const notHoistedConst = 15;
+ 
 
 
 > Key Differences Between `var`, `let`, and `const` in Hoisting:
@@ -635,7 +610,33 @@ const notHoistedConst = 15;
 - Function Declarations: Hoisted entirely (both name and function body).
 - Function Expressions: Only the variable declaration is hoisted, not the function assignment.
 - Variable Declarations : `var` variables are hoisted and automatic initialized with `undefined`, while `let` 
-and `const` variables are hoisted but not initialized (temporal dead zone) anf gives ReferenceError ( ReferenceError: Cannot access 'variable' before initialization )
+and `const` variables are hoisted but not initialized (temporal dead zone) and gives ReferenceError ( ReferenceError: Cannot access 'variable' before initialization )
+
+
+#11)Tempory Dead Zone (TDZ)
+
+The Temporal Dead Zone (TDZ) refers to the period in which variables declared with let or const are hoisted but 
+cannot be accessed until the code execution reaches their declaration. If we try to access them before declaration,
+ it results in a ReferenceError. This is known as the Temporal Dead Zone.
+
+--Simple Explaination
+
+Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
+it throws a ReferenceError. (Uncaught ReferenceError: Cannot access 'variableName' before initialization)
+
+(On the other hand, variables declared with var are hoisted and automatically initialized to undefined, 
+so you can access var before declaration, but it just return undefined instead of throwing a ReferenceError)
+
+--Example
+
+console.log(myVar); // Output: undefined ( it hoisted but initialized with `undefined`)
+var myVar = 10;
+
+console.log(myLet); // Uncaught ReferenceError: Cannot access 'myLet' before initialization (it also hoisted but not initialized with `undefined and goes into TDZ))
+let myLet = 20;
+
+console.log(myConst); // Uncaught ReferenceError: Cannot access 'myConst' before initialization  (it also hoisted but not initialized with `undefined and goes into TDZ)
+const myConst = 30;
 
 
 #12) undefined vs Not define vs null

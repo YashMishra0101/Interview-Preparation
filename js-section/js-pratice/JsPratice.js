@@ -313,11 +313,5 @@ let five = () => {
 
 
 
-
-
-b()  //ReferenceError: Cannot access 'b' before initialization
-
-let b =function (){
- console.log("Hey I a function")
-}
+console.log(a);
 
