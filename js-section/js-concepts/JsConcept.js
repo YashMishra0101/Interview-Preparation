@@ -14,7 +14,7 @@ console.log("In Var:", a);
 let b = 30;
     b = 32;
 console.log("In let:", b);
-
+ 
 let b = 40; (not valid)
 console.log("In let:", b);
 
@@ -627,6 +627,13 @@ it throws a ReferenceError. (Uncaught ReferenceError: Cannot access 'variableNam
 (On the other hand, variables declared with var are hoisted and automatically initialized to undefined, 
 so you can access var before declaration, but it just return undefined instead of throwing a ReferenceError)
 
+--Why Does This Happen?
+
+-var is hoisted and initialized with undefined, so you can access it before declaration.
+-let and const are also hoisted, but they are not initialized immediately, This means they exist in a "Temporal Dead Zone" from the start of the block until the
+execution reaches the declaration.
+-TDZ only happen with let and const not with var.
+
 --Example
 
 console.log(myVar); // Output: undefined ( it hoisted but initialized with `undefined`)
@@ -717,6 +724,7 @@ function myFunction() {
 
 
 ---2️⃣ Code Execution Phase:
+
    - Code executes line by line.  
    - Variables are assigned their actual values.  
    - When a function is called, a new execution context is created and pushed into the call stack.  
@@ -737,15 +745,7 @@ function myFunction() {
 - Created whenever a function is called.
 - Each function call generates a new execution context.
 - Function execution contexts are managed by the call stack:
-  - A new execution context is pushed onto the stack when a function is invoked.
-  - It is popped off the stack once the function completes execution.
-
-
--- Key Points
-
-- Memory allocation happens before code execution.
-- The call stack handles the order of execution contexts, managing function calls and returns.
-- The execution context manages the flow and execution of code.
+  - A new execution context is pushed onto the stack when a function is invoked, It is popped outr from the stack once the function completes execution.
 
 
 ---Example to Understand
@@ -769,6 +769,247 @@ console.log("End");  // Still inside Global Execution Context
 4️⃣ `console.log("Hello, Yashu!")` runs inside this new execution context.  
 5️⃣ After execution, the function’s execution context is removed from the stack.  
 6️⃣ `console.log("End")` runs inside the Global Execution Context.  
-7️⃣ Once all code is executed, the Global Execution Context is removed from the call stack.  
+7️⃣ Once all code is executed, the Global Execution Context is removed from the call stack. 
 
+
+>>Key Points (Short & Simple):
+
+- Global Execution Context (GEC) is the first environment where JavaScript code runs.  
+
+- Phases of Execution Context:  
+  1️⃣ Memory Allocation Phase:  
+    - `var` is hoisted as `undefined`, while `let` and `const` stay in the Temporal Dead Zone (TDZ).  
+    - Function declarations are hoisted with their full body.  
+
+  2️⃣ Code Execution Phase: 
+    - Code runs line by line.  
+    - Variables get actual values.  
+    - Function calls create new execution contexts inside the call stack.  
+
+    -  Call Stack:
+      - GEC enters first, functions get **pushed in** when called and **popped out** when done.  
+     - The process repeats until all code executes and GEC is removed.  
+
+- Function Execution Context:
+  - Created whenever a function is called.  
+  - Manages function execution using the **call stack**.  
+
+- Takeaway: 
+  - Memory is allocated before execution. 
+  - Call stack controls function execution. 
+
+
+#14) Event Loop   
+
+The Event Loop is a feature provided by the browser (or Node.js runtime), not JavaScript itself. JavaScript is 
+single-threaded and doesn't have built-in asynchronous capabilities. So Web APIs, Event Loop, Microtask Queue, 
+and Task Queue are part of the browser environment,to handle asynchronous operations efficiently. not JavaScript 
+itself  The browser engine (like V8 in Chrome,SpiderMonkey in Firefox) works with the javascript (callback queue) 
+to manage asynchronous tasks like setTimeout,fetch, and promises without blocking execution.
+
+>>How the Event Loop Works ?
+
+---1️⃣ Execution of Synchronous Code
+
+- When JavaScript runs, all **synchronous code** is executed **first** inside the **Call Stack**.  
+- If a function is called, it is **pushed into the Call Stack**, and once it completes execution, it is **popped out**.  
+- JavaScript does not move to asynchronous tasks until all synchronous code is executed.  
+
+---2️⃣ Asynchronous Code Goes to Web APIs
+
+- When JavaScript encounters an **asynchronous operation** (like `setTimeout`, `fetch`, or event listeners), it **does not block the Call Stack**.  
+- Instead, these operations are handed over to the **Web APIs**, which handle them separately (e.g., timers for `setTimeout`, HTTP requests for `fetch`).  
+
+---3️⃣ Moving Asynchronous Tasks to Queues
+
+Once the Web APIs complete their tasks, the results are sent to different queues:  
+
+- Microtask Queue (Higher Priority)  
+  - Contains **Promises (`.then, .catch, .finally`)** and **MutationObserver**.  
+  - These tasks are **executed before** other asynchronous tasks.  
+
+- Task Queue (Callback Queue) (Lower Priority)  
+  - Contains **`setTimeout`, `setInterval`, event listeners, etc.**  
+  - Executed only **after** the Microtask Queue is cleared.  
+
+---4️⃣ Role of the Event Loop
+
+The **Event Loop** continuously checks:  
+1. If the **Call Stack is empty**, meaning all synchronous code is executed.  
+2. If there are **Microtasks in the Microtask Queue**, they are pushed into the Call Stack and executed **before** any Task Queue items.  
+3. If the **Microtask Queue is empty**, then tasks from the **Task Queue** are executed in order.  
+4. This process **repeats indefinitely**, ensuring JavaScript handles asynchronous operations efficiently.  
+
+---Example for Better Understanding
+
+console.log("Start"); 
+
+setTimeout(() => {
+    console.log("Inside setTimeout"); 
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Inside Promise");
+});
+
+console.log("End");
+
+---Execution Flow
+
+1️⃣ **Synchronous Code Execution:** `"Start"` is logged first.  
+2️⃣ **setTimeout(0)** goes to **Web APIs** and waits.  
+3️⃣ **Promise** goes to **Microtask Queue**.  
+4️⃣ **Synchronous code completes**, logging `"End"`.  
+5️⃣ **Microtask Queue executes first**, logging `"Inside Promise"`.  
+6️⃣ **Task Queue executes next**, logging `"Inside setTimeout"`.  
+
+**Final Output:**  
+
+Start
+End
+Inside Promise
+Inside setTimeout
+
+
+>Key Takeaways
+
+- **Synchronous code runs first** in the Call Stack.  
+- **Asynchronous tasks go to Web APIs and are queued**.  
+- **Microtask Queue has higher priority** than the Task Queue.  
+- **The Event Loop ensures tasks are executed properly** in the right order. 
+
+
+//#15)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
+
+--Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
+-- Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed )
+
+- Primitive Data Types are immutable, meaning their values cannot be changed.Any modification results in the 
+creation of a new value.
+
+- Primitive Data Types are stored in the Stack. Copying these results in a new copy being created, 
+so changes to the copy do not affect the original.
+
+- Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new 
+object, changing the same memory block.
+
+-Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will affect the original data.
+
+- Examples :
+
+let oldProfile = "Front End Developer";
+let newProfile = oldProfile;
+
+newProfile = "Full Stack Developer";
+
+console.log(oldProfile); // Output: Front End Developer
+console.log(newProfile); // Output: Full Stack Developer
+
+let arr = ["HTML", "CSS", "JavaScript"];
+let arr2 = arr;
+
+arr2[1] = "Tailwind CSS";
+
+console.log(arr2[1]); // Output: Tailwind CSS
+console.log(arr[1]);  // Output: Tailwind CSS
+
+>Summary :
+
+- Primitive Data Types -> Store in Stack -> Immutable,values cannot be changed -> Any modification results in the 
+creation of a new value -> String,numbers etc.
+
+- Non-Primitive Data Types -> Store in Healp -> Mutable,values can be changed -> Values can be changed without creating a new 
+object -> Array,objects,function etc.
+
+
+//#16) `Destructuring`, `Spread operator`, and `Rest operator`) 
+
+>>1️⃣ Destructuring (Extracting Values)
+
+Destructuring helps you **extract values from arrays or objects easily.  
+
+---👉 Array Destructuring Example:**
+
+const numbers = [1, 2, 3];
+const [first, second, third] = numbers;
+
+console.log(first);  // 1
+console.log(second); // 2
+console.log(third);  // 3
+
+Instead of writing `numbers[0]`, `numbers[1]`, etc., **destructuring** makes it shorter and cleaner.  
+
+--👉 Object Destructuring Example:**
+
+const person = { name: "Yashu", age: 22 };
+const { name, age } = person;
+
+console.log(name); // "Yashu"
+console.log(age);  // 22
+
+You can directly extract values from objects without `person.name` or `person.age`.  
+
+
+>>2️⃣ Spread Operator (`...`) (Expanding)
+
+The Spread Operator **spreads elements of an array or object**. It's mostly used for **copying, merging, 
+and passing values.
+
+--👉 Copying an Array (Avoids Reference Issues)**
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];  // Creates a copy
+
+arr2.push(4);
+console.log(arr1); // [1, 2, 3]  (Original array remains unchanged)
+console.log(arr2); // [1, 2, 3, 4]  
+
+
+---👉 Merging Two Arrays**
+
+const boys = ["Yash", "Ram"];
+const girls = ["Chiku", "Priya"];
+const all = [...boys, ...girls];
+
+console.log(all); // ["Yash", "Ram", "Chiku", "Priya"]
+
+
+---👉 Expanding an Object**
+
+const user = { name: "Yash", age: 22 };
+const updatedUser = { ...user, city: "Nagpur" };
+
+console.log(updatedUser); // { name: "Yash", age: 22, city: "Nagpur" }
+
+
+>3️⃣ Rest Operator (`...`) (Collecting)
+
+The **Rest Operator** is used to **collect multiple values** into an array.  
+
+---👉 Function with Multiple Arguments (Rest Operator)
+
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
+Here, `...numbers` **collects** all arguments into an array `[1, 2, 3, 4]`.  
+
+----👉 Destructuring with Rest Operator
+
+const fruits = ["Apple", "Mango", "Banana", "Grapes"];
+const [first, second, ...remainingFruits] = fruits;
+
+console.log(first); // "Apple"
+console.log(second); // "Mango"
+console.log(remainingFruits); // ["Banana", "Grapes"]
+
+Here, `...remainingFruits` **collects** all remaining elements into an array.  
+
+>>> Simple Trick to Remember:
+
+- **Destructuring** → **Extracting values** (`{}` or `[]`)  
+- **Spread (`...`)** → **Expanding values** (used for copying & merging)  
+- **Rest (`...`)** → **Collecting values** (used in function parameters or destructuring)  
 */

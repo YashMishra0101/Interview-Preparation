@@ -313,5 +313,11 @@ let five = () => {
 
 
 
-console.log(a);
+let abc=["yash","ram"];
 
+let xyz=["trisha","shita"];
+let copy=[...xyz,...abc];
+
+
+
+console.log(copy);
