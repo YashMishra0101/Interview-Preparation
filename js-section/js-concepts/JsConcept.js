@@ -1,4 +1,38 @@
 /*
+#0)Basic Info
+
+JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was working at Netscape Communications Corporation.
+Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
+meaning it executes code line by line and is single-threaded.
+
+JavaScript can be run in browsers and Node.js. Browsers use Javascript Enging for running js code like,
+
+JavaScript Engine : A JavaScript engine is responsible for executing JavaScript code in the browser. 
+It processes JavaScript, optimizes it, and runs scripts efficiently.
+
+Rendering Engine: A Rendering engine (also called a layout engine) is responsible for converting 
+HTML, CSS, and images into what you actually see on the screen. It determines how the webpage 
+looks and is displayed.
+
+Chrome use          : V8 engine      (Rendering - Blink),
+Microsoft Edge uses : V8 engine      (Rendering - Blink),
+Brave also use      : V8 engine      (Rendering - Blink),
+Safari uses         : JavaScriptCore (Rendering - Webkit),
+Firefox             : SpiderMonkey   (Rendering - Gecko), 
+
+-Node.js, on the other hand, is not a framework or language but a software platform. It uses the V8 engine, the same one used by Google Chrome, to run JavaScript 
+code in any terminal or command-line prompt.
+
+JavaScript is fundamentally an interpreted language because it executes source code directly without 
+a separate compilation step before runtime. However, modern JavaScript engines like V8 use JIT (just-in-time) compilation 
+to optimize performance by compiling JavaScript code into machine code at runtime. So, while JavaScript remains an 
+interpreted language, it benefits from JIT compilation in engines like V8, which significantly improves its performance. 
+
+V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
+execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
+
+-JavaScript is a synchronous single-threaded language.
+
 #1)Three way to declared variable in javascript (Var,let,Const)
 
 >In var, we can redeclared and reassing them and Var is function scope.
@@ -307,64 +341,63 @@ let promise = new Promise (function (resolve, reject) {
 
 >>>Example of Promises 
 
-let dataOne=(()=>{
-  return new Promise ((resolve ,reject)=>{
-    setTimeout(()=>{
-      console.log("One")
+let dataOne = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
       resolve("I am a Dataone");
-    },2000)
-  })
-  
-})
+    }, 2000);
+  });
+};
 
-let dataTwo=(()=>{
-  return new Promise ((resolve, reject)=>{
-    setTimeout(()=>{
-      console.log("Two")
-      resolve("I am a Datatwo")
-    },1000)
-  })
-})
+let dataTwo = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("I am a Datatwo");
+    }, 1000);
+  });
+};
 
-let dataThree=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Three");
+let dataThree = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
       reject("Error hai Three me");
       // resolve("I am a dataThree");
-    },1000)
-  })
-  
-})
+    }, 1000);
+  });
+};
 
-let dataFour=(()=>{
-  return new Promise ((resolve,reject)=>{
-    setTimeout(()=>{
-      console.log("Four")
+let dataFour = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
       resolve("I am a dataFour");
-    },1000)
-  })
-})
+    }, 1000);
+  });
+};
 
-
-let start=(()=>{
+let start = () => {
   dataOne()
-  
-  .then(dataTwo)
-  .then(dataThree)
-  .then(dataFour)
-      
-  .catch((error)=>{
-    console.log("Error : ",error)
-  })
-  .finally(()=>{
-    console.log("Program End")
-  })
-  
-})
+    .then((result) => {
+      console.log(result);
+      return dataTwo();
+    })
+    .then((result) => {
+      console.log(result);
+      return dataThree();
+    })
+    .then((result) => {
+      console.log(result);
+      return dataFour();
+    })
+
+    .catch((error) => {
+      console.log("Error : ", error);
+    })
+    .finally(() => {
+      console.log("Program End");
+    });
+};
 
 start();
-
 
 
 #7)Asyn await
@@ -687,7 +720,7 @@ let info = {
 
 console.log(info.middleName); // Logs "null" because we explicitly set it to null.
 
-#13) Global Execution Context and Execution Context (In Detail)
+#13) Global Execution Context and Execution Context/Function Execution Context (In Detail)
 
 > Global Execution Context in JavaScript:
 
@@ -696,6 +729,8 @@ that is created when JavaScript starts running. It is the default environment wh
 
 So, the global execution context is just one type of execution context, and it is the first and main one that 
 JavaScript creates before executing any other function.
+
+First Global Execution Context is created then other Execution Context is created inside Global Execution Context.
 
 
 >It has two main phases:
@@ -727,7 +762,7 @@ function myFunction() {
 
    - Code executes line by line.  
    - Variables are assigned their actual values.  
-   - When a function is called, a new execution context is created and pushed into the call stack.  
+   - When a function is called, a new execution context is created and pushed into the call stack(Upon Global Execution Context).  
    - After the function finishes execution, its execution context is popped out of the call stack.  
 
 
@@ -748,7 +783,9 @@ function myFunction() {
   - A new execution context is pushed onto the stack when a function is invoked, It is popped outr from the stack once the function completes execution.
 
 
----Example to Understand
+---Example for better Understand
+
+_-_--------Global Execution Context is created.
 
 console.log("Start");  // Runs inside Global Execution Context
 
@@ -760,6 +797,7 @@ sayHello();  // Function call → New Execution Context created in Call Stack
 
 console.log("End");  // Still inside Global Execution Context
 
+_-_--------Global Execution Context is removed/end.
 
 --Flow of Execution Context:
 
@@ -801,10 +839,13 @@ console.log("End");  // Still inside Global Execution Context
 
 #14) Event Loop   
 
+JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are 
+present, they are managed by the event loop, ensuring non-blocking execution.
+
 The Event Loop is a feature provided by the browser (or Node.js runtime), not JavaScript itself. JavaScript is 
 single-threaded and doesn't have built-in asynchronous capabilities. So Web APIs, Event Loop, Microtask Queue, 
-and Task Queue are part of the browser environment,to handle asynchronous operations efficiently. not JavaScript 
-itself  The browser engine (like V8 in Chrome,SpiderMonkey in Firefox) works with the javascript (callback queue) 
+and Task Queue are part of the browser environment,to handle asynchronous operations efficiently not JavaScript 
+itself, The browser engine (like V8 in Chrome,SpiderMonkey in Firefox) works with the javascript (callback queue) 
 to manage asynchronous tasks like setTimeout,fetch, and promises without blocking execution.
 
 >>How the Event Loop Works ?
@@ -910,8 +951,8 @@ let arr2 = arr;
 
 arr2[1] = "Tailwind CSS";
 
-console.log(arr2[1]); // Output: Tailwind CSS
 console.log(arr[1]);  // Output: Tailwind CSS
+console.log(arr2[1]); // Output: Tailwind CSS
 
 >Summary :
 
@@ -1012,4 +1053,269 @@ Here, `...remainingFruits` **collects** all remaining elements into an array.
 - **Destructuring** → **Extracting values** (`{}` or `[]`)  
 - **Spread (`...`)** → **Expanding values** (used for copying & merging)  
 - **Rest (`...`)** → **Collecting values** (used in function parameters or destructuring)  
+
+#17)Naming conventions
+
+> 1. Camel Case
+
+- Usage: This convention is commonly used for variable names, function names and method names.
+- Camel Case is a naming convention in which the first word starts with a lowercase letter, 
+and all subsequent words start with an uppercase letter.
+- Example: userName
+
+  let userName = "Yashu";       // Variable
+  function calculateTotal() {   // Function
+      return total;
+  }
+
+> 2. Pascal Case
+
+- Usage: Often used for class names and constructor functions.
+- Pascal Case is a naming convention where each word starts with an uppercase letter, including 
+the first word.
+- Example:UserProfile
+
+  class UserProfile {                 // Class
+      constructor(name: string) {
+          this.name = name;
+      }
+  }
+
+
+> 3. Snake Case
+
+- All letters are lowercase, and words are separated by underscores.
+- Usage: This convention is frequently used in variable names in some languages, particularly Python and Ruby.
+
+- Example:user_name
+
+  ```python
+  user_name = "Yashu"       # Variable in Python
+  total_price = 100         # Another example
+  ```
+
+> 4. Kebab Case
+
+- Definition: All letters are lowercase, and words are separated by hyphens.
+- Usage: Commonly used in URLs and CSS class names.
+
+- Example:main-header
+
+  ```css
+  .main-header {             CSS Class 
+      font-size: 24px;
+  }
+  ```
+
+>5. Uppercase Snake Case
+
+- Usage: Typically used for constants.
+
+- Example:MAX_USERS , API_URL
+
+
+  const MAX_USERS = 100;     // Constant
+  const API_URL = "https://api.example.com"; // Another example API_URL
+
+
+> Descriptive Names
+
+- Using full words to describe the purpose of a variable or function rather than 
+abbreviations or short forms.
+
+- Example:
+
+  function calculateAreaOfCircle(radius) { // Descriptive function name
+      return Math.PI * radius * radius;
+  }
+
+--In React and TS 
+
+- Kebab Case for Folders: Use `kebab-case` for folder names. It’s simple, readable, and widely 
+used in React and TypeScript projects.  
+  Example: `user-profile`, `api-services`.
+
+- Pascal Case for Files: Use `PascalCase` for file names, especially for React components. 
+  - Example: `UserProfile.tsx`, `Header.tsx`.
+
+#18)Loops
+
+---1)For Loop
+
+The for loop is used to repeat a block of code a specific number of times.
+
+ for(let f=1;f<=10;f++){
+   console.log("For Loop",f);
+ }
+
+--2)While Loop
+
+ The while loop repeats a block of code as long as a condition is true.
+
+ let w2=1;
+
+ while(w2<=5){
+   console.log("While Loop",w2);
+   w2++
+ }
+
+--3)Do While loop
+
+ The do while loop executes the code block once before checking the condition, then repeats as long as the condition is true.
+
+ let d=1;
+
+ do{
+ console.log("Do While Loop",d);
+ d++;
+ }while(d<=8)
+
+--4)For in loop ( For in loop for object )
+
+ The for...in loop is used to iterate over the properties (keys) of an object.
+
+ const info={
+   name:"yash mishra",
+   role:"front end developer",
+   age:"21"
+ }
+
+ for (let key in info){
+   console.log(key);
+ }
+
+ for (let key in info){
+   console.log(info[key]);
+ }
+
+ for (let key in info){
+   console.log(`${key}:${info[key]}`);
+ }
+
+>Inportant Info
+
+? Can we use for of loop with obejct ?
+Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
+arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
+by iterating over their properties using methods like Object.keys(), Object.values(), or Object.entries()
+
+
+--5)For of loop (use for array)
+
+ let arr = ["Yash", 21, "Developer"];
+
+ for (let a of arr) {
+   console.log(a);
+ }
+
+? Can we use a for in loop for an array?
+If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
+we need to use it this way: console.log(arr[a]) instant of console.log(a).
+
+>Objects: Use for...in to iterate over keys.
+>Arrays/Iterables: Use for...of to iterate over values.
+
+--6)ForEach vs forOf loop
+
+forEach(value,index,array)
+
+- `forEach` is specifically for arrays and uses a callback function. With `forEach`, we can access the index number, 
+but we cannot use `break` or `continue` statements.
+
+- `for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
+` statements but cannot directly access the index number (unless using `Array.entries()`).
+
+> `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
+> or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
+> we can use `continue` and `break` statements but cannot directly access the index number.
+
+--ForEach Example
+
+let arr = ['Yash', 'Ram', 'Hello'];
+
+arr.forEach((value, index) => {
+  console.log(`${index}:${value}`);
+});
+
+ Output:
+ Index: 0, Value: Yash
+ Index: 1, Value: Ram
+ Index: 2, Value: Hello
+
+ --for of loop
+
+ 1)
+ let arr=[1,2,"Yash",4,"Bro"];
+
+  for(let a of arr){
+   console.log(a)
+ }
+
+ Output:
+ 1
+ 2
+ Yash
+ 4
+ Bro
+
+2)let str = "Yash";
+
+str.forEach((value) => {
+  console.log(value);
+});
+
+Output
+Y
+a
+s
+h
+
+
+3)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Found "s", terminating the loop.');
+    break;  // Exit the loop
+  }
+  console.log(char);
+}
+
+Output:
+
+Y
+a
+Found "s", terminating the loop.
+
+4)
+let str = "Yash";
+
+for (let char of str) {
+  if (char === 's') {
+    console.log('Skipping "s".');
+    continue;  // Skip the rest of the loop for this iteration
+  }
+  console.log(char);
+}
+
+Output:
+Y
+a
+Skipping "s".
+h
+
+5)
+let arr = ['Yash', 'Ram', 'Hello'];
+
+for (let [index, value] of arr.entries()) {
+  console.log(`Index: ${index}, Value: ${value}`);
+}
+
+ Output:
+ Index: 0, Value: Yash
+ Index: 1, Value: Ram
+ Index: 2, Value: Hello
+
+
 */
