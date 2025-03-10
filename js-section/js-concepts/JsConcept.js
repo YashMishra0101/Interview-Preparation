@@ -5,7 +5,7 @@ JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was wo
 Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
 meaning it executes code line by line and is single-threaded.
 
-JavaScript can be run in browsers and Node.js. Browsers use Javascript Enging for running js code like,
+JavaScript can be run in browsers and Node.js. Browsers use Javascript Enging for running js code like.
 
 JavaScript Engine : A JavaScript engine is responsible for executing JavaScript code in the browser. 
 It processes JavaScript, optimizes it, and runs scripts efficiently.
@@ -31,7 +31,7 @@ interpreted language, it benefits from JIT compilation in engines like V8, which
 V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
 execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
 
--JavaScript is a synchronous single-threaded language.
+-JavaScript is a synchronous single-threaded language means it excute code line by line.
 
 #1)Three way to declared variable in javascript (Var,let,Const)
 
@@ -737,7 +737,7 @@ First Global Execution Context is created then other Execution Context is create
 
 
 --1️⃣ Memory Allocation Phase (Hoisting Phase):  
-
+   - Memory allocation for variables and funtions.
    - Variables declared with `var` are initialized as `undefined`.  
    - Variables declared with `let` and `const` are stored in memory but remain in the "Temporal Dead Zone" until they are assigned a value.
    - Functions (declared using function declarations) are stored with their full body.  
@@ -843,7 +843,7 @@ JavaScript is a single-threaded language, meaning it executes code line by line.
 present, they are managed by the event loop, ensuring non-blocking execution.
 
 The Event Loop is a feature provided by the browser (or Node.js runtime), not JavaScript itself. JavaScript is 
-single-threaded and doesn't have built-in asynchronous capabilities. So Web APIs, Event Loop, Microtask Queue, 
+single-threaded and doesn't have built-in asynchronous capabilities. So Web APIs, Microtask Queue, 
 and Task Queue are part of the browser environment,to handle asynchronous operations efficiently not JavaScript 
 itself, The browser engine (like V8 in Chrome,SpiderMonkey in Firefox) works with the javascript (callback queue) 
 to manage asynchronous tasks like setTimeout,fetch, and promises without blocking execution.
@@ -859,7 +859,7 @@ to manage asynchronous tasks like setTimeout,fetch, and promises without blockin
 ---2️⃣ Asynchronous Code Goes to Web APIs
 
 - When JavaScript encounters an **asynchronous operation** (like `setTimeout`, `fetch`, or event listeners), it **does not block the Call Stack**.  
-- Instead, these operations are handed over to the **Web APIs**, which handle them separately (e.g., timers for `setTimeout`, HTTP requests for `fetch`).  
+- Instead, these operations are handed over to the **Web APIs**, which handle them separately (e.g., timers for `setTimeout`, HTTP requests for `fetch`, `fetch`, event listeners).  
 
 ---3️⃣ Moving Asynchronous Tasks to Queues
 
@@ -880,6 +880,8 @@ The **Event Loop** continuously checks:
 2. If there are **Microtasks in the Microtask Queue**, they are pushed into the Call Stack and executed **before** any Task Queue items.  
 3. If the **Microtask Queue is empty**, then tasks from the **Task Queue** are executed in order.  
 4. This process **repeats indefinitely**, ensuring JavaScript handles asynchronous operations efficiently.  
+
+and this is process is called Event Loop.
 
 ---Example for Better Understanding
 
@@ -967,7 +969,7 @@ object -> Array,objects,function etc.
 
 >>1️⃣ Destructuring (Extracting Values)
 
-Destructuring helps you **extract values from arrays or objects easily.  
+--Destructuring helps you Extract values from arrays or objects easily.  
 
 ---👉 Array Destructuring Example:**
 
@@ -1194,11 +1196,10 @@ The for loop is used to repeat a block of code a specific number of times.
 
 >Inportant Info
 
-? Can we use for of loop with obejct ?
-Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
-arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
-by iterating over their properties using methods like Object.keys(), Object.values(), or Object.entries()
+??? Can we use a for in loop for an array?
 
+If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
+we need to use it this way: console.log(arr[a]) instant of console.log(a).
 
 --5)For of loop (use for array)
 
@@ -1208,9 +1209,17 @@ by iterating over their properties using methods like Object.keys(), Object.valu
    console.log(a);
  }
 
-? Can we use a for in loop for an array?
-If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
-we need to use it this way: console.log(arr[a]) instant of console.log(a).
+??? Can we use for of loop with obejct ?
+
+Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
+arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
+by iterating over their properties using methods like Object.keys(), Object.values(), or Object.entries()
+
+example : 
+
+for (let value of Object.values(info)) {
+  console.log(value);
+}
 
 >Objects: Use for...in to iterate over keys.
 >Arrays/Iterables: Use for...of to iterate over values.
@@ -1225,9 +1234,9 @@ but we cannot use `break` or `continue` statements.
 - `for...of`** is for iterables, including arrays, strings, etc. In a `for...of` loop, we can use `continue` and `break
 ` statements but cannot directly access the index number (unless using `Array.entries()`).
 
-> `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
-> or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
-> we can use `continue` and `break` statements but cannot directly access the index number.
+-- `forEach` is only for arrays and has a callback function. With `forEach`, we can access the index number, but we cannot use `break` 
+-- or `continue` statements. `for...of` is for iterables, including arrays, strings, etc. In a `for...of` loop, 
+-- we can use `continue` and `break` statements but cannot directly access the index number.
 
 --ForEach Example
 
