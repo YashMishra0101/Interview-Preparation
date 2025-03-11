@@ -1,52 +1,45 @@
-console.log("JS Logical Questions Is Working");
+console.log("JS Logical Questions Section Is Working");
+/*
+1. Print and check the following types of numbers within a given range:
+- Odd Numbers  
+- Even Numbers  
+- Prime Numbers  
 
-/*  
-1. **Write a function to reverse a string.**  
-   Input: `"hello"` → Output: `"olleh"`
+2. Print the following star patterns: 
+   - Ascending Pattern  
+   - Descending Pattern  
+   - Pyramid Pattern  
 
-2. **Implement a function to check if a string is a palindrome.**  
-   Input: `"madam"` → Output: `true`
-   
-3. **Write a program to find the second largest number in an array.**  
-   Input: `[10, 20, 4, 45, 99]` → Output: `45`  
 
-4. **Create a function to remove duplicates from an array.**  
-   Input: `[1, 2, 3, 2, 1, 4]` → Output: `[1, 2, 3, 4]`  
+_____--------------------____________________-------------------------------_____________________------------------------___________________________-------------------------_________________________   
 
-5. **Write a function to check if a number is prime or not.**  
-   Input: `7` → Output: `true`  
+1. **Reverse a String:** Write a function to reverse a given string.
+2. **Palindrome Check:** Write a function to check if a string is a palindrome.
+3. **Max & Min in an Array:** Find the maximum and minimum values in an array.
+4. **Remove Duplicates:** Remove duplicates from an array.
+5. **Prime Number Check:** Write a function to determine if a number is prime.
+6. **Factorial Calculation:** Calculate the factorial of a number using recursion.
+7. **Fibonacci Series:** Generate the Fibonacci series up to *n* terms.
+8. **Custom Array Sort:** Sort an array of numbers without using the built-in sort function.
+9. **Character Frequency:** Count the occurrence of each character in a string.
+10. **Empty Object Check:** Determine if an object is empty.
+11. **Merge Arrays:** Merge two arrays without duplicates.
+12. **Flatten Nested Array:** Flatten a nested array (one level or fully flattened).
+13. **Array Intersection:** Find the intersection between two arrays.
+14. **Implement Map:** Create your own implementation of the `Array.map()` method.
+15. **Pattern Generation:** Generate a pyramid (or similar) pattern using loops.
+16. **Decimal to Binary:** Convert a number to its binary representation.
+17. **Swap Variables:** Swap two variables without using a temporary variable.
+18. **Anagram Check:** Check if two strings are anagrams.
+19. **Deep Clone Object:** Create a deep clone of an object.
+20. **Sum of Digits:** Find the sum of the digits of a number.
+21. **Count Vowels:** Count the number of vowels in a string.
+22. **Reverse Array:** Reverse an array without using the built-in `reverse()` method.
+23. **Capitalize Words:** Capitalize the first letter of every word in a string.
+24. **Debounce Function:** Implement a debounce function.
+25. **Even or Odd:** Check if a number is even or odd.
 
-6. **Write a function to merge two sorted arrays into one sorted array.**  
-   Input: `[1, 3, 5]` and `[2, 4, 6]` → Output: `[1, 2, 3, 4, 5, 6]`  
-
-7. **Create a function to calculate the factorial of a number using recursion.**  
-   Input: `5` → Output: `120`  
-
-8. **Write a function to count the number of vowels in a string.**  
-   Input: `"JavaScript"` → Output: `3`  
-
-9. **Implement a program to check if two strings are anagrams.**  
-   Input: `"listen"` and `"silent"` → Output: `true`  
-
-10. **Write a program to find the sum of all numbers in an array.**  
-    Input: `[1, 2, 3, 4, 5]` → Output: `15`  
-
-11. **Write a function to flatten a nested array.**  
-    Input: `[1, [2, [3, 4], 5], 6]` → Output: `[1, 2, 3, 4, 5, 6]`  
-
-12. **Create a program to find the largest and smallest numbers in an array.**  
-    Input: `[10, 20, 30, 5, 1]` → Output: `Largest: 30, Smallest: 1`  
-
-13. **Write a function to convert a given object into an array of key-value pairs.**  
-    Input: `{name: "Yashu", age: 22}` → Output: `[["name", "Yashu"], ["age", 22]]`  
-
-14. **Write a program to find the frequency of each element in an array.**  
-    Input: `[1, 2, 2, 3, 3, 3]` → Output: `{1: 1, 2: 2, 3: 3}`  
-
-15. **Write a function to implement the Fibonacci sequence up to `n` terms.**  
-    Input: `5` → Output: `[0, 1, 1, 2, 3]`  
 */
-
 //#Question 1
 
 // let ab=5;
@@ -103,22 +96,6 @@ with string manipulation.
 // function a(){
 //   console.log("three");
 // }
-
-//#Question 3 : Difference between null, undefined, and empty .
-
-/*
-Undefined means a variable has been declared but not assigned a value. Null is an explicit assignment indicating 
-that a variable has no value. Empty refers to a variable that is assigned an empty string or an empty array, meaning 
-it has been assigned a value, but that value is empty.
-*/
-
-// let u;
-// let emptyStringExample = null;
-// let emptyArrayExample = [];
-
-// console.log(u); // Output: undefined
-// console.log(emptyStringExample); // Output: (empty string)
-// console.log(emptyArrayExample); // Output: []
 
 //#Question 4 : Tells the output without running the code.
 
