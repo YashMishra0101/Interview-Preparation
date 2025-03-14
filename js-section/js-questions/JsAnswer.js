@@ -6,26 +6,25 @@ console.log("Js Question Section");
 --Checking Even or Odd Number
 
 let checkNumber = (num) => {
-  if (typeof num !== "number" || !Number.isInteger(num)) {
-    console.log("This is not a valid Number");
-    return;
+  if (typeof num !== "number" || !Number.isInteger(num) || isNaN(num)) {
+    return "This is not a valid Number";
   }
 
   if (num % 2 === 0) {
-    console.log("It's a even number");
+    return "It's an Even number";
   } else {
-    console.log("It's a odd number");
+    return "It's an Odd number";
   }
 };
 
-checkNumber(8);
+console.log(checkNumber(4));
 
----Printing Even Number Betwee the two number
+---Printing Even Number Between the two number
 
 let printEven = (numOne, numTwo) => {
   if (
-    typeof !numOne === "number" ||
-    typeof !numTwo === "number" ||
+    typeof numOne !== "number" ||
+    typeof numTwo !== "number" ||
     !Number.isInteger(numOne) ||
     !Number.isInteger(numTwo)
   ) {
@@ -48,12 +47,12 @@ let printEven = (numOne, numTwo) => {
 
 printEven(3, 8);
 
----Printing Odd Number Betwee the two number
+---Printing Odd Number Between the two number
 
 let printOdd = (numOne, numTwo) => {
   if (
-    typeof !numOne === "number" ||
-    typeof !numTwo === "number" ||
+    typeof numOne !=== "number" ||
+    typeof numTwo !== "number" ||
     !Number.isInteger(numOne) ||
     !Number.isInteger(numTwo)
   ) {

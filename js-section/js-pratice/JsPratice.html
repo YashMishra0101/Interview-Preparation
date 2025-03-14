@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Pratice Room</title>
-    <link rel="stylesheet" href="./JsPratice.css">
+    <title>Even Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="wrapper">
-        <h1>JS Practice Room </h1>
-    </div>
+    <h2>Even Number Checker</h2>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="checkEven()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEven() {
+            let num = document.getElementById("numInput").value;
+
+            if (num === "" || isNaN(num)) {
+                document.getElementById("result").innerText = "Please enter a valid number!";
+                return;
+            }
+
+            num = parseInt(num);
+
+            if (num % 2 === 0) {
+                document.getElementById("result").innerText = num + " is an Even Number ✅";
+            } else {
+                document.getElementById("result").innerText = num + " is NOT an Even Number ❌";
+            }
+        }
+    </script>
     <script src="./JsPratice.js"></script>
 </body>
-
 </html>
