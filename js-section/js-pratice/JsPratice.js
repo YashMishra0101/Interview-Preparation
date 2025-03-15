@@ -27,3 +27,32 @@ console.log("JS Practice Room Is Working");
 // isPrime()
 
 
+
+
+let printEven = (numOne, numTwo) => {
+  if (
+    typeof numOne !== "number" ||
+    typeof numTwo !== "number" ||
+    !Number.isInteger(numOne) ||
+    !Number.isInteger(numTwo)
+  ) {
+    throw new Error ("Please Enter a Valid Number")
+  }
+
+  if (numOne >= numTwo) {
+    throw new Error("Number-One Must be Less than Number Two");
+  }
+
+  if (numOne % 2 !== 0) {
+    numOne++;
+  }
+  let evenNumber=[];
+  for (let a = numOne; a <= numTwo; a += 2) {
+    evenNumber.push(a)
+  }
+};
+
+
+  console.log(printEven(2, 2)); // Throws an error: "Number-One must be less than Number-Two"
+
+

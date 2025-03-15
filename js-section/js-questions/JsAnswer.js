@@ -7,7 +7,7 @@ console.log("Js Question Section");
 
 let checkNumber = (num) => {
   if (typeof num !== "number" || !Number.isInteger(num) || isNaN(num)) {
-    return "This is not a valid Number";
+    throw new Error ("This is not a valid Number");
   }
 
   if (num % 2 === 0) {
@@ -23,8 +23,8 @@ console.log(checkNumber(4));
 
 let printEven = (numOne, numTwo) => {
   if (
-    typeof numOne !== "number" ||
-    typeof numTwo !== "number" ||
+    typeof !numOne === "number" ||
+    typeof !numTwo === "number" ||
     !Number.isInteger(numOne) ||
     !Number.isInteger(numTwo)
   ) {
@@ -47,12 +47,39 @@ let printEven = (numOne, numTwo) => {
 
 printEven(3, 8);
 
+
+let printEven = (numOne, numTwo) => {
+  if (
+    typeof numOne !== "number" ||
+    typeof numTwo !== "number" ||
+    !Number.isInteger(numOne) ||
+    !Number.isInteger(numTwo)
+  ) {
+    throw new Error ("Please Enter a Valid Number")
+  }
+
+  if (numOne >= numTwo) {
+    throw new Error("Number-One Must be Less than Number Two");
+  }
+
+  if (numOne % 2 !== 0) {
+    numOne++;
+  }
+  let evenNumber=[];
+  for (let a = numOne; a <= numTwo; a += 2) {
+    evenNumber.push(a)
+  }
+};
+
+
+console.log(printEven(2, 2)); // Throws an error: "Number-One must be less than Number-Two"
+
 ---Printing Odd Number Between the two number
 
 let printOdd = (numOne, numTwo) => {
   if (
-    typeof numOne !=== "number" ||
-    typeof numTwo !== "number" ||
+    typeof !numOne === "number" ||
+    typeof !numTwo === "number" ||
     !Number.isInteger(numOne) ||
     !Number.isInteger(numTwo)
   ) {
