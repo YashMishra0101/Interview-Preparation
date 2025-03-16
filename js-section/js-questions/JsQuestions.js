@@ -1,9 +1,9 @@
 console.log("JS Logical Questions Section Is Working");
 /*
-1. Print and check the following types of numbers within a given range:
-- Odd Numbers  
-- Even Numbers  
-- Prime Numbers  
+1. Check and print the following types of numbers within a given range:  
+  - Odd Numbers  
+  - Even Numbers  
+  - Prime Numbers
 
 2. Print the following star patterns: 
    - Ascending Pattern  

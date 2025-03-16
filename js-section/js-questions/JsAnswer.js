@@ -5,19 +5,24 @@ console.log("Js Question Section");
 
 --Checking Even or Odd Number
 
-let checkNumber = (num) => {
-  if (typeof num !== "number" || !Number.isInteger(num) || isNaN(num)) {
-    throw new Error ("This is not a valid Number");
+let checkEven = (number) => {
+  if (number === "" || number===undefined || number===null) {
+    return "Please Enter a Number";
   }
+  if (
+    typeof number !== "number" ||
+    isNaN(number) ||
+    !Number.isInteger(number)
+  ) {
+    return "Please Enter Valid Number";
+  }
+  
 
-  if (num % 2 === 0) {
-    return "It's an Even number";
-  } else {
-    return "It's an Odd number";
-  }
+  return number%2===0 ? "It's an even number" : "It's an odd number";
 };
 
-console.log(checkNumber(4));
+console.log(checkEven(9));
+
 
 ---Printing Even Number Between the two number
 
@@ -101,5 +106,32 @@ let printOdd = (numOne, numTwo) => {
 };
 
 printOdd(2, 8);
+
+--Printing prime  Number
+let checkPrime = (num) => {
+    if (num <= 1 ) {
+        console.log("Not a Prime Number");
+        return;
+      }
+  for (let a = 2; a < num; a++) {
+    for (let b = a; num % b === 0; b++) {
+      console.log("Not a Prime Number");
+      return;
+    }
+  }
+  console.log("It's a Prime Number");
+};
+
+checkPrime(11);
+
+console.log(Math.sqrt(97));
+
+let isPrime=(num)=>{
+  if(typeof num==="number" || Number.isInteger(num)) {
+
+  }
+}
+
+isPrime()
 
 */
