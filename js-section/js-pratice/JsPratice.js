@@ -1,37 +1,34 @@
 console.log("JS Practice Room Is Working");
 
-let printEven = (numOne, numTwo) => {
-  if (
-    numOne === "" ||
-    numTwo === "" ||
-    numOne === null ||
-    numTwo === null ||
-    numOne === undefined ||
-    numTwo === undefined
-  ) {
-    return "Please Enter a Number";
+
+
+let checkPrime = (numOne,numTwo) => {
+  if(numOne==null || numTwo==null){
+    return "Please enter a number"
   }
 
-  if (
-    typeof numOne !== "number" ||
-    typeof numTwo !== "number" ||
-    !Number.isInteger(numOne) ||
-    !Number.isInteger(numTwo)
-  ) {
-    return "Please Enter Valid Number";
+  if(isNaN(numOne) || isNaN(numTwo)|| typeof numOne!=="number" || typeof numTwo!=="number" ){
+    return "Please enter a valid number"
   }
-
+  
   if (numOne > numTwo) {
-    return "Number One must be greater than Number Two";
+    return "First number must be smaller than or equal to number two";
   }
-  if (numOne % 2 !== 0) {
-    numOne++;
+  
+let printPrime=[];
+  for (let a = numOne; a <= numTwo; a++) { 
+    if (numOne % a === 0) {
+      return printPrime.push(a)
+    }
+    else{
+      
+    }
+    
+   
   }
-  let printEven = [];
-  for (let print = numOne; print < numTwo; print += 2) {
-    printEven.push(print);
-  }
-  return printEven;
+  return printPrime;
+
+ 
 };
 
-console.log(printEven(11,11));
+console.log(checkPrime(29,100));
