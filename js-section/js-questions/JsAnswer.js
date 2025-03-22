@@ -5,58 +5,46 @@ console.log("Js Question Section");
 
 --Checking Even or Odd Number
 
-let checkNumber = (num) => {
-  // I use '== null' instead of '=== null' because it checks for both 'null' and 'undefined' in a single condition,
-  // avoiding the need to write 'number === null || number === undefined' separately.
+let checkEvenOdd=(number)=>{
+if(!Number.isInteger(number)){
+  return "Please enter valid number";
+}
 
-  if (num == null) {
-    return "Please enter a number";
-  }
-  if (!Number.isInteger(num)) {
-    return "Please Enter a valid number";
-  }
+return number %2===0 ? "Even number" : "Odd number";
+}
 
-  return num % 2 === 0 ? "It is a even number" : "It is a odd number";
-};
-
-console.log(checkNumber());
+console.log(checkEvenOdd(5));
 
 
 ---Printing Even Number Between the two number
 
-let printEven = (numOne, numTwo) => {
-  if (numOne == null || numTwo == null) {
-    return "Please enter a number";
+let printEvenNumbers = (valueOne, valueTwo) => {
+  if (!Number.isInteger(valueOne) || !Number.isInteger(valueTwo)) {
+    return "Please enter valid number";
   }
 
-  if (!Number.isInteger(numOne) || !Number.isInteger(numTwo)) {
-    return "Please enter a valid number";
+  if(valueOne>valueTwo){
+    return "Value one must be less than equal to value two"
   }
 
-  if (numOne > numTwo) {
-    return "Number one must be less than or equal to number two";
+  if(valueOne%2 !==0){
+    valueOne++;
   }
 
-  if (numOne % 2 !== 0) {
-    numOne++;
+  let storeEven=[];
+  for (let a=valueOne; a<=valueTwo; a +=2){
+       storeEven.push(a)
   }
-
-  let printEven = [];
-  for (let a = numOne; a <= numTwo; a += 2) {
-    printEven.push(a);
-  }
-
-  return printEven.length !== 0 ? printEven : "No Even number available";
+  return storeEven.length !==0 ? storeEven : "No even number available";
 };
 
-console.log(printEven(9, 15));
+console.log(printEvenNumbers(2,2));
+
 
 ---Printing Odd Number Between the two number
 
-let printOdd = (numOne, numTwo) => {
-  if (numOne == null || numTwo == null) {
-    return "Please enter the number";
-  }
+let printOddNumbers = (numOne, numTwo) => {
+
   if (!Number.isInteger(numOne) || !Number.isInteger(numTwo)) {
     return "Please enter a valid number";
   }
@@ -75,33 +63,66 @@ let printOdd = (numOne, numTwo) => {
   return printOdd.length !== 0 ? printOdd : "No odd number available";
 };
 
-console.log(printOdd(7, 15));
+console.log(printOddNumbers(7, 15));
 
 
---Printing prime  Number
+--Checking prime  Number
 
-let checkPrime = (num) => {
-  if(num==null){
-    return "Please enter a number"
+let checkPrimeNumber = (number) => {
+  if (!Number.isInteger(number)) {
+    return "Please enter a valid number";
   }
 
-  if(isNaN(num) || typeof num!=="number"){
-    return "Please enter a valid number"
-  }
-  
-  if (num <= 1) {
+  if (number <= 1) {
     return "It is not a prime number";
   }
 
-  for (let a = 2; a <= Math.sqrt(num); a++) {
-    if (num % a === 0) {
+  for (let check = 2; check <= Math.sqrt(number); check++) {
+    if (number % check === 0) {
       return "It is not a prime number";
     }
   }
-  return "It is a prime number";
+  return "It's a prime number";
 };
 
-console.log(checkPrime(8));
+console.log(checkPrimeNumber(8));
 
+--Print Prime number between Two numbers
 
+let checkPrime = (valueOne, valueTwo) => {
+  if (valueOne == null || valueTwo == null) {
+    return "Please enter the value";
+  }
+
+  if (valueOne > valueTwo) {
+    return "Value one must be less than or equal to value two";
+  }
+
+  if (
+    typeof valueOne !== "number" ||
+    typeof valueTwo !== "number" ||
+    isNaN(valueOne) ||
+    isNaN(valueTwo) ||
+    !Number.isInteger(valueOne) ||
+    !Number.isInteger(valueTwo)
+  ) {
+    return "Please enter the valid value";
+  }
+  let storePrime = [];
+  for (let numOne = Math.max(2, valueOne); numOne <= valueTwo; numOne++) {
+    let isPrime = true;
+    for (let check = 2; check <= Math.sqrt(numOne); check++) {
+      if (numOne % check === 0) {
+        isPrime=false;
+        break;
+      }
+    }
+    if (isPrime) {
+      storePrime.push(numOne);
+    }
+  }
+  return storePrime.length !== 0 ? storePrime : "No Prime number available";
+};
+
+console.log(checkPrime(2,10));
 */
