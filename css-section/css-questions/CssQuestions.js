@@ -878,17 +878,21 @@ Theming: Easily implement themes by switching variable values.
 }
 
 1. * (Universal Selector):
-  - Targets all elements on the page.
+🔹 This applies styles to all elements on the page.
+🔹 It removes default margins & paddings and ensures box-sizing: border-box applies globally.
+🔹 However, it does not affect ::before and ::after pseudo-elements.
 
 2.*::before and *::after :
-  - Targets the `::before` and `::after` pseudo-elements of all elements on the page.
+🔹 This applies styles to all elements AND their pseudo-elements (::before and ::after).
+🔹 It ensures everything, including pseudo-elements, follows the same box-sizing model.
+🔹 More consistent layout handling, especially for UI elements that use ::before and ::after (buttons, tooltips, animations, etc.).
 
 
 Ans : **second approach** because:  
 
 1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
 2. Pseudo-elements sometimes have default styles in browsers that can cause unexpected layout issues. The second approach resets those styles too.  
-3. It’s the **standard practice** used by industry experts and frameworks, making your code more professional and future-proof.  
+3. It’s the **standard practice** used by industry experts and frameworks, making your code more professional and future-proof. 
 
 In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
