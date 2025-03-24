@@ -3,7 +3,7 @@ console.log("Js Question Section");
 /*
 #Ans 1)
 
---Checking Even or Odd Number
+----Checking Even or Odd Number
 
 let checkEvenOdd=(number)=>{
 if(!Number.isInteger(number)){
@@ -16,7 +16,7 @@ return number %2===0 ? "Even number" : "Odd number";
 console.log(checkEvenOdd(5));
 
 
----Printing Even Number Between the two number
+----Printing Even Number Between the two number
 
 let printEvenNumbers = (valueOne, valueTwo) => {
   if (!Number.isInteger(valueOne) || !Number.isInteger(valueTwo)) {
@@ -41,7 +41,7 @@ let printEvenNumbers = (valueOne, valueTwo) => {
 console.log(printEvenNumbers(2,2));
 
 
----Printing Odd Number Between the two number
+----Printing Odd Number Between the two number
 
 let printOddNumbers = (numOne, numTwo) => {
 
@@ -66,7 +66,7 @@ let printOddNumbers = (numOne, numTwo) => {
 console.log(printOddNumbers(7, 15));
 
 
---Checking prime  Number
+----Checking Prime Number
 
 let checkPrimeNumber = (number) => {
   if (!Number.isInteger(number)) {
@@ -87,42 +87,54 @@ let checkPrimeNumber = (number) => {
 
 console.log(checkPrimeNumber(8));
 
---Print Prime number between Two numbers
+----Print Prime number between Two numbers
 
-let checkPrime = (valueOne, valueTwo) => {
-  if (valueOne == null || valueTwo == null) {
-    return "Please enter the value";
+let printPrime = (valueOne, valueTwo) => {
+  if (!Number.isInteger(valueOne) || !Number.isInteger(valueTwo)) {
+    return "Please enter valid number";
   }
 
   if (valueOne > valueTwo) {
     return "Value one must be less than or equal to value two";
   }
 
-  if (
-    typeof valueOne !== "number" ||
-    typeof valueTwo !== "number" ||
-    isNaN(valueOne) ||
-    isNaN(valueTwo) ||
-    !Number.isInteger(valueOne) ||
-    !Number.isInteger(valueTwo)
-  ) {
-    return "Please enter the valid value";
-  }
   let storePrime = [];
-  for (let numOne = Math.max(2, valueOne); numOne <= valueTwo; numOne++) {
+
+  for (let check = Math.max(2, valueOne); check <= valueTwo; check++) {
     let isPrime = true;
-    for (let check = 2; check <= Math.sqrt(numOne); check++) {
-      if (numOne % check === 0) {
-        isPrime=false;
+
+    for (let a = 2; a <= Math.sqrt(check); a++) {
+      if (check % a === 0) {
+        isPrime = false;
         break;
       }
     }
+
     if (isPrime) {
-      storePrime.push(numOne);
+      storePrime.push(check);
     }
   }
-  return storePrime.length !== 0 ? storePrime : "No Prime number available";
+
+  return storePrime.length === 0 ? "No Prime number available" : storePrime;
 };
 
-console.log(checkPrime(2,10));
+console.log(printPrime(2, 11));
+
+#Ans 2
+
+----1)
+
+let printPattern=(num)=>{
+    let store="";
+    for(let i=1;i<=num;i++){
+        for(let a=1; a<=num; a++){
+            store +=" * ";
+        }
+        store+="\n";
+    }
+    return store;
+    
+    }
+    
+    console.log(printPattern(5));
 */
