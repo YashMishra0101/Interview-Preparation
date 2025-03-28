@@ -124,23 +124,22 @@ console.log(printPrime(2, 11));
 
 ----1)
 
-let printPattern=(num)=>{
-    let store="";
-    for(let i=1;i<=num;i++){
-        for(let a=1; a<=num; a++){
-            store +=" * ";
-        }
-        store+="\n";
+let patternOne = (num) => {
+  let store = "";
+  for (let i = 1; i <= num; i++) {
+    for (let a = 1; a <= num; a++) {
+      store += " * ";
     }
-    return store;
-    
-    }
-    
-    console.log(printPattern(5));
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternOne(5));
 
 ----2)
 
-let print = (value) => {
+let patternTwo = (value) => {
   let store = "";
   for (let a = 1; a <= value; a++) {
     for (let b = 1; b <= a; b++) {
@@ -151,6 +150,66 @@ let print = (value) => {
   return store;
 };
 
-console.log(print(5));
+console.log(patternTwo(5));
+
+---3)
+
+let patternThree = (number) => {
+  let store = "";
+  for (let a = 1; a <= number; a++) {
+    for (let b = 1; b <= a; b++) {
+      store += b + " ";
+    }
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternThree(5));
+
+---4)
+let patternFour = (value) => {
+  let store = "";
+  for (let a = 1; a <= value; a++) {
+    for (let b = 1; b <= a; b++) {
+      store += a + " ";
+    }
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternFour(5));
+
+---5)
+let patternFive = (value) => {
+  let store = "";
+  for (let a = value; a >= 1; a--) {
+    for (let b = 1; b <=a; b++) {
+      store += " * " ;
+    }
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternFive(5));
+
+---6)
+
+let patternSix = (value) => {
+  let store = "";
+  for (let a = value; a >= 1; a--) {
+    for (let b = 1; b <= a; b++) {
+      store += b;
+    }
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternSix(5));
+
+---7)
 
 */
