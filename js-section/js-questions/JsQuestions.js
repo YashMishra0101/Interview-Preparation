@@ -50,6 +50,18 @@ console.log("JS Logical Questions Section Is Working");
 12
 1
 
+7)Pattern Seven
+1
+3
+5
+7       
+9
+
+      *
+     ***
+    *****
+   *******
+  *********
 
 
 
