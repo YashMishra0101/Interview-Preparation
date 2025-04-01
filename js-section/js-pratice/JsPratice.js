@@ -1,17 +1,27 @@
-let patternSeven = (value) => {
+console.log("Working");
+
+let printSeven = (value) => {
   let store = "";
-  let space = "";
-  let star="";
+
   for (let a = 1; a <= value; a++) {
+    let space = "";
+    let stars = "";
+
+    // Adding spaces before stars
     for (let b = 1; b <= value - a; b++) {
-      space+=" ";
+      space += " ";
     }
-    for(let c=1; c<=2*a-1;c++){
-      star+="*";
+
+    // Adding stars
+    for (let c = 0; c < 2 * a - 1; c++) {
+      stars += "*";
     }
-    store+=space+star+"\n"
+
+    // Concatenating spaces and stars, then adding a new line
+    store += space + stars + "\n";
   }
+
   return store;
 };
 
-console.log(patternSeven(5));
+console.log(printSeven(5));
