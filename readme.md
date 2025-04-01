@@ -16,7 +16,7 @@ This repository includes:
 - ⚛️ React
 - 🧩 Machine Coding (For React-Based Interviews)
 - 🔷 TypeScript
-- JS, React, Tyepescript Project for revising
+- JavaScript, React, and TypeScript projects for revising concepts
 - 🛠️ Basic Backend Questions
 - 💬 General HR Questions
 

@@ -212,4 +212,22 @@ console.log(patternSix(5));
 
 ---7)
 
+let printPatternSeven = (number) => {
+    let store = "";
+    
+    for (let a = 1; a <= number; a++) {
+        for (let space = 1; space <= number - a; space++) {
+            store += " ";  
+        }
+        for (let star = 1; star <= 2 * a - 1; star++) {
+            store += "*";  
+        }
+        store += "\n";  
+    }
+
+    return store;
+};
+
+console.log(printPatternSeven(5));
+
 */
