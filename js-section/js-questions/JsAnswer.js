@@ -230,4 +230,89 @@ let printPatternSeven = (number) => {
 
 console.log(printPatternSeven(5));
 
+---8)
+
+let patternEight=(number)=>{
+  let store="";
+  for(let a=number; 1<=a; a--){
+      for(let space=1; space<=number-a; space++){
+          store+=" ";
+      }
+      for(let star=1; star<=2*a-1; star++){
+          store+="*";
+      }
+       store+="\n";
+  }
+ return store;
+}
+
+console.log(patternEight(5))
+
+---9)
+
+let patternNine = (number) => {
+  let store = "";
+
+  for (let a = 1; a <= number; a++) {
+    for (let space = 1; space <= number - a; space++) {
+      store += " ";
+    }
+    for (let star = 1; star <= 2 * a - 1; star++) {
+      store += "*";
+    }
+    store += "\n";
+  }
+  for (let a = number; 1 <= a; a--) {
+    for (let space = 1; space <= number - a; space++) {
+      store += " ";
+    }
+    for (let star = 1; star <= 2 * a - 1; star++) {
+      store += "*";
+    }
+    store += "\n";
+  }
+
+  return store;
+};
+
+console.log(patternNine(5));
+
+---10)
+
+let patternTen=(value)=>{
+    let store="";
+    for(let a=1; a<=value*2-1; a++){
+         let star=a;
+         if(a>value){
+             star=2*value-a;
+         }
+        for(let b=1; b<=star; b++){
+            store+="*";
+        }
+        store+="\n";
+    }
+    return store;
+}
+
+console.log(patternTen(5))
+
+---11)
+
+let patternEleven = (number) => {
+  let store = "";
+  for (let a = 1; a <= number; a++) {
+    for (let b = 1; b <= a; b++) {
+      a % 2 === 0
+        ? 
+        b % 2 === 0 ? (store += 1 + " "): (store += 0 + " ")
+        : 
+        b % 2 === 0 ? (store += 0 + " "): (store += 1 + " ");
+    }
+    store += "\n";
+  }
+  return store;
+};
+
+console.log(patternEleven(5));
+
 */

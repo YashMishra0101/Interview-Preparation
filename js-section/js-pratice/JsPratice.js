@@ -1,27 +1,18 @@
 console.log("Working");
 
-let printSeven = (value) => {
+let patternEleven = (number) => {
   let store = "";
-
-  for (let a = 1; a <= value; a++) {
-    let space = "";
-    let stars = "";
-
-    // Adding spaces before stars
-    for (let b = 1; b <= value - a; b++) {
-      space += " ";
+  for (let a = 1; a <= number; a++) {
+    for (let b = 1; b <= a; b++) {
+      a % 2 === 0
+        ? 
+        b % 2 === 0 ? (store += 1 + " "): (store += 0 + " ")
+        : 
+        b % 2 === 0 ? (store += 0 + " "): (store += 1 + " ");
     }
-
-    // Adding stars
-    for (let c = 0; c < 2 * a - 1; c++) {
-      stars += "*";
-    }
-
-    // Concatenating spaces and stars, then adding a new line
-    store += space + stars + "\n";
+    store += "\n";
   }
-
   return store;
 };
 
-console.log(printSeven(5));
+console.log(patternEleven(5));
