@@ -315,4 +315,25 @@ let patternEleven = (number) => {
 
 console.log(patternEleven(5));
 
+---12)
+
+let patternTwelve=(number)=>{
+    let store="";
+    for (let a=1; a<=number; a++){
+        for (let b=1; b<=a; b++){
+            store +=b;
+        }
+        for(let c=1; c<=2*number-a*2;c++){
+            store+=" ";
+        }
+        for(let d=a; 1<=d; d--){
+            store+=d;
+        }
+        store+="\n";
+    }
+    return store;
+}
+
+console.log(patternTwelve(5))
+
 */
