@@ -336,4 +336,72 @@ let patternTwelve=(number)=>{
 
 console.log(patternTwelve(5))
 
+--13)
+
+let patternThirtheen=(n)=>{
+    let store="";
+    let c=1;
+    for(let a=1; a<=n; a++){
+        for(let b=1; b<=a; b++){
+            store+=c+" ";
+            c++;
+        }
+        store+="\n";
+    }
+    return store;
+}
+
+console.log(patternThirtheen(5))
+
+--14)
+
+let patternFourteen=(n)=>{
+    let store="";
+    for(let a=1; a<=n; a++){
+        let c=65;
+        for(let b=1; b<=a; b++){
+           store+= String.fromCharCode(c) + " ";
+           c++;
+        }
+        store+="\n"
+    }
+    return store;
+}
+
+console.log(patternFourteen(5))
+
+--15)
+
+let patternFifteen=(n)=>{
+    let store="";
+    for(let a=n; 1<=a; a--){
+        let c=65;
+        for(let b=1; b<=a; b++){
+           store+= String.fromCharCode(c) + " ";
+           c++;
+        }
+        store+="\n"
+    }
+    return store;
+}
+
+console.log(patternFifteen(5))
+
+--16)
+
+let patternSixteen=(n)=>{
+    let store="";
+    let c=65;
+    for(let a=1; a<=n; a++){
+        for(let b=1; b<=a; b++){
+           store+= String.fromCharCode(c) + " ";
+        }
+        store+="\n"
+        c++;
+    }
+    return store;
+}
+
+console.log(patternSixteen(5))
+
 */
