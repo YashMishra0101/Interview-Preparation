@@ -147,9 +147,22 @@ A B C
 A B C D
 A B C D E
 
-15) Pattern Fifteen
+15)Pattern Fifteen
+
+A B C D E
+A B C D
+A B C
+A B
+A
+
+16)Pattern Sixteen
 
 A
+B B
+C C C
+D D D D
+E E E E E
+
 
 
 

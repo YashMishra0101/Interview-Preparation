@@ -10,15 +10,24 @@ Unlike other repositories, this one is not designed to include everything in the
 
 This repository includes:
 
-- 🌐 HTML
-- 🎨 CSS
-- ⚙️ JavaScript
-- ⚛️ React
-- 🧩 Machine Coding (For React-Based Interviews)
-- 🔷 TypeScript
-- JavaScript, React, and TypeScript projects for revising concepts
-- 🛠️ Basic Backend Questions
-- 💬 General HR Questions
+🌐 HTML
+
+🎨 CSS
+
+⚙️ JavaScript
+
+⚛️ React
+
+🧩 Machine Coding (for React-based interviews)
+
+🔷 TypeScript
+
+✅ Projects built using JavaScript, React, and TypeScript to revise and reinforce core concepts
+
+🛠️ Basic Backend Questions
+
+💬 General HR Questions (to prepare for interview rounds)
+
 
 ## 📂 Folder and File Naming Conventions (Which I Used)
 
