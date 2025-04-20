@@ -355,32 +355,31 @@ console.log(patternThirtheen(5))
 
 --14)
 
-let patternFourteen=(n)=>{
-    let store="";
-    for(let a=1; a<=n; a++){
-        let c=65;
-        for(let b=1; b<=a; b++){
-           store+= String.fromCharCode(c) + " ";
-           c++;
-        }
-        store+="\n"
+let patternFourteen = (value) => {
+  let store = "";
+  for (let a = 1; a <= value; a++) {
+    let print = 65;
+    for (let b = 1; b <= a; b++) {
+      (store += String.fromCharCode(print) + " "), print++;
     }
-    return store;
-}
+    store += "\n";
+  }
+  return store;
+};
 
-console.log(patternFourteen(5))
+console.log(patternFourteen(5));
 
 --15)
 
-let patternFifteen=(n)=>{
+let patternFifteen=(value)=>{
     let store="";
-    for(let a=n; 1<=a; a--){
-        let c=65;
-        for(let b=1; b<=a; b++){
-           store+= String.fromCharCode(c) + " ";
-           c++;
+    for (let a=value; a>=1; a--){
+        let print=65;
+        for (let b=1; b<=a; b++){
+            store+=String.fromCharCode(print)+" ";
+            print++;
         }
-        store+="\n"
+        store+="\n";
     }
     return store;
 }
@@ -389,43 +388,23 @@ console.log(patternFifteen(5))
 
 --16)
 
-let patternSixteen=(n)=>{
-    let store="";
-    let c=65;
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=a; b++){
-           store+= String.fromCharCode(c) + " ";
-        }
-        store+="\n"
-        c++;
+let patternFifteen = (value) => {
+  let store = "";
+  let print = 65;
+  for (let a = 1; a <= value; a++) {
+    for (let b = 1; b <= a; b++) {
+      store += String.fromCharCode(print) + " ";
     }
-    return store;
-}
+    store += "\n";
+    print++;
+  }
+  return store;
+};
 
-console.log(patternSixteen(5))
+console.log(patternFifteen(5));
 
 ---17)
 
-let patternSevenTeen = (n) => {
-    let store = "";
-    for (let a = 1; a <= n; a++) {
-      let alphabet = 65;
-      for (let space = 1; space <= n - a; space++) {
-        store += " ";
-      }
-      for (let b = 1; b <= 2 * a - 1; b++) {
-        if (b > a) {
-          store += String.fromCharCode(alphabet-2);
-        } else {
-          store += String.fromCharCode(alphabet);
-          alphabet++;
-        }
-      }
-      store += "\n";
-    }
-    return store;
-  };
-  
-  console.log(patternSevenTeen(5));
+
 
 */

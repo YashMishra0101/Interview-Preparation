@@ -160,6 +160,19 @@ that value. The parameter, on the other hand, receives the value sent by the arg
 we call a function and try to pass a value, that value is called an argument. Then, inside the function, that value is received 
 and handled by the parameter.
 
+Example: 
+
+let abc=(name)=>{
+    return name;
+}
+
+console.log(abc("Yashu"))
+
+console.log("Yashu")
+
+-->Yashu ->Argument
+-->name  ->Parameter
+
 #4)About Call Back :-
 
 When "A function" is passed as an argument into "Another function", then it is called a callback function.

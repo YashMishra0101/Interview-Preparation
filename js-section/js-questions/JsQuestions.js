@@ -163,6 +163,15 @@ C C C
 D D D D
 E E E E E
 
+17)Pattern Seventeen
+
+    A
+   ABA
+  ABCBB
+ ABCDCCC
+ABCDEDDDD
+
+
 
 
 
