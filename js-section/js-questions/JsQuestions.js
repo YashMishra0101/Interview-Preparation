@@ -167,9 +167,43 @@ E E E E E
 
     A
    ABA
-  ABCBB
- ABCDCCC
-ABCDEDDDD
+  ABCBA
+ ABCDCBA
+ABCDEDCBA
+
+18)Pattern Eighteen
+
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+
+19)
+
+**********
+**** ****
+***   ***
+**     **
+*       *
+*       *
+**     **
+***   ***
+**** ****
+**********
+
+20)
+
+*         *
+**       **
+***     ***
+****   ****
+***** *****
+****   ****
+***     ***
+**       **
+*         *
+
 
 
 

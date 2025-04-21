@@ -405,6 +405,150 @@ console.log(patternFifteen(5));
 
 ---17)
 
+function patternSevenTeen(n) {
+  let store = "";
+  for (let a = 1; a <= n; a++) {
+    let alphabet = 65;
+    for (let space = 1; space <= n - a; space++) {
+      store += " ";
+    }
+    for (let b = 1; b <= 2 * a - 1; b++) {
+      store += String.fromCharCode(alphabet);
+      if(b>=a){
+        alphabet--
+      }
+      else{
+        alphabet++
+      }
+    }
+    store += "\n";
+  }
+  return store;
+}
+
+console.log(patternSevenTeen(5));
+
+--18)
+
+let patternEighteen=(n)=>{
+    let store="";
+  for(let a=0; a<n; a++){
+      let alphabet=64;
+      let print=alphabet+n-a;
+      for(let b=0; b<=a; b++){
+          store+=String.fromCharCode(print) + " ",
+          print++;
+      }
+      store+="\n"
+  }
+  return store;
+}
+
+console.log(patternEighteen(5));
+
+--19)
+
+let patternNineteen = (n) => {
+  let store = "";
+  let startCount = n;
+  let totalspace = 0;
+ 
+    for (let firstPhase = 1; firstPhase <= n; firstPhase++) {
+      for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
+        store += "*";
+      }
+      for (let space = 1; space < totalspace * 2; space++) {
+        store += " ";
+      }
+      for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
+        store += "*";
+      }
+      store += "\n";
+      if (firstPhase < n) {
+        startCount--; //5-4-3-2-1
+        totalspace++; //0-1-2-3-4
+      } else {
+        break;
+      }
+    }
+
+
+    for (let secondPhase = 1; secondPhase <= n; secondPhase++) {
+      for (let rightSideStar = 1;rightSideStar <= startCount;rightSideStar++
+      ) {
+        store += "*";
+      }
+      for (let space = 1; space < totalspace * 2; space++) {
+        store += " ";
+      }
+      for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
+        store += "*";
+      }
+      store += "\n";
+      if (secondPhase < n) {
+        startCount++;
+        totalspace--;
+      } else {
+        break;
+      }
+    }
+    return store;
+};
+
+
+console.log(patternNineteen(5));
+
+
+--20)
+
+let patternTwenty = (n) => {
+  let store = "";
+  let startCount = 1;
+  let totalspace = n - 1;
+
+  for (let firstPhase = 1; firstPhase <= n; firstPhase++) {
+    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
+      store += "*";
+    }
+    for (let space = 1; space <= totalspace * 2; space++) {
+      store += " ";
+    }
+    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
+      store += "*";
+    }
+    store += "\n";
+
+    if (firstPhase < n) {
+      startCount++;
+      totalspace--;
+    } else {
+      startCount--;
+      totalspace++;
+    }
+  }
+  for (let secondPhase = 1; secondPhase < n; secondPhase++) {
+    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
+      store += "*";
+    }
+    for (let space = 1; space <= totalspace * 2; space++) {
+      store += " ";
+    }
+    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
+      store += "*";
+    }
+    store += "\n";
+    if (secondPhase < n) {
+      startCount--;
+      totalspace++;
+    } else {
+      break;
+    }
+  }
+  return store;
+};
+
+console.log(patternTwenty(5));
+
 
 
 */
