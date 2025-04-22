@@ -1,47 +1,19 @@
-let patternTwenty = (n) => {
-  let store = "";
-  let startCount = 1;
-  let totalspace = n - 1;
+console.log("Js Practic is working");
 
-  for (let firstPhase = 1; firstPhase <= n; firstPhase++) {
-    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
-      store += "*";
+let patternTwentyOne=(n)=>{
+    let store="";
+    for(let a=1; a<=n; a++){
+        for(let b=1; b<=n; b++){
+            if(a===1 && (b===1 || b===n) || a===n && (b===1 || b===n) ||  a===2 && (b===2 || b===4)||  a===3 && b===3 || a===4 && (b===2 || b===4)){
+                store+="*";
+            }
+            else{
+                store+=" ";
+            }
+        }
+        store+="\n";
     }
-    for (let space = 1; space <= totalspace * 2; space++) {
-      store += " ";
-    }
-    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-      store += "*";
-    }
-    store += "\n";
+     return store;
+}
 
-    if (firstPhase < n) {
-      startCount++;
-      totalspace--;
-    } else {
-      startCount--;
-      totalspace++;
-    }
-  }
-  for (let secondPhase = 1; secondPhase < n; secondPhase++) {
-    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
-      store += "*";
-    }
-    for (let space = 1; space <= totalspace * 2; space++) {
-      store += " ";
-    }
-    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-      store += "*";
-    }
-    store += "\n";
-    if (secondPhase < n) {
-      startCount--;
-      totalspace++;
-    } else {
-      break;
-    }
-  }
-  return store;
-};
-
-console.log(patternTwenty(5));
+console.log(patternTwentyOne(5))
