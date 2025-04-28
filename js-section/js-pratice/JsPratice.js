@@ -1,19 +1,17 @@
 console.log("Js Practic is working");
 
-let patternTwentyOne=(n)=>{
-    let store="";
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=n; b++){
-            if(a===1 && (b===1 || b===n) || a===n && (b===1 || b===n) ||  a===2 && (b===2 || b===4)||  a===3 && b===3 || a===4 && (b===2 || b===4)){
-                store+="*";
-            }
-            else{
-                store+=" ";
-            }
-        }
-        store+="\n";
+let partternTwentyThree = (n) => {
+  let size = 2 * n - 1;
+  let store ="";
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      let minimumNumber = Math.min(i, j, size - i - 1, size - j - 1);
+      print = n - minimumNumber;
+      store += print + " ";
     }
-     return store;
-}
+    store+="\n";
+  }
+  return store.trim();
+};
 
-console.log(patternTwentyOne(5))
+console.log(partternTwentyThree(4));
