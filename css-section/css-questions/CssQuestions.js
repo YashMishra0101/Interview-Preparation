@@ -4,8 +4,8 @@
 
 # Note (Very important)🤚  
 
-> This is for interview preparation purposes, not for learning CSS from scratch. Make sure you first learn CSS.  
-> This section covers the most commonly asked CSS interview Questions and Concepts for entry-level and fresher jobs.
+> This is for interview preparation purposes, not for learning CSS from scratch. Make sure you First Learn CSS.  
+> This section covers the most commonly asked CSS interview Questions and Concepts for Entry-level and Fresher jobs.
 > For CSS, regular practice is essential—just reading and understanding concepts is not enough. So, ensure you Practice properly.  
 
 --Total : 26 Questions

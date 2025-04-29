@@ -1,17 +1,28 @@
 console.log("Js Practic is working");
 
-let partternTwentyThree = (n) => {
-  let size = 2 * n - 1;
-  let store = "";
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      let minimumNumber = Math.min(i, j, size - i - 1, size - j - 1);
-      let print = n - minimumNumber;
-      store += print + " ";
+// let checkPrime = (n) => {
+//   for (let a = 2; a <= Math.sqrt(n); a++) {
+//     let ans=true;
+//     if (n % a === 0) {
+//       ans = true;
+//     }
+//     return ans ? "Not a Prime Number" : "Prime Number";
+//   }
+// };
+
+// console.log(checkPrime(8));
+
+
+const checkPrime = (n) => {
+  if (n < 2){
+    return "Not a Prime Number";
+  } 
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return "Not a Prime Number";
     }
-    store += "\n";
   }
-  return store;
+  return "Prime Number";
 };
 
-console.log(partternTwentyThree(4));
+console.log(checkPrime(8));

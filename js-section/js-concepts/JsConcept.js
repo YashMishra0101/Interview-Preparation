@@ -1,4 +1,11 @@
 /*
+### What’s This Section About ? 
+
+  This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a little JavaScript. 
+  It's not for complete beginners.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #0)Basic Info
 
 JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was working at Netscape Communications Corporation.
@@ -935,7 +942,7 @@ Inside setTimeout
 - **The Event Loop ensures tasks are executed properly** in the right order. 
 
 
-//#15)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
+#15)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
 
 --Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
 -- Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed )
@@ -978,7 +985,7 @@ creation of a new value -> String,numbers etc.
 object -> Array,objects,function etc.
 
 
-//#16) `Destructuring`, `Spread operator`, and `Rest operator`) 
+#16) `Destructuring`, `Spread operator`, and `Rest operator`) 
 
 >>1️⃣ Destructuring (Extracting Values)
 

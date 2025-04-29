@@ -1,13 +1,18 @@
 console.log("JS Logical Questions Section Is Working");
 /*
-1. Check and print the following types of numbers within a given range:  
+# For Logic Building
+
+#1. Check and Print the following types of numbers within a given range(choose two numbers by your own):
+
   - Even Numbers  
   - Odd Numbers  
   - Prime Numbers
 
-2. Print the following star patterns: 
+#2. Print the following star patterns (Total 23 Questions): 
 
 1)Pattern One
+n=5;
+
 *****
 *****
 *****
@@ -15,6 +20,8 @@ console.log("JS Logical Questions Section Is Working");
 *****
 
 2)Pattern Two
+n=5;
+
 *
 **
 ***
@@ -22,6 +29,8 @@ console.log("JS Logical Questions Section Is Working");
 *****
 
 3)Pattern Three
+n=5;
+
 1
 12
 123
@@ -29,6 +38,8 @@ console.log("JS Logical Questions Section Is Working");
 12345
 
 4)Pattern Four
+n=5;
+
 1
 22
 333
@@ -36,6 +47,7 @@ console.log("JS Logical Questions Section Is Working");
 55555
 
 5)Pattern Five (Decending Order)
+n=5;
 
 *****
 ****
@@ -44,6 +56,8 @@ console.log("JS Logical Questions Section Is Working");
 *
 
 6)Pattern Six
+n=5;
+
 12345
 1234
 123
@@ -51,6 +65,8 @@ console.log("JS Logical Questions Section Is Working");
 1
 
 7)Pattern Seven
+n=5;
+
 1
 3
 5
@@ -64,6 +80,7 @@ console.log("JS Logical Questions Section Is Working");
   *********
 
 8)Pattern Eight (Reverse of Pattern Seven)
+n=5;
 
 9
 7
@@ -79,6 +96,7 @@ console.log("JS Logical Questions Section Is Working");
     *
     
 9)Pattern Nine 
+n=5;
 
 9
 7
@@ -103,6 +121,7 @@ console.log("JS Logical Questions Section Is Working");
 *********
 
 10)Pattern Ten
+n=5;
 
 *
 **
@@ -115,6 +134,7 @@ console.log("JS Logical Questions Section Is Working");
 *
 
 11)Pattern Eleven
+n=5;
 
 1
 0 1
@@ -123,6 +143,7 @@ console.log("JS Logical Questions Section Is Working");
 1 0 1 0 1
 
 12)Pattern Twelve
+n=5;
 
 1      1
 12    21
@@ -130,8 +151,8 @@ console.log("JS Logical Questions Section Is Working");
 12344321
 
 13)Pattern Thirteen
+n=5;
 
-if n=5
 
 1
 2 3
@@ -140,6 +161,7 @@ if n=5
 11 13 14 15
 
 14)Pattern Fourteen
+n=5;
 
 A
 A B
@@ -148,6 +170,7 @@ A B C D
 A B C D E
 
 15)Pattern Fifteen
+n=5;
 
 A B C D E
 A B C D
@@ -156,6 +179,7 @@ A B
 A
 
 16)Pattern Sixteen
+n=5;
 
 A
 B B
@@ -164,6 +188,8 @@ D D D D
 E E E E E
 
 17)Pattern Seventeen
+n=5;
+
 
     A
    ABA
@@ -172,6 +198,8 @@ E E E E E
 ABCDEDCBA
 
 18)Pattern Eighteen
+n=5;
+
 
 E 
 D E 
@@ -179,7 +207,8 @@ C D E
 B C D E 
 A B C D E 
 
-19)
+19)Pattern Nineteen
+n=5;
 
 **********
 **** ****
@@ -192,7 +221,9 @@ A B C D E
 **** ****
 **********
 
-20)
+20)Pattern Twenty
+n=5;
+
 
 *         *
 **       **
@@ -204,7 +235,9 @@ A B C D E
 **       **
 *         *
 
-21)
+21)Pattern Twentyone
+n=5;
+
 
 *****
 *   *
@@ -212,7 +245,9 @@ A B C D E
 *   *
 *****
 
-22)
+22)Pattern Twentytwo
+n=5;
+
 
 *   *
  * * 
@@ -220,7 +255,7 @@ A B C D E
  * * 
 *   *
 
-23)
+23)Pattern Twenthree
 n=4;
 7*7
 
@@ -232,62 +267,27 @@ n=4;
 4 3 3 3 3 3 4 
 4 4 4 4 4 4 4 
 
+#Questions
 
+#)1
 
+let a=5;
+let b="10";
 
+let c=b-a;
+let c=b*a;
+let c=b/a;
+let c=b+ab
 
+?What's the output
+console.log(c);
+console.log(typeof(c));
 
+>Ans
 
-
-
-_____--------------------____________________-------------------------------_____________________------------------------___________________________-------------------------_________________________   
-
-1. **Reverse a String:** Write a function to reverse a given string.
-2. **Palindrome Check:** Write a function to check if a string is a palindrome.
-3. **Max & Min in an Array:** Find the maximum and minimum values in an array.
-4. **Remove Duplicates:** Remove duplicates from an array.
-5. **Prime Number Check:** Write a function to determine if a number is prime.
-6. **Factorial Calculation:** Calculate the factorial of a number using recursion.
-7. **Fibonacci Series:** Generate the Fibonacci series up to *n* terms.
-8. **Custom Array Sort:** Sort an array of numbers without using the built-in sort function.
-9. **Character Frequency:** Count the occurrence of each character in a string.
-10. **Empty Object Check:** Determine if an object is empty.
-11. **Merge Arrays:** Merge two arrays without duplicates.
-12. **Flatten Nested Array:** Flatten a nested array (one level or fully flattened).
-13. **Array Intersection:** Find the intersection between two arrays.
-14. **Implement Map:** Create your own implementation of the `Array.map()` method.
-15. **Pattern Generation:** Generate a pyramid (or similar) pattern using loops.
-16. **Decimal to Binary:** Convert a number to its binary representation.
-17. **Swap Variables:** Swap two variables without using a temporary variable.
-18. **Anagram Check:** Check if two strings are anagrams.
-19. **Deep Clone Object:** Create a deep clone of an object.
-20. **Sum of Digits:** Find the sum of the digits of a number.
-21. **Count Vowels:** Count the number of vowels in a string.
-22. **Reverse Array:** Reverse an array without using the built-in `reverse()` method.
-23. **Capitalize Words:** Capitalize the first letter of every word in a string.
-24. **Debounce Function:** Implement a debounce function.
-25. **Even or Odd:** Check if a number is even or odd.
-
-*/
-//#Question 1
-
-// let ab=5;
-// let bc="10"
-
-// let cd=bc-ab;
-// let cd=bc*ab;
-//  let cd=bc/ab;
-
-// let cd=bc+ab;
-// console.log(cd);
-// console.log(typeof(cd));
-
-/*
 In JavaScript, when you use the + operator with one operand being a number and the other operand being a string, JavaScript implicitly
 coerces the number to a string and performs string concatenation rather than addition.
-*/
 
-/* 
 Concatenation primarily refers to combining strings together to form a single string. However, it can also be used more broadly to
 describe the process of combining or linking together multiple items or entities, not just limited to strings. 
 
@@ -299,132 +299,117 @@ While concatenation often involves combining strings, the concept can also be ap
 objects, or even numbers. However, in the context of programming languages, the term "concatenation" is most commonly associated 
 with string manipulation.
 
-*/
 
-//# Question 2 :- How can you pass one function into another function and print its value in JavaScript ?
 
-// const one = (parameter) => {
-//   console.log(parameter());
-// };
+#2) How to pass one function into another function and print its value ?
 
-// const two = () => {
-// return("I am Two")
-// };
+const one = (parameter) => {
+  console.log(parameter());
+};
 
-// one(two)
+const two = () => {
+return("I am Two")
+};
 
-//  function a(){
-//   console.log("one");
-// }
-// a()
+one(two)
 
-// function a(){
-//   console.log("two");
-// }
+#3) : Tells the output without running the code.
 
-// function a(){
-//   console.log("three");
-// }
+function firstFunction() {
+  console.log("First Function Start");
+  secondFunction();
+  console.log("First Function End");
+}
 
-//#Question 4 : Tells the output without running the code.
+function secondFunction() {
+  console.log("Second Function Start");
+  thirdFunction();
+  console.log("Second Function End");
+}
 
-// function firstFunction() {
-//   console.log("First Function Start");
-//   secondFunction();
-//   console.log("First Function End");
-// }
+function thirdFunction() {
+  console.log("Third Function");
+}
 
-// function secondFunction() {
-//   console.log("Second Function Start");
-//   thirdFunction();
-//   console.log("Second Function End");
-// }
+firstFunction();
 
-// function thirdFunction() {
-//   console.log("Third Function");
-// }
+#4)Tells the output without running the code in the proper sequence.
 
-// firstFunction();
+console.log("line number 1", varName);
+var varName = 10;
 
-//#Quesstion 5 : Tells the output without running the code in the proper sequence.
+function b() {
+  console.log("line number 2", varName);
+}
 
-// console.log("line number 1", varName);
-// var varName = 10;
+console.log("line number 3", varName);
 
-// function b() {
-//   console.log("line number 2", varName);
-// }
+function fn() {
+  console.log("line number 4", varName);
+  var varName = 20;
+  b();
+  console.log("line number 5", varName);
+}
 
-// console.log("line number 3", varName);
+console.log("line number 6");
 
-// function fn() {
-//   console.log("line number 4", varName);
-//   var varName = 20;
-//   b();
-//   console.log("line number 5", varName);
-// }
+fn();
 
-// console.log("line number 6");
+#5) Can we use the for...of loop for objects ?
 
-// fn();
-
-//#Question 6 : Can we use the for...of loop for objects?
-/*
 When we use the for...of loop with an array, it throws the values. 
 When we use the for...in loop with an array, it prints the index 
 numbers instead of the array values.
 
 1. Use `for...of` for arrays to directly access the values.
 2. Use `for...in` for objects to iterate over property names.
-*/
 
-//#Question 7 : Tells the output
 
-// var a = 10;
-// console.log("line number 2", a);
-// function fn() {
-//   console.log("line number 4", a);
-//   var a = 28;
-//   a++;
-//   console.log("line number 7", a);
-//   if (a) {
-//     var a = 30;
-//     a++;
-//     console.log("line number 11", a);
-//   }
-//   console.log("line number 13", a);
-// }
-// fn();
-// console.log("line number 2", a);
+#6)Tells the output
 
-//#Question 8 : Tells The output
+var a = 10;
+console.log("line number 2", a);
+function fn() {
+  console.log("line number 4", a);
+  var a = 28;
+  a++;
+  console.log("line number 7", a);
+  if (a) {
+    var a = 30;
+    a++;
+    console.log("line number 11", a);
+  }
+  console.log("line number 13", a);
+}
+fn();
+console.log("line number 2", a);
 
-// let letFruit = "orange";
-// var varFruit = "orange"
-// console.log("letFruit", letFruit,
-// "varFruit", varFruit)
-// {
-// let letFruit = "apple";
-// varFruit = "apple";
-// console. log("letFruit", letFruit,
-// "varFruit", varFruit)
-// }
-// console.log("letFruit", letFruit, "varFruit", varFruit);
+#7) Tells The output
 
-/*
+let letFruit = "orange";
+var varFruit = "orange"
+console.log("letFruit", letFruit,
+"varFruit", varFruit)
+{
+let letFruit = "apple";
+varFruit = "apple";
+console. log("letFruit", letFruit,
+"varFruit", varFruit)
+}
+console.log("letFruit", letFruit, "varFruit", varFruit);
+
+
 letfruit=orange,varfruit=orange
 letfruit=apple,varfruit=apple
 letfruit=orange,varfruit=apple
 
-*/
 
-//#Question 9 : You have the following JavaScript object:
+#8) You have the following JavaScript object 
 
-// 1. What will be the output of `console.log(person.fullName())`, and why?
-// 2. How does the `this` keyword behave inside the `fullName` method?
-// 3. What is the significance of using `let` inside the `fullName` method?
+1. What will be the output of `console.log(person.fullName())`, and why?
+2. How does the `this` keyword behave inside the `fullName` method?
+3. What is the significance of using `let` inside the `fullName` method?
 
-/*
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -435,7 +420,7 @@ let person = {
   }
 };
 
-//>**Answer:**
+>Ans
 
 1. **Output:**
    - The output will be: `"Hello, my name is Yash Mishra. I am 22 years old."`
@@ -448,11 +433,9 @@ let person = {
    - `let` is used to declare the `greeting` variable inside the `fullName` method. This variable is block-scoped, meaning it is only accessible within the `fullName` method. 
    - Using `let` here ensures that `greeting` is a local variable and doesn't interfere with other parts of the code, demonstrating good scoping practices.
 
- */
 
-//##Question 9 In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two,and what happens if you try to access object properties using `this` inside an arrow function?
-/*
-**Answer:**
+#9) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two,and what happens if you try to access object properties using `this` inside an arrow function?
+>Answer:
 
 The key difference between an arrow function and a regular function as a method inside an object is how `this` is handled.
 
@@ -492,11 +475,10 @@ the outer scope, which in many cases is the global object (`window` in browsers)
  to the object, you should use regular functions. Arrow functions are more suited for cases 
  where you want to maintain `this` from the surrounding scope, not when you need to access 
  properties of the object.  
-*/
 
-//#10) What will be the output of the following code ?
 
-/*
+#10) What will be the output of the following code ?
+
 ? Code Without `await`:
 
 async function f1() {
@@ -573,11 +555,7 @@ Go!
 In summary, without actual asynchronous operations, `await` does not create a delay and the code 
 effectively executes in a synchronous manner.
 
-*/
-
-//#11) Find the output of this code using var and let.
-
-/*
+#11) Find the output of this code using var and let.
 
 for (let a = 1; a <= 5; a++) {
     setTimeout(() => {
@@ -596,7 +574,7 @@ for (var a = 1; a <= 5; a++) {
 
 -----------------------------------------
 
-#### For `let`
+#For `let`
 
 Code:
 
@@ -748,11 +726,9 @@ During looping, only the value of the one `a` variable is being updated each tim
  callbacks execute, `var` has the final value of `6`, as `var` is function-scoped and not block-scoped.
 
 
-*/
 
-//##13)Give me previous output which you get using Let but that time don't use let .
+#12)Give me previous output which you get using Let but that time don't use let .
 
-/*
 >>Without changing the var into let 
 
 for (var a = 1; a <= 5; a++) {
@@ -775,11 +751,9 @@ output:
 4
 5
 
-*/
 
-//#14)What if we palce let outside the for loop ? , tell me correct output .
+#13)What if we palce let outside the for loop ? , tell me correct output .
 
-/*
 let a = 1;
 
 for (a; a <= 5; a++) {
@@ -791,11 +765,10 @@ for (a; a <= 5; a++) {
 Ans : In short: Both in the case of let (outside the loop) and var (inside the loop),
 the same single variable is updated, and previous values are overwritten. That’s why 
 in both cases, you get 6 printed five times when the loop completes.
-*/
 
-//#15)Tell me the output of this code.
 
-/*
+#14)Tell me the output of this code.
+
 let count = 0;
 (function immediate() {
     if (count === 0) {
@@ -804,11 +777,8 @@ let count = 0;
     }
     console.log(count); // What is logged here?
 })();
-*/
 
-//#16)Tell me the output of this code in proper sequence manner .
-
-/*
+#15)Tell me the output of this code in proper sequence manner .
 
 let outerFun = (() => {
     
@@ -836,14 +806,9 @@ see();
 see();
 seeTwo();
 
-
-*/
-
-/*
 >>>Solution :
 
 > Code Explanation:
-
 
 let outerFun = (() => {
     
@@ -900,6 +865,7 @@ SeeTwo count 12 // seeTwo logs the current count, which is 12
 SeeTwo ref 10   // seeTwo logs the value of ref, which is still 10
 
 > How to Fix This:
+
 If you want `ref` to reflect the current value of `count`, you would need to reference `count` directly inside `seeTwo()`, rather than assigning a copy of `count` to `ref`. Here's one way to fix it:
 
 ```javascript
@@ -930,11 +896,8 @@ seeTwo();   // will log the current count, which is now 12
 
 
 Now, `seeTwo()` will always log the current value of `count`.
-*/
 
-//#17)Tell me the output of this code .
-
-/*
+#16)Tell me the output of this code .
 
 for (var i = 0; i < 3; i++) {
 setTimeout(function log() {
@@ -942,10 +905,8 @@ setTimeout(function log() {
 }, 1000);
 }
 
-*/
-//#18)What is Bable and webpack ?
+//#17)What is Bable and webpack ?
 
-/*
 1. Babel
 Babel is a JavaScript transpiler that converts modern JavaScript (ES6+) into older, browser-compatible 
 JavaScript. This ensures your code works in all browsers, even those that don’t support the latest
@@ -973,10 +934,8 @@ for faster browser loading.
 Why it's important: Webpack helps in managing dependencies and improving performance by bundling 
 and optimizing files for deployment.
 
-*/
 
-//##19) Why is Node.js necessary?
-/*
+#18) Why is Node.js necessary?
 
 1. To use npm (Node Package Manager):  
    - Reason: Node.js comes with npm (Node Package Manager), which is essential for installing
@@ -991,11 +950,8 @@ and optimizing files for deployment.
    - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
    Node.js is required to run these tools for building and optimizing code.
 
+#19) For version Checking which command is good: --version, -v, --v, or -version?
 
-*/
-//##20) For version Checking which command is good: --version, -v, --v, or -version?
-
-/*
 With the help of these commands (--version, -v, --v, and -version), we can check the version of 
 installed tools. But, but, but...
 
@@ -1005,11 +961,8 @@ For example, in **TypeScript**, all these commands work. However, in Node.js, --
 do not work. 
 
 >>Therefore, it's better to use --version and -v consistently to avoid issues.
-*/
 
-/*
-
-###21)What is TypeScript ?
+#20)What is TypeScript ?
 
 TypeScript is a statically typed superset of JavaScript that enhances code quality, maintainability, and 
 readability. It ensures type safety during development, which helps prevent runtime errors, especially in 
@@ -1019,11 +972,8 @@ large-scale applications.
 When discussing TypeScript, make sure to mention that it’s widely used in larger applications to improve 
 reliability** and make **refactoring** easier. It also **transpiles** into JavaScript, so it can run in 
 any environment where JavaScript runs!
-*/
 
-/*
-
-###21)What is -g ?
+#21)What is -g ?
 
 -g (Global Installation):
 When you use the -g flag with npm (e.g., npm install -g <package-name>), it means you are installing the 
@@ -1037,33 +987,17 @@ in any project without needing to install it separately in each project folder.
 Installs the package only in the current project’s node_modules folder, and it is available only within that 
 specific project.
 
-*/
 
-//#22)What is type inference in TypeScript?
-/*
-Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
-variable or expression based on its value or context, without needing explicit type annotations. 
-This feature helps keep the code clean and reduces redundancy while still providing type safety. For example, if you write `let num = 5;`, TypeScript infers that `num` is of type `number`. 📊✨
+#22)What is JSX ?
 
-Even with type inference, we mention types explicitly for clarity, better error checking, improved IDE 
-support, and to maintain code readability, especially in larger projects and for the developers.
-
-Example : let num = 5; // TypeScript infers that 'num' is of type 'number'
-
-*/
-//#23)What is JSX ?
-
-/*
 JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code directly 
 within your JavaScript files. It is primarily used in React to describe what the UI should look like.
 
 JSX simplifies the process of creating React components and enhances the readability of the code, allowing 
 developers to build user interfaces more efficiently.
-*/
 
-//#24)What is ts and tsx in react vite ?
+#23)What is ts and tsx in react vite ?
 
-/*
   --  ts = Typescript and tsx = Typescript XML.
   - .ts : This is a TypeScript file that can contain plain TypeScript code. It does **not** support JSX syntax.
   - .tsx : This is a TypeScript file that **does** support JSX syntax, allowing you to write React components.
@@ -1090,6 +1024,7 @@ This file contains a React component with JSX:
 
 ```typescript
 // ExampleComponent.tsx
+
 import React from 'react';
 
 const ExampleComponent: React.FC = () => {
