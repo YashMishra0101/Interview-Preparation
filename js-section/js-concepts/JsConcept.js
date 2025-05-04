@@ -1,7 +1,7 @@
 /*
 ### What’s This Section About ? 
 
-  This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a little JavaScript. 
+  This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a JavaScript,
   It's not for complete beginners.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,8 +66,8 @@ console.log("In Const:", c);
 
 >>Extra Info
 
-🤚👉-When we use var and let, we can assign a variable's value After Declaration, but during
-const, it is necessary to define the value during declaration.(🔥V.Imp)
+🤚🔥V.Imp👉-When we use var and let, we can assign a variable's value After Declaration, but during
+const, it is necessary to define the value during declaration
 
 - var is function scope and let and const are block scoped
 
@@ -174,8 +174,6 @@ let abc=(name)=>{
 }
 
 console.log(abc("Yashu"))
-
-console.log("Yashu")
 
 -->Yashu ->Argument
 -->name  ->Parameter
@@ -757,10 +755,11 @@ First Global Execution Context is created then other Execution Context is create
 
 
 --1️⃣ Memory Allocation Phase (Hoisting Phase):  
+
    - Memory allocation for variables and funtions.
    - Variables declared with `var` are initialized as `undefined`.  
    - Variables declared with `let` and `const` are stored in memory but remain in the "Temporal Dead Zone" until they are assigned a value.
-   - Functions (declared using function declarations) are stored with their full body.  
+   - Functions are stored with their full body.  
 
    
 ---Example:Example for Better Understanding :

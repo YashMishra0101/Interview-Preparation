@@ -25,4 +25,4 @@ const checkPrime = (n) => {
   return "Prime Number";
 };
 
-console.log(checkPrime(8));
+console.log(checkPrime(2));
