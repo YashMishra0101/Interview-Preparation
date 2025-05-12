@@ -556,14 +556,45 @@ In this example:
 -The scope chain is the path JavaScript follows to find a variable if it's not in the current box. (Because)
 -Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
 
+#10) Static Languages vs Dynamic Languages
 
-#10) Hoisting Explained
+--Static Languages:
 
-Hoisting means that during the compile phase (before code execution), variable declarations are moved to the top 
-of their containing scope, while function declarations are hoisted along with their body, allowing them to be called 
-before their declaration. However, only the declarations are hoisted, not the initializations. Variables declared with 
-var are hoisted with their declaration but initialized as undefined, while let and const are hoisted but remain uninitialized 
-and go into the Temporal Dead Zone (TDZ). This process is known as hoisting.
+Static programming languages, such as Java, C++,Kotlin etc require the developer to explicitly declare the data type of
+variables at the time of declaration. For example, in Java, you would write `int number = 10;`, where the type `int` must 
+be mentioned. These languages use a **compiler** to convert the entire source code into machine code before execution. The 
+compiler scans the whole codebase during this compilation phase, and this process happens **before** the program is run.
+
+If there are any syntax errors, type mismatches, or other issues, they are reported during compilation—before the program 
+even starts executing. This early error detection makes static languages highly suitable for large-scale applications, as
+many problems can be caught early, reducing runtime failures and improving overall code safety and reliability.
+
+
+--Dynamic Languages:
+
+Dynamic programming languages, such as Python, JavaScript, PHP etc do **not** require developers to explicitly specify variable 
+types during declaration. For instance, you can simply write `number = 10` in Python or JavaScript without mentioning the type. 
+These languages use an **interpreter**, which reads and executes the code **line by line** during runtime, unlike static languages
+where code is compiled beforehand.
+
+In dynamic languages, code is interpreted **at runtime**, so errors are only detected when the interpreter reaches the specific
+line causing the issue. This means the program may execute partially before throwing an error. While dynamic languages offer more
+flexibility, quicker prototyping, and faster development cycles, they can also introduce unexpected bugs that are harder to trace,
+specially in larger codebases.
+
+
+#11) Hoisting Explained
+
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during 
+the compile phase, which happens before code execution begins. This means that function declarations are fully hoisted, including 
+their function body, allowing them to be invoked even before their actual declaration appears in the code. In the case of variables 
+declared with var, only the declaration is hoisted—not the initialization—so they are initialized with the value undefined until the 
+line of code where the assignment actually happens. On the other hand, variables declared with let and const are also hoisted, 
+but unlike var, they remain uninitialized and enter a state known as the Temporal Dead Zone (TDZ). Accessing them before their 
+declaration line results in a ReferenceError. This entire compile-time process of moving declarations to the top is known as
+hoisting, and understanding it helps prevent unexpected behaviors in JavaScript execution.
+
+
 
 Quick Points:
 
@@ -640,7 +671,7 @@ var a =function (){
 }
 
 
- b()  //ReferenceError: Cannot access 'b' before initialization
+b()  //ReferenceError: Cannot access 'b' before initialization
 
  let b =function (){
   console.log("Hey I a function")
@@ -664,7 +695,7 @@ var a =function (){
 and `const` variables are hoisted but not initialized (temporal dead zone) and gives ReferenceError ( ReferenceError: Cannot access 'variable' before initialization )
 
 
-#11)Tempory Dead Zone (TDZ)
+#12)Tempory Dead Zone (TDZ)
 
 The Temporal Dead Zone (TDZ) refers to the period in which variables declared with let or const are hoisted but 
 cannot be accessed until the code execution reaches their declaration. If we try to access them before declaration,
@@ -697,7 +728,7 @@ console.log(myConst); // Uncaught ReferenceError: Cannot access 'myConst' before
 const myConst = 30;
 
 
-#12) undefined vs Not define vs null
+#13) undefined vs Not define vs null
 
 > undefined: This occurs when a variable or function is declared, but no value is assigned to them. When we try to access that variable, it gives us "undefined."
 
@@ -738,7 +769,7 @@ let info = {
 
 console.log(info.middleName); // Logs "null" because we explicitly set it to null.
 
-#13) Global Execution Context and Execution Context/Function Execution Context (In Detail)
+#14) Global Execution Context and Execution Context/Function Execution Context (In Detail)
 
 > Global Execution Context in JavaScript:
 
@@ -748,7 +779,7 @@ that is created when JavaScript starts running. It is the default environment wh
 So, the global execution context is just one type of execution context, and it is the first and main one that 
 JavaScript creates before executing any other function.
 
-First Global Execution Context is created then other Execution Context is created inside Global Execution Context.
+First Global Execution Context is created then other Execution Context is created inside the Global Execution Context.
 
 
 >It has two main phases:
@@ -856,7 +887,7 @@ _-_--------Global Execution Context is removed/end.
   - Call stack controls function execution. 
 
 
-#14) Event Loop   
+#15) Event Loop   
 
 JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are 
 present, they are managed by the event loop, ensuring non-blocking execution.
@@ -941,7 +972,7 @@ Inside setTimeout
 - **The Event Loop ensures tasks are executed properly** in the right order. 
 
 
-#15)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
+#16)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
 
 --Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
 -- Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed )
@@ -984,7 +1015,7 @@ creation of a new value -> String,numbers etc.
 object -> Array,objects,function etc.
 
 
-#16) `Destructuring`, `Spread operator`, and `Rest operator`) 
+#17) `Destructuring`, `Spread operator`, and `Rest operator`) 
 
 >>1️⃣ Destructuring (Extracting Values)
 
@@ -1075,7 +1106,7 @@ Here, `...remainingFruits` **collects** all remaining elements into an array.
 - **Spread (`...`)** → **Expanding values** (used for copying & merging)  
 - **Rest (`...`)** → **Collecting values** (used in function parameters or destructuring)  
 
-#17)Naming conventions
+#18)Naming conventions
 
 > 1. Camel Case
 
@@ -1159,7 +1190,7 @@ used in React and TypeScript projects.
 - Pascal Case for Files: Use `PascalCase` for file names, especially for React components. 
   - Example: `UserProfile.tsx`, `Header.tsx`.
 
-#18)Loops
+#19)Loops
 
 ---1)For Loop
 
