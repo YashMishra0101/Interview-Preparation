@@ -595,7 +595,6 @@ declaration line results in a ReferenceError. This entire compile-time process o
 hoisting, and understanding it helps prevent unexpected behaviors in JavaScript execution.
 
 
-
 Quick Points:
 
 - During the compile phase : It's important to note that hoisting occurs during the compile phase, not during code execution.
@@ -872,7 +871,8 @@ _-_--------Global Execution Context is removed/end.
   2️⃣ Code Execution Phase: 
     - Code runs line by line.  
     - Variables get actual values.  
-    - Function calls create new execution contexts inside the call stack.  
+    - Function calls create new execution contexts inside the call stack but first global execution context 
+      enter in call stack then function execution context.
 
     -  Call Stack:
       - GEC enters first, functions get **pushed in** when called and **popped out** when done.  
@@ -887,51 +887,69 @@ _-_--------Global Execution Context is removed/end.
   - Call stack controls function execution. 
 
 
-#15) Event Loop   
+### #15) Event Loop
 
-JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are 
-present, they are managed by the event loop, ensuring non-blocking execution.
+JavaScript is a **single-threaded language**, meaning it executes code **line by line**. When **asynchronous operations** are 
+involved, they are managed by the **Event Loop**, which ensures **non-blocking** execution.
 
-The Event Loop is a feature provided by the browser (or Node.js runtime), not JavaScript itself. JavaScript is 
-single-threaded and doesn't have built-in asynchronous capabilities. So Web APIs, Microtask Queue, 
-and Task Queue are part of the browser environment,to handle asynchronous operations efficiently not JavaScript 
-itself, The browser engine (like V8 in Chrome,SpiderMonkey in Firefox) works with the javascript (callback queue) 
-to manage asynchronous tasks like setTimeout,fetch, and promises without blocking execution.
+⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the **browser environment** (or **Node.js runtime**).
+JavaScript doesn't have built-in asynchronous capabilities. Instead, **Web APIs**, the **Microtask Queue**, and the **Task (Callback )
+Queue** are provided by the runtime environment to handle asynchronous operations efficiently.
 
->>How the Event Loop Works ?
+The **browser engine** (like **V8** in Chrome or **SpiderMonkey** in Firefox) works together with JavaScript to manage asynchronous
+operations such as `setTimeout`, `fetch`, and **Promises**, without blocking the main thread.
 
----1️⃣ Execution of Synchronous Code
 
-- When JavaScript runs, all **synchronous code** is executed **first** inside the **Call Stack**.  
-- If a function is called, it is **pushed into the Call Stack**, and once it completes execution, it is **popped out**.  
-- JavaScript does not move to asynchronous tasks until all synchronous code is executed.  
+>>How the Event Loop Works:
 
----2️⃣ Asynchronous Code Goes to Web APIs
 
-- When JavaScript encounters an **asynchronous operation** (like `setTimeout`, `fetch`, or event listeners), it **does not block the Call Stack**.  
-- Instead, these operations are handed over to the **Web APIs**, which handle them separately (e.g., timers for `setTimeout`, HTTP requests for `fetch`, `fetch`, event listeners).  
+--1️⃣ Execution of Synchronous Code
 
----3️⃣ Moving Asynchronous Tasks to Queues
+* JavaScript first executes **all synchronous code** in the **Call Stack**.
+* If a function is invoked, it is **pushed into the Call Stack** and **popped out** after execution.
+* JavaScript **does not process asynchronous tasks** until the Call Stack is empty.
 
-Once the Web APIs complete their tasks, the results are sent to different queues:  
+--- 2️⃣ Asynchronous Code is Handled by Web APIs
 
-- Microtask Queue (Higher Priority)  
-  - Contains **Promises (`.then, .catch, .finally`)** and **MutationObserver**.  
-  - These tasks are **executed before** other asynchronous tasks.  
+* When the JS engine encounters an **asynchronous operation** (e.g., `setTimeout`, `fetch`, or event listeners), it offloads
+ them to the **Web APIs**.
+* These APIs handle the operations in the background, freeing up the Call Stack.
 
-- Task Queue (Callback Queue) (Lower Priority)  
-  - Contains **`setTimeout`, `setInterval`, event listeners, etc.**  
-  - Executed only **after** the Microtask Queue is cleared.  
+---3️⃣ Asynchronous Tasks Are Moved to Queues
 
----4️⃣ Role of the Event Loop
+Once the Web APIs finish their operations, their callbacks are queued in:
 
-The **Event Loop** continuously checks:  
-1. If the **Call Stack is empty**, meaning all synchronous code is executed.  
-2. If there are **Microtasks in the Microtask Queue**, they are pushed into the Call Stack and executed **before** any Task Queue items.  
-3. If the **Microtask Queue is empty**, then tasks from the **Task Queue** are executed in order.  
-4. This process **repeats indefinitely**, ensuring JavaScript handles asynchronous operations efficiently.  
+* **Microtask Queue** (🎯 Higher Priority)
 
-and this is process is called Event Loop.
+  * Includes `Promise.then`, `Promise.catch`, `Promise.finally`, and `MutationObserver`.
+  * Always executed **before** tasks in the Task Queue.
+
+* **Task Queue (Callback Queue)** (🔁 Lower Priority)
+
+  * Includes `setTimeout`, `setInterval`, `event listeners`, etc.
+  * Executed **only after** the Microtask Queue is completely empty.
+
+
+---4️⃣ Moving Tasks to the Call Stack
+
+* The **Event Loop** checks:
+
+  1. If the **Call Stack is empty**.
+  2. If there are **Microtasks**, it pushes them into the Call Stack for execution.
+  3. Once all Microtasks are done, it moves tasks from the **Task Queue** to the Call Stack.
+* This cycle **repeats continuously**, ensuring smooth, non-blocking asynchronous execution.
+
+
+--- 5️⃣ Role of the Event Loop
+
+The **Event Loop** is the mechanism that:
+
+* Monitors the Call Stack and the Queues.
+* **Prioritizes Microtasks over Task Queue** items.
+* Ensures that the JS engine processes events and tasks in the correct order without blocking the UI or main thread.
+
+👉 This continuous cycle of checking the Call Stack and managing asynchronous queues is what we call the **Event Loop**.
+
 
 ---Example for Better Understanding
 
