@@ -120,7 +120,28 @@ let printPrime = (valueOne, valueTwo) => {
 
 console.log(printPrime(2, 11));
 
-#Ans 2
+
+#Ans 2 : Printing Prime number between Two numbers
+
+  let storePrime = "";
+  for (let a = 2; a <= n; a++) {
+    let isPrime = true;
+    for (let b = 2; b <= Math.sqrt(a); b++) {
+      if (a % b === 0) {
+        isPrime = false;
+      }
+    }
+     if(isPrime){
+      storePrime+=a + " ";
+    }
+  }
+  return storePrime;
+};
+
+console.log(printPrimeNumber(25));
+
+
+#Ans 3 : Patterns Question Answer
 
 ----1)
 

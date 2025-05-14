@@ -1,14 +1,31 @@
 console.log("JS Logical Questions Section Is Working");
 /*
-# For Logic Building
+#For Logic Building : These questions are mainly for improving your logic-building skills.They aren't directly tied to JavaScript concepts but are super helpful in developing the kind of logical thinking.
 
-#1. Check and Print the following types of numbers within a given range(choose two numbers by your own):
+---1) Write a JavaScript program to check whether a number is even, odd, or prime, and then print all even, odd, and prime numbers within a given range. You can choose any two numbers as the range limits: start and end.
 
   - Even Numbers  
   - Odd Numbers  
   - Prime Numbers
 
-#2. Print the following star patterns (Total 23 Questions): 
+---2) Write a JavaScript function `printPrimeNumber(n)` that returns all **prime numbers** from 2 to `n` (inclusive) as a **string**, separated by spaces.
+
+A **prime number** is a number greater than 1 that has no positive divisors other than 1 and itself.
+
+Your function should:
+
+* Accept a positive integer `n`.
+* Check each number from 2 up to `n`.
+* Collect all prime numbers in a string, separated by a single space.
+* Return the final string.
+
+Example:
+console.log(printPrimeNumber(25));
+
+Output:
+"2 3 5 7 11 13 17 19 23"
+
+---3) Print the following Star Patterns (Total 23 Questions): 
 
 1)Pattern One
 n=5;
@@ -267,7 +284,10 @@ n=4;
 4 3 3 3 3 3 4 
 4 4 4 4 4 4 4 
 
-#Questions
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# JavaScript-Based Logical Coding Questions:
 
 #)1
 
