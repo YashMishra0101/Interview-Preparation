@@ -1,5 +1,6 @@
 console.log("JS Logical Questions Section Is Working");
 /*
+#Section One
 #For Logic Building : These questions are mainly for improving your logic-building skills.They aren't directly tied to JavaScript concepts but are super helpful in developing the kind of logical thinking.
 
 ---1) Write a JavaScript program to check whether a number is even, odd, or prime, and then print all even, odd, and prime numbers within a given range. You can choose any two numbers as the range limits: start and end.
@@ -286,7 +287,7 @@ n=4;
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-
+#Section 2
 # JavaScript-Based Logical Coding Questions:
 
 #)1
@@ -1056,5 +1057,24 @@ const ExampleComponent: React.FC = () => {
 };
 
 export default ExampleComponent;
+
+#24)
+
+let a=9;
+let b=9;
+let c="5";
+let d="3";
+let e=undefined;
+let f=null;
+console.log("Sum of a + b = " + a + b);
+console.log(a + b+ " is a sum of a + b");
+
+console.log(a+b)//18
+console.log(c+d)//53
+console.log(a+c)//95
+console.log(e+a)//NaN
+console.log(e+d);//undefined3
+console.log(a+f);//9
+console.log(d+f);//3null
 
 */

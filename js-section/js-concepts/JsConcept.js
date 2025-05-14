@@ -1395,4 +1395,36 @@ for (let [index, value] of arr.entries()) {
  Index: 2, Value: Hello
 
 
+#20)Type Coercion (koversion) vs Type casting
+
+--- Type Coercion (Automatic conversion)
+
+Type coercion is when **JavaScript automatically** converts one data type to another behind your back—**without you asking for it.
+
+🧠 Example:
+
+"5" * 2  // JS converts "5" (string) to 5 (number) → result is 10
+"3" + 1  // JS sees a string, so it makes 1 into "1" → result is "31"
+
+You didn’t tell JS to do this—**it did it by itself**. That’s **type coercion**.
+
+
+---Type Casting (Manual conversion)
+
+Type casting means **YOU manually** convert one type to another using methods like `Number()`, `String()`, etc.
+
+🧠 Example:
+
+Number("5") + 2 // You manually converted "5" to 5 → result is 7
+String(10) + "1" // You manually made 10 a string → result is "101"
+
+Here, **you** are in control. That’s **type casting**.
+
+
+?? 🔥 So Are They the Same?
+
+
+* Type **coercion** = **automatic**, JS decides.
+* Type **casting** = **manual**, **you** decide.
+
 */

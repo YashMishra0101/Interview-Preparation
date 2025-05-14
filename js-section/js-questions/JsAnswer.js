@@ -1,6 +1,7 @@
 console.log("Js Question Section");
 
 /*
+#Secion One
 #Ans 1)
 
 ----Checking Even or Odd Number
@@ -121,7 +122,7 @@ let printPrime = (valueOne, valueTwo) => {
 console.log(printPrime(2, 11));
 
 
-#Ans 2 : Printing Prime number between Two numbers
+#Ans 2 : Printing Prime number from 2 to n .
 
   let storePrime = "";
   for (let a = 2; a <= n; a++) {
@@ -628,5 +629,67 @@ let partternTwentyThree = (n) => {
 
 console.log(partternTwentyThree(4));
 
+#Secion 3
+
+---24)
+
+??Concatenation :
+Concatenation in JavaScript means joining two or more strings together to form a single string.
+It is usually done using the + operator.
+
+??Coercion (koversion) :
+Coerced (koverced) means js automatic convert one data type into another data type.
+Note: 
+🤚🙎‍♂️ In JavaScript, type coercion is the automatic or implicit conversion of values "from one data type to 
+another" (It converts one data type to another depending on the situation). It doesn't just convert to strings — depending on the context, it can also convert values to numbers,
+booleans, or other types during operations.
+
+let a=9;
+let b=9;
+let c="5";
+let d="3";
+let e=undefined;
+let f=null;
+
+
+1)console.log(a+b)
+output=18 (Simple addtion)
+
+2)console.log(c+d)
+output=53 (This is string concatenation,Because both operands c and d are string , so JavaScript simply joins them called concatenation)
+
+3)console.log(a+c)
+ouptu=95 (This is type coercion + string concatenation. Since one operand (a) is a number and the other (c) is a string, JavaScript converts the number to a string, now both are string then it concatenates both the strings.)
+
+4)console.log(e+a)
+undefined+9=NaN 
+output=NaN (Coerced means js automatic convert one data type into another data type so undefined is not a number, but when JS tries to convert it to a number, it becomes NaN and NaN + 9= NaN and if "9" is a string so it gives us NaN9)
+
+5)console.log(e+d);
+output:undefined + "3"= undefined3 (d is a string so js coverted undefined into string)
+
+6)console.log(a+f);
+output:9+null=9
+
+7)console.log(d+f);
+output:"3"+null=3null (d is a string so js converted null to the string);
+
+8)console.log("Sum of a + b = " + a + b);
+output=Sum of a + b = 99
+
+9)console.log(a + b+ " is a sum of a + b");
+output=18 is a sum of a + b
+
+
+🔥 Note 🤚🤚🤚
+=> In JavaScript, if you use the + operator and one of the values is a string (like "3"), it will treat everything as a string and join them. 
+For example, "3" + "3" gives "33". But with other operators like -, /, or %, JavaScript converts strings to numbers and then does normal
+math. So "3" - "3" becomes 0, "3" / "3" becomes 1, and "3" % "3" becomes 0.
+
+so apart form + , for -,/ and % js do normal maths it does care about string.
+
+This means JavaScript behaves differently based on the operator you're using. The + operator is special—it acts like a joiner when 
+strings are involved. But the rest (-, *, /, %) don’t care about strings; they’ll automatically convert string numbers to real numbers 
+and do proper mathematical calculations. So "3" - 3 also becomes 0 because JS changes "3" to number 3 first.
 
 */
