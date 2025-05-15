@@ -727,7 +727,7 @@ console.log(myConst); // Uncaught ReferenceError: Cannot access 'myConst' before
 const myConst = 30;
 
 
-#13) undefined vs Not define vs null
+#13) undefined vs Not define vs null vs NaN
 
 > undefined: This occurs when a variable or function is declared, but no value is assigned to them. When we try to access that variable, it gives us "undefined."
 
@@ -767,6 +767,11 @@ let info = {
 };
 
 console.log(info.middleName); // Logs "null" because we explicitly set it to null.
+
+>NaN (Not a Number)
+
+In JavaScript, NaN occurs when you try to convert a value (like a string) into a number, but the conversion fails, resulting in
+an invalid number (In simple lang we try to convert value like string into number and it's falied then it's gives NaN)
 
 #14) Global Execution Context and Execution Context/Function Execution Context (In Detail)
 

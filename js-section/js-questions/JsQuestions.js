@@ -1069,12 +1069,43 @@ let f=null;
 console.log("Sum of a + b = " + a + b);
 console.log(a + b+ " is a sum of a + b");
 
-console.log(a+b)//18
-console.log(c+d)//53
-console.log(a+c)//95
-console.log(e+a)//NaN
-console.log(e+d);//undefined3
-console.log(a+f);//9
-console.log(d+f);//3null
+console.log(a+b)
+console.log(c+d)
+console.log(a+c)
+console.log(e+a)
+console.log(e+d);
+console.log(a+f)
+console.log(d+f);
+
+#25)
+Swap Two Variable (Three Ways)
+
+let a=30;
+let b=600;
+
+#26)
+Can you write this same array destructuring swap logic for three variables?
+Like x = 1, y = 2, z = 3 → swap x -> y, y -> z, z -> x
+
+#27)
+let a=8;
+let b=2;
+
+console.log(8%2)
+console.log(2%8)
+
+#28)
+let a=5859;
+
+1)Remove last digit and print all the remaiing digit 585.
+2)Print only last digit 9.
+
+#29)
+console.log(10>5 && -55<56 && 67<88)
+console.log(10>5  -55<56 && 67>88)
+console.log(100=="100" || 2>-9 || 88<102)
+console.log(100==="100" || 2>-9 || 88<102)
+console.log(100==="100" || 2>-9 || 88>102)
+console.log(100==="100" || 2<-9 || 88>102)
 
 */

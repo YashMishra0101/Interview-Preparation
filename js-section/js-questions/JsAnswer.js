@@ -692,4 +692,63 @@ This means JavaScript behaves differently based on the operator you're using. Th
 strings are involved. But the rest (-, *, /, %) don’t care about strings; they’ll automatically convert string numbers to real numbers 
 and do proper mathematical calculations. So "3" - 3 also becomes 0 because JS changes "3" to number 3 first.
 
+
+//#25)
+
+1)Using Third Variable
+
+ let c;
+
+ c=a;
+ a=b;
+ b=c;
+
+ console.log(a);
+ console.log(b);
+
+2)Without using Third Vairble
+
+ a=a+b;//630
+ b=a-b;//630-600=30
+ a=a-b;//630-30=600
+
+ console.log(a,b);
+
+3)Swapping using Destructuring Assignment
+[a,b]=[b,a]
+console.log("a=",a);
+console.log("b=",b);
+
+#26)
+
+let x = 1;
+let y = 2;
+let z = 3;
+
+[x,y,z]=[y,z,x]
+console.log(x,y,z);
+
+#27)
+let a=8;
+let b=2;
+
+console.log(8%2)//0
+console.log(2%8)//2
+
+#28)
+let a=5859;
+
+console.log(Math.floor(a/10));//585
+console.log(a%10); //9
+
+#29)
+
+console.log(10>5 && -55<56 && 67<88)//ture
+console.log(10>5  -55<56 && 67>88)//false
+console.log(100=="100" || 2>-9 || 88<102)//true
+console.log(100==="100" || 2>-9 || 88<102)//true
+console.log(100==="100" || 2>-9 || 88>102)//true
+console.log(100==="100" || 2<-9 || 88>102)//false
+
+
 */
