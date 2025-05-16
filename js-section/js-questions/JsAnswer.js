@@ -750,5 +750,111 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
+#30)
+Context 
+Unary Operator (++,--)
+
+Pre Increment and Decrement
+++x
+--x
+
+Post Increment and Decrement
+
+x++
+x--
+
+
+1)
+let a=10;
+let ansPost=a++;
+console.log(ansPost)//10
+
+2)
+let b=10;
+let ansPre=++b;
+console.log(ansPre)//11
+
+3)
+let x=10;
+let ansPost=x++;
+let ansPre=++x;
+console.log(ansPost);//10
+console.log(ansPre);//12
+
+4)
+let i=11; 
+let answer=i++ + ++i;
+console.log(answer);//24
+
+5)
+let p=11; 
+let value=p++ + p;
+console.log(value);//23
+
+6)
+let a = 3, b = 1;
+
+let c = a + b + a++ + b++ + ++a + ++b;
+console.log("a=" + a);
+console.log("b=" + b);
+console.log("c=" + c);
+
+7)
+
+a)
+let a=true;
+a++;
+console.log(a);//2
+
+b)
+let see=false;
+see++;
+console.log(see);//1
+
+c)
+let x=10;
+console.log(x++)//10
+
+d)
+let y=15++;
+console.log(y);
+
+output=Uncaught SyntaxError: Invalid left-hand side expression in postfix operation
+In simple lang we can not apply unary operator on constant value we can put on vairbale but not on constant value.
+
+e)
+let p=10;
+let ans=(p++);
+console.log(p);//11
+
+f)
+let p=10;
+let ans=++(p++);
+console.log(p);
+
+output=Uncaught SyntaxError: Invalid left-hand side expression in prefix operation.
+Same reason we cannot apply unary operator.
+
+let p=10;
+let ans=++(p++)
+First brakcet solved so :  ++(p++)=++11; (so after brakcet solved ++ is applying on constant value that's why it's giving error)
+
+#31)
+1)
+console.log(Math.trunc(1000+Math.random()*9000)); // 4 Digit Otp
+console.log(Math.trunc(10000+Math.random()*9000)); // 5 Digit Otp
+
+2)
+let l=10;
+let b=20;
+console.log(l*b)//200 Area of rectangel
+console.log(2*(l*b))//200 Perimeter of rectangle
+
+3)
+Formula 2*pi*r
+let radius=5;
+let ans =Number((2*Math.PI*radius).toFixed(2))
+console.log(typeof(ans));
+console.log(ans);
 
 */

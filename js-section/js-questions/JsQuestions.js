@@ -1108,4 +1108,79 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
+#30)
+
+1)
+let a=10;
+let ansPost=a++;
+console.log(ansPost)
+
+2)
+let b=10;
+let ansPre=++b;
+console.log(ansPre)
+
+3)
+let x=10;
+let ansPost=x++;
+let ansPre=++x;
+console.log(ansPost);
+console.log(ansPre);
+
+4)
+let i=11; 
+let answer=i++ + ++i;
+console.log(answer);
+
+5)
+let p=11; 
+let value=p++ + p;
+console.log(value);
+
+6)
+let a = 3, b = 1;
+
+let c = a + b + a++ + b++ + ++a + ++b;
+console.log("a=" + a);
+console.log("b=" + b);
+console.log("c=" + c);
+
+7)
+a)
+let a=true;
+a++;
+console.log(a);
+
+b)
+let see=false;
+see++;
+console.log(see);
+
+c)
+let x=10;
+console.log(x++)
+
+d)
+let y=15++;
+console.log(y);
+
+e)
+let p=10;
+let ans=(p++);
+console.log(p);
+
+f)
+let p=10;
+let ans=++(p++);
+console.log(p);
+
+#31)
+A)Firt Generate 4 digit otp then Generate 5 digit otp.
+B)Area of rectangle (Formula : Lenght*Breadth) and Perimeter of rectangle (Formula : 2(Length * Breadth)
+let l=10;
+let b=20;
+c)Find circumference of circle , Formula 2*pi*r (We need only Two value after decimal and number not string so type also)
+let radius=5;
+
+
 */
