@@ -45,7 +45,12 @@ console.log("Js Practic is working");
 // console.log(l*b)//200 Area of rectangel
 // console.log(2*(l*b))//200 Perimeter of rectangle
 
-let radius=5;
-let ans =Number((2*Math.PI*radius).toFixed(2))
-console.log(typeof(ans));
-console.log(ans);
+// let radius=5;
+// let ans =Number((2*Math.PI*radius).toFixed(2))
+// console.log(typeof(ans));
+// console.log(ans);
+
+let arr=[10,20,78,4,30,85,40,50,];
+
+let min=Math.min(...arr)
+console.log(min);

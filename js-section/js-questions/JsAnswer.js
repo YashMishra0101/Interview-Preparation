@@ -857,4 +857,52 @@ let ans =Number((2*Math.PI*radius).toFixed(2))
 console.log(typeof(ans));
 console.log(ans);
 
+#32)
+let arr=[10,20,30,40,50];
+
+let arrTotal=0;
+for(let i=0; i< arr.length ; i++){
+    arrTotal=arrTotal+arr[i];
+}
+
+console.log(arrTotal);
+
+#33)
+let arr=[10,20,78,30,85,40,50,];
+
+---First Solution :
+let biggestValue=arr[0]
+for(let i=0; i<arr.length; i++){
+    if(biggestValue<arr[i]){
+        biggestValue=arr[i]
+    }
+}
+
+console.log(biggestValue);
+
+---Second Solution :
+let arr=[10,20,78,4,30,85,40,50,];
+
+let max=Math.max(...arr)
+console.log(max);
+
+
+#34)
+let arr=[10,20,78,4,30,85,40,50,];
+
+---First Solution
+let smallestValue=arr[0]
+for(let i=0; i<arr.length; i++){
+    if(arr[i]<smallestValue){
+        smallestValue=arr[i]
+    }
+}
+
+console.log(smallestValue);
+
+---Second Solution 
+let arr=[10,20,78,4,30,85,40,50,];
+
+let min=Math.min(...arr)
+console.log(min);
 */

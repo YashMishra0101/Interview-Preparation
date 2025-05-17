@@ -1182,5 +1182,16 @@ let b=20;
 c)Find circumference of circle , Formula 2*pi*r (We need only Two value after decimal and number not string so type also)
 let radius=5;
 
+#32) Given an array of integers, calculate the total of all its values.
+
+let arr=[10,20,30,40,50];
+
+#33) Find the largest value in an array.
+
+let arr=[10,20,78,30,85,40,50,];
+
+#34) Find the lowest value in the array.
+
+let arr=[10,20,78,4,30,85,40,50,];
 
 */
