@@ -880,6 +880,22 @@ for(let i=0; i<arr.length; i++){
 
 console.log(biggestValue);
 
+or 
+
+---Another way to writting 
+
+let arrMaxValue = (...arrsValues) => {
+  let maxValue = arrsValues[0];
+  for (let a = 1; a < arrsValues.length; a++) {
+    if (maxValue < arrsValues[a]) {
+      maxValue = arrsValues[a];
+    }
+  }
+  return maxValue;
+};
+
+console.log(arrMaxValue(5,6,98,85,67));
+
 ---Second Solution :
 let arr=[10,20,78,4,30,85,40,50,];
 
@@ -899,6 +915,22 @@ for(let i=0; i<arr.length; i++){
 }
 
 console.log(smallestValue);
+
+or 
+
+---Another way of writting 
+
+let arrMinValue = (...arrsValues) => {
+  let minValue = arrsValues[0];
+  for (let a = 1; a < arrsValues.length; a++) {
+    if (minValue > arrsValues[a]) {
+      minValue = arrsValues[a];
+    }
+  }
+  return minValue;
+};
+
+console.log(arrMinValue(5,6,98,85,67,1,3));
 
 ---Second Solution 
 let arr=[10,20,78,4,30,85,40,50,];
