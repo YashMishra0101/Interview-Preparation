@@ -1194,4 +1194,6 @@ let arr=[10,20,78,30,85,40,50,];
 
 let arr=[10,20,78,4,30,85,40,50,];
 
+#35)Find the second max value in the array.
+
 */
