@@ -1194,6 +1194,19 @@ let arr=[10,20,78,30,85,40,50,];
 
 let arr=[10,20,78,4,30,85,40,50,];
 
-#35)Find the second max value in the array.
+#35) Find the first and second maximum values from the array, Create a solution that can find the first and second maximum values from the arrays given below:
+let arr1 = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
+let arr2 = [50, 50, 50, 50];
+let arr3 = [99, 99, 99, 89, 87];
+
+#36)Reverse the array
+
+let arr=[1,2,3,4,5,6,7,8,9,10];
+
+#37)Put 0 on left and 1 on right side ;
+
+let arr=[0,0,1,0,1,0,1,1,0,1,0]
+
+
 
 */

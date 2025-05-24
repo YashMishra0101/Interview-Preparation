@@ -941,4 +941,94 @@ let arr=[10,20,78,4,30,85,40,50,];
 
 let min=Math.min(...arr)
 console.log(min);
+
+#35)
+let arr = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
+let arr = [50, 50, 50, 50];
+let arr = [99, 99, 99,89, 87];
+
+let secondMaxValue = () => {
+  let firstMaxValue = -Infinity;
+  let secondMaxValue = -Infinity;
+  for (let a = 0; a < arr.length; a++) {
+    if (arr[a] > firstMaxValue) {
+      secondMaxValue = firstMaxValue;
+      firstMaxValue = arr[a];
+    } else if (arr[a] > secondMaxValue && arr[a] < firstMaxValue) {
+      secondMaxValue = arr[a];
+    }
+  }
+  if(secondMaxValue===-Infinity){
+    return "No Second Max Value Found"
+  }
+  else{
+    return {
+      "First Max Value" : firstMaxValue,
+      "Second Max Value" : secondMaxValue
+
+    }
+  }
+};
+
+console.log(secondMaxValue());
+
+#36)
+
+---First Solution
+
+let arr = [1, 2, 3, 4, 5,6,7,8,9,10];
+
+let reverse=arr.reverse();
+console.log(reverse);
+
+---Second Way (Not optimal : We are creating New Array based on previous array it take same space like previous array )
+
+let arr=[1,2,3,4,5,6,7,8,9,10];
+
+let otherArray=new Array(arr.length);
+
+let a=0;
+
+for(let i=arr.length-1; i>=0; i--){
+  otherArray[a]=arr[i];
+  a++;
+}
+
+console.log(otherArray);
+
+---Third Solution (Optimal)
+
+let arr = [1, 2, 3, 4, 5,6,7,8,9,10];
+let a = 0;
+let b = arr.length - 1;
+
+while (a < b) {
+  let temp = arr[a];//In temp me 1 hai
+  arr[a] = arr[b];//In arr[a] means a[0]-->10 store huaa hai
+  arr[b] = temp;//and temp me 1 hai ab vo arr[b] me store ho gaya 
+  a++; 
+  b--;
+}
+
+console.log(arr);
+
+#37)
+
+let arr=[0,0,1,0,1,0,1,1,0,1,0]
+
+let a=0;
+let b=0;
+
+while(a<arr.length){
+  if(arr[a]===0){
+    temp=arr[a];
+    arr[a]=arr[b]
+    arr[b]=temp;
+    b++;
+  }
+  a++;
+}
+
+console.log(arr);
+
 */

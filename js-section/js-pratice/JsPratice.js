@@ -1,26 +1,30 @@
 console.log("Js Practic is working");
 
-let arr = [10, 20, 78, 4, 30, 85, 40, 50,80,86,99,87,89,9,98,99];
-// let arr = [50, 50, 50, 50];
-// let arr = [99, 99, 99,89, 87];
+// let arr=[1,2,3,4,5,6,7,8,9,10];
 
-let firstMaxValue = Math.max(arr[0], arr[1]);
-let secondMaxValue = Math.min(arr[0], arr[1]);
+// let otherArray=new Array(arr.length);
 
-for (let a = 2; a < arr.length; a++) {
-  if (arr[a]>firstMaxValue) {
-    secondMaxValue = firstMaxValue;
-    firstMaxValue = arr[a];
-  }
-  else if(arr[a]>secondMaxValue && arr[a] !== firstMaxValue){
-    secondMaxValue=arr[a]
-  }
-}
+// let a=0;
 
-console.log("First Max Value",firstMaxValue);
-console.log("Second Max Value",secondMaxValue);
+// for(let i=arr.length-1; i>=0; i--){
+//   otherArray[a]=arr[i];
+//   a++;
+// }
+
+// console.log(otherArray);
 
 
+// let a = 0;
+// let b = arr.length - 1;
 
+// while (a < b) {
+//   let temp = arr[a];//In temp me 1 hai
+//   arr[a] = arr[b];//In arr[a] means a[0]-->10 store huaa hai
+//   arr[b] = temp;//and temp me 1 hai ab vo arr[b] me store ho gaya 
+//   a++; 
+//   b--;
+// }
+
+// console.log(arr);
 
 
