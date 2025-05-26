@@ -1203,10 +1203,23 @@ let arr3 = [99, 99, 99, 89, 87];
 
 let arr=[1,2,3,4,5,6,7,8,9,10];
 
-#37)Put 0 on left and 1 on right side ;
+#37)Put 0s on left and 1s on right side.
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
+#38)Print Each Charcter on new line.
 
+let s="ramratan";
 
+#39)Print the each Charcter on a reverse order on new line.
+
+let s="ramratan";
+
+#40)Check the string is Palindrom or not .
+
+let a="abcdef";
+
+#41)Find two numbers in a sorted array whose sum equals the "target" using two pointers, Your target is 13 and the array is sorted.
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 */

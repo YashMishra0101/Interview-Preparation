@@ -1031,4 +1031,64 @@ while(a<arr.length){
 
 console.log(arr);
 
+
+#38) 
+
+let s="ramratan";
+
+for(let a=0; a<s.length;a++){
+    console.log(s[a]);
+    // console.log(s.charAt(a));
+}
+
+#39)
+
+let s="ramratan";
+
+for(let a=s.length-1; a>0; a--){
+    console.log(s[a]);
+    // console.log(s.charAt(a));
+}
+
+#40)
+
+---Solution One using pre build methods
+
+let checkPalindrom = (string) => {
+  let rev = string.split("").reverse().join("");
+  return rev === string ? true : false;
+};
+
+---Solution Two
+
+let checkPalindrom = (string) => {
+    let rev="";
+  for (let i = string.length-1; i >= 0; i--) {
+       rev+=string[i]
+  }
+  return rev ===string ? true : false;
+};
+
+console.log(checkPalindrom("abcdef"));
+
+
+#41)
+let target = 13;
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let left =0;
+let right =arr.length-1;
+
+while (right>left) {
+  let sum = arr[left]+arr[right];
+  if (sum === target) {
+    console.log(`${arr[left]} + ${arr[right]} = ${sum}`);
+    break;
+  } else if (sum < target) {
+    left++;
+  } else {
+    right--;
+  }
+}
 */
