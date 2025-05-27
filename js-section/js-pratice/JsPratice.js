@@ -1,12 +1,18 @@
 console.log("Js Practic is working");
 
 
-let naam="yashu";
+let str = "zZabcdedcjbA";
 
-let rev=naam.split("").reverse().join("");
+let count = {};
 
-console.log(rev);
+for (let a = 0; a < str.length; a++) {
+  let char = str[a].toLocaleLowerCase();
 
+  if (count[char]) {
+    count[char]++;
+  } else {
+    count[char] = 1;
+  }
+}
 
-
-
+console.log(count);

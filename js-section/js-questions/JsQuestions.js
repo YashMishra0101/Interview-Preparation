@@ -1222,4 +1222,13 @@ let a="abcdef";
 #41)Find two numbers in a sorted array whose sum equals the "target" using two pointers, Your target is 13 and the array is sorted.
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+#42)Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
+let str="YAsh";
+
+#43)
+Count how many times each character repeats in a string.
+
+let str = "zZabcdedcjbA";
+
 */

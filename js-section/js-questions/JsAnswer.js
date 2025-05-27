@@ -1059,7 +1059,7 @@ let checkPalindrom = (string) => {
   return rev === string ? true : false;
 };
 
----Solution Two
+---Second Solution
 
 let checkPalindrom = (string) => {
     let rev="";
@@ -1071,6 +1071,23 @@ let checkPalindrom = (string) => {
 
 console.log(checkPalindrom("abcdef"));
 
+---Third Solution using Two pointer 
+
+let checkPalindrome = (str) => {
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+
+  return true;
+};
+console.log(checkPalindrome("abbao"));
 
 #41)
 let target = 13;
@@ -1091,4 +1108,40 @@ while (right>left) {
     right--;
   }
 }
+
+#42)
+let str="YAsh";
+let newStr="";
+for(let i=0; i<=str.length-1; i++){
+    let char=str.charCodeAt(i);
+
+    if(char>=65 && char<=90){
+       newStr+=String.fromCharCode(char+32);
+    }
+    else
+    {
+        newStr+=String.fromCharCode(char-32)
+    }
+  
+}
+console.log(newStr);
+
+#43)
+
+let str = "zZabcdedcjbA";
+
+let count = {};
+
+for (let a = 0; a < str.length; a++) {
+  let char = str[a].toLocaleLowerCase();
+
+  if (count[char]) {
+    count[char]++;
+  } else {
+    count[char] = 1;
+  }
+}
+
+console.log(count);
+
 */
