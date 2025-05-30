@@ -128,8 +128,7 @@ will switch to "Quirks mode", where it uses outdated rendering rules from older 
 Ans:
 
     The<head> element is where you place meta-information (information about the document) are present.
-    For example, <title>, <meta>, <link>, <script>
-    <style> are normally kept under head element.
+    For example, <title>, <meta>, <link>, <script> , <style> are normally kept under head element.
        
     The <body> element is where you place the actual
     content of your HTML web page. For example,
