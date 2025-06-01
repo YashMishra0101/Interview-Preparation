@@ -16,6 +16,8 @@ return number %2===0 ? "Even number" : "Odd number";
 
 console.log(checkEvenOdd(5));
 
+SC:O(1)
+TC:O(1)
 
 ----Printing Even Number Between the two number
 
