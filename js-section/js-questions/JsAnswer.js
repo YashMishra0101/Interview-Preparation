@@ -43,6 +43,8 @@ let printEvenNumbers = (valueOne, valueTwo) => {
 
 console.log(printEvenNumbers(2,2));
 
+TC:O(N)
+SC:O(N)
 
 ----Printing Odd Number Between the two number
 
@@ -68,6 +70,8 @@ let printOddNumbers = (numOne, numTwo) => {
 
 console.log(printOddNumbers(7, 15));
 
+TC:O(N)
+SC:O(N)
 
 ----Checking Prime Number
 
@@ -89,6 +93,9 @@ let checkPrimeNumber = (number) => {
 };
 
 console.log(checkPrimeNumber(8));
+
+TC:O(√N)
+SC:O(1)
 
 ----Print Prime number between Two numbers
 
@@ -123,6 +130,9 @@ let printPrime = (valueOne, valueTwo) => {
 
 console.log(printPrime(2, 11));
 
+TC: O(N x √N)
+SC: O(N)
+
 
 #Ans 2 : Printing Prime number from 2 to n .
 
@@ -143,6 +153,9 @@ console.log(printPrime(2, 11));
 
 console.log(printPrimeNumber(25));
 
+TC:O(N√N)
+SC:O(1)
+
 
 #Ans 3 : Patterns Question Answer
 
@@ -161,6 +174,9 @@ let patternOne = (num) => {
 
 console.log(patternOne(5));
 
+TC:O(N²)
+SC:O(N²)
+
 ----2)
 
 let patternTwo = (value) => {
@@ -175,6 +191,10 @@ let patternTwo = (value) => {
 };
 
 console.log(patternTwo(5));
+
+TC:O(N²)
+SC:O(N²)
+
 
 ---3)
 
@@ -191,6 +211,10 @@ let patternThree = (number) => {
 
 console.log(patternThree(5));
 
+TC:O(N²)
+SC:O(N²)
+
+
 ---4)
 let patternFour = (value) => {
   let store = "";
@@ -204,6 +228,9 @@ let patternFour = (value) => {
 };
 
 console.log(patternFour(5));
+
+TC:O(N²)
+SC:O(N²)
 
 ---5)
 let patternFive = (value) => {
@@ -219,6 +246,9 @@ let patternFive = (value) => {
 
 console.log(patternFive(5));
 
+TC:O(N²)
+SC:O(N²)
+
 ---6)
 
 let patternSix = (value) => {
@@ -233,6 +263,9 @@ let patternSix = (value) => {
 };
 
 console.log(patternSix(5));
+
+TC:O(N²)
+SC:O(N²)
 
 ---7)
 
@@ -253,6 +286,9 @@ let printPatternSeven = (number) => {
 };
 
 console.log(printPatternSeven(5));
+
+TC:O(N square)
+SC:O(N cube)
 
 ---8)
 
