@@ -16,8 +16,9 @@ return number %2===0 ? "Even number" : "Odd number";
 
 console.log(checkEvenOdd(5));
 
-SC:O(1)
 TC:O(1)
+SC:O(1)
+
 
 ----Printing Even Number Between the two number
 
@@ -46,6 +47,7 @@ console.log(printEvenNumbers(2,2));
 TC:O(N)
 SC:O(N)
 
+
 ----Printing Odd Number Between the two number
 
 let printOddNumbers = (numOne, numTwo) => {
@@ -73,6 +75,7 @@ console.log(printOddNumbers(7, 15));
 TC:O(N)
 SC:O(N)
 
+
 ----Checking Prime Number
 
 let checkPrimeNumber = (number) => {
@@ -96,6 +99,7 @@ console.log(checkPrimeNumber(8));
 
 TC:O(√N)
 SC:O(1)
+
 
 ----Print Prime number between Two numbers
 
@@ -130,9 +134,8 @@ let printPrime = (valueOne, valueTwo) => {
 
 console.log(printPrime(2, 11));
 
-TC: O(N x √N)
-SC: O(N)
-
+TC:O(N√N)
+SC:O(N)
 
 #Ans 2 : Printing Prime number from 2 to n .
 
@@ -153,8 +156,8 @@ SC: O(N)
 
 console.log(printPrimeNumber(25));
 
-TC:O(N√N)
-SC:O(1)
+TC:O(√N)
+SC:O(N)
 
 
 #Ans 3 : Patterns Question Answer
@@ -195,7 +198,6 @@ console.log(patternTwo(5));
 TC:O(N²)
 SC:O(N²)
 
-
 ---3)
 
 let patternThree = (number) => {
@@ -213,7 +215,6 @@ console.log(patternThree(5));
 
 TC:O(N²)
 SC:O(N²)
-
 
 ---4)
 let patternFour = (value) => {
@@ -249,6 +250,7 @@ console.log(patternFive(5));
 TC:O(N²)
 SC:O(N²)
 
+
 ---6)
 
 let patternSix = (value) => {
@@ -278,7 +280,7 @@ let printPatternSeven = (number) => {
         }
         for (let star = 1; star <= 2 * a - 1; star++) {
             store += "*";  
-        }
+        } 
         store += "\n";  
     }
 
@@ -287,8 +289,8 @@ let printPatternSeven = (number) => {
 
 console.log(printPatternSeven(5));
 
-TC:O(N square)
-SC:O(N cube)
+TC:O(N²)
+SC:O(N²)
 
 ---8)
 
@@ -307,6 +309,10 @@ let patternEight=(number)=>{
 }
 
 console.log(patternEight(5))
+
+TC:O(N²)
+SC:O(N²)
+
 
 ---9)
 
@@ -337,6 +343,9 @@ let patternNine = (number) => {
 
 console.log(patternNine(5));
 
+TC:O(N²)
+SC:O(N²)
+
 ---10)
 
 let patternTen=(value)=>{
@@ -356,6 +365,9 @@ let patternTen=(value)=>{
 
 console.log(patternTen(5))
 
+TC:O(N²)
+SC:O(N²)
+
 ---11)
 
 let patternEleven = (number) => {
@@ -374,6 +386,9 @@ let patternEleven = (number) => {
 };
 
 console.log(patternEleven(5));
+
+TC:O(N²)
+SC:O(N²)
 
 ---12)
 
@@ -396,6 +411,9 @@ let patternTwelve=(number)=>{
 
 console.log(patternTwelve(5))
 
+TC:O(N²)
+SC:O(N²)
+
 --13)
 
 let patternThirtheen=(n)=>{
@@ -413,6 +431,9 @@ let patternThirtheen=(n)=>{
 
 console.log(patternThirtheen(5))
 
+TC:O(N²)
+SC:O(N²)
+
 --14)
 
 let patternFourteen = (value) => {
@@ -428,6 +449,9 @@ let patternFourteen = (value) => {
 };
 
 console.log(patternFourteen(5));
+
+TC:O(N²)
+SC:O(N²)
 
 --15)
 
@@ -446,6 +470,9 @@ let patternFifteen=(value)=>{
 
 console.log(patternFifteen(5))
 
+TC:O(N²)
+SC:O(N²)
+
 --16)
 
 let patternFifteen = (value) => {
@@ -462,6 +489,9 @@ let patternFifteen = (value) => {
 };
 
 console.log(patternFifteen(5));
+
+TC:O(N²)
+SC:O(N²)
 
 ---17)
 
@@ -488,6 +518,9 @@ function patternSevenTeen(n) {
 
 console.log(patternSevenTeen(5));
 
+TC:O(N²)
+SC:O(N²)
+
 --18)
 
 let patternEighteen=(n)=>{
@@ -505,6 +538,9 @@ let patternEighteen=(n)=>{
 }
 
 console.log(patternEighteen(5));
+
+TC:O(N²)
+SC:O(N²)
 
 --19)
 
@@ -558,6 +594,8 @@ let patternNineteen = (n) => {
 
 console.log(patternNineteen(5));
 
+TC:O(N²)
+SC:O(N²)
 
 --20)
 
@@ -609,6 +647,8 @@ let patternTwenty = (n) => {
 
 console.log(patternTwenty(5));
 
+TC:O(N²)
+SC:O(N²)
 
 --21)
 let patternTwentyOne=(n)=>{
@@ -628,6 +668,9 @@ let patternTwentyOne=(n)=>{
 }
 
 console.log(patternTwentyOne(5))
+
+TC:O(N²)
+SC:O(N²)
 
 22)
 
@@ -649,6 +692,9 @@ let patternTwentyOne=(n)=>{
 
 console.log(patternTwentyOne(5))
 
+TC:O(N²)
+SC:O(N²)
+
 23)
 
 let partternTwentyThree = (n) => {
@@ -666,6 +712,9 @@ let partternTwentyThree = (n) => {
 };
 
 console.log(partternTwentyThree(4));
+
+TC:O(N²)
+SC:O(N²)
 
 #Secion 3
 
