@@ -1234,5 +1234,14 @@ let str = "zZabcdedcjbA";
 #44)
 1)Use console.log() to display the current year.
 2)Create a two variable for first and last name.
+3)Create a for loop that calculate the factorial of 5.
+4)Write a nested loop to print a 3x3 grid of numbers.
+1 2 3 
+4 5 6 
+7 8 9 
+5)Reverse the Array'
+let arr=[1,2,3,4,5];
 
+
+#45)In JavaScript, what happens if you declare a variable without using let, const, or var?
 */

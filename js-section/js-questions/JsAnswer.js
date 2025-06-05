@@ -1123,10 +1123,19 @@ console.log(arr);
 
 let s="ramratan";
 
+---Using simple loop
+
 for(let a=0; a<s.length;a++){
     console.log(s[a]);
     // console.log(s.charAt(a));
 }
+
+---Using for of loop
+
+for(let a of s){
+    console.log(a);
+}
+
 
 #39)
 
@@ -1242,5 +1251,73 @@ let lastName="Mishra";
 
 console.log(firstName+" "+lastName)
 console.log(`${firstName} ${lastName}`)
+
+---3)
+let factorial = 1;
+for (let a = 5; a > 0; a--) {
+  factorial *= a;
+}
+console.log(factorial);
+
+---4)
+let gridPattern=(value)=>{
+   let pattern="";
+   let count=1;
+   for(let a=1; a<=value; a++){
+    for(let b=1; b<=value; b++){
+        pattern+=count+" ";
+        count++;
+    }
+    pattern+="\n";
+   }
+   return pattern;
+}
+
+console.log(gridPattern(3));
+
+---5)
+
+// let rev=arr.reverse();
+// console.log(rev);
+
+let revArr=[];
+for(let a=arr.length-1; a>=0; a--){
+  revArr.push(arr[a])
+}
+console.log(revArr);
+
+| Method          | Time Complexity | Space Complexity | Mutates Original? |
+| --------------- | --------------- | ---------------- | ----------------  |
+| `arr.reverse()` | O(n)            | O(1)             | ✅ Yes (Original array lost) |
+| `for` loop      | O(n)            | O(n)             | ❌ No  (Original array stil exit) |
+
+#45)
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
+anywhere in the code—even from inside a function or block.
+
+If we use `var`, the variable is function-scoped, so we cannot access it from outside the function where it was declared.
+If we use `let` or `const`, they are block-scoped, which means we cannot access them from outside the block in which they 
+were declared.
+
+Also, we **cannot access variables before their declaration**. If we use `var`, accessing the variable before declaration gives us 
+`undefined` because of hoisting. But if we use `let` or `const`, trying to access them before declaration results in a 
+**ReferenceError**, due to the Temporal Dead Zone.
+
+This declaring a variable without using `var`, `let`, or `const` and it becoming globalonly happens in JavaScript**. 
+Most other languages don’t allow this at all. 
+
+---Example :
+
+function check(){
+  console.log("Just checking");
+  {
+
+      umar=23;
+  }
+}
+
+check()
+
+console.log(umar);
 
 */
