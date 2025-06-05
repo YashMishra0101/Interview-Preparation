@@ -1231,4 +1231,8 @@ Count how many times each character repeats in a string.
 
 let str = "zZabcdedcjbA";
 
+#44)
+1)Use console.log() to display the current year.
+2)Create a two variable for first and last name.
+
 */

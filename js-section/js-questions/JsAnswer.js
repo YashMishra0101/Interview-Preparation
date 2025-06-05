@@ -1231,4 +1231,16 @@ for (let a = 0; a < str.length; a++) {
 
 console.log(count);
 
+#44)
+--1)
+let getCurrentYear=new Date();
+console.log(getCurrentYear.getFullYear())
+
+---2)
+let firstName="Yash";
+let lastName="Mishra";
+
+console.log(firstName+" "+lastName)
+console.log(`${firstName} ${lastName}`)
+
 */
