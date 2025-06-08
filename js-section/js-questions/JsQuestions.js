@@ -1201,7 +1201,7 @@ let arr3 = [99, 99, 99, 89, 87];
 
 #36)Reverse the array
 
-let arr=[1,2,3,4,5,6,7,8,9,10];
+let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
 
 #37)Put 0s on left and 1s on right side.
 
@@ -1244,4 +1244,7 @@ let arr=[1,2,3,4,5];
 
 
 #45)In JavaScript, what happens if you declare a variable without using let, const, or var?
+#46)Reverse the array  using Bubble sort,merge sort and insertio sort.
+let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
+
 */

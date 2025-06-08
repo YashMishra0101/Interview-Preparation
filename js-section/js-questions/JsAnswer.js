@@ -1063,35 +1063,40 @@ console.log(secondMaxValue());
 
 ---First Solution
 
-let arr = [1, 2, 3, 4, 5,6,7,8,9,10];
+let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
 
 let reverse=arr.reverse();
 console.log(reverse);
 
+>>It modifies the original array
+
+So We can use this approch 
+
+let reverse=[...arr];
+
+console.log(reverse.reverse());
+
 ---Second Way (Not optimal : We are creating New Array based on previous array it take same space like previous array )
 
-let arr=[1,2,3,4,5,6,7,8,9,10];
+let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
 
-let otherArray=new Array(arr.length);
-
-let a=0;
-
-for(let i=arr.length-1; i>=0; i--){
-  otherArray[a]=arr[i];
-  a++;
+let revArray=[];
+for(let a=arr.length-1; a>=0; a--){
+   revArray.push(arr[a])
 }
 
-console.log(otherArray);
+console.log(revArray);
 
 ---Third Solution (Optimal)
 
-let arr = [1, 2, 3, 4, 5,6,7,8,9,10];
+let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
+
 let a = 0;
 let b = arr.length - 1;
 
 while (a < b) {
   let temp = arr[a];//In temp me 1 hai
-  arr[a] = arr[b];//In arr[a] means a[0]-->10 store huaa hai
+  arr[a] = arr[b];//In arr[a] means a[0]-->10 store huaa hai arr[arr.length-1]
   arr[b] = temp;//and temp me 1 hai ab vo arr[b] me store ho gaya 
   a++; 
   b--;
@@ -1320,4 +1325,24 @@ check()
 
 console.log(umar);
 
+#46)
+function bubbleSort(arr) {
+  for (let a = 0; a < arr.length; a++) {
+    let isSort=false;
+    for (let b = 0; b < arr.length; b++) {
+      if (arr[b] > arr[b + 1]) {
+        let temp = arr[b];
+        arr[b] = arr[b + 1];
+        arr[b + 1] = temp;
+        isSort=true;
+      }
+    }
+    if(!isSort){
+        break;
+    }
+  }
+  return arr;
+}
+let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
+console.log(bubbleSort(arr));
 */
