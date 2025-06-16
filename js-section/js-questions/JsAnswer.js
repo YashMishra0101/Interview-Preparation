@@ -1368,4 +1368,18 @@ let selectionSort = (arr) => {
 console.log(selectionSort(arr));
 
 >>Insertio sort 
+let insertionSort = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    let current = arr[i];
+    let a = i - 1;
+    while (a >= 0 && arr[a] > current) {
+      arr[a + 1] = arr[a];
+      a--;
+    }
+    arr[a + 1] = current;
+  }
+  return arr;
+};
+
+console.log(insertionSort(arr));
 */

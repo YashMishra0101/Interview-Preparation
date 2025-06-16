@@ -195,7 +195,8 @@ almost all characters and symbols from different languages.
 Use: Ensures that special characters like "é", "ü", "😊" are displayed correctly.
 
 2. `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-Purpose: Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, making it responsive.
+Purpose: Controls the layout of the page on mobile browsers. It tells the browser how to scale the page, 
+making it responsive.
 
 3. `<meta name="description" content="A brief description of the webpage.">`
 Purpose: Provides a short description of the webpage. Search engines like Google use this meta tag to display a summary in search results.
