@@ -1382,4 +1382,25 @@ let insertionSort = (arr) => {
 };
 
 console.log(insertionSort(arr));
+
+#47) Answer
+The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
+
+--- Loops vs Recursion in JavaScript 
+
+In JavaScript, loops like for, while, or do-while run inside a single function call. No matter how many times the loop executes, 
+it doesn't add new function calls to the stack. That makes loops memory-efficient, fast, and safe from stack overflow. 
+They are ideal for simple, repetitive tasks like printing, counting, or iterating over arrays because they maintain a single 
+stack frame throughout execution.
+
+In contrast, recursion creates a new function call for every step. So if the input size is large (for example, recurse(100000)), 
+it results in too many function calls, which can exceed the call stack limit and crash the program with a 👉 "Maximum call stack size 
+exceeded" error.
+Most browsers have a call stack size limit ranging from ~10,000 to 100,000 calls, depending on the engine and environment. 
+Recursion is great for problems like tree traversal, divide-and-conquer algorithms, and deeply nested structures. 
+However, JavaScript does not support Tail Call Optimization in most engines, meaning it can't reuse stack frames during deep 
+recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
+safety, and reliability.
+
+
 */

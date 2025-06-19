@@ -891,6 +891,13 @@ _-_--------Global Execution Context is removed/end.
   - Memory is allocated before execution. 
   - Call stack controls function execution. 
 
+??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It ?
+
+👉 If the variable holds a primitive value (like numbers, strings, booleans, etc.), the actual value is stored directly
+in the execution context (stack).
+
+👉 If the variable holds a non-primitive value (like objects, arrays, or functions), then the reference is stored in the 
+stack, but the actual data (the object or array itself) is stored in the heap.  
 
 ### #15) Event Loop
 
@@ -995,23 +1002,32 @@ Inside setTimeout
 - **The Event Loop ensures tasks are executed properly** in the right order. 
 
 
-#16)Primitive Data Types (Store in a Stack ) & Non-Primitive  (Store in a Heap)
+#16)Primitive Data Types (Store in a Stack ) & Non-Primitive (Store in a Heap)
 
---Primitive Data Types: String, Boolean, Number, etc. (immutable,values cannot be changed.)
--- Non-Primitive Data Types: Array, Object, Function, etc. (mutable,values can be changed )
+>Primitive Data Types
 
-- Primitive Data Types are immutable, meaning their values cannot be changed.Any modification results in the 
-creation of a new value.
+Examples: String, Number, Boolean, Null, Undefined;
 
-- Primitive Data Types are stored in the Stack. Copying these results in a new copy being created, 
-so changes to the copy do not affect the original.
+Immutable: Their original value cannot be changed. Any modification results in the creation of a new value.
 
-- Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new 
+Stored in Stack: These values are stored directly in the stack memory.
+
+Copied by Value: When a primitive value is assigned or copied to another variable, a new copy is created.
+Changes to the new variable don’t affect the original.
+
+> Non-Primitive (Reference) Data Types
+
+Examples: Object, Array, Function
+
+Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new 
 object, changing the same memory block.
 
--Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will affect the original data.
+Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will 
+affect the original data.
 
 - Examples :
+
+>Immutable: cannot change
 
 let oldProfile = "Front End Developer";
 let newProfile = oldProfile;
@@ -1021,13 +1037,25 @@ newProfile = "Full Stack Developer";
 console.log(oldProfile); // Output: Front End Developer
 console.log(newProfile); // Output: Full Stack Developer
 
-let arr = ["HTML", "CSS", "JavaScript"];
-let arr2 = arr;
+>Mutable:can change
 
-arr2[1] = "Tailwind CSS";
+let userInfo={
+    name:'ram',
+    age:"21"
+}
 
-console.log(arr[1]);  // Output: Tailwind CSS
-console.log(arr2[1]); // Output: Tailwind CSS
+let newAge=userInfo.age="23"
+
+console.log(userInfo.age);
+console.log(newAge);
+
+
+let arr=[1,2,3,4,5];
+let change=arr;
+
+change[0]=8888;
+console.log(change);
+console.log(arr);
 
 >Summary :
 

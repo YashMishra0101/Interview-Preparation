@@ -1244,7 +1244,33 @@ let arr=[1,2,3,4,5];
 
 
 #45)In JavaScript, what happens if you declare a variable without using let, const, or var?
+
 #46)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
+
+#47)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+
+---Context :
+>>Recursion
+Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, 
+continuing until a base case is reached.
+
+
+let test = (n) => {
+if (n===0) return;
+console.log("hello ji");
+test(n--)
+};
+
+test(5);
+
+
+let testTwo = (n) => {
+for(let a=n; a>-1; a++){
+    console.log("Helllo ji");
+}
+};
+
+testTwo(5);
 
 */
