@@ -1402,5 +1402,17 @@ However, JavaScript does not support Tail Call Optimization in most engines, mea
 recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
 safety, and reliability.
 
+#48)
+let fiboNum = (n) => {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  let storeFibo = [0, 1];
+  for (let a = 3; a <= n; a++) {
+    let calculate = storeFibo[a - 3] + storeFibo[a - 2];
+    storeFibo.push(calculate);
+  }
+  return storeFibo;
+};
 
+console.log(fiboNum(4));
 */

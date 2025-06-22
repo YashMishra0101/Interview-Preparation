@@ -1251,9 +1251,21 @@ let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 #47)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context :
+
 >>Recursion
 Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, 
 continuing until a base case is reached.
+
+>>Backtracking
+Backtracking is a method where we try all the possible options.If one option doesn’t lead to a valid solution, we go back and try another option.
+We keep doing this until we find the correct solution.
+--or-- 
+Backtracking is a problem-solving technique where we try all possible options to build a solution step by step.
+If a certain choice doesn’t lead to a valid or complete solution, we backtrack—go back to the previous step—and try another option.
+This continues until we find a valid solution or explore all possibilities.
+--or--
+Backtracking is a method where we explore all possible options, and if one path fails, we backtrack and try another, until we 
+reach a valid solution.
 
 
 let test = (n) => {
@@ -1273,4 +1285,9 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
+#48)How to Find Fibonacci numbers till n;
+Fibonacci numbers: Each number is the sum of the previous two numbers called Fibonacci Numbers.
+examples : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+n=10;
+#49)
 */

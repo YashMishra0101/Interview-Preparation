@@ -69,24 +69,116 @@ console.log("Working");
 // change[0]=8888;
 // console.log(change);
 
+//--n to 1  -----------> I understand how it is working
 
-// n to 1  -----------> I understand how it is working
+// let see = (num) => {
+//   if (num===0) return;
+//   console.log(num);
+//   see(num-1);
+// };
 
-let see = (num) => {
-  if (num===0) return;
-  console.log(num);
-  see(num-1);
+// see(5);
+
+//--1 to n -------> But I am not able to understand how it is working
+
+// let seeTwo = (num) => {
+//   if (num===0) return;
+//   see(num-1);
+//   console.log(num);
+// };
+
+// seeTwo(5);
+
+//--Sum of numbers
+
+// let sumOfNumber = (num) => {
+//   if (num == 1) return 1;
+
+//   return num + sumOfNumber(num - 1);
+// };
+
+// console.log(sumOfNumber(5));
+
+//--Factorial of number
+
+// let fact=(n)=>{
+//  if(n===1) return 1;
+//  return n*fact(n-1)
+// }
+
+// console.log(fact(5));
+
+// let fibo = (n) => {
+//   if (n <= 0) return [];
+//   if (n === 1) return [0];
+//   let storeFibo = [0, 1];
+
+//   for (let a = 2; storeFibo[storeFibo.length - 1] <= n; a++) {
+//     let calculate = storeFibo[a - 2] + storeFibo[a - 1];
+//     storeFibo.push(calculate);
+//     if (calculate >= n) {
+//       break;
+//     }
+//   }
+// return {
+//     FiboSeries: storeFibo,
+//     Position: storeFibo.indexOf(n)
+//   };
+// };
+
+// console.log(fibo(1));
+
+let fiboNum = (n) => {
+  if (typeof n !== "number") {
+    return "Please provide a valid number!";
+  }
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  let storeFibo = [0, 1];
+  for (let a = 2; a < n; a++) {
+    let calculate = storeFibo[a - 2] + storeFibo[a - 1];
+    storeFibo.push(calculate);
+  }
+  return storeFibo;
 };
 
-see(5);
+console.log(fiboNum(15));
 
+let fibo = (n) => {
+  if (typeof n !== "number") {
+    return "Please provide a valid number!";
+  }
+  if (n <= 0) return [-1];
+  if (n === 1) return [0];
 
-//1 to n -------> But I am not able to understand how it is working
+  let pre = 0;
+  let curr = 1;
 
-let seeTwo = (num) => {
-  if (num===0) return;
-  see(num-1);
-  console.log(num);
+  for (let a = 2; a < n; a++) {
+    let next = pre + curr;
+    pre = curr;
+    curr = next;
+  }
+  return curr;
 };
 
-seeTwo(5);
+console.log(fibo(10));
+
+let fiboPosition = (n) => {
+  if (n < 0) return [-1];
+  if (n === 0) return [1];
+  if (n === 1) return [2];
+
+  let pre = 0;
+  let curr = 1;
+  let postion = 2;
+  while (curr<n) {
+    let next = pre + curr;
+    pre = curr;
+    curr = next;
+    postion++;
+  }
+  return curr;
+};
+
+console.log(fiboPosition(21));
