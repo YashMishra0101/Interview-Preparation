@@ -1,75 +1,18 @@
 console.log("Working");
 
-// let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88, 78];
+//--n to 1
 
-// let bubbleSort=(arr)=>{
-//   for(let a=0; a<arr.length; a++){
-//     let isSorted=false;
-//     for(let b=0; b<arr.length-a-1; b++){
-//       if(arr[b]>arr[b+1]){
-//           let temp=arr[b];
-//           arr[b]=arr[b+1];
-//           arr[b+1]=temp;
-//           isSorted=true;
-//       }
-//     }
-//    if(!isSorted){
-//     break;
-//    }
+//Normal using for loop
+
+// let printToN = (n) => {
+//   for (let a = n; a > 0; a--) {
+//     console.log(a);
 //   }
-//   return arr;
-// }
-
-// console.log(bubbleSort(arr))
-
-// let selectionSort = (arr) => {
-//   for(let a=0; a<arr.length-1; a++){
-//     let minValue=a;
-//     for(let b=a+1; b<arr.length; b++){
-//       if(arr[b]<arr[minValue]){
-//         minValue=b;
-//       }
-//     }
-//     if(minValue !== a){
-//       let temp=arr[minValue];
-//       arr[minValue]=arr[a];
-//       arr[a]=temp;
-//     }
-//   }
-//   return arr;
 // };
 
-// console.log(selectionSort(arr));
+// printToN(5);
 
-// let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88, 78];
-
-// let one="Yash";
-
-// let two=one;
-
-// two="yashji";
-
-// console.log(one);
-// console.log(two);
-
-// console.log("---------------------------------------");
-
-// let userInfo={
-//     name:'ram',
-//     age:"21"
-// }
-// let newAge=userInfo.age="23"
-
-// console.log(userInfo.age);
-// console.log(newAge);
-
-// let arr=[1,2,3,4,5];
-// let change=arr;
-
-// change[0]=8888;
-// console.log(change);
-
-//--n to 1  -----------> I understand how it is working
+//Using Recursion
 
 // let see = (num) => {
 //   if (num===0) return;
@@ -79,106 +22,37 @@ console.log("Working");
 
 // see(5);
 
-//--1 to n -------> But I am not able to understand how it is working
+//--1 to n
 
-// let seeTwo = (num) => {
-//   if (num===0) return;
-//   see(num-1);
-//   console.log(num);
-// };
-
-// seeTwo(5);
-
-//--Sum of numbers
-
-// let sumOfNumber = (num) => {
-//   if (num == 1) return 1;
-
-//   return num + sumOfNumber(num - 1);
-// };
-
-// console.log(sumOfNumber(5));
-
-//--Factorial of number
-
-// let fact=(n)=>{
-//  if(n===1) return 1;
-//  return n*fact(n-1)
-// }
-
-// console.log(fact(5));
-
-// let fibo = (n) => {
-//   if (n <= 0) return [];
-//   if (n === 1) return [0];
-//   let storeFibo = [0, 1];
-
-//   for (let a = 2; storeFibo[storeFibo.length - 1] <= n; a++) {
-//     let calculate = storeFibo[a - 2] + storeFibo[a - 1];
-//     storeFibo.push(calculate);
-//     if (calculate >= n) {
-//       break;
-//     }
+// let oneToN = (n) => {
+//   for (let a = 1; a <= n; a++) {
+//     console.log(a);
 //   }
-// return {
-//     FiboSeries: storeFibo,
-//     Position: storeFibo.indexOf(n)
-//   };
 // };
 
-// console.log(fibo(1));
+// oneToN(5);
 
-let fiboNum = (n) => {
-  if (typeof n !== "number") {
-    return "Please provide a valid number!";
-  }
-  if (n <= 0) return [];
-  if (n === 1) return [0];
-  let storeFibo = [0, 1];
-  for (let a = 2; a < n; a++) {
-    let calculate = storeFibo[a - 2] + storeFibo[a - 1];
-    storeFibo.push(calculate);
-  }
-  return storeFibo;
+let seeTwo = (num) => {
+  if (num===0) return;
+  console.log(num);
+  seeTwo(num-1);
 };
 
-console.log(fiboNum(15));
+seeTwo(5);
 
-let fibo = (n) => {
-  if (typeof n !== "number") {
-    return "Please provide a valid number!";
-  }
-  if (n <= 0) return [-1];
-  if (n === 1) return [0];
+// let sum = (n) => {
+//   let total = 0;
+//   for (let a = 1; a <= n; a++) {
+//     total = total + a;
+//   }
+//   return total;
+// };
 
-  let pre = 0;
-  let curr = 1;
+// console.log(sum(5));
 
-  for (let a = 2; a < n; a++) {
-    let next = pre + curr;
-    pre = curr;
-    curr = next;
-  }
-  return curr;
-};
+// let sumRecursion = (n) => {
+//   if (n === 1) return 1;
+//   return n + sumRecursion(n - 1);
+// };
 
-console.log(fibo(10));
-
-let fiboPosition = (n) => {
-  if (n < 0) return [-1];
-  if (n === 0) return [1];
-  if (n === 1) return [2];
-
-  let pre = 0;
-  let curr = 1;
-  let postion = 2;
-  while (curr<n) {
-    let next = pre + curr;
-    pre = curr;
-    curr = next;
-    postion++;
-  }
-  return curr;
-};
-
-console.log(fiboPosition(21));
+// console.log(sumRecursion(5));

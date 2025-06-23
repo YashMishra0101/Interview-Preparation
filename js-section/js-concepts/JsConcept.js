@@ -1460,4 +1460,15 @@ Here, **you** are in control. That’s **type casting**.
 * Type **coercion** = **automatic**, JS decides.
 * Type **casting** = **manual**, **you** decide.
 
+#21)Recursion and Backtracking
+
+>>Recursion
+Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, 
+continuing until a base case is reached.
+
+>>Backtracking
+Backtracking is a method where we try all the possible options.If one option doesn’t lead to a valid solution, we go back and try another option.
+We keep doing this until we find the correct solution.
+
+
 */

@@ -1403,16 +1403,74 @@ recursion. So for large input sizes, recursion is risky and must be used careful
 safety, and reliability.
 
 #48)
-let fiboNum = (n) => {
+let fiboNumber = (n) => {
+  if(typeof n!=="number"){
+    return "Please enter a valid number"
+  }
   if (n <= 0) return [];
   if (n === 1) return [0];
-  let storeFibo = [0, 1];
-  for (let a = 3; a <= n; a++) {
-    let calculate = storeFibo[a - 3] + storeFibo[a - 2];
-    storeFibo.push(calculate);
+
+  let storeFiboNum = [0, 1];
+
+  for (let a = 2; a < n; a++) {
+    storeFiboNum.push(storeFiboNum[a-2]+storeFiboNum[a-1]);
   }
-  return storeFibo;
+
+  return storeFiboNum;
 };
 
-console.log(fiboNum(4));
+console.log(fiboNumber(10));
+
+--TC:O(n)
+--SC:O(n)
+
+let getFiboAtPosition = (n) => {
+  if (typeof n !== "number") {
+    return "Please enter a valid number";
+  }
+  if (n<=0) return "Invaid Number";
+  if(n===1) return 0;
+
+  let pre=0;
+  let curr=1;
+
+  for(let a=2; a<n; a++){
+    let next=pre+curr;
+    pre=curr;
+    curr=next;
+  }
+  return curr;
+};
+
+console.log(getFiboAtPosition(10));
+
+--TC:O(n)
+--SC:O(1)
+
+
+let positionOfFiboNum = (num) => {
+  if (typeof num !== "number") return "Please enter a valid number";
+  if (num < 0) return "Invalid Number";
+  if (num === 0) return 1;
+
+  let pre = 0,
+    curr = 1,
+    pos = 2;
+
+  while (curr < num) {
+    let next = pre + curr;
+    pre = curr;
+    curr = next;
+    pos++;
+  }
+
+  return curr === num ? pos : "Not a Fibonacci number";
+};
+
+console.log(positionOfFiboNum(34));
+
+--TC:O(n)
+--SC:O(1)
+
+
 */
