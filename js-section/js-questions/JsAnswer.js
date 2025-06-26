@@ -1403,6 +1403,8 @@ recursion. So for large input sizes, recursion is risky and must be used careful
 safety, and reliability.
 
 #48)
+
+>>1)
 let fiboNumber = (n) => {
   if(typeof n!=="number"){
     return "Please enter a valid number"
@@ -1424,6 +1426,7 @@ console.log(fiboNumber(10));
 --TC:O(n)
 --SC:O(n)
 
+>>2)
 let getFiboAtPosition = (n) => {
   if (typeof n !== "number") {
     return "Please enter a valid number";
@@ -1447,15 +1450,15 @@ console.log(getFiboAtPosition(10));
 --TC:O(n)
 --SC:O(1)
 
-
+>>3)
 let positionOfFiboNum = (num) => {
   if (typeof num !== "number") return "Please enter a valid number";
   if (num < 0) return "Invalid Number";
   if (num === 0) return 1;
 
-  let pre = 0,
-    curr = 1,
-    pos = 2;
+  let pre = 0;
+  let = curr = 1;
+  let = pos = 2;
 
   while (curr < num) {
     let next = pre + curr;
@@ -1471,6 +1474,83 @@ console.log(positionOfFiboNum(34));
 
 --TC:O(n)
 --SC:O(1)
+
+>>4)
+let sumOfFiboLoop = (n) => {
+  if (typeof n !== "number") {
+    return "Please Enter a valid number";
+  }
+
+  if (n <= 0 || n === 1) return 0;
+  if (n === 2) return 1;
+
+  let pre = 0;
+  let curr = 1;
+  let sum = 1;
+
+  for (let a = 2; a < n; a++) {
+    let next = pre + curr;
+    sum += next;
+    pre = curr;
+    curr = next;
+  }
+
+  return sum;
+};
+
+console.log(sumOfFiboLoop(10));
+
+#49)
+>>N to One
+
+let nToOne = (n) => {
+  if (n === 0) return;
+  console.log(n);
+  nToOne(n - 1);
+};
+
+nToOne(5);
+
+>>One To N
+
+let OneToN = (n) => {
+  if (n === 0) return;
+  OneToN(n - 1);
+  console.log(n);
+};
+
+OneToN(5);
+
+#50)
+
+let sumNumbers = (n) => {
+  if (n === 0) return 0;
+  return n + sumNumbers(n - 1);
+};
+
+console.log(sumNumbers(10));
+
+#51)
+let fiboNumber = (n) => {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  let print = fiboNumber(n - 1);
+  print.push(print[print.length - 2] + print[print.length - 1]);
+  return print;
+};
+
+console.log(fiboNumber(10));
+
+
+#53)Memoization
+Memoization is an optimization technique used to speed up programs by saving time. It works by storing the 
+results of function calls in a cache. When the function is called again with the same inputs, it gets the 
+result from the cache instead of running the function again. This helps save time and system resources.
+
+In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
+again, the program can return the saved result instead of calculating it again.
 
 
 */

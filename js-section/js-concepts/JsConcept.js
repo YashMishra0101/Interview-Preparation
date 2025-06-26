@@ -1471,4 +1471,144 @@ Backtracking is a method where we try all the possible options.If one option doe
 We keep doing this until we find the correct solution.
 
 
+>>>Print Hello word till n time
+
+--Using normal loop
+
+let print = (n) => {
+  for (let a = 1; a <= n; a++) {
+    console.log("Hello");
+  }
+};
+
+print(5);
+
+--Using Recursion
+
+let print = (n) => {
+  if (n === 0) return;
+  console.log("Hello");
+  print(n - 1);
+};
+
+print(5);
+
+>>>n to 1
+
+--Normal using for loop
+
+let printToN = (n) => {
+  for (let a = n; a > 0; a--) {
+    console.log(a);
+  }
+};
+
+printToN(5);
+
+--Using Recursion
+
+let see = (num) => {
+  if (num===0) return;
+  console.log(num);
+  see(num-1);
+};
+
+see(5);
+
+>>1 to n
+
+--Normal loop
+
+let oneToN = (n) => {
+  for (let a = 1; a <= n; a++) {
+    console.log(a);
+  }
+};
+
+oneToN(5);
+
+--Using Recursion
+
+let seeTwo = (num) => {
+  if (num===0) return;
+  seeTwo(num-1);
+  console.log(num);
+};
+
+seeTwo(5);
+
+>>sum of number
+
+--Normal Loop
+
+let sum = (n) => {
+  let total = 0;
+  for (let a = 1; a <= n; a++) {
+    total = total + a;
+  }
+  return total;
+};
+
+console.log(sum(5));
+
+--Using Recursion
+
+let sumRecursion = (n) => {
+  if (n === 1) return 1;
+  return n + sumRecursion(n - 1);
+};
+
+console.log(sumRecursion(5));
+
+
+>>>Fibo number till n
+
+--Using loop
+
+let fiboNumber = (n) => {
+  if(typeof n!=="number"){
+    return "Please enter a valid number"
+  }
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+
+  let storeFiboNum = [0, 1];
+
+  for (let a = 2; a < n; a++) {
+    storeFiboNum.push(storeFiboNum[a-2]+storeFiboNum[a-1]);
+  }
+
+  return storeFiboNum;
+};
+
+console.log(fiboNumber(10));
+
+TC:O(n)
+SC:O(n)
+
+--using recursion
+
+let fibo = (n) => {
+  if (typeof n !== "number") {
+    return "Please enter a valid number";
+  }
+
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  let printFiboNum = fibo(n - 1);
+
+  printFiboNum.push(
+    printFiboNum[printFiboNum.length - 2] +
+    printFiboNum[printFiboNum.length - 1]
+  );
+  return printFiboNum;
+};
+
+console.log(fibo(10));
+
+TC:O(n)
+SC:O(n)
+
 */
