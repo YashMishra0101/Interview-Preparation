@@ -1352,7 +1352,7 @@ console.log(bubbleSort(arr));
 --SC: O(1)
 
 >>Selection Sort
----Selection Sort is a sorting algorithm where we repeatedly find the smallest element from the unsorted part of the array and swap it with the first unsorted element.
+---Selection Sort is a sorting algorithm where we Repeatedly find the smallest element from the unsorted part of the array and swap it with the correct postion (Initially with first one).
 let selectionSort = (arr) => {
   for(let a=0; a<arr.length-1; a++){
     let minValue=a;
@@ -1377,6 +1377,7 @@ console.log(selectionSort(arr));
 
 
 >>Insertio sort 
+>In insertion sort, we check one element at a time, compare it with the previous elements, and place it in its correct position.
 let insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
