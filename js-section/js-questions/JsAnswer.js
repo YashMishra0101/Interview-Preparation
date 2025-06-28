@@ -1327,6 +1327,7 @@ console.log(umar);
 
 #46)
 >>Bubble Sort
+---Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones move to the end.
 function bubbleSort(arr) {
   for (let a = 0; a < arr.length; a++) {
     let isSort=false;
@@ -1347,7 +1348,11 @@ function bubbleSort(arr) {
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 console.log(bubbleSort(arr));
 
+--TC: O(n²)
+--SC: O(1)
+
 >>Selection Sort
+---Selection Sort is a sorting algorithm where we repeatedly find the smallest element from the unsorted part of the array and swap it with the first unsorted element.
 let selectionSort = (arr) => {
   for(let a=0; a<arr.length-1; a++){
     let minValue=a;
@@ -1367,6 +1372,10 @@ let selectionSort = (arr) => {
 
 console.log(selectionSort(arr));
 
+--TC: O(n²)
+--SC: O(1)
+
+
 >>Insertio sort 
 let insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {
@@ -1382,6 +1391,9 @@ let insertionSort = (arr) => {
 };
 
 console.log(insertionSort(arr));
+
+--TC: O(n²)
+--SC: O(1)
 
 #47) Answer
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
@@ -1457,8 +1469,8 @@ let positionOfFiboNum = (num) => {
   if (num === 0) return 1;
 
   let pre = 0;
-  let = curr = 1;
-  let = pos = 2;
+  let curr = 1;
+  let pos = 2;
 
   while (curr < num) {
     let next = pre + curr;
