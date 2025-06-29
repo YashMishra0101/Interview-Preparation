@@ -1191,24 +1191,27 @@ let checkPalindrome = (str) => {
 console.log(checkPalindrome("abbao"));
 
 #41)
-let target = 13;
-
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-let left =0;
-let right =arr.length-1;
-
-while (right>left) {
-  let sum = arr[left]+arr[right];
-  if (sum === target) {
-    console.log(`${arr[left]} + ${arr[right]} = ${sum}`);
-    break;
-  } else if (sum < target) {
-    left++;
-  } else {
-    right--;
+let target = 13;
+let targetCheck = (arr) => {
+  let right = 0;
+  let left = arr.length - 1;
+  while (right < left) {
+    let check = arr[right] + arr[left];
+    if (check === target) {
+      console.log(`${arr[right]}+ ${arr[left]} = ${check}`);
+      return true;
+    } else if (check < target) {
+      right++;
+    } else {
+      left--;
+    }
   }
-}
+  console.log("No Target found");
+  return false;
+};
+
+targetCheck(arr);
 
 #42)
 let str="YAsh";
@@ -1565,5 +1568,38 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
+#54)Merge Two sorted Array
+
+let arrayOne = [3, 5, 8, 9, 89, 92];
+let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
+
+let mergeArray = (arrayOne, arrayTwo) => {
+  let a = 0;
+  let b = 0;
+  let store = [];
+  while (a < arrayOne.length && b < arrayTwo.length) {
+    if (arrayOne[a] < arrayTwo[b]) {
+      store.push(arrayOne[a]);
+      a++;
+    } else {
+      store.push(arrayTwo[b]);
+      b++;
+    }
+  }
+
+  while (a < arrayOne.length) {
+    store.push(arrayOne[a]);
+    a++;
+  }
+
+  while (b < arrayTwo.length) {
+    store.push(arrayTwo[b]);
+    b++;
+  }
+
+  return store;
+};
+
+console.log(mergeArray(arrayOne, arrayTwo));
 
 */

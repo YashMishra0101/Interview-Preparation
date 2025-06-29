@@ -1341,4 +1341,8 @@ Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
 #53)What is Memoization ?
 
+#54)Merge Two sorted array ?
+let arrayOne = [3, 5, 8, 9, 89, 92];
+let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
+
 */
