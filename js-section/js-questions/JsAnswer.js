@@ -1,7 +1,8 @@
 console.log("Js Question Section");
 
 /*
-#Secion One
+#Section One : Logical Building
+
 #Ans 1)
 
 ----Checking Even or Odd Number
@@ -672,7 +673,7 @@ console.log(patternTwentyOne(5))
 TC:O(N²)
 SC:O(N²)
 
-22)
+--22)
 
 let patternTwentyOne=(n)=>{
     let store="";
@@ -695,7 +696,7 @@ console.log(patternTwentyOne(5))
 TC:O(N²)
 SC:O(N²)
 
-23)
+--23)
 
 let partternTwentyThree = (n) => {
   let size = 2 * n - 1;
@@ -715,21 +716,31 @@ console.log(partternTwentyThree(4));
 
 TC:O(N²)
 SC:O(N²)
+----------------------------------------------------------------------------------------------------------------
+#Section 2 : For interviews
 
-#Secion 3
+#Ans 1
 
----24)
+In JavaScript, when you use the + operator with one operand being a number and the other 
+operand being a string, JavaScript implicitly coerces the number to a string and performs 
+string concatenation rather than addition.
 
-??Concatenation :
-Concatenation in JavaScript means joining two or more strings together to form a single string.
-It is usually done using the + operator.
+>Note:
+so apart form + , for -,/ and % js do normal maths it does care about string.
 
-??Coercion (koversion) :
-Coerced (koverced) means js automatic convert one data type into another data type.
-Note: 
-🤚🙎‍♂️ In JavaScript, type coercion is the automatic or implicit conversion of values "from one data type to 
-another" (It converts one data type to another depending on the situation). It doesn't just convert to strings — depending on the context, it can also convert values to numbers,
-booleans, or other types during operations.
+---a)
+let a=5;
+let b="10";
+
+let a=5;
+let b="10";
+
+let c=b-a; //5 number
+let c=b*a; //50 number
+let c=b/a; //2 number
+let c=b+a //105 string
+
+---b)
 
 let a=9;
 let b=9;
@@ -737,48 +748,219 @@ let c="5";
 let d="3";
 let e=undefined;
 let f=null;
+let g=true;
+let h=false;
 
 
-1)console.log(a+b)
-output=18 (Simple addtion)
+console.log(a+b)//18
+console.log(a+d)//53
+console.log(a+c)//95
+console.log(e+a)//NaN
+console.log(e+d);//undefined3
+console.log(a+f)//9
+console.log(d+f);//3null
+console.log(d-f);//3
+console.log(d/f);//Infinite
+console.log(a+g);//10
+console.log(a-g);//8
+console.log(b-h);//9
+console.log(b+h);//9
 
-2)console.log(c+d)
-output=53 (This is string concatenation,Because both operands c and d are string , so JavaScript simply joins them called concatenation)
-
-3)console.log(a+c)
-ouptu=95 (This is type coercion + string concatenation. Since one operand (a) is a number and the other (c) is a string, JavaScript converts the number to a string, now both are string then it concatenates both the strings.)
-
-4)console.log(e+a)
-undefined+9=NaN 
-output=NaN (Coerced means js automatic convert one data type into another data type so undefined is not a number, but when JS tries to convert it to a number, it becomes NaN and NaN + 9= NaN and if "9" is a string so it gives us NaN9)
-
-5)console.log(e+d);
-output:undefined + "3"= undefined3 (d is a string so js coverted undefined into string)
-
-6)console.log(a+f);
-output:9+null=9
-
-7)console.log(d+f);
-output:"3"+null=3null (d is a string so js converted null to the string);
-
-8)console.log("Sum of a + b = " + a + b);
-output=Sum of a + b = 99
-
-9)console.log(a + b+ " is a sum of a + b");
-output=18 is a sum of a + b
-
-
-🔥 Note 🤚🤚🤚
-=> In JavaScript, if you use the + operator and one of the values is a string (like "3"), it will treat everything as a string and join them. 
-For example, "3" + "3" gives "33". But with other operators like -, /, or %, JavaScript converts strings to numbers and then does normal
-math. So "3" - "3" becomes 0, "3" / "3" becomes 1, and "3" % "3" becomes 0.
-
-so apart form + , for -,/ and % js do normal maths it does care about string.
+console.log(a + b+ " is a sum of a + b");//18
+console.log("Sum of a + b = " + a + b);//99
+console.log("Sum of a + b = " , a + b);//18
 
 This means JavaScript behaves differently based on the operator you're using. The + operator is special—it acts like a joiner when 
 strings are involved. But the rest (-, *, /, %) don’t care about strings; they’ll automatically convert string numbers to real numbers 
 and do proper mathematical calculations. So "3" - 3 also becomes 0 because JS changes "3" to number 3 first.
 
+
+#Ans 2)
+
+let functionOne = (parameter) => {
+    return parameter();
+}
+
+let functionTwo = () => {
+    return "Hello ji kaise ho aap";
+}
+
+console.log(functionOne(functionTwo));
+
+#Ans 3)
+
+  console.log("First Function Start");
+  console.log("Second Function Start");
+  console.log("Third Function");
+  console.log("Second Function End");
+  console.log("First Function End");
+
+#Ans 4)
+
+console.log("line number 1", undefined);
+console.log("line number 3", 10);
+console.log("line number 6",10); 
+console.log("line number 4", undefined);
+console.log("line number 2", 10);
+console.log("line number 5", 20); 
+
+#Ans 5)
+
+console.log("line number 1", 10); 
+console.log("line number 2", undefined); 
+console.log("line number 3", 29); 
+console.log("line number 4", 31); 
+console.log("line number 5", 31); 
+console.log("line number 6", 10);
+
+#Ans 6)
+
+console.log("letFruit" = orange, "varFruit" = orange)
+console.log("letFruit" = apple, "varFruit" = apple) 
+console.log("letFruit" = orange, "varFruit" = apple)
+
+
+#Ans 7)
+Hello, my name is  Yash Mishra. I am 22 years old.
+
+#Ans 8)
+
+✅ for...of loop is used for arrays — it gives the values directly.
+✅ for...in loop is used to iterate over object keys.
+✅ for...in loop can be used on arrays — it gives the indexes instead of values.
+❌ for...of cannot be used directly on objects — because plain objects are not iterable.
+
+
+let arr = [2, 4, 5, 6, 7, 8];
+
+for (let a of arr) {
+    console.log(a); // ✅ for...of → gives values of array
+}
+
+for (let a in arr) {
+    console.log(a); // ✅ for...in → gives indexes of array
+}
+
+let userInfo = {
+    name: "Yash",
+    age: 23
+}
+
+for (let b in userInfo) {
+    console.log(b); // ✅ for...in → gives keys of object
+}
+
+// ❌ for...of can't be used on plain objects (not iterable)
+// for (let x of userInfo) {
+//     console.log(x); // ❌ TypeError
+}
+
+#Ans 9)
+
+Let’s say I have a function that uses this to refer to an object’s properties. If I want to call that function for a different object, 
+I can use call, apply, or bind to change the value of this.Call , apply and blind are the pre build method in javascript with the helps 
+that we can invoke the funciton with the help of this keyword.
+
+--1. `call()` Method
+
+- Definition: `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
+- Example:
+ 
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(age,post){
+  return (`${this.firstName} ${this.lastName} ${age} ${post}`)
+}
+
+console.log(userInfo.call(userOne,"Full Stack Developer",23))
+console.log(userInfo.call(userTwo,"frontEnd-Developer",24))
+
+
+-- 2. apply()` Method
+
+- Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
+- Example:
+
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(age,post){
+  return (`My name is ${this.firstName} ${this.lastName} ${age} ${post}`)
+}
+
+console.log(userInfo.apply(userOne,["Full-Stack-Developer","23"])) //--Pass Info In the form of array
+console.log(userInfo.apply(userTwo,["FrontEnd-Developer","24"])) //--Pass Info In the form of array
+  
+
+-- 3. `bind()` Method
+
+> **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately.
+- Example:
+
+let userOne={
+  firstName:"Yash",
+  lastName:"Mishra" 
+}
+
+let userTwo={
+  firstName:"Ram",
+  lastName:"Turkar"
+}
+
+let userInfo=function(age,post){
+  return (`${this.firstName} ${this.lastName} ${age} ${post} `)
+}
+
+let userDataOne=userInfo.bind(userOne,"frontEnd-Developer","23"); //--assing to the variable and then call it
+console.log(userDataOne())
+let userDataTwo=userInfo.bind(userOne,"frontEnd-Developer","24"); //--assing to the variable and then call it
+console.log(userDataTwo())
+
+
+>Should You Use Array Form or Individual Arguments?
+
+--Individual Arguments: When using bind, you should pass arguments individually, as bind is not designed to accept an array of arguments. The additional arguments after the this value are passed directly to the bound function when it is called.
+
+--Array Form: If you have arguments in array form, you might consider using apply instead, as apply is designed to accept an array of arguments.
+
+> Summary:
+- `call()`: Calls a function with a specific `this` value and individual arguments.
+- `apply()`: Like `call()`, but arguments are passed as an array.
+- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately.
+
+#Ans 10)
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  age: 22,
+  regularFunction: function() {
+    return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  },
+  arrowFunction: () => {
+    return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  }
+};
+
+console.log(person.regularFunction());
+// Output: "Regular: My name is Yash Mishra. I am 22 years old."
+
+console.log(person.arrowFunction());
+// Output: "Arrow: My name is undefined undefined. I am undefined years old."
 
 //#25)
 
@@ -1602,4 +1784,25 @@ let mergeArray = (arrayOne, arrayTwo) => {
 
 console.log(mergeArray(arrayOne, arrayTwo));
 
+#55)
+let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
+let target = 25;
+
+let binarySearch = (arr, target) => {
+  let first = 0;
+  let last = arr.length - 1;
+
+  while (first <= last) {
+    let mid = Math.floor(first + (last - first) / 2);
+    if (arr[mid] === target) return mid;
+    else if (arr[mid] < target) {
+      first = mid + 1;
+    } else {
+      last = mid - 1;
+    }
+  }
+  return -1;
+};
+
+console.log(binarySearch(arr, target));
 */

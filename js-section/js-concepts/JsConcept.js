@@ -478,24 +478,7 @@ async function fetchUserData() {
 --The async/await version is cleaner and easier to understand, right.
 
 
-#8)What is closer
-
-A closure in JavaScript means that an inner function has access to the outer function’s variable and even after 
-the outer function has completed execution.
-
-let outerFun=()=>{
-  let name="My Name is Yash I am a Front End Developer";
-  function innerFun (){
-   console.log(name)
-  }
-  return innerFun;
-}
-
-let print=outerFun();
-print()
-
-
-#9)Scope chain, Lexical Scope (Closer)
+#8)Scope chain, Lexical Scope (Closer)
 
 >Scope Chain
 
@@ -555,6 +538,24 @@ In this example:
 
 -The scope chain is the path JavaScript follows to find a variable if it's not in the current box. (Because)
 -Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
+
+
+#9)What is closer
+
+A closure in JavaScript means that an inner function has access to the outer function’s variable and even after 
+the outer function has completed execution.
+
+let outerFun=()=>{
+  let name="My Name is Yash I am a Front End Developer";
+  function innerFun (){
+   console.log(name)
+  }
+  return innerFun;
+}
+
+let print=outerFun();
+print()
+
 
 #10) Static Languages vs Dynamic Languages
 
@@ -769,6 +770,10 @@ let info = {
 console.log(info.middleName); // Logs "null" because we explicitly set it to null.
 
 >NaN (Not a Number)
+
+NaN stand for Not a Number, NaN typically occurs when a mathematical operation or a conversion fails, such as 
+trying to convert a non-numeric value to a number. For example, using Number('hello') would result in NaN 
+because 'hello' cannot be converted into a valid number.
 
 In JavaScript, NaN occurs when you try to convert a value (like a string) into a number, but the conversion fails, resulting in
 an invalid number (In simple lang we try to convert value like string into number and it's falied then it's gives NaN)
@@ -1428,13 +1433,15 @@ for (let [index, value] of arr.entries()) {
  Index: 2, Value: Hello
 
 
-#20)Type Coercion (koversion) vs Type casting
+#20)Type Coercion (koversion) vs Type casting and Concatenation
 
---- Type Coercion (Automatic conversion)
+>Coerces
+
+--- Type Coercion (koversion) (Automatic conversion)
 
 Type coercion is when **JavaScript automatically** converts one data type to another behind your back—**without you asking for it.
 
-🧠 Example:
+Example:
 
 "5" * 2  // JS converts "5" (string) to 5 (number) → result is 10
 "3" + 1  // JS sees a string, so it makes 1 into "1" → result is "31"
@@ -1446,7 +1453,7 @@ You didn’t tell JS to do this—**it did it by itself**. That’s **type coerc
 
 Type casting means **YOU manually** convert one type to another using methods like `Number()`, `String()`, etc.
 
-🧠 Example:
+Example:
 
 Number("5") + 2 // You manually converted "5" to 5 → result is 7
 String(10) + "1" // You manually made 10 a string → result is "101"
@@ -1454,11 +1461,32 @@ String(10) + "1" // You manually made 10 a string → result is "101"
 Here, **you** are in control. That’s **type casting**.
 
 
-?? 🔥 So Are They the Same?
+?? So Are They the Same? --- No NO
 
 
 * Type **coercion** = **automatic**, JS decides.
 * Type **casting** = **manual**, **you** decide.
+
+>Note: 
+🤚🙎‍♂️ In JavaScript, type coercion is the automatic or implicit conversion of values "from one data type to 
+another" (It converts one data type to another depending on the situation). It doesn't just convert to strings 
+depending on the context, it can also convert values to numbers,booleans, or other types during operations.
+
+>Concatenation
+Concatenation primarily refers to combining strings together to form a single string. However, it can also be used more broadly to
+describe the process of combining or linking together multiple items or entities, not just limited to strings. 
+
+In the context of programming, especially with languages like JavaScript, concatenation commonly refers to combining strings by 
+appending one string to the end of another. For example, combining words or phrases to form a sentence, or combining different 
+parts of a URL.
+
+While concatenation often involves combining strings, the concept can also be applied to other types of data, such as combining arrays, 
+objects, or even numbers. However, in the context of programming languages, the term "concatenation" is most commonly associated 
+with string manipulation.
+
+??Summmary: Concatenation
+Concatenation in JavaScript means joining two or more strings together to form a single string.
+It is usually done using the + operator.
 
 #21)Recursion and Backtracking
 

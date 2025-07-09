@@ -1,7 +1,8 @@
 console.log("JS Logical Questions Section Is Working");
 /*
-#Section One
-#For Logic Building : These questions are mainly for improving your logic-building skills.They aren't directly tied to JavaScript concepts but are super helpful in developing the kind of logical thinking.
+#Section One : Logical Building
+
+#This questions are mainly for improving your logic-building skills. They aren't directly tied to JavaScript concepts or interview preparation, but they are super helpful for developing strong logical thinking.
 
 ---1) Write a JavaScript program to check whether a number is even, odd, or prime, and then print all even, odd, and prime numbers within a given range. You can choose any two numbers as the range limits: start and end.
 
@@ -287,54 +288,57 @@ n=4;
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-#Section 2
-# JavaScript-Based Logical Coding Questions:
+
+#Section 2 : For interviews
+
+#In this section, JavaScript-based questions are covered for interview preparation, along with other commonly asked questions which are asked in coding rounds.
+
 
 #)1
 
+--a)
 let a=5;
 let b="10";
 
 let c=b-a;
 let c=b*a;
 let c=b/a;
-let c=b+ab
+let c=b+a
 
-?What's the output
 console.log(c);
 console.log(typeof(c));
 
->Ans
+--b)
+let a=9;
+let b=9;
+let c="5";
+let d="3";
+let e=undefined;
+let f=null;
+let g=true;
+let h=false;
 
-In JavaScript, when you use the + operator with one operand being a number and the other operand being a string, JavaScript implicitly
-coerces the number to a string and performs string concatenation rather than addition.
+console.log(a+b)
+console.log(c+d)
+console.log(a+c)
+console.log(e+a)
+console.log(e+d);
+console.log(a+f)
+console.log(d+f);
+console.log(d-f);
+console.log(d/f);
+console.log(a+g);
+console.log(a-g);
+console.log(b-h);
+console.log(b+h);
 
-Concatenation primarily refers to combining strings together to form a single string. However, it can also be used more broadly to
-describe the process of combining or linking together multiple items or entities, not just limited to strings. 
-
-In the context of programming, especially with languages like JavaScript, concatenation commonly refers to combining strings by 
-appending one string to the end of another. For example, combining words or phrases to form a sentence, or combining different 
-parts of a URL.
-
-While concatenation often involves combining strings, the concept can also be applied to other types of data, such as combining arrays, 
-objects, or even numbers. However, in the context of programming languages, the term "concatenation" is most commonly associated 
-with string manipulation.
+console.log("Sum of a + b = " + a + b);
+console.log(a + b+ " is a sum of a + b");
 
 
+#2) Implement callback function in JavaScript by passing one function into another and then using it to print a value?
 
-#2) How to pass one function into another function and print its value ?
-
-const one = (parameter) => {
-  console.log(parameter());
-};
-
-const two = () => {
-return("I am Two")
-};
-
-one(two)
-
-#3) : Tells the output without running the code.
+#3) Tells the output without running the code.
 
 function firstFunction() {
   console.log("First Function Start");
@@ -376,17 +380,8 @@ console.log("line number 6");
 
 fn();
 
-#5) Can we use the for...of loop for objects ?
 
-When we use the for...of loop with an array, it throws the values. 
-When we use the for...in loop with an array, it prints the index 
-numbers instead of the array values.
-
-1. Use `for...of` for arrays to directly access the values.
-2. Use `for...in` for objects to iterate over property names.
-
-
-#6)Tells the output
+#5)Tells the output 
 
 var a = 10;
 console.log("line number 2", a);
@@ -405,7 +400,7 @@ function fn() {
 fn();
 console.log("line number 2", a);
 
-#7) Tells The output
+#6) Tells The output
 
 let letFruit = "orange";
 var varFruit = "orange"
@@ -420,51 +415,24 @@ console. log("letFruit", letFruit,
 console.log("letFruit", letFruit, "varFruit", varFruit);
 
 
-letfruit=orange,varfruit=orange
-letfruit=apple,varfruit=apple
-letfruit=orange,varfruit=apple
-
-
-#8) You have the following JavaScript object 
-
-1. What will be the output of `console.log(person.fullName())`, and why?
-2. How does the `this` keyword behave inside the `fullName` method?
-3. What is the significance of using `let` inside the `fullName` method?
+#7) What will be the output of `console.log(person.fullName())`, and why?
 
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
   age: 22,
-  fullName: function() {
+  fullName: function () {
     let greeting = "Hello, my name is ";
     return `${greeting} ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
-  }
+  },
 };
 
->Ans
+    
+#8) Can we use the for...of loop for objects ?
 
-1. **Output:**
-   - The output will be: `"Hello, my name is Yash Mishra. I am 22 years old."`
+#9)Explain the use of call(), apply(), and bind() in JavaScript?
 
-2. **Explanation of `this`:**
-   - Inside the `fullName` method, `this` refers to the `person` object because the method is being called on the `person` object (`person.fullName()`).
-   - As a result, `this.firstName`, `this.lastName`, and `this.age` correctly access the `firstName`, `lastName`, and `age` properties of the `person` object.
-
-3. **Significance of `let`:**
-   - `let` is used to declare the `greeting` variable inside the `fullName` method. This variable is block-scoped, meaning it is only accessible within the `fullName` method. 
-   - Using `let` here ensures that `greeting` is a local variable and doesn't interfere with other parts of the code, demonstrating good scoping practices.
-
-
-#9) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two,and what happens if you try to access object properties using `this` inside an arrow function?
->Answer:
-
-The key difference between an arrow function and a regular function as a method inside an object is how `this` is handled.
-
-- **Regular functions**: When used as methods inside an object, the `this` keyword refers to the object the method is called on. This allows you to access the object's properties directly using `this.propertyName`.
-
-- **Arrow functions**: Arrow functions do not have their own `this` context. Instead, they inherit `this` from the surrounding lexical scope where the function is defined. If an arrow function is used as a method inside an object, the `this` value inside the arrow function will refer to the `this` from the outer scope, not the object itself.
-
-**Example:**
+#10) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
 
 let person = {
   firstName: "Yash",
@@ -477,27 +445,7 @@ let person = {
     return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
   }
 };
-
-console.log(person.regularFunction());
-// Output: "Regular: My name is Yash Mishra. I am 22 years old."
-
-console.log(person.arrowFunction());
-// Output: "Arrow: My name is undefined undefined. I am undefined years old."
-
-
-**Explanation:**
-
-- In `regularFunction`, `this` refers to the `person` object, so it correctly accesses `firstName`, 
-`lastName`, and `age`.
-- In `arrowFunction`, `this` does not refer to the `person` object. Instead, it refers to 
-the outer scope, which in many cases is the global object (`window` in browsers), leading to `undefined` values for the properties.
-
-**Conclusion:** When defining methods inside an object, if you need to use `this` to refer
- to the object, you should use regular functions. Arrow functions are more suited for cases 
- where you want to maintain `this` from the surrounding scope, not when you need to access 
- properties of the object.  
-
-
+ 
 #10) What will be the output of the following code ?
 
 ? Code Without `await`:
@@ -1058,24 +1006,7 @@ const ExampleComponent: React.FC = () => {
 
 export default ExampleComponent;
 
-#24)
 
-let a=9;
-let b=9;
-let c="5";
-let d="3";
-let e=undefined;
-let f=null;
-console.log("Sum of a + b = " + a + b);
-console.log(a + b+ " is a sum of a + b");
-
-console.log(a+b)
-console.log(c+d)
-console.log(a+c)
-console.log(e+a)
-console.log(e+d);
-console.log(a+f)
-console.log(d+f);
 
 #25)
 Swap Two Variable (Three Ways)
@@ -1345,4 +1276,6 @@ Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
 
+#55)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 */
