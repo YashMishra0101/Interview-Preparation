@@ -227,6 +227,9 @@ columns.
 10. flex-basic ( for child );
    - we can set the width of flex item width 
 
+11.flex-wrap
+  -wrap , wrap-reverse   
+
  >Note (V.V IMP)
 
  =>

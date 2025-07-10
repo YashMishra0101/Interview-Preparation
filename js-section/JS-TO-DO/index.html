@@ -4,40 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS To DO</title>
-    <link rel="stylesheet" href="style.css">
+    <title>JS-To-Do-App</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="main-header">
-            <h1 class="main-heading">
-                Task Tracker
-            </h1>
-            <button id="themeToggleBtn"> 🌙 Dark Mode</button>
+        <header>
+            <nav>
+                <div class="navbar-heading">
+                    <h1>Task-Tracker</h1>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#">All Task</a></li>
+                        <li><a href="#">Pending Task</a></li>
+                        <li><a href="#">All Task</a></li>
+                    </ul>
+                </div>
+                <div class="theme-toggle">
+                    <button>
+                        Dark Mode
+                    </button>
+                </div>
+            </nav>
+
         </header>
-        <nav>
-            <span id="navAddTask">
-                Add Task
-            </span>
-            <span id="navAllTasks">
-                All Tasks
-            </span>
-            <span id="navCompletedTasks">
-                Completed Task
-            </span>
-            <span id="navMotivationlQuotes">
-                Motivational Quotes
-            </span>
-        </nav>
-        <main>
-            <section id="addTaskSection"></section>
-            <section id="allTaskSection"></section>
-            <section id="completedTaskSection"></section>
-            <section id="motivationalQuotesSection"></section>
-        </main>
+        <main></main>
+        <footer></footer>
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

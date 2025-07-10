@@ -453,8 +453,6 @@ Window is the object of browser, it is not the object of javascript. The javascr
 array, date etc. 
 */
 
-//#25)Call , Apply , Blind
-
 
 
 //#26)Function Currying
