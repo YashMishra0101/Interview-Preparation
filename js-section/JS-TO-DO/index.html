@@ -4,34 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS-To-Do-App</title>
+    <title>Js To Do</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="wrapper">
-        <header>
-            <nav>
-                <div class="navbar-heading">
-                    <h1>Task-Tracker</h1>
-                </div>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="#">All Task</a></li>
-                        <li><a href="#">Pending Task</a></li>
-                        <li><a href="#">All Task</a></li>
-                    </ul>
-                </div>
+        <header class="header">
+            <div class="heading">
+                <h1>Task Tracker</h1>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="#">All Task</a></li>
+                    <li><a href="#">Pending</a></li>
+                    <li><a href="#">Completed</a></li>
+                </ul>
                 <div class="theme-toggle">
-                    <button>
-                        Dark Mode
-                    </button>
+                    <button id="theme-toggle-button">Dark Mode</button>
                 </div>
             </nav>
-
         </header>
-        <main></main>
-        <footer></footer>
     </div>
     <script src="./script.js"></script>
 </body>

@@ -95,3 +95,65 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-To-Do-App</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="navbar-logo">
+                    <h1>Task-Tracker</h1>
+                </div>
+
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" id="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="navbar-links" id="nav-links">
+                    <ul>
+                        <li><a href="#">All Task</a></li>
+                        <li><a href="#">Pending Task</a></li>
+                        <li><a href="#">Completed Task</a></li>
+                    </ul>
+
+                    <!-- Dark Mode Toggle Inside Nav for Mobile -->
+                    <div class="theme-toggle mobile-toggle">
+                        <button id="theme-btn">Dark Mode</button>
+                    </div>
+                </div>
+
+                <!-- Dark Mode Toggle for Desktop -->
+                <div class="theme-toggle desktop-toggle">
+                    <button id="theme-btn-desktop">Dark Mode</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- To-Do Content Will Go Here -->
+        </main>
+
+        <footer>
+            <!-- Optional Footer -->
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

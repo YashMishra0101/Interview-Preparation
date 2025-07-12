@@ -130,6 +130,8 @@ The specificity numbers are calculated based on the types of selectors in CSS.
 
 # 5)Position Property In CSS ?
 
+---Position Property Youtube Video Link (Lang : Eng) (cltr + click 👆) : https://youtu.be/MxEtxo_AaZ4?si=-RflCAOCy4FFIOp_  [🤚 Watch this video first ]
+
   position: static (Default);
   position: relative;
   position: absolute;
@@ -162,8 +164,8 @@ There are Four Main Postion Property :
    
    --Key Differences Between Fixed and Sticky :
 
-| Property         | `fixed`                            | `sticky`                           |
-|------------------|------------------------------------|------------------------------------|
+| Property         | `fixed`                           | `sticky`                            |
+|------------------|-----------------------------------|-------------------------------------|
 | Reference        | Viewport                          | Parent container boundaries         |
 | Scroll Behavior  | Always stays fixed                | Becomes fixed within a boundary     |
 | Common Use       | Navigation bars, floating buttons | Table headers, sticky sections      |
