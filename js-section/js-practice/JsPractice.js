@@ -1,16 +1,13 @@
 console.log("Working");
 
-let increment=document.getElementById("increment");
-let decrement=document.getElementById("decrement");
-let number=document.getElementById("number");
+let normalFunction = (a) => {
+  return function (b) {
+    return function (c) {
+      return function (d) {
+        return a+b+c+d;
+      };
+    };
+  };
+};
 
-let plus=()=>{
-   number.innerText= parseInt(number.innerText)+1;
-}
-
-let minus=()=>{
-    number.innerText=parseInt(number.innerText)-1;
-}
-
-increment.addEventListener("click",plus)
-decrement.addEventListener("click",minus)
+console.log(normalFunction(1)(2));
