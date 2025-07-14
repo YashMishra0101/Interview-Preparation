@@ -1,13 +1,21 @@
+// "use strict"
 console.log("Working");
 
-let normalFunction = (a) => {
-  return function (b) {
-    return function (c) {
-      return function (d) {
-        return a+b+c+d;
-      };
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  age: 22,
+  regularFunction: function () {
+    return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  },
+  see: function () {
+    arrowFunction: () => {
+      return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
     };
-  };
+    arrowFunction();
+  },
 };
 
-console.log(normalFunction(1)(2));
+console.log(person.regularFunction());
+
+console.log(person.see());
