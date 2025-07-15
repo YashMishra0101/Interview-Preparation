@@ -824,6 +824,45 @@ console.log("letFruit" = orange, "varFruit" = apple)
 Hello, my name is  Yash Mishra. I am 22 years old.
 
 #Ans 8)
+Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from,
+Functions can access variables from their parent or outer scope — this is called lexical scoping.
+
+In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called.
+
+--Example 1:
+
+let name = "Yashu";
+
+function outer() {
+  let hobby = "Coding";
+
+  function inner() {
+    console.log(name);  // ✅ Accesses global `name`
+    console.log(hobby); // ✅ Accesses parent scope `hobby`
+  }
+
+  inner();
+}
+
+outer();
+
+--Example 2:
+
+function outer() {
+  let secret = "hidden";
+
+  function inner() {
+    console.log(secret);
+  }
+
+  return inner;
+}
+
+let func = outer();
+func(); // ✅ Still prints "hidden" because of lexical scope
+
+
+#Ans 9)
 
 ✅ for...of loop is used for arrays — it gives the values directly.
 ✅ for...in loop is used to iterate over object keys.
@@ -855,7 +894,7 @@ for (let b in userInfo) {
 //     console.log(x); // ❌ TypeError
 }
 
-#Ans 9)
+#Ans 10)
 
 Let’s say I have a function that uses this to refer to an object’s properties. If I want to call that function for a different object, 
 I can use call, apply, or bind to change the value of this.Call , apply and blind are the pre build method in javascript with the helps 
@@ -943,7 +982,7 @@ console.log(userDataTwo())
 - `apply()`: Like `call()`, but arguments are passed as an array.
 - `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately.
 
-#Ans 10)
+#Ans 11)
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -961,6 +1000,15 @@ console.log(person.regularFunction());
 
 console.log(person.arrowFunction());
 // Output: "Arrow: My name is undefined undefined. I am undefined years old."
+
+console.log(person.arrowFunctionTwo());
+//Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+--Reason : 
+Arrow functions do not have their own this. Instead, they inherit this from the outer lexical scope where they are defined—usually the global scope.
+Or, if the arrow function is wrapped inside another function, it inherits this from that outer function.
+
+(In the global space, this refers to the window object. That is why, when we use an arrow function and try to print this, it gives us the window object :  they inherit this from the outer lexical scope where they are defined—usually the global scope.)
 
 //#25)
 

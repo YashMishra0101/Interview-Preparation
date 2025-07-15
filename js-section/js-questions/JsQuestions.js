@@ -427,24 +427,35 @@ let person = {
   },
 };
 
+#8)What is lexical scop or lexical scoping ?
     
-#8) Can we use the for...of loop for objects ?
+#9) Can we use the for...of loop for objects ?
 
-#9)Explain the use of call(), apply(), and bind() in JavaScript?
+#10)Explain the use of call(), apply(), and bind() in JavaScript?
 
-#10) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
+#11) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
 
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
   age: 22,
-  regularFunction: function() {
+  regularFunction: function () {
     return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
   },
   arrowFunction: () => {
     return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
-  }
+  },
+  arrowFunctionTwo: () => {
+    return this;
+  },
 };
+
+console.log(person.regularFunction());
+
+console.log(person.arrowFunction());
+
+console.log(person.arrowFunctionTwo());
+
  
 #10) What will be the output of the following code ?
 

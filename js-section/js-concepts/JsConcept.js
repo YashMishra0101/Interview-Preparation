@@ -1639,4 +1639,50 @@ console.log(fibo(10));
 TC:O(n)
 SC:O(n)
 
+#22)Function currying.
+Function currying is a technique in JavaScript where a function with multiple arguments is transformed into a sequence of nested 
+functions, each taking a single argument one at a time.
+->>Instead of passing all arguments at once, we pass them one by one through chained function calls.
+
+---Normal way 
+
+let normalFunction = (a, b, c, d) => {
+  return a + b + c + d;
+};
+
+let normalFunctionResult = normalFunction(1, 2, 3, 4);
+
+console.log(normalFunctionResult); //10
+
+---Using Function Currying
+
+let functionCurrying = (a) => {
+  return function (b) {
+    return function (c) {
+      return function (d) {
+        return a + b + c + d;
+      };
+    };
+  };
+};
+
+let resultFunctionCurrying = functionCurrying(1)(2)(3)(4);
+console.log(resultFunctionCurrying); //10
+
+
+---Infinity Function Currying
+
+let infinityFunctionCurrying = (a) => {
+  return function (b) {
+    if (b === undefined) {
+      return a;
+    } else {
+      return infinityFunctionCurrying(a + b);
+    }
+  };
+};
+
+let resultInfinityFunctionCurrying = infinityFunctionCurrying(1)(2)(3)(4)();
+console.log(resultInfinityFunctionCurrying); //10
+
 */

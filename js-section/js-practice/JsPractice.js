@@ -1,4 +1,5 @@
 // "use strict"
+
 console.log("Working");
 
 let person = {
@@ -9,8 +10,14 @@ let person = {
     return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
   },
   see: function () {
-    arrowFunction: () => {
+    let = arrowFunction = () => {
       return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+    };
+    arrowFunction();
+  },
+  seeTwo: function () {
+    let = arrowFunction = () => {
+      return this;
     };
     arrowFunction();
   },
@@ -19,3 +26,4 @@ let person = {
 console.log(person.regularFunction());
 
 console.log(person.see());
+console.log(person.seeTwo());
