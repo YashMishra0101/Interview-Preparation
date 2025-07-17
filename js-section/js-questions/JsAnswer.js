@@ -1008,7 +1008,31 @@ console.log(person.arrowFunctionTwo());
 Arrow functions do not have their own this. Instead, they inherit this from the outer lexical scope where they are defined—usually the global scope.
 Or, if the arrow function is wrapped inside another function, it inherits this from that outer function.
 
-(In the global space, this refers to the window object. That is why, when we use an arrow function and try to print this, it gives us the window object :  they inherit this from the outer lexical scope where they are defined—usually the global scope.)
+(In the global space, this refers to the window object. That is why, when we use an arrow function and try to print this, it gives us the window object)
+
+
+#12)
+
+console.log(person.seeOne());
+Output: My name is Yash Mishra.
+
+console.log(person.seeTwo());
+Output: The entire object :  {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, seeTwo: ƒ, seeThree: ƒ, …}
+Explanation: The entire object is returned because `this` refers to the person object in a regular function.
+
+console.log(person.seeThree());
+Output: undefined
+Explanation: The arrow function returns a value, but it is not returned by the outer function, so we get undefined.
+
+console.log(person.seeFour());
+Output: My name is Yash Mishra.
+Explanation: The arrow function inherits `this` from its enclosing function (which refers to the `person` object), 
+and its return value is returned by the outer function.
+
+console.log(person.seeFive());
+Output: The entire object : {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, seeTwo: ƒ, seeThree: ƒ, …}
+Explanation: The arrow function returns `this`, which it inherits from the outer function (`seeFive()`), 
+and since `seeFive()` is called on `person`, `this` refers to the person object.
 
 //#25)
 

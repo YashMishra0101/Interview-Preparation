@@ -456,6 +456,43 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
+#12)Tell the output without running the code.
+
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  seeOne: function () {
+    return `My name is ${this.firstName} ${this.lastName}.`;
+  },
+  seeTwo: function () {
+    return this;
+  },
+  seeThree: function () {
+    let = arrowFunction = () => {
+      return `My name is ${this.firstName} ${this.lastName}.`;
+    };
+    arrowFunction();
+  },
+  seeFour: function () {
+    let = arrowFunction = () => {
+      return `My name is ${this.firstName} ${this.lastName}.`;
+    };
+    return arrowFunction();
+  },
+  seeFive: function () {
+    let arrowFunction = () => {
+      return this;
+    };
+    return arrowFunction();
+  },
+};
+
+console.log(person.seeOne());
+console.log(person.seeTwo());
+console.log(person.seeThree());
+console.log(person.seeFour());
+console.log(person.seeFive());
+
  
 #10) What will be the output of the following code ?
 
