@@ -982,7 +982,42 @@ console.log(userDataTwo())
 - `apply()`: Like `call()`, but arguments are passed as an array.
 - `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately.
 
-#Ans 11)
+#Asn 10)
+
+"this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js)
+and it also depends on how the function is called.
+
+--🔹 1. **Global Scope:**
+
+In **browsers**, `this` in the global scope refers to the **`window` object**.
+In **Node.js**, it refers to an **empty object** `{}`.
+
+
+--🔹 2. **Inside a Function:**
+
+  🔸 a. **Non-strict mode:**
+
+In **browsers**, `this` inside a regular function refers to the **global object (`window`)**.
+In **Node.js**, `this` inside a function refers to the **global object (`global`)**.
+
+ 🔸 b. **Strict mode (`'use strict'`):**
+
+In both **browsers and Node.js**, `this` becomes **`undefined`** inside a regular function.
+
+
+--🔹 3. **Inside an Object Method:
+
+If you use a **normal function**, `this` refers to the **object itself**.
+If you use an **arrow function**, `this` does **not** refer to the object — instead, it uses **lexical scope**, meaning it takes `this` from the outer context (usually `window` in browsers).
+
+
+--🔹 4. This substitution :
+
+In **non-strict mode**, if `this` is `null` or `undefined`, JavaScript **automatically substitutes it with the global object**.
+That’s why, inside a normal function in non-strict mode in browsers, `this` becomes `window`.
+
+
+#Ans 12)
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -1011,7 +1046,7 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 (In the global space, this refers to the window object. That is why, when we use an arrow function and try to print this, it gives us the window object)
 
 
-#12)
+#13)
 
 console.log(person.seeOne());
 Output: My name is Yash Mishra.
@@ -1034,6 +1069,174 @@ Output: The entire object : {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, 
 Explanation: The arrow function returns `this`, which it inherits from the outer function (`seeFive()`), 
 and since `seeFive()` is called on `person`, `this` refers to the person object.
 
+#Ans 14)
+
+>Bothe code have same output
+
+3
+2
+1
+Go!
+
+#Ans 15)
+
+>a)
+1
+2
+3
+4
+5
+
+>b)
+6
+6
+6
+6
+6
+(6 repeated 5 times)
+
+>For Let
+
+Code:
+
+for (let a = 1; a <= 5; a++) {
+  setTimeout(() => {
+    console.log(a); // Prints value of 'a' specific to each block
+  }, 1000);
+}
+
+
+🔥Diagram 1:
+
+
+Iteration 1: { Block Scope: a = 1 }
+Iteration 2: { Block Scope: a = 2 }
+Iteration 3: { Block Scope: a = 3 }
+Iteration 4: { Block Scope: a = 4 }
+Iteration 5: { Block Scope: a = 5 }
+
+After 1 second: Logs -> 1, 2, 3, 4, 5
+
+
+🔥Diagram 2:
+
+for (let a = 1; a <= 5; a++) {
+  //-- New Block Scope for each iteration
+  {
+    // Iteration 1
+    setTimeout(() => {
+      console.log(a); // Prints 1
+    }, 1000);
+  }
+  {
+    // Iteration 2
+    setTimeout(() => {
+      console.log(a); // Prints 2
+    }, 1000);
+  }
+  {
+    // Iteration 3
+    setTimeout(() => {
+      console.log(a); // Prints 3
+    }, 1000);
+  }
+  {
+    // Iteration 4
+    setTimeout(() => {
+      console.log(a); // Prints 4
+    }, 1000);
+  }
+  {
+    // Iteration 5
+    setTimeout(() => {
+      console.log(a); // Prints 5
+    }, 1000);
+  }
+}
+
+
+---Explanation for Let :
+
+- Each `{}` block represents a new scope created by `let` for each iteration.
+- `setTimeout` captures the value of `a` specific to that iteration's block.
+
+
+--------------------------------------------------
+
+>>> For `var`
+
+
+Code:
+
+for (var a = 1; a <= 5; a++) {
+  setTimeout(() => {
+    console.log(a); // Prints 6 (value of 'a' after loop ends)
+  }, 1000);
+}
+
+
+🔥Diagram :
+
+Global Scope: var a; //👀👀👀👀
+
+Iteration 1: { Single Scope: a updated to 1 }
+Iteration 2: { Single Scope: a updated to 2 } (previous value 1 is also updated to 2)
+Iteration 3: { Single Scope: a updated to 3 } (previous values 1 and 2 are also updated to 3)
+Iteration 4: { Single Scope: a updated to 4 } (previous values 1, 2, and 3 are also updated to 4) 
+Iteration 5: { Single Scope: a updated to 5 } (previous values 1, 2, 3, and 4 are also updated to 5)
+
+After Loop Completes:
+The loop ends with a incrementing one last time.
+Final Value of a: The loop condition (a <= 5) becomes false when a becomes 6 (after the last increment).
+
+After 1 second: Logs -> 6, 6, 6, 6, 6
+
+---Explanation for var:
+
+1. Global Scope: When using `var`, there is only one variable in the global scope. 
+The value of `a` is updated during each iteration, but no new block is created for each loop 
+Value Updated Globally. 
+ 
+2. **Value Updated Globally**:
+ When you use `var`, there’s only one variable, and it’s being updated throughout the entire loop. 
+ So during each iteration, the value of `a` is updated globally.
+
+
+#Ans 16)
+
+for (var a = 1; a <= 5; a++) {
+  function inner() {
+    var b = a;
+    setTimeout(() => {
+      console.log(b);
+    });
+  }
+  inner();
+}
+
+
+#Ans 17)
+let a = 1;
+
+for (a; a <= 5; a++) {
+    setTimeout(() => {
+        console.log(a)
+    }, 1000)
+}
+
+Ans : In short: Both in the case of let (outside the loop) and var (inside the loop),
+the same single variable is updated, and previous values are overwritten. That’s why 
+in both cases, you get 6 printed five times when the loop completes.
+
+
+#Ans 18)
+>a)
+0
+3
+
+>b)
+3
+0
 //#25)
 
 1)Using Third Variable

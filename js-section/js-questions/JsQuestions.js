@@ -427,13 +427,15 @@ let person = {
   },
 };
 
-#8)What is lexical scop or lexical scoping ?
+#8)What is lexical scop/lexical scoping ?
     
 #9) Can we use the for...of loop for objects ?
 
 #10)Explain the use of call(), apply(), and bind() in JavaScript?
 
-#11) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
+#11)What "this keyword" is javascript ?
+
+#12) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
 
 let person = {
   firstName: "Yash",
@@ -456,7 +458,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-#12)Tell the output without running the code.
+#13)Tell the output without running the code.
 
 let person = {
   firstName: "Yash",
@@ -494,7 +496,7 @@ console.log(person.seeFour());
 console.log(person.seeFive());
 
  
-#10) What will be the output of the following code ?
+#14) What will be the output of the following code ?
 
 ? Code Without `await`:
 
@@ -502,22 +504,22 @@ async function f1() {
   console.log(1);
 }
 
-async function f1() {
+async function f2() {
   console.log(2);
 }
 
 console.log(3);
 
 f1();
+f2()
 
 console.log(1);
 
-f2();
+f3();
 
-async function f2(){
+async function f3() {
   console.log("Go!");
 }
-
 
 ? Code With `await`
 
@@ -526,62 +528,38 @@ async function main() {
     console.log(1);
   }
 
-  async function f1() {
+  async function f2() {
     console.log(2);
   }
 
   console.log(3);
 
   await f1();
+  await f2();
 
   console.log(1);
 
-  await f2();
+  await f3();
 
-  async function f2(){
+  async function f3(){
     console.log("Go!");
   }
 }
 
-main();
+main()
 
 
->Bothe code have same output
+#15) Find the output of this codes ?
 
-3
-2
-1
-Go!
-
- If the `await` is used with functions that don't involve any actual delay (like those that return 
- promises resolved immediately or don’t have any asynchronous operations), the code behaves similarly
- to synchronous code. Here's a more detailed explanation:
-
-1. await` Behavior:
-   - `await` pauses the execution of an `async` function until the promise it’s waiting for is resolved or rejected. 
-   - If the promise resolves immediately (or if the function doesn’t actually involve any asynchronous behavior), the `await` doesn’t cause any noticeable delay.
-
-2. Immediate Resolution:
-   - In your example, both `f1()` and `f2()` are defined as `async` functions but they don’t return any promises that involve real asynchronous work like network requests or timers. 
-   - Because of this, `await` doesn’t introduce a delay and the code executes in a synchronous-like manner within the `main()` function.
-
-3. Code Execution Order:
-   - Without `await`: The functions are called in the order they appear, with synchronous logging and function calls.
-   - With `await`: Even though `await` is used, the functions execute immediately because they are resolved immediately. Thus, the output order remains the same as if `await` were not used.
-
-In summary, without actual asynchronous operations, `await` does not create a delay and the code 
-effectively executes in a synchronous manner.
-
-#11) Find the output of this code using var and let.
-
+>a)
 for (let a = 1; a <= 5; a++) {
     setTimeout(() => {
       console.log(a);
     }, 1000);
 }
 
---Vs--
 
+>b)
 for (var a = 1; a <= 5; a++) {
   setTimeout(() => {
     console.log(a);
@@ -589,178 +567,18 @@ for (var a = 1; a <= 5; a++) {
 }
 
 
------------------------------------------
+#16)Give me previous output output:
 
-#For `let`
-
-Code:
-
-for (let a = 1; a <= 5; a++) {
-  setTimeout(() => {
-    console.log(a); // Prints value of 'a' specific to each block
-  }, 1000);
-}
-
-
-🔥Diagram 1:
-
-
-Iteration 1: { Block Scope: a = 1 }
-Iteration 2: { Block Scope: a = 2 }
-Iteration 3: { Block Scope: a = 3 }
-Iteration 4: { Block Scope: a = 4 }
-Iteration 5: { Block Scope: a = 5 }
-
-After 1 second: Logs -> 1, 2, 3, 4, 5
-
-
-🔥Diagram 2:
-
-for (let a = 1; a <= 5; a++) {
-  //-- New Block Scope for each iteration
-  {
-    // Iteration 1
-    setTimeout(() => {
-      console.log(a); // Prints 1
-    }, 1000);
-  }
-  {
-    // Iteration 2
-    setTimeout(() => {
-      console.log(a); // Prints 2
-    }, 1000);
-  }
-  {
-    // Iteration 3
-    setTimeout(() => {
-      console.log(a); // Prints 3
-    }, 1000);
-  }
-  {
-    // Iteration 4
-    setTimeout(() => {
-      console.log(a); // Prints 4
-    }, 1000);
-  }
-  {
-    // Iteration 5
-    setTimeout(() => {
-      console.log(a); // Prints 5
-    }, 1000);
-  }
-}
-
-
------------------------------------------
-
-
->>Explanation for Let :
-
-- Each `{}` block represents a new scope created by `let` for each iteration.
-- `setTimeout` captures the value of `a` specific to that iteration's block.
-
-
------------------------------------------
-
->>> For `var`
-
-
-Code:
-
-for (var a = 1; a <= 5; a++) {
-  setTimeout(() => {
-    console.log(a); // Prints 6 (value of 'a' after loop ends)
-  }, 1000);
-}
-
-
-🔥Diagram 1:
-
-
-Global Scope: var a; //👀👀👀👀
-
-Iteration 1: { Single Scope: a updated to 1 }
-Iteration 2: { Single Scope: a updated to 2 } (previous value 1 is also updated to 2)
-Iteration 3: { Single Scope: a updated to 3 } (previous values 1 and 2 are also updated to 3)
-Iteration 4: { Single Scope: a updated to 4 } (previous values 1, 2, and 3 are also updated to 4) 
-Iteration 5: { Single Scope: a updated to 5 } (previous values 1, 2, 3, and 4 are also updated to 5)
-
-After Loop Completes:
-The loop ends with a incrementing one last time.
-Final Value of a: The loop condition (a <= 5) becomes false when a becomes 6 (after the last increment).
-
-After 1 second: Logs -> 6, 6, 6, 6, 6
-
-
-🔥Diagram 2:
-
-var a; // Global Scope 👀👀👀👀
-
-for (a = 1; a <= 5; a++) {
-  setTimeout(() => {
-    console.log(a); // Prints 6 (value of 'a' after loop ends; each iteration updates the same 'a')
-  }, 1000);
-}
-
-
------------------------------------------
-
->>Explanation for var:
-
-1. Global Scope: When using `var`, there is only one variable in the global scope. 
-The value of `a` is updated during each iteration, but no new block is created for each loop 
-Value Updated Globally. 
- 
-2. **Value Updated Globally**:
- When you use `var`, there’s only one variable, and it’s being updated throughout the entire loop. 
- So during each iteration, the value of `a` is updated globally.
-
-That means:
-
-1. Initially, `a` is `1`.
-2. When `a` becomes `2`, the previous value of `1` is also updated to `2` 
-(because there is only one `a` variable in the global scope).
-3. This keeps happening, so by the time the loop finishes, `a` is `6`.
-
-When the `setTimeout` function is executed after the loop has completed, it refers to that same 
-global `a` variable, which now holds the value `6`. That's why `6` gets printed five times. 
-The previous values aren't preserved because `var` is constantly being overwritten.
-
-During looping, only the value of the one `a` variable is being updated each time. 
-
-- `var` is function-scoped and only creates a single block scope.
-- By the time `setTimeout` executes, `a` has the final value of `6` because the loop has completed.
-- Each `setTimeout` callback references the same `a`, which has been updated to `6`.
-
-
-
->> Summary
-
-- **`let`**: Creates a new block scope for each iteration of the loop. Each `setTimeout`
- callback captures the value of `a` specific to that iteration.
-  
-- **`var`**: Uses a single block scope for the entire loop. By the time `setTimeout`
- callbacks execute, `var` has the final value of `6`, as `var` is function-scoped and not block-scoped.
-
-
-
-#12)Give me previous output which you get using Let but that time don't use let .
+1
+2
+3
+4
+5
+#which you get using Let but that time don't use let .
 
 >>Without changing the var into let 
 
-for (var a = 1; a <= 5; a++) {
-
-    function see() {
-        var a2=a;
-        setTimeout(() => {
-            console.log(a2)
-        }, 1000)
-    }
-    see()
-
-}
-
-output:
+Expected output:
 
 1
 2
@@ -769,7 +587,7 @@ output:
 5
 
 
-#13)What if we palce let outside the for loop ? , tell me correct output .
+#17)What if we palce let outside the for loop ? , tell me correct output .
 
 let a = 1;
 
@@ -779,23 +597,34 @@ for (a; a <= 5; a++) {
     }, 1000)
 }
 
-Ans : In short: Both in the case of let (outside the loop) and var (inside the loop),
-the same single variable is updated, and previous values are overwritten. That’s why 
-in both cases, you get 6 printed five times when the loop completes.
 
+#18)Tell me the output of this code.
 
-#14)Tell me the output of this code.
-
+>a)
 let count = 0;
 (function immediate() {
-    if (count === 0) {
-        let count = 1;
-        console.log(count); // What is logged here?
-    }
+  if (count === 0) {
+    let count = 2;
+    count++;
     console.log(count); // What is logged here?
+  }
+  console.log(count); // What is logged here?
 })();
 
-#15)Tell me the output of this code in proper sequence manner .
+>b)
+let countTwo = 0;
+function immediate() {
+  if (countTwo === 0) {
+    let countTwo = 2;
+    countTwo++;
+    console.log(countTwo); // What is logged here?
+  }
+  console.log(countTwo); // What is logged here?
+}
+
+immediate();
+
+#19)Tell me the output of this code in proper sequence manner .
 
 let outerFun = (() => {
     
@@ -823,127 +652,25 @@ see();
 see();
 seeTwo();
 
->>>Solution :
-
-> Code Explanation:
-
-let outerFun = (() => {
-    
-    let count = 10;
-    
-    function see() {
-        count++;
-        console.log("See count", count);
-    }
-    
-    let ref = count;
-    console.log("Center ref", ref);
-
-    function seeTwo() {
-        console.log("SeeTwo count", count);
-        console.log("SeeTwo ref", ref);
-    }
-
-    return [see, seeTwo];
-});
-
-let [see, seeTwo] = outerFun();
-see();      // increments count by 1 -> count is now 11
-see();      // increments count by 1 again -> count is now 12
-seeTwo();   // logs count and ref
-
-
-> Key Points:
-1. **Initial State:**
-   - The first time `outerFun` is invoked, `count` is initialized with `10`.
-   - The variable `ref` is immediately set to the value of `count`, which is `10` at that moment. This stores a **copy** of the value of `count` in `ref`.
-   - `console.log("Center ref", ref)` logs the value of `ref` (which is `10` at that moment).
-
-2. **When `see()` is called:**
-   - The `count++` operation inside `see()` increments the `count` by 1.
-   - After the first `see()`, `count` becomes `11`.
-   - After the second `see()`, `count` becomes `12`.
-
-3. **When `seeTwo()` is called:**
-   - It logs the current value of `count` (which is `12`).
-   - However, `ref` still holds the initial value of `count`, which was **`10`**, because `ref` was assigned the value of `count` at the time `outerFun` was first invoked.
-   - **`ref` is not automatically updated** when `count` changes, because `ref` holds the **value** of `count` at the time it was declared, not a reference to `count`.
-
-> Why `ref` is Not Updated:
-- **`ref` is a primitive value (number)**, and when you do `let ref = count;`, it stores the value `10` (the value of `count` at that time), but it does not store a reference to the `count` variable itself.
-- So, when `count` is incremented later inside the `see()` function, `ref` does not change because it's a separate copy of the value at the time of the assignment.
-
-> Correct Output:
-
-Center ref 10   // ref was assigned the initial value of count (10)
-See count 11    // count is incremented to 11 after the first see()
-See count 12    // count is incremented to 12 after the second see()
-SeeTwo count 12 // seeTwo logs the current count, which is 12
-SeeTwo ref 10   // seeTwo logs the value of ref, which is still 10
-
-> How to Fix This:
-
-If you want `ref` to reflect the current value of `count`, you would need to reference `count` directly inside `seeTwo()`, rather than assigning a copy of `count` to `ref`. Here's one way to fix it:
-
-```javascript
-let outerFun = (() => {
-    
-    let count = 10;
-    
-    function see() {
-        count++;
-        console.log("See count", count);
-    }
-
-    // No need for ref assignment here
-    console.log("Center ref", count);
-
-    function seeTwo() {
-        console.log("SeeTwo count", count);
-        // Now use count directly instead of ref
-    }
-
-    return [see, seeTwo];
-});
-
-let [see, seeTwo] = outerFun();
-see();      // increments count to 11
-see();      // increments count to 12
-seeTwo();   // will log the current count, which is now 12
-
-
-Now, `seeTwo()` will always log the current value of `count`.
-
-#16)Tell me the output of this code .
-
-for (var i = 0; i < 3; i++) {
-setTimeout(function log() {
-   console.log(i); 
-}, 1000);
-}
-
 //#17)What is Bable and webpack ?
 
-1. Babel
+--1. Babel
+
 Babel is a JavaScript transpiler that converts modern JavaScript (ES6+) into older, browser-compatible 
 JavaScript. This ensures your code works in all browsers, even those that don’t support the latest
 features.
 
-What it is: Babel is a JavaScript transpiler.
 Purpose: It converts modern JavaScript (ES6/ES7+) into older JavaScript (ES5) that works
 in all browsers.
 
 Why it's important: Not all browsers support the latest JavaScript features, so Babel ensures 
 your code is compatible with older browsers.
 
-2. Webpack
+--2. Webpack
 
 Webpack is a module bundler. It takes all your project’s files (JavaScript, CSS, images)
 and bundles them into one (or a few) optimized files, improving performance and managing 
 dependencies.
-
-
-What it is: Webpack is a module bundler.
 
 Purpose: It bundles your JavaScript, CSS, and other assets into a single file (or smaller chunks) 
 for faster browser loading.
