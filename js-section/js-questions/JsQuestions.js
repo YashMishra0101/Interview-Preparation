@@ -662,6 +662,15 @@ see();
 see();
 seeTwo();
 
+
+#20) What is `Destructuring`, `Spread operator`, and `Rest operator`.
+
+#21)Explain Event loop.
+
+#22)Explain Global Execution context.
+
+
+
 //#17)What is Bable and webpack ?
 
 --1. Babel

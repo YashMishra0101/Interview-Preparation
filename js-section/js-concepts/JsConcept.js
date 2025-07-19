@@ -973,7 +973,7 @@ in the execution context (stack).
 👉 If the variable holds a non-primitive value (like objects, arrays, or functions), then the reference is stored in the 
 stack, but the actual data (the object or array itself) is stored in the heap.  
 
-### #15) Event Loop
+#15) Event Loop
 
 JavaScript is a **single-threaded language**, meaning it executes code **line by line**. When **asynchronous operations** are 
 involved, they are managed by the **Event Loop**, which ensures **non-blocking** execution.
@@ -982,7 +982,7 @@ involved, they are managed by the **Event Loop**, which ensures **non-blocking**
 JavaScript doesn't have built-in asynchronous capabilities. Instead, **Web APIs**, the **Microtask Queue**, and the **Task (Callback )
 Queue** are provided by the runtime environment to handle asynchronous operations efficiently.
 
-The **browser engine** (like **V8** in Chrome or **SpiderMonkey** in Firefox) works together with JavaScript to manage asynchronous
+The **browser engine** (like **V8** in Chrome,Brave,Microsoft Edge , **SpiderMonkey** in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous
 operations such as `setTimeout`, `fetch`, and **Promises**, without blocking the main thread.
 
 
@@ -992,7 +992,6 @@ operations such as `setTimeout`, `fetch`, and **Promises**, without blocking the
 --1️⃣ Execution of Synchronous Code
 
 * JavaScript first executes **all synchronous code** in the **Call Stack**.
-* If a function is invoked, it is **pushed into the Call Stack** and **popped out** after execution.
 * JavaScript **does not process asynchronous tasks** until the Call Stack is empty.
 
 --- 2️⃣ Asynchronous Code is Handled by Web APIs
@@ -1140,13 +1139,13 @@ creation of a new value -> String,numbers etc.
 object -> Array,objects,function etc.
 
 
-#17) `Destructuring`, `Spread operator`, and `Rest operator`) 
+#17) `Destructuring`, `Spread operator`, and `Rest operator`
 
 >>1️⃣ Destructuring (Extracting Values)
 
 --Destructuring helps you Extract values from arrays or objects easily.  
 
----👉 Array Destructuring Example:**
+---👉 Array Destructuring Example:
 
 const numbers = [1, 2, 3];
 const [first, second, third] = numbers;
@@ -1157,7 +1156,7 @@ console.log(third);  // 3
 
 Instead of writing `numbers[0]`, `numbers[1]`, etc., **destructuring** makes it shorter and cleaner.  
 
---👉 Object Destructuring Example:**
+--👉 Object Destructuring Example:
 
 const person = { name: "Yashu", age: 22 };
 const { name, age } = person;
@@ -1170,10 +1169,10 @@ You can directly extract values from objects without `person.name` or `person.ag
 
 >>2️⃣ Spread Operator (`...`) (Expanding)
 
-The Spread Operator **spreads elements of an array or object**. It's mostly used for **copying, merging, 
-and passing values.
+The spread operator (...) is used to expand the values of an array or object.
+It is mainly used for copying, merging, or passing values.
 
---👉 Copying an Array (Avoids Reference Issues)**
+--👉 Copying an Array
 
 const arr1 = [1, 2, 3];
 const arr2 = [...arr1];  // Creates a copy
@@ -1182,8 +1181,16 @@ arr2.push(4);
 console.log(arr1); // [1, 2, 3]  (Original array remains unchanged)
 console.log(arr2); // [1, 2, 3, 4]  
 
+--👉 Copying the object
 
----👉 Merging Two Arrays**
+const user = { name: "Yashu", age: 24 };
+const newUser = { ...user };
+
+console.log(newUser);  
+// Output: { name: "Yashu", age: 24 }
+
+
+---👉 Merging Two Arrays
 
 const boys = ["Yash", "Ram"];
 const girls = ["Chiku", "Priya"];
@@ -1191,8 +1198,38 @@ const all = [...boys, ...girls];
 
 console.log(all); // ["Yash", "Ram", "Chiku", "Priya"]
 
+---👉 Merging Two objects
 
----👉 Expanding an Object**
+const userDetails = {
+  name: "Yash",
+  age: 23
+};
+
+const jobDetails = {
+  role: "Full Stack Developer",
+  salary: "₹12 LPA"
+};
+
+
+const fullProfile = {
+  ...userDetails,
+  ...jobDetails
+};
+
+console.log(fullProfile);
+
+---👉 Passing values
+
+let nums = [10, 20, 30];
+
+function add(a, b, c) {
+  console.log(a + b + c);
+}
+
+add(...nums);  // 👈 spreading array as individual args
+// Output: 60
+
+---👉 Expanding an Object
 
 const user = { name: "Yash", age: 22 };
 const updatedUser = { ...user, city: "Nagpur" };
@@ -1227,9 +1264,9 @@ Here, `...remainingFruits` **collects** all remaining elements into an array.
 
 >>> Simple Trick to Remember:
 
-- **Destructuring** → **Extracting values** (`{}` or `[]`)  
-- **Spread (`...`)** → **Expanding values** (used for copying & merging)  
-- **Rest (`...`)** → **Collecting values** (used in function parameters or destructuring)  
+- Destructuring → Extracting values (`{}` or `[]`)  
+- Spread (`...`) → Expanding values
+- Rest (`...`) → Collecting values
 
 #18)Naming conventions
 

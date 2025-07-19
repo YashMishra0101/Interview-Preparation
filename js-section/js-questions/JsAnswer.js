@@ -1242,6 +1242,20 @@ in both cases, you get 6 printed five times when the loop completes.
 >b)
 3
 0
+
+
+#Ans 20)
+---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
+Ctrl + F ➤ Just search in concepts section :  #17)
+#Ans 21)
+---Event loop concept is available in “Concepts” section. 
+Ctrl + F ➤ Just search in concepts section : #15) 
+
+#Ans 22)
+---Global Execution context concept is available in “Concepts” section.
+Ctrl + F ➤ Just search in concepts section : #14) 
+
+
 //#25)
 
 1)Using Third Variable
