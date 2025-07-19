@@ -460,6 +460,15 @@ console.log(person.arrowFunctionTwo());
 
 #13)Tell the output without running the code.
 
+let globalSpace = "this";
+console.log(globalSpace);
+
+function abc() {
+  console.log(this);
+}
+
+abc();
+
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -470,13 +479,13 @@ let person = {
     return this;
   },
   seeThree: function () {
-    let = arrowFunction = () => {
+    let arrowFunction = () => {
       return `My name is ${this.firstName} ${this.lastName}.`;
     };
     arrowFunction();
   },
   seeFour: function () {
-    let = arrowFunction = () => {
+    let arrowFunction = () => {
       return `My name is ${this.firstName} ${this.lastName}.`;
     };
     return arrowFunction();
@@ -494,6 +503,7 @@ console.log(person.seeTwo());
 console.log(person.seeThree());
 console.log(person.seeFour());
 console.log(person.seeFive());
+
 
  
 #14) What will be the output of the following code ?

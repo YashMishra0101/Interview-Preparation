@@ -1047,6 +1047,11 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 
 
 #13)
+console.log(globalSpace);
+output:this
+
+abc();
+output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
 console.log(person.seeOne());
 Output: My name is Yash Mishra.

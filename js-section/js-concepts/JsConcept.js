@@ -233,9 +233,8 @@ When "A function" is passed as an argument into "Another function", then it is c
 
 #5)About Callback Hell :
 
-Callback Hell is a situation in programming, especially in JavaScript, where multiple nested callbacks make the code difficult to read, 
-maintain, and debug so it happens when callbacks are nested within each other, leading to deeply indented code, each step depends 
-on the completion of the previous one.
+Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to 
+deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug.
 
 
 >Explanation
@@ -254,51 +253,54 @@ on the completion of the previous one.
 
 --- Example:
  
- let stepOne = (callme) => {
+let one = (callMe) => {
   setTimeout(() => {
-    console.log("One");
-    callme();
-  }, 1000);
+    console.log("My");
+    callMe();
+  },1000);
 };
 
-let stepTwo = (callme) => {
+let two = (callMe) => {
   setTimeout(() => {
-    console.log("Two");
-    callme();
-  }, 1000);
+    console.log("name");
+    callMe();
+  },1000);
 };
 
-let stepThree = (callme) => {
+let three = (callMe) => {
   setTimeout(() => {
-    console.log("Three");
-    callme();
-  }, 1000);
+    console.log("is");
+    callMe();
+  },1000);
 };
 
-let stepFour = (callme) => {
+let four = (callMe) => {
   setTimeout(() => {
-    console.log("Four");
-    callme();
-  }, 1000);
+    console.log("yash");
+    callMe();
+  },1000);
 };
 
-let stepFive = () => {
+let five = (callMe) => {
   setTimeout(() => {
-    console.log("Five");
-  }, 1000);
+    console.log("mishra");
+  },1000);
 };
 
-let stepSequence = () => {
-  stepOne(() => {
-    stepTwo(() => {
-      stepThree(() => {
-        stepFour(stepFive);
-      });
-    });
-  });
-};
 
-stepSequence();
+let start=()=>{
+one((()=>{
+  two((()=>{
+    three(()=>{
+      four(()=>{
+        five()
+      })
+    })
+  }))
+}))
+}
+
+start()
 
 -- In the example above, each function relies on the completion of the previous function, resulting in nested callbacks.
 
@@ -359,63 +361,78 @@ let promise = new Promise (function (resolve, reject) {
 
 >>>Example of Promises 
 
-let dataOne = () => {
+let one = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("I am a Dataone");
-    }, 2000);
-  });
-};
-
-let dataTwo = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("I am a Datatwo");
+      resolve("My");
     }, 1000);
   });
 };
 
-let dataThree = () => {
+let two = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject("Error hai Three me");
-      // resolve("I am a dataThree");
+      resolve("name");
     }, 1000);
   });
 };
 
-let dataFour = () => {
+let three = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("I am a dataFour");
+      // resolve("is");
+      reject("is");
     }, 1000);
   });
 };
 
-let start = () => {
-  dataOne()
-    .then((result) => {
-      console.log(result);
-      return dataTwo();
-    })
-    .then((result) => {
-      console.log(result);
-      return dataThree();
-    })
-    .then((result) => {
-      console.log(result);
-      return dataFour();
-    })
-
-    .catch((error) => {
-      console.log("Error : ", error);
-    })
-    .finally(() => {
-      console.log("Program End");
-    });
+let four = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // reject("yash");
+      resolve("yash");
+    }, 1000);
+  });
 };
 
+let five = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("mishra");
+      // reject("mishra");
+    }, 1000);
+  });
+};
+
+let start = () => {};
+one()
+  .then((mess) => {
+    console.log(mess);
+    return two();
+  })
+  .then((mess) => {
+    console.log(mess);
+    return three();
+  })
+  .then((mess) => {
+    console.log(mess);
+    return four();
+  })
+  .then((mess) => {
+    console.log(mess);
+    return five();
+  })
+  .then((mess) => {
+    console.log(mess);
+  })
+  .catch((error) => {
+    console.log("Error : ",error);
+  })
+  .finally(() => {
+    console.log("Code End");
+  });
 start();
+
 
 
 #7)Asyn await
@@ -434,6 +451,58 @@ await: It is used inside an async function. It makes JavaScript wait for a Promi
 before moving to the next line of code.
 
 >>Example of async/await
+
+
+let one = () => {
+  return new Promise((resolve, reject) => {
+    resolve("My");
+  });
+};
+let two = () => {
+  return new Promise((resolve, reject) => {
+    resolve("name");
+  });
+};
+let three = () => {
+  return new Promise((resolve, reject) => {
+    resolve("is");
+    // reject("is");
+  });
+};
+let four = () => {
+  return new Promise((resolve, reject) => {
+    resolve("yash");
+  });
+};
+let five = () => {
+  return new Promise((resolve, reject) => {
+    resolve("mishra");
+  });
+};
+
+let start = async () => {
+  try {
+    let messOne = await one();
+    console.log(messOne);
+    let messTwo = await two();
+    console.log(messTwo);
+    let messThree = await three();
+    console.log(messThree);
+    let messFour = await four();
+    console.log(messFour);
+    let messFive = await five();
+    console.log(messFive);
+  } catch (error) {
+    console.log(error);
+  }
+  finally{
+    console.log("Code Ends");
+  }
+};
+
+start();
+
+>API callig with async await
 
 async function fetchUserData() {
   try {
