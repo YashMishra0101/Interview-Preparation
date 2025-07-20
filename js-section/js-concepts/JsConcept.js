@@ -526,34 +526,6 @@ fetchUserData();
 
 --Using Promises (then/catch):
 
-fetch("https://jsonplaceholder.typicode.com/todos/1")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log("error", error);
-  })
-  .finally(() => {
-    console.log("Code End");
-  });
-
---Using Async await (try/catch):
-
-let info = async () => {
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    let data = await response.json();
-    console.log(data);
-  } catch {
-    console.log(error);
-  } finally {
-    console.log("Code End");
-  }
-};
-info();
 
 --The async/await version is cleaner and easier to understand, right.
 
