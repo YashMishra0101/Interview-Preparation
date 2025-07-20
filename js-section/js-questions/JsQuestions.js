@@ -336,7 +336,7 @@ console.log("Sum of a + b = " + a + b);
 console.log(a + b+ " is a sum of a + b");
 
 
-#2) Implement callback function in JavaScript by passing one function into another and then using it to print a value?
+#2) Implement callback function in JavaScript by passing one function into another , then print it's value?
 
 #3) Tells the output without running the code.
 
@@ -381,7 +381,7 @@ console.log("line number 6");
 fn();
 
 
-#5)Tells the output 
+#5)Tells the output without running the code in the proper sequence.
 
 var a = 10;
 console.log("line number 2", a);
@@ -415,7 +415,7 @@ console. log("letFruit", letFruit,
 console.log("letFruit", letFruit, "varFruit", varFruit);
 
 
-#7) What will be the output of `console.log(person.fullName())`, and why?
+#7) What will be the output of `console.log(person.fullName())`?
 
 let person = {
   firstName: "Yash",
@@ -460,8 +460,8 @@ console.log(person.arrowFunctionTwo());
 
 #13)Tell the output without running the code.
 
-let globalSpace = "this";
-console.log(globalSpace);
+
+console.log(this);//in global space
 
 function abc() {
   console.log(this);
@@ -586,7 +586,7 @@ for (var a = 1; a <= 5; a++) {
 5
 #which you get using Let but that time don't use let .
 
->>Without changing the var into let 
+>>Just use var , don't use let 
 
 Expected output:
 
@@ -668,6 +668,22 @@ seeTwo();
 #21)Explain Event loop.
 
 #22)Explain Global Execution context.
+
+#23)What is callback,callback hell, promies.
+
+#24) Write a program with proper error handling to fetch a user's data from this API:
+👉👨‍💻 Note:First check if the API URL is working before using it. Sometimes the API may not respond.
+👉 https://jsonplaceholder.typicode.com/users/1
+Print the user's name in the console.
+Do this using both:
+
+1).then()
+
+2)async/await
+
+
+
+
 
 
 

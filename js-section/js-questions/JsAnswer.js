@@ -982,7 +982,7 @@ console.log(userDataTwo())
 - `apply()`: Like `call()`, but arguments are passed as an array.
 - `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately.
 
-#Asn 10)
+#Asn 11)
 
 "this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js)
 and it also depends on how the function is called.
@@ -1014,7 +1014,8 @@ If you use an **arrow function**, `this` does **not** refer to the object — in
 --🔹 4. This substitution :
 
 In **non-strict mode**, if `this` is `null` or `undefined`, JavaScript **automatically substitutes it with the global object**.
-That’s why, inside a normal function in non-strict mode in browsers, `this` becomes `window`.
+That’s why, inside a normal function in non-strict mode in browsers, `this` becomes `window`so originally value is "undefined" but 
+because of this keyword it gives us window object.
 
 
 #Ans 12)
@@ -1229,7 +1230,9 @@ for (a; a <= 5; a++) {
     }, 1000)
 }
 
-Ans : In short: Both in the case of let (outside the loop) and var (inside the loop),
+Ans : 6 (Five times)
+
+Explanation:In short: Both in the case of let (outside the loop) and var (inside the loop),
 the same single variable is updated, and previous values are overwritten. That’s why 
 in both cases, you get 6 printed five times when the loop completes.
 
@@ -1255,6 +1258,40 @@ Ctrl + F ➤ Just search in concepts section : #15)
 ---Global Execution context concept is available in “Concepts” section.
 Ctrl + F ➤ Just search in concepts section : #14) 
 
+#Ans 23)
+---Callback, Callbachell, Promises->.then and async await concepts are available in “Concepts” section.
+Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)  
+
+#Ans 24)
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  })
+  .finally(() => {
+    console.log("Code End");
+  });
+
+--Using Async await (try/catch):
+
+let info = async () => {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let data = await response.json();
+    console.log(data);
+  } catch {
+    console.log(error);
+  } finally {
+    console.log("Code End");
+  }
+};
+info();
 
 //#25)
 
