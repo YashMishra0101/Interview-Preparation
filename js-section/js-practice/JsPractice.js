@@ -32,14 +32,30 @@ console.log("Working");
 // for(;;){
 //     console.log("hi");
 // }
-console.log(typeof("hi"));
-console.log(typeof(7));
-console.log(typeof(null));
-console.log(typeof(Object));
-console.log(typeof(Array));
-console.log(typeof(false));
-console.log(typeof(true));
-console.log(typeof(undefined));
-console.log(typeof(NaN));
 
-console.log(null===null);
+
+// console.log(typeof("hi"));
+// console.log(typeof(7));
+// console.log(typeof(null));
+// console.log(typeof(Object));
+// console.log(typeof(Array));
+// console.log(typeof(false));
+// console.log(typeof(true));
+// console.log(typeof(undefined));
+// console.log(typeof(NaN));
+
+
+
+// (function abc(){
+// console.log("Hi my name is yash");
+// })();
+
+// (() => {
+//   console.log("Hi my name is yash");
+// })();
+
+let arr=[1,2,3,4,5];
+
+// arr.push(6)
+// arr.pop()
+console.log(arr);
