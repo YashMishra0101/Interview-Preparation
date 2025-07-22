@@ -1,61 +1,68 @@
 console.log("Working");
 
-// fetch("https://jsonplaceholder.typicode.com/todos/1")
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.log("error", error);
-//   })
-//   .finally(() => {
-//     console.log("Code End");
-//   });
-
-// let info = async () => {
-//   try {
-//     let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-//     let data = await response.json();
-//     console.log(data);
-//   } catch {
-//     console.log(error);
-//   } finally {
-//     console.log("Code End");
+// let userInfoOne={
+//   name:"Ram",
+//   age:23,
+//   info:function(){
+//     console.log(`My name ${this.name} and my age is ${this.age}`);
 //   }
-// };
-// info();
-
-
-
-// for(;;){
-//     console.log("hi");
 // }
 
+// console.log(userInfoOne);
 
-// console.log(typeof("hi"));
-// console.log(typeof(7));
-// console.log(typeof(null));
-// console.log(typeof(Object));
-// console.log(typeof(Array));
-// console.log(typeof(false));
-// console.log(typeof(true));
-// console.log(typeof(undefined));
-// console.log(typeof(NaN));
+// class UserInfo {
+//   constructor(name,role){
+//     this.name=name;
+//     this.role=role;
+//   }
+//   showInfo(){
+//     console.log(`User name is ${this.name} and User is a ${this.role}`);
+//   }
+// }
 
+// const userOne=new UserInfo("Yash","Software Developer");
+// console.log(userOne);
+// userOne.showInfo();
+// const userTwo=new UserInfo("Vani","Backend Developer");
+// console.log(userTwo);
+// userTwo.showInfo();
+// const userThree=new UserInfo("Gaurav","Frontend Developer");
+// console.log(userThree);
+// userThree.showInfo();
 
+// class BankAccount {
+//   #balance = 100;
 
-// (function abc(){
-// console.log("Hi my name is yash");
-// })();
+//   deposit(amount) {
+//     if (amount <= 0) {
+//       console.log("Amount must be greater than 0.");
+//       return;
+//     }
 
-// (() => {
-//   console.log("Hi my name is yash");
-// })();
+//     this.#balance += amount;
+//     console.log(
+//       `₹${amount} deposited successfully. Your current balance is ₹${this.#balance}.`
+//     );
+//   }
 
-let arr=[1,2,3,4,5];
+//   withdraw(amount) {
+//     if (amount > this.#balance) {
+//       console.log("Insufficient balance available.");
+//       return;
+//     }
 
-// arr.push(6)
-// arr.pop()
-console.log(arr);
+//     this.#balance -= amount;
+//     console.log(
+//       `₹${amount} withdrawn successfully. Your current balance is ₹${this.#balance}.`
+//     );
+//   }
+
+//   checkBalance() {
+//     console.log(`Your current balance is ₹${this.#balance}.`);
+//   }
+// }
+
+// const userOne = new BankAccount();
+// userOne.checkBalance();
+// userOne.deposit(1500);
+// userOne.withdraw(500);

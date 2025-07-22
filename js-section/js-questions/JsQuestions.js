@@ -680,6 +680,35 @@ Do this using both:
 1).then()
 
 2)async/await
+#25)Write a JavaScript program that demonstrates the use of classes and object creation.
+
+#26) Demonstrate Encapsulation using a Class**
+Task:
+Create a class `BankAccount` that demonstrates the concept of **Encapsulation** in JavaScript.
+
+>Requirements:
+
+* Use a **private field** `#balance` (initial value should be ₹100).
+
+* Implement the following **public methods**:
+
+  1. **`deposit(amount)`**
+
+     * Adds the amount to the balance **only if** it’s greater than 0.
+     * Logs the updated balance.
+
+  2. **`withdraw(amount)`**
+
+     * Deducts the amount from balance **only if** sufficient balance is available.
+     * Otherwise, logs an "insufficient balance" message.
+
+  3. **`checkBalance()`**
+
+     * Logs the current balance.
+
+* Finally, create an object of the class and demonstrate all three methods.
+
+
 
 
 
