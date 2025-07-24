@@ -1318,6 +1318,7 @@ console.log(userThree);
 userThree.showInfo();
 
 #Ans 26)
+--Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private properties (ES2022+).
 
 class BankAccount {
   #balance = 100;
@@ -1336,7 +1337,7 @@ class BankAccount {
 
   withdraw(amount) {
     if (amount > this.#balance) {
-      console.log("Insufficient balance available.");
+      console.log("Insufficient balance.");
       return;
     }
 
@@ -1355,6 +1356,173 @@ const userOne = new BankAccount();
 userOne.checkBalance();
 userOne.deposit(1500);
 userOne.withdraw(500);
+
+
+#Ans 27)
+--Inheritance means a class can inherit properties and methods from another class using extends.
+
+class Users {
+  constructor(name, role) {
+    this.name = name;
+    this.role = role;
+  }
+
+  login() {
+    console.log(`${this.name} (${this.role}) has logged in.`);
+  }
+  logout() {
+    console.log(`${this.name} (${this.role}) has logged out.`);
+  }
+}
+
+class Admin extends Users {
+  constructor(name, role) {
+    super(name, role);
+  }
+
+  delete(user) {
+    console.log(
+      `${this.name} (${this.role}) Deleted ${user.name} (User) account.`
+    );
+  }
+
+  banUser(user) {
+    console.log(
+      `${this.name} (${this.role}) Banned ${user.name} (User) account.`
+    );
+  }
+}
+
+const userOne = new Users("Vani", "User");
+
+userOne.login();
+userOne.logout();
+
+const admin = new Admin("Yash", "Admin");
+
+admin.login();
+admin.delete(userOne);
+admin.banUser(userOne);
+admin.logout();
+
+#Ans 28)
+--- Polymorphism
+Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
+use case or behavior.
+
+In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
+parent class to provide a different functionality.
+
+class SMSNotification{
+    send(){
+        console.log("Sending SMS Notification");
+    }
+}
+
+class EmailNotification extends SMSNotification{
+    send(){
+        console.log("Sending Email Notification");
+    }
+}
+
+class PushNotification extends EmailNotification {
+    send(){
+        console.log("Sending Push Notification");
+    }
+}
+
+const userOne=new SMSNotification;
+const userTwo=new EmailNotification;
+const userThree=new PushNotification;
+
+userOne.send();
+userTwo.send();
+userThree.send();
+
+#Ans 29)
+--Abstraction
+
+Abstraction means hiding the complex internal logic and only exposing the essential features or behavior to the outside world.
+It helps you focus on what an object does instead of how it does it.
+
+It’s like using a TV remote:
+You press a button to increase volume, but you don’t need to know how the remote talks to the TV. That's abstraction in action.
+
+
+class PaymentProcessor {
+  #connectToBank() {  // private method
+    console.log("Connecting to bank...");
+  }
+
+  processPayment(amount) {
+    this.#connectToBank();  // hide internal logic
+    console.log(`Processing payment of ₹${amount}`);
+  }
+}
+
+const payment = new PaymentProcessor();
+payment.processPayment(1000);  // ✅
+payment.#connectToBank();      // ❌ Not accessible from outside
+
+
+✅ Key Points:
+
+--You only expose what's necessary (processPayment)
+
+--You hide internal logic (#connectToBank)
+
+--User doesn't need to know the complex stuff going on behind
+
+
+#Ans 30)
+---Prototype
+
+Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object called its prototype.
+This prototype object contains various properties and methods, which can be inherited by other objects through the prototype chain.
+
+or 
+
+In JavaScript, every object has a hidden property called [[Prototype]] (accessible via Object.getPrototypeOf(example:myCar) ), which refers to another object.
+This prototype object contains shared properties and methods. If the original object doesn't have a certain property or method, 
+JavaScript looks it up in its prototype chain.
+
+"
+
+💬 In Simpler Words (for notes or revision):
+Each object has a hidden prototype that is itself an object containing shared properties and methods. These can be inherited by other objects.
+
+--- Prototype Inheritance
+
+Prototype inheritance means that one object can inherit properties and methods from another object through its prototype, 
+forming a chain of inheritance known as the prototype chain.
+
+or
+
+Prototype inheritance in JavaScript allows an object to inherit shared properties and methods from another object through 
+the [[Prototype]] link
+
+
+---Code
+
+const usersName = {
+   userOneName: "Yash",
+   userTwoName: "Ram"
+};
+
+const usersAge = {
+  userOneName: "23",
+  userTwoName: "24"
+};
+
+// Set the prototype of usersAge to usersName
+Object.setPrototypeOf(usersAge, usersName);
+
+// Get the prototype of usersName
+console.log(Object.getPrototypeOf(usersName));
+
+// Accessing userOneName from usersAge
+console.log(usersAge.userOneName); 
+
 
 
 //#25)

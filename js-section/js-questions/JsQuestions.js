@@ -680,9 +680,11 @@ Do this using both:
 1).then()
 
 2)async/await
+
+
 #25)Write a JavaScript program that demonstrates the use of classes and object creation.
 
-#26) Demonstrate Encapsulation using a Class**
+#26) Demonstrate Encapsulation using a Class.
 Task:
 Create a class `BankAccount` that demonstrates the concept of **Encapsulation** in JavaScript.
 
@@ -707,6 +709,15 @@ Create a class `BankAccount` that demonstrates the concept of **Encapsulation** 
      * Logs the current balance.
 
 * Finally, create an object of the class and demonstrate all three methods.
+
+#27) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
+
+#28) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
+
+#29)  What is Abstraction in JavaScript?
+
+#30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+
 
 
 
