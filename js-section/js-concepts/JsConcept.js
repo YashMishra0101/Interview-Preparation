@@ -502,29 +502,44 @@ let start = async () => {
 
 start();
 
->API callig with async await
+>API callig with Promises and async await
 
-async function fetchUserData() {
+--Using Promises (then/catch):
+
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then((info) => {
+   return info.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  })
+  .finally(() => {
+    console.log("Api fetching completed");
+  });
+
+--Using async await :
+
+async function userInfo() {
   try {
     --await waits for the Promise to resolve
-    const response = await fetch('https://api.example.com/user');
-    
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+
     --await waits for the response to be converted to JSON
-    const data = await response.json();
-    
-    console.log(data);  --> Now you have the user data, and you can use it
-  } catch (error) {
-    console.error('Error fetching user data:', error);
+    let data = await response.json();
+    console.log(data);
+  } 
+  catch (error) {
+    console.log("Error", error);
+  } 
+  finally {
+    console.log("Api fetching completed");
   }
 }
 
-fetchUserData();
-
-
->>A small comparison:
-
-
---Using Promises (then/catch):
+userInfo();
 
 
 --The async/await version is cleaner and easier to understand, right.
@@ -1240,7 +1255,7 @@ const fruits = ["Apple", "Mango", "Banana", "Grapes"];
 const [first, second, ...remainingFruits] = fruits;
 
 console.log(first); // "Apple"
-console.log(second); // "Mango"
+console.log(second); // "Mango
 console.log(remainingFruits); // ["Banana", "Grapes"]
 
 Here, `...remainingFruits` **collects** all remaining elements into an array.  

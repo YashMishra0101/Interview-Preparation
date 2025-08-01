@@ -376,7 +376,7 @@ function fn() {
   console.log("line number 5", varName);
 }
 
-console.log("line number 6");
+console.log("line number 6", varName);
 
 fn();
 
@@ -460,15 +460,6 @@ console.log(person.arrowFunctionTwo());
 
 #13)Tell the output without running the code.
 
-
-console.log(this);//in global space
-
-function abc() {
-  console.log(this);
-}
-
-abc();
-
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -504,7 +495,13 @@ console.log(person.seeThree());
 console.log(person.seeFour());
 console.log(person.seeFive());
 
+console.log(this);//in global space
 
+function abc() {
+  console.log(this);
+}
+
+abc();
  
 #14) What will be the output of the following code ?
 
@@ -584,6 +581,7 @@ for (var a = 1; a <= 5; a++) {
 3
 4
 5
+
 #which you get using Let but that time don't use let .
 
 >>Just use var , don't use let 
@@ -633,6 +631,20 @@ function immediate() {
 }
 
 immediate();
+
+>c)
+let countTwo = 0;
+function immediate() {
+  if (countTwo === 0) {
+    countTwo = 2;
+    countTwo++;
+    console.log(countTwo); // What is logged here?
+  }
+  console.log(countTwo); // What is logged here?
+}
+
+immediate();
+
 
 #19)Tell me the output of this code in proper sequence manner .
 
@@ -717,6 +729,8 @@ Create a class `BankAccount` that demonstrates the concept of **Encapsulation** 
 #29)  What is Abstraction in JavaScript?
 
 #30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+
+#31) What is Type Coercion (koversion) vs Type casting and Concatenation
 
 
 

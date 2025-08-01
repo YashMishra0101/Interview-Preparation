@@ -1048,11 +1048,6 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 
 
 #13)
-console.log(globalSpace);
-output:this
-
-abc();
-output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
 console.log(person.seeOne());
 Output: My name is Yash Mishra.
@@ -1074,6 +1069,12 @@ console.log(person.seeFive());
 Output: The entire object : {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, seeTwo: ƒ, seeThree: ƒ, …}
 Explanation: The arrow function returns `this`, which it inherits from the outer function (`seeFive()`), 
 and since `seeFive()` is called on `person`, `this` refers to the person object.
+
+console.log(globalSpace);
+output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+abc();
+output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
 #Ans 14)
 
@@ -1246,6 +1247,10 @@ in both cases, you get 6 printed five times when the loop completes.
 3
 0
 
+>c)
+3
+3
+
 
 #Ans 20)
 ---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
@@ -1294,6 +1299,12 @@ let info = async () => {
 info();
 
 #Ans 25)
+>Constructor
+
+When we create a new object using the new keyword, the constructor inside the class is automatically called. 
+The constructor is mainly used to create and initialize the properties of the object inside the class.
+
+
 class UserInfo {
   constructor(name, role) {
     this.name = name;
@@ -1318,7 +1329,22 @@ console.log(userThree);
 userThree.showInfo();
 
 #Ans 26)
---Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private properties (ES2022+).
+>Encapsulation 
+Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
+public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
+unauthorized modifications.
+
+--In simple language 
+
+Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private 
+properties (ES2022+).
+
+--❓ Why didn’t we use a constructor in this code?
+
+We didn’t use a constructor in this code because the private field #balance is already initialized with a default value (100). 
+If we wanted to make the starting balance dynamic, then we would need a constructor.”
+
+
 
 class BankAccount {
   #balance = 100;
@@ -1359,7 +1385,14 @@ userOne.withdraw(500);
 
 
 #Ans 27)
---Inheritance means a class can inherit properties and methods from another class using extends.
+>Inheritance
+
+Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
+another class (called the parent or superclass) using the extends keyword in JavaScript.
+
+>super keyword
+
+The super keyword is used to call the constructor and methods of the parent class from within the child class.
 
 class Users {
   constructor(name, role) {
@@ -1411,7 +1444,7 @@ Polymorphism is a concept where multiple classes can have methods with the same 
 use case or behavior.
 
 In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
-parent class to provide a different functionality.
+parent class to provide a different functionality
 
 class SMSNotification{
     send(){
@@ -1510,8 +1543,8 @@ const usersName = {
 };
 
 const usersAge = {
-  userOneName: "23",
-  userTwoName: "24"
+  userOneAge: "23",
+  userTwoAge: "24"
 };
 
 // Set the prototype of usersAge to usersName
@@ -1522,7 +1555,12 @@ console.log(Object.getPrototypeOf(usersName));
 
 // Accessing userOneName from usersAge
 console.log(usersAge.userOneName); 
+console.log(usersAge.userTwoName); 
 
+
+#Ans 31)
+---Type Coercion (koversion) vs Type casting and Concatenation concepts are available in “Concepts” section.
+Ctrl + F ➤ Just search in concepts section : #20)  
 
 
 //#25)

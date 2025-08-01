@@ -62,11 +62,6 @@ greeter(); // Output: Hi!
 Other reason bhi hai
 */
 
-
-
-
-
-
 //#16)Shadowing
 
 /*
@@ -104,148 +99,6 @@ But ,
 
 
 >So, shadowing means that a variable inside a specific scope can "hide" a variable with the same name in an outer scope.
-*/
-
-//#17)About array and objects in details
-
-/*
-JavaScript में arrays और functions दोनों की typeof output "object" होती है, लेकिन वे अलग-अलग तरह से काम करते हैं। Arrays और functions दोनों iterable होते हैं, जबकि plain objects by default iterable नहीं होते। 
-
-1. **Arrays और functions iterable होते हैं।** आप arrays के लिए for-of loop का उपयोग कर सकते हैं क्योंकि वे iterable होते हैं।
-2. **Plain objects iterable नहीं होते।** अगर आपको objects के keys या values को iterate करना है, तो आप for-in loop का उपयोग कर सकते हैं।
-
-उदाहरण:
-- **Arrays:** for-of loop का उपयोग कर सकते हैं।
-- **Objects:** for-in loop का उपयोग कर सकते हैं।
-
-*/
-
-//-- 🔥🧐 We can add key,value and function inside the array
-
-/*
---More About array
-
-let arr = [1, "Yash", "Ram", "Hello"];
-
-// Adding a property to the array
-arr.name = "Amit";
-
-// Adding a method to the array
-
-arr.a = function(){
-  console.log("I am a function inside the array");
-}
-
-console.log(arr); // Outputs the array with added properties and methods
-
-console.log(arr.length); // Outputs: 4
-
-**Explanation:**
-- We start with an array containing four elements.
-- We then add a property `name` and a method `a` to the array.
-- The `length` property of the array remains 4. This is because the `length` property only counts the numeric indices (elements) in the array, not the additional properties or methods.
-
-// Adding an element at index 10
-
-arr[10] = "Rahul";
-
-console.log(arr); // Outputs the array with "Rahul" at index 10 and undefined for missing indices
-
-console.log(arr.length); // Outputs: 11
-console.log(arr[8]); // Outputs: undefined (since no value is assigned at index 8)
-console.log(arr[10]); // Outputs: "Rahul"
-console.log(arr[15]); // Outputs: undefined (since no value is assigned at index 15)
-
-
-**Explanation:**
-
-- We add an element "Rahul" at index 10 of the array.
-- The `length` of the array now becomes 11. This is because the array now has elements from index 0 to 10, even though some of these elements are `undefined`.
-- Accessing `arr[8]` returns `undefined` because no value is assigned at that index.
-- Accessing `arr[10]` returns "Rahul" because we explicitly assigned a value at that index.
-- Accessing `arr[15]` returns `undefined` because no value is assigned at that index.
-
-**Key Points:**
-
-1. **Array Length:** The `length` property of an array only counts numeric indices (elements), not additional properties or methods added to the array.
-2. **Adding Properties/Methods:** Adding properties or methods to an array does not affect its length.
-3. **Sparse Arrays:** Assigning a value to a higher index (e.g., 10) creates a sparse array, where intermediate indices (e.g., 4 to 9) are `undefined`.
-
---- About array
-
->1. `shift()`
- **`shift()`**:
-  - **Use:** Removes and returns the first element of an array.
-
-let arr = [1, 2, 3, 4];
-let firstElement = arr.shift();
-
-console.log(firstElement); // Outputs: 1
-console.log(arr); // Outputs: [2, 3, 4]
-
-
- >2. `Object.keys()`
- **`Object.keys()`**:
-  - **Use:** Returns an array of the object's property names (keys) work on both arrya and object.
-
-
-let obj = { name: "Yash", age: 21, role: "Front End Developer" };
-let keys = Object.keys(obj);
-
-console.log(keys); // Outputs: ["name", "age", "role"]
-
->3. `Object.values()`
- **`Object.values()`**:
-  - **Use:** Returns an array of the object's property values  work on both arrya and object..
-
-**Example:**
-
-let obj = { name: "Yash", age: 21, role: "Front End Developer" };
-let values = Object.values(obj);
-
-console.log(values); // Outputs: ["Yash", 21, "Front End Developer"]
-
-
->4. `Object.entries()`
-**`Object.entries()`**:
-  - **Use:** Returns an array of the object's property [key, value] pairs.
-  
-let obj = { name: "Yash", age: 21, role: "Front End Developer" };
-let entries = Object.entries(obj);
-
-console.log(entries); // Outputs: [["name", "Yash"], ["age", 21], ["role", "Front End Developer"]]
-
---About function
-
-In JavaScript, functions are a special type of object. Although using `typeof` on a function will return `"function"`,
-functions are indeed objects. This means you can add properties and methods to them just like you would with any other object.
-
-So, even though `typeof` returns `"function"`, you can think of functions as objects with additional capabilities. 
-
-Here's a quick example:
-
-function example() {
-  console.log("I am a function.");
-}
-
-// Adding a property to the function
-example.description = "This is a function object.";
-
-// Adding a method to the function
-example.sayHello = function() {
-  console.log("Hello!");
-};
-
-console.log(typeof example); // "function"
-console.log(example.description); // "This is a function object."
-example.sayHello(); // "Hello!"
-
-
-In this example, `example` is a function, but it also has properties and methods, demonstrating that functions are
-indeed objects in JavaScript.
-
-Method:In simple terms, a method is a function that belongs to an object. It allows you to perform actions or compute values
-related to that object.Property of an Object: 
 */
 
 //#18)Imperative Programming vS Declarative Programming
@@ -443,15 +296,7 @@ features and functions. Polyfills are crucial for maintaining cross-browser comp
 allowing developers to use the latest features while ensuring older browsers can still function correctly.
 
 
-//#24) What is window obejct in browser ?
 
-/*
-The browser automatically creates a window object.The window object represents a window in the browser 
-and provides access to the browser's features and functions,alert(), setTimeout(),prompt() etc.  
-
-Window is the object of browser, it is not the object of javascript. The javascript objects are string, 
-array, date etc. 
-*/
 
 
 
@@ -469,7 +314,6 @@ function add(a,b){
 let result=add.bind(this,4)
 
 console.log(result(2))
-
 
 
 --With Closer
@@ -502,147 +346,7 @@ function stepOne(name) {
 
 stepOne("Yash")("Lemon Tea")("One cup");
 
-*/
 
-//#27) What is constructor in Javascript ?
-/*
-
-- **Constructor**: With the help of construcot we can define the we can define the object and and it's properties.
-- **`new` keyword**: When you use the `new` keyword with a constructor function, it creates a new instance of an object.
-- **`this` keyword**: Inside the constructor, `this` refers to the new object that is being created, allowing you to set properties on that object.
-
--- Example Recap:
-
->Example one : 
-
-function Car(make, model) {
-    this.make = make;  // 'this' refers to the new Car object
-    this.model = model;
-}
-
-let myCar = new Car('Toyota', 'Corolla');
-console.log(myCar);  
-
-// Output: Car { make: 'Toyota', model: 'Corolla' }
-
-
-In this example:
-- The `Car` function is a **constructor**.
-- The `new` keyword is used to create an object, `myCar`, from the `Car` constructor.
-- The `this` keyword refers to the `myCar` object inside the `Car` constructor, allowing the properties `make` and `model` to be set.
-
->Example Two :
-*/
-function UserData(name, age, role) {
-  this.name = name;
-  this.age = age;
-  this.role = role;
-
-  this.userInfo = function () {
-    return `Hello My name is ${this.name} and my age is ${this.age} and I am 
-    ${this.role} Developer`;
-  };
-}
-
-let userOne = new UserData("Yash", "22", "FrontEnd");
-
-let userTwo = new UserData("Ram", "25", "Full Stack");
-
-console.log(userOne.userInfo());
-console.log(userTwo.userInfo());
-
-//#28)Prototype and Prototype inheritance
-
-/*
--- In JavaScript, every object has a hidden internal property known as Prototype.
-
->What is Prototype Inheritance ?
-
-/*
-Inheritance means one object is trying to access property of other objects,
-and overall prototype inheritance ka bhi means ye hi hota hai.
-
-Prototype inheritance is a feature of JavaScript that allows objects to inherit 
-properties and methods from their prototype. If a property or method isn’t found 
-directly on an object, JavaScript will look for it in the object’s prototype. 
-If it’s not found in the prototype, it will keep looking up the chain until it 
-finds the property or reaches the end of the chain (where the prototype is null).
-
---Example 
-
-let userOne={
-  name:"Yashu",
-  age:"22"
-}
-
-let userTwo={
-  name:"Ram"
-}
-
-userTwo.__proto__=userOne;
-
-console.log(userTwo.age)
-
---But
-
->Why It's Not Ideal to Use `__proto__` Directly:
-
-1. Performance: Direct manipulation of `__proto__` can lead to performance issues, as it changes 
-the internal prototype chain, which is generally not as fast as other methods.
-  
-2. Readability and Maintainability: Using `__proto__` can make your code harder to understand 
-and maintain, especially in larger projects.
-
->Recommended Approach:
-
-Instead of using `__proto__`, you can use `Object.create()` to create `userTwo` with `userOne` 
-as its prototype:
-
-let userOne={
-  name:"Yashu",
-  age:"22"
-}
-
-let userTwo={
-  name:"Ram"
-}
-
-userTwo=Object.create(userOne)
-
-console.log(userTwo.age)
-
-
-Explanation:
-- `Object.create(userOne)` creates a new object (`userTwo`) with `userOne` as its prototype.
-- `userTwo` inherits the properties of `userOne`, so `userTwo.age` will return `22`.
-
-*/
-
-//#30)This is why js is synchronous and asynchronous in  nature .
-
-/*
-
->Synchronous 
-
-console.log("Hi I am a one");
-
-for (let a=0; a<=10; a++){
-    console.log(a);
-}
-
-console.log("Hi I am a Two ")
-
->Asynchronous 
-
-console.log("Hi I am a one");
-
-for (let a=0; a<=10; a++){
-    setTimeout(()=>{
-      console.log(a);
-    })
-}
-
-console.log("Hi I am a Two ");
 
 */
 
@@ -685,91 +389,6 @@ I am setTime out
 
 I am setTime out
 I am promise
-
-*/
-
-//#38) About  Coercion (koversion) and  comparision operator
-/*
-
->>Coercion :
-
-- Coercion is when JavaScript **automatically** converts one data type to another during comparisons or operations. 
-This is done to make different types of values comparable.
-
-  - Example: `5 == '5'` → JavaScript converts `'5'` (a string) to `5` (a number), so the result is `true`.
-
->>No Coercion :
-
-- No coercion means JavaScript **does not** automatically convert types. The values must match exactly in both
- type and value for the comparison to be true.
-
-  - Example: `5 === '5'` → Since a number and a string are different types, the result is `false`.
-
-
-
->>Previous Explanation :
-
-When I said **why they are called coercion and no coercion**, I meant:
-
-- Coercion (`==`, `!=`) happens because JavaScript **converts** values to the same type before comparing.
-- No coercion (`===`, `!==`) means JavaScript checks both the **value and type** without any conversion.
-
-
->>1. Equal (`==`) (performs type coercion).
-  -- Compares values but not types (loose comparisons).  
-   
-   console.log(5 == '5'); // true (number and string are compared as equal)
-   
-
->>.2. Strict Equal (`===`)  (no type coercion).
- --  Compares both values and types (strict comparisons).  
-
-   console.log(5 === '5'); // false (number vs string, different types)
-
-
->>.3. Not Equal (`!=`)  (performs type coercion).
-   Compares values but not types (performs type coercion).  
-
-   console.log(5 != '5'); // false (values are the same after coercion)
-
-
->>.4. Strict Not Equal (`!==`)  (no type coercion).
-   Compares both values **and types** (no type coercion).  
- 
-   console.log(5 !== '5'); // true (different types, so not equal)
-
-
->>5. Greater Than (`>`)  
-   Checks if the left value is greater than the right value.  
-   
-   console.log(10 > 5); // true
-
-
->>6. Less Than (`<`)  
-   Checks if the left value is less than the right value.  
-
-   console.log(5 < 10); // true
-   
-
->>7. Greater Than or Equal (`>=`)  
-   Checks if the left value is greater than or equal to the right value.  
- 
-   console.log(10 >= 10); // true
-
-
->>8.Less Than or Equal (`<=`)  
-   Checks if the left value is less than or equal to the right value.  
-
-   console.log(5 <= 5); // true
-  
-
-These are essential in decision-making (conditions) in JavaScript, and they work with `if-else` or ternary operators.
-
-
->> Additional Tip:
-
-Always use `===` and `!==` for strict comparisons to avoid unexpected results from type coercion! This will help you 
-write more reliable and bug-free code.
 
 */
 
