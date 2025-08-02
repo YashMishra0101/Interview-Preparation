@@ -730,7 +730,54 @@ Create a class `BankAccount` that demonstrates the concept of **Encapsulation** 
 
 #30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
-#31) What is Type Coercion (koversion) vs Type casting and Concatenation
+#31) What is Type Coercion (koversion) vs Type casting and Concatenation.
+
+#32)Shallow copy and deep copy question.
+
+>A)Create a Shallow copy of the profile object using any method you prefer.
+
+const profileOne = {
+  name: "Yashu",
+};
+
+>B)Create a Deep copy of the profile object using any method you prefer.
+
+const profile = {
+  name: "Yashu",
+  social: {
+    twitter: "@yashdev"   --->Shallow copy not possible
+  }
+};
+
+>C)
+const user = {
+  name: "Yashu",
+  skills: ["JS", "React"],
+  address: {
+    city: "Delhi",
+    pin: 110001
+  },
+  createdAt: new Date()
+};
+
+>D)
+const user = {
+  name: "Yashu",
+  skills: ["JS", "React"],
+  address: {
+    city: "Delhi",
+    pin: 110001
+  },
+  createdAt: new Date(),
+  info(){
+    console.log(`I name is ${this.name} my skill are ${this.skills[0]},${this.skills[1]} and I am living at ${this.address.city} ${this.address.pin}`);
+  }
+};
+
+
+
+
+
 
 
 

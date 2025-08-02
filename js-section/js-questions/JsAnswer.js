@@ -1562,6 +1562,84 @@ console.log(usersAge.userTwoName);
 ---Type Coercion (koversion) vs Type casting and Concatenation concepts are available in “Concepts” section.
 Ctrl + F ➤ Just search in concepts section : #20)  
 
+#Asn 32)
+
+>🤚 IMP: Summary for Deep vs Shallow Copy:
+
+-- ✅For shallow copy, use the spread operator `{...}` or `Object.assign()` — but remember, it only copies the first layer.
+
+-- ✅ For Deep copy:
+
+=> Use `structuredClone()` It can create deep copy, but it cannot work with functions , moder way (Node 17+, Chrome 98+).
+=> Use `_.cloneDeep()` from Lodash for deep copy it work with functions also. (you're working with older browsers or complex structures)
+
+
+>A)
+//shallow copy 
+
+let profileTwo={...profileOne};
+
+profileTwo.name="Ram";
+
+console.log(profileOne);//Yashu
+console.log(profileTwo);//Ram
+
+>B)
+//Deep Copy (In this we can not use shallow copy technique)
+
+let newProfile=structuredClone(profile);
+
+newProfile.name="Shiva";
+newProfile.social.twitter="shiva@dev"
+
+console.log(profile);
+console.log(newProfile);
+
+>C)
+const copy = structuredClone(user);
+
+copy.name="Ram";
+copy.skills.push("Node.js");
+copy.address.city = "Mumbai";
+
+console.log("Original:", user);
+console.log("Copy:", copy);
+
+>D)
+//Deep copy with Lodash ( _.cloneDeep(); ) and We are Using Lodash via CDN in Vanilla JS
+
+let newUser= _.cloneDeep(user);
+
+newUser.name = "Vani";
+newUser.skills[0]="Node.js";
+newUser.skills[1]="Express";
+newUser.address.city = "Mumbai";
+newUser.address.pin="9999";
+
+console.log(user);
+user.info();
+
+console.log(newUser);
+newUser.info()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //#25)
 

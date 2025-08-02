@@ -1117,16 +1117,16 @@ let userInfo={
 
 let newAge=userInfo.age="23"
 
-console.log(userInfo.age);
-console.log(newAge);
+console.log(userInfo.age);//23
+console.log(newAge);//23
 
 
 let arr=[1,2,3,4,5];
 let change=arr;
 
 change[0]=8888;
-console.log(change);
-console.log(arr);
+console.log(change);//8888
+console.log(arr);//8888
 
 >Summary :
 
