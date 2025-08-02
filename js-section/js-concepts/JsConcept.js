@@ -1789,4 +1789,129 @@ let infinityFunctionCurrying = (a) => {
 let resultInfinityFunctionCurrying = infinityFunctionCurrying(1)(2)(3)(4)();
 console.log(resultInfinityFunctionCurrying); //10
 
+
+#23)Higher Order Function in Javascript
+
+const companies = [
+  { name: "Google", category: "Product Based", start: 1981, end: 2004 },
+  { name: "Amazon", category: "Product Based", start: 1992, end: 2008 },
+  { name: "Paytm", category: "Product Based", start: 1999, end: 2007 },
+  { name: "Coforge", category: "Service Based", start: 1989, end: 2010 },
+  { name: "Mindtree", category: "Service Based", start: 1989, end: 2010 },
+];
+
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+>Normal for loop
+for (let a = 0; a < companies.length; a++) {
+  if (companies[a].name === "Paytm") {
+    break;
+  } else {
+    console.log(companies[a]);
+  }
+}
+
+>For...of loop
+We can use break and continue in a for...of loop. However, we cannot use return directly in a for...of loop 
+unless it is inside a function. If the loop is inside a function, then the return statement can be used to return a value.
+
+---Example
+for(let company of companies ){
+ if(company.name==="Paytm"){
+  continue;
+ }
+ else{
+   console.log(company.name);
+ }
+}
+
+>forEach
+We cannot use break or continue with forEach. These keywords only work with traditional loops like for, while,
+or do...while. Also, forEach does not return anything. If we want to return a new array or value, we should use 
+map, filter, or reduce instead
+
+---Example
+array.forEach((element,index,array)=>{
+   console.log(array);
+})
+
+companies.forEach((company, index, array) => {
+  console.log(company);
+});
+
+>filter
+--The main difference is that filter() returns and creates a new array, but forEach() doesn’t.
+
+---Example
+let data=companies.filter((company) => {
+  if (company.category === "Service Based") {
+    return company.name;
+  }
+});
+
+console.log(data);
+
+>map
+
+So, with the help of map(), we can modify each element in the array.Even though we might try using filter()
+for that there is no issue but it’s not meant for modifying it's meant for selecting.
+That’s why JavaScript provides separate higher-order functions for different tasks like map
+for transforming, filter for selecting, and forEach for looping.
+
+---Example
+let doubledAges=ages.map((age)=>{
+  return age*2
+})
+
+console.log(doubledAges);
+
+>sort
+---With the help of sort we sort the  element Ascending or Descending order
+
+---Syntax
+let data=array.sort((a,b)=>{
+   return a-b (For Ascending)
+   return b-a (For Descending)
+})
+
+---Example
+let filterAge = ages.sort((a, b) => {
+  // return a-b
+  return b - a;
+});
+
+console.log(filterAge);
+
+let filterCompanies = companies.sort((a, b) => {
+  // return a.start-b.start
+  return b.start - a.start;
+});
+
+console.log(filterCompanies);
+
+>reduce
+reduce() is a powerful method used on arrays to reduce the array to a single value — like a total, average, merged object, etc.
+It goes element by element and carries forward a result (called accumulator) until it's done with the whole array.
+
+--Syntax
+array.reduce((accumulator, currentValue, index, array) => {
+  // logic
+}, initialValue);
+
+
+---Only 2 things you REALLY need to care about:
+
+=>accumulator = value carried from the previous step
+
+=>currentValue = the current element of the array
+
+=>initialValue = (optional) starting value of the accumulator
+
+--Example:
+
+let total = ages.reduce((total, currentValue) => {
+  return total + currentValue;
+}, 0);
+
+console.log(total);
 */
