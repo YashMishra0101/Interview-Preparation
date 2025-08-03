@@ -1914,4 +1914,88 @@ let total = ages.reduce((total, currentValue) => {
 }, 0);
 
 console.log(total);
+
+#24)🍰 `slice()` vs 🍕 `splice()` in JavaScript:
+
+
+--- 1️⃣ `slice()` – **Non-destructive**, makes a copy
+
+
+let arr = [1, 2, 3, 4, 5];
+let sliced = arr.slice(1, 4);
+console.log(sliced); // 👉 [2, 3, 4]
+console.log(arr);    // 👉 [1, 2, 3, 4, 5] ✅ Original remains
+
+
+* ✅ Doesn’t modify original array
+* 🧠 Syntax: `array.slice(start, end)` (end is **exclusive**)
+* 📦 Returns a shallow copy of the portion
+
+
+--- 2️⃣ `splice()` – **Destructive**, changes original array
+
+
+let arr = [1, 2, 3, 4, 5];
+let spliced = arr.splice(1, 2);
+console.log(spliced); // 👉 [2, 3]
+console.log(arr);     // 👉 [1, 4, 5] ❌ Original changed
+
+* ❌ Modifies original array
+* 🧠 Syntax: `array.splice(startIndex, deleteCount, repalceitems)`
+* 🧨 Can delete, insert, or replace items
+
+
+--- 3️⃣ Use `slice()` when:
+
+* You want to extract a piece of the array
+* You **don't** want to touch the original array
+* Works great for copying arrays or strings
+
+
+--- 4️⃣ Use `splice()` when:
+
+* You want to **edit** the array (insert, remove, replace)
+* You’re okay with changing the original array
+
+
+--- 5️⃣ Visual Difference Table 📊
+
+| Feature        | `slice()`           | `splice()`                     |
+| -------------- | ------------------- | ------------------------------ |
+| Changes array? | ❌ No               | ✅ Yes                        |
+| Return value   | New array           | Removed items (array)          |
+| Use case       | Copying, extracting | Inserting, deleting, replacing |
+| Syntax         | `slice(start, end)` | `splice(start, count, items)`  |
+
+
+#25)  Throttling and  Debouncing
+
+>🔁 Throttling:
+
+=> It depends on the event, but limits how **frequently** the function runs.
+=> Even if the event is triggered **100 times**, throttling lets the function run
+ only once in a specific time (like every 1 second).
+
+👉 Example:
+1)
+You scroll continuously → the event fires constantly → throttling runs the function every 1s (e.g., update scroll position).
+
+2)
+If you're using GPS to track a delivery boy’s location, it doesn't make sense to update the map every millisecond 😤 — it’ll kill battery and waste network calls.
+So we throttle the location update API to fire every 5 seconds, even if GPS sends updates more frequently.
+
+>⏳ Debouncing:
+
+=> It depends on the event, but waits for the user to stop triggering it.
+=> If the event keeps firing, the function **never runs**. It runs **only after a pause (when no event triggers for X ms).
+
+👉 Example:
+Typing in a search bar → debounce waits till you stop typing → runs the search function after 500ms of silence.
+
+
+> In simple language :
+
+Throttling means the function can run at most once every specific time, even if the event keeps 
+triggering. Debouncing means the function runs only **after the event has stopped for a certain time.
+
 */

@@ -749,7 +749,7 @@ const profile = {
   }
 };
 
->C)
+>C)Create a deep copy each of them
 const user = {
   name: "Yashu",
   skills: ["JS", "React"],
@@ -760,7 +760,7 @@ const user = {
   createdAt: new Date()
 };
 
->D)
+>D)Create a deep copy each of them
 const user = {
   name: "Yashu",
   skills: ["JS", "React"],
@@ -773,6 +773,49 @@ const user = {
     console.log(`I name is ${this.name} my skill are ${this.skills[0]},${this.skills[1]} and I am living at ${this.address.city} ${this.address.pin}`);
   }
 };
+
+#33)Based on slice and splice
+
+let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
+
+Question 1:
+How would you create a new array with only `"Vani"` and `"Code"` **without modifying** the original?
+
+Question 2:
+How would you **remove** `"Code"` and `"Fun"` from the array and **add** `"Success"` in their place?
+
+#34)How to generate a random number between two numbers ?
+
+#35)Tell me the output of both of these lines and explain why:
+
+console.log([] == false);  
+console.log([] === false);
+
+
+#36)Which of the following is NOT an immutable operation ?
+a) `map()`
+b) `filter()`
+c) `splice()`
+d) `concat()`
+
+#37)What is the output of this code ?
+
+>a)
+async function name(){
+    return "Yash"
+}
+console.log(name());
+
+>b)
+async function age(){
+    return await "23"
+}
+console.log(age());
+
+
+
+
+
 
 
 

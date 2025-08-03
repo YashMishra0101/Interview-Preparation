@@ -1622,8 +1622,49 @@ user.info();
 console.log(newUser);
 newUser.info()
 
+#Ans 33)
+let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
+
+let ansOne=names.slice(1,3);
+console.log(ansOne);
+
+let ansTwo=names.splice(2,2,"Sucess");
+console.log(names);
+
+#Ans 34)
+let randomNumber = (numOne, numTwo) => {
+  return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
+};
+console.log(randomNumber(2, 10));
+console.log(randomNumber(2, 10));
+console.log(randomNumber(2, 10));
+
+#Ans 35)
+console.log([] == false);
+=>true 
+When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
+number, and false is converted into 0, that's why answer is true.
+
+console.log([] === false);
+=>false
+JS does NOT convert values when using === , That’s the whole point of strict equality — it compares values as-is, 
+without converting them.
+
+#Ans 36)
+ Answer: c) `splice()`
+
+`splice()` modifies the original array → ❌ mutable
+`map()`, `filter()`, and `concat()` return a new array without changing the original → ✅ immutable
+
+So, `splice()` is the only **mutable** one among them 👀
 
 
+#Ans 37)
+>a)
+Promise {<fulfilled>: 'Yash'}
+
+>b)
+Promise {<pending>}
 
 
 
