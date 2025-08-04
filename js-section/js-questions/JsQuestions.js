@@ -813,67 +813,11 @@ async function age(){
 console.log(age());
 
 
+#38) What is Bable and webpack ? Answer not added yet 👨‍💻
 
+#39) Why is Node.js necessary?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//#17)What is Bable and webpack ?
-
---1. Babel
-
-Babel is a JavaScript transpiler that converts modern JavaScript (ES6+) into older, browser-compatible 
-JavaScript. This ensures your code works in all browsers, even those that don’t support the latest
-features.
-
-Purpose: It converts modern JavaScript (ES6/ES7+) into older JavaScript (ES5) that works
-in all browsers.
-
-Why it's important: Not all browsers support the latest JavaScript features, so Babel ensures 
-your code is compatible with older browsers.
-
---2. Webpack
-
-Webpack is a module bundler. It takes all your project’s files (JavaScript, CSS, images)
-and bundles them into one (or a few) optimized files, improving performance and managing 
-dependencies.
-
-Purpose: It bundles your JavaScript, CSS, and other assets into a single file (or smaller chunks) 
-for faster browser loading.
-
-Why it's important: Webpack helps in managing dependencies and improving performance by bundling 
-and optimizing files for deployment.
-
-
-#18) Why is Node.js necessary?
-
-1. To use npm (Node Package Manager):  
-   - Reason: Node.js comes with npm (Node Package Manager), which is essential for installing
-    and managing JavaScript packages like TypeScript, React, and other libraries used in development. 
-    Without npm (Node Package Manager), you can’t easily install these packages.
-  
-2. **To run JavaScript outside the browser**:  
-   - Reason: Node.js provides a JavaScript runtime environment, allowing you to run JavaScript
-    on the server-side or locally (e.g., running backend services or development tools).
-
-3. **For modern development tools**:  
-   - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
-   Node.js is required to run these tools for building and optimizing code.
-
-#19) For version Checking which command is good: --version, -v, --v, or -version?
+# For Knowledge Purpose: For version Checking which command is good: --version, -v, --v, or -version ?
 
 With the help of these commands (--version, -v, --v, and -version), we can check the version of 
 installed tools. But, but, but...
@@ -885,18 +829,8 @@ do not work.
 
 >>Therefore, it's better to use --version and -v consistently to avoid issues.
 
-#20)What is TypeScript ?
 
-TypeScript is a statically typed superset of JavaScript that enhances code quality, maintainability, and 
-readability. It ensures type safety during development, which helps prevent runtime errors, especially in 
-large-scale applications.
-
-> Extra Tip:
-When discussing TypeScript, make sure to mention that it’s widely used in larger applications to improve 
-reliability** and make **refactoring** easier. It also **transpiles** into JavaScript, so it can run in 
-any environment where JavaScript runs!
-
-#21)What is -g ?
+# For Knowledge Purpose: What is -g ?
 
 -g (Global Installation):
 When you use the -g flag with npm (e.g., npm install -g <package-name>), it means you are installing the 
@@ -910,82 +844,32 @@ in any project without needing to install it separately in each project folder.
 Installs the package only in the current project’s node_modules folder, and it is available only within that 
 specific project.
 
+#40)What is JSX ? Answer not added yet 👨‍💻
 
-#22)What is JSX ?
-
-JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code directly 
-within your JavaScript files. It is primarily used in React to describe what the UI should look like.
-
-JSX simplifies the process of creating React components and enhances the readability of the code, allowing 
-developers to build user interfaces more efficiently.
-
-#23)What is ts and tsx in react vite ?
-
-  --  ts = Typescript and tsx = Typescript XML.
-  - .ts : This is a TypeScript file that can contain plain TypeScript code. It does **not** support JSX syntax.
-  - .tsx : This is a TypeScript file that **does** support JSX syntax, allowing you to write React components.
-  - .ts for files that do not contain any React components or JSX.
-  - .tsx for files that contain React components, JSX, or any JSX expressions.
-  - Use `.ts` for standard TypeScript files without JSX.
-  - Use `.tsx` when writing React components that include JSX.
-
-> Using `.ts` File
-
-This file contains TypeScript code without any JSX:
-
-```typescript
-// example.ts
-const greet = (name: string): string => {
-  return `Hello, ${name}!`;
-};
-
-console.log(greet('Yashu'));
-
-
->  Using `.tsx` File
-This file contains a React component with JSX:
-
-```typescript
-// ExampleComponent.tsx
-
-import React from 'react';
-
-const ExampleComponent: React.FC = () => {
-  return (
-    <div>
-      <h1>Hello, Yashu!</h1>
-    </div>
-  );
-};
-
-export default ExampleComponent;
-
-
-
-#25)
-Swap Two Variable (Three Ways)
+#41) Swap two variables using three different methods.
 
 let a=30;
 let b=600;
 
-#26)
-Can you write this same array destructuring swap logic for three variables?
-Like x = 1, y = 2, z = 3 → swap x -> y, y -> z, z -> x
+#42)
+Can you write the same array destructuring swap logic for three variables?
+Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
 
-#27)
+#43) Tell me the output of this code .
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#28)
+#44) Solve this
 let a=5859;
 
-1)Remove last digit and print all the remaiing digit 585.
-2)Print only last digit 9.
+1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
+2)Print only the last digit of the number. (Expected output: 9)
 
-#29)
+
+#45) Evaluate the following JavaScript expressions and state whether they return true or false:
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
 console.log(100=="100" || 2>-9 || 88<102)
@@ -993,7 +877,7 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
-#30)
+#46) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
 
 1)
 let a=10;
@@ -1059,32 +943,51 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-#31)
-A)Firt Generate 4 digit otp then Generate 5 digit otp.
-B)Area of rectangle (Formula : Lenght*Breadth) and Perimeter of rectangle (Formula : 2(Length * Breadth)
-let l=10;
-let b=20;
-c)Find circumference of circle , Formula 2*pi*r (We need only Two value after decimal and number not string so type also)
-let radius=5;
+#47) Solve These Questions.
 
-#32) Given an array of integers, calculate the total of all its values.
+>A) Generate OTPs
+1. Generate a 4-digit OTP
+2. Generate a 5-digit OTP
+
+>B) Rectangle Calculations**
+
+let l = 10;
+let b = 20;
+
+1. Calculate the Area of the rectangle
+  Formula: `Length * Breadth`
+
+2. Calculate the **Perimeter** of the rectangle
+  Formula: `2 * (Length + Breadth)`
+
+
+>C) Circumference of a Circle**
+
+Using:
+let radius = 5;
+
+1. Find the **circumference of a circle** using the formula:
+  👉 `2 * π * r`
+  (Result must be a number, not a string — and limited to 2 decimal places.)
+
+#48) Given an array of integers, calculate the total of all its values.
 
 let arr=[10,20,30,40,50];
 
-#33) Find the largest value in an array.
+#49) Find the largest value in an array.
 
 let arr=[10,20,78,30,85,40,50,];
 
-#34) Find the lowest value in the array.
+#50) Find the lowest value in the array.
 
 let arr=[10,20,78,4,30,85,40,50,];
 
-#35) Find the first and second maximum values from the array, Create a solution that can find the first and second maximum values from the arrays given below:
+#51) Find the first and second maximum values from the array, Create a solution that can find the first and second maximum values from the arrays given below:
 let arr1 = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
 let arr2 = [50, 50, 50, 50];
 let arr3 = [99, 99, 99, 89, 87];
 
-#36)Reverse the array
+#52)Reverse the array
 
 let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
 

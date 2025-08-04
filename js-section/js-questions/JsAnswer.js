@@ -1666,25 +1666,30 @@ Promise {<fulfilled>: 'Yash'}
 >b)
 Promise {<pending>}
 
+#Ans 38)
+- Answer not present yet 👨‍💻
 
+#Ans 39)
 
+1. To use npm (Node Package Manager):  
+   - Reason: Node.js comes with npm (Node Package Manager), which is essential for installing
+    and managing JavaScript packages like TypeScript, React, and other libraries used in development. 
+    Without npm (Node Package Manager), you can’t easily install these packages.
+  
+2. **To run JavaScript outside the browser**:  
+   - Reason: Node.js provides a JavaScript runtime environment, allowing you to run JavaScript
+    on the server-side or locally (e.g., running backend services or development tools).
 
+3. **For modern development tools**:  
+   - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
+   Node.js is required to run these tools for building and optimizing code.
 
+#Ans 40)
+- Answer not present yet 👨‍💻
 
+#Ans 41)
 
-
-
-
-
-
-
-
-
-
-
-//#25)
-
-1)Using Third Variable
+1)First Way : Using Third Variable
 
  let c;
 
@@ -1695,7 +1700,7 @@ Promise {<pending>}
  console.log(a);
  console.log(b);
 
-2)Without using Third Vairble
+2)Second Way: Without using Third Vairble
 
  a=a+b;//630
  b=a-b;//630-600=30
@@ -1703,12 +1708,13 @@ Promise {<pending>}
 
  console.log(a,b);
 
-3)Swapping using Destructuring Assignment
+3)Third Way : Swapping using Destructuring Assignment
 [a,b]=[b,a]
 console.log("a=",a);
 console.log("b=",b);
 
-#26)
+
+#Ans 42)
 
 let x = 1;
 let y = 2;
@@ -1717,21 +1723,21 @@ let z = 3;
 [x,y,z]=[y,z,x]
 console.log(x,y,z);
 
-#27)
+#Ans 43)
 let a=8;
 let b=2;
 
 console.log(8%2)//0
 console.log(2%8)//2
 
-#28)
+#Ans 44) 
 let a=5859;
 
-console.log(Math.floor(a/10));//585
-console.log(a%10); //9
+console.log(Math.floor(a / 10)); // 585
+console.log(a % 10); // 9
 
-#29)
 
+#Ans 45) 
 console.log(10>5 && -55<56 && 67<88)//ture
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
@@ -1739,7 +1745,7 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
-#30)
+#Ans 46)
 Context 
 Unary Operator (++,--)
 
@@ -1828,7 +1834,7 @@ let p=10;
 let ans=++(p++)
 First brakcet solved so :  ++(p++)=++11; (so after brakcet solved ++ is applying on constant value that's why it's giving error)
 
-#31)
+#Ans 47)
 1)
 console.log(Math.trunc(1000+Math.random()*9000)); // 4 Digit Otp
 console.log(Math.trunc(10000+Math.random()*9000)); // 5 Digit Otp
@@ -1846,7 +1852,7 @@ let ans =Number((2*Math.PI*radius).toFixed(2))
 console.log(typeof(ans));
 console.log(ans);
 
-#32)
+#Ans 48)
 let arr=[10,20,30,40,50];
 
 let arrTotal=0;
@@ -1856,7 +1862,7 @@ for(let i=0; i< arr.length ; i++){
 
 console.log(arrTotal);
 
-#33)
+#Ans 49)
 let arr=[10,20,78,30,85,40,50,];
 
 ---First Solution :
@@ -1894,7 +1900,7 @@ let max=Math.max(...arr)
 console.log(max);
 
 
-#34)
+#Ans 50)
 let arr=[10,20,78,4,30,85,40,50,];
 
 ---First Solution
@@ -1931,7 +1937,7 @@ let arr=[10,20,78,4,30,85,40,50,];
 let min=Math.min(...arr)
 console.log(min);
 
-#35)
+#Ans 51)
 let arr = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
 let arr = [50, 50, 50, 50];
 let arr = [99, 99, 99,89, 87];
@@ -1961,7 +1967,7 @@ let secondMaxValue = () => {
 
 console.log(secondMaxValue());
 
-#36)
+#Ans 52)
 
 ---First Solution
 
