@@ -991,52 +991,52 @@ let arr3 = [99, 99, 99, 89, 87];
 
 let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
 
-#37)Put 0s on left and 1s on right side.
+#53)Put 0s on left and 1s on right side.
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
-#38)Print Each Charcter on new line.
+#54)Print Each Charcter on new line.
 
 let s="ramratan";
 
-#39)Print the each Charcter on a reverse order on new line.
+#55)Print the each Charcter on a reverse order on new line.
 
 let s="ramratan";
 
-#40)Check the string is Palindrom or not .
+#56)Check the string is Palindrom or not .
 
 let a="abcdef";
 
-#41)Find two numbers in a sorted array whose sum equals the "target" using two pointers, Your target is 13 and the array is sorted.
+#57)Find two numbers in a sorted array whose sum equals the "target" using two pointers, Your target is 13 and the array is sorted.
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-#42)Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
+#58)Write a JavaScript function to toggle the case of each character in a given string Without using built-in methods like toUpperCase() or toLowerCase().
 let str="YAsh";
 
-#43)
+#59)
 Count how many times each character repeats in a string.
 
 let str = "zZabcdedcjbA";
 
-#44)
+#60)
 1)Use console.log() to display the current year.
-2)Create a two variable for first and last name.
+2)Create a two variable for first and last name and print it.
 3)Create a for loop that calculate the factorial of 5.
 4)Write a nested loop to print a 3x3 grid of numbers.
 1 2 3 
 4 5 6 
 7 8 9 
-5)Reverse the Array'
+5)Reverse the Array' (Use normal for loop, don't us pre build method or any sorting method just use normal loop)
 let arr=[1,2,3,4,5];
 
 
-#45)In JavaScript, what happens if you declare a variable without using let, const, or var?
+#61)In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-#46)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
+#62)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
-#47)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+#63)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context :
 
@@ -1073,7 +1073,7 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#48) Fibonacci Series – 3 Variations
+#64) Fibonacci Series – 3 Variations
 
 >Q1. Write a function to print the first `n` Fibonacci numbers.
 Example:
@@ -1100,7 +1100,7 @@ Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
-#49)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#65)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -1109,30 +1109,30 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#50)Write a function to calculate the sum of first n natural numbers without using a loop.
+#66)Write a function to calculate the sum of first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#51)Write a function to print Fibonacci numbers till n without using a loop.
+#67)Write a function to print Fibonacci numbers till n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 Explanation: Each number is the sum of the previous two numbers.
 
-#52)Write a function to calculate the sum of first n Fibonacci numbers without using a loop.
+#68)Write a function to calculate the sum of first n Fibonacci numbers without using a loop. => Answer not added yet 👨‍💻
 Example:
 Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
-#53)What is Memoization ?
+#69)What is Memoization ?
 
-#54)Merge Two sorted array ?
+#70)Merge Two sorted array ?
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
 
-#55)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+#71)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 */

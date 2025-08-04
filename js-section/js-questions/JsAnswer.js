@@ -2012,7 +2012,7 @@ while (a < b) {
 
 console.log(arr);
 
-#37)
+#Ans 53)
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
@@ -2032,7 +2032,7 @@ while(a<arr.length){
 console.log(arr);
 
 
-#38) 
+#Ans 54) 
 
 let s="ramratan";
 
@@ -2050,7 +2050,7 @@ for(let a of s){
 }
 
 
-#39)
+#Ans 55)
 
 let s="ramratan";
 
@@ -2059,7 +2059,7 @@ for(let a=s.length-1; a>0; a--){
     // console.log(s.charAt(a));
 }
 
-#40)
+#Ans 56)
 
 ---Solution One using pre build methods
 
@@ -2098,7 +2098,7 @@ let checkPalindrome = (str) => {
 };
 console.log(checkPalindrome("abbao"));
 
-#41)
+#Ans 57)
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let target = 13;
 let targetCheck = (arr) => {
@@ -2121,7 +2121,7 @@ let targetCheck = (arr) => {
 
 targetCheck(arr);
 
-#42)
+#Ans 58)
 let str="YAsh";
 let newStr="";
 for(let i=0; i<=str.length-1; i++){
@@ -2138,7 +2138,7 @@ for(let i=0; i<=str.length-1; i++){
 }
 console.log(newStr);
 
-#43)
+#Ans 59)
 
 let str = "zZabcdedcjbA";
 
@@ -2156,7 +2156,7 @@ for (let a = 0; a < str.length; a++) {
 
 console.log(count);
 
-#44)
+#Ans 60)
 --1)
 let getCurrentYear=new Date();
 console.log(getCurrentYear.getFullYear())
@@ -2207,7 +2207,7 @@ console.log(revArr);
 | `arr.reverse()` | O(n)            | O(1)             | ✅ Yes (Original array lost) |
 | `for` loop      | O(n)            | O(n)             | ❌ No  (Original array stil exit) |
 
-#45)
+#Ans 61)
 When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
 anywhere in the code—even from inside a function or block.
 
@@ -2236,7 +2236,7 @@ check()
 
 console.log(umar);
 
-#46)
+#Ans 62)
 >>Bubble Sort
 ---Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones move to the end.
 function bubbleSort(arr) {
@@ -2307,7 +2307,7 @@ console.log(insertionSort(arr));
 --TC: O(n²)
 --SC: O(1)
 
-#47) Answer
+#Answer 63)
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
 --- Loops vs Recursion in JavaScript 
@@ -2326,7 +2326,7 @@ However, JavaScript does not support Tail Call Optimization in most engines, mea
 recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
 safety, and reliability.
 
-#48)
+#Answer 64)
 
 >>1)
 let fiboNumber = (n) => {
@@ -2424,7 +2424,7 @@ let sumOfFiboLoop = (n) => {
 
 console.log(sumOfFiboLoop(10));
 
-#49)
+#Ans 65)
 >>N to One
 
 let nToOne = (n) => {
@@ -2445,7 +2445,7 @@ let OneToN = (n) => {
 
 OneToN(5);
 
-#50)
+#Ans 66)
 
 let sumNumbers = (n) => {
   if (n === 0) return 0;
@@ -2454,7 +2454,7 @@ let sumNumbers = (n) => {
 
 console.log(sumNumbers(10));
 
-#51)
+#Ans 67)
 let fiboNumber = (n) => {
   if (n <= 0) return [];
   if (n === 1) return [0];
@@ -2467,8 +2467,9 @@ let fiboNumber = (n) => {
 
 console.log(fiboNumber(10));
 
+#Ans 68)Answer not added yet 👨‍💻
 
-#53)Memoization
+#Ans 69)Memoization
 Memoization is an optimization technique used to speed up programs by saving time. It works by storing the 
 results of function calls in a cache. When the function is called again with the same inputs, it gets the 
 result from the cache instead of running the function again. This helps save time and system resources.
@@ -2476,7 +2477,7 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
-#54)Merge Two sorted Array
+#Ans 70)Merge Two sorted Array
 
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
@@ -2510,7 +2511,7 @@ let mergeArray = (arrayOne, arrayTwo) => {
 
 console.log(mergeArray(arrayOne, arrayTwo));
 
-#55)
+#Ans 71)
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 let target = 25;
 
