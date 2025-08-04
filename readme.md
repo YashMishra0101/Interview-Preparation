@@ -43,7 +43,9 @@ Each section contains:
 3. **Practice Section**: A dedicated space to practice related concepts and code hands-on.
    - 📝 _Note_: The pre-existing code reflects my personal practice. Feel free to modify it, break it, and rebuild it—your repo, your rules 😎
 
-Note : You may find some grammatical or spelling mistakes. But hey, coding is more important, right? 😜 So, ignore those slip-ups and focus on what truly matters—your code.
+## Note 🤚
+
+ You may find some grammatical or spelling mistakes. But hey, coding is more important, right? 😜 So, ignore those slip-ups and focus on what truly matters—your code.
 
 ## 📝 How to Contribute
 
@@ -72,7 +74,7 @@ For further reading and practice, check out these fantastic resources:
 
 - [MDN Web Docs (HTML, CSS, JS)](https://developer.mozilla.org/)
 - [React Official Documentation](https://reactjs.org/docs/getting-started.html)
-- [Frontend Interview Handbook](https://frontendinterviewhandbook.com/)
+
 
 ## ⭐️ Show Your Support
 
