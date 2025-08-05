@@ -165,8 +165,12 @@ Ans:
   3. Prevents Blocking: Avoids "render-blocking" issues caused by JavaScript in the `<head>`.
 
 - Exception: `async`/`defer`
-   - `async`: Loads the script in parallel with HTML but may not wait for the DOM to be fully loaded.
-   - `defer`: Loads the script while HTML is parsed but only executes after the HTML is fully loaded, maintaining the order of scripts.
+   - `async`:  When you add the async attribute, the script is downloaded in the background while the rest 
+      of the page continues to load. Once the script is fully downloaded, it will execute immediately,
+      potentially before the page is fully loaded.
+   - `defer`: The defer attribute also downloads the script in the background, but it waits to execute the 
+    script until the entire page has finished loading. This ensures that the script runs after the page 
+    content is fully available.
 
 For most cases, placing JavaScript just before `</body>` remains the preferred industry practice.
 

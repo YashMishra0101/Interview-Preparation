@@ -1,17 +1,19 @@
 *,
-*::before,
-*::after {
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .wrapper {
+  width: 100vw;
   min-height: 100vh;
-  max-width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
 }
 
-.wrapper.active {
+.wrapper.active{
   background-color: black;
 }
 
@@ -22,60 +24,68 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem;
+  padding: 0 2rem;
 }
 
 .nav-bar,
 .nav-links {
   display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 .nav-bar,
 .nav-links,
 li,
 a {
-  list-style: none;
   text-decoration: none;
-  gap: 3rem;
-  color: white;
+  list-style: none;
+  gap: 4rem;
+  align-self: center;
+  font-weight: 500;
 }
 
-.theme-toggle,
+.theme-toggle {
+  align-self: center;
+}
+
 #theme-toggle-button {
-  padding: 0.6rem;
   border: none;
+  padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
 }
 
-#hamburger-btn {
+.hamburger {
+  align-self: center;
   display: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  #hamburger-btn {
-    display: block;
-  }
   .header {
     position: relative;
   }
-
   .nav-bar {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding-top: 1rem;
-  }
-
-  .nav-bar,
-  .nav-links {
-    display: flex;
-    flex-direction: column;
+    display: none;
+    padding: 1rem 0;
     background-color: #5d8bf4;
   }
+  .nav-links {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem;
+    padding: 0;
+  }
+  .hamburger {
+    display: block;
+    margin-right: 1rem;
+  }
+
   .nav-bar.active {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
 }

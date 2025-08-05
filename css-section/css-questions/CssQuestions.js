@@ -441,7 +441,7 @@ the total height and width, making the element larger than what you initially se
 
 By default, `box-sizing` is set to `content-box`.
 
---box-sizing:border-box;
+--box-sizing:border-box; --We have to use this
 --box-sizing:content-box;(By default)
 
 
@@ -882,6 +882,8 @@ Theming: Easily implement themes by switching variable values.
   box-sizing: border-box;
 }
 
+Ans : **second approach** because:  
+
 1. * (Universal Selector):
 🔹 This applies styles to all elements on the page.
 🔹 It removes default margins & paddings and ensures box-sizing: border-box applies globally.
@@ -891,9 +893,6 @@ Theming: Easily implement themes by switching variable values.
 🔹 This applies styles to all elements AND their pseudo-elements (::before and ::after).
 🔹 It ensures everything, including pseudo-elements, follows the same box-sizing model.
 🔹 More consistent layout handling, especially for UI elements that use ::before and ::after (buttons, tooltips, animations, etc.).
-
-
-Ans : **second approach** because:  
 
 1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
 2. Pseudo-elements sometimes have default styles in browsers that can cause unexpected layout issues. The second approach resets those styles too.  

@@ -1,14 +1,20 @@
-const hamburger = document.querySelector(".hamburger");
-const navbar = document.querySelector(".nav-bar");
-const darkMode = document.querySelector("#theme-toggle-button");
-const wrapper = document.querySelector(".wrapper");
+console.log("Javascript To Do");
 
-hamburger.addEventListener("click", () => {
-  navbar.classList.toggle("active");
+const hamburgerBth = document.querySelector("#hamburger-btn");
+const navBar = document.querySelector(".nav-bar");
+const themeToggleButton = document.querySelector("#theme-toggle-button");
+const wrapper=document.querySelector(".wrapper")
+
+hamburgerBth.addEventListener("click", () => {
+  navBar.classList.toggle("active");
 });
 
-darkMode.addEventListener("click", () => {
+themeToggleButton.addEventListener("click", () => {
   wrapper.classList.toggle("active");
-   darkMode.textContent = wrapper.classList.contains("active") ? "Light Mode" : "Dark Mode";
-
+  if(wrapper.classList.contains("active")){
+    themeToggleButton.innerText="Light Mode"
+  }
+  else{
+        themeToggleButton.innerText="Dark Mode"
+  }
 });
