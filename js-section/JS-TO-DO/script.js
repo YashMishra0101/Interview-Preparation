@@ -18,40 +18,48 @@ themeToggleButton.addEventListener("click", () => {
   }
 });
 
-const taskInput = document.getElementById("task-name");
-const addTaskButton = document.getElementById("add-task-button");
-const taskList = document.getElementById("task-list");
+const inputTask = document.querySelector("#input-task");
+const addTask = document.querySelector("#add-task");
+const showTask = document.querySelector(".show-saved-task");
 
-// Load tasks from localStorage on page load
+let displayAllTask = () => {
+  let tasksInfo = JSON.parse(localStorage.getItem("tasks") || '["No Tasks"]');
+    if (tasksInfo.length === 0) {
+    showTask.innerHTML = "<p>No Tasks</p>";
+    return;
+  }
+  let tasks = tasksInfo
+    .map((task,index) => {
+      return `
+        <div class="task-card">
+          <h3>${task.name}</h3>
+          <p><strong>Date:</strong> ${task.date}</p>
+          <p><strong>Day:</strong> ${task.day}</p>
+        </div>
+      `;
+    })
+    .join("");
+
+  showTask.innerHTML = tasks;
+};
+
 window.addEventListener("DOMContentLoaded", () => {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.forEach((task) => renderTask(task));
+  displayAllTask();
 });
 
-// Add new task
-addTaskButton.addEventListener("click", () => {
-  const taskName = taskInput.value.trim();
-  if (taskName === "") return;
-
-  const task = {
-    id: Date.now(),
-    name: taskName,
-    completed: false,
-  };
-
-  // Save to localStorage
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.push(task);
+addTask.addEventListener("click", () => {
+  let taskName = inputTask.value.trim();
+  if (taskName === "") {
+    alert("Please enter a task");
+  }
+  let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+  let date=new Date();
+  let taskInfo={
+    name:taskName,
+    date:date.toLocaleDateString,
+    day:date.toLocaleString('en-US',{weekDay:'long'})
+  }
+  tasks.push(taskInfo);
   localStorage.setItem("tasks", JSON.stringify(tasks));
-
-  renderTask(task);
-  taskInput.value = "";
+  inputTask.value = "";
 });
-
-// Render task in UI
-function renderTask(task) {
-  const taskItem = document.createElement("div");
-  taskItem.className = "task-item";
-  taskItem.textContent = task.name;
-  taskList.appendChild(taskItem);
-}

@@ -1812,7 +1812,7 @@ for (let a = 0; a < companies.length; a++) {
 }
 
 >For...of loop
-We can use break and continue in a for...of loop. However, we cannot use return directly in a for...of loop 
+We can use break and continue in a for...of loop. However, we cannot use "return" directly in a for...of loop 
 unless it is inside a function. If the loop is inside a function, then the return statement can be used to return a value.
 
 ---Example
