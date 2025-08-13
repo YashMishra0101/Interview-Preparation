@@ -21,20 +21,29 @@ themeToggleButton.addEventListener("click", () => {
 const taskInputField = document.querySelector("#task-input-field");
 const addTaskBtn = document.querySelector("#add-task-btn");
 const displayTasks = document.querySelector("#display-tasks");
+const searchFiled = document.querySelector("#search-box");
 
-let renderTask = () => {
+let renderTask = (navOption = "All") => {
   let allTasks = JSON.parse(localStorage.getItem("allTasksInfo") || "[]");
-  if (allTasks.length === 0) {
+
+  let filterTaskData = allTasks.filter((task) => {
+    if (navOption === "All") return true;
+    return task.status === navOption;
+  });
+
+  if (filterTaskData.length === 0) {
     displayTasks.innerHTML = `<div id="task-card"> <p class="task-text">No Tasks</p> </div>`;
     return;
   }
-  let allTaskData = allTasks
+
+  let allTaskData = filterTaskData
     .map((task, index) => {
-      return `<div id="task-card"> 
-    <p class="task-text">Task name : ${task.name}</p>
+      return `<div class="task-card"> 
+    <p class="task-text task-name">Task name : ${task.name}</p>
     <p class="task-text">Date : ${task.date}</p>
+    <p class="task-text-status">Status : ${task.status}</p>
     <button class="edit-task-name" data-index="${index}">Edit Task Name</button>
-    <button class="completed" data-index="${index}">Completed</button>
+    <button class="Completed" data-index="${index}">Completed</button>
     <button class="delete" data-index="${index}">Delete</button>
     </div>`;
     })
@@ -57,6 +66,7 @@ addTaskBtn.addEventListener("click", () => {
   let taskObj = {
     name: taskName,
     date: date.toDateString(),
+    status: "Pending",
   };
   existingTasks.push(taskObj);
   localStorage.setItem("allTasksInfo", JSON.stringify(existingTasks));
@@ -83,9 +93,61 @@ displayTasks.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     let index = e.target.dataset.index;
     let tasks = JSON.parse(localStorage.getItem("allTasksInfo"));
-    tasks.splice(index,1)
+    tasks.splice(index, 1);
     localStorage.setItem("allTasksInfo", JSON.stringify(tasks));
     alert("Delete the task");
     renderTask();
   }
+});
+
+displayTasks.addEventListener("click", (e) => {
+  if (e.target.classList.contains("Completed")) {
+    let index = e.target.dataset.index;
+    let tasksCompleted = JSON.parse(localStorage.getItem("allTasksInfo"));
+    tasksCompleted[index].status = "Completed";
+    localStorage.setItem("allTasksInfo", JSON.stringify(tasksCompleted));
+    alert("Task Completed");
+    renderTask();
+  }
+});
+
+const navLinks = document.querySelector(".nav-links");
+const navLinkslia = document.querySelectorAll(".nav-links li a");
+
+navLinks.addEventListener("click", (e) => {
+  e.preventDefault();
+  navLinkslia.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  e.target.classList.add("active");
+
+  if (e.target.textContent.includes("All")) {
+    renderTask("All");
+  }
+  if (e.target.textContent.includes("Completed")) {
+    renderTask("Completed");
+  }
+  if (e.target.textContent.includes("Pending")) {
+    renderTask("Pending");
+  }
+});
+
+searchFiled.addEventListener("input", () => {
+  const searchData = searchFiled.value.toLowerCase().trim();
+
+  const taskCards = document.querySelectorAll(".task-card");
+
+  taskCards.forEach((card) => {
+    const taskName = card.querySelector(".task-name").textContent.toLowerCase();
+
+    // Show if matches search, else hide
+    if (taskName.includes(searchData)) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+   
+
+    }
+  });
 });

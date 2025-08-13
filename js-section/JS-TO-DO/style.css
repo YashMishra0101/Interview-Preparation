@@ -112,15 +112,24 @@ a {
   background: #4a74d4;
 }
 
-#task-card {
+.task-card {
   width: 100%;
   background-color: #5d8bf4;
-  color: yellow;
+  color: rgb(222, 222, 45);
   border: 2px solid blanchedalmond;
   font-size: large;
+  font: bolder;
   font-family: monospace;
   padding: 0.5rem;
   margin-top: 0.5rem;
+}
+
+.task-text-status {
+  color: rgb(0, 240, 232);
+  font-size: large;
+  font: bolder;
+  padding: 0.5rem;
+  font-family: monospace;
 }
 
 .tasks-adding {
@@ -148,23 +157,39 @@ a {
   padding: 0.5rem;
 }
 
-.task-card,
-.edit-task-name {
+.task-card .edit-task-name {
   color: white;
   background-color: blue;
   cursor: pointer;
 }
 
-.task-card,
-.completed {
+.task-card .Completed {
   color: white;
   background-color: green;
   cursor: pointer;
 }
 
-.task-card,
-.delete {
+.task-card .delete {
   color: white;
   background-color: red;
   cursor: pointer;
+}
+
+.nav-link,
+li,
+a.active {
+  color: rgb(225, 8, 8);
+  font: bold;
+  font-size: large;
+}
+
+#search-box {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid skyblue;
+}
+
+.hidden {
+  display: none;
 }
