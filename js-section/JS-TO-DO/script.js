@@ -18,48 +18,74 @@ themeToggleButton.addEventListener("click", () => {
   }
 });
 
-const inputTask = document.querySelector("#input-task");
-const addTask = document.querySelector("#add-task");
-const showTask = document.querySelector(".show-saved-task");
+const taskInputField = document.querySelector("#task-input-field");
+const addTaskBtn = document.querySelector("#add-task-btn");
+const displayTasks = document.querySelector("#display-tasks");
 
-let displayAllTask = () => {
-  let tasksInfo = JSON.parse(localStorage.getItem("tasks") || '["No Tasks"]');
-    if (tasksInfo.length === 0) {
-    showTask.innerHTML = "<p>No Tasks</p>";
+let renderTask = () => {
+  let allTasks = JSON.parse(localStorage.getItem("allTasksInfo") || "[]");
+  if (allTasks.length === 0) {
+    displayTasks.innerHTML = `<div id="task-card"> <p class="task-text">No Tasks</p> </div>`;
     return;
   }
-  let tasks = tasksInfo
-    .map((task,index) => {
-      return `
-        <div class="task-card">
-          <h3>${task.name}</h3>
-          <p><strong>Date:</strong> ${task.date}</p>
-          <p><strong>Day:</strong> ${task.day}</p>
-        </div>
-      `;
+  let allTaskData = allTasks
+    .map((task, index) => {
+      return `<div id="task-card"> 
+    <p class="task-text">Task name : ${task.name}</p>
+    <p class="task-text">Date : ${task.date}</p>
+    <button class="edit-task-name" data-index="${index}">Edit Task Name</button>
+    <button class="completed" data-index="${index}">Completed</button>
+    <button class="delete" data-index="${index}">Delete</button>
+    </div>`;
     })
     .join("");
-
-  showTask.innerHTML = tasks;
+  displayTasks.innerHTML = allTaskData;
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  displayAllTask();
+document.addEventListener("DOMContentLoaded", () => {
+  renderTask();
 });
 
-addTask.addEventListener("click", () => {
-  let taskName = inputTask.value.trim();
+addTaskBtn.addEventListener("click", () => {
+  let existingTasks = JSON.parse(localStorage.getItem("allTasksInfo") || "[]");
+  let taskName = taskInputField.value.trim();
   if (taskName === "") {
-    alert("Please enter a task");
+    alert("Please enter the task");
+    return;
   }
-  let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  let date=new Date();
-  let taskInfo={
-    name:taskName,
-    date:date.toLocaleDateString,
-    day:date.toLocaleString('en-US',{weekDay:'long'})
+  let date = new Date();
+  let taskObj = {
+    name: taskName,
+    date: date.toDateString(),
+  };
+  existingTasks.push(taskObj);
+  localStorage.setItem("allTasksInfo", JSON.stringify(existingTasks));
+  taskInputField.value = "";
+  renderTask();
+});
+
+displayTasks.addEventListener("click", (e) => {
+  if (e.target.classList.contains("edit-task-name")) {
+    let index = e.target.dataset.index;
+    let taskName = JSON.parse(localStorage.getItem("allTasksInfo"));
+    let editName = prompt(taskName[index].name);
+    if (editName.trim() !== "") {
+      taskName[index].name = editName.trim();
+      localStorage.setItem("allTasksInfo", JSON.stringify(taskName));
+      renderTask();
+    } else {
+      alert("Failed");
+    }
   }
-  tasks.push(taskInfo);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  inputTask.value = "";
+});
+
+displayTasks.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    let index = e.target.dataset.index;
+    let tasks = JSON.parse(localStorage.getItem("allTasksInfo"));
+    tasks.splice(index,1)
+    localStorage.setItem("allTasksInfo", JSON.stringify(tasks));
+    alert("Delete the task");
+    renderTask();
+  }
 });
