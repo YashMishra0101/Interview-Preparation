@@ -1,9 +1,18 @@
 console.log("Javascript To Do");
 
+const wrapper = document.querySelector(".wrapper");
 const hamburgerBth = document.querySelector("#hamburger-btn");
+const navLinks = document.querySelector(".nav-links");
+const navLinkslia = document.querySelectorAll(".nav-links li a");
 const navBar = document.querySelector(".nav-bar");
 const themeToggleButton = document.querySelector("#theme-toggle-button");
-const wrapper = document.querySelector(".wrapper");
+
+const taskInputField = document.querySelector("#task-input-field");
+const addTaskBtn = document.querySelector("#add-task-btn");
+const displayTasks = document.querySelector("#display-tasks");
+const searchFiled = document.querySelector("#search-box");
+
+const taskImageInput = document.querySelector("#task-image-input");
 
 hamburgerBth.addEventListener("click", () => {
   navBar.classList.toggle("active");
@@ -17,11 +26,6 @@ themeToggleButton.addEventListener("click", () => {
     themeToggleButton.innerText = "Dark Mode";
   }
 });
-
-const taskInputField = document.querySelector("#task-input-field");
-const addTaskBtn = document.querySelector("#add-task-btn");
-const displayTasks = document.querySelector("#display-tasks");
-const searchFiled = document.querySelector("#search-box");
 
 let renderTask = (navOption = "All") => {
   let allTasks = JSON.parse(localStorage.getItem("allTasksInfo") || "[]");
@@ -40,6 +44,7 @@ let renderTask = (navOption = "All") => {
     .map((task, index) => {
       return `<div class="task-card"> 
     <p class="task-text task-name">Task name : ${task.name}</p>
+    <p class="task-text task-image"> <img src="${task.image}" alt="Task Image" width="100"></p>
     <p class="task-text">Date : ${task.date}</p>
     <p class="task-text-status">Status : ${task.status}</p>
     <button class="edit-task-name" data-index="${index}">Edit Task Name</button>
@@ -58,20 +63,35 @@ document.addEventListener("DOMContentLoaded", () => {
 addTaskBtn.addEventListener("click", () => {
   let existingTasks = JSON.parse(localStorage.getItem("allTasksInfo") || "[]");
   let taskName = taskInputField.value.trim();
+  const file = taskImageInput.files[0];
+
   if (taskName === "") {
     alert("Please enter the task");
     return;
   }
-  let date = new Date();
-  let taskObj = {
-    name: taskName,
-    date: date.toDateString(),
-    status: "Pending",
+  if (!file) {
+    alert("Please select an image first!");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const base64Image = e.target.result;
+    let date = new Date();
+    let taskObj = {
+      name: taskName,
+      image: base64Image,
+      date: date.toDateString(),
+      status: "Pending",
+    };
+    existingTasks.push(taskObj);
+    localStorage.setItem("allTasksInfo", JSON.stringify(existingTasks));
+    taskInputField.value = "";
+    taskImageInput.value = "";
+    renderTask();
   };
-  existingTasks.push(taskObj);
-  localStorage.setItem("allTasksInfo", JSON.stringify(existingTasks));
-  taskInputField.value = "";
-  renderTask();
+  reader.readAsDataURL(file);
 });
 
 displayTasks.addEventListener("click", (e) => {
@@ -111,9 +131,6 @@ displayTasks.addEventListener("click", (e) => {
   }
 });
 
-const navLinks = document.querySelector(".nav-links");
-const navLinkslia = document.querySelectorAll(".nav-links li a");
-
 navLinks.addEventListener("click", (e) => {
   e.preventDefault();
   navLinkslia.forEach((link) => {
@@ -141,13 +158,10 @@ searchFiled.addEventListener("input", () => {
   taskCards.forEach((card) => {
     const taskName = card.querySelector(".task-name").textContent.toLowerCase();
 
-    // Show if matches search, else hide
     if (taskName.includes(searchData)) {
       card.classList.remove("hidden");
     } else {
       card.classList.add("hidden");
-   
-
     }
   });
 });

@@ -34,8 +34,11 @@
         </header>
         <main class="main-section">
             <div class="tasks-adding">
-                <input type="text" id="task-input-field" placeholder="Please enter your task">
-                <button id="add-task-btn">Add Task</button>
+                <form id="task-form">
+                    <input type="text" id="task-input-field" placeholder="Please enter your task">
+                    <input type="file" id="task-image-input"">
+                    <button id=" add-task-btn" type="submit">Add Task</button>
+                </form>
             </div>
             <div class="search">
                 <input type="text" id="search-box" placeholder="Search here...">

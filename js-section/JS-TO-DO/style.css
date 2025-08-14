@@ -54,33 +54,6 @@ a {
   display: none;
 }
 
-@media (max-width: 768px) {
-  #hamburger-btn {
-    display: block;
-  }
-  .header {
-    position: relative;
-  }
-
-  .nav-bar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding-top: 1rem;
-  }
-
-  .nav-bar,
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    background-color: #5d8bf4;
-  }
-  .nav-bar.active {
-    display: none;
-  }
-}
-
 .show-saved-task {
   display: grid;
   gap: 1rem;
@@ -140,7 +113,6 @@ a {
 
 #task-input-field {
   padding: 0.5rem;
-  width: 90%;
   margin: 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid skyblue;
@@ -149,10 +121,13 @@ a {
 #add-task-btn {
   border-radius: 0.3rem;
   border: 2px solid skyblue;
-  padding: 0.3rem, 0.5rem;
   cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
-
+#task-image-input {
+  margin-left: 4rem;
+}
 .task-text {
   padding: 0.5rem;
 }
@@ -192,4 +167,45 @@ a.active {
 
 .hidden {
   display: none;
+}
+.task-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #hamburger-btn {
+    display: block;
+  }
+  .header {
+    position: relative;
+  }
+
+  .nav-bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-top: 1rem;
+  }
+
+  .nav-bar,
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: #5d8bf4;
+  }
+  .nav-bar.active {
+    display: none;
+  }
 }
