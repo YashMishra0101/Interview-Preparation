@@ -770,7 +770,7 @@ const user = {
   },
   createdAt: new Date(),
   info(){
-    console.log(`I name is ${this.name} my skill are ${this.skills[0]},${this.skills[1]} and I am living at ${this.address.city} ${this.address.pin}`);
+    return(`I name is ${this.name} my skill are ${this.skills[0]},${this.skills[1]} and I am living at ${this.address.city} ${this.address.pin}`);
   }
 };
 
@@ -815,9 +815,9 @@ console.log(age());
 
 #38) What is Bable and webpack ? Answer not added yet 👨‍💻
 
-#39) Why is Node.js necessary?
+#39) Why is Node.js necessary? (For Knowledge Purpose)
 
-# For Knowledge Purpose: For version Checking which command is good: --version, -v, --v, or -version ?
+# For version Checking which command is good: --version, -v, --v, or -version ?
 
 With the help of these commands (--version, -v, --v, and -version), we can check the version of 
 installed tools. But, but, but...
@@ -870,6 +870,7 @@ let a=5859;
 
 
 #45) Evaluate the following JavaScript expressions and state whether they return true or false:
+
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
 console.log(100=="100" || 2>-9 || 88<102)
@@ -946,10 +947,11 @@ console.log(p);
 #47) Solve These Questions.
 
 >A) Generate OTPs
+
 1. Generate a 4-digit OTP
 2. Generate a 5-digit OTP
 
->B) Rectangle Calculations**
+>B) Rectangle Calculations
 
 let l = 10;
 let b = 20;
@@ -961,7 +963,7 @@ let b = 20;
   Formula: `2 * (Length + Breadth)`
 
 
->C) Circumference of a Circle**
+>C) Circumference of a Circle
 
 Using:
 let radius = 5;
