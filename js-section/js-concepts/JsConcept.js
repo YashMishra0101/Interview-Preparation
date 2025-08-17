@@ -653,14 +653,14 @@ specially in larger codebases.
 
 #11) Hoisting Explained
 
-Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during 
-the compile phase, which happens before code execution begins. This means that function declarations are fully hoisted, including 
+Hoisting is a JavaScript mechanism where variable and function declarations are processed during the creation phase 
+before code execution, which happens before code execution begins. This means that function declarations are fully hoisted, including 
 their function body, allowing them to be invoked even before their actual declaration appears in the code. In the case of variables 
 declared with var, only the declaration is hoisted—not the initialization—so they are initialized with the value undefined until the 
 line of code where the assignment actually happens. On the other hand, variables declared with let and const are also hoisted, 
 but unlike var, they remain uninitialized and enter a state known as the Temporal Dead Zone (TDZ). Accessing them before their 
 declaration line results in a ReferenceError. This entire compile-time process of moving declarations to the top is known as
-hoisting, and understanding it helps prevent unexpected behaviors in JavaScript execution.
+hoisting.
 
 
 Quick Points:
