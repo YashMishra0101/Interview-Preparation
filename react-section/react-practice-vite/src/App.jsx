@@ -1,10 +1,10 @@
 import './App.css'
-import UserInfo from './UserInfo'
+import DevelopersInfo from './DevelopersInfo'
 function App() {
 
   return (
     <>
-    <UserInfo/>
+    <DevelopersInfo/>
     </>
   )
 }
