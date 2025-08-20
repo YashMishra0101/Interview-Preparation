@@ -1,10 +1,14 @@
 import './App.css'
-import DevelopersInfo from './DevelopersInfo'
+import DevelopersInfo from './DevelopersInfo';
+import Counter from './Counter';
+
 function App() {
 
   return (
     <>
-    <DevelopersInfo/>
+    {/* <DevelopersInfo/> */}
+    <Counter/>
+
     </>
   )
 }

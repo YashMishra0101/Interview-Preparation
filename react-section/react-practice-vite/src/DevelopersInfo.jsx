@@ -15,7 +15,7 @@ function DevelopersInfo() {
       role: "Backed End Developer",
       age: "24",
       image:
-        "https://avatars.githubusercontent.com/u/121499348?s=400&u=f0dbe3b954055bd8533e0957535bef7a753e38bc&v=4",
+      "https://pbs.twimg.com/profile_images/1931015967561379840/fuw2oJLe_400x400.jpg"
     },
   ];
   return (
