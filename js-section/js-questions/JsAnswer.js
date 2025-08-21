@@ -806,12 +806,12 @@ console.log("line number 5", 20);
 
 #Ans 5)
 
-console.log("line number 1", 10); 
-console.log("line number 2", undefined); 
-console.log("line number 3", 29); 
-console.log("line number 4", 31); 
-console.log("line number 5", 31); 
+console.log("line number 1", 10);
 console.log("line number 6", 10);
+console.log("line number 2", undefined);
+console.log("line number 3", 29);
+console.log("line number 4", 31);
+console.log("line number 5", 31);
 
 #Ans 6)
 
@@ -828,6 +828,14 @@ Lexical scope means that the scope of a variable is determined by where it is wr
 Functions can access variables from their parent or outer scope — this is called lexical scoping.
 
 In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called.
+
+or 
+
+Lexical scoping means that the accessibility of variables is determined by where they are declared in the code structure, not where they are executed.
+
+✅ Scope determined by: Where the function is defined/written
+❌ NOT determined by: Where the function is called/executed
+✅ Functions can access: Variables from their parent/outer scope
 
 --Example 1:
 

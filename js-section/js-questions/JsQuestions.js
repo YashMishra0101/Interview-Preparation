@@ -384,21 +384,22 @@ fn();
 #5)Tells the output without running the code in the proper sequence.
 
 var a = 10;
-console.log("line number 2", a);
+console.log("line number 1", a);
 function fn() {
-  console.log("line number 4", a);
+  console.log("line number 2", a);
   var a = 28;
   a++;
-  console.log("line number 7", a);
+  console.log("line number 3", a);
   if (a) {
     var a = 30;
     a++;
-    console.log("line number 11", a);
+    console.log("line number 4", a);
   }
-  console.log("line number 13", a);
+  console.log("line number 5", a);
 }
+console.log("line number 6", a);
+
 fn();
-console.log("line number 2", a);
 
 #6) Tells The output
 
@@ -427,9 +428,11 @@ let person = {
   },
 };
 
+console.log(person.fullName());
+
 #8)What is lexical scop/lexical scoping ?
     
-#9) Can we use the for...of loop for objects ?
+#9)Can we use the for...of loop for objects ?
 
 #10)Explain the use of call(), apply(), and bind() in JavaScript?
 
@@ -726,13 +729,13 @@ Create a class `BankAccount` that demonstrates the concept of **Encapsulation** 
 
 #28) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
 
-#29)  What is Abstraction in JavaScript?
+#29) What is Abstraction in JavaScript?
 
 #30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
 #31) What is Type Coercion (koversion) vs Type casting and Concatenation.
 
-#32)Shallow copy and deep copy question.
+#32) Shallow copy and deep copy question.
 
 >A)Create a Shallow copy of the profile object using any method you prefer.
 
