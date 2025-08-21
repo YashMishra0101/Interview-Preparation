@@ -1,16 +1,18 @@
-import './App.css'
-import DevelopersInfo from './DevelopersInfo';
-import Counter from './Counter';
+import "./App.css";
+import Counter from "./Counter";
+import DevelopersInfo from "./DevelopersInfo";
+import RoleAssign from "./RoleAssign";
 
 function App() {
-
   return (
     <>
-    {/* <DevelopersInfo/> */}
-    <Counter/>
-
+      <div className="overflow-hidden pb-14">
+        <Counter />
+        <DevelopersInfo />
+        <RoleAssign />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
