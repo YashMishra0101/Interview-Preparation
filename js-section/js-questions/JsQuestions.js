@@ -579,28 +579,89 @@ for (var a = 1; a <= 5; a++) {
 
 #16)Give me previous output output:
 
-1
-2
-3
-4
-5
+a)
+for (let a = 1; a <= 5; a++) {
+  setTimeout(() => {
+    console.log(a);
+  });
+}
 
-#which you get using Let but that time don't use let .
+b)
+for (var a = 1; a <= 5; a++) {
+  setTimeout(()=>{
+    console.log(a);
+  })
+}
 
->>Just use var , don't use let 
+c)
+let a = 1;
+for (a; a <= 5; a++) {
+  setTimeout(() => {
+    console.log(a);
+  });
+}
 
-Expected output:
+d)
+for ( var a = 1; a <= 5; a++) {
+  var b=a;
+  setTimeout(() => {
+    console.log(b);
+  });
+}
 
-1
-2
-3
-4
-5
+e)
+for (var a = 1; a <= 5; a++) {
+  a;
+  (function () {
+    setTimeout(() => {
+      console.log(a);
+    });
+  })();
+}
 
+f)
+for (var a = 1; a <= 5; a++) {
+  var b = a;
+  (function () {
+    setTimeout(() => {
+      console.log(b);
+    });
+  })();
+}
 
+g)
+for (var a = 1; a <= 5; a++) {
+  (function () {
+    var b = a;
+    setTimeout(() => {
+      console.log(b);
+    });
+  })();
+}
+
+h)
+for (var a = 1; a <= 5; a++) {
+  (function () {
+    setTimeout(() => {
+      var b = a;
+      console.log(b);
+    });
+  })();
+}
+
+g)
+a = 1;
+
+for (a; a <= 5; a++) {
+    setTimeout(() => {
+        console.log(a)
+    }, 1000)
+}
+    
 #17)What if we palce let outside the for loop ? , tell me correct output .
 
-let a = 1;
+a)
+const a = 1;
 
 for (a; a <= 5; a++) {
     setTimeout(() => {
@@ -608,6 +669,18 @@ for (a; a <= 5; a++) {
     }, 1000)
 }
 
+b)
+const a = 1;
+
+for (a; a <= 5; a++) {
+  console.log(a);
+}
+
+In the first code with setTimeout, a is a const, so a++ throws a TypeError. However, the loop body executes before the increment, 
+so the first setTimeout is scheduled and after 1 second prints 1 even though the error stops the loop. In the second code with a 
+direct console.log, the first a++ also throws a TypeError, but since there’s no asynchronous scheduling, nothing else runs and only 
+the error appears. Key point: asynchronous callbacks scheduled before an error can still execute, while synchronous code stops 
+immediately when a const is modified.
 
 #18)Tell me the output of this code.
 
@@ -678,7 +751,41 @@ see();
 seeTwo();
 
 
-#20) What is `Destructuring`, `Spread operator`, and `Rest operator`.
+#20) What is `Destructuring`, `Spread operator` and `Rest operator`and solve this problem.
+>Destructuring
+1)
+Task: Extract name, city, and the first hobby using destructuring
+Expected output: name = 'John Doe', city = 'New York', firstHobby = 'reading'
+
+const user = {
+  name: 'John Doe',
+  age: 30,
+  address: {
+    street: '123 Main St',
+    city: 'New York',
+    country: 'USA'
+  },
+  hobbies: ['reading', 'swimming', 'coding']
+};
+
+2)
+Task: Destructure the array to get first, second, and third colors
+If third color doesn't exist, default it to 'yellow'
+Expected output: first = 'red', second = 'green', third = 'white' (if third is not present answer must be yellow)
+
+const colors = ['red', 'green',"white"];
+
+
+3)
+Task: Write a function that takes a user object and returns a formatted string
+The function should destructure name, age, and email (with default 'N/A') from parameters
+Expected: formatUser({name: 'Alice', age: 25}) should return "Alice (25) - N/A"
+
+function formatUser( your destructuring here ) {
+   your code here
+}
+
+>Spread operator
 
 #21)Explain Event loop.
 

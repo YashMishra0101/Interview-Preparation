@@ -905,12 +905,12 @@ for (let b in userInfo) {
 #Ans 10)
 
 Let’s say I have a function that uses this to refer to an object’s properties. If I want to call that function for a different object, 
-I can use call, apply, or bind to change the value of this.Call , apply and blind are the pre build method in javascript with the helps 
+I can use call, apply, or bind to change the value of this. Call, apply and blind are the pre build method in javascript with the helps 
 that we can invoke the funciton with the help of this keyword.
 
 --1. `call()` Method
 
-- Definition: `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
+>- Definition: `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
 - Example:
  
 let userOne={
@@ -933,7 +933,7 @@ console.log(userInfo.call(userTwo,"frontEnd-Developer",24))
 
 -- 2. apply()` Method
 
-- Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
+>- Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
 - Example:
 
 let userOne={
@@ -956,7 +956,7 @@ console.log(userInfo.apply(userTwo,["FrontEnd-Developer","24"])) //--Pass Info I
 
 -- 3. `bind()` Method
 
-> **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately.
+> **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately and arguments provided individually.
 - Example:
 
 let userOne={
@@ -988,7 +988,7 @@ console.log(userDataTwo())
 > Summary:
 - `call()`: Calls a function with a specific `this` value and individual arguments.
 - `apply()`: Like `call()`, but arguments are passed as an array.
-- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately.
+- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately and individual arguments.
 
 #Asn 11)
 
@@ -1021,9 +1021,8 @@ If you use an **arrow function**, `this` does **not** refer to the object — in
 
 --🔹 4. This substitution :
 
-In **non-strict mode**, if `this` is `null` or `undefined`, JavaScript **automatically substitutes it with the global object**.
-That’s why, inside a normal function in non-strict mode in browsers, `this` becomes `window`so originally value is "undefined" but 
-because of this keyword it gives us window object.
+In non-strict mode, JavaScript has an automatic behavior called 'this' substitution. When this would normally be
+null or undefined, JavaScript automatically substitutes it with the global object (which is window in browsers).
 
 
 #Ans 12)
@@ -1110,141 +1109,55 @@ Go!
 6
 (6 repeated 5 times)
 
->For Let
-
-Code:
-
-for (let a = 1; a <= 5; a++) {
-  setTimeout(() => {
-    console.log(a); // Prints value of 'a' specific to each block
-  }, 1000);
-}
-
-
-🔥Diagram 1:
-
-
-Iteration 1: { Block Scope: a = 1 }
-Iteration 2: { Block Scope: a = 2 }
-Iteration 3: { Block Scope: a = 3 }
-Iteration 4: { Block Scope: a = 4 }
-Iteration 5: { Block Scope: a = 5 }
-
-After 1 second: Logs -> 1, 2, 3, 4, 5
-
-
-🔥Diagram 2:
-
-for (let a = 1; a <= 5; a++) {
-  //-- New Block Scope for each iteration
-  {
-    // Iteration 1
-    setTimeout(() => {
-      console.log(a); // Prints 1
-    }, 1000);
-  }
-  {
-    // Iteration 2
-    setTimeout(() => {
-      console.log(a); // Prints 2
-    }, 1000);
-  }
-  {
-    // Iteration 3
-    setTimeout(() => {
-      console.log(a); // Prints 3
-    }, 1000);
-  }
-  {
-    // Iteration 4
-    setTimeout(() => {
-      console.log(a); // Prints 4
-    }, 1000);
-  }
-  {
-    // Iteration 5
-    setTimeout(() => {
-      console.log(a); // Prints 5
-    }, 1000);
-  }
-}
-
-
----Explanation for Let :
-
-- Each `{}` block represents a new scope created by `let` for each iteration.
-- `setTimeout` captures the value of `a` specific to that iteration's block.
-
-
---------------------------------------------------
-
->>> For `var`
-
-
-Code:
-
-for (var a = 1; a <= 5; a++) {
-  setTimeout(() => {
-    console.log(a); // Prints 6 (value of 'a' after loop ends)
-  }, 1000);
-}
-
-
-🔥Diagram :
-
-Global Scope: var a; //👀👀👀👀
-
-Iteration 1: { Single Scope: a updated to 1 }
-Iteration 2: { Single Scope: a updated to 2 } (previous value 1 is also updated to 2)
-Iteration 3: { Single Scope: a updated to 3 } (previous values 1 and 2 are also updated to 3)
-Iteration 4: { Single Scope: a updated to 4 } (previous values 1, 2, and 3 are also updated to 4) 
-Iteration 5: { Single Scope: a updated to 5 } (previous values 1, 2, 3, and 4 are also updated to 5)
-
-After Loop Completes:
-The loop ends with a incrementing one last time.
-Final Value of a: The loop condition (a <= 5) becomes false when a becomes 6 (after the last increment).
-
-After 1 second: Logs -> 6, 6, 6, 6, 6
-
----Explanation for var:
-
-1. Global Scope: When using `var`, there is only one variable in the global scope. 
-The value of `a` is updated during each iteration, but no new block is created for each loop 
-Value Updated Globally. 
- 
-2. **Value Updated Globally**:
- When you use `var`, there’s only one variable, and it’s being updated throughout the entire loop. 
- So during each iteration, the value of `a` is updated globally.
-
+For Better underStanding : https://claude.ai/public/artifacts/7b76b74b-c488-4eeb-be6b-06292265ab25
 
 #Ans 16)
 
-for (var a = 1; a <= 5; a++) {
-  function inner() {
-    var b = a;
-    setTimeout(() => {
-      console.log(b);
-    });
-  }
-  inner();
-}
+a)
+1
+2
+3
+4
+5
+
+b) 6 "5 time"
+
+c) 6 "5 time"
+
+d) 5 "5 time"
+
+e) 6 "5 time"
+
+f) 5 "5 time"
+
+g)
+1
+2
+3
+4
+5
+
+h) 6 "5 time"
+
+g) 6 "5 time"
+
+
+>>>
 
 
 #Ans 17)
-let a = 1;
+a)
+error
+1
 
-for (a; a <= 5; a++) {
-    setTimeout(() => {
-        console.log(a)
-    }, 1000)
-}
+b)
+1 
+then error
 
-Ans : 6 (Five times)
-
-Explanation:In short: Both in the case of let (outside the loop) and var (inside the loop),
-the same single variable is updated, and previous values are overwritten. That’s why 
-in both cases, you get 6 printed five times when the loop completes.
-
+Core concept : The code prints 1 because in a for loop, JavaScript executes the loop body first, then the increment. Here, 
+setTimeout is scheduled during the first iteration before a++ is attempted. Since a is a const, the increment throws a TypeError, 
+stopping the loop. However, the already-scheduled setTimeout still runs, printing 1. So, the output is 1 followed by an error about
+assigning to a constant.
 
 #Ans 18)
 >a)
@@ -1263,6 +1176,41 @@ in both cases, you get 6 printed five times when the loop completes.
 #Ans 20)
 ---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
 Ctrl + F ➤ Just search in concepts section :  #17)
+>Destructuring
+1)
+const {
+  name,
+  address: { city },
+  hobbies: [firstHobbie],
+} = user;
+console.log(name); // John Doe
+console.log(city); // New York
+console.log(firstHobbie); // reading
+
+//Basically, in this, I change the variable name to userName and address and hobbies themselves are not variables — only city and firstHobbie become variables.
+const {
+  name: userName,
+  address: { city: cityName },
+  hobbies: [firstHobbyRenamed],
+} = user;
+console.log(userName); // John Doe
+console.log(cityName); // New York
+console.log(firstHobbyRenamed); // reading
+
+2)
+const [firstColor,secondColor,thirdColor="yellow"]=colors;
+
+console.log(firstColor); //red
+console.log(secondColor); //green
+console.log(thirdColor); //white (white - because the array has a third color, if third color not present then it will give yellow color)
+
+3)
+function userInfo({name,age,email="N/A"}){
+return `User name is ${name} , Age is ${age} and email is ${email}`
+}
+
+console.log(userInfo({name:"Alice",age:"25"}));
+
 #Ans 21)
 ---Event loop concept is available in “Concepts” section. 
 Ctrl + F ➤ Just search in concepts section : #15) 
