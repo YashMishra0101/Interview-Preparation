@@ -869,7 +869,7 @@ First Global Execution Context is created then other Execution Context is create
    - Functions are stored with their full body.  
 
    
----Example:Example for Better Understanding :
+Example:Example for Better Understanding :
 
 console.log(myVar); // Output: undefined (hoisted but not initialized)
 console.log(myFunction()); // Output: "Hello, Yashu" (function is hoisted with name + body)
@@ -909,7 +909,7 @@ function myFunction() {
   - A new execution context is pushed onto the stack when a function is invoked, It is popped outr from the stack once the function completes execution.
 
 
----Example for better Understand
+Example for better Understand
 
 _-_--------Global Execution Context is created.
 
@@ -1892,6 +1892,8 @@ console.log(filterCompanies);
 >reduce
 reduce() is a powerful method used on arrays to reduce the array to a single value — like a total, average, merged object, etc.
 It goes element by element and carries forward a result (called accumulator) until it's done with the whole array.
+
+Simple explanation : Reduce the element of an array to a single value
 
 --Syntax
 array.reduce((accumulator, currentValue, index, array) => {

@@ -1177,7 +1177,8 @@ assigning to a constant.
 ---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
 Ctrl + F ➤ Just search in concepts section :  #17)
 >Destructuring
-1)
+
+--1)Problem 1 Ans: 
 const {
   name,
   address: { city },
@@ -1197,20 +1198,78 @@ console.log(userName); // John Doe
 console.log(cityName); // New York
 console.log(firstHobbyRenamed); // reading
 
-2)
+--2)Problem 2 Ans:
 const [firstColor,secondColor,thirdColor="yellow"]=colors;
 
 console.log(firstColor); //red
 console.log(secondColor); //green
 console.log(thirdColor); //white (white - because the array has a third color, if third color not present then it will give yellow color)
 
-3)
+--3)Problem 3 Ans:
 function userInfo({name,age,email="N/A"}){
 return `User name is ${name} , Age is ${age} and email is ${email}`
 }
 
 console.log(userInfo({name:"Alice",age:"25"}));
 
+>Spread operator
+
+--1)Problem 4 Ans:
+//First approach
+const result = [10, ...arr1, ...arr2, ...arr3, 0];
+
+//Second approach
+const combineArray=[...arr1,...arr2,...arr3];
+combineArray.unshift(10);
+combineArray.push(0);
+console.log(combineArray);
+
+--2)Problem 5 Ans:
+const combine={...defaultSettings,...userSettings};
+
+console.log(combine);
+
+--3)Problem 6 Ans:
+const numbers = [10, 20, 30, 40, 50];
+
+function calculateSum(a, b, c, d, e) {
+  return a + b + c + d + e;
+}
+
+console.log(calculateSum(...numbers));
+
+>Rest Operator Solutions
+
+---1)Problem 7 Ans:
+
+function multiply(multiplier, ...numbers) {
+return  numbers.reduce((accumulator, currentValue) => {
+    return accumulator+(multiplier*currentValue)
+  }, 0);
+}
+
+console.log(multiply(2, 3, 4, 5));
+
+---2)Problem 8 Ans:
+
+const scores = [95, 87, 92, 78, 85, 90, 88];
+
+const[first,second,...remaining]=scores;
+
+function average(first, second, ...remaining) {
+  const ans = remaining.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0);
+  return ans / remaining.length;
+}
+
+console.log(average(first,second,...remaining));
+
+const {id,name,...details}=student
+
+console.log(id);
+console.log(name);
+console.log(details);
 #Ans 21)
 ---Event loop concept is available in “Concepts” section. 
 Ctrl + F ➤ Just search in concepts section : #15) 

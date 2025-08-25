@@ -753,7 +753,8 @@ seeTwo();
 
 #20) What is `Destructuring`, `Spread operator` and `Rest operator`and solve this problem.
 >Destructuring
-1)
+
+---1)Problem 1: Object Property Extraction
 Task: Extract name, city, and the first hobby using destructuring
 Expected output: name = 'John Doe', city = 'New York', firstHobby = 'reading'
 
@@ -768,7 +769,7 @@ const user = {
   hobbies: ['reading', 'swimming', 'coding']
 };
 
-2)
+---2)Problem 2: Array with Default Values
 Task: Destructure the array to get first, second, and third colors
 If third color doesn't exist, default it to 'yellow'
 Expected output: first = 'red', second = 'green', third = 'white' (if third is not present answer must be yellow)
@@ -776,7 +777,7 @@ Expected output: first = 'red', second = 'green', third = 'white' (if third is n
 const colors = ['red', 'green',"white"];
 
 
-3)
+---3)Problem 3: Function Parameter Destructuring
 Task: Write a function that takes a user object and returns a formatted string
 The function should destructure name, age, and email (with default 'N/A') from parameters
 Expected: formatUser({name: 'Alice', age: 25}) should return "Alice (25) - N/A"
@@ -786,6 +787,76 @@ function formatUser( your destructuring here ) {
 }
 
 >Spread operator
+
+---1)Problem 4: Array Manipulation
+Task: Create a new array that contains all elements from arr1, arr2, and arr3
+Then add the number 10 at the beginning and 0 at the end
+Expected output: [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [7, 8, 9];
+
+---2)Problem 5: Object Merging with Override
+Task: Create a final settings object that merges defaultSettings with userSettings
+userSettings should override defaultSettings where properties match
+Expected: { theme: 'dark', language: 'en', notifications: false, autoSave: false }
+
+const defaultSettings = {
+  theme: 'light',
+  language: 'en',
+  notifications: true,
+  autoSave: false
+};
+
+const userSettings = {
+  theme: 'dark',
+  notifications: false
+};
+
+---3)Problem 6: Function Arguments Spreading
+Task: Call calculateSum using the spread operator with the numbers array
+Expected output: 150
+
+function calculateSum(a, b, c, d, e) {
+  return a + b + c + d + e;
+}
+
+const numbers = [10, 20, 30, 40, 50];
+
+>Rest Operator Problems
+
+---1)Problem 7: Function with Variable Arguments
+
+Task: Write a function called 'multiply' that takes the first number as a multiplier
+and multiplies it with all remaining numbers, then returns the sum of results
+Example: multiply(2, 3, 4, 5) should return 2*3 + 2*4 + 2*5 = 6 + 8 + 10 = 24
+
+function multiply( your parameters here ) {
+  your code here
+}
+
+--2)Problem 8: Array Destructuring with Rest
+
+Task: Use destructuring to get the first score, second score, and collect the rest
+Then calculate the average of the remaining scores
+Expected: first = 95, second = 87, avgOfRest = average of [92, 78, 85, 90, 88]
+const scores = [95, 87, 92, 78, 85, 90, 88];
+
+--3)Problem 9: Object Destructuring with Rest
+Task: Destructure to get id and name, then collect all other properties in a 'details' object
+Expected: id = 1, name = 'Sarah', details = {email: '...', grade: 'A', ...}
+
+const student = {
+  id: 1,
+  name: 'Sarah',
+  email: 'sarah@email.com',
+  grade: 'A',
+  subjects: ['Math', 'Science'],
+  attendance: 95,
+  behavior: 'excellent'
+};
+
 
 #21)Explain Event loop.
 
