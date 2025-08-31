@@ -1409,49 +1409,31 @@ another class (called the parent or superclass) using the extends keyword in Jav
 
 The super keyword is used to call the constructor and methods of the parent class from within the child class.
 
-class Users {
-  constructor(name, role) {
-    this.name = name;
-    this.role = role;
+class TeamInfo {
+  constructor(teamName, teamRole, teamSize) {
+    this.teamName = teamName;
+    this.teamRole = teamRole;
+    this.teamSize = teamSize;
   }
 
-  login() {
-    console.log(`${this.name} (${this.role}) has logged in.`);
-  }
-  logout() {
-    console.log(`${this.name} (${this.role}) has logged out.`);
+  getTeamInfo() {
+    return `Team name: ${this.teamName} | Team role: ${this.teamRole} | Team size: ${this.teamSize} members`;
   }
 }
 
-class Admin extends Users {
-  constructor(name, role) {
-    super(name, role);
+class TeamCurrentTask extends TeamInfo {
+  constructor(teamName, teamRole, teamSize, currentTask) {
+    super(teamName, teamRole, teamSize);
+    this.currentTask = currentTask;
   }
-
-  delete(user) {
-    console.log(
-      `${this.name} (${this.role}) Deleted ${user.name} (User) account.`
-    );
-  }
-
-  banUser(user) {
-    console.log(
-      `${this.name} (${this.role}) Banned ${user.name} (User) account.`
-    );
+  getTeamInfoWithTask(){
+  return `${super.getTeamInfo()}. Currently, the team is working on ${this.currentTask}.`;
   }
 }
 
-const userOne = new Users("Vani", "User");
 
-userOne.login();
-userOne.logout();
-
-const admin = new Admin("Yash", "Admin");
-
-admin.login();
-admin.delete(userOne);
-admin.banUser(userOne);
-admin.logout();
+let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
+console.log(teamCurrentTask.getTeamInfoWithTask());
 
 #Ans 28)
 --- Polymorphism
@@ -1459,68 +1441,68 @@ Polymorphism is a concept where multiple classes can have methods with the same 
 use case or behavior.
 
 In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
-parent class to provide a different functionality
+parent class to provide a different functionality.
 
-class SMSNotification{
-    send(){
-        console.log("Sending SMS Notification");
-    }
+>Difference (one-liner trick)
+
+--Overriding → Same method name, same parameters, but redefined in child class (runtime).
+--Overloading → Same method name, different parameters (compile-time → but JS doesn’t true method overloading like C++ and Java).
+
+class SMSNotification {
+  send() {
+    console.log("Sending a generic notification");
+  }
 }
 
-class EmailNotification extends SMSNotification{
-    send(){
-        console.log("Sending Email Notification");
-    }
+class EmailNotification extends SMSNotification {
+  send() {
+    console.log("Sending Email Notification");
+  }
 }
 
 class PushNotification extends EmailNotification {
-    send(){
-        console.log("Sending Push Notification");
-    }
+  send() {
+    console.log("Sending Push Notification");
+  }
 }
 
-const userOne=new SMSNotification;
-const userTwo=new EmailNotification;
-const userThree=new PushNotification;
+const sendNotification = [
+  new SMSNotification(),
+  new EmailNotification(),
+  new PushNotification(),
+];
 
-userOne.send();
-userTwo.send();
-userThree.send();
+sendNotification.forEach((n) => {
+  n.send();
+});
 
 #Ans 29)
 --Abstraction
 
-Abstraction means hiding the complex internal logic and only exposing the essential features or behavior to the outside world.
-It helps you focus on what an object does instead of how it does it.
+Abstraction in JavaScript simply means hiding the internal details and showing only the necessary things to the user.
 
-It’s like using a TV remote:
-You press a button to increase volume, but you don’t need to know how the remote talks to the TV. That's abstraction in action.
+In JS, we don’t have keywords like abstract (like in Java), but we can achieve abstraction using classes + methods + private 
+fields (or by using functions with closures).
 
-
-class PaymentProcessor {
-  #connectToBank() {  // private method
-    console.log("Connecting to bank...");
+class Login {
+  #password;
+  constructor(name, password) {
+    this.name = name;
+    this.#password = password;
   }
 
-  processPayment(amount) {
-    this.#connectToBank();  // hide internal logic
-    console.log(`Processing payment of ₹${amount}`);
+  userLogin(inputPassword) {
+    if (inputPassword === this.#password) {
+      return `${this.name} Login successfully`;
+    } else {
+      return "Invalid Password";
+    }
   }
 }
 
-const payment = new PaymentProcessor();
-payment.processPayment(1000);  // ✅
-payment.#connectToBank();      // ❌ Not accessible from outside
-
-
-✅ Key Points:
-
---You only expose what's necessary (processPayment)
-
---You hide internal logic (#connectToBank)
-
---User doesn't need to know the complex stuff going on behind
-
+let userOne=new Login("Yash","12345");
+console.log(userOne.userLogin("12345")); ✅ 
+console.log(userOne.userLogin("123")); ❌
 
 #Ans 30)
 ---Prototype
@@ -1530,14 +1512,7 @@ This prototype object contains various properties and methods, which can be inhe
 
 or 
 
-In JavaScript, every object has a hidden property called [[Prototype]] (accessible via Object.getPrototypeOf(example:myCar) ), which refers to another object.
-This prototype object contains shared properties and methods. If the original object doesn't have a certain property or method, 
-JavaScript looks it up in its prototype chain.
-
-"
-
-💬 In Simpler Words (for notes or revision):
-Each object has a hidden prototype that is itself an object containing shared properties and methods. These can be inherited by other objects.
+Every object has a hidden object called a prototype that contains methods and properties. With the help of prototype inheritance, objects can share their properties and methods.
 
 --- Prototype Inheritance
 
@@ -1663,7 +1638,9 @@ number, and false is converted into 0, that's why answer is true.
 console.log([] === false);
 =>false
 JS does NOT convert values when using === , That’s the whole point of strict equality — it compares values as-is, 
-without converting them.
+without converting them, [] is an object (array is technically an object type), Since they are different types 
+(object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
+boolean are not the same type, hence false.
 
 #Ans 36)
  Answer: c) `splice()`

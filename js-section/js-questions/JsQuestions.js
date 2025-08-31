@@ -915,13 +915,18 @@ Create a class `BankAccount` that demonstrates the concept of **Encapsulation** 
 
 #32) Shallow copy and deep copy question.
 
->A)Create a Shallow copy of the profile object using any method you prefer.
+>A) 
+Create a shallow copy of the profileOne object using any method you prefer.
+After copying, change the name property in the copied object and make sure the original object does not change.
 
 const profileOne = {
   name: "Yashu",
 };
 
->B)Create a Deep copy of the profile object using any method you prefer.
+>B)
+Create a deep copy of the profile object using any method you prefer.
+Since it has a nested object (social), a shallow copy will not be enough. Make sure changes in the copied object 
+do not affect the original object.
 
 const profile = {
   name: "Yashu",
@@ -930,7 +935,11 @@ const profile = {
   }
 };
 
->C)Create a deep copy each of them
+>C)
+Create a deep copy of the user object given below.
+This object contains nested objects, arrays, and a Date property. Ensure that all levels are copied independently so
+that changes in the copied object do not affect the original.
+
 const user = {
   name: "Yashu",
   skills: ["JS", "React"],
@@ -941,7 +950,11 @@ const user = {
   createdAt: new Date()
 };
 
->D)Create a deep copy each of them
+>D)
+Create a deep copy of the user object given below.
+This object contains nested objects, arrays, a Date property, and also a method (info). Make sure the deep copy handles 
+all these properties correctly without affecting the original object.
+
 const user = {
   name: "Yashu",
   skills: ["JS", "React"],
