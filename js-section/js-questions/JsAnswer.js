@@ -1655,18 +1655,38 @@ So, `splice()` is the only **mutable** one among them 👀
 >a)
 Promise {<fulfilled>: 'Yash'}
 
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "Yash"
+
 >b)
 Promise {<pending>}
 
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "23"
+
 #Ans 38)
-- Answer not present yet 👨‍💻
+>Babel
+Babel is a JavaScript compiler that allows developers to use the latest JavaScript features without worrying about browser 
+compatibility. It transpiles modern JavaScript code (like ES6+) into a version that older browsers can understand, ensuring
+wide support.
+
+->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it.
+
+>Bundlers
+Bundlers (like Webpack, Parcel, Vite) are powerful module bundlers for JavaScript applications. They take all assets (JavaScript, 
+CSS, images, etc.) and bundle them into optimized files for efficient loading. Bundlers also support loaders and plugins, making 
+it possible to handle tasks like transpiling code with Babel, processing CSS, or optimizing images.
+
+->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
 
 #Ans 39)
 
 1. To use npm (Node Package Manager):  
-   - Reason: Node.js comes with npm (Node Package Manager), which is essential for installing
-    and managing JavaScript packages like TypeScript, React, and other libraries used in development. 
-    Without npm (Node Package Manager), you can’t easily install these packages.
+  -Reason: When you install Node.js, it comes with npm (Node Package Manager), which is essential for installing and managing 
+  JavaScript packages like TypeScript, React, and other libraries used in development. Without npm, you can’t easily install 
+  these packages.
   
 2. **To run JavaScript outside the browser**:  
    - Reason: Node.js provides a JavaScript runtime environment, allowing you to run JavaScript
@@ -1677,11 +1697,12 @@ Promise {<pending>}
    Node.js is required to run these tools for building and optimizing code.
 
 #Ans 40)
-- Answer not present yet 👨‍💻
+- JSX (JavaScript XML) is a syntax extension for JavaScript used in React. With the help of JSX, we can write HTML-like code 
+inside JavaScript
 
 #Ans 41)
 
-1)First Way : Using Third Variable
+1)First Way : Using a temporary variable
 
  let c;
 
@@ -1692,7 +1713,7 @@ Promise {<pending>}
  console.log(a);
  console.log(b);
 
-2)Second Way: Without using Third Vairble
+2)Second Way: Using arithmetic operations
 
  a=a+b;//630
  b=a-b;//630-600=30
@@ -1700,7 +1721,8 @@ Promise {<pending>}
 
  console.log(a,b);
 
-3)Third Way : Swapping using Destructuring Assignment
+3)Third Way : Using Array destructuring (ES6)
+
 [a,b]=[b,a]
 console.log("a=",a);
 console.log("b=",b);
@@ -1720,7 +1742,7 @@ let a=8;
 let b=2;
 
 console.log(8%2)//0
-console.log(2%8)//2
+console.log(2%8)//2 (if a%b and a<b so asnwer will be a)
 
 #Ans 44) 
 let a=5859;
@@ -1827,17 +1849,24 @@ let ans=++(p++)
 First brakcet solved so :  ++(p++)=++11; (so after brakcet solved ++ is applying on constant value that's why it's giving error)
 
 #Ans 47)
+>A)
 1)
-console.log(Math.trunc(1000+Math.random()*9000)); // 4 Digit Otp
-console.log(Math.trunc(10000+Math.random()*9000)); // 5 Digit Otp
+function generateFourDigitOTP(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(generateFourDigitOTP(1000, 9999)); 
 
 2)
+
+
+>B)
 let l=10;
 let b=20;
 console.log(l*b)//200 Area of rectangel
 console.log(2*(l*b))//200 Perimeter of rectangle
 
-3)
+>C)
 Formula 2*pi*r
 let radius=5;
 let ans =Number((2*Math.PI*radius).toFixed(2))

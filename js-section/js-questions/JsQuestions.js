@@ -1007,7 +1007,7 @@ async function age(){
 console.log(age());
 
 
-#38) What is Bable and webpack ? Answer not added yet 👨‍💻
+#38) What is Bable and Bundlers (Webpack, Parcel, Vite)? 
 
 #39) Why is Node.js necessary? (For Knowledge Purpose)
 
@@ -1038,7 +1038,7 @@ in any project without needing to install it separately in each project folder.
 Installs the package only in the current project’s node_modules folder, and it is available only within that 
 specific project.
 
-#40)What is JSX ? Answer not added yet 👨‍💻
+#40)What is JSX ?
 
 #41) Swap two variables using three different methods.
 
@@ -1142,8 +1142,8 @@ console.log(p);
 
 >A) Generate OTPs
 
-1. Generate a 4-digit OTP
-2. Generate a 5-digit OTP
+1. Generate a 4-digit OTP 
+2. Generate a 6-digit OTP don't use Math.random use cryptographically secure otp.
 
 >B) Rectangle Calculations
 
@@ -1164,7 +1164,7 @@ let radius = 5;
 
 1. Find the **circumference of a circle** using the formula:
   👉 `2 * π * r`
-  (Result must be a number, not a string — and limited to 2 decimal places.)
+  (Result must be a number, not a string and limited to 2 decimal places.)
 
 #48) Given an array of integers, calculate the total of all its values.
 
