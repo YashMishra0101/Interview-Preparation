@@ -1143,21 +1143,10 @@ console.log(p);
 >A) Generate OTPs
 
 1. Generate a 4-digit OTP 
-2. Generate a 6-digit OTP don't use Math.random use cryptographically secure otp.
-
->B) Rectangle Calculations
-
-let l = 10;
-let b = 20;
-
-1. Calculate the Area of the rectangle
-  Formula: `Length * Breadth`
-
-2. Calculate the **Perimeter** of the rectangle
-  Formula: `2 * (Length + Breadth)`
+2. Generate a 6-digit OTP. Do not use Math.random; use a cryptographically secure method instead.
 
 
->C) Circumference of a Circle
+>B) Circumference of a Circle
 
 Using:
 let radius = 5;
@@ -1269,7 +1258,7 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#64) Fibonacci Series – 3 Variations
+#64) Fibonacci Series – 4 Variations
 
 >Q1. Write a function to print the first `n` Fibonacci numbers.
 Example:

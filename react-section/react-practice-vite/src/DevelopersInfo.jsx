@@ -7,15 +7,15 @@ function DevelopersInfo() {
       name: "Yash Mishra",
       role: "Full Stack Developer",
       age: "23",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHEz2CoxkNVTQ/profile-displayphoto-shrink_800_800/B4DZQ0.TA6GUAg-/0/1736055534790?e=1758153600&v=beta&t=dR-wPlYql7IAfV-kL7QhI-j0IwmxTCfP1HCPFDKGEXA",
+      image: "https://i.ibb.co/VWf1Kc3N/1756575920105.jpg",
     },
+
     {
       name: "Rahul Tiwari",
       role: "Backend Developer",
       age: "24",
       image:
-        "https://pbs.twimg.com/profile_images/1931015967561379840/fuw2oJLe_400x400.jpg",
+        "https://i.ibb.co/xtcbJvr0/121499348.jpg",
     },
   ];
   const toggle = () => {

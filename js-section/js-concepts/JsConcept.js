@@ -1791,6 +1791,9 @@ console.log(resultInfinityFunctionCurrying); //10
 
 
 #23)Higher Order Function in Javascript
+A function is called higher-order if: It takes another function as an argument (callback) OR It returns another function.
+Examples: map(), filter(), reduce(), forEach(),sort().
+-->for...of is NOT a higher-order function.It’s just a looping construct (syntax provided by JavaScript), not a function that takes another function.
 
 const companies = [
   { name: "Google", category: "Product Based", start: 1981, end: 2004 },
@@ -1864,6 +1867,34 @@ let doubledAges=ages.map((age)=>{
 })
 
 console.log(doubledAges);
+
+----------------------------------------------------------
+>Major difference between filter and reduce
+
+let arr = [1, 2, 3, 4];
+
+let evens = arr.filter(function(num) {
+  if (num % 2 === 0) {
+    return true;  // keep it
+  } else {
+    return false; // remove it
+  }
+});
+
+console.log(evens); // [2, 4]  <<<--------------
+
+
+let evensUsingMap = arr.map(function(num) {
+  if (num % 2 === 0) {
+    return num;     // keep value
+  } else {
+    return undefined; // try to "remove" it
+  }
+});
+
+console.log(evensUsingMap); // [undefined, 2, undefined, 4]   <<<<<<<<<<<<<<<--------------- main difference
+
+----------------------------------------------------------
 
 >sort
 ---With the help of sort we sort the  element Ascending or Descending order
