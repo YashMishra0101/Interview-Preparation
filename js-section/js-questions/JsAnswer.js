@@ -2037,36 +2037,31 @@ let arr = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
 let arr = [50, 50, 50, 50];
 let arr = [99, 99, 99,89, 87];
 
-let secondMaxValue = () => {
-  let firstMaxValue = -Infinity;
-  let secondMaxValue = -Infinity;
+let firstSecondMaxArray = (arr) => {
+  let firstMax = -Infinity;
+  let secondMax = -Infinity;
   for (let a = 0; a < arr.length; a++) {
-    if (arr[a] > firstMaxValue) {
-      secondMaxValue = firstMaxValue;
-      firstMaxValue = arr[a];
-    } else if (arr[a] > secondMaxValue && arr[a] < firstMaxValue) {
-      secondMaxValue = arr[a];
+    if (firstMax < arr[a]) {
+      secondMax = firstMax;
+      firstMax = arr[a];
+    } else if (arr[a] > secondMax && arr[a] < firstMax) {
+      secondMax = arr[a];
     }
   }
-  if(secondMaxValue===-Infinity){
-    return "No Second Max Value Found"
+  if (secondMax === -Infinity) {
+    secondMax = "No second max";
   }
-  else{
-    return {
-      "First Max Value" : firstMaxValue,
-      "Second Max Value" : secondMaxValue
 
-    }
-  }
+  return { firstMax, secondMax };
 };
 
-console.log(secondMaxValue());
+console.log(firstSecondMaxArray(arr1));
 
 #Ans 52)
 
 ---First Solution
 
-let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
+let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
 
 let reverse=arr.reverse();
 console.log(reverse);
@@ -2081,7 +2076,7 @@ console.log(reverse.reverse());
 
 ---Second Way (Not optimal : We are creating New Array based on previous array it take same space like previous array )
 
-let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
+let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
 
 let revArray=[];
 for(let a=arr.length-1; a>=0; a--){
@@ -2092,7 +2087,7 @@ console.log(revArray);
 
 ---Third Solution (Optimal)
 
-let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
+let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
 
 let a = 0;
 let b = arr.length - 1;
@@ -2106,6 +2101,10 @@ while (a < b) {
 }
 
 console.log(arr);
+
+Method name : Two-pointer swapping technique (in-place reversal)
+-Time Complexity: O(n)
+-Space Complexity: O(1)
 
 #Ans 53)
 

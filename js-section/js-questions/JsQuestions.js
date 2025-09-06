@@ -1174,7 +1174,7 @@ let arr3 = [99, 99, 99, 89, 87];
 
 #52)Reverse the array
 
-let arr=[1,2,3,4,89,5,6,7,66,8,0,9,10];
+let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
 
 #53)Put 0s on left and 1s on right side.
 

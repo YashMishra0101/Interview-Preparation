@@ -1,54 +1,42 @@
 console.log("Working");
 // 'use strict'
 
-// let arr = [10, 20, 30, 40, 50];
-
-// let arrTotal = 0;
-// for (let a = 0; a < arr.length; a++) {
-//   arrTotal += arr[a];
-// }
-
-// console.log(arrTotal);
-
-// let arrTotal = 0;
-// for (let value of arr) {
-//   arrTotal += value;
-// }
-// console.log(arrTotal);
-
-// let sum=arr.reduce((acc,next)=>{
-// return acc+next;
-// },0)
-
-// console.log(sum);
-
-// let arr=[10,20,78,30,85,40,50,];
-
-// let maxValue=arr[0];
-
-// for(let a=1; a<arr.length; a++){
-//     if(maxValue<arr[a]){
-//         maxValue=arr[a];
-//     }
-// }
-
-// console.log(maxValue);
-
-// let maxValue=Math.max(...arr);
-// console.log(maxValue);
-
-let arr = [10, 20, 78, 4, 30, 85, 40, 50];
-
-// let minValue = arr[0];
-
-// for (let a = 0; a < arr.length; a++) {
-//   if (minValue > arr[a]) {
-//     minValue = arr[a];
-//   }
-// }
-
-// console.log(minValue);
 
 
-let minValue=Math.min(...arr);
-console.log(minValue);
+let arr = [0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0];
+
+let a = 0;
+let b = arr.length - 1;
+
+while (a < b) {
+  if (arr[a] === 1) {
+    let temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+    b--;
+  }
+  if (arr[a] != 1) {
+    a++;
+  }
+}
+
+console.log(arr);
+
+
+
+let arr=[0,0,1,0,1,0,1,1,0,1,0]
+
+let a=0;
+let b=0;
+
+while(a<arr.length){
+  if(arr[a]===0){
+    temp=arr[a];
+    arr[a]=arr[b]
+    arr[b]=temp;
+    b++;
+  }
+  a++;
+}
+
+console.log(arr);
