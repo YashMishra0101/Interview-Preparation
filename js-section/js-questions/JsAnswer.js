@@ -1995,7 +1995,7 @@ console.log(biggestValue);
 TC:O(n)
 SC:O(1)
 
----Second Solution 
+---Second Solution (In Industry)
 
 let arr=[10,20,78,4,30,85,40,50,];
 
@@ -2053,6 +2053,11 @@ let firstSecondMaxArray = (arr) => {
   }
 
   return { firstMax, secondMax };
+
+  // return {
+  //   firstMax,
+  //   secondMax: secondMax === -Infinity ? "No second max present" : secondMax,
+  // };
 };
 
 console.log(firstSecondMaxArray(arr1));
@@ -2088,6 +2093,8 @@ console.log(revArray);
 ---Third Solution (Optimal)
 
 let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
+let arr=[0,45,98,1,33,1,-7,55];
+
 
 let a = 0;
 let b = arr.length - 1;
@@ -2109,6 +2116,25 @@ Method name : Two-pointer swapping technique (in-place reversal)
 #Ans 53)
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
+
+---First Approach
+let a = 0;
+let b = arr.length - 1;
+while (a < b) {
+  if (arr[a] === 1) {
+    let temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+    b--;
+  }
+  if (arr[a] !== 1) {
+    a++;
+  }
+}
+
+console.log(arr);
+
+---Second Approach 
 
 let a=0;
 let b=0;
