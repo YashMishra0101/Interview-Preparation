@@ -2,8 +2,10 @@ import "./App.css";
 import Counter from "./Counter";
 import DevelopersInfo from "./DevelopersInfo";
 import RoleAssign from "./RoleAssign";
-import {Hide} from "./Hide"
+import { Hide } from "./Hide";
 import { TakeInputValue } from "./TakeInputValue";
+import SkillsCheckbox from "./SkillsCheckbox";
+import RadioSelect from "./RadioSelect";
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
         <Counter />
         <DevelopersInfo />
         <RoleAssign />
-        <Hide/>
-        <TakeInputValue/>
+        <Hide />
+        <TakeInputValue />
+        <SkillsCheckbox />
+        <RadioSelect />
       </div>
     </>
   );

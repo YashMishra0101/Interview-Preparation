@@ -23,7 +23,7 @@ function DevelopersInfo() {
   };
   return (
     <>
-      <div className="min-h-screen pb-6 w-screen bg-green-500 flex justify-center items-center flex-col gap-2">
+      <div className="min-h-screen pb-6 w-screen bg-green-500 flex justify-center items-center flex-col gap-2 py-6">
         <div className="developerInfo flex flex-col md:flex-row md:mt-0 mt-2 gap-2">
           {isVisible &&
             developersInfo.map((info, index) => (

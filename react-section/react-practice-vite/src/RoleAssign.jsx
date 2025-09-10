@@ -41,7 +41,7 @@ const RoleAssign = () => {
   };
   return (
     <>
-      <div className="flex justify-center items-center flex-col">
+      <div className="flex justify-center items-center flex-col py-6 mt-8">
         <h1 className="text-2xl font-bold text-center mb-5 mt-7 text-green-600">
           Job Eligibility Checker
         </h1>
