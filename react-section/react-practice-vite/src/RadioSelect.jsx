@@ -55,8 +55,6 @@ const RadioSelect = () => {
           <div className="text-2xl font-bold text-center mb-2 mt-3 text-red-600 w-80">
             <div>Select Your Location</div>
             <select
-              name="location"
-              id="location"
               className="text-lg flex items-end ml-5 border-2 outline-none my-3"
               onChange={handelLocation}
             >

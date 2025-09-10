@@ -65,44 +65,63 @@ const userName = () => {
   alert("Hi My Name is Vanin");
 };
 
-#23)What is ts and tsx in react vite ?
+#2)What is the meaning of caret ^ symbol.
 
-  --  ts = Typescript and tsx = Typescript XML.
-  - .ts : This is a TypeScript file that can contain plain TypeScript code. It does **not** support JSX syntax.
-  - .tsx : This is a TypeScript file that **does** support JSX syntax, allowing you to write React components.
-  - .ts for files that do not contain any React components or JSX.
-  - .tsx for files that contain React components, JSX, or any JSX expressions.
-  - Use `.ts` for standard TypeScript files without JSX.
-  - Use `.tsx` when writing React components that include JSX.
+When you see something like:
 
-> Using `.ts` File
+"react": "^19.0.1"
 
-This file contains TypeScript code without any JSX:
+-> The **caret (`^`)** means:
+  Install the **latest minor and patch versions** of that package, but **don’t upgrade the major version**.
 
-```typescript
-// example.ts
-const greet = (name: string): string => {
-  return `Hello, ${name}!`;
-};
+Example:
 
-console.log(greet('Yashu'));
+`"^19.0.1"` means npm/yarn can install anything from:
 
+  ```
+19.0.1  →  19.x.x  (latest minor/patch)
+  ```
 
->  Using `.tsx` File
-This file contains a React component with JSX:
+but it **will not automatically upgrade** to version **20.0.0** (because major version changes may break compatibility).
 
-```typescript
-// ExampleComponent.tsx
+--- Comparison with other symbols:
+* `"~19.0.1"` → Only allow patch updates (like `19.0.2`, `19.0.3`) but not minor (`19.1.0`).
+* `"19.0.1"` (no symbol) → Exactly that version, no auto-updates.
+* `"*"` → Install absolutely any version (very risky).
+* `"latest"` → Always pulls the newest available version.
 
-import React from 'react';
+--- So in short:
+`^` keeps you safe from breaking changes (major updates) but still lets you get bug fixes and new features from minor/patch updates not from major updates.
 
-const ExampleComponent: React.FC = () => {
-  return (
-    <div>
-      <h1>Hello, Yashu!</h1>
-    </div>
-  );
-};
+#3)What is useState hook.
+With the help of that we can update the state.
 
-export default ExampleComponent;
+useState returns an array with two elements. The first element is the current state value and 
+the second element is a function that you use to update that state.
+
+We pass an initial state to `useState()`. This can be any data type: number, string, object, array, or even `null`.
+
+When we call the update function, React re-renders the component with the new state value.
+
+#4)Fragment Tag in React.
+In React, a Fragment (<React.Fragment> or shorthand <> </>) lets us group multiple elements without adding 
+an extra node to the DOM.
+Normally, React components must return a single root element, so we wrap everything in a <div>. But that 
+adds unnecessary DOM nodes. Fragments solve this by grouping elements invisibly.
+Fragments let us group elements without creating unnecessary DOM nodes. This keeps the DOM tree smaller, 
+cleaner, and better for performance in big apps.
+
+#5)Named and Default Exports in JavaScript.
+Default Export → Only one per file. Imported without curly braces.
+Named Export → Can export multiple values. Imported with curly braces.
+
+Example:
+
+export default Greet;
+export const Add = (a, b) => a + b;
+
+// app.js
+import Greet from "./Greet";  // default import
+import { Add } from "./Add"; // named import
+
 */

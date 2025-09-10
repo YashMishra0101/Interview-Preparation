@@ -2134,15 +2134,18 @@ while (a < b) {
 
 console.log(arr);
 
----Second Approach 
+-Time Complexity: O(n)
+-Space Complexity: O(1)
+
+---Second Approach (This one is better than first one) (Two Pointer - Partition Process used in QuickSort)
 
 let a=0;
 let b=0;
 
 while(a<arr.length){
   if(arr[a]===0){
-    temp=arr[a];
-    arr[a]=arr[b]
+    let temp=arr[a];
+    arr[a]=arr[b];
     arr[b]=temp;
     b++;
   }
@@ -2150,6 +2153,9 @@ while(a<arr.length){
 }
 
 console.log(arr);
+
+-Time Complexity: O(n)
+-Space Complexity: O(1)
 
 
 #Ans 54) 
@@ -2202,44 +2208,49 @@ console.log(checkPalindrom("abcdef"));
 
 ---Third Solution using Two pointer 
 
-let checkPalindrome = (str) => {
-  let left = 0;
-  let right = str.length - 1;
+const checkPalindrom = (para) => {
+  let a = 0;
+  let b = para.length - 1;
 
-  while (left < right) {
-    if (str[left] !== str[right]) {
-      return false;
-    }
-    left++;
-    right--;
+  while (a < b) {
+    if (para[a] !== para[b]) {
+      return "Not a palindrom"; 
+    a++;
+    b--;
   }
 
-  return true;
+  return "It's a palindrom"; 
 };
-console.log(checkPalindrome("abbao"));
+
+console.log(checkPalindrom(a));
+
 
 #Ans 57)
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let target = 13;
-let targetCheck = (arr) => {
+
+const checkTarget = (target) => {
   let right = 0;
   let left = arr.length - 1;
   while (right < left) {
-    let check = arr[right] + arr[left];
-    if (check === target) {
-      console.log(`${arr[right]}+ ${arr[left]} = ${check}`);
-      return true;
-    } else if (check < target) {
+    let total = arr[right] + arr[left];
+    if (total < target) {
       right++;
-    } else {
+    } else if (total > target) {
       left--;
+    } else {
+      console.log(`Found: ${arr[right]} + ${arr[left]} = ${total}`);
+      return;
     }
   }
-  console.log("No Target found");
-  return false;
+  console.log("No Target Found");
+  return;
 };
 
-targetCheck(arr);
+checkTarget(13);
+
+-Time Complexity: O(n)
+-Space Complexity: O(1)
 
 #Ans 58)
 let str="YAsh";

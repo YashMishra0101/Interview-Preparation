@@ -1181,7 +1181,6 @@ let arr=[0,45,98,1,33,1,-7,55];
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
-
 #54)Print Each Charcter on new line.
 
 let s="ramratan";
