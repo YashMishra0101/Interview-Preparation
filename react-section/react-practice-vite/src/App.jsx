@@ -2,6 +2,8 @@ import "./App.css";
 import Counter from "./Counter";
 import DevelopersInfo from "./DevelopersInfo";
 import RoleAssign from "./RoleAssign";
+import {Hide} from "./Hide"
+import { TakeInputValue } from "./TakeInputValue";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Counter />
         <DevelopersInfo />
         <RoleAssign />
+        <Hide/>
+        <TakeInputValue/>
       </div>
     </>
   );
