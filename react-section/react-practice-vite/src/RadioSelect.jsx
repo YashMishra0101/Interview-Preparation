@@ -45,7 +45,7 @@ const RadioSelect = () => {
                 onChange={handelRole}
                 value="Fullstack Developer"
               />
-              <label htmlFor="backend">Fullstack Developer</label>
+              <label htmlFor="fullstac">Fullstack Developer</label>
             </div>
             <p className="font-bold text-center mt-2 text-red-600">
               Role Selected: {role === "" ? "Not selected" : role + "🧑‍💻"}
@@ -56,10 +56,11 @@ const RadioSelect = () => {
             <div>Select Your Location</div>
             <select
               className="text-lg flex items-end ml-5 border-2 outline-none my-3"
+              value={location}
               onChange={handelLocation}
             >
               <option value="">Select</option>
-              <option value="India">Indai</option>
+              <option value="India">India</option>
               <option value="UAE">UAE</option>
               <option value="USA">USA</option>
               <option value="England">England</option>
