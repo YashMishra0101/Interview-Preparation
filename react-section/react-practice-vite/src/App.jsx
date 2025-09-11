@@ -6,6 +6,7 @@ import { Hide } from "./Hide";
 import { TakeInputValue } from "./TakeInputValue";
 import SkillsCheckbox from "./SkillsCheckbox";
 import RadioSelect from "./RadioSelect";
+import Clock from "./Clock";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <TakeInputValue />
         <SkillsCheckbox />
         <RadioSelect />
+        <Clock/>
       </div>
     </>
   );
