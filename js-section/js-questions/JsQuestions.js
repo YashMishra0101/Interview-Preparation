@@ -117,27 +117,16 @@ n=5;
 9)Pattern Nine 
 n=5;
 
-9
-7
-5
-3
-1
-1
-3
-5
-7       
-9
-
-*********
- *******
-  *****
-   ***
-    *
     *
    ***
   *****
  *******
 *********
+*********
+ *******
+  *****
+   ***
+    *
 
 10)Pattern Ten
 n=5;
@@ -1201,20 +1190,57 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let str="YAsh";
 
 #59)
-Count how many times each character repeats in a string.
+Count how many times each character repeats in a string.(This is a : Frequency counter pattern)
 
-let str = "zZabcdedcjbA";
+let str = "zZabcdedcjbAeeee";
 
 #60)
 1)Use console.log() to display the current year.
-2)Create a two variable for first and last name and print it.
-3)Create a for loop that calculate the factorial of 5.
-4)Write a nested loop to print a 3x3 grid of numbers.
+
+2)Create a for loop that calculate the factorial of 5.
+
+3)Write a program to print a 6×6 grid star pattern.
+
+******
+******
+******
+******
+******
+******
+
+4)Write a program to print the Hourglass / Inverted Diamond Pattern.
+n=5;
+
+*********
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
+
+
+5)Write a program to print the Diamond Star Pattern.
+n=5;
+
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+
+
+6)Write a program to print a 3×3 grid of numbers from 1 to 9.
 1 2 3 
 4 5 6 
 7 8 9 
-5)Reverse the Array' (Use normal for loop, don't us pre build method or any sorting method just use normal loop)
-let arr=[1,2,3,4,5];
 
 
 #61)In JavaScript, what happens if you declare a variable without using let, const, or var?

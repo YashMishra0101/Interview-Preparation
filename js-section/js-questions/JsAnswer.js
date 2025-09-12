@@ -2214,12 +2214,13 @@ const checkPalindrom = (para) => {
 
   while (a < b) {
     if (para[a] !== para[b]) {
-      return "Not a palindrom"; 
+      return "Not a palindrom";
+    }
     a++;
     b--;
   }
 
-  return "It's a palindrom"; 
+  return "It's a palindrom";
 };
 
 console.log(checkPalindrom(a));
@@ -2253,25 +2254,27 @@ checkTarget(13);
 -Space Complexity: O(1)
 
 #Ans 58)
-let str="YAsh";
-let newStr="";
-for(let i=0; i<=str.length-1; i++){
-    let char=str.charCodeAt(i);
+//ASCII knowledge → A-Z = 65-90, a-z = 97-122
+let str = "YAsh";
 
-    if(char>=65 && char<=90){
-       newStr+=String.fromCharCode(char+32);
+const changeCase = (para) => {
+  let newStr = "";
+  for (let a = 0; a < para.length; a++) {
+    let check = para.charCodeAt(a);
+    if (check >= 97 && check <= 122) {
+      newStr += String.fromCharCode(check - 32);
+    } else {
+      newStr += String.fromCharCode(check + 32);
     }
-    else
-    {
-        newStr+=String.fromCharCode(char-32)
-    }
-  
-}
-console.log(newStr);
+  }
+  return newStr;
+};
+console.log(changeCase(str));
+
 
 #Ans 59)
 
-let str = "zZabcdedcjbA";
+let str = "zZabcdedcjbAeeee";
 
 let count = {};
 
@@ -2287,56 +2290,38 @@ for (let a = 0; a < str.length; a++) {
 
 console.log(count);
 
+TC = O(n)
+SC = O(n)
+
 #Ans 60)
 --1)
 let getCurrentYear=new Date();
 console.log(getCurrentYear.getFullYear())
 
 ---2)
-let firstName="Yash";
-let lastName="Mishra";
-
-console.log(firstName+" "+lastName)
-console.log(`${firstName} ${lastName}`)
-
----3)
 let factorial = 1;
 for (let a = 5; a > 0; a--) {
   factorial *= a;
 }
 console.log(factorial);
 
----4)
-let gridPattern=(value)=>{
-   let pattern="";
-   let count=1;
-   for(let a=1; a<=value; a++){
-    for(let b=1; b<=value; b++){
-        pattern+=count+" ";
-        count++;
+---3)
+let count = 6;
+let patternStore = "";
+const pattern = (value) => {
+  for (let a = 1; a <= value; a++) {
+    for (let b = 1; b <= value; b++) {
+      patternStore += "*";
     }
-    pattern+="\n";
-   }
-   return pattern;
-}
+    patternStore += "\n";
+  }
+  return patternStore;
+};
 
-console.log(gridPattern(3));
+console.log(pattern(count));
 
----5)
+---4)
 
-// let rev=arr.reverse();
-// console.log(rev);
-
-let revArr=[];
-for(let a=arr.length-1; a>=0; a--){
-  revArr.push(arr[a])
-}
-console.log(revArr);
-
-| Method          | Time Complexity | Space Complexity | Mutates Original? |
-| --------------- | --------------- | ---------------- | ----------------  |
-| `arr.reverse()` | O(n)            | O(1)             | ✅ Yes (Original array lost) |
-| `for` loop      | O(n)            | O(n)             | ❌ No  (Original array stil exit) |
 
 #Ans 61)
 When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from

@@ -1869,7 +1869,7 @@ let doubledAges=ages.map((age)=>{
 console.log(doubledAges);
 
 ----------------------------------------------------------
->Major difference between filter and reduce
+>Major difference between filter and map
 
 let arr = [1, 2, 3, 4];
 
@@ -1893,6 +1893,26 @@ let evensUsingMap = arr.map(function(num) {
 });
 
 console.log(evensUsingMap); // [undefined, 2, undefined, 4]   <<<<<<<<<<<<<<<--------------- main difference
+
+--Second Example 
+
+let arr = [1, 2, 3, 4, 5];
+
+let filt = arr.filter((value) => {
+  if (value !== 2) {
+    return value;
+  }
+});
+
+console.log(filt); //[1, 3, 4, 5] <<<--------------
+
+let usingMap = arr.map((value) => {
+  if (value !== 2) {
+    return value;
+  }
+});
+
+console.log(usingMap); //[1, undefined, 3, 4, 5] //<<<<<<<<<<<<<<<--------------- main difference
 
 ----------------------------------------------------------
 
