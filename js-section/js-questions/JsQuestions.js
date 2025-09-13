@@ -1200,7 +1200,7 @@ let str = "zZabcdedcjbAeeee";
 2)Create a for loop that calculate the factorial of 5.
 
 3)Write a program to print a 6×6 grid star pattern.
-
+---n=6;
 ******
 ******
 ******
@@ -1209,7 +1209,7 @@ let str = "zZabcdedcjbAeeee";
 ******
 
 4)Write a program to print the Hourglass / Inverted Diamond Pattern.
-n=5;
+---n=5;
 
 *********
  *******

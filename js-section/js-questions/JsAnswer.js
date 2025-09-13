@@ -2306,11 +2306,12 @@ for (let a = 5; a > 0; a--) {
 console.log(factorial);
 
 ---3)
-let count = 6;
-let patternStore = "";
-const pattern = (value) => {
-  for (let a = 1; a <= value; a++) {
-    for (let b = 1; b <= value; b++) {
+let star = 6;
+
+const startPattern = (size) => {
+  let patternStore = "";
+  for (let a = 1; a <= size; a++) {
+    for (let b = 1; b <= size; b++) {
       patternStore += "*";
     }
     patternStore += "\n";
@@ -2318,7 +2319,8 @@ const pattern = (value) => {
   return patternStore;
 };
 
-console.log(pattern(count));
+console.log(startPattern(star));
+
 
 ---4)
 
