@@ -2373,23 +2373,28 @@ console.log(Diamondpattern(n));
 
 --6)
 let n = 3;
-let s = 1;
-let pattern = "";
-for (let a = 1; a <= n; a++) {
-  for (let b = 1; b <= n; b++) {
-    pattern += s + " ";
-    s++;
+const pattern = (count) => {
+  let num = 1;
+  let patternStore = "";
+  for (let a = 1; a <= count; a++) {
+    for (let printNum = 1; printNum <= count; printNum++) {
+      patternStore += num + " ";
+      num++;
+    }
+    patternStore += "\n";
   }
-  pattern += "\n";
-}
-
-console.log(pattern);
+  return patternStore;
+};
+console.log(pattern(n));
 
 
 
 #Ans 61)
 When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code—even from inside a function or block.
+anywhere in the code—even from inside a function or block but after declaring not before declaring if we try to access before declaring
+it's gives us Uncaught ReferenceError.
+
+---Extra Info
 
 If we use `var`, the variable is function-scoped, so we cannot access it from outside the function where it was declared.
 If we use `let` or `const`, they are block-scoped, which means we cannot access them from outside the block in which they 
@@ -2416,7 +2421,125 @@ check()
 
 console.log(umar);
 
-#Ans 62)
+#Answer 62)
+
+>>1)
+const fiboNumber = (n) => {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+
+  let fiboNum = [0, 1];
+  for (let a = 2; a < n; a++) {
+    fiboNum.push(fiboNum[a - 2] + fiboNum[a - 1]);
+  }
+  return fiboNum;
+};
+
+console.log(fiboNumber(10));
+
+--TC:O(n)
+--SC:O(n)
+
+>>2)
+
+const getFiboNumber = (n) => {
+  if (n < 0) return null;
+  if (n === 1) return 0;
+  if (n === 2) return 1;
+
+  let prev = 0;
+  let curr = 1;
+
+  for (let a = 3; a <= n; a++) {
+    let temp = prev + curr;
+    prev = curr;
+    curr = temp;
+  }
+  return curr;
+};
+
+console.log(getFiboNumber(n));
+
+
+--TC:O(n)
+--SC:O(1)
+
+>>3)
+let n = 34;
+
+const positionOfFiboNum = (n) => {
+  if (n < 0) return "Invalid Number";
+  if (n === 0) return 1;
+  if (n === 1) return 2;
+  let prev = 0;
+  let curr = 1;
+  let position = 2;
+  while (curr < n) {
+    let temp = prev + curr;
+    prev = curr;
+    curr = temp;
+    position++;
+  }
+
+  return curr === n ? position : "Not a Fibonacci Number";
+};
+
+console.log(positionOfFiboNum(n));
+
+--TC:O(n)
+--SC:O(1)
+
+>>4)
+let n = 10;
+
+const sumOfFiboNum = (n) => {
+  if (n <= 0) return null;
+  if (n === 1) return 0;
+  if (n === 2) return 1;
+
+  let prev = 0;
+  let curr = 1;
+  let sum = prev + curr;
+
+  for (let a = 3; a <= n; a++) {
+    let temp = prev+curr;
+    prev = curr;
+    curr = temp;
+    sum += curr;
+  }
+  return sum;
+};
+
+console.log(sumOfFiboNum(n));
+
+#Ans 63)Memoization
+Memoization is an optimization technique used to speed up programs by saving time. It works by storing the 
+results of function calls in a cache. When the function is called again with the same inputs, it gets the 
+result from the cache instead of running the function again. This helps save time and system resources.
+
+In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
+again, the program can return the saved result instead of calculating it again.
+
+#Answer 65)
+The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
+
+--- Loops vs Recursion in JavaScript 
+
+In JavaScript, loops like for, while, or do-while run inside a single function call. No matter how many times the loop executes, 
+it doesn't add new function calls to the stack. That makes loops memory-efficient, fast, and safe from stack overflow. 
+They are ideal for simple, repetitive tasks like printing, counting, or iterating over arrays because they maintain a single 
+stack frame throughout execution.
+
+In contrast, recursion creates a new function call for every step. So if the input size is large (for example, recurse(100000)), 
+it results in too many function calls, which can exceed the call stack limit and crash the program with a 👉 "Maximum call stack size 
+exceeded" error.
+Most browsers have a call stack size limit ranging from ~10,000 to 100,000 calls, depending on the engine and environment. 
+Recursion is great for problems like tree traversal, divide-and-conquer algorithms, and deeply nested structures. 
+However, JavaScript does not support Tail Call Optimization in most engines, meaning it can't reuse stack frames during deep 
+recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
+safety, and reliability.
+
+#Ans 65)
 >>Bubble Sort
 ---Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones move to the end.
 function bubbleSort(arr) {
@@ -2487,124 +2610,8 @@ console.log(insertionSort(arr));
 --TC: O(n²)
 --SC: O(1)
 
-#Answer 63)
-The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
---- Loops vs Recursion in JavaScript 
-
-In JavaScript, loops like for, while, or do-while run inside a single function call. No matter how many times the loop executes, 
-it doesn't add new function calls to the stack. That makes loops memory-efficient, fast, and safe from stack overflow. 
-They are ideal for simple, repetitive tasks like printing, counting, or iterating over arrays because they maintain a single 
-stack frame throughout execution.
-
-In contrast, recursion creates a new function call for every step. So if the input size is large (for example, recurse(100000)), 
-it results in too many function calls, which can exceed the call stack limit and crash the program with a 👉 "Maximum call stack size 
-exceeded" error.
-Most browsers have a call stack size limit ranging from ~10,000 to 100,000 calls, depending on the engine and environment. 
-Recursion is great for problems like tree traversal, divide-and-conquer algorithms, and deeply nested structures. 
-However, JavaScript does not support Tail Call Optimization in most engines, meaning it can't reuse stack frames during deep 
-recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
-safety, and reliability.
-
-#Answer 64)
-
->>1)
-let fiboNumber = (n) => {
-  if(typeof n!=="number"){
-    return "Please enter a valid number"
-  }
-  if (n <= 0) return [];
-  if (n === 1) return [0];
-
-  let storeFiboNum = [0, 1];
-
-  for (let a = 2; a < n; a++) {
-    storeFiboNum.push(storeFiboNum[a-2]+storeFiboNum[a-1]);
-  }
-
-  return storeFiboNum;
-};
-
-console.log(fiboNumber(10));
-
---TC:O(n)
---SC:O(n)
-
->>2)
-let getFiboAtPosition = (n) => {
-  if (typeof n !== "number") {
-    return "Please enter a valid number";
-  }
-  if (n<=0) return "Invaid Number";
-  if(n===1) return 0;
-
-  let pre=0;
-  let curr=1;
-
-  for(let a=2; a<n; a++){
-    let next=pre+curr;
-    pre=curr;
-    curr=next;
-  }
-  return curr;
-};
-
-console.log(getFiboAtPosition(10));
-
---TC:O(n)
---SC:O(1)
-
->>3)
-let positionOfFiboNum = (num) => {
-  if (typeof num !== "number") return "Please enter a valid number";
-  if (num < 0) return "Invalid Number";
-  if (num === 0) return 1;
-
-  let pre = 0;
-  let curr = 1;
-  let pos = 2;
-
-  while (curr < num) {
-    let next = pre + curr;
-    pre = curr;
-    curr = next;
-    pos++;
-  }
-
-  return curr === num ? pos : "Not a Fibonacci number";
-};
-
-console.log(positionOfFiboNum(34));
-
---TC:O(n)
---SC:O(1)
-
->>4)
-let sumOfFiboLoop = (n) => {
-  if (typeof n !== "number") {
-    return "Please Enter a valid number";
-  }
-
-  if (n <= 0 || n === 1) return 0;
-  if (n === 2) return 1;
-
-  let pre = 0;
-  let curr = 1;
-  let sum = 1;
-
-  for (let a = 2; a < n; a++) {
-    let next = pre + curr;
-    sum += next;
-    pre = curr;
-    curr = next;
-  }
-
-  return sum;
-};
-
-console.log(sumOfFiboLoop(10));
-
-#Ans 65)
+#Ans 66)
 >>N to One
 
 let nToOne = (n) => {
@@ -2625,7 +2632,7 @@ let OneToN = (n) => {
 
 OneToN(5);
 
-#Ans 66)
+#Ans 67)
 
 let sumNumbers = (n) => {
   if (n === 0) return 0;
@@ -2634,7 +2641,7 @@ let sumNumbers = (n) => {
 
 console.log(sumNumbers(10));
 
-#Ans 67)
+#Ans 68)
 let fiboNumber = (n) => {
   if (n <= 0) return [];
   if (n === 1) return [0];
@@ -2647,15 +2654,7 @@ let fiboNumber = (n) => {
 
 console.log(fiboNumber(10));
 
-#Ans 68)Answer not added yet 👨‍💻
-
-#Ans 69)Memoization
-Memoization is an optimization technique used to speed up programs by saving time. It works by storing the 
-results of function calls in a cache. When the function is called again with the same inputs, it gets the 
-result from the cache instead of running the function again. This helps save time and system resources.
-
-In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
-again, the program can return the saved result instead of calculating it again.
+#Ans 69)Answer not added yet 👨‍💻
 
 #Ans 70)Merge Two sorted Array
 

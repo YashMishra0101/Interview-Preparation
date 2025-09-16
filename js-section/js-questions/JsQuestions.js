@@ -1245,10 +1245,36 @@ n=5;
 
 #61)In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-#62)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
-let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
+#62) Fibonacci Series – 4 Variations
 
-#63)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+>Q1. Write a function to print the first `n` Fibonacci numbers.
+Example:
+Input: `n = 10`
+Output: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]`
+
+---
+
+>Q2. Write a function to return the Fibonacci number at the `n`th position.
+Example:
+Input: `n = 10`
+Output: `34`
+
+---
+
+>Q3. Write a function to return the position of a given number in the Fibonacci sequence. If the number is not part of the Fibonacci series, return `"Not a Fibonacci number"`.
+Example:
+Input: `num = 34`
+Output: `10`
+
+>Q4. Write a function to return the sum of first n Fibonacci numbers.
+Example:
+Input: n = 10
+Output: 88
+Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
+
+#63)What is Memoization ?
+
+#64)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context :
 
@@ -1285,34 +1311,10 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#64) Fibonacci Series – 4 Variations
+#65)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
+let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
->Q1. Write a function to print the first `n` Fibonacci numbers.
-Example:
-Input: `n = 10`
-Output: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]`
-
----
-
->Q2. Write a function to return the Fibonacci number at the `n`th position (1-based index).
-Example:
-Input: `n = 10`
-Output: `34`
-
----
-
->Q3. Write a function to return the position of a given number in the Fibonacci sequence. If the number is not part of the Fibonacci series, return `"Not a Fibonacci number"`.
-Example:
-Input: `num = 34`
-Output: `10`
-
->Q4. Write a function to return the sum of first n Fibonacci numbers.
-Example:
-Input: n = 10
-Output: 88
-Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
-
-#65)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#66)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -1321,30 +1323,29 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#66)Write a function to calculate the sum of first n natural numbers without using a loop.
+#67)Write a function to calculate the sum of first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#67)Write a function to print Fibonacci numbers till n without using a loop.
+#68)Write a function to print Fibonacci numbers till n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 Explanation: Each number is the sum of the previous two numbers.
 
-#68)Write a function to calculate the sum of first n Fibonacci numbers without using a loop. => Answer not added yet 👨‍💻
+#69)Write a function to calculate the sum of first n Fibonacci numbers without using a loop. => Answer not added yet 👨‍💻
 Example:
 Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
-
-#69)What is Memoization ?
 
 #70)Merge Two sorted array ?
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
 
 #71)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+let target = 25;
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 */

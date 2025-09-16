@@ -1,65 +1,81 @@
 console.log("Working");
 // 'use strict'
 
-// let n = 5;
+// let n = 10;
 
-// const pattern = (count) => {
-//   let patternStore = "";
-//   for (let row = 0; row < 2 * count - 1; row++) {
-//     let currentRow = row < count ? row : 2 * count - row - 2;
-//     for (let space = 0; space < currentRow; space++) {
-//       patternStore += " ";
-//     }
-//     let starCount = 2 * (count - currentRow) - 1;
-//     for (let star = 0; star < starCount; star++) {
-//       patternStore += "*";
-//     }
-//     patternStore += "\n";
+// const fiboNumber = (n) => {
+//   if (n <= 0) return [];
+//   if (n === 1) return [0];
+
+//   let fiboNum = [0, 1];
+
+//   for (let a = 2; a < n; a++) {
+//     fiboNum.push(fiboNum[a - 2] + fiboNum[a - 1]);
 //   }
-//   return patternStore;
+//   return fiboNum;
 // };
 
-// console.log(pattern(n));
+// console.log(fiboNumber(2));
 
-// let n = 5;
-// const Diamondpattern = (count) => {
-//   let storePattern = "";
-//   for (let upperRow = 1; upperRow <= count; upperRow++) {
-//     for (let space = upperRow; space < count; space++) {
-//       storePattern += " ";
-//     }
-//     for (let star = 1; star <= 2 * upperRow - 1; star++) {
-//       storePattern += "*";
-//     }
-//     storePattern += "\n";
-//   }
+// let n = 10;
 
-//   for (let bottomRow = count - 1; bottomRow >= 1; bottomRow--) {
-//     for (let space = bottomRow; space < count; space++) {
-//       storePattern += " ";
-//     }
-//     for (let star = 1; star <= 2 * bottomRow - 1; star++) {
-//       storePattern += "*";
-//     }
-//     storePattern += "\n";
+// const getFiboNumber = (n) => {
+//   if (n < 0) return null;
+//   if (n === 1) return 0;
+//   if (n === 2) return 1;
+
+//   let pre = 0;
+//   let curr = 1;
+
+//   for (let a = 3; a <= n; a++) {
+//     let temp = pre + curr;
+//     pre = curr;
+//     curr = temp;
 //   }
-//   return storePattern;
+//   return curr;
 // };
 
-// console.log(Diamondpattern(n));
+// console.log(getFiboNumber(n));
 
-// let n = 3;
-// let s = 1;
-// let pattern = "";
-// for (let a = 1; a <= n; a++) {
-//   for (let b = 1; b <= n; b++) {
-//     pattern += s + " ";
-//     s++;
+// let n = 34;
+
+// const positionOfFiboNum = (n) => {
+//   if (n < 0) return "Invalid Number";
+//   if (n === 0) return 1;
+//   if (n === 1) return 2;
+//   let prev = 0;
+//   let curr = 1;
+//   let position = 2;
+//   while (curr < n) {
+//     let temp = prev + curr;
+//     prev = curr;
+//     curr = temp;
+//     position++;
 //   }
-//   pattern += "\n";
-// }
 
-// console.log(pattern);
+//   return curr === n ? position : "Not a Fibonacci Number";
+// };
 
+// console.log(positionOfFiboNum(n));
 
-console.log(new Date().getFullYear())
+// let n = 10;
+
+// const sumOfFiboNum = (n) => {
+//   if (n <= 0) return null;
+//   if (n === 1) return 0;
+//   if (n === 2) return 1;
+
+//   let prev = 0;
+//   let curr = 1;
+//   let sum = prev + curr;
+
+//   for (let a = 3; a <= n; a++) {
+//     let temp = prev+curr;
+//     prev = curr;
+//     curr = temp;
+//     sum += curr;
+//   }
+//   return sum;
+// };
+
+// console.log(sumOfFiboNum(10));
