@@ -3,7 +3,7 @@ export const TakeInputValue = () => {
   const [value, getValue] = useState("React.js");
   return (
     <>
-      <div className="flex justify-center items-center flex-col py-6 mt-8">
+      <div className="flex justify-center items-center flex-col py-6 mt-8 mb-10">
         <p className="text-2xl font-bold text-center mb-5 mt-7 text-yellow-600">Input Value: {value}</p>
         <input
           type="text"

@@ -4,7 +4,7 @@ export const Hide = () => {
   const [hide, sethide] = useState(true);
   return (
     <>
-      <div className="flex justify-center items-center flex-col bg-cyan-600 py-6 mt-8">
+      <div className="flex justify-center items-center flex-col bg-cyan-600 py-16 mt-8 select-none">
         <span className="mb-4 text-white font-bold text-2xl">
           {hide ? <p>My name is Yash Mishra and I love coding</p> : "🙈"}
         </span>

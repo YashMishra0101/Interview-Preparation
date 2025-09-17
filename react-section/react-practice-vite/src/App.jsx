@@ -5,8 +5,7 @@ import RoleAssign from "./RoleAssign";
 import { Hide } from "./Hide";
 import { TakeInputValue } from "./TakeInputValue";
 import SkillsCheckbox from "./SkillsCheckbox";
-import RadioSelect from "./RadioSelect";
-import Clock from "./Clock";
+import Clock from "./ClocK";
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         <Hide />
         <TakeInputValue />
         <SkillsCheckbox />
-        <RadioSelect />
         <Clock/>
       </div>
     </>
