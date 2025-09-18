@@ -6,7 +6,7 @@ import { Hide } from "./Hide";
 import { TakeInputValue } from "./TakeInputValue";
 import SkillsCheckbox from "./SkillsCheckbox";
 import Clock from "./ClocK";
-
+import FetchEmployess from "./FetchEmployess";
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
         <Hide />
         <TakeInputValue />
         <SkillsCheckbox />
-        <Clock/>
+        <Clock />
+        <FetchEmployess />
       </div>
     </>
   );

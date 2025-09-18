@@ -11,9 +11,9 @@ const Clock = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-col py-10 mt-14 mb-10">
-       <div className="border-2 border-balck p-7 rounded-sm">
+       <div className="border-2 p-7 rounded-sm" style={{color}}>
          <p className="text-2xl font-semibold" style={{ color }}>{time}</p>
-        <ColorDropDown setColor={setColor} />
+        <ColorDropDown setColor={setColor} color={color} />
        </div>
       </div>
     </>
