@@ -5,8 +5,10 @@ import RoleAssign from "./RoleAssign";
 import { Hide } from "./Hide";
 import { TakeInputValue } from "./TakeInputValue";
 import SkillsCheckbox from "./SkillsCheckbox";
-import Clock from "./ClocK";
+import Clock from "./Clock";
 import FetchEmployess from "./FetchEmployess";
+// import Practice from "./Practice.jsx";
+import ReactCss from "./ReactCSS";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <SkillsCheckbox />
         <Clock />
         <FetchEmployess />
+        <ReactCss/>
+        {/* <Practice /> */}
       </div>
     </>
   );
