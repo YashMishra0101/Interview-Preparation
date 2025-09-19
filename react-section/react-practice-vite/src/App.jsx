@@ -7,8 +7,9 @@ import { TakeInputValue } from "./TakeInputValue";
 import SkillsCheckbox from "./SkillsCheckbox";
 import Clock from "./Clock";
 import FetchEmployess from "./FetchEmployess";
-// import Practice from "./Practice.jsx";
 import ReactCss from "./ReactCSS";
+import UseRef from "./UseRef";
+// import Practice from "./Practice.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Clock />
         <FetchEmployess />
         <ReactCss/>
+        <UseRef/>
         {/* <Practice /> */}
       </div>
     </>
