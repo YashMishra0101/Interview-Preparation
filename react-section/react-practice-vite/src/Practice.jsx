@@ -1,29 +1,22 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import PracticeTwo from "./PracticeTwo";
 const Practice = () => {
-  const [num, increaseNum] = useState(0);
-
-  const numHandlerPlus = () => {
-    increaseNum((prev) => prev + 1);
+  const [buttonNumber, setButtonNumber] = useState(" ");
+  const handlUserRef = () => {
+    setButtonNumber("69");
   };
-
-  const numHandlerMinus = () => {
-    increaseNum((prev) => prev - 1);
-  };
-
-  const Test = () => {
-    console.log("Test", { num });
-  };
-
-
-  Test();
 
   return (
     <>
+      <PracticeTwo prop={buttonNumber} />
       <div>
-        <button style={{marginLeft:"10rem",color:"red",fontFamily:"monospace",fontSize:"2rem"}}>Hi my name is yash</button>
-        <p>{num}</p>
-        <button onClick={numHandlerMinus}>-</button>
+        <button
+          className="border-2 mt-2"
+          id="updateButton"
+          onClick={handlUserRef}
+        >
+          Add number
+        </button>
       </div>
     </>
   );
