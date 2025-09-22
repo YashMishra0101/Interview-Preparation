@@ -1,81 +1,92 @@
 console.log("Working");
 // 'use strict'
 
-// let n = 10;
-
-// const fiboNumber = (n) => {
-//   if (n <= 0) return [];
-//   if (n === 1) return [0];
-
-//   let fiboNum = [0, 1];
-
-//   for (let a = 2; a < n; a++) {
-//     fiboNum.push(fiboNum[a - 2] + fiboNum[a - 1]);
-//   }
-//   return fiboNum;
+// const generateOTP = () => {
+//   return Math.floor(Math.random() * (999999 - 100000 + 1) + 100000).toString();
 // };
 
-// console.log(fiboNumber(2));
+// console.log(generateOTP());
 
-// let n = 10;
+// const generateOTP=(length)=>{
+// if(length<=0) return;
 
-// const getFiboNumber = (n) => {
-//   if (n < 0) return null;
-//   if (n === 1) return 0;
-//   if (n === 2) return 1;
+// let min=10**(length-1);
+// let max=10**length-1;
+// return Math.floor(Math.random()*(max-min+1)+min).toString()
+// }
 
-//   let pre = 0;
-//   let curr = 1;
+// console.log(generateOTP(6));
 
-//   for (let a = 3; a <= n; a++) {
-//     let temp = pre + curr;
-//     pre = curr;
-//     curr = temp;
+// let radius=5;
+
+// let result=2 * 22/7 * radius;
+// console.log(result.toFixed(2));
+
+// let arr=[10,20,30,40,50];
+
+// let sum=0;
+// for(let a=0; a<arr.length;a++){
+//     sum+=arr[a]
+// }
+
+// console.log(sum);
+
+// let sum=arr.reduce((prev,next)=>{
+//  return prev+next;
+// })
+
+// console.log(sum);
+
+// let arr = [10, 20, 78, 30, 85, 40, 50];
+
+// let largest = arr[0];
+
+// for (let a = 1; a < arr.length; a++) {
+//   if (largest < arr[a]) {
+//     largest = arr[a];
 //   }
-//   return curr;
+// }
+// console.log(largest);
+
+// console.log(Math.max(...arr));
+
+// let arr = [10, 20, 78, 30, 85, 40, 50];
+
+// let lowest = arr[0];
+
+// for (let a = 1; a < arr.length; a++) {
+//   if (lowest > arr[a]) {
+//     lowest = arr[a];
+//   }
+// }
+// console.log(lowest);
+
+// console.log(Math.min(...arr));
+
+// let arr1 = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
+// let arr2 = [50, 50, 50, 50];
+// let arr3 = [99, 99, 99, 89, 87];
+
+// const firstSecondLargest = (arr) => {
+//   let firstLargest = -Infinity;
+//   let secondLargest = -Infinity;
+
+//   for (let a = 0; a < arr.length; a++) {
+//     if (arr[a] > firstLargest) {
+//       secondLargest = firstLargest;
+//       firstLargest = arr[a];
+//     }
+//     if (secondLargest < arr[a] && firstLargest > arr[a]) {
+//       secondLargest = arr[a];
+//     }
+//   }
+//   if (secondLargest === -Infinity) {
+//     secondLargest = "No second largest";
+//   }
+//   return {
+//     firstLargest,
+//     secondLargest,
+//   };
 // };
 
-// console.log(getFiboNumber(n));
-
-// let n = 34;
-
-// const positionOfFiboNum = (n) => {
-//   if (n < 0) return "Invalid Number";
-//   if (n === 0) return 1;
-//   if (n === 1) return 2;
-//   let prev = 0;
-//   let curr = 1;
-//   let position = 2;
-//   while (curr < n) {
-//     let temp = prev + curr;
-//     prev = curr;
-//     curr = temp;
-//     position++;
-//   }
-
-//   return curr === n ? position : "Not a Fibonacci Number";
-// };
-
-// console.log(positionOfFiboNum(n));
-
-// let n = 10;
-
-// const sumOfFiboNum = (n) => {
-//   if (n <= 0) return null;
-//   if (n === 1) return 0;
-//   if (n === 2) return 1;
-
-//   let prev = 0;
-//   let curr = 1;
-//   let sum = prev + curr;
-
-//   for (let a = 3; a <= n; a++) {
-//     let temp = prev+curr;
-//     prev = curr;
-//     curr = temp;
-//     sum += curr;
-//   }
-//   return sum;
-// };
-
-// console.log(sumOfFiboNum(10));
+// console.log(firstSecondLargest(arr3));
