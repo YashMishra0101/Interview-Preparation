@@ -9,9 +9,9 @@ import Clock from "./Clock";
 import FetchEmployess from "./FetchEmployess";
 import ReactCss from "./ReactCSS";
 import UseRef from "./UseRef";
-import ReactForm from "./ReactForm"
+import React18Form from "./React18Form";
+import React19Form from "./React19Form";
 // import Practice from "./Practice.jsx";
-
 
 function App() {
   return (
@@ -25,9 +25,10 @@ function App() {
         <SkillsCheckbox />
         <Clock />
         <FetchEmployess />
-        <ReactCss/>
-        <UseRef/>
-        <ReactForm/>
+        <ReactCss />
+        <UseRef />
+        <React18Form />
+        <React19Form/>
         {/* <Practice /> */}
       </div>
     </>

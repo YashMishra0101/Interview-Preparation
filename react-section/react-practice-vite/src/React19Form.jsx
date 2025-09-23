@@ -1,52 +1,44 @@
 import { useState } from "react";
 
-const ReactForm = () => {
-  const [formData, setFormData] = useState({
-    dname: "",
-    demail: "",
-    drole: "",
-  });
-
-  const inputFieldHandler = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    alert("Form Submited Successfully");
-    setFormData({
-      dname: "",
-      demail: "",
-      drole: "",
-    });
+// FormData automatically collects ALL form data from inputs that have a name attribute inside the form.
+const React19Form = () => {
+  const formSubmitHandler = (formData) => {
+    const dname = formData.get("developerName");
+    const demail = formData.get("developerEmail");
+    const drole = formData.get("developerRole");
+    console.log(dname);
+    console.log(demail);
+    console.log(drole);
+    if(dname.length===0 || demail.length === 0 || drole.length ===0){
+       
+        
+    }
   };
   return (
     <>
-      <div className="flex justify-center items-center bg-green-500 mt-7 py-6">
-        <form className="text-white" onSubmit={formSubmitHandler}>
+      <div className="flex justify-center flex-col items-center bg-blue-500 mt-7 py-6">
+        <h2 className="text-white mb-3 font-bold ml-3 text-2xl">
+          React 19 Form Handling
+        </h2>
+
+        <form className="text-white" action={formSubmitHandler}>
           <div>
             <label htmlFor="developerName">Name:</label>
             <input
               type="text"
-              name="dname"
+              name="developerName"
               id="developerName"
-              value={formData.dname}
-              onChange={inputFieldHandler}
+              required //HTML5 feature
               className="border-2 border-white outline-0"
             />
           </div>
           <div>
             <label htmlFor="developerEmail">Email:</label>
             <input
-              type="text"
-              name="demail"
+              type="email"
+              name="developerEmail"
               id="developerEmail"
-              value={formData.demail}
-              onChange={inputFieldHandler}
+              required
               className="border-2 border-white outline-0 mt-2"
             />
           </div>
@@ -54,10 +46,9 @@ const ReactForm = () => {
             <label htmlFor="developerRole">Role:</label>
             <input
               type="text"
-              name="drole"
+              name="developerRole"
               id="developerRole"
-              value={formData.drole}
-              onChange={inputFieldHandler}
+              required 
               className="border-2 border-white outline-0 mt-2"
             />
           </div>
@@ -73,4 +64,4 @@ const ReactForm = () => {
   );
 };
 
-export default ReactForm;
+export default React19Form;
