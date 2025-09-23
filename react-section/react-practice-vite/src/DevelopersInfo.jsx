@@ -24,6 +24,8 @@ function DevelopersInfo() {
   return (
     <>
       <div className="h-96 pb-6 w-screen bg-green-500 flex justify-center items-center flex-col gap-2 py-6">
+                <h2 className="font-bold text-white mb-6 text-2xl">Handling Toggle</h2>
+
         <div className="developerInfo flex flex-col md:flex-row md:mt-0 mt-2 gap-2">
           {isVisible &&
             developersInfo.map((info, index) => (

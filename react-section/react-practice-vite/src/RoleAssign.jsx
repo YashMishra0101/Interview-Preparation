@@ -42,7 +42,9 @@ const RoleAssign = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-col py-6 mt-8">
-        <h1 className="text-2xl font-bold text-center mb-5 mt-7 text-green-600">
+                <h2 className="font-bold text-green-600 mb-6 text-2xl">Handling Multiple Option</h2>
+
+        <h1 className="text-2xl font-bold text-center mb-5  text-green-600">
           Job Eligibility Checker
         </h1>
         <span className="role border-2 border-green-500 p-2 bg-green-300 rounded-sm w-[25rem] min-h-10 text-center mb-5 ">

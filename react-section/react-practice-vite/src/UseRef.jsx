@@ -1,48 +1,45 @@
 import { useRef } from "react";
-
 const UseRef = () => {
-  const refName = useRef(null);
-  const refEmail = useRef(null);
-  const formHandler = (e) => {
-    const refUserName = refName.current.value.trim();
-    const refUserEmail = refEmail.current.value.trim();
+  const userName = useRef(null);
+  const userEmail = useRef(null);
+  const submitHandler = (e) => {
     e.preventDefault();
-    if (!refUserName) {
-      refName.current.focus();
+    if (!userName.current.value) {
+      userName.current.focus();
       return;
     }
-    if (!refUserEmail.includes("@")) {
-      refEmail.current.focus();
+    if (!userEmail.current.value) {
+      userEmail.current.focus();
       return;
     }
-    alert("For submitted");
-  };
+    alert("Form Submited");
+  }
   return (
     <>
-      <div className="flex justify-center items-center flex-col p-3 border-2 border-green-500 mt-8">
-        <h2 className="text-2xl font-bold text-center mb-5 text-green-600">User ref</h2>
-        <form onSubmit={formHandler}>
+      <div className="flex justify-center items-center flex-col py-6 mt-8 border-2 border-green-500">
+        <h2 className="font-bold text-green-600 mb-6 text-2xl">Use of useRef hook</h2>
+        <form onSubmit={submitHandler}>
           <div>
             <label htmlFor="userName">Name:</label>
             <input
               type="text"
               id="userName"
-              ref={refName}
+              ref={userName}
               placeholder="Enter your name"
-              className="border-2 border-gray-300 outline-0 focus:border-blue-500"
+              className="border-2 border-gray-400 focus:border-blue-500 outline-0"
             />
           </div>
           <div>
             <label htmlFor="userEmail">Email:</label>
             <input
-              type="text"
+              type="email"
               id="userEmail"
-              ref={refEmail}
-              placeholder="Enter your email id"
-              className="border-2 border-gray-300 outline-0 focus:border-blue-500 mt-2"
+              ref={userEmail}
+              placeholder="Enter your name"
+              className="border-2 border-gray-400 focus:border-blue-500 mt-2 outline-0"
             />
           </div>
-          <button className="border-2 border-blue-300 outline-0 p-2 rounded-2xl mt-2">Submit</button>
+          <button className="border-2 border-green-600 outline-0 p-2 rounded-2xl mt-2">Submit</button>
         </form>
       </div>
     </>

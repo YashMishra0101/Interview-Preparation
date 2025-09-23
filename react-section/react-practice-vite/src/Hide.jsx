@@ -5,6 +5,8 @@ export const Hide = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-col bg-cyan-600 py-16 mt-8 select-none">
+                <h2 className="font-bold text-white mb-6 text-2xl">---Toggle---</h2>
+
         <span className="mb-4 text-white font-bold text-2xl">
           {hide ? <p>My name is Yash Mishra and I love coding</p> : "🙈"}
         </span>

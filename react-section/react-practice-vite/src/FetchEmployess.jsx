@@ -5,6 +5,10 @@ const FetchEmployess = () => {
   return (
     <>
       <div className="py-6 w-screen bg-yellow-200 flex justify-center items-center flex-col gap-2">
+        <h2 className="font-bold text-yellow-600 mb-6 text-2xl">
+          Fetch Data From Array Objects
+        </h2>
+
         {EmployessList.map((employessData, index) => {
           return (
             <div key={index}>

@@ -15,13 +15,17 @@ const SkillsCheckbox = () => {
       );
     }
   };
-  const clearData=()=>{
-  setSkills([]);
-  }
+  const clearData = () => {
+    setSkills([]);
+  };
   return (
     <>
       <div className="pb-6 w-screen bg-blue-500 flex justify-center items-center flex-col gap-2 ">
-        <h2 className="text-2xl font-bold text-center mb-5 mt-7 text-white">
+        <h2 className="font-bold text-blue-200 mb-6 text-2xl mt-4">
+          Handling Check box
+        </h2>
+
+        <h2 className="text-2xl font-bold text-center mb-5 text-white">
           Select Your Skills
         </h2>
         <div>
@@ -31,7 +35,6 @@ const SkillsCheckbox = () => {
             value="Javascript"
             onChange={checkBoxHandler}
             checked={skills.includes("Javascript")}
-
           />
           <label htmlFor="Javascript">Javascript</label>
         </div>
@@ -42,7 +45,6 @@ const SkillsCheckbox = () => {
             value="React"
             onChange={checkBoxHandler}
             checked={skills.includes("React")}
-
           />
           <label htmlFor="React">React</label>
         </div>
@@ -53,7 +55,6 @@ const SkillsCheckbox = () => {
             value="Typescript"
             onChange={checkBoxHandler}
             checked={skills.includes("Typescript")}
-
           />
           <label htmlFor="Typescript">Typescript</label>
         </div>
@@ -64,7 +65,6 @@ const SkillsCheckbox = () => {
             value="Node"
             onChange={checkBoxHandler}
             checked={skills.includes("Node")}
-
           />
           <label htmlFor="Node">Node</label>
         </div>
