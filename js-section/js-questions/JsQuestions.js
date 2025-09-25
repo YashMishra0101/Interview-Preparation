@@ -1131,8 +1131,9 @@ console.log(p);
 
 >A) Generate OTPs
 
-1. Generate a 4-digit OTP 
-2. Generate a 6-digit OTP. Do not use Math.random; use a cryptographically secure method instead.
+1. Generate a 6-digit OTP 
+2. Generate 4,6,8 digit OTPs , you have to creat same single code logic for that.
+3. Generate a 6-digit OTP. Do not use Math.random; use a cryptographically secure method instead.
 
 
 >B) Circumference of a Circle
@@ -1164,7 +1165,7 @@ let arr3 = [99, 99, 99, 89, 87];
 #52)Reverse the array
 
 let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
-let arr=[0,45,98,1,33,1,-7,55];
+let arr2=[0,45,98,1,33,1,-7,55];
 
 #53)Put 0s on left and 1s on right side.
 
@@ -1286,13 +1287,8 @@ continuing until a base case is reached.
 Backtracking is a method where we try all the possible options.If one option doesn’t lead to a valid solution, we go back and try another option.
 We keep doing this until we find the correct solution.
 --or-- 
-Backtracking is a problem-solving technique where we try all possible options to build a solution step by step.
-If a certain choice doesn’t lead to a valid or complete solution, we backtrack—go back to the previous step—and try another option.
-This continues until we find a valid solution or explore all possibilities.
---or--
-Backtracking is a method where we explore all possible options, and if one path fails, we backtrack and try another, until we 
-reach a valid solution.
-
+Backtracking is an algorithmic technique built on top of recursion. It’s used to search for all possible solutions by exploring paths, 
+and if one path fails, we backtrack and try another.
 
 let test = (n) => {
 if (n===0) return;
@@ -1311,10 +1307,18 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#65)Reverse the array  using Bubble sort,Selection Sort,Insertio sort and Merge sort.
+#65)Reverse the array  using Bubble sort or Selection Sort or Insertio sort and Merge sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
-#66)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#66)Merge Two sorted array ?
+let arrayOne = [3, 5, 8, 9, 89, 92];
+let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
+
+#67)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+let target = 25;
+let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
+
+#68)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -1323,29 +1327,16 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#67)Write a function to calculate the sum of first n natural numbers without using a loop.
+#69)Write a function to calculate the sum of first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#68)Write a function to print Fibonacci numbers till n without using a loop.
+#70)Write a function to print Fibonacci numbers till n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 Explanation: Each number is the sum of the previous two numbers.
 
-#69)Write a function to calculate the sum of first n Fibonacci numbers without using a loop. => Answer not added yet 👨‍💻
-Example:
-Input: n = 10
-Output: 88
-Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
-
-#70)Merge Two sorted array ?
-let arrayOne = [3, 5, 8, 9, 89, 92];
-let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
-
-#71)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
-let target = 25;
-let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 */

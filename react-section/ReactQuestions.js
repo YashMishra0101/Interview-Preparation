@@ -124,4 +124,10 @@ export const Add = (a, b) => a + b;
 import Greet from "./Greet";  // default import
 import { Add } from "./Add"; // named import
 
+#6)What is useRef hook.
+useRef is mainly designed to store a reference to DOM elements like input fields or buttons. We can access 
+the element using the .current property. Unlike state, changing a ref value does not trigger a re-render. 
+This makes useRef very useful when we want to manipulate the DOM or store mutable values without causing 
+the component to re-render.
+
 */

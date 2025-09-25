@@ -90,3 +90,46 @@ console.log("Working");
 // };
 
 // console.log(firstSecondLargest(arr3));
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// let arr2=[0,45,98,1,33,1,-7,55];
+
+// const reverse = (arr) => {
+//   let a = 0;
+//   let b = arr.length-1;
+//   while (a < b) {
+//     let temp = arr[a];
+//     arr[a] = arr[b];
+//     arr[b] = temp;
+//     a++;
+//     b--;
+//   }
+//   return arr;
+// };
+
+// console.log(reverse(arr2));
+
+// let rev=[...arr];
+// console.log(rev.reverse());
+// console.log(arr);
+
+let arr = [0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0];
+
+const arrange = (arr) => {
+  let a = 0;
+  let b = 1;
+  while (a < arr.length) {
+    if (arr[a] === 1) {
+      let temp = arr[a];
+      arr[a] = arr[b];
+      arr[b] = temp;
+      b++;
+    }
+    if (arr[a] !== 1) {
+      a++;
+    }
+  }
+  return arr;
+};
+
+console.log(arrange(arr));

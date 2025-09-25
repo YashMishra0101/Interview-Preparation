@@ -1851,30 +1851,37 @@ First brakcet solved so :  ++(p++)=++11; (so after brakcet solved ++ is applying
 #Ans 47)
 >A)
 1)
-function generateFourDigitOtp(){
-return Math.floor(Math.random()*(9999-1000+1)+1000).toString()
-}
+const sixDigitOTP = () => {
+  return Math.floor(Math.random() * (999999 - 100000 + 1) + 100000).toString();//Most companies keep OTPs as strings when sending to users, because users see it as text.
+};
 
-console.log(generateFourDigitOtp());
+console.log(sixDigitOTP());
 
 2)
--->Approach 1: Range 100000-999999 (Industry Standard)
+const generateOTP = (length) => {
+  if (length <= 0) return;
+  let min = 10 ** (length - 1);
+  let max = 10 ** length - 1;
+  return Math.floor(Math.random() * (max - min + 1) + min).toString();
+};
+
+console.log(generateOTP(4));
+console.log(generateOTP(6));
+console.log(generateOTP(8));
+
+3)Industry Standard)
 
 const crypto = require("crypto");
 
-function generateSixDigitOtp() {
-  return crypto.randomInt(100000, 1000000).toString();
-}
+const generateOTP = (length) => {
+  if (length <= 0) return;
+  let min = 10 ** (length - 1);
+  let max = 10 ** length - 1;
+  return crypto.randomInt(min,max+1).toString();
+};
 
-console.log(generateSixDigitOtp());
+console.log(generateOTP(6));
 
--->Approach 2: Range 0-999999 with Padding
-
-const crypto = require("crypto");
-function generateSixDigitOtp() {
-  return crypto.randomInt(0, 1000000).toString().padStart(6, "0");
-}
-console.log(generateSixDigitOtp());
 
 ---Explanation:
 
@@ -1887,65 +1894,6 @@ network events, and even small temperature variations — making the output trul
 applications.
 
 (In computer security, entropy means randomness or unpredictability)
-
--->Approach 1 - True 6-Digit Range
-
-Pros:
-- No padding required - cleaner code
-- Always generates "real" 6-digit numbers
-- Better user experience
-- No leading zero confusion
-- Faster execution (no string manipulation)
-
-Cons:
-- Slightly smaller range (900,000 vs 1,000,000 possibilities)
-- Still cryptographically secure
-
---> Industry Usage: 90%+ Use Approach 1
---> Why Industry Prefers Approach 1:
-
-1. User Experience Priority
-   - Users expect codes like `123456`, not `000123`
-   - Reduces customer support tickets
-   - More intuitive for users
-
-2. System Compatibility
-   - SMS gateways handle better
-   - No issues with leading zero stripping
-   - Database storage consistency
-
-3. Code Maintainability
-   - Simpler, cleaner code
-   - No string manipulation needed
-   - Less prone to errors
-
-4. Real-World Examples Using Approach 1:
-   - Banking apps (Chase, Bank of America)
-   - Tech giants (Google, Microsoft 2FA)
-   - Payment systems (PayPal, Stripe)
-   - Social media platforms
-
---> Security Analysis
-
-- Both are equally secur from cryptographic perspective
-- `crypto.randomInt()` provides cryptographically secure randomness
-- Range difference (900k vs 1M) is negligible for security
-- Both meet industry security standards
-
--->The Second method has 100,000 more possible combinations, but this difference is negligible for security.
-
---> Approach 2 - Padding Method
-Pros:
-- Mathematically uses full range (1 million possibilities)
-- Explicit padding makes intent clear
-- Works for any digit length requirement
-
-Cons:
-- Extra processing step (padding)
-- Can generate confusing codes like `000001`
-- Users may not recognize `000123` as valid OTP
-- Some systems strip leading zeros
-
 
 >B)
 Formula 2*pi*r
@@ -1963,6 +1911,9 @@ for (let a = 0; a < arr.length; a++) {
   arrTotal += arr[a];
 }
 console.log(arrTotal);
+
+TC:O(n)
+SC:O(1)
 
 ---Using for of loop
 let sum = 0;
@@ -2391,21 +2342,15 @@ console.log(pattern(n));
 
 #Ans 61)
 When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code—even from inside a function or block but after declaring not before declaring if we try to access before declaring
-it's gives us Uncaught ReferenceError.
+anywhere in the code—even from inside a function or block but after declaring but not before declaring if we try to access before 
+declaring it's gives us Uncaught ReferenceError.
 
----Extra Info
+if you create a global variable by not using let, var, or const, you can definitely re-declare and re-assign it anywhere in your code. 
+It’s essentially like having a variable that’s always in the global scope, so you can change its value or even declare it again without 
+any issues.
 
-If we use `var`, the variable is function-scoped, so we cannot access it from outside the function where it was declared.
-If we use `let` or `const`, they are block-scoped, which means we cannot access them from outside the block in which they 
-were declared.
-
-Also, we **cannot access variables before their declaration**. If we use `var`, accessing the variable before declaration gives us 
-`undefined` because of hoisting. But if we use `let` or `const`, trying to access them before declaration results in a 
-**ReferenceError**, due to the Temporal Dead Zone.
-
-This declaring a variable without using `var`, `let`, or `const` and it becoming globalonly happens in JavaScript**. 
-Most other languages don’t allow this at all. 
+This behavior is pretty specific to JavaScript because of how it handles variable declarations and the global scope. Other languages, 
+like Python, Java, or C++, have their own rules and scoping mechanisms
 
 ---Example :
 
@@ -2520,7 +2465,7 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
-#Answer 65)
+#Answer 64)
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
 --- Loops vs Recursion in JavaScript 
@@ -2528,16 +2473,22 @@ The first code uses recursion, and the second uses a loop — and they behave ve
 In JavaScript, loops like for, while, or do-while run inside a single function call. No matter how many times the loop executes, 
 it doesn't add new function calls to the stack. That makes loops memory-efficient, fast, and safe from stack overflow. 
 They are ideal for simple, repetitive tasks like printing, counting, or iterating over arrays because they maintain a single 
-stack frame throughout execution.
+stack frame throughout execution (With loops, there’s just one function call on the call stack, and the loop runs repeatedly within
+that same frame. There’s no additional stack growth for each iteration, so it remains stable and efficient).
 
 In contrast, recursion creates a new function call for every step. So if the input size is large (for example, recurse(100000)), 
 it results in too many function calls, which can exceed the call stack limit and crash the program with a 👉 "Maximum call stack size 
 exceeded" error.
+
 Most browsers have a call stack size limit ranging from ~10,000 to 100,000 calls, depending on the engine and environment. 
 Recursion is great for problems like tree traversal, divide-and-conquer algorithms, and deeply nested structures. 
 However, JavaScript does not support Tail Call Optimization in most engines, meaning it can't reuse stack frames during deep 
 recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
 safety, and reliability.
+
+>👇👇👇
+The size of the call stack isn’t fixed in JavaScript by the language itself, The JavaScript engine (like V8 in Chrome/Node.js, 
+SpiderMonkey in Firefox, JavaScriptCore in Safari) the call stack limit is usually around 10,000 to 20,000 function calls.
 
 #Ans 65)
 >>Bubble Sort
@@ -2610,53 +2561,7 @@ console.log(insertionSort(arr));
 --TC: O(n²)
 --SC: O(1)
 
-
-#Ans 66)
->>N to One
-
-let nToOne = (n) => {
-  if (n === 0) return;
-  console.log(n);
-  nToOne(n - 1);
-};
-
-nToOne(5);
-
->>One To N
-
-let OneToN = (n) => {
-  if (n === 0) return;
-  OneToN(n - 1);
-  console.log(n);
-};
-
-OneToN(5);
-
-#Ans 67)
-
-let sumNumbers = (n) => {
-  if (n === 0) return 0;
-  return n + sumNumbers(n - 1);
-};
-
-console.log(sumNumbers(10));
-
-#Ans 68)
-let fiboNumber = (n) => {
-  if (n <= 0) return [];
-  if (n === 1) return [0];
-  if (n === 2) return [0, 1];
-
-  let print = fiboNumber(n - 1);
-  print.push(print[print.length - 2] + print[print.length - 1]);
-  return print;
-};
-
-console.log(fiboNumber(10));
-
-#Ans 69)Answer not added yet 👨‍💻
-
-#Ans 70)Merge Two sorted Array
+#Ans 66)Merge Two sorted Array
 
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
@@ -2690,7 +2595,7 @@ let mergeArray = (arrayOne, arrayTwo) => {
 
 console.log(mergeArray(arrayOne, arrayTwo));
 
-#Ans 71)
+#Ans 67)
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 let target = 25;
 
@@ -2711,4 +2616,48 @@ let binarySearch = (arr, target) => {
 };
 
 console.log(binarySearch(arr, target));
+
+#Ans 68)
+>>N to One
+
+let nToOne = (n) => {
+  if (n === 0) return;
+  console.log(n);
+  nToOne(n - 1);
+};
+
+nToOne(5);
+
+>>One To N
+
+let OneToN = (n) => {
+  if (n === 0) return;
+  OneToN(n - 1);
+  console.log(n);
+};
+
+OneToN(5);
+
+#Ans 69)
+
+let sumNumbers = (n) => {
+  if (n === 0) return 0;
+  return n + sumNumbers(n - 1);
+};
+
+console.log(sumNumbers(10));
+
+#Ans 70)
+let fiboNumber = (n) => {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  let print = fiboNumber(n - 1);
+  print.push(print[print.length - 2] + print[print.length - 1]);
+  return print;
+};
+
+console.log(fiboNumber(10));
+
 */
