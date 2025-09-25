@@ -6,12 +6,11 @@ const React19Form = () => {
     const dname = formData.get("developerName");
     const demail = formData.get("developerEmail");
     const drole = formData.get("developerRole");
-    console.log(dname);
-    console.log(demail);
-    console.log(drole);
     if(dname.length===0 || demail.length === 0 || drole.length ===0){
-       
-        
+      
+      alert("Empty")
+      return;
+      console.log({dname,demail,drole});
     }
   };
   return (
@@ -28,7 +27,7 @@ const React19Form = () => {
               type="text"
               name="developerName"
               id="developerName"
-              required //HTML5 feature
+              // required //HTML5 feature
               className="border-2 border-white outline-0"
             />
           </div>
@@ -38,7 +37,7 @@ const React19Form = () => {
               type="email"
               name="developerEmail"
               id="developerEmail"
-              required
+              // required
               className="border-2 border-white outline-0 mt-2"
             />
           </div>
@@ -48,7 +47,7 @@ const React19Form = () => {
               type="text"
               name="developerRole"
               id="developerRole"
-              required 
+              // required 
               className="border-2 border-white outline-0 mt-2"
             />
           </div>
