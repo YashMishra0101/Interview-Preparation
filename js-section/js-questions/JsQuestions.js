@@ -855,7 +855,7 @@ const student = {
 
 #24) Write a program with proper error handling to fetch a user's data from this API:
 👉👨‍💻 Note:First check if the API URL is working before using it. Sometimes the API may not respond.
-👉 https://jsonplaceholder.typicode.com/users/1
+👉 API: https://jsonplaceholder.typicode.com/users/1
 Q)Print the user's name in the console.
 Do this using both:
 
