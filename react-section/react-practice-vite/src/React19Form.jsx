@@ -1,61 +1,125 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useActionState } from "react";
+import toast from "react-hot-toast";
 
-// FormData automatically collects ALL form data from inputs that have a name attribute inside the form.
 const React19Form = () => {
-  const formSubmitHandler = (formData) => {
-    const dname = formData.get("developerName");
-    const demail = formData.get("developerEmail");
-    const drole = formData.get("developerRole");
-    if(dname.length===0 || demail.length === 0 || drole.length ===0){
-      
-      alert("Empty")
-      return;
-      console.log({dname,demail,drole});
+  const initialState = {
+    message: "",
+    error: false,
+    success: false,
+  };
+
+  const formSubmitHandler = async (prevState, formData) => {
+    const dName = formData.get("developerName");
+    const dEmail = formData.get("developerEmailId");
+    const dId = formData.get("developerId");
+
+    try {
+      await new Promise((res, rej) => {
+        setTimeout(() => {
+          res();
+        }, 3000);
+      });
+      console.log({ dName, dEmail, dId });
+      return {
+        message: "Form successfully submitted ✅",
+        error: false,
+        success: true,
+      };
+    } catch {
+      return {
+        message: "Something went wrong ❌",
+        error: true,
+        success: false,
+      };
     }
   };
+
+  const [formState, formAction, isPending] = useActionState(
+    formSubmitHandler,
+    initialState
+  );
+
+  useEffect(() => {
+    if (formState.success) {
+      toast.success(formState.message);
+    }
+    if (formState.error) {
+      toast.error(formState.message);
+    }
+  }, [formState]);
+
   return (
     <>
-      <div className="flex justify-center flex-col items-center bg-blue-500 mt-7 py-6">
-        <h2 className="text-white mb-3 font-bold ml-3 text-2xl">
-          React 19 Form Handling
-        </h2>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+        <form
+          action={formAction}
+          className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md"
+        >
+          <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+            React 19 Form
+          </h2>
 
-        <form className="text-white" action={formSubmitHandler}>
-          <div>
-            <label htmlFor="developerName">Name:</label>
+          {/* Name */}
+          <div className="mb-4">
+            <label
+              htmlFor="developerName"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Developer Name
+            </label>
             <input
               type="text"
-              name="developerName"
               id="developerName"
-              // required //HTML5 feature
-              className="border-2 border-white outline-0"
+              name="developerName"
+              required
+              disabled={isPending}
+              placeholder="Enter your name"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
             />
           </div>
-          <div>
-            <label htmlFor="developerEmail">Email:</label>
+
+          <div className="mb-4">
+            <label
+              htmlFor="developerEmailId"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Developer Email ID
+            </label>
             <input
               type="email"
-              name="developerEmail"
-              id="developerEmail"
-              // required
-              className="border-2 border-white outline-0 mt-2"
+              id="developerEmailId"
+              name="developerEmailId"
+              required
+              disabled={isPending}
+              placeholder="Enter your email"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
             />
           </div>
-          <div>
-            <label htmlFor="developerRole">Role:</label>
+          <div className="mb-6">
+            <label
+              htmlFor="developerId"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Developer ID
+            </label>
             <input
-              type="text"
-              name="developerRole"
-              id="developerRole"
-              // required 
-              className="border-2 border-white outline-0 mt-2"
+              type="number"
+              id="developerId"
+              name="developerId"
+              required
+              disabled={isPending}
+              placeholder="Enter your ID"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
             />
           </div>
+
           <button
             type="submit"
-            className="border-2 w-52 border-white text-white font-semibold hover:text-lg p-2 rounded-2xl cursor-pointer mt-3 ml-3"
+            disabled={isPending}
+            className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 disabled:opacity-50"
           >
-            Submit
+            {isPending ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>

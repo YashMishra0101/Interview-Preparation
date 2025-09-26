@@ -27,7 +27,9 @@ const ReactForm = () => {
   return (
     <>
       <div className="flex justify-center flex-col items-center bg-green-500 mt-7 py-6">
-        <h2 className="text-white mb-3 font-bold ml-3 text-2xl">React 18 Form Handling</h2>
+        <h2 className="text-white mb-3 font-bold ml-3 text-2xl">
+          React 18 Form Handling
+        </h2>
         <form className="text-white" onSubmit={formSubmitHandler}>
           <div>
             <label htmlFor="developerName">Name:</label>

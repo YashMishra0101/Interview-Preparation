@@ -1,4 +1,7 @@
 import "./App.css";
+
+import { Toaster } from "react-hot-toast";
+
 import Counter from "./Counter";
 import DevelopersInfo from "./DevelopersInfo";
 import RoleAssign from "./RoleAssign";
@@ -28,8 +31,10 @@ function App() {
         <ReactCss />
         <UseRef />
         <React18Form />
-        <React19Form/>
+        <React19Form />
         {/* <Practice /> */}
+
+        <Toaster />
       </div>
     </>
   );

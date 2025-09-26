@@ -13,11 +13,13 @@ const UseRef = () => {
       return;
     }
     alert("Form Submited");
-  }
+  };
   return (
     <>
       <div className="flex justify-center items-center flex-col py-6 mt-8 border-2 border-green-500">
-        <h2 className="font-bold text-green-600 mb-6 text-2xl">Use of useRef hook</h2>
+        <h2 className="font-bold text-green-600 mb-6 text-2xl">
+          Use of useRef hook
+        </h2>
         <form onSubmit={submitHandler}>
           <div>
             <label htmlFor="userName">Name:</label>
@@ -39,7 +41,9 @@ const UseRef = () => {
               className="border-2 border-gray-400 focus:border-blue-500 mt-2 outline-0"
             />
           </div>
-          <button className="border-2 border-green-600 outline-0 p-2 rounded-2xl mt-2">Submit</button>
+          <button className="border-2 border-green-600 outline-0 p-2 rounded-2xl mt-2">
+            Submit
+          </button>
         </form>
       </div>
     </>
