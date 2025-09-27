@@ -14,7 +14,7 @@ import ReactCss from "./ReactCSS";
 import UseRef from "./UseRef";
 import React18Form from "./React18Form";
 import React19Form from "./React19Form";
-// import Practice from "./Practice.jsx";
+import Practice from "./Practice.jsx";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
         <UseRef />
         <React18Form />
         <React19Form />
-        {/* <Practice /> */}
+        <Practice />
 
         <Toaster />
       </div>
