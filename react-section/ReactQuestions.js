@@ -130,4 +130,41 @@ the element using the .current property. Unlike state, changing a ref value does
 This makes useRef very useful when we want to manipulate the DOM or store mutable values without causing 
 the component to re-render.
 
+#7)What is Pure Component and Impure Component
+--Pure Component
+A pure component always renders the same output given the same props and state.
+It doesn’t rely on external factors or introduce side effects.
+--Impure Component
+An impure component may produce different outputs for the same props and state.
+This usually happens when it depends on random values, time, or external variables.
+
+Example (Pure):
+const Greeting = ({ name }) => {
+  return <h2>Hello, {name}!</h2>;
+};
+👉 If I pass name="Yashu", it will always render Hello, Yashu!.
+
+Example (Impure):
+const RandomGreeting = ({ name }) => {
+  const randomNum = Math.floor(Math.random() * 10);
+  return <h2>Hello, {name}! Your number is {randomNum}</h2>;
+};
+👉 Even with name="Yashu", the number keeps changing, so the output is not predictable.
+
+
+A pure component in React behaves like a pure function in JavaScript — it always returns the same output for the same input, which makes it predictable and easy to optimize. An impure component, on the other hand, can produce different outputs for the same input because it depends on external factors like random values or time
+
+#8)Derived State in React
+Derived state is a value that is calculated from existing state or props, instead of being stored separately in the state. It allows you to avoid storing redundant information and keeps your components more predictable and easier to maintain.
+
+---Why Use Derived State:
+
+->Reduces chances of inconsistent state.
+->Makes the component simpler and more maintainable.
+->Optimizes React rendering, since you don’t update extra state unnecessarily.
+
+If you need some value or want to calculate something, you don’t always need to create a new state. You can use existing states to derive the value you need. This approach helps keep your component simpler and more maintainable. It also avoids redundancy and reduces the chance of your states becoming inconsistent.
+
+Note:
+For a practical example of derived state, please visit the React section in your notes, where you can see the Derived State Example in action.
 */
