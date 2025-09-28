@@ -1,7 +1,6 @@
 import "./App.css";
 
 import { Toaster } from "react-hot-toast";
-
 import Counter from "./Counter";
 import DevelopersInfo from "./DevelopersInfo";
 import RoleAssign from "./RoleAssign";
@@ -14,7 +13,8 @@ import ReactCss from "./ReactCSS";
 import UseRef from "./UseRef";
 import React18Form from "./React18Form";
 import React19Form from "./React19Form";
-import Practice from "./Practice.jsx";
+import InputFieldData from "./InputFiledData";
+// import Practice from "./Practice.jsx";
 
 function App() {
   return (
@@ -32,8 +32,8 @@ function App() {
         <UseRef />
         <React18Form />
         <React19Form />
-        <Practice />
-
+        {/* <Practice /> */}
+        <InputFieldData />
         <Toaster />
       </div>
     </>
