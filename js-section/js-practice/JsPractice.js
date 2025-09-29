@@ -113,30 +113,48 @@ console.log("Working");
 // console.log(rev.reverse());
 // console.log(arr);
 
-let arr = [0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0];
+// let arr = [0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0];
 
-const arrange = (arr) => {
-  let a = 0;
-  let b = 1;
-  while (a < arr.length) {
-    if (arr[a] === 1) {
-      let temp = arr[a];
-      arr[a] = arr[b];
-      arr[b] = temp;
-      b++;
-    }
-    if (arr[a] !== 1) {
-      a++;
-    }
-  }
-  return arr;
-};
+// const arrange = (arr) => {
+//   let a = 0;
+//   let b = 1;
+//   while (a < arr.length) {
+//     if (arr[a] === 1) {
+//       let temp = arr[a];
+//       arr[a] = arr[b];
+//       arr[b] = temp;
+//       b++;
+//     }
+//     if (arr[a] !== 1) {
+//       a++;
+//     }
+//   }
+//   return arr;
+// };
 
-console.log(arrange(arr));
+// console.log(arrange(arr));
 
-let a=2;
-let b=4;
+// let a=2;
+// let b=4;
 
-let ans=a+b;
-console.log(ans);
+// let ans=a+b;
+// console.log(ans);
 
+// let userName="Yash";
+// let newUserName="Sam";
+
+// console.log(userName);
+// console.log(newUserName);
+
+// let userName={
+//   nameIs:"Yash"
+// }
+
+// // let newUserName=userName;
+// let newUserName={...userName};
+// newUserName.nameIs="Sam";
+
+// console.log(userName.nameIs);
+// console.log(newUserName.nameIs);
+
+console.log(a);
