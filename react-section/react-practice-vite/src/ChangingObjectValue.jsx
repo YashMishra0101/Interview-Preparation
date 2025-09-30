@@ -17,25 +17,17 @@ const ChangingObjectValue = () => {
       toast.error("Input field is empty");
       return;
     }
-    if (data === "name") {
-      setIntialData((prev) => ({ ...prev, name: updatedInfo }));
+    if (data === "name" || data === "role") {
+      setIntialData((prev) => ({ ...prev, [data]: updatedInfo }));
     }
-    if (data === "role") {
-      setIntialData((prev) => ({ ...prev, role: updatedInfo }));
-    }
-    if (data === "country") {
+    if (data === "country" || data === "state") {
       setIntialData((prev) => ({
         ...prev,
-        location: { ...prev.location, country: updatedInfo },
-      }));
-    }
-    if (data === "state") {
-      setIntialData((prev) => ({
-        ...prev,
-        location: { ...prev.location, state: updatedInfo },
+        location: { ...prev.location, [data]: updatedInfo },
       }));
     }
     setInputData("");
+    toast.success("Info updated successfully");
   };
   return (
     <>

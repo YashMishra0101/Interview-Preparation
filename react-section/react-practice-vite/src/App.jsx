@@ -15,6 +15,7 @@ import React18Form from "./React18Form";
 import React19Form from "./React19Form";
 import InputFieldData from "./InputFiledData";
 import ChangingObjectValue from "./ChangingObjectValue";
+import HideShow from "../HideShow";
 // import Practice from "./Practice.jsx";
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
         <React19Form />
         {/* <Practice /> */}
         <InputFieldData />
-        <ChangingObjectValue/>
+        <ChangingObjectValue />
+        <HideShow/>
         <Toaster />
       </div>
     </>
