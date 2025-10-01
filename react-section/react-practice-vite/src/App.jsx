@@ -16,6 +16,7 @@ import React19Form from "./React19Form";
 import InputFieldData from "./InputFiledData";
 import ChangingObjectValue from "./ChangingObjectValue";
 import HideShow from "./HideShow";
+import PropDrillingExample from "./PropDrillingExample";
 // import Practice from "./Practice.jsx";
 
 function App() {
@@ -34,11 +35,12 @@ function App() {
         <UseRef />
         <React18Form />
         <React19Form />
-        {/* <Practice /> */}
         <InputFieldData />
         <ChangingObjectValue />
-        <HideShow/>
+        <HideShow />
         <Toaster />
+        <PropDrillingExample />
+        {/* <Practice /> */}
       </div>
     </>
   );

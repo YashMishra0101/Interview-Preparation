@@ -33,7 +33,7 @@ const ChangingObjectValue = () => {
     <>
       <div className=" mx-auto p-4 border rounded-2xl bg-gray-50 shadow-md mt-12 w-[30rem]">
         <h2 className="text-xl font-bold text-center text-gray-800 mb-3">
-          Developer Info
+         Changing Object Values
         </h2>
 
         <p className="text-gray-700">
