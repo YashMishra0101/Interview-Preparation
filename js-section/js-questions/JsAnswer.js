@@ -1883,8 +1883,8 @@ const crypto = require("crypto");
 const generateOTP = (length) => {
   if (length <= 0) return;
   let min = 10 ** (length - 1);
-  let max = 10 ** length - 1;
-  return crypto.randomInt(min,max+1).toString();
+  let max = 10 ** length ;
+  return crypto.randomInt(min,max).toString();
 };
 
 console.log(generateOTP(6));
