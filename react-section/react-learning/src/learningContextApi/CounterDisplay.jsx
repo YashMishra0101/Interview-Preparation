@@ -1,4 +1,4 @@
-import { useCounter } from "./context/CounterContext";
+import { useCounter } from "./context/counter/CounterContext";
 
 const CounterDisplay = () => {
   const { count, setCount } = useCounter();

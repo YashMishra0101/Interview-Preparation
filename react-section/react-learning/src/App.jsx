@@ -17,7 +17,8 @@ import InputFieldData from "./learningReactCore/InputFiledData";
 import ChangingObjectValue from "./learningReactCore/ChangingObjectValue";
 import HideShow from "./learningCustomHook/HideShow";
 import PropDrillingExample from "./learningPropsDrilling/PropDrillingExample";
-import CounterDisplay from "./learningContextApi/CounterDisplay"
+import CounterDisplay from "./learningContextApi/CounterDisplay";
+import { AppProviders } from "./learningContextApi/context/AppProviders";
 // import Practice from "./Practice.jsx";
 
 function App() {
@@ -41,7 +42,9 @@ function App() {
         <HideShow />
         <Toaster />
         <PropDrillingExample />
-        <CounterDisplay/>
+        <AppProviders>
+          <CounterDisplay />
+        </AppProviders>
         {/* <Practice /> */}
       </div>
     </>
