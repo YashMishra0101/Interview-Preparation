@@ -1,10 +1,10 @@
-import useToggle from "./hooks/useToggle";
+import useToggle from "./hooks/useToggle"
 
 const HideShow = () => {
   const [isVisible, toggle] = useToggle();
 
   return (
-    <div className="flex flex-col items-center justify-center mt-12 bg-gray-100 p-6">
+    <div className="flex flex-col items-center justify-center mt-12 bg-gray-300 p-6">
       <h1 className="text-3xl font-bold text-blue-600 mb-6">
         Custom Hook: useToggle Example
       </h1>

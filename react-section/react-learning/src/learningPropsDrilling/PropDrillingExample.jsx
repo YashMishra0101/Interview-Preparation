@@ -8,7 +8,7 @@ const PropDrillingExample = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-yellow-200 mt-14">
       <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">
         Prop Drilling Example
       </h1>
