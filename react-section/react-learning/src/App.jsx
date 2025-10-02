@@ -12,11 +12,12 @@ import FetchEmployess from "./learningReactCore/FetchEmployess";
 import ReactCss from "./learningReactCore/ReactCss";
 import UseRef from "./learningReactCore/UseRef";
 import React19Form from "./learningForms/React19Form";
-import React18Form from "./learningForms/React19Form";
+import React18Form from "./learningForms/React18Form";
 import InputFieldData from "./learningReactCore/InputFiledData";
 import ChangingObjectValue from "./learningReactCore/ChangingObjectValue";
 import HideShow from "./learningCustomHook/HideShow";
 import PropDrillingExample from "./learningPropsDrilling/PropDrillingExample";
+import CounterDisplay from "./learningContextApi/CounterDisplay"
 // import Practice from "./Practice.jsx";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <HideShow />
         <Toaster />
         <PropDrillingExample />
+        <CounterDisplay/>
         {/* <Practice /> */}
       </div>
     </>
