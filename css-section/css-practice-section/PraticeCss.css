@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.practice {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4caf50;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+}
