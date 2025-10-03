@@ -19,6 +19,7 @@ import HideShow from "./learningCustomHook/HideShow";
 import PropDrillingExample from "./learningPropsDrilling/PropDrillingExample";
 import CounterDisplay from "./learningContextApi/CounterDisplay";
 import { AppProviders } from "./learningContextApi/context/AppProviders";
+import CardInfoDisplay from "./learningContextApi/CardInfoDisplay";
 // import Practice from "./Practice.jsx";
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
         <PropDrillingExample />
         <AppProviders>
           <CounterDisplay />
+
+          <CardInfoDisplay />
         </AppProviders>
         {/* <Practice /> */}
       </div>
