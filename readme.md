@@ -31,11 +31,7 @@ This repository includes:
 
 🔷 TypeScript
 
-✅ Projects built using JavaScript, React, and TypeScript to revise and reinforce core concepts
-
-🛠️ Basic Backend Questions
-
-💬 General HR Questions (to prepare for interview rounds)
+🛠️ Basic Backend Questions (Node.js, Express, MongoDB) 
 
 ## 📂 Folder and File Naming Conventions (Which I Used)
 
@@ -75,13 +71,6 @@ If you'd like to add new interview questions, improve explanations, or share pra
    git push origin my-new-feature
    ```
 6. Submit a **pull request**.
-
-## 📚 Resources
-
-For further reading and practice, check out these fantastic resources:
-
-- [MDN Web Docs (HTML, CSS, JS)](https://developer.mozilla.org/)
-- [React Official Documentation](https://reactjs.org/docs/getting-started.html)
 
 ## ⭐️ Show Your Support
 
