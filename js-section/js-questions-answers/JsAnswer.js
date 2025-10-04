@@ -1675,9 +1675,13 @@ wide support.
 ->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it.
 ->Note : Babel is specifically designed for JavaScript. It’s not a general-purpose tool for other programming languages.
 
+---In the context of React and Vite, Babel does two main jobs:
+
+-Browser Compatibility  - Converting modern JS to older JS
+-JSX Transformation - Converting React's JSX syntax into regular JavaScript
+
 >Bundlers
-Bundlers (such as Webpack, Parcel, and Vite) are powerful tools for the frontend. They take all files and assets (JavaScript, CSS, images, etc.) 
-and bundle them into optimized files to ensure efficient loading. (use this)
+Bundlers (such as Webpack, Parcel, and Vite) are powerful tools for the frontend. They take all files and assets (JavaScript, CSS, images, etc.) and bundle them into optimized files to ensure efficient loading. (use this)
 
 ->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
 

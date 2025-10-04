@@ -167,4 +167,27 @@ If you need some value or want to calculate something, you don’t always need t
 
 Note:
 For a practical example of derived state, please visit the React section in your notes, where you can see the Derived State Example in action.
+
+#9)--template react vs  --template react-swc
+( pnpm create vite my-react-app --template react vs pnpm create vite my-react-app --template react-swc )
+
+=> First learn what is Babel (Please see : In "JsQuestion.js" section question number "#38")
+
+--template react 
+->Use Babel 
+->Written in Javascript
+->Traditional, well-established tool but slower
+
+--template react-swc : 
+->Use (SWC-Speedy Web Compiler) 
+->Written in Rust (much faster than JavaScript-based Babel)
+->Faster ( Significantly faster compilation and Hot Module Replacement (HMR) )
+->SWC is typically 20-70x faster than Babel because it's written in Rust instead of JavaScript. You'll notice:
+-Faster initial dev server startup
+-Faster hot reloads when you save files
+-Faster production builds
+
+SWC does exactly the same job as Babel - both transpiling modern JS for browser compatibility AND converting JSX. It's just written in Rust, making it much faster.
+
+For most modern React projects, --template react-swc is the better choice. The speed improvements are noticeable, and SWC supports all standard React/JSX features. Unless you have a specific need for Babel plugins, go with SWC!
 */
