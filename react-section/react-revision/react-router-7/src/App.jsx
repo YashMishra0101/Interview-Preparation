@@ -15,14 +15,16 @@ function App() {
       (pushState, popstate) to keep the UI in sync with the browser’s URL,
       allowing seamless navigation without page reloads. */}
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         {/*Routes  looks at the current URL path in the browser and decides which <Route> to render. */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blogsList" element={<BlogsList />} />
-          <Route path="/blogInfo/:id" element={<BlogInfo/>}/>
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blogsList" element={<BlogsList />} />
+            <Route path="/blogInfo/:id" element={<BlogInfo />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
