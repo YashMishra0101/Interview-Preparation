@@ -190,4 +190,65 @@ For a practical example of derived state, please visit the React section in your
 SWC does exactly the same job as Babel - both transpiling modern JS for browser compatibility AND converting JSX. It's just written in Rust, making it much faster.
 
 For most modern React projects, --template react-swc is the better choice. The speed improvements are noticeable, and SWC supports all standard React/JSX features. Unless you have a specific need for Babel plugins, go with SWC!
+
+#10)What the different between Link ,NavLink and useNavigate.
+>In short 
+
+“`Link` and `NavLink` are JSX components used only inside the return statement for static navigation, while `useNavigate` is a hook used inside JS logic or functions for dynamic navigation and it can also handle going forward or backward.”
+
+>In Deep
+
+-- `Link` and `NavLink`
+
+✅ **Used only inside JSX**
+❌ **Cannot be used inside JavaScript logic or functions**
+
+They are **React components**, not functions or hooks.
+So they can only appear **in your JSX return part**, like this:
+
+return (
+  <div>
+    <Link to="/home">Home</Link>
+    <NavLink to="/about">About</NavLink>
+  </div>
+);
+
+🧠 They are perfect for:
+
+* Static navigation (when a user clicks something)
+* Menus, navbars, or in-page links
+* Showing which page is active (`NavLink` only)
+
+
+-- `useNavigate`
+
+✅ **Used inside JS logic or functions**
+❌ **Cannot be used directly in JSX**
+
+It’s a **hook**, not a component.
+You call it in your logic to navigate programmatically.
+
+Example:
+
+const navigate = useNavigate();
+
+function handleLogin() {
+  // after successful login
+  navigate("/dashboard"); // redirects user dynamically
+}
+
+You can also use:
+
+navigate(-1); // go back
+navigate(1);  // go forward
+
+--🧠 It’s perfect for:
+
+* Redirecting after actions (like login, logout, form submission)
+* Conditional navigation (like “if user not logged in → go to /login”)
+* Going back or forward in history
+
+-- 🔸 Link / NavLink** = JSX Components → used for **static navigation
+-- 🔸 useNavigate** = Hook → used for **dynamic navigation (logic-based)
+
 */
