@@ -1,4 +1,5 @@
 import { useRef } from "react";
+//About useRef : The useRef hook in React is used to store a mutable value that persists across re-renders without causing the component to re-render when the value changes. It returns an object with a .current property, where you can store any value you want — like DOM elements, timers, or data that shouldn’t trigger re-rendering. Unlike useState, which re-renders the component every time its value updates, useRef simply updates the .current value silently in the background. This makes useRef ideal for situations where you want to remember something between renders (like input focus, scroll position, or previous values) without re-rendering the component. In short, useState updates cause re-rendering, while useRef updates do not.
 const UseRef = () => {
   const userName = useRef(null);
   const userEmail = useRef(null);
