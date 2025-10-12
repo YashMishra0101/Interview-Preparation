@@ -1,0 +1,54 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+const DataFetching = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/developers");
+      console.log(response);
+      console.log(response.data); // ← Axios wraps the server response inside data, which is why we access response.data. In contrast, with Fetch API or jQuery AJAX, the server JSON is returned directly without any automatic data wrapper.
+      setData(response.data);
+    } catch (err) {
+      setError("Some error occur", err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) return <h2>Loading....</h2>;
+  if (error) return <h2>Something went wrong...{error}</h2>;
+
+  return (
+    <>
+      <div>
+        <h1 className="text-center font-bold text-xl text-green-400 my-3">
+          Developer Data
+        </h1>
+        <ul>
+          {data.map((info) => (
+            <div
+              key={info.id}
+              className="border-2 border-green-400 py-3 mb-3 pl-3"
+            >
+              <li>Name:{info.name}</li>
+              <li>Country:{info.country}</li>
+              <li>Experience:{info.experience}</li>
+              <li>Salary:{info.salary} USD</li>
+              <li>Previous Company:{info.previousCompany}</li>
+              <li>Salary: {info.salary} USD</li>
+              <li>Skills:{info.skills.join(", ")}</li>
+            </div>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
+
+export default DataFetching;
