@@ -1,5 +1,5 @@
 
-import DataFetching from "../DataFetching"
+import DataFetching from "./DataFetching"
 function App() {
 
   return (
