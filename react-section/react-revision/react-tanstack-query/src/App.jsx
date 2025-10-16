@@ -1,11 +1,21 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import DataFetching from "./DataFetchingTanStack";
+import AddData from "./AddData";
+import Header from "./component/header";
+import { Toaster } from "react-hot-toast";
 
-
+const queryClient = new QueryClient();
 function App() {
   return (
-  <>
-  <h2 className="bg-sky-400 text-center py-3 font-bold text-xl text-white">Working</h2>
-  </>
-  )
+    <>
+      <QueryClientProvider client={queryClient}>
+        <Toaster position="top-right" reverseOrder={false} />
+        <Header />
+        <AddData />
+        <DataFetching />
+      </QueryClientProvider>
+    </>
+  );
 }
 
-export default App
+export default App;
