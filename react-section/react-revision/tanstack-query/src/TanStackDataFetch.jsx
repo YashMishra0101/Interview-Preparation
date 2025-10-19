@@ -1,0 +1,54 @@
+import { useQuery } from "@tanstack/react-query"; //useQuery: Hook from React Query to fetch and manage server data.
+import { DataFetch } from "./api/developersApi";
+import Loader from "./components/Loader";
+const TanStackDataFetch = () => {
+  const { data, error, isLoading, isError } = useQuery({
+    queryKey: ["developers"], //Unique identifier for this query,If another component uses the same queryKey, React Query will reuse the cached data.
+    queryFn: DataFetch, //The function that actually fetches the data from your backend API, Must return a promise (like axios.get).
+    staleTime: 5 * 60 * 1000, //5 minutes:Time in milliseconds for which cached data is considered fresh,During this time, React Query won’t refetch data even if the component re-renders,Yes, if you manually refresh the page (F5 or Ctrl+R), the data will be fetched again from the backend — even if staleTime is set.
+    refetchOnWindowFocus: false, //By default, React Query refetch data when the window gains focus, Setting it false disables this behavior,Useful when you don’t want unnecessary API calls when users switch tabs.
+  });
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center">
+        <Loader />
+      </div>
+    );
+  if (isError) return <p>Error:{error.message}</p>;
+  console.log(data);
+  return (
+    <>
+      <div>
+        <h2 className="mb-4 mt-6 text-center text-green-400 font-bold text-xl">
+          Developer Info
+          <div className="mt-2">
+            <button className="bg-sky-500 border-2 border-sky-500 text-white p-2 rounded-2xl cursor-pointer mb-3 ">
+              Add New Developer Info
+            </button>
+          </div>
+        </h2>
+        {data?.map((info) => (
+          <div key={info?.id} className="border-2 border-green-400 mb-3 p-3">
+            <p>Name: {info?.name}</p>
+            <p>Country: {info?.country}</p>
+            <p>Experience: {info?.experience}</p>
+            <p>Current Position: {info?.currentPosition}</p>
+            <p>Salary: {info?.salary} USD</p>
+            <p>Previous Company: {info?.previousCompany}</p>
+            <p>Skills: {info?.skills?.join(", ")}</p>
+            <div className="mt-3">
+              <button className="bg-amber-400 border-2 border-yellow-500 p-2 rounded-2xl cursor-pointer">
+                Edit
+              </button>
+              <button className="bg-green-400 border-2 border-green-500 p-2 rounded-2xl cursor-pointer ml-3">
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default TanStackDataFetch;
