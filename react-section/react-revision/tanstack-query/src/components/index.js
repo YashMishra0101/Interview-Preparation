@@ -1,1 +1,1 @@
-export {default as TanStackDataFetch} from "../TanStackDataFetch"
+export {default as TanStackDataFetch} from "../pages/TanStackDataFetch"

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"; //useQuery: Hook from React Query to fetch and manage server data.
-import { DataFetch } from "./api/developersApi";
-import Loader from "./components/Loader";
+import { DataFetch } from "../api/developersApi";
+import Loader from "../components/Loader";
 const TanStackDataFetch = () => {
   const { data, error, isLoading, isError } = useQuery({
     queryKey: ["developers"], //Unique identifier for this query,If another component uses the same queryKey, React Query will reuse the cached data.
