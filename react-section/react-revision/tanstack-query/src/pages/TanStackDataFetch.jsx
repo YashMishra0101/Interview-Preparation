@@ -1,13 +1,37 @@
-import { useQuery } from "@tanstack/react-query"; //useQuery: Hook from React Query to fetch and manage server data.
-import { DataFetch } from "../api/developersApi";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"; 
+import { DataFetch, DeleteDeveloper } from "../api/developersApi";
+import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
+import toast from "react-hot-toast";
+
 const TanStackDataFetch = () => {
+  const queryClient = useQueryClient();
+
   const { data, error, isLoading, isError } = useQuery({
-    queryKey: ["developers"], //Unique identifier for this query,If another component uses the same queryKey, React Query will reuse the cached data.
-    queryFn: DataFetch, //The function that actually fetches the data from your backend API, Must return a promise (like axios.get).
-    staleTime: 5 * 60 * 1000, //5 minutes:Time in milliseconds for which cached data is considered fresh,During this time, React Query won’t refetch data even if the component re-renders,Yes, if you manually refresh the page (F5 or Ctrl+R), the data will be fetched again from the backend — even if staleTime is set.
-    refetchOnWindowFocus: false, //By default, React Query refetch data when the window gains focus, Setting it false disables this behavior,Useful when you don’t want unnecessary API calls when users switch tabs.
+    queryKey: ["developers"],
+    queryFn: DataFetch,
+    staleTime: 5 * 60 * 1000,
+    refetchOnWindowFocus: false,
   });
+  const deleteMutation = useMutation({
+    mutationFn: DeleteDeveloper,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["developers"] });
+      toast.success("Developer deleted successfully!");
+    },
+    onError: (error) => {
+      console.error("Delete error:", error);
+      toast.error("Failed to delete developer. Please try again.");
+    },
+  });
+
+  // Handle delete
+  const handleDelete = (id, name) => {
+    if (window.confirm(`Are you sure you want to delete ${name}?`)) {
+      deleteMutation.mutate(id);
+    }
+  };
+
   if (isLoading)
     return (
       <div className="flex justify-center items-center">
@@ -21,11 +45,6 @@ const TanStackDataFetch = () => {
       <div>
         <h2 className="mb-4 mt-6 text-center text-green-400 font-bold text-xl">
           Developer Info
-          <div className="mt-2">
-            <button className="bg-sky-500 border-2 border-sky-500 text-white p-2 rounded-2xl cursor-pointer mb-3 ">
-              Add New Developer Info
-            </button>
-          </div>
         </h2>
         {data?.map((info) => (
           <div key={info?.id} className="border-2 border-green-400 mb-3 p-3">
@@ -40,7 +59,10 @@ const TanStackDataFetch = () => {
               <button className="bg-amber-400 border-2 border-yellow-500 p-2 rounded-2xl cursor-pointer">
                 Edit
               </button>
-              <button className="bg-green-400 border-2 border-green-500 p-2 rounded-2xl cursor-pointer ml-3">
+              <button
+                onClick={() => handleDelete(info?.id, info?.name)}
+                className="bg-green-400 border-2 border-green-500 p-2 rounded-2xl cursor-pointer ml-3"
+              >
                 Delete
               </button>
             </div>
@@ -52,3 +74,10 @@ const TanStackDataFetch = () => {
 };
 
 export default TanStackDataFetch;
+
+// const { data, error, isLoading, isError } = useQuery({
+//   queryKey: ["developers"], //Unique identifier for this query,If another component uses the same queryKey, React Query will reuse the cached data.
+//   queryFn: DataFetch, //The function that actually fetches the data from your backend API, Must return a promise (like axios.get).
+//   staleTime: 5 * 60 * 1000, //5 minutes:Time in milliseconds for which cached data is considered fresh,During this time, React Query won’t refetch data even if the component re-renders,Yes, if you manually refresh the page (F5 or Ctrl+R), the data will be fetched again from the backend — even if staleTime is set.
+//   refetchOnWindowFocus: false, //By default, React Query refetch data when the window gains focus, Setting it false disables this behavior,Useful when you don’t want unnecessary API calls when users switch tabs.
+// });
