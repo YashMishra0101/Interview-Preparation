@@ -1,16 +1,17 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"; 
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { DataFetch, DeleteDeveloper } from "../api/developersApi";
-import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const TanStackDataFetch = () => {
   const queryClient = useQueryClient();
+const navigate = useNavigate(); // At the top of your component
 
   const { data, error, isLoading, isError } = useQuery({
     queryKey: ["developers"],
     queryFn: DataFetch,
-    staleTime: 5 * 60 * 1000,
+    // staleTime: 5 * 60 * 1000,
     refetchOnWindowFocus: false,
   });
   const deleteMutation = useMutation({
@@ -30,6 +31,11 @@ const TanStackDataFetch = () => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
       deleteMutation.mutate(id);
     }
+  };
+
+  //handel edit
+  const handleEdit = (id) => {
+    navigate(`/editInfo/${id}`);
   };
 
   if (isLoading)
@@ -56,7 +62,10 @@ const TanStackDataFetch = () => {
             <p>Previous Company: {info?.previousCompany}</p>
             <p>Skills: {info?.skills?.join(", ")}</p>
             <div className="mt-3">
-              <button className="bg-amber-400 border-2 border-yellow-500 p-2 rounded-2xl cursor-pointer">
+              <button
+                onClick={() => handleEdit(info?.id)}
+                className="bg-amber-400 border-2 border-yellow-500 p-2 rounded-2xl cursor-pointer"
+              >
                 Edit
               </button>
               <button
