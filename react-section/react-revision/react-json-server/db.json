@@ -1,14 +1,18 @@
 {
   "developers": [
     {
-      "id": 1,
       "name": "John Doe",
       "country": "USA",
-      "experience": 5,
+      "experience": "5",
+      "salary": "14999",
+      "previousCompany": "TCS",
       "currentPosition": "Frontend Developer",
-      "salary": "80,000 USD",
-      "previousCompany": "TechSoft Inc",
-      "skills": ["React", "JavaScript", "CSS"]
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -18,7 +22,11 @@
       "currentPosition": "Full Stack Developer",
       "salary": "15,00,000 INR",
       "previousCompany": "InnoTech Solutions",
-      "skills": ["React", "Node.js", "MongoDB"]
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB"
+      ]
     },
     {
       "id": 3,
@@ -28,7 +36,11 @@
       "currentPosition": "Backend Developer",
       "salary": "75,000 EUR",
       "previousCompany": "CodeWorks GmbH",
-      "skills": ["Node.js", "Express", "MySQL"]
+      "skills": [
+        "Node.js",
+        "Express",
+        "MySQL"
+      ]
     },
     {
       "id": 4,
@@ -38,7 +50,11 @@
       "currentPosition": "React Developer",
       "salary": "70,000 CAD",
       "previousCompany": "MapleTech",
-      "skills": ["React", "TypeScript", "Redux"]
+      "skills": [
+        "React",
+        "TypeScript",
+        "Redux"
+      ]
     },
     {
       "id": 5,
@@ -48,7 +64,11 @@
       "currentPosition": "Full Stack Developer",
       "salary": "9,000,000 JPY",
       "previousCompany": "Nippon Soft",
-      "skills": ["Vue.js", "Node.js", "PostgreSQL"]
+      "skills": [
+        "Vue.js",
+        "Node.js",
+        "PostgreSQL"
+      ]
     },
     {
       "id": 6,
@@ -58,7 +78,11 @@
       "currentPosition": "Backend Developer",
       "salary": "200,000 BRL",
       "previousCompany": "SambaTech",
-      "skills": ["Java", "Spring Boot", "MySQL"]
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "MySQL"
+      ]
     },
     {
       "id": 7,
@@ -68,7 +92,11 @@
       "currentPosition": "Frontend Developer",
       "salary": "55,000 GBP",
       "previousCompany": "BrightSoft",
-      "skills": ["Angular", "JavaScript", "CSS"]
+      "skills": [
+        "Angular",
+        "JavaScript",
+        "CSS"
+      ]
     },
     {
       "id": 8,
@@ -78,7 +106,11 @@
       "currentPosition": "Full Stack Developer",
       "salary": "400,000 CNY",
       "previousCompany": "DragonTech",
-      "skills": ["React", "Node.js", "MongoDB"]
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB"
+      ]
     },
     {
       "id": 9,
@@ -88,7 +120,11 @@
       "currentPosition": "Backend Developer",
       "salary": "60,000 EUR",
       "previousCompany": "CodeEspaña",
-      "skills": ["Python", "Django", "PostgreSQL"]
+      "skills": [
+        "Python",
+        "Django",
+        "PostgreSQL"
+      ]
     },
     {
       "id": 10,
@@ -98,7 +134,11 @@
       "currentPosition": "Frontend Developer",
       "salary": "50,000 USD",
       "previousCompany": "SeoulTech",
-      "skills": ["React", "JavaScript", "Tailwind CSS"]
+      "skills": [
+        "React",
+        "JavaScript",
+        "Tailwind CSS"
+      ]
     }
   ]
 }

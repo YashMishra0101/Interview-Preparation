@@ -217,7 +217,7 @@ return (
 
 * Static navigation (when a user clicks something)
 * Menus, navbars, or in-page links
-* Showing which page is active (`NavLink` only)
+* Showing which page is "Active" (`NavLink` only)
 
 
 -- `useNavigate`
@@ -250,5 +250,29 @@ navigate(1);  // go forward
 
 -- 🔸 Link / NavLink** = JSX Components → used for **static navigation
 -- 🔸 useNavigate** = Hook → used for **dynamic navigation (logic-based)
+
+#11)What is ? (Optional Chaining) ?
+Optional chaining is a feature in JavaScript that allows you to safely access properties of an object or call functions without running into errors when a value in the chain is undefined or null. Normally, if you try to access a property of undefined or null, JavaScript throws an error and your app may crash. Optional chaining solves this problem by using the ?. operator. When you write object?.property, JavaScript first checks if object is defined. If it is, it returns the property value. If it is undefined or null, it simply returns undefined instead of throwing an error. This makes your code cleaner and safer, especially when working with data from APIs, where some properties might be missing or delayed.
+
+--In simple language
+Optional chaining basically ensures that if any part of the chain is undefined or null, it won’t throw an error. Instead, it simply returns undefined. This keeps your code clean and prevents unexpected crashes, especially when dealing with asynchronous data or nested objects.
+
+--Examples:
+>1
+const user = {
+  name: "Yashu",
+  address: {
+    city: "Delhi"
+  }
+};
+
+console.log(user.address.city);  // "Delhi"
+console.log(user.contact.phone); // ❌ Error: Cannot read properties of undefined
+console.log(user.contact?.phone); // ✅ undefined (safe)
+
+>2
+const data = undefined;
+console.log(data?.map(item => item.name)); // Output: undefined, safe
+
 
 */
