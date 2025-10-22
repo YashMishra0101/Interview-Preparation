@@ -113,7 +113,7 @@ const developerInfo = [
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
-app.get("/developers", (req, res) => {
+app.get("/api/developers", (req, res) => {
   res.json(developerInfo);
 });
 
