@@ -1,8 +1,0 @@
-Important Note 📝:
-
-The React revision section is purely for my personal practice. I’m experimenting with random React concepts using a YouTube course, documentation, and other resources. I added this section for my personal convenience, so please do not use or refer to it.
-
-This section may contain messy code, unfinished experiments, and incomplete implementations, as it’s only meant for my revision. I’m using it to test different ideas, understand concepts better, and improve my React skills.
-
-You’re welcome to explore the other sections of the repository, which are more organized and suitable for learning or reference. This React revision folder is not intended for public use, and I kindly request that you skip it.
-
