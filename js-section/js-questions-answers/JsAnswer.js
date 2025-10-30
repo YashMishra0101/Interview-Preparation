@@ -1668,9 +1668,7 @@ Promise {<pending>}
 
 #Ans 38)
 >Babel
-Babel is a JavaScript compiler that allows developers to use the latest JavaScript features without worrying about browser 
-compatibility. It transpiles modern JavaScript code (like ES6+) into a version that older browsers can understand, ensuring
-wide support.
+Babel is a JavaScript compiler that allows developers to use the latest JavaScript features without worrying about browser compatibility. It transpiles modern JavaScript code (like ES6+) into a version that older browsers can understand, ensuring wide support.
 
 ->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it.
 ->Note : Babel is specifically designed for JavaScript. It’s not a general-purpose tool for other programming languages.
@@ -1679,6 +1677,9 @@ wide support.
 
 -Browser Compatibility  - Converting modern JS to older JS
 -JSX Transformation - Converting React's JSX syntax into regular JavaScript
+
+>SWC
+SWC (Speedy Web Compiler) is like Babel’s ultra-fast younger sibling ⚡. It does the same job — compiling modern JavaScript (and TypeScript) into older, browser-compatible code — but it’s written in Rust, which makes it blazingly fast
 
 >Bundlers
 Bundlers (such as Webpack, Parcel, and Vite) are powerful tools for the frontend. They take all files and assets (JavaScript, CSS, images, etc.) and bundle them into optimized files to ensure efficient loading. (use this)
