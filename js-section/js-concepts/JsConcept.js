@@ -1793,6 +1793,7 @@ console.log(resultInfinityFunctionCurrying); //10
 #23)Higher Order Function in Javascript
 A function is called higher-order if: It takes another function as an argument (callback) OR It returns another function.
 Examples: map(), filter(), reduce(), forEach(),sort().
+
 -->for...of is NOT a higher-order function.It’s just a looping construct (syntax provided by JavaScript), not a function that takes another function.
 
 const companies = [
