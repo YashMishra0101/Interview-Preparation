@@ -276,7 +276,7 @@ n=4;
 4 4 4 4 4 4 4 
 
 
--------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 #Section 2 : For interviews
 
@@ -1339,4 +1339,9 @@ Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 Explanation: Each number is the sum of the previous two numbers.
 
+#71)
+In JavaScript, the main thread is single-threaded and runs asynchronously.
+Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+
+For example, if you call blockThread(3), it should pause execution for 3 seconds before printing "Done" — without using setTimeout, setInterval, or Promise.
 */

@@ -48,28 +48,24 @@ There are three main ways to add CSS to HTML:
 
 --Using **External CSS** is the preferred choice for most cases due to better maintainability and reusability.
 
-# 2) What is the Precedence and Specificity in CSS ?
+# 2) What is specificity in CSS, and which CSS rule has higher precedence ?
 
----CSS specificity Youtube Video Link (Lang : Hindi) (cltr + click 👆): https://youtu.be/uTcpbPMZlFE?si=LmlAc28AHnN8t1he  [🤚 Watch this video first ]
 ---CSS specificity Youtube Video Link (Lang : English) (cltr + click 👆): https://youtu.be/CHyPGSpIhSs?si=aoeiBrvZxUkGzs-2  [🤚 Watch this video first ]
 
-In simple language, we can say that precedence deals with CSS styles (inline > internal > external CSS) and specificity 
-deals with selectors (ID > class > element).
+CSS specificity determines which CSS rule is applied when multiple rules target the same element.
+It’s basically a priority system that decides which style wins in case of a conflict.
 
-Precedency of CSS Styles : inline > internal > external CSS
-Specificity of selectors : ID > class > element
+Specificity in CSS means how the browser decides which CSS rule to apply when more than one rule targets the same element.Think of it like a priority system — whichever rule has higher specificity, that one wins.
+
+The order of precedence is: !important` > Inline styles > ID selectors > Class/attribute/pseudo-class selectors > Element selectors
 
 # 3) Cascade Algorithm in CSS ?
 
-
-The cascade algorithm determines which CSS rules apply to an element when there are multiple conflicting
-styles. It considers both factors like CSS precedecny and specificity, importance (e.g., !important), and the source order
-to resolve conflicts.
+The cascade algorithm in CSS is the process the browser uses to decide which CSS rule should be applied when multiple rules target the same HTML element.
 
 --Rules:
 
-
-1.Order and Position:
+1.Order and Position: 
    - If the same selector is used multiple times with different styles, the one written last will be applied. 
    - Example:
      p { color: blue; }
@@ -108,6 +104,8 @@ The specificity numbers are calculated based on the types of selectors in CSS.
 # 4)Box Model
 
 ---CSS Box Youtube Video Link (Lang : Eng) (cltr + click 👆) : https://youtu.be/nSst4-WbEZk?si=lTfz75tuk8UIdJIt  [🤚 Watch this video first ]
+
+The cascade algorithm in CSS is the process the browser uses to decide which CSS rule should be applied when multiple rules target the same HTML element.
 
 1)Content
 2)Padding
@@ -433,11 +431,9 @@ Features of CSS Preprocessor :
 
 # 12)What is border size border box ?
 
-When you use `box-sizing: border-box` in CSS, adding padding or borders won’t change the actual height and 
-width of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
+When you use `box-sizing: border-box` in CSS, adding padding or borders won’t change the actual height and  width of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
 
-Without `box-sizing: border-box` padding and borders **will increase** 
-the total height and width, making the element larger than what you initially set.  
+Without `box-sizing: border-box` padding and borders **will increase** the total height and width, making the element larger than what you initially set.  
 
 By default, `box-sizing` is set to `content-box`.
 
@@ -1304,4 +1300,44 @@ its corners during the process.
 </div>
 
 >>In a real-world scenario, Flexbox or Grid is generally preferred because of their simplicity and flexibility.
+
+#27) What is Inheritance in css ?
+
+Inheritance in CSS means that some CSS properties applied to a parent element are automatically passed (inherited) to its child elements.
+
+In simple words —
+if you style a parent element with certain properties, the children “inherit” those styles unless you override them.
+
+<body>
+  <p>This is a <span>paragraph</span>.</p>
+</body>
+
+body {
+  color: blue;
+  font-family: Arial;
+}
+
+p {
+  font-size: 16px;
+}
+
+✅ The <span> inside the <p> will also be blue and use the Arial font,
+even though we didn’t write any CSS for <span>.
+
+That’s because color and font-family are inheritable properties.
+
+⚙️ Properties That Are Inheritable
+
+Not all CSS properties are inherited automatically.Here are some common ones that are:
+
+-color
+-font-family, font-size, font-style, font-weight
+-line-height
+-visibility
+-cursor
+
+🚫 Properties That Are Not Inherited Automatically
+
+Layout and box-related properties such as padding, margin, border, and background are not inherited because they directly affect the box model and could break the layout if passed to child elements.
+
 */
