@@ -1673,8 +1673,7 @@ Babel is a JavaScript compiler that allows developers to use the latest JavaScri
 ->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it.
 ->Note : Babel is specifically designed for JavaScript. It’s not a general-purpose tool for other programming languages.
 
----In the context of React and Vite, Babel does two main jobs:
-
+-Babel do two thing: 
 -Browser Compatibility  - Converting modern JS to older JS
 -JSX Transformation - Converting React's JSX syntax into regular JavaScript
 
@@ -1686,12 +1685,7 @@ Bundlers (such as Webpack, Parcel, and Vite) are powerful tools for the frontend
 
 ->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
 
-(For knowledge Purpose : The main thing to keep in mind is that bundlers like Vite, Parcel, and Webpack are indeed focused on front-end 
-assets in general. So, while they’re most commonly used for JavaScript and frameworks like React, Vue, and Angular, they can also handle 
-other front-end languages. For instance, if you use Python on the front-end through something like PyScript, bundlers can definitely 
-bundle the Python code along with your JavaScript and other assets. They essentially treat the Python code as another asset that
-needs to be processed and bundled. So, in short, bundlers are flexible and can handle front-end code written in different languages, 
-not just JavaScript. It all comes down to how you configure them and the tools you use alongside them.)
+#Note : During bundling automatic Js framework/library code (react/angular/vue) and CSS framework/library code (tailwind,bootstrap,ant design etc) converted into normal Js, CSS code.
 
 #Ans 39)
 
