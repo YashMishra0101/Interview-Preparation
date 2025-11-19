@@ -996,7 +996,7 @@ async function age(){
 console.log(age());
 
 
-#38) What is Bable , SWC and Bundlers (Webpack, Parcel, Vite)? 
+#38) What is Bable , SWC and Bundlers (Webpack, Parcel, Vite, esbuild, rollup)? 
 
 #39) Why is Node.js necessary? (For Knowledge Purpose)
 
