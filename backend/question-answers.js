@@ -82,4 +82,12 @@ Claude
 
 Claude
 ---https://claude.ai/public/artifacts/979a2fce-fdbd-4d6d-aae4-e1eccc992f40
+
+#5)What is multer.
+#6)What is mongoose-aggreate-paginate-v2
+#7)Cors
+#8)Cloudinary
+#9)Cookieparser
+#10)Jsonwebtoken
+#11)Bcrypt
 */
