@@ -276,7 +276,7 @@ n=4;
 4 4 4 4 4 4 4 
 
 
---------------------------------------------------------------------------------------------------
+------------------------------------------------------------------
 
 #Section 2 : For interviews
 
@@ -290,9 +290,9 @@ let a=5;
 let b="10";
 
 let c=b-a;
-let c=b*a;
-let c=b/a;
-let c=b+a
+// let c=b*a;
+// let c=b/a;
+// let c=b+a
 
 console.log(c);
 console.log(typeof(c));
@@ -307,22 +307,24 @@ let f=null;
 let g=true;
 let h=false;
 
-console.log(a+b)
-console.log(c+d)
-console.log(a+c)
-console.log(e+a)
-console.log(e+d);
-console.log(a+f)
-console.log(d+f);
-console.log(d-f);
-console.log(d/f);
-console.log(a+g);
-console.log(a-g);
-console.log(b-h);
-console.log(b+h);
+console.log("a+b", a + b, typeof (a + b)); 
+console.log("c+d", c + d, typeof (c + d)); 
+console.log("a+c", a + c, typeof (a + c)); 
+console.log("e+a", e + a, typeof (e + a)); 
+console.log("e+d", e + d, typeof (e + d)); 
+console.log("a+f", a + f, typeof (a + f)); 
+console.log("d+f", d + f, typeof (d + f)); 
+console.log("d-f", d - f, typeof (d - f)); 
+console.log("a+g", a + g, typeof (a + g)); 
+console.log("a-g", a - g, typeof (a - g)); 
+console.log("b-h", b - h, typeof (b - h)); 
+console.log("b+h", b + h, typeof (b + h)); 
 
-console.log("Sum of a + b = " + a + b);
-console.log(a + b+ " is a sum of a + b");
+console.log("Sum of a + b = " + a + b, typeof ("Sum of a + b = " + a + b)); 
+console.log(
+  a + b + " is a sum of a + b",
+  typeof (a + b + " is a sum of a + b"),
+); 
 
 
 #2) Implement callback function in JavaScript by passing one function into another , then print it's value?

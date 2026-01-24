@@ -1,17 +1,17 @@
 /*
 ##1) What is CORS?
 
-**CORS = Cross-Origin Resource Sharing**
+CORS = Cross-Origin Resource Sharing
 
 It's a **security feature** implemented by browsers to control which websites can access resources from your backend server.
 
---- What is CORS?
+-- What is CORS?
 
 - Origin = Protocol + Domain + Port
 - Browser security feature that blocks requests between different origins
 - Prevents malicious websites from stealing your data
 
---- Why CORS Exists
+-- Why CORS Exists
 
 CORS exists to protect users from malicious websites trying to:
 =>Steal their cookies

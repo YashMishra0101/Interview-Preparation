@@ -721,9 +721,9 @@ SC:O(N²)
 
 #Ans 1
 
-In JavaScript, when you use the + operator with one operand being a number and the other 
-operand being a string, JavaScript implicitly coerces the number to a string and performs 
-string concatenation rather than addition.
+In JavaScript, when the + operator is used between a string and a number, JavaScript performs type coercion (कोर्शन) by converting the number into a string and then concatenating them. As a result, you get a combined string. In contrast, other arithmetic operators (-, *, /, %) convert strings into numbers to perform mathematical operations. This difference is why + concatenates, while other operators do normal math.
+
+"Concatenation" just means joining things together nothing more. When we say "string concatenation," we’re specifically talking about joining strings together. In JavaScript, the + operator is what we use for string concatenation we are joining. So "Concatenation" just means joining things together and "string concatenation," we’re specifically talking about joining strings together.
 
 >Note:
 so apart form + , for -,/ and % js do normal maths it does care about string.
@@ -752,27 +752,24 @@ let g=true;
 let h=false;
 
 
-console.log(a+b)//18
-console.log(a+d)//53
-console.log(a+c)//95
-console.log(e+a)//NaN
-console.log(e+d);//undefined3
-console.log(a+f)//9
-console.log(d+f);//3null
-console.log(d-f);//3
-console.log(d/f);//Infinite
-console.log(a+g);//10
-console.log(a-g);//8
-console.log(b-h);//9
-console.log(b+h);//9
+console.log("a+b", a + b, typeof (a + b)); //18 , number
+console.log("c+d", c + d, typeof (c + d)); //53 , string
+console.log("a+c", a + c, typeof (a + c)); //95 , string
+console.log("e+a", e + a, typeof (e + a)); // NaN, number
+console.log("e+d", e + d, typeof (e + d)); //undefined3, string
+console.log("a+f", a + f, typeof (a + f)); //9, number
+console.log("d+f", d + f, typeof (d + f)); //3null , string
+console.log("d-f", d - f, typeof (d - f)); //3, number
+console.log("a+g", a + g, typeof (a + g)); //10,number
+console.log("a-g", a - g, typeof (a - g)); //8,number
+console.log("b-h", b - h, typeof (b - h)); //9,number
+console.log("b+h", b + h, typeof (b + h)); //9, number
 
-console.log(a + b+ " is a sum of a + b");//18
-console.log("Sum of a + b = " + a + b);//99
-console.log("Sum of a + b = " , a + b);//18
-
-This means JavaScript behaves differently based on the operator you're using. The + operator is special—it acts like a joiner when 
-strings are involved. But the rest (-, *, /, %) don’t care about strings; they’ll automatically convert string numbers to real numbers 
-and do proper mathematical calculations. So "3" - 3 also becomes 0 because JS changes "3" to number 3 first.
+console.log("Sum of a + b = " + a + b, typeof ("Sum of a + b = " + a + b)); //Sum of a + b =99 , string
+console.log(
+  a + b + " is a sum of a + b",
+  typeof (a + b + " is a sum of a + b"),
+); //18 is a sum of a + b , string
 
 
 #Ans 2)
