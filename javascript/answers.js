@@ -794,45 +794,40 @@ console.log(functionOne(functionTwo));
 
 #Ans 4)
 
-console.log("line number 1", undefined);
-console.log("line number 3", 10);
-console.log("line number 6",10); 
-console.log("line number 4", undefined);
-console.log("line number 2", 10);
-console.log("line number 5", 20); 
+// line number 1, undefined
+// line number 3, 10
+// line number 6, 10
+// line number 4, undefined
+// line number 2, 10
+// line number 5, 20
 
 #Ans 5)
 
-console.log("line number 1", 10);
-console.log("line number 6", 10);
-console.log("line number 2", undefined);
-console.log("line number 3", 29);
-console.log("line number 4", 31);
-console.log("line number 5", 31);
+// line number 1: 10
+// line number 6: 10
+// line number 2: undefined
+// line number 3: 29
+// line number 4: 31
+// line number 5: 31
 
 #Ans 6)
 
-console.log("letFruit" = orange, "varFruit" = orange)
-console.log("letFruit" = apple, "varFruit" = apple) 
-console.log("letFruit" = orange, "varFruit" = apple)
-
+//letFruit, orange, varFruit, orange
+//letFruit, apple, varFruit, apple);
+//letFruit, orange, varFruit, apple)
 
 #Ans 7)
 Hello, my name is  Yash Mishra. I am 22 years old.
 
 #Ans 8)
-Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from,
+Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from.
 Inner Functions can access their parent or outer scope — this is called lexical scoping.
 
 In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called.
 
-or 
-
-Lexical scoping means that the accessibility of variables is determined by where they are declared in the code structure, not where they are executed.
-
 ✅ Scope determined by: Where the function is defined/written
 ❌ NOT determined by: Where the function is called/executed
-✅ Functions can access: Variables from their parent/outer scope
+
 
 --Example 1:
 
@@ -894,20 +889,22 @@ for (let b in userInfo) {
     console.log(b); // ✅ for...in → gives keys of object
 }
 
-// ❌ for...of can't be used on plain objects (not iterable)
-// for (let x of userInfo) {
-//     console.log(x); // ❌ TypeError
+for (let b in userInfo) {
+    console.log(userInfo[b]); // ✅ now it will gives values
+}
+
+❌ for...of can't be used on plain objects (not iterable)
+ for (let x of userInfo) {
+  console.log(x); // ❌ TypeError
 }
 
 #Ans 10)
-
-Let’s say I have a function that uses this to refer to an object’s properties. If I want to call that function for a different object, 
-I can use call, apply, or bind to change the value of this. Call, apply and blind are the pre build method in javascript with the helps 
-that we can invoke the funciton with the help of this keyword.
+ Call, apply and blind are the pre build method in javascript with the helps that we can invoke the funciton with the help of this keyword.
 
 --1. `call()` Method
 
->- Definition: `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
+>Definition: `call()` is a method that allows you to invoke a function with a specified `this` value and arguments provided individually.
+
 - Example:
  
 let userOne={
@@ -920,8 +917,8 @@ let userTwo={
   lastName:"Turkar"
 }
 
-let userInfo=function(age,post){
-  return (`${this.firstName} ${this.lastName} ${age} ${post}`)
+let userInfo=function(post,age){
+  return (`${this.firstName} ${this.lastName} ${post} ${age}`)
 }
 
 console.log(userInfo.call(userOne,"Full Stack Developer",23))
@@ -930,7 +927,8 @@ console.log(userInfo.call(userTwo,"frontEnd-Developer",24))
 
 -- 2. apply()` Method
 
->- Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
+>Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
+
 - Example:
 
 let userOne={
@@ -953,7 +951,8 @@ console.log(userInfo.apply(userTwo,["FrontEnd-Developer","24"])) //--Pass Info I
 
 -- 3. `bind()` Method
 
-> **Definition:** `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately and arguments provided individually.
+> Definition: `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately and arguments provided individually.
+
 - Example:
 
 let userOne={
@@ -975,17 +974,25 @@ console.log(userDataOne())
 let userDataTwo=userInfo.bind(userOne,"frontEnd-Developer","24"); //--assing to the variable and then call it
 console.log(userDataTwo())
 
-
->Should You Use Array Form or Individual Arguments?
-
---Individual Arguments: When using bind, you should pass arguments individually, as bind is not designed to accept an array of arguments. The additional arguments after the this value are passed directly to the bound function when it is called.
-
---Array Form: If you have arguments in array form, you might consider using apply instead, as apply is designed to accept an array of arguments.
-
 > Summary:
 - `call()`: Calls a function with a specific `this` value and individual arguments.
 - `apply()`: Like `call()`, but arguments are passed as an array.
-- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately and individual arguments.
+- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately and individual arguments not in array form .
+
+--Answer:
+1)
+// output:Yash
+2)
+// output:
+// undefined
+// 50
+3)
+output:12
+4)
+output:25
+5)
+output:Audi
+
 
 #Asn 11)
 

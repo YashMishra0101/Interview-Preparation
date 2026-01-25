@@ -729,6 +729,11 @@ function hoistedFunction() {
  Function expressions, where you assign a function to a variable, are not hoisted. Only the variable declaration
  is hoisted, not the function assignment ,so calling the function before assignment results in a TypeError.
 
+ Arrow Functions (or Functions Assigned to Variables):When you assign a function—whether arrow or even a normal function—to a variable (using var, let, or const), only the variable declaration is hoisted—not the function body.
+
+ If you use let or const, the variable is hoisted but remains in a "temporal dead zone" until the line of initialization. Accessing it before initialization throws a ReferenceError.
+ If you use var, the variable is hoisted and set to undefined. So if you try to call it before the assignment, you’re calling undefined function that's why we got a TypeError. 
+
 --Example:
 
 a()  //TypeError: a is not a function

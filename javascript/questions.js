@@ -395,16 +395,15 @@ fn();
 #6) Tells The output
 
 let letFruit = "orange";
-var varFruit = "orange"
-console.log("letFruit", letFruit,
-"varFruit", varFruit)
+var varFruit = "orange";
+console.log("letFruit", letFruit, "varFruit", varFruit);
 {
-let letFruit = "apple";
-varFruit = "apple";
-console. log("letFruit", letFruit,
-"varFruit", varFruit)
+  let letFruit = "apple";
+  varFruit = "apple";
+  console.log("letFruit", letFruit, "varFruit", varFruit);
 }
 console.log("letFruit", letFruit, "varFruit", varFruit);
+
 
 
 #7) What will be the output of `console.log(person.fullName())`?
@@ -425,7 +424,61 @@ console.log(person.fullName());
     
 #9)Can we use the for...of loop for objects ?
 
-#10)Explain the use of call(), apply(), and bind() in JavaScript?
+#10)Explain the use of call(), apply(), and bind() in JavaScript and then solve this question.
+
+--1)Output-based (call)
+
+const user = { name: "Yash" };
+
+function show() {
+  console.log(this.name);
+}
+
+show.call(user);
+
+
+--2)call vs default this
+
+const obj = { x: 50 };
+
+function print() {
+  console.log(this.x);
+}
+
+print();
+print.call(obj);
+
+--3)apply with arguments
+function add(a, b, c) {
+  return a + b + c;
+}
+
+console.log(add.apply(null, [2, 4, 6]));
+
+--4)bind (this cannot be changed)
+
+const person = { age: 25 };
+
+function getAge() {
+  console.log(this.age);
+}
+
+const bound = getAge.bind(person);
+bound.call({ age: 40 });
+//Once a function is bound using bind, its this cannot be changed by call or apply.
+
+--5)method borrowing
+const car1 = {
+  brand: "BMW",
+  getBrand() {
+    console.log(this.brand);
+  }
+};
+
+const car2 = { brand: "Audi" };
+
+car1.getBrand.call(car2);
+//Method borrowing allows one object to use another object’s method by changing the value of this using call or apply.
 
 #11)What "this keyword" is javascript ?
 
@@ -858,6 +911,7 @@ const student = {
 #24) Write a program with proper error handling to fetch a user's data from this API:
 👉👨‍💻 Note:First check if the API URL is working before using it. Sometimes the API may not respond.
 👉 API: https://jsonplaceholder.typicode.com/users/1
+
 Q)Print the user's name in the console.
 Do this using both:
 
@@ -1000,7 +1054,7 @@ console.log(age());
 
 #38) What is Bable , SWC and Bundlers (Webpack, Parcel, Vite, esbuild, rollup)? 
 
-#39) Why is Node.js necessary? (For Knowledge Purpose)
+#39) Why Node.js is necessary? (For Knowledge Purpose)
 
 # For version Checking which command is good: --version, -v, --v, or -version ?
 

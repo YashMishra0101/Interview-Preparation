@@ -69,7 +69,6 @@ console.log("working");
 
 // firstFunction();
 
-
 // First Function Start
 // Second Function Start
 // Third Function
@@ -98,7 +97,6 @@ console.log("working");
 
 // fn();
 
-
 // line number 1, undefined
 // line number 3, 10
 // line number 6, 10
@@ -106,3 +104,162 @@ console.log("working");
 // line number 2, 10
 // line number 5, 20
 
+// #5)Tells the output without running the code in the proper sequence.
+
+// var a = 10;
+// console.log("line number 1", varName);
+// var varName = 10;
+
+// function b() {
+//   console.log("line number 2", varName);
+// }
+
+// console.log("line number 3", varName);
+
+// function fn() {
+//   console.log("line number 4", varName);
+//   var varName = 20;
+//   b();
+//   console.log("line number 5", varName);
+// }
+
+// console.log("line number 6", varName);
+
+// fn();
+
+// line number 1: 10
+// line number 6: 10
+// line number 2: undefined
+// line number 3: 29
+// line number 4: 31
+// line number 5: 31
+
+// #6) Tells The output
+
+// let letFruit = "orange";
+// var varFruit = "orange";
+// console.log("letFruit", letFruit, "varFruit", varFruit);
+// {
+//   let letFruit = "apple";
+//   varFruit = "apple";
+//   console.log("letFruit", letFruit, "varFruit", varFruit);
+// }
+// console.log("letFruit", letFruit, "varFruit", varFruit);
+
+//letFruit, orange, varFruit, orange
+//letFruit, apple, varFruit, apple);
+//letFruit, orange, varFruit, apple)
+
+// let person = {
+//   firstName: "Yash",
+//   lastName: "Mishra",
+//   age: 22,
+//   fullName: function () {
+//     let greeting = "Hello, my name is ";
+//     return `${greeting} ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+//   },
+// };
+
+// console.log(person.fullName());
+
+// Hello, my name is Yash Mishra. I am 22 years old
+
+// let a=[1,2,3,4,5];
+
+// for(let i of a){
+//     console.log(i);
+// }
+
+// let b={
+//     name:"Yash",
+//     age:"24"
+// }
+
+// for(let a in b){
+//     console.log(b[a]);
+// }
+
+// console.log(b[2]);
+
+// let userInfo = {
+//     name: "Yash",
+//     age: 23
+// }
+
+// for (let b in userInfo) {
+//     console.log(userInfo[b]); // ✅ now it will gives values
+// }
+
+// const user = { name: "Yashu" };
+
+// function show() {
+//   console.log(this.name);
+// }
+
+// show.call(user);
+
+// // output:Yash
+
+// const obj = { x: 50 };
+
+// function print() {
+//   console.log(this.x);
+// }
+
+// print();
+// print.call(obj);
+
+// // output:
+// // undefined
+// // 50
+
+// let userInfo = {
+//   name: "Yash",
+//   age: "23",
+// };
+
+// function a(post) {
+//   console.log(`${this.name},${this.age},${post}`);
+// }
+
+// a.call(userInfo,"Full Stack Developer")
+
+// function add(a, b, c) {
+//   return a + b + c;
+// }
+
+// console.log(add.apply(null, [2, 4, 6]));
+
+// const person = { age: 25 };
+
+// function getAge() {
+//   console.log(this.age);
+// }
+
+// const bound = getAge.bind(person);
+// // bound();
+
+// let userInfo = {
+//   name: "Yash",
+//   age: 23,
+// };
+
+// const person = { age: 25 };
+
+// function getAge() {
+//   console.log(this.age);
+// }
+
+// const bound = getAge.bind(person);
+// bound.call({ age: 40 });
+
+const car1 = {
+  brand: "BMW",
+  getBrand() {
+    console.log(this.brand);
+  }
+};
+
+const car2 = { brand: "Audi" };
+
+car1.getBrand.call(car2);
