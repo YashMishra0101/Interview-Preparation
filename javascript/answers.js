@@ -1039,18 +1039,6 @@ In non-strict mode, JavaScript has an automatic behavior called 'this' substitut
 
 
 #Ans 12)
-let person = {
-  firstName: "Yash",
-  lastName: "Mishra",
-  age: 22,
-  regularFunction: function() {
-    return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
-  },
-  arrowFunction: () => {
-    return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
-  }
-};
-
 console.log(person.regularFunction());
 // Output: "Regular: My name is Yash Mishra. I am 22 years old."
 
@@ -1069,41 +1057,32 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 
 #13)
 
-console.log(person.seeOne());
-Output: My name is Yash Mishra.
+---output 1)
+// console.log(person.seeOne());//My name is Yash Mishra.
+// console.log(person.seeTwo());//object it's self
+// console.log(person.seeThree());//undefined
+// console.log(person.seeFour());//My name is Yash Mishra.
+// console.log(person.seeFive());//object it's self
 
-console.log(person.seeTwo());
-Output: The entire object :  {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, seeTwo: ƒ, seeThree: ƒ, …}
-Explanation: The entire object is returned because `this` refers to the person object in a regular function.
+// console.log(this);//in global space->window object
 
-console.log(person.seeThree());
-Output: undefined
-Explanation: The arrow function returns a value, but it is not returned by the outer function, so we get undefined.
+---output 2)
+// function abc() {
+//   console.log(this);
+// }
 
-console.log(person.seeFour());
-Output: My name is Yash Mishra.
-Explanation: The arrow function inherits `this` from its enclosing function (which refers to the `person` object), 
-and its return value is returned by the outer function.
-
-console.log(person.seeFive());
-Output: The entire object : {firstName: 'Yash', lastName: 'Mishra', seeOne: ƒ, seeTwo: ƒ, seeThree: ƒ, …}
-Explanation: The arrow function returns `this`, which it inherits from the outer function (`seeFive()`), 
-and since `seeFive()` is called on `person`, `this` refers to the person object.
-
-console.log(globalSpace);
-output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
-
-abc();
-output:Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+// abc();//window object
 
 #Ans 14)
 
->Bothe code have same output
+>Both 1 and 2 code have same output
 
 3
-2
 1
-Go!
+2
+4
+"GO!"
+
 
 #Ans 15)
 
@@ -1122,7 +1101,6 @@ Go!
 6
 (6 repeated 5 times)
 
-For Better underStanding : https://claude.ai/public/artifacts/7b76b74b-c488-4eeb-be6b-06292265ab25
 
 #Ans 16)
 
@@ -1133,15 +1111,20 @@ a)
 4
 5
 
-b) 6 "5 time"
+b) 
+6 repeated 5 times
 
-c) 6 "5 time"
+c)
+6 repeated 5 times
 
-d) 5 "5 time"
+d)
+5 repeated 5 times
 
-e) 6 "5 time"
+e)
+6 repeated 5 times
 
-f) 5 "5 time"
+f)
+5 repeated 5 times
 
 g)
 1
@@ -1150,12 +1133,16 @@ g)
 4
 5
 
-h) 6 "5 time"
+h)
+1
+2
+3
+4
+5
 
-g) 6 "5 time"
+k)
+6 repeated 5 times
 
-
->>>
 
 
 #Ans 17)

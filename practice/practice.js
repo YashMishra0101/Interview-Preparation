@@ -284,3 +284,247 @@ console.log("working");
 // console.log(person.arrowFunction());
 
 // console.log(person.arrowFunctionTwo());
+
+// let person = {
+//   firstName: "Yash",
+//   lastName: "Mishra",
+//   seeOne: function () {
+//     return `My name is ${this.firstName} ${this.lastName}.`;
+//   },
+//   seeTwo: function () {
+//     return this;
+//   },
+//   seeThree: function () {
+//     let arrowFunction = () => {
+//       return `My name is ${this.firstName} ${this.lastName}.`;
+//     };
+//     arrowFunction();
+//   },
+//   seeFour: function () {
+//     let arrowFunction = () => {
+//       return `My name is ${this.firstName} ${this.lastName}.`;
+//     };
+//     return arrowFunction();
+//   },
+//   seeFive: function () {
+//     let arrowFunction = () => {
+//       return this;
+//     };
+//     return arrowFunction();
+//   },
+// };
+
+// console.log(person.seeOne());//My name is Yash Mishra.
+// console.log(person.seeTwo());//object it's self
+// console.log(person.seeThree());//undefined
+// console.log(person.seeFour());//My name is Yash Mishra.
+// console.log(person.seeFive());//object it's self
+
+// console.log(this);//in global space->window object
+
+// function abc() {
+//   console.log(this);
+// }
+
+// abc();//window object
+
+// async function f1() {
+//   console.log(1);
+// }
+
+// async function f2() {
+//   console.log(2);
+// }
+
+// console.log(3);
+
+// f1();
+// f2()
+
+// console.log(4);
+
+// f3();
+
+// async function f3() {
+//   console.log("Go!");
+// }
+
+// 3
+// 1
+// 2
+// 4
+// "GO!"
+
+
+// async function main() {
+//   async function f1() {
+//     console.log(1);
+//   }
+
+//   async function f2() {
+//     console.log(2);
+//   }
+
+//   console.log(3);
+
+//   await f1();
+//   await f2();
+
+//   console.log(4);
+
+//   await f3();
+
+//   async function f3(){
+//     console.log("Go!");
+//   }
+// }
+
+// main()
+
+//3
+//1
+//2
+//4
+//GO!
+
+// // a)
+// for (let a = 1; a <= 5; a++) {
+//     setTimeout(() => {
+//       console.log(a);
+//     }, 1000);
+// }
+// 1
+// 2
+// 3
+// 4
+// 5
+
+
+// //b)
+
+// 6
+
+
+
+//a)
+// for (let a = 1; a <= 5; a++) {
+//   setTimeout(() => {
+//     console.log(a);
+//   });
+// }
+
+// //b)
+// for (var a = 1; a <= 5; a++) {
+//   setTimeout(()=>{
+//     console.log(a);
+//   })
+// }
+
+// //c)
+// let a = 1;
+// for (a; a <= 5; a++) {
+//   setTimeout(() => {
+//     console.log(a);
+//   });
+// }
+
+//d)
+// for ( var a = 1; a <= 5; a++) {
+//   var b=a;
+//   setTimeout(() => {
+//     console.log(b);
+//   });
+// }
+
+// //e)
+// for (var a = 1; a <= 5; a++) {
+//   a;
+//   (function () {
+//     setTimeout(() => {
+//       console.log(a);
+//     });
+//   })();
+// }
+
+// //f)
+// for (var a = 1; a <= 5; a++) {
+//   var b = a;
+//   (function () {
+//     setTimeout(() => {
+//       console.log(b);
+//     });
+//   })();
+// }
+
+// //g)
+// for (var a = 1; a <= 5; a++) {
+//   (function () {
+//     var b = a;
+//     setTimeout(() => {
+//       console.log(b);
+//     });
+//   })();
+// }
+
+// //h)
+// for (var a = 1; a <= 5; a++) {
+//   (function () {
+//     setTimeout(() => {
+//       var b = a;
+//       console.log(b);
+//     });
+//   })();
+// }
+
+// //k)
+// a = 1;
+// for (a; a <= 5; a++) {
+//     setTimeout(() => {
+//         console.log(a)
+//     }, 1000)
+// }
+
+
+
+/*
+a)
+1
+2
+3
+4
+5
+
+b) 
+6 repeated 5 times
+
+c)
+6 repeated 5 times
+
+d)
+5 repeated 5 times
+
+e)
+6 repeated 5 times
+
+f)
+5 repeated 5 times
+
+g)
+1
+2
+3
+4
+5
+
+h)
+1
+2
+3
+4
+5
+
+k)
+6 repeated 5 times
+
+
+*/

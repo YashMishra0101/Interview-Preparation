@@ -506,7 +506,7 @@ console.log(person.arrowFunction());
 console.log(person.arrowFunctionTwo());
 
 #13)Tell the output without running the code.
-
+--1)
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -543,16 +543,16 @@ console.log(person.seeFour());
 console.log(person.seeFive());
 
 console.log(this);//in global space
-
+--2)
 function abc() {
   console.log(this);
 }
 
 abc();
  
-#14) What will be the output of the following code ?
+#14) What will be the output of the following code in a proper sequence ?
 
-? Code Without `await`:
+--1) Code Without `await`:
 
 async function f1() {
   console.log(1);
@@ -567,7 +567,7 @@ console.log(3);
 f1();
 f2()
 
-console.log(1);
+console.log(4);
 
 f3();
 
@@ -575,7 +575,7 @@ async function f3() {
   console.log("Go!");
 }
 
-? Code With `await`
+---2) Code With `await`
 
 async function main() {
   async function f1() {
@@ -591,7 +591,7 @@ async function main() {
   await f1();
   await f2();
 
-  console.log(1);
+  console.log(4);
 
   await f3();
 
@@ -621,7 +621,7 @@ for (var a = 1; a <= 5; a++) {
 }
 
 
-#16)Give me previous output output:
+#16)Give me output of these question:
 
 a)
 for (let a = 1; a <= 5; a++) {
@@ -693,9 +693,8 @@ for (var a = 1; a <= 5; a++) {
   })();
 }
 
-g)
+k)
 a = 1;
-
 for (a; a <= 5; a++) {
     setTimeout(() => {
         console.log(a)
