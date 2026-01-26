@@ -996,37 +996,46 @@ output:Audi
 
 #Asn 11)
 
-"this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js)
-and it also depends on how the function is called.
+"this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js) and it also depends on how the function is called.
 
---🔹 1. **Global Scope:**
-
-In **browsers**, `this` in the global scope refers to the **`window` object**.
-In **Node.js**, it refers to an **empty object** `{}`.
+>IMP Note
+If you enable strict mode globally (e.g., using "use strict"; at the top of the file), it applies strict rules to the global scope, such as preventing accidental globals. However, a function’s this behavior depends on whether strict mode is active inside the function’s own scope. If strict mode is not explicitly declared inside the function, the function still defaults to non-strict this behavior. To ensure this is undefined inside a function, you must also enable strict mode inside that function. In short, global strict mode doesn’t override the function’s this unless the function itself is also running in strict mode.
 
 
---🔹 2. **Inside a Function:**
+--🔹 1. Global Scope (Same for Strict and non Strict mode)
 
-  🔸 a. **Non-strict mode:**
-
-In **browsers**, `this` inside a regular function refers to the **global object (`window`)**.
-In **Node.js**, `this` inside a function refers to the **global object (`global`)**.
-
- 🔸 b. **Strict mode (`'use strict'`):**
-
-In both **browsers and Node.js**, `this` becomes **`undefined`** inside a regular function.
+In browsers, `this` in the global scope refers to the `window` object.
+In Node.js, it refers to an empty object `{}`.
 
 
---🔹 3. **Inside an Object Method:
+--🔹 2. Inside a Function:
 
-If you use a **normal function**, `this` refers to the **object itself**.
-If you use an **arrow function**, `this` does **not** refer to the object — instead, it uses **lexical scope**, meaning it takes `this` from the outer context (usually `window` in browsers).
+  🔸 a. Non-strict mode:
+
+In browsers, `this` inside a regular function refers to the global object (`window`).
+In Node.js, `this` inside a function refers to the global object (`global`).
+
+ 🔸 b. Strict mode (`'use strict'`):
+
+In both browsers and Node.js, `this` becomes `undefined` inside a regular function.
+
+
+--🔹 3. Inside an Object Method:
+
+If you use a normal function, `this` refers to the object itself and objects values.
+
+If you use an arrow function, it does not have its own this. Instead, it uses lexical this, meaning it takes "this" from the surrounding scope where the function is defined.
+
+-----
+For arrow function
+- for object values: nothing in the browsers and `undefined` in the node.js 
+- for direct this: `Window object` in browsers and the {}->empty object` in node.js it behave like this value in global space
+----
 
 
 --🔹 4. This substitution :
 
-In non-strict mode, JavaScript has an automatic behavior called 'this' substitution. When this would normally be
-null or undefined, JavaScript automatically substitutes it with the global object (which is window in browsers).
+In non-strict mode, JavaScript has an automatic behavior called 'this' substitution. When this would normally be null or undefined, JavaScript automatically substitutes it with the global object (which is window in browsers).
 
 
 #Ans 12)
@@ -1055,7 +1064,7 @@ console.log(person.arrowFunctionTwo());
 Arrow functions do not have their own this. Instead, they inherit this from the outer lexical scope where they are defined—usually the global scope.
 Or, if the arrow function is wrapped inside another function, it inherits this from that outer function.
 
-(In the global space, this refers to the window object. That is why, when we use an arrow function and try to print this, it gives us the window object)
+(In the global space, this refers to the window object (Browser). That is why, when we use an arrow function and try to print this, it gives us the window object)
 
 
 #13)

@@ -253,13 +253,34 @@ console.log("working");
 // const bound = getAge.bind(person);
 // bound.call({ age: 40 });
 
-const car1 = {
-  brand: "BMW",
-  getBrand() {
-    console.log(this.brand);
-  }
-};
+// const car1 = {
+//   brand: "BMW",
+//   getBrand() {
+//     console.log(this.brand);
+//   }
+// };
 
-const car2 = { brand: "Audi" };
+// const car2 = { brand: "Audi" };
 
-car1.getBrand.call(car2);
+// car1.getBrand.call(car2);
+
+// let person = {
+//   firstName: "Yash",
+//   lastName: "Mishra",
+//   age: 22,
+//   regularFunction: function () {
+//     return `Regular: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+//   },
+//   arrowFunction: () => {
+//     return `Arrow: My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+//   },
+//   arrowFunctionTwo: () => {
+//     return this;
+//   },
+// };
+
+// console.log(person.regularFunction());
+
+// console.log(person.arrowFunction());
+
+// console.log(person.arrowFunctionTwo());

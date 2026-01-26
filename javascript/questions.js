@@ -404,8 +404,6 @@ console.log("letFruit", letFruit, "varFruit", varFruit);
 }
 console.log("letFruit", letFruit, "varFruit", varFruit);
 
-
-
 #7) What will be the output of `console.log(person.fullName())`?
 
 let person = {
@@ -465,6 +463,7 @@ function getAge() {
 
 const bound = getAge.bind(person);
 bound.call({ age: 40 });
+
 //Once a function is bound using bind, its this cannot be changed by call or apply.
 
 --5)method borrowing
@@ -478,6 +477,7 @@ const car1 = {
 const car2 = { brand: "Audi" };
 
 car1.getBrand.call(car2);
+
 //Method borrowing allows one object to use another object’s method by changing the value of this using call or apply.
 
 #11)What "this keyword" is javascript ?
