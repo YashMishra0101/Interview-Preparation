@@ -641,7 +641,6 @@ k)
 // console.log("see:",see);
 // console.log("seeTwo:",seeTwo);
 
-
 // const user = {
 //   name: 'John Doe',
 //   age: 30,
@@ -658,7 +657,6 @@ k)
 // console.log(name);
 // console.log(city);
 // console.log(firstOne);
-
 
 // a)
 // const colors = ['red', 'green',"white"];
@@ -703,10 +701,70 @@ k)
 
 // console.log(see);
 
-const numbers = [10, 20, 30, 40, 50];
+// const numbers = [10, 20, 30, 40, 50];
 
-function calculateSum(a, b, c, d, e) {
-  return a + b + c + d + e;
-}
+// function calculateSum(a, b, c, d, e) {
+//   return a + b + c + d + e;
+// }
 
-console.log(calculateSum(...numbers));
+// console.log(calculateSum(...numbers));
+
+let num = [1, 1, 1, 1, 1];
+
+// let total = 0;
+// for (let a = 0; a <= num.length - 1; a++) {
+//   total = total + num[a];
+// }
+// console.log(total);
+
+// let reduceTotal = num.reduce((accumulator,nextValue) => {
+//   return accumulator + nextValue;
+// },0);
+// console.log("Reduce Total:",reduceTotal);
+
+// function multiply(multiple, ...numbers) {
+//   return numbers.reduce((sum, currentValue) => {
+//     return sum + multiple * currentValue;
+//   }, 0);
+// }
+
+// console.log(multiply(2, 3, 4, 5));
+
+// const scores = [95, 87, 92, 78, 85, 90, 88];
+
+// let [first, second, ...rest] = scores;
+
+// let average = rest.reduce((accumulator, currentValue) => {
+//   return accumulator + currentValue / rest.length;
+// }, 0);
+// console.log(first);
+// console.log(second);
+// console.log(average);
+
+// const scores = [95, 87, 92, 78, 85, 90, 88];
+// let [first,second,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
+
+// function average(...values){  // Rest parameter (collects)
+//  let total=values.reduce((accumulator,currentValue)=>{
+//     return accumulator+currentValue;
+//  })
+//  return total/values.length;
+// }
+
+// console.log(average(...remainingValues));// Spread operator (expands array into arguments)
+
+const student = {
+  id: 1,
+  name: 'Sarah',
+  email: 'sarah@email.com',
+  grade: 'A',
+  subjects: ['Math', 'Science'],
+  attendance: 95,
+  behavior: 'excellent'
+};
+
+const {id,name,...details}=student;
+
+console.log(id);
+console.log(name);
+console.log(details);

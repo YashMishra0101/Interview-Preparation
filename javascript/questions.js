@@ -886,20 +886,24 @@ function calculateSum(a, b, c, d, e) {
 
 ---1)Problem 7: Function with Variable Arguments
 
-Task: Write a function called 'multiply' that takes the first number as a multiplier
-and multiplies it with all remaining numbers, then returns the sum of results
-Example: multiply(2, 3, 4, 5) should return 2*3 + 2*4 + 2*5 = 6 + 8 + 10 = 24
+Task: Write a function called 'multiply' that takes the first number as a multiplier and multiplies it with all remaining numbers, then returns the sum of results.
+Example: multiply(2, 3, 4, 5) should return 2*3 + 2*4 + 2*5 = 24
 
 function multiply( your parameters here ) {
   your code here
 }
 
+---Hint 
+User Reduce:reduce() is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result. Reduce is a method of Array objects but under the hood reduce is a function.
+
 --2)Problem 8: Array Destructuring with Rest
 
-Task: Use destructuring to get the first score, second score, and collect the rest
-Then calculate the average of the remaining scores
-Expected: first = 95, second = 87, avgOfRest = average of [92, 78, 85, 90, 88]
+Given an array of scores, use array destructuring to extract the first score and second score into separate variables, and collect all the remaining scores into another array using the rest operator. After destructuring, calculate the average of only the remaining scores (do not include the first and second scores in this calculation).
+
 const scores = [95, 87, 92, 78, 85, 90, 88];
+first → 95
+second → 87
+avgOfRest → average of [92, 78, 85, 90, 88]
 
 --3)Problem 9: Object Destructuring with Rest
 Task: Destructure to get id and name, then collect all other properties in a 'details' object
@@ -914,7 +918,6 @@ const student = {
   attendance: 95,
   behavior: 'excellent'
 };
-
 
 #21)Explain Event loop.
 

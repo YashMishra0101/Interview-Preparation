@@ -1261,23 +1261,25 @@ console.log(multiply(2, 3, 4, 5));
 ---2)Problem 8 Ans:
 
 const scores = [95, 87, 92, 78, 85, 90, 88];
+let [first,second,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
 
-const[first,second,...remaining]=scores;
-
-function average(first, second, ...remaining) {
-  const ans = remaining.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  }, 0);
-  return ans / remaining.length;
+function average(...values){  // Rest parameter (collects)
+ let total=values.reduce((accumulator,currentValue)=>{
+    return accumulator+currentValue;
+ })
+ return total/values.length;
 }
 
-console.log(average(first,second,...remaining));
+console.log(average(...remainingValues));// Spread operator (expands array into arguments)
+
+--3)Problem 9:
 
 const {id,name,...details}=student
 
 console.log(id);
 console.log(name);
 console.log(details);
+
 #Ans 21)
 ---Event loop concept is available in “Concepts” section. 
 Ctrl + F ➤ Just search in concepts section : #15) 
