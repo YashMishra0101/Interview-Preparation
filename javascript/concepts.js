@@ -970,11 +970,15 @@ _-_--------Global Execution Context is removed/end.
 
 ??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It ?
 
-👉 If the variable holds a primitive value (like numbers, strings, booleans, etc.), the actual value is stored directly
-in the execution context (stack).
+Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value.
+When the original value changes, the copied value does not change.
 
-👉 If the variable holds a non-primitive value (like objects, arrays, or functions), then the reference is stored in the 
-stack, but the actual data (the object or array itself) is stored in the heap.  
+- Primitive values are stored directly in the stack
+
+Non-primitive data types (objects, arrays, functions) are assigned by reference.
+When the original object is modified, all references to it reflect the change.
+
+- While objects are stored in heap memory and accessed via references stored in the stack.
 
 #15) Event Loop
 

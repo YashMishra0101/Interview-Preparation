@@ -1111,7 +1111,7 @@ a)
 4
 5
 
-b) 
+b)
 6 repeated 5 times
 
 c)
@@ -1134,30 +1134,31 @@ g)
 5
 
 h)
+6 repeated 5 times
+
+k)
+6 repeated 5 times
+
+L)
 1
 2
 3
 4
 5
 
-k)
-6 repeated 5 times
-
-
 
 #Ans 17)
 a)
-error
+Uncaught TypeError: Assignment to constant variable.
 1
 
 b)
 1 
-then error
+Uncaught TypeError: Assignment to constant variable.
 
 Core concept : The code prints 1 because in a for loop, JavaScript executes the loop body first, then the increment. Here, 
 setTimeout is scheduled during the first iteration before a++ is attempted. Since a is a const, the increment throws a TypeError, 
-stopping the loop. However, the already-scheduled setTimeout still runs, printing 1. So, the output is 1 followed by an error about
-assigning to a constant.
+stopping the loop. However, the already-scheduled setTimeout still runs, printing 1. So, the output is 1 followed by an error about assigning to a constant.
 
 #Ans 18)
 >a)
@@ -1172,6 +1173,20 @@ assigning to a constant.
 3
 3
 
+#Ans 19)
+Center ref 10
+See count 11
+See count 12
+SeeTwo count 12
+SeeTwo ref 10
+
+Reason:
+Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value.
+When the original value changes, the copied value does not change.
+
+Non-primitive data types (objects, arrays, functions) are assigned by reference.
+When the original object is modified, all references to it reflect the change.
+
 
 #Ans 20)
 ---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
@@ -1179,31 +1194,24 @@ Ctrl + F ➤ Just search in concepts section :  #17)
 >Destructuring
 
 --1)Problem 1 Ans: 
-const {
-  name,
-  address: { city },
-  hobbies: [firstHobbie],
-} = user;
+const {name,address: {city},hobbies: [firstHobbyRenamed]} = user;
 console.log(name); // John Doe
 console.log(city); // New York
-console.log(firstHobbie); // reading
-
-//Basically, in this, I change the variable name to userName and address and hobbies themselves are not variables — only city and firstHobbie become variables.
-const {
-  name: userName,
-  address: { city: cityName },
-  hobbies: [firstHobbyRenamed],
-} = user;
-console.log(userName); // John Doe
-console.log(cityName); // New York
 console.log(firstHobbyRenamed); // reading
 
 --2)Problem 2 Ans:
-const [firstColor,secondColor,thirdColor="yellow"]=colors;
 
-console.log(firstColor); //red
-console.log(secondColor); //green
-console.log(thirdColor); //white (white - because the array has a third color, if third color not present then it will give yellow color)
+a)
+const [one, two, three] = colors;
+console.log(one);
+console.log(two);
+console.log(three);
+
+b)
+const [one,two,three=["yellow"]]=colorsTwo;
+console.log(one);
+console.log(two);
+console.log(three);
 
 --3)Problem 3 Ans:
 function userInfo({name,age,email="N/A"}){

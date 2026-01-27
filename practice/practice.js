@@ -355,7 +355,6 @@ console.log("working");
 // 4
 // "GO!"
 
-
 // async function main() {
 //   async function f1() {
 //     console.log(1);
@@ -399,28 +398,25 @@ console.log("working");
 // 4
 // 5
 
-
 // //b)
 
 // 6
 
-
-
-//a)
+// a)
 // for (let a = 1; a <= 5; a++) {
 //   setTimeout(() => {
 //     console.log(a);
 //   });
 // }
 
-// //b)
+// // b)
 // for (var a = 1; a <= 5; a++) {
 //   setTimeout(()=>{
 //     console.log(a);
 //   })
 // }
 
-// //c)
+// c)
 // let a = 1;
 // for (a; a <= 5; a++) {
 //   setTimeout(() => {
@@ -428,7 +424,7 @@ console.log("working");
 //   });
 // }
 
-//d)
+// d)
 // for ( var a = 1; a <= 5; a++) {
 //   var b=a;
 //   setTimeout(() => {
@@ -436,7 +432,7 @@ console.log("working");
 //   });
 // }
 
-// //e)
+// e)
 // for (var a = 1; a <= 5; a++) {
 //   a;
 //   (function () {
@@ -446,7 +442,7 @@ console.log("working");
 //   })();
 // }
 
-// //f)
+// f)
 // for (var a = 1; a <= 5; a++) {
 //   var b = a;
 //   (function () {
@@ -456,7 +452,7 @@ console.log("working");
 //   })();
 // }
 
-// //g)
+// g)
 // for (var a = 1; a <= 5; a++) {
 //   (function () {
 //     var b = a;
@@ -466,7 +462,7 @@ console.log("working");
 //   })();
 // }
 
-// //h)
+// h)
 // for (var a = 1; a <= 5; a++) {
 //   (function () {
 //     setTimeout(() => {
@@ -476,7 +472,7 @@ console.log("working");
 //   })();
 // }
 
-// //k)
+// k)
 // a = 1;
 // for (a; a <= 5; a++) {
 //     setTimeout(() => {
@@ -484,7 +480,12 @@ console.log("working");
 //     }, 1000)
 // }
 
-
+// L)
+// 1
+// 2
+// 3
+// 4
+// 5
 
 /*
 a)
@@ -494,7 +495,7 @@ a)
 4
 5
 
-b) 
+b)
 6 repeated 5 times
 
 c)
@@ -517,14 +518,195 @@ g)
 5
 
 h)
-1
-2
-3
-4
-5
+6 repeated 5 times
 
 k)
 6 repeated 5 times
 
-
 */
+
+// a)
+// const a = 1;
+
+// for (a; a <= 5; a++) {
+//     setTimeout(() => {
+//         console.log(a)
+//     }, 1000)
+// }
+
+// b)
+// const a = 1;
+
+// for (a; a <= 5; a++) {
+//   console.log(a);
+// }
+
+//a)
+// error
+// 1
+
+//b)
+// 1
+// error
+
+// let count = 0;
+// (function immediate() {
+//   if (count === 0) {
+//     let count = 2;
+//     count++;
+//     console.log(count); // What is logged here? //3
+//   }
+//   console.log(count); // What is logged here? //0
+// })();
+
+// let countTwo = 0;
+// function immediate() {
+//   if (countTwo === 0) {
+//     let countTwo = 2;
+//     countTwo++;
+//     console.log(countTwo); // What is logged here? //3
+//   }
+//   console.log(countTwo); // What is logged here? //0
+// }
+
+// immediate();
+
+// let countTwo = 0;
+// function immediate() {
+//   if (countTwo === 0) {
+//     countTwo = 2;
+//     countTwo++;
+//     console.log(countTwo); // What is logged here? //3
+//   }
+//   console.log(countTwo); // What is logged here? //3
+// }
+
+// immediate();
+
+// let outerFun = (() => {
+
+//     let count = 10;
+
+//     function see() {
+//         count++;
+//         console.log("See count", count) //11
+//     }
+
+//     let ref = count;
+//     console.log("Center ref", ref) //10
+
+//     function seeTwo() {
+//         console.log("SeeTwo count", count)
+//         console.log("SeeTwo ref", ref)
+
+//     }
+//     return [see, seeTwo];
+
+// })
+
+// let [see, seeTwo] = outerFun()
+// see();
+// see();
+// seeTwo();
+
+// //10
+// //11
+// //12
+// //12
+// //10
+
+// let see=1;
+// let seeTwo=see;
+
+// see++;
+
+// console.log("see:",see); //2
+// console.log("seeTwo:",seeTwo); //1
+
+// let see=[1];
+// let seeTwo=see;
+
+// see[0]++;
+
+// console.log("see:",see); //2
+// console.log("seeTwo:",seeTwo); //2
+
+// let see={
+//     check:1
+// };
+// let seeTwo=see;
+
+// see.check++;
+
+// console.log("see:",see);
+// console.log("seeTwo:",seeTwo);
+
+
+// const user = {
+//   name: 'John Doe',
+//   age: 30,
+//   address: {
+//     street: '123 Main St',
+//     city: 'New York',
+//     country: 'USA'
+//   },
+//   hobbies: ['reading', 'swimming', 'coding']
+// };
+
+// let {name,address:{city},hobbies:[firstOne]}=user;
+
+// console.log(name);
+// console.log(city);
+// console.log(firstOne);
+
+
+// a)
+// const colors = ['red', 'green',"white"];
+
+// b)
+// const colorsTwo = ['red', 'green'];
+
+// let [one,two,three=["see"]]=colorsTwo;
+
+// console.log(one);
+// console.log(two);
+// console.log(three);
+
+// function formatUser(name,age,role="NA") {
+//   return (`${name},${age},${role}`)
+// }
+
+// console.log(formatUser("yash",23,"Fullstack"));
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [7, 8, 9];
+
+// let combine=[...arr1,...arr2,...arr3];
+// combine.push(0);
+// combine.unshift(10)
+// console.log(combine);
+
+// const defaultSettings = {
+//   theme: 'light',
+//   language: 'en',
+//   notifications: true,
+//   autoSave: false
+// };
+
+// const userSettings = {
+//   theme: 'dark',
+//   notifications: false
+// };
+
+// let see={...defaultSettings,...userSettings};
+
+// console.log(see);
+
+const numbers = [10, 20, 30, 40, 50];
+
+function calculateSum(a, b, c, d, e) {
+  return a + b + c + d + e;
+}
+
+console.log(calculateSum(...numbers));

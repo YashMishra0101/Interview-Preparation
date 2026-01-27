@@ -700,8 +700,13 @@ for (a; a <= 5; a++) {
         console.log(a)
     }, 1000)
 }
+
+L)
+for(var a=1; a<=5; a++){
+    console.log(a);
+}
     
-#17)What if we palce let outside the for loop ? , tell me correct output .
+#17)Tell me correct output .
 
 a)
 const a = 1;
@@ -795,9 +800,15 @@ seeTwo();
 
 
 #20) What is `Destructuring`, `Spread operator` and `Rest operator`and solve this problem.
+
+--Destructuring: Extracts values.
+--Spread : Copying & Merging, (expands values).
+--Rest : Collects values.
+
 >Destructuring
 
 ---1)Problem 1: Object Property Extraction
+
 Task: Extract name, city, and the first hobby using destructuring
 Expected output: name = 'John Doe', city = 'New York', firstHobby = 'reading'
 
@@ -813,17 +824,20 @@ const user = {
 };
 
 ---2)Problem 2: Array with Default Values
+
 Task: Destructure the array to get first, second, and third colors
 If third color doesn't exist, default it to 'yellow'
 Expected output: first = 'red', second = 'green', third = 'white' (if third is not present answer must be yellow)
 
+a)
 const colors = ['red', 'green',"white"];
+
+b)
+const colorsTwo = ['red', 'green'];
 
 
 ---3)Problem 3: Function Parameter Destructuring
-Task: Write a function that takes a user object and returns a formatted string
-The function should destructure name, age, and email (with default 'N/A') from parameters
-Expected: formatUser({name: 'Alice', age: 25}) should return "Alice (25) - N/A"
+Task:Write a function named formatUser that accepts a user object as its parameter. Use function parameter destructuring to extract the properties name, age, and email directly from the function parameters. If the email property is not provided in the object, assign it a default value of "N/A". The function should return a formatted string in the following format: "name (age) - email". For example, calling formatUser({ name: 'Alice', age: 25 }) should return "Alice (25) - N/A".
 
 function formatUser( your destructuring here ) {
    your code here
@@ -861,11 +875,12 @@ const userSettings = {
 Task: Call calculateSum using the spread operator with the numbers array
 Expected output: 150
 
+const numbers = [10, 20, 30, 40, 50];
+
 function calculateSum(a, b, c, d, e) {
   return a + b + c + d + e;
 }
 
-const numbers = [10, 20, 30, 40, 50];
 
 >Rest Operator Problems
 
@@ -905,7 +920,7 @@ const student = {
 
 #22)Explain Global Execution context.
 
-#23)What is callback,callback hell, promies.
+#23)What is callback,callback hell, promise.
 
 #24) Write a program with proper error handling to fetch a user's data from this API:
 👉👨‍💻 Note:First check if the API URL is working before using it. Sometimes the API may not respond.
