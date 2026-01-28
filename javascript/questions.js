@@ -837,7 +837,9 @@ const colorsTwo = ['red', 'green'];
 
 
 ---3)Problem 3: Function Parameter Destructuring
-Task:Write a function named formatUser that accepts a user object as its parameter. Use function parameter destructuring to extract the properties name, age, and email directly from the function parameters. If the email property is not provided in the object, assign it a default value of "N/A". The function should return a formatted string in the following format: "name (age) - email". For example, calling formatUser({ name: 'Alice', age: 25 }) should return "Alice (25) - N/A".
+Task:Write a function named formatUser that accepts a user object as its parameter. Use function parameter destructuring to extract the properties name, age, and email directly from the function parameters. If the email property is not provided in the object, assign it a default value of "N/A". 
+The function should return a formatted string in the following format: "name, age, email".
+For example, calling formatUser({ name: 'Alice', age: 25 }) should return "Alice, (25), N/A".
 
 function formatUser( your destructuring here ) {
    your code here
@@ -847,8 +849,8 @@ function formatUser( your destructuring here ) {
 
 ---1)Problem 4: Array Manipulation
 Task: Create a new array that contains all elements from arr1, arr2, and arr3
-Then add the number 10 at the beginning and 0 at the end
-Expected output: [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+Then add the number 0 at the beginning and 10 at the end
+Expected output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
@@ -856,7 +858,7 @@ const arr3 = [7, 8, 9];
 
 ---2)Problem 5: Object Merging with Override
 Task: Create a final settings object that merges defaultSettings with userSettings
-userSettings should override defaultSettings where properties match
+userSettings should override defaultSettings where properties match.
 Expected: { theme: 'dark', language: 'en', notifications: false, autoSave: false }
 
 const defaultSettings = {
@@ -872,7 +874,7 @@ const userSettings = {
 };
 
 ---3)Problem 6: Function Arguments Spreading
-Task: Call calculateSum using the spread operator with the numbers array
+Task:Calculate the sum of all the array values, call calculateSum using the spread operator with.
 Expected output: 150
 
 const numbers = [10, 20, 30, 40, 50];
@@ -893,8 +895,9 @@ function multiply( your parameters here ) {
   your code here
 }
 
----Hint 
-User Reduce:reduce() is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result. Reduce is a method of Array objects but under the hood reduce is a function.
+---Hint User Reduce
+reduce() is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result. 
+(Reduce is a method of Array objects but under the hood reduce is a function.)
 
 --2)Problem 8: Array Destructuring with Rest
 
@@ -903,7 +906,9 @@ Given an array of scores, use array destructuring to extract the first score and
 const scores = [95, 87, 92, 78, 85, 90, 88];
 first → 95
 second → 87
-avgOfRest → average of [92, 78, 85, 90, 88]
+avgOfRest → average of [92, 78, 85, 90, 88] → 86.6
+
+---Hint User Reduce
 
 --3)Problem 9: Object Destructuring with Rest
 Task: Destructure to get id and name, then collect all other properties in a 'details' object

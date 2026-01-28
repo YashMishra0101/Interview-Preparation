@@ -1214,22 +1214,31 @@ console.log(two);
 console.log(three);
 
 --3)Problem 3 Ans:
-function userInfo({name,age,email="N/A"}){
-return `User name is ${name} , Age is ${age} and email is ${email}`
+
+const userInfo={
+  name:"Alice",
+  age:"25"
 }
 
-console.log(userInfo({name:"Alice",age:"25"}));
+const{name,age}=userInfo;
+
+function  formatUser(name,age,email="NA"){
+  return `${name},${age},${email}`
+}
+
+console.log(formatUser(name,age));
 
 >Spread operator
 
 --1)Problem 4 Ans:
 //First approach
-const result = [10, ...arr1, ...arr2, ...arr3, 0];
+const combineArray=[0,...arr1,...arr2,...arr3,10];
+console.log(combineArray);
 
 //Second approach
 const combineArray=[...arr1,...arr2,...arr3];
-combineArray.unshift(10);
-combineArray.push(0);
+combineArray.unshift(0)
+combineArray.push(10)
 console.log(combineArray);
 
 --2)Problem 5 Ans:
@@ -1244,7 +1253,7 @@ function calculateSum(a, b, c, d, e) {
   return a + b + c + d + e;
 }
 
-console.log(calculateSum(...numbers));
+console.log(calculateSum(...numbers)); // spread operator basically we are expanding the value
 
 >Rest Operator Solutions
 
@@ -1261,7 +1270,7 @@ console.log(multiply(2, 3, 4, 5));
 ---2)Problem 8 Ans:
 
 const scores = [95, 87, 92, 78, 85, 90, 88];
-let [first,second,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
+let [firstOne,secondOne,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
 
 function average(...values){  // Rest parameter (collects)
  let total=values.reduce((accumulator,currentValue)=>{
@@ -1269,8 +1278,9 @@ function average(...values){  // Rest parameter (collects)
  })
  return total/values.length;
 }
-
-console.log(average(...remainingValues));// Spread operator (expands array into arguments)
+console.log(firstOne);//95
+console.log(secondOne);//87
+console.log(average(...remainingValues));//86.6  Spread operator (expands array into arguments)
 
 --3)Problem 9:
 

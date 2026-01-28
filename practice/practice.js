@@ -753,18 +753,135 @@ let num = [1, 1, 1, 1, 1];
 
 // console.log(average(...remainingValues));// Spread operator (expands array into arguments)
 
-const student = {
-  id: 1,
-  name: 'Sarah',
-  email: 'sarah@email.com',
-  grade: 'A',
-  subjects: ['Math', 'Science'],
-  attendance: 95,
-  behavior: 'excellent'
-};
+// const student = {
+//   id: 1,
+//   name: 'Sarah',
+//   email: 'sarah@email.com',
+//   grade: 'A',
+//   subjects: ['Math', 'Science'],
+//   attendance: 95,
+//   behavior: 'excellent'
+// };
 
-const {id,name,...details}=student;
+// const {id,name,...details}=student;
 
-console.log(id);
-console.log(name);
+// console.log(id);
+// console.log(name);
+// console.log(details);
+
+// const user = {
+//   name: 'John Doe',
+//   age: 30,
+//   address: {
+//     street: '123 Main St',
+//     city: 'New York',
+//     country: 'USA'
+//   },
+//   hobbies: ['reading', 'swimming', 'coding']
+// };
+
+// const {name,address:{city},hobbies:[firstOne]}=user;
+
+// console.log(name);
+// console.log(city);
+// console.log(firstOne);
+
+// // a)
+// const colors = ['red', 'green',"white"];
+
+// // b)
+// const colorsTwo = ['red', 'green'];
+
+// const [first,second,third=["yellow"]]=colorsTwo;
+
+// console.log(first);
+// console.log(second);
+// console.log(third);
+
+// const userInfo={
+//   name:"Alice",
+//   age:"25"
+// }
+
+// const{name,age}=userInfo;
+
+// function  formatUser(name,age,email="NA"){
+//   return `${name},${age},${email}`
+// }
+
+// console.log(formatUser(name,age));
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [7, 8, 9];
+
+// const combineArray=[0,...arr1,...arr2,...arr3,10];
+// const combineArray=[...arr1,...arr2,...arr3];
+
+// combineArray.unshift(0)
+// combineArray.push(10)
+
+// console.log(combineArray);
+
+// const defaultSettings = {
+//   theme: 'light',
+//   language: 'en',
+//   notifications: true,
+//   autoSave: false
+// };
+
+// const userSettings = {
+//   theme: 'dark',
+//   notifications: false
+// };
+
+// const newOne={...defaultSettings,...userSettings}
+
+// console.log(newOne);
+
+// const numbers = [10, 20, 30, 40, 50];
+
+// function calculateSum(a, b, c, d, e) {
+//   return a + b + c + d + e;
+// }
+
+// console.log(calculateSum(...numbers)); // spread operator basically we are expanding the value
+
+// function multiply(multiplier, ...values) {
+//  return values.reduce((accumulator, currentValue) => {
+//    return accumulator + (multiplier * currentValue);
+//   }, 0);
+// }
+
+// console.log(multiply(2, 3, 4, 5));
+
+// const scores = [95, 87, 92, 78, 85, 90, 88];
+// let [firstOne,secondOne,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
+
+// function average(...values){  // Rest parameter (collects)
+//  let total=values.reduce((accumulator,currentValue)=>{
+//     return accumulator+currentValue;
+//  })
+//  return total/values.length;
+// }
+// console.log(firstOne);
+// console.log(secondOne);
+// console.log(average(...remainingValues));// Spread operator (expands array into arguments)
+
+
+// const student = {
+//   id: 1,
+//   name: 'Sarah',
+//   email: 'sarah@email.com',
+//   grade: 'A',
+//   subjects: ['Math', 'Science'],
+//   attendance: 95,
+//   behavior: 'excellent'
+// };
+
+
+// const {id,name,...details}=student;
+
+// console.log(id);
+// console.log(name);
 console.log(details);
