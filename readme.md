@@ -1,4 +1,4 @@
-# MERN Stack Interview Preparation
+# Interview Preparation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-green.svg)](https://github.com/YashMishra0101/Interview-Preparation)
@@ -64,6 +64,7 @@ Interview-Preparation/
 ├── .gitignore
 ├── IMPORTANT-NOTE.md
 ├── LICENSE
+├── randomNotes.md
 └── readme.md
 ```
 
