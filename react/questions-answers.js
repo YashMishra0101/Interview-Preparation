@@ -28,22 +28,17 @@ but it will not automatically upgrade to version 20.0.0 (because major version c
 `^` keeps you safe from breaking changes (major updates) but still lets you get bug fixes and new features from minor/patch updates not from major updates.
 
 #2) What is the useState hook?
-With the help of that we can update the state.
-
-useState returns an array with two elements. The first element is the current state value and 
-the second element is a function that you use to update that state.
-
-We pass an initial state to `useState()`. This can be any data type: number, string, object, array, or even `null`.
-
-When we call the update function, React re-renders the component with the new state value.
+useState is a React Hook that returns an array with two elements: the current state value and a function used to update the state. We can also provide an initial state value when calling useState.
 
 #3) Fragment Tag in React
-In React, a Fragment (<React.Fragment> or shorthand <> </>) lets us group multiple elements without adding 
-an extra node to the DOM.
-Normally, React components must return a single root element, so we wrap everything in a <div>. But that 
-adds unnecessary DOM nodes. Fragments solve this by grouping elements invisibly.
+In React, a Fragment (<React.Fragment> or shorthand <> </>) lets us group multiple elements without adding an extra node to the DOM.
+Normally, React components must return a single root element, so we wrap everything in a <div id="root"> --here-- </id>. But that adds unnecessary DOM nodes. Fragments solve this by grouping elements invisibly.
 Fragments let us group elements without creating unnecessary DOM nodes. This keeps the DOM tree smaller, 
-cleaner, and better for performance in big apps.
+cleaner and better for performance in big apps.
+
+Fragment का use हम तब करते हैं जब हमें कई JSX elements को एक साथ रखना हो, लेकिन DOM में कोई extra wrapper means We use a Fragment when we want to group multiple JSX elements without adding an extra DOM node.
+
+In production, neither is universally preferred. It depends on whether you actually need a DOM element.  Use Fragment when you only need to group elements and don't need a wrapper element.  Use div when the wrapper has a purpose, for example, you need CSS styling, a class, layout, positioning, or a semantic/structural container.  
 
 #4) Named and Default Exports in JavaScript
 Default Export → Only one per file. Imported without curly braces.
@@ -208,5 +203,43 @@ console.log(user.contact?.phone); // ✅ undefined (safe)
 const data = undefined;
 console.log(data?.map(item => item.name)); // Output: undefined, safe
 
+#11) What is react virtual DOM ?
+React uses a reconciliation algorithm, also called the diffing algorithm. When the UI changes, React creates a new virtual DOM tree and compares it with the previous virtual DOM one. It identifies the differences and updates only the necessary parts of the real DOM.
+
+
+#11) What is useEffect and where to use it  ?
+useEffect is a React hook used to handle side effects, like data fetching or timers, after a component renders.
+
+(A side effect is an operation that interacts with something outside the React rendering process)
+
+examples : API request, Browser storage, Timer,  Direct DOM interaction, Subscriptions
+
+#12) What are Props and Prop Drilling?
+Props are a way to pass data from a parent to a child in React. They allow us to share data between different components, pages, or parts of the application while maintaining a one-way data flow.
+
+Prop drilling happens when we have to pass data through multiple intermediate components because we need to reach a child component that needs the data. The intermediate components don't need the data themselves, but we still have to pass it through them to reach the child. This creates unnecessary prop passing and can make the code harder to maintain.
+
+#13)Can we pass data from a child component to a parent component?
+Yes, but not directly. The parent can pass a callback function to the child as a prop. The child can then call that function and pass the required data to the parent. The parent can receive that data and use it to update its state or perform an action.
+
+This is a common way to handle child-to-parent communication in React.
+
+#14) What is Context API?
+
+Context API is a built-in React feature that allows us to share data between multiple components without passing props through every level of the component tree.
+
+It is mainly used to avoid prop drilling for data that needs to be accessed by multiple or deeply nested components, such as user information, authentication, themes or application settings.
+
+We create a context using `createContext()`, provide the value using a Context Provider, and access that value in a component using `useContext()`.
+
+Short version if the interviewer wants a quick answer:
+
+Context API is a React feature used to share data across multiple components without manually passing props through intermediate components, helping us avoid prop drilling.
+
+#15)What is a component.
+A component is a function that returns JSX and is used to build the UI in React. Reusability is one of the main advantages of components (but a component doesn't necessarily have to be reusable. Even a page can be a component)
+
+#16)What is higher order function in JavaScript.
+A higher order function is a function that either takes another function as an argument or returns a function. So like map, filter, and reduce in JavaScript are classic examples.
 
 */

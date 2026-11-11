@@ -492,19 +492,17 @@ especially in larger codebases.
 
 #11) Hoisting Explained
 
-Hoisting is a JavaScript mechanism where variable and function declarations are processed during the creation phase 
-before code execution, which happens before code execution begins. This means that function declarations are fully hoisted, including 
-their function body, allowing them to be invoked even before their actual declaration appears in the code. In the case of variables 
-declared with var, only the declaration is hoisted—not the initialization—so they are initialized with the value undefined until the 
-line of code where the assignment actually happens. On the other hand, variables declared with let and const are also hoisted, 
-but unlike var, they remain uninitialized and enter a state known as the Temporal Dead Zone (TDZ). Accessing them before their 
-declaration line results in a ReferenceError. This entire compile-time process of moving declarations to the top is known as
-hoisting.
+Hoisting is JavaScript's behavior of moving declarations to the top of their scope before code execution.
+With function declarations: The entire function is hoisted, so you can call it before you write it in your code and it works fine.
+
+With var: The declaration is hoisted to the top, but it's initialized as undefined. So if you use it before the line where you assigned a value, you get undefined, not an error.
+
+With let and const: They are hoisted, but they're not initialized. They go into a temporal dead zone from the top of the scope until the line where they're declared. If you try to use them before that line, you get a reference error.
 
 
 Quick Points:
 
-- During the compile phase : It's important to note that hoisting occurs during the compile phase, not during code execution.
+- During the compile phase : It's important to note that hoisting occurs before code execution phase, not during code execution.
 - Variable and function declarations : Both variables and functions are hoisted, means moved to the top of their containing scope.
   But :-
 ->Function declarations are fully hoisted (name and body).
@@ -711,7 +709,7 @@ So, JavaScript first creates the Global Execution Context, and then creates addi
 - Variables declared with `let` and `const` are also hoisted, but they remain in the Temporal Dead Zone (TDZ).
 - The `this` value is initialized.
   - In browsers → `window`
-  - In Node.js → `global` object
+  - In Node.js → `{}` object
 
 2️⃣ Code Execution Phase
 
@@ -761,8 +759,9 @@ JavaScript is a single-threaded language, meaning it executes code line by line.
 
 The event loop is not part of the JavaScript language itself. On the frontend, the browser provides the event loop, and on the backend, if you are using Node.js, Node.js provides the event loop.
 
-The JavaScript engine (such as V8 in Chrome, Brave, and Microsoft Edge, SpiderMonkey in Firefox, and JavaScriptCore in Safari) is responsible for parsing and executing JavaScript code. The event loop and the JavaScript engine are separate components that work together to handle asynchronous operations but both are present in browser.
+The JavaScript engine (such as V8 in Chrome, Brave, and Microsoft Edge, SpiderMonkey in Firefox, and JavaScriptCore/Nitro in Safari) is responsible for parsing and executing JavaScript code. The event loop and the JavaScript engine are separate components that work together to handle asynchronous operations but both are present in browser.
 
+--Extra Info:
 In browsers, the event loop is provided by the browser. In Node.js, the event loop is implemented using the libuv library, which is written in C and handles asynchronous operations.
 
 
@@ -824,7 +823,7 @@ The Event Loop continuously monitors the system and follows these steps:
 
 1. Check whether the Call Stack is empty.
 2. If Call Stack is empty and if the Microtask Queue contains tasks, execute all microtasks first by pushing them to the Call Stack.
-3. After the Microtask Queue is empty, move one task from the Task Queue to the Call Stack.
+3. After the Microtask Queue is empty, moves task from the Task Queue to the Call Stack.
 
 This cycle repeats continuously, enabling JavaScript to perform non-blocking asynchronous execution efficiently.
 

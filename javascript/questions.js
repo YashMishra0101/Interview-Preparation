@@ -216,11 +216,11 @@ const car2 = { brand: "Audi" };
 
 car1.getBrand.call(car2);
 
-//Method borrowing allows one object to use another object's method by changing the value of this using call or apply.
+//Method borrowing allows one object to use another object's method by changing the value of this using call, apply or bind.
 
 # 11) What is the "this" keyword in JavaScript?
 
-# 12) Predict the output of the following three console.log statements (in the browser, non-strict mode) and explain why this behaves differently in regularFunction, arrowFunction, and arrowFunctionTwo.
+# 12) Predict the output of the following three console.log statements (in the browser, for non-strict mode) and explain why this behaves differently in regularFunction, arrowFunction, and arrowFunctionTwo.
 
 let person = {
   firstName: "Yash",
@@ -243,7 +243,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-# 13) Tell the output according to the browser (in the browser,non-strict mode) without running the code.
+# 13) Tell the output according to the browser (non-strict mode) without running the code.
 --1)
 let person = {
   firstName: "Yash",
@@ -545,7 +545,7 @@ seeTwo();
 # 20) Solve these problems.
 
 --Destructuring: Extracts values (from arrays, objects).
---Spread : Copying & Merging, expands values.
+--Spread : Copying, Merging, expands values.
 --Rest : Collects values.
 
 >Destructuring
@@ -645,7 +645,8 @@ function multiply( your parameters here ) {
 multiply(2, 3, 4, 5)
 
 ---Hint: Use `reduce()`.
-`reduce()` is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result.
+reduce() is an array method that takes multiple values and reduces them into a single value.
+(reduce()` is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result)
 
 ---2) Problem 8: Array Destructuring with Rest
 
@@ -713,9 +714,9 @@ Installs the package only in the current project's `node_modules` folder — ava
 
 # 30) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-# 31) What is a scripting language? Why was JavaScript initially called a scripting language and why is it no longer considered just a scripting language?
+# Q31) What Are JavaScript Engines and Browser Engines? What Is a JIT Compiler, and How Does It Work?
 
-# 32) What is a JIT compiler?
+# 32) What is a scripting language? Why was JavaScript initially called a scripting language and why is it no longer considered just a scripting language?
 
 # 33) What is a closure?
 

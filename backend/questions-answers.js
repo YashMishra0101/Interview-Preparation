@@ -25,13 +25,15 @@ CORS is like a bouncer 🧍‍♂️ at a club (your backend) who checks the ID 
 
 #2) What is Middleware?
 
-Basically, middleware is a function that has access to the request and response objects. It can either end the request-response cycle or, if certain conditions are met (like authentication), forward the request to the next middleware or route.
-
----More Professional 
-
 A middleware is a function that has access to the request object (req), the response object (res), and the next middleware function (next) in the application’s request-response cycle.
 
 It can modify the request and response objects, execute code, end the request-response cycle, or call the next middleware in the stack using next().
+
+Middleware functions execute during the request-response lifecycle.
+
+---More Professional 
+
+Middleware is a function that has access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. It can run any code, modify req and res, end the cycle by sending a response, or pass control to the next middleware using next(). For example, an authentication middleware can verify a token and call next() if it’s valid, or return a 401 if not. If a middleware neither responds nor calls next(), the request will hang.
 
 #3) What is JSON?
 

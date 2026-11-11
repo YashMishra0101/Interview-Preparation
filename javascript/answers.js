@@ -479,11 +479,13 @@ SeeTwo count 12
 SeeTwo ref 10
 
 Reason:
-Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value.
-When the original value changes, the copied value does not change.
+Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value. 
+When the original value changes, the copied value does not change. 
+Pass by Value (numbers, strings, booleans) — each has own memory. Change original, copy stays same.
 
 Non-primitive data types (objects, arrays, functions) are assigned by reference.
-When the original value is modified, all references to it reflect the change.
+When the original value is modified, all references to it reflect the change. 
+Pass by Reference (objects, arrays, functions) — both point to same memory. Change original, copy changes too.
 
 
 #Ans 20)
@@ -571,7 +573,7 @@ let [firstOne, secondOne, ...remaining] = scores; // Destructuring (Extract) + R
 function average(remaining) {
   let total = remaining.reduce((accumulator, nextValue) => {
     return accumulator + nextValue;
-  });
+  },0);
   return total / remaining.length;
 }
 
@@ -607,60 +609,45 @@ Ctrl + F ➤ Just search in concepts section : #20)
 #Ans 25)
 
 --Babel
-Both Babel and SWC are JavaScript transpilers (although they are sometimes referred to as compilers). Babel is written in JavaScript, while SWC (Speedy Web Compiler) is similar to Babel but much faster because it is written in Rust.
+Babel and SWC are JavaScript compilers, although they are also commonly called transpilers. Babel is mainly written in JavaScript, while SWC is written in Rust and is designed to be much faster.
 
-Both tools convert modern JavaScript (ES6+) into backward-compatible JavaScript so it can run in older browsers. They can also compile React JSX and TypeScript syntax into plain JavaScript.
+They can convert modern JavaScript into older-compatible JavaScript when needed, so it can work in older browsers. They can also convert React JSX and TypeScript code into JavaScript.
 
-Babel and SWC can handle TypeScript by removing type annotations (such as number or string) and converting the code into plain JavaScript. However, they do not perform type checking—that responsibility belongs to the TypeScript compiler.
+When handling TypeScript, they remove TypeScript-specific type information, such as string and number, and convert the code into JavaScript. However, they do not perform type checking. Type checking is handled separately by the TypeScript compiler (tsc).
 
 --Note : 
-Both Babel and SWC is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
+Both Babel and SWC are specifically designed for JavaScript. They are not general-purpose tools for other programming languages.
 
 #Ans 26)
 
-Bundlers—like Webpack, Rollup, Parcel, Rolldown or esbuild—take multiple files—such as JavaScript, CSS, and assets—and bundle them into fewer, optimized files. This helps reduce network requests and ensures smoother performance in the browser. Bundlers also perform optimizations like tree shaking (removing unused code), code splitting (loading code in smaller parts), and minification (reducing file size). 
+Bundlers, like Webpack, Rollup, Parcel, esbuild, and Rolldown, take multiple files and modules, such as JavaScript, CSS, and other assets, resolve their dependencies, and combine them into optimized output files for the browser.
+
+Bundlers can also perform optimizations such as tree shaking,code splitting, and minification, depending on the tool and its configuration.
 
 ---
-Tree Shaking : Removes unused code from the final bundle.
-Code Splitting : Splits code into multiple smaller bundles instead of one big file.
-Code Minification: Removes unnecessary characters from code, removes spaces, comments, Shortens variable names.
----
+Tree Shaking: Removes unused code from the final output.
 
-#Ans 27)
+Code Splitting: Splits the application code into multiple smaller chunks so that only the required code can be loaded when needed.
 
---vite
-
-Vite is a modern frontend build tool and development server designed for fast development. In earlier versions (before version 8), Vite used esbuild during development and Rollup for production builds, both written in JavaScript. In newer versions like Vite 8, Vite is transitioning to Rolldown, a Rust-based bundler that is faster than both esbuild and Rollup and is used for both development and production.
-
-Vite also provides HMR (Hot Module Replacement), which allows your code changes to be applied instantly in the browser without reloading the page, making development faster and smoother.
-
-HMR (Hot Module Replacement) is provided by Vite itself, not by the bundlers like Rolldown, esbuild, or Rollup.
-
------
->Clarity/More info:
-
-- With ES Modules, the browser can load JavaScript files directly during development. Vite uses esbuild to pre-bundle dependencies from node_modules into an optimized format, so the browser can load them faster. At the same time, esbuild converts JSX or TSX into normal JavaScript. After this, the browser loads everything smoothly using ES Modules.
-
-- esbuild is a very fast JavaScript tool written in Go. It can bundle, transform, and minify code. Because it is written in Go and uses parallel processing, it is much faster than many JavaScript-based tools. In Vite, it is mainly used for fast dependency pre-bundling and code transformation during development.
-
-- Tools like Webpack and Parcel bundle the entire application (source code + dependencies) into large files, even during development. They do not rely on the browser’s native ES Modules. Both support HMR, but their updates are usually slower because they still need partial rebundling. Vite is faster because it serves modules directly using ES Modules instead of rebundling everything.
-
-- Other tools like Webpack, Rollup, and Parcel can also bundle and optimize code. However, they are generally slower than esbuild because they are written in JavaScript, while esbuild is written in Go and is optimized for speed.
-
--During development (In version 8):
-  - Rolldown pre-bundles node_modules — that's Rolldown's job in dev.
-  - Oxc converts TypeScript and JSX to JavaScript — Oxc is the compiler inside Rolldown. When you request a file, Oxc transforms it on-demand.
-
--During production (In version 8):
-   - In production, Rolldown acts as the main bundler. It takes all your project files and dependencies and combines them into optimized bundles. It also removes unused code (tree shaking), reduces file size, and improves performance so your app loads faster in the browser. Because Rolldown is written in Rust, it is designed to handle this process efficiently and scale better for large applications.
-
-- Inverse: Before Vite 8: esbuild did both pre-bundling AND TS/JSX transformation during dev
-After Vite 8: Rolldown does pre-bundling, and Oxc (inside Rolldown) does the transformation.
-
-- If you configure Vite to use SWC, it replaces esbuild for transforming code (like JSX/TSX) during development. SWC is written in Rust and offers performance comparable to esbuild. However, for production builds, Vite still uses Rollup (or Rolldown in newer versions) to bundle and optimize the application.
-
--But in Version 8 vite is using rolldown both in the development and Production.
+Code Minification: Reduces the size of the code by removing unnecessary characters, such as whitespace and comments, and sometimes shortening variable names.
 ----
+
+# Ans 27)
+
+Vite is a modern frontend build tool and development server designed to provide a fast development experience.
+
+Before Vite 8, Vite used esbuild (written in Go) during development and Rollup (written in JavaScript) for production builds.
+
+esbuild transformed React JSX/TSX and TypeScript code into JavaScript in both development and production and Rollup was used as the production bundler to bundle the transformed JavaScript and other assets.
+
+Since the new version, Vite 8, Vite uses a single bundler called Rolldown, which is written in Rust, for its bundling process, and Oxc for JavaScript transformation in the Vite 8 toolchain.
+
+Oxc handles JavaScript, TypeScript, and JSX transformations in both development and production.
+
+Vite also provides HMR (Hot Module Replacement), which allows changes in your code to be applied quickly in the browser without a full page reload, making development faster and smoother.
+
+HMR is provided by Vite's development server/API, not by the bundler itself, such as Rolldown, esbuild, or Rollup.
+
 #Ans 28)
 
 Node.js is not required to run frontend code in the browser because browsers can directly execute HTML, CSS, and JavaScript. However, Node.js is required in the development environment when we use modern frontend tools.
@@ -669,7 +656,9 @@ Node.js enables the use of package managers like npm or pnpm to install and mana
 
 Frontend build tools like Vite and bundlers like Webpack run on Node.js. Node.js provides the runtime environment that allows these tools to execute on the developer's machine.
 
-So, in summary, Node.js is not required to run frontend code in the browser, but it is required in the development environment to run build tools, bundlers, development servers, and package managers.
+So, Node.js itself isn't required to run your front-end code in the browser — the browser executes the JavaScript. But Node.js is absolutely required for development tools like bundlers, package managers, and build tools. Vite, Webpack, npm, and pnpm all run on Node.js during development. So Node.js is essential for the development environment and tooling, even though your actual front-end code runs in the browser. It's a development dependency, not a runtime dependency for your users.
+
+Summary, Node.js is not required to run frontend code in the browser, but it is required in the development environment to run build tools, bundlers, development servers, and package managers.
 
 #Ans 29)
 - JSX (JavaScript XML) is a syntax extension for JavaScript used in React. With the help of JSX, we can write HTML-like code inside JavaScript
@@ -677,11 +666,14 @@ So, in summary, Node.js is not required to run frontend code in the browser, but
 (Browsers do not understand JSX directly, so it must be transpiled into regular JavaScript using tools like Babel and SWC)
 
 --Note
-Many people say “JSX is HTML inside JavaScript”, This is technically incorrect. The correct statement is: “JSX is HTML-like syntax inside JavaScript”.
+Many people say, “JSX is HTML inside JavaScript.” Technically, this is incorrect. The correct statement is: “JSX is an HTML-like syntax inside JavaScript.” JSX is not real HTML — it is JavaScript syntax that looks similar to HTML, so we can write HTML-like code inside JavaScript, not actual HTML code.
 
 #Ans 30) Variable Declared Without let / const / var
 
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before declaring, it gives us an Uncaught ReferenceError.
+Example
+a=10;
+
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before declaring, it gives us an Uncaught ReferenceError: a is not defined.
 
 If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code. It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without any issues.
 
@@ -700,25 +692,85 @@ check();
 console.log(umar); // 23 — accessible globally
 
 #Ans 31)
+
+--JavaScript Engine
+
+A JavaScript engine is a software component responsible for parsing and executing JavaScript code.
+
+Examples:
+
+• V8: Chrome, Brave, Edge, Opera, Node.js.
+• SpiderMonkey: Firefox.
+• JavaScriptCore (JSC): Safari.
+
+Note:
+• JavaScriptCore (JSC) is Apple's JavaScript engine.
+• Nitro is a historical name associated with Apple's high-performance JavaScript implementation. It is not a separate JavaScript engine.
+
+-- Browser Engine
+
+A browser engine is responsible for processing HTML and CSS, calculating layouts, and rendering webpages.
+
+Examples:
+
+• Blink: Chrome, Brave, Edge, Opera.
+• Gecko: Firefox.
+• WebKit: Safari.
+
+3. Main Difference
+
+• JavaScript Engine: Executes JavaScript code.
+• Browser Engine: Processes HTML and CSS and renders webpages.
+• JIT Compiler: Compiles code into machine code during runtime to improve execution performance.
+
+Remember:
+
+A web browser generally uses both a JavaScript engine and a browser engine. For example, Chrome uses V8 as its JavaScript engine and Blink as its browser engine.
+
+Node.js uses V8 as its JavaScript engine, but it is not a browser and does not use a browser engine.
+
+-- Interpreters and JIT Compilers Used by JavaScript Engines
+
+Different JavaScript engines use different interpreters and JIT compilation techniques.
+
+• V8 (Chrome, Edge, Brave, Opera, Node.js): Ignition (Interpreter), Sparkplug (Baseline Compiler), Maglev (Mid-tier Optimizing Compiler), TurboFan (Optimizing Compiler).
+• SpiderMonkey (Firefox): SpiderMonkey Interpreter (Interpreter), Baseline Interpreter (Interpreter), Baseline JIT (Baseline Compiler), IonMonkey (Optimizing Compiler).
+• JavaScriptCore (Safari): LLInt (Low-Level Interpreter), Baseline JIT (Baseline Compiler), DFG JIT (Data Flow Graph Optimizing Compiler), FTL JIT (Faster Than Light Optimizing Compiler).
+
+Note: These are internal implementation names. The execution pipelines and compiler tiers can evolve between JavaScript engine versions.
+
+-- What Is JIT Compilation?
+
+JIT stands for Just-In-Time Compilation.JIT is a compilation technique used by modern JavaScript engines to improve JavaScript execution performance.
+
+A JavaScript engine initially executes JavaScript code and monitors its execution. When the JavaScript engine identifies frequently executed code, known as hot code, its JIT compiler can compile that code into optimized machine code during runtime, allowing the CPU to execute it directly.
+
+-- How Does JIT Compilation Work?
+
+The general JIT compilation process works as follows:
+
+1. Parsing: The JavaScript engine parses the JavaScript source code.
+2. Initial Execution: The JavaScript engine starts executing the code using its interpreter or baseline compiler, depending on its implementation.
+3. Code Monitoring: The JavaScript engine monitors which functions and code paths are executed frequently.
+4. Hot Code Identification: The JavaScript engine identifies frequently executed code, known as hot code.
+5. JIT Compilation: The JavaScript engine's optimizing compiler compiles hot code into optimized machine code.
+6. Code Reuse: The JavaScript engine can keep the generated machine code in memory and reuse it during subsequent executions.
+7. Deoptimization: If the code behaves differently from the JavaScript engine's optimization assumptions, the JavaScript engine can stop using the optimized machine code and switch to a less optimized execution path. It can optimize the code again later if suitable.
+
+Note: This is a simplified explanation of the general JIT process. The exact execution pipeline differs between JavaScript engines.
+
+-- One Line Interview Answer
+
+A JavaScript engine initially converts JavaScript code into bytecode and executes it using an interpreter. While executing the code, the JavaScript engine monitors frequently executed code, known as hot code, and compiles it into optimized machine code using a JIT compiler. The CPU can then execute this machine code directly, This runtime compilation technique is called JIT (Just-In-Time) compilation.
+
+{Different JavaScript engines use different interpreters and JIT compilers. For example, V8 uses Ignition (Interpreter) and TurboFan (Optimizing Compiler) others, while Firefox's SpiderMonkey and Safari's JavaScriptCore use their own interpreters and JIT compilers.}
+
+#Ans 32)
 A scripting language is a type of programming language typically used to automate tasks and run within another environment, such as a browser or a server. It is usually interpreted at runtime rather than compiled and is often used for quick and dynamic operations.
 
 JavaScript was created by Brendan Eich in 1995. It was initially called a scripting language because it was designed to run inside the browser to make web pages interactive. Additionally, since it was an interpreted language, it was considered a pure scripting language.
 
 However, JavaScript is no longer considered just a scripting language. With the introduction of Node.js in 2009, JavaScript can now run outside the browser as well. Additionally, the introduction of JIT (Just-In-Time) compilation gave JavaScript the performance needed for serious applications. Together, these advancements transformed it into a general-purpose programming language.
-
-#Ans 32)
-JIT (Just-In-Time) compilation in JavaScript is a technique used by JavaScript engines like V8, SpiderMonkey,JavaScriptCore to improve performance by compiling code during execution. Instead of interpreting code line by line every time, the engine first runs the code normally and monitors which parts are executed frequently, then it converts those frequently executed parts into optimized machine code using the JIT compiler, so they run much faster the next time. This approach allows JavaScript to achieve high performance while still remaining a flexible and dynamic language.
-
-Once JIT compiles a hot code path (frequently executed code) into machine code, that compiled version is cached. The next time that code runs, it uses the already-compiled version — it doesn't recompile it again.
-
-Flow:
-1. Code runs normally (interpreted)
-2. Engine notices it runs repeatedly
-3. JIT compiles it to machine code
-4. That compiled version stays cached
-5. All future executions use the cached compiled version (very fast)
-
-The recompilation only happens if the code changes or if the engine detects it needs optimization adjustments.
 
 #Ans 33)
 A closure is a function that remembers the variables from its outer scope even after that outer scope has finished executing, means an inner function can access its outer function's variables even after the outer function has finished its execution.
